@@ -1,0 +1,7586 @@
+[
+  {
+    "squad": "alpha",
+    "weekStart": "2025-04-07",
+    "role": "pm",
+    "plannedH": 40,
+    "loggedH": 28.5,
+    "absenceH": 0
+  },
+  {
+    "squad": "alpha",
+    "weekStart": "2025-04-07",
+    "role": "designer",
+    "plannedH": 40,
+    "loggedH": 19,
+    "absenceH": 16
+  },
+  {
+    "squad": "alpha",
+    "weekStart": "2025-04-07",
+    "role": "engineer",
+    "plannedH": 120,
+    "loggedH": 74.5,
+    "absenceH": 16
+  },
+  {
+    "squad": "alpha",
+    "weekStart": "2025-04-07",
+    "role": "qa",
+    "plannedH": 40,
+    "loggedH": 31.5,
+    "absenceH": 0
+  },
+  {
+    "squad": "beta",
+    "weekStart": "2025-04-07",
+    "role": "pm",
+    "plannedH": 40,
+    "loggedH": 26.5,
+    "absenceH": 0
+  },
+  {
+    "squad": "beta",
+    "weekStart": "2025-04-07",
+    "role": "designer",
+    "plannedH": 40,
+    "loggedH": 25.5,
+    "absenceH": 0
+  },
+  {
+    "squad": "beta",
+    "weekStart": "2025-04-07",
+    "role": "engineer",
+    "plannedH": 160,
+    "loggedH": 109,
+    "absenceH": 8
+  },
+  {
+    "squad": "beta",
+    "weekStart": "2025-04-07",
+    "role": "qa",
+    "plannedH": 40,
+    "loggedH": 29,
+    "absenceH": 0
+  },
+  {
+    "squad": "beta",
+    "weekStart": "2025-04-07",
+    "role": "legal",
+    "plannedH": 40,
+    "loggedH": 29.5,
+    "absenceH": 0
+  },
+  {
+    "squad": "gamma",
+    "weekStart": "2025-04-07",
+    "role": "pm",
+    "plannedH": 40,
+    "loggedH": 37,
+    "absenceH": 0
+  },
+  {
+    "squad": "gamma",
+    "weekStart": "2025-04-07",
+    "role": "engineer",
+    "plannedH": 80,
+    "loggedH": 60.5,
+    "absenceH": 0
+  },
+  {
+    "squad": "gamma",
+    "weekStart": "2025-04-07",
+    "role": "qa",
+    "plannedH": 40,
+    "loggedH": 33,
+    "absenceH": 0
+  },
+  {
+    "squad": "alpha",
+    "weekStart": "2025-04-14",
+    "role": "pm",
+    "plannedH": 40,
+    "loggedH": 28.5,
+    "absenceH": 0
+  },
+  {
+    "squad": "alpha",
+    "weekStart": "2025-04-14",
+    "role": "designer",
+    "plannedH": 40,
+    "loggedH": 32,
+    "absenceH": 0
+  },
+  {
+    "squad": "alpha",
+    "weekStart": "2025-04-14",
+    "role": "engineer",
+    "plannedH": 120,
+    "loggedH": 91,
+    "absenceH": 8
+  },
+  {
+    "squad": "alpha",
+    "weekStart": "2025-04-14",
+    "role": "qa",
+    "plannedH": 40,
+    "loggedH": 28.5,
+    "absenceH": 0
+  },
+  {
+    "squad": "beta",
+    "weekStart": "2025-04-14",
+    "role": "pm",
+    "plannedH": 40,
+    "loggedH": 28.5,
+    "absenceH": 0
+  },
+  {
+    "squad": "beta",
+    "weekStart": "2025-04-14",
+    "role": "designer",
+    "plannedH": 40,
+    "loggedH": 30,
+    "absenceH": 0
+  },
+  {
+    "squad": "beta",
+    "weekStart": "2025-04-14",
+    "role": "engineer",
+    "plannedH": 160,
+    "loggedH": 115,
+    "absenceH": 16
+  },
+  {
+    "squad": "beta",
+    "weekStart": "2025-04-14",
+    "role": "qa",
+    "plannedH": 40,
+    "loggedH": 30.5,
+    "absenceH": 0
+  },
+  {
+    "squad": "beta",
+    "weekStart": "2025-04-14",
+    "role": "legal",
+    "plannedH": 40,
+    "loggedH": 21,
+    "absenceH": 8
+  },
+  {
+    "squad": "gamma",
+    "weekStart": "2025-04-14",
+    "role": "pm",
+    "plannedH": 40,
+    "loggedH": 20.5,
+    "absenceH": 16
+  },
+  {
+    "squad": "gamma",
+    "weekStart": "2025-04-14",
+    "role": "engineer",
+    "plannedH": 80,
+    "loggedH": 52,
+    "absenceH": 16
+  },
+  {
+    "squad": "gamma",
+    "weekStart": "2025-04-14",
+    "role": "qa",
+    "plannedH": 40,
+    "loggedH": 33,
+    "absenceH": 0
+  },
+  {
+    "squad": "alpha",
+    "weekStart": "2025-04-21",
+    "role": "pm",
+    "plannedH": 40,
+    "loggedH": 31,
+    "absenceH": 0
+  },
+  {
+    "squad": "alpha",
+    "weekStart": "2025-04-21",
+    "role": "designer",
+    "plannedH": 40,
+    "loggedH": 24.5,
+    "absenceH": 8
+  },
+  {
+    "squad": "alpha",
+    "weekStart": "2025-04-21",
+    "role": "engineer",
+    "plannedH": 120,
+    "loggedH": 92,
+    "absenceH": 0
+  },
+  {
+    "squad": "alpha",
+    "weekStart": "2025-04-21",
+    "role": "qa",
+    "plannedH": 40,
+    "loggedH": 31.5,
+    "absenceH": 0
+  },
+  {
+    "squad": "beta",
+    "weekStart": "2025-04-21",
+    "role": "pm",
+    "plannedH": 40,
+    "loggedH": 27,
+    "absenceH": 0
+  },
+  {
+    "squad": "beta",
+    "weekStart": "2025-04-21",
+    "role": "designer",
+    "plannedH": 40,
+    "loggedH": 29.5,
+    "absenceH": 0
+  },
+  {
+    "squad": "beta",
+    "weekStart": "2025-04-21",
+    "role": "engineer",
+    "plannedH": 160,
+    "loggedH": 116.5,
+    "absenceH": 8
+  },
+  {
+    "squad": "beta",
+    "weekStart": "2025-04-21",
+    "role": "qa",
+    "plannedH": 40,
+    "loggedH": 28,
+    "absenceH": 0
+  },
+  {
+    "squad": "beta",
+    "weekStart": "2025-04-21",
+    "role": "legal",
+    "plannedH": 40,
+    "loggedH": 30,
+    "absenceH": 0
+  },
+  {
+    "squad": "gamma",
+    "weekStart": "2025-04-21",
+    "role": "pm",
+    "plannedH": 40,
+    "loggedH": 30.5,
+    "absenceH": 0
+  },
+  {
+    "squad": "gamma",
+    "weekStart": "2025-04-21",
+    "role": "engineer",
+    "plannedH": 80,
+    "loggedH": 56,
+    "absenceH": 8
+  },
+  {
+    "squad": "gamma",
+    "weekStart": "2025-04-21",
+    "role": "qa",
+    "plannedH": 40,
+    "loggedH": 31.5,
+    "absenceH": 0
+  },
+  {
+    "squad": "alpha",
+    "weekStart": "2025-04-28",
+    "role": "pm",
+    "plannedH": 40,
+    "loggedH": 30,
+    "absenceH": 0
+  },
+  {
+    "squad": "alpha",
+    "weekStart": "2025-04-28",
+    "role": "designer",
+    "plannedH": 40,
+    "loggedH": 29,
+    "absenceH": 0
+  },
+  {
+    "squad": "alpha",
+    "weekStart": "2025-04-28",
+    "role": "engineer",
+    "plannedH": 120,
+    "loggedH": 92.5,
+    "absenceH": 0
+  },
+  {
+    "squad": "alpha",
+    "weekStart": "2025-04-28",
+    "role": "qa",
+    "plannedH": 40,
+    "loggedH": 18.5,
+    "absenceH": 16
+  },
+  {
+    "squad": "beta",
+    "weekStart": "2025-04-28",
+    "role": "pm",
+    "plannedH": 40,
+    "loggedH": 29.5,
+    "absenceH": 0
+  },
+  {
+    "squad": "beta",
+    "weekStart": "2025-04-28",
+    "role": "designer",
+    "plannedH": 40,
+    "loggedH": 28.5,
+    "absenceH": 0
+  },
+  {
+    "squad": "beta",
+    "weekStart": "2025-04-28",
+    "role": "engineer",
+    "plannedH": 160,
+    "loggedH": 82,
+    "absenceH": 40
+  },
+  {
+    "squad": "beta",
+    "weekStart": "2025-04-28",
+    "role": "qa",
+    "plannedH": 40,
+    "loggedH": 30,
+    "absenceH": 0
+  },
+  {
+    "squad": "beta",
+    "weekStart": "2025-04-28",
+    "role": "legal",
+    "plannedH": 40,
+    "loggedH": 30.5,
+    "absenceH": 0
+  },
+  {
+    "squad": "gamma",
+    "weekStart": "2025-04-28",
+    "role": "pm",
+    "plannedH": 40,
+    "loggedH": 30.5,
+    "absenceH": 0
+  },
+  {
+    "squad": "gamma",
+    "weekStart": "2025-04-28",
+    "role": "engineer",
+    "plannedH": 80,
+    "loggedH": 55.5,
+    "absenceH": 8
+  },
+  {
+    "squad": "gamma",
+    "weekStart": "2025-04-28",
+    "role": "qa",
+    "plannedH": 40,
+    "loggedH": 30,
+    "absenceH": 0
+  },
+  {
+    "squad": "alpha",
+    "weekStart": "2025-05-05",
+    "role": "pm",
+    "plannedH": 40,
+    "loggedH": 31,
+    "absenceH": 0
+  },
+  {
+    "squad": "alpha",
+    "weekStart": "2025-05-05",
+    "role": "designer",
+    "plannedH": 40,
+    "loggedH": 31,
+    "absenceH": 0
+  },
+  {
+    "squad": "alpha",
+    "weekStart": "2025-05-05",
+    "role": "engineer",
+    "plannedH": 120,
+    "loggedH": 98,
+    "absenceH": 0
+  },
+  {
+    "squad": "alpha",
+    "weekStart": "2025-05-05",
+    "role": "qa",
+    "plannedH": 40,
+    "loggedH": 33.5,
+    "absenceH": 0
+  },
+  {
+    "squad": "beta",
+    "weekStart": "2025-05-05",
+    "role": "pm",
+    "plannedH": 40,
+    "loggedH": 17.5,
+    "absenceH": 16
+  },
+  {
+    "squad": "beta",
+    "weekStart": "2025-05-05",
+    "role": "designer",
+    "plannedH": 40,
+    "loggedH": 28,
+    "absenceH": 0
+  },
+  {
+    "squad": "beta",
+    "weekStart": "2025-05-05",
+    "role": "engineer",
+    "plannedH": 160,
+    "loggedH": 117.5,
+    "absenceH": 0
+  },
+  {
+    "squad": "beta",
+    "weekStart": "2025-05-05",
+    "role": "qa",
+    "plannedH": 40,
+    "loggedH": 0,
+    "absenceH": 40
+  },
+  {
+    "squad": "beta",
+    "weekStart": "2025-05-05",
+    "role": "legal",
+    "plannedH": 40,
+    "loggedH": 29.5,
+    "absenceH": 0
+  },
+  {
+    "squad": "gamma",
+    "weekStart": "2025-05-05",
+    "role": "pm",
+    "plannedH": 40,
+    "loggedH": 32,
+    "absenceH": 0
+  },
+  {
+    "squad": "gamma",
+    "weekStart": "2025-05-05",
+    "role": "engineer",
+    "plannedH": 80,
+    "loggedH": 62,
+    "absenceH": 0
+  },
+  {
+    "squad": "gamma",
+    "weekStart": "2025-05-05",
+    "role": "qa",
+    "plannedH": 40,
+    "loggedH": 34.5,
+    "absenceH": 0
+  },
+  {
+    "squad": "alpha",
+    "weekStart": "2025-05-12",
+    "role": "pm",
+    "plannedH": 40,
+    "loggedH": 23.5,
+    "absenceH": 8
+  },
+  {
+    "squad": "alpha",
+    "weekStart": "2025-05-12",
+    "role": "designer",
+    "plannedH": 40,
+    "loggedH": 29.5,
+    "absenceH": 0
+  },
+  {
+    "squad": "alpha",
+    "weekStart": "2025-05-12",
+    "role": "engineer",
+    "plannedH": 120,
+    "loggedH": 93,
+    "absenceH": 0
+  },
+  {
+    "squad": "alpha",
+    "weekStart": "2025-05-12",
+    "role": "qa",
+    "plannedH": 40,
+    "loggedH": 27.5,
+    "absenceH": 0
+  },
+  {
+    "squad": "beta",
+    "weekStart": "2025-05-12",
+    "role": "pm",
+    "plannedH": 40,
+    "loggedH": 29.5,
+    "absenceH": 0
+  },
+  {
+    "squad": "beta",
+    "weekStart": "2025-05-12",
+    "role": "designer",
+    "plannedH": 40,
+    "loggedH": 29,
+    "absenceH": 0
+  },
+  {
+    "squad": "beta",
+    "weekStart": "2025-05-12",
+    "role": "engineer",
+    "plannedH": 160,
+    "loggedH": 105,
+    "absenceH": 8
+  },
+  {
+    "squad": "beta",
+    "weekStart": "2025-05-12",
+    "role": "qa",
+    "plannedH": 40,
+    "loggedH": 27.5,
+    "absenceH": 0
+  },
+  {
+    "squad": "beta",
+    "weekStart": "2025-05-12",
+    "role": "legal",
+    "plannedH": 40,
+    "loggedH": 22.5,
+    "absenceH": 8
+  },
+  {
+    "squad": "gamma",
+    "weekStart": "2025-05-12",
+    "role": "pm",
+    "plannedH": 40,
+    "loggedH": 33,
+    "absenceH": 0
+  },
+  {
+    "squad": "gamma",
+    "weekStart": "2025-05-12",
+    "role": "engineer",
+    "plannedH": 80,
+    "loggedH": 61.5,
+    "absenceH": 0
+  },
+  {
+    "squad": "gamma",
+    "weekStart": "2025-05-12",
+    "role": "qa",
+    "plannedH": 40,
+    "loggedH": 32,
+    "absenceH": 0
+  },
+  {
+    "squad": "alpha",
+    "weekStart": "2025-05-19",
+    "role": "pm",
+    "plannedH": 40,
+    "loggedH": 31,
+    "absenceH": 0
+  },
+  {
+    "squad": "alpha",
+    "weekStart": "2025-05-19",
+    "role": "designer",
+    "plannedH": 40,
+    "loggedH": 28.5,
+    "absenceH": 0
+  },
+  {
+    "squad": "alpha",
+    "weekStart": "2025-05-19",
+    "role": "engineer",
+    "plannedH": 120,
+    "loggedH": 90,
+    "absenceH": 0
+  },
+  {
+    "squad": "alpha",
+    "weekStart": "2025-05-19",
+    "role": "qa",
+    "plannedH": 40,
+    "loggedH": 28.5,
+    "absenceH": 0
+  },
+  {
+    "squad": "beta",
+    "weekStart": "2025-05-19",
+    "role": "pm",
+    "plannedH": 40,
+    "loggedH": 26,
+    "absenceH": 0
+  },
+  {
+    "squad": "beta",
+    "weekStart": "2025-05-19",
+    "role": "designer",
+    "plannedH": 40,
+    "loggedH": 28,
+    "absenceH": 0
+  },
+  {
+    "squad": "beta",
+    "weekStart": "2025-05-19",
+    "role": "engineer",
+    "plannedH": 160,
+    "loggedH": 118.5,
+    "absenceH": 0
+  },
+  {
+    "squad": "beta",
+    "weekStart": "2025-05-19",
+    "role": "qa",
+    "plannedH": 40,
+    "loggedH": 27,
+    "absenceH": 0
+  },
+  {
+    "squad": "beta",
+    "weekStart": "2025-05-19",
+    "role": "legal",
+    "plannedH": 40,
+    "loggedH": 30,
+    "absenceH": 0
+  },
+  {
+    "squad": "gamma",
+    "weekStart": "2025-05-19",
+    "role": "pm",
+    "plannedH": 40,
+    "loggedH": 33,
+    "absenceH": 0
+  },
+  {
+    "squad": "gamma",
+    "weekStart": "2025-05-19",
+    "role": "engineer",
+    "plannedH": 80,
+    "loggedH": 62.5,
+    "absenceH": 0
+  },
+  {
+    "squad": "gamma",
+    "weekStart": "2025-05-19",
+    "role": "qa",
+    "plannedH": 40,
+    "loggedH": 32,
+    "absenceH": 0
+  },
+  {
+    "squad": "alpha",
+    "weekStart": "2025-05-26",
+    "role": "pm",
+    "plannedH": 40,
+    "loggedH": 29,
+    "absenceH": 0
+  },
+  {
+    "squad": "alpha",
+    "weekStart": "2025-05-26",
+    "role": "designer",
+    "plannedH": 40,
+    "loggedH": 29.5,
+    "absenceH": 0
+  },
+  {
+    "squad": "alpha",
+    "weekStart": "2025-05-26",
+    "role": "engineer",
+    "plannedH": 120,
+    "loggedH": 80.5,
+    "absenceH": 16
+  },
+  {
+    "squad": "alpha",
+    "weekStart": "2025-05-26",
+    "role": "qa",
+    "plannedH": 40,
+    "loggedH": 32.5,
+    "absenceH": 0
+  },
+  {
+    "squad": "beta",
+    "weekStart": "2025-05-26",
+    "role": "pm",
+    "plannedH": 40,
+    "loggedH": 27,
+    "absenceH": 0
+  },
+  {
+    "squad": "beta",
+    "weekStart": "2025-05-26",
+    "role": "designer",
+    "plannedH": 40,
+    "loggedH": 29,
+    "absenceH": 0
+  },
+  {
+    "squad": "beta",
+    "weekStart": "2025-05-26",
+    "role": "engineer",
+    "plannedH": 160,
+    "loggedH": 108.5,
+    "absenceH": 8
+  },
+  {
+    "squad": "beta",
+    "weekStart": "2025-05-26",
+    "role": "qa",
+    "plannedH": 40,
+    "loggedH": 29.5,
+    "absenceH": 0
+  },
+  {
+    "squad": "beta",
+    "weekStart": "2025-05-26",
+    "role": "legal",
+    "plannedH": 40,
+    "loggedH": 29,
+    "absenceH": 0
+  },
+  {
+    "squad": "gamma",
+    "weekStart": "2025-05-26",
+    "role": "pm",
+    "plannedH": 40,
+    "loggedH": 0,
+    "absenceH": 40
+  },
+  {
+    "squad": "gamma",
+    "weekStart": "2025-05-26",
+    "role": "engineer",
+    "plannedH": 80,
+    "loggedH": 62.5,
+    "absenceH": 0
+  },
+  {
+    "squad": "gamma",
+    "weekStart": "2025-05-26",
+    "role": "qa",
+    "plannedH": 40,
+    "loggedH": 31.5,
+    "absenceH": 0
+  },
+  {
+    "squad": "alpha",
+    "weekStart": "2025-06-02",
+    "role": "pm",
+    "plannedH": 40,
+    "loggedH": 28.5,
+    "absenceH": 0
+  },
+  {
+    "squad": "alpha",
+    "weekStart": "2025-06-02",
+    "role": "designer",
+    "plannedH": 40,
+    "loggedH": 28,
+    "absenceH": 0
+  },
+  {
+    "squad": "alpha",
+    "weekStart": "2025-06-02",
+    "role": "engineer",
+    "plannedH": 120,
+    "loggedH": 86,
+    "absenceH": 0
+  },
+  {
+    "squad": "alpha",
+    "weekStart": "2025-06-02",
+    "role": "qa",
+    "plannedH": 40,
+    "loggedH": 29.5,
+    "absenceH": 0
+  },
+  {
+    "squad": "beta",
+    "weekStart": "2025-06-02",
+    "role": "pm",
+    "plannedH": 40,
+    "loggedH": 28.5,
+    "absenceH": 0
+  },
+  {
+    "squad": "beta",
+    "weekStart": "2025-06-02",
+    "role": "designer",
+    "plannedH": 40,
+    "loggedH": 21,
+    "absenceH": 8
+  },
+  {
+    "squad": "beta",
+    "weekStart": "2025-06-02",
+    "role": "engineer",
+    "plannedH": 160,
+    "loggedH": 115,
+    "absenceH": 8
+  },
+  {
+    "squad": "beta",
+    "weekStart": "2025-06-02",
+    "role": "qa",
+    "plannedH": 40,
+    "loggedH": 27.5,
+    "absenceH": 0
+  },
+  {
+    "squad": "beta",
+    "weekStart": "2025-06-02",
+    "role": "legal",
+    "plannedH": 40,
+    "loggedH": 30.5,
+    "absenceH": 0
+  },
+  {
+    "squad": "gamma",
+    "weekStart": "2025-06-02",
+    "role": "pm",
+    "plannedH": 40,
+    "loggedH": 20,
+    "absenceH": 16
+  },
+  {
+    "squad": "gamma",
+    "weekStart": "2025-06-02",
+    "role": "engineer",
+    "plannedH": 80,
+    "loggedH": 57.5,
+    "absenceH": 8
+  },
+  {
+    "squad": "gamma",
+    "weekStart": "2025-06-02",
+    "role": "qa",
+    "plannedH": 40,
+    "loggedH": 30.5,
+    "absenceH": 0
+  },
+  {
+    "squad": "alpha",
+    "weekStart": "2025-06-09",
+    "role": "pm",
+    "plannedH": 40,
+    "loggedH": 23,
+    "absenceH": 8
+  },
+  {
+    "squad": "alpha",
+    "weekStart": "2025-06-09",
+    "role": "designer",
+    "plannedH": 40,
+    "loggedH": 31.5,
+    "absenceH": 0
+  },
+  {
+    "squad": "alpha",
+    "weekStart": "2025-06-09",
+    "role": "engineer",
+    "plannedH": 120,
+    "loggedH": 90,
+    "absenceH": 0
+  },
+  {
+    "squad": "alpha",
+    "weekStart": "2025-06-09",
+    "role": "qa",
+    "plannedH": 40,
+    "loggedH": 19,
+    "absenceH": 16
+  },
+  {
+    "squad": "beta",
+    "weekStart": "2025-06-09",
+    "role": "pm",
+    "plannedH": 40,
+    "loggedH": 27.5,
+    "absenceH": 0
+  },
+  {
+    "squad": "beta",
+    "weekStart": "2025-06-09",
+    "role": "designer",
+    "plannedH": 40,
+    "loggedH": 29.5,
+    "absenceH": 0
+  },
+  {
+    "squad": "beta",
+    "weekStart": "2025-06-09",
+    "role": "engineer",
+    "plannedH": 160,
+    "loggedH": 92.5,
+    "absenceH": 48
+  },
+  {
+    "squad": "beta",
+    "weekStart": "2025-06-09",
+    "role": "qa",
+    "plannedH": 40,
+    "loggedH": 31.5,
+    "absenceH": 0
+  },
+  {
+    "squad": "beta",
+    "weekStart": "2025-06-09",
+    "role": "legal",
+    "plannedH": 40,
+    "loggedH": 29,
+    "absenceH": 0
+  },
+  {
+    "squad": "gamma",
+    "weekStart": "2025-06-09",
+    "role": "pm",
+    "plannedH": 40,
+    "loggedH": 24,
+    "absenceH": 8
+  },
+  {
+    "squad": "gamma",
+    "weekStart": "2025-06-09",
+    "role": "engineer",
+    "plannedH": 80,
+    "loggedH": 61,
+    "absenceH": 0
+  },
+  {
+    "squad": "gamma",
+    "weekStart": "2025-06-09",
+    "role": "qa",
+    "plannedH": 40,
+    "loggedH": 32.5,
+    "absenceH": 0
+  },
+  {
+    "squad": "alpha",
+    "weekStart": "2025-06-16",
+    "role": "pm",
+    "plannedH": 40,
+    "loggedH": 29,
+    "absenceH": 0
+  },
+  {
+    "squad": "alpha",
+    "weekStart": "2025-06-16",
+    "role": "designer",
+    "plannedH": 40,
+    "loggedH": 29,
+    "absenceH": 0
+  },
+  {
+    "squad": "alpha",
+    "weekStart": "2025-06-16",
+    "role": "engineer",
+    "plannedH": 120,
+    "loggedH": 91.5,
+    "absenceH": 8
+  },
+  {
+    "squad": "alpha",
+    "weekStart": "2025-06-16",
+    "role": "qa",
+    "plannedH": 40,
+    "loggedH": 30.5,
+    "absenceH": 0
+  },
+  {
+    "squad": "beta",
+    "weekStart": "2025-06-16",
+    "role": "pm",
+    "plannedH": 40,
+    "loggedH": 28.5,
+    "absenceH": 0
+  },
+  {
+    "squad": "beta",
+    "weekStart": "2025-06-16",
+    "role": "designer",
+    "plannedH": 40,
+    "loggedH": 18,
+    "absenceH": 16
+  },
+  {
+    "squad": "beta",
+    "weekStart": "2025-06-16",
+    "role": "engineer",
+    "plannedH": 160,
+    "loggedH": 105,
+    "absenceH": 16
+  },
+  {
+    "squad": "beta",
+    "weekStart": "2025-06-16",
+    "role": "qa",
+    "plannedH": 40,
+    "loggedH": 26.5,
+    "absenceH": 0
+  },
+  {
+    "squad": "beta",
+    "weekStart": "2025-06-16",
+    "role": "legal",
+    "plannedH": 40,
+    "loggedH": 28,
+    "absenceH": 0
+  },
+  {
+    "squad": "gamma",
+    "weekStart": "2025-06-16",
+    "role": "pm",
+    "plannedH": 40,
+    "loggedH": 35,
+    "absenceH": 0
+  },
+  {
+    "squad": "gamma",
+    "weekStart": "2025-06-16",
+    "role": "engineer",
+    "plannedH": 80,
+    "loggedH": 66,
+    "absenceH": 0
+  },
+  {
+    "squad": "gamma",
+    "weekStart": "2025-06-16",
+    "role": "qa",
+    "plannedH": 40,
+    "loggedH": 27,
+    "absenceH": 8
+  },
+  {
+    "squad": "alpha",
+    "weekStart": "2025-06-23",
+    "role": "pm",
+    "plannedH": 40,
+    "loggedH": 32,
+    "absenceH": 0
+  },
+  {
+    "squad": "alpha",
+    "weekStart": "2025-06-23",
+    "role": "designer",
+    "plannedH": 40,
+    "loggedH": 31,
+    "absenceH": 0
+  },
+  {
+    "squad": "alpha",
+    "weekStart": "2025-06-23",
+    "role": "engineer",
+    "plannedH": 120,
+    "loggedH": 76.5,
+    "absenceH": 16
+  },
+  {
+    "squad": "alpha",
+    "weekStart": "2025-06-23",
+    "role": "qa",
+    "plannedH": 40,
+    "loggedH": 29.5,
+    "absenceH": 0
+  },
+  {
+    "squad": "beta",
+    "weekStart": "2025-06-23",
+    "role": "pm",
+    "plannedH": 40,
+    "loggedH": 27.5,
+    "absenceH": 0
+  },
+  {
+    "squad": "beta",
+    "weekStart": "2025-06-23",
+    "role": "designer",
+    "plannedH": 40,
+    "loggedH": 29,
+    "absenceH": 0
+  },
+  {
+    "squad": "beta",
+    "weekStart": "2025-06-23",
+    "role": "engineer",
+    "plannedH": 160,
+    "loggedH": 112,
+    "absenceH": 8
+  },
+  {
+    "squad": "beta",
+    "weekStart": "2025-06-23",
+    "role": "qa",
+    "plannedH": 40,
+    "loggedH": 25.5,
+    "absenceH": 0
+  },
+  {
+    "squad": "beta",
+    "weekStart": "2025-06-23",
+    "role": "legal",
+    "plannedH": 40,
+    "loggedH": 28,
+    "absenceH": 0
+  },
+  {
+    "squad": "gamma",
+    "weekStart": "2025-06-23",
+    "role": "pm",
+    "plannedH": 40,
+    "loggedH": 32.5,
+    "absenceH": 0
+  },
+  {
+    "squad": "gamma",
+    "weekStart": "2025-06-23",
+    "role": "engineer",
+    "plannedH": 80,
+    "loggedH": 62.5,
+    "absenceH": 0
+  },
+  {
+    "squad": "gamma",
+    "weekStart": "2025-06-23",
+    "role": "qa",
+    "plannedH": 40,
+    "loggedH": 34,
+    "absenceH": 0
+  },
+  {
+    "squad": "alpha",
+    "weekStart": "2025-06-30",
+    "role": "pm",
+    "plannedH": 40,
+    "loggedH": 31.5,
+    "absenceH": 0
+  },
+  {
+    "squad": "alpha",
+    "weekStart": "2025-06-30",
+    "role": "designer",
+    "plannedH": 40,
+    "loggedH": 27,
+    "absenceH": 0
+  },
+  {
+    "squad": "alpha",
+    "weekStart": "2025-06-30",
+    "role": "engineer",
+    "plannedH": 120,
+    "loggedH": 89.5,
+    "absenceH": 0
+  },
+  {
+    "squad": "alpha",
+    "weekStart": "2025-06-30",
+    "role": "qa",
+    "plannedH": 40,
+    "loggedH": 32.5,
+    "absenceH": 0
+  },
+  {
+    "squad": "beta",
+    "weekStart": "2025-06-30",
+    "role": "pm",
+    "plannedH": 40,
+    "loggedH": 22.5,
+    "absenceH": 8
+  },
+  {
+    "squad": "beta",
+    "weekStart": "2025-06-30",
+    "role": "designer",
+    "plannedH": 40,
+    "loggedH": 28,
+    "absenceH": 0
+  },
+  {
+    "squad": "beta",
+    "weekStart": "2025-06-30",
+    "role": "engineer",
+    "plannedH": 160,
+    "loggedH": 125.5,
+    "absenceH": 0
+  },
+  {
+    "squad": "beta",
+    "weekStart": "2025-06-30",
+    "role": "qa",
+    "plannedH": 40,
+    "loggedH": 31,
+    "absenceH": 0
+  },
+  {
+    "squad": "beta",
+    "weekStart": "2025-06-30",
+    "role": "legal",
+    "plannedH": 40,
+    "loggedH": 30,
+    "absenceH": 0
+  },
+  {
+    "squad": "gamma",
+    "weekStart": "2025-06-30",
+    "role": "pm",
+    "plannedH": 40,
+    "loggedH": 34,
+    "absenceH": 0
+  },
+  {
+    "squad": "gamma",
+    "weekStart": "2025-06-30",
+    "role": "engineer",
+    "plannedH": 80,
+    "loggedH": 64,
+    "absenceH": 0
+  },
+  {
+    "squad": "gamma",
+    "weekStart": "2025-06-30",
+    "role": "qa",
+    "plannedH": 40,
+    "loggedH": 35,
+    "absenceH": 0
+  },
+  {
+    "squad": "alpha",
+    "weekStart": "2025-07-07",
+    "role": "pm",
+    "plannedH": 40,
+    "loggedH": 30,
+    "absenceH": 0
+  },
+  {
+    "squad": "alpha",
+    "weekStart": "2025-07-07",
+    "role": "designer",
+    "plannedH": 40,
+    "loggedH": 29.5,
+    "absenceH": 0
+  },
+  {
+    "squad": "alpha",
+    "weekStart": "2025-07-07",
+    "role": "engineer",
+    "plannedH": 120,
+    "loggedH": 79,
+    "absenceH": 16
+  },
+  {
+    "squad": "alpha",
+    "weekStart": "2025-07-07",
+    "role": "qa",
+    "plannedH": 40,
+    "loggedH": 30.5,
+    "absenceH": 0
+  },
+  {
+    "squad": "beta",
+    "weekStart": "2025-07-07",
+    "role": "pm",
+    "plannedH": 40,
+    "loggedH": 29,
+    "absenceH": 0
+  },
+  {
+    "squad": "beta",
+    "weekStart": "2025-07-07",
+    "role": "designer",
+    "plannedH": 40,
+    "loggedH": 28,
+    "absenceH": 0
+  },
+  {
+    "squad": "beta",
+    "weekStart": "2025-07-07",
+    "role": "engineer",
+    "plannedH": 160,
+    "loggedH": 86.5,
+    "absenceH": 32
+  },
+  {
+    "squad": "beta",
+    "weekStart": "2025-07-07",
+    "role": "qa",
+    "plannedH": 40,
+    "loggedH": 29.5,
+    "absenceH": 0
+  },
+  {
+    "squad": "beta",
+    "weekStart": "2025-07-07",
+    "role": "legal",
+    "plannedH": 40,
+    "loggedH": 29.5,
+    "absenceH": 0
+  },
+  {
+    "squad": "gamma",
+    "weekStart": "2025-07-07",
+    "role": "pm",
+    "plannedH": 40,
+    "loggedH": 34.5,
+    "absenceH": 0
+  },
+  {
+    "squad": "gamma",
+    "weekStart": "2025-07-07",
+    "role": "engineer",
+    "plannedH": 80,
+    "loggedH": 58,
+    "absenceH": 8
+  },
+  {
+    "squad": "gamma",
+    "weekStart": "2025-07-07",
+    "role": "qa",
+    "plannedH": 40,
+    "loggedH": 32,
+    "absenceH": 0
+  },
+  {
+    "squad": "alpha",
+    "weekStart": "2025-07-14",
+    "role": "pm",
+    "plannedH": 40,
+    "loggedH": 28.5,
+    "absenceH": 0
+  },
+  {
+    "squad": "alpha",
+    "weekStart": "2025-07-14",
+    "role": "designer",
+    "plannedH": 40,
+    "loggedH": 30,
+    "absenceH": 0
+  },
+  {
+    "squad": "alpha",
+    "weekStart": "2025-07-14",
+    "role": "engineer",
+    "plannedH": 120,
+    "loggedH": 90,
+    "absenceH": 0
+  },
+  {
+    "squad": "alpha",
+    "weekStart": "2025-07-14",
+    "role": "qa",
+    "plannedH": 40,
+    "loggedH": 30.5,
+    "absenceH": 0
+  },
+  {
+    "squad": "beta",
+    "weekStart": "2025-07-14",
+    "role": "pm",
+    "plannedH": 40,
+    "loggedH": 28,
+    "absenceH": 0
+  },
+  {
+    "squad": "beta",
+    "weekStart": "2025-07-14",
+    "role": "designer",
+    "plannedH": 40,
+    "loggedH": 18.5,
+    "absenceH": 16
+  },
+  {
+    "squad": "beta",
+    "weekStart": "2025-07-14",
+    "role": "engineer",
+    "plannedH": 160,
+    "loggedH": 110.5,
+    "absenceH": 0
+  },
+  {
+    "squad": "beta",
+    "weekStart": "2025-07-14",
+    "role": "qa",
+    "plannedH": 40,
+    "loggedH": 31.5,
+    "absenceH": 0
+  },
+  {
+    "squad": "beta",
+    "weekStart": "2025-07-14",
+    "role": "legal",
+    "plannedH": 40,
+    "loggedH": 27,
+    "absenceH": 0
+  },
+  {
+    "squad": "gamma",
+    "weekStart": "2025-07-14",
+    "role": "pm",
+    "plannedH": 40,
+    "loggedH": 33,
+    "absenceH": 0
+  },
+  {
+    "squad": "gamma",
+    "weekStart": "2025-07-14",
+    "role": "engineer",
+    "plannedH": 80,
+    "loggedH": 51.5,
+    "absenceH": 16
+  },
+  {
+    "squad": "gamma",
+    "weekStart": "2025-07-14",
+    "role": "qa",
+    "plannedH": 40,
+    "loggedH": 30,
+    "absenceH": 0
+  },
+  {
+    "squad": "alpha",
+    "weekStart": "2025-07-21",
+    "role": "pm",
+    "plannedH": 40,
+    "loggedH": 32.5,
+    "absenceH": 0
+  },
+  {
+    "squad": "alpha",
+    "weekStart": "2025-07-21",
+    "role": "designer",
+    "plannedH": 40,
+    "loggedH": 33.5,
+    "absenceH": 0
+  },
+  {
+    "squad": "alpha",
+    "weekStart": "2025-07-21",
+    "role": "engineer",
+    "plannedH": 120,
+    "loggedH": 87.5,
+    "absenceH": 16
+  },
+  {
+    "squad": "alpha",
+    "weekStart": "2025-07-21",
+    "role": "qa",
+    "plannedH": 40,
+    "loggedH": 31,
+    "absenceH": 0
+  },
+  {
+    "squad": "beta",
+    "weekStart": "2025-07-21",
+    "role": "pm",
+    "plannedH": 40,
+    "loggedH": 0,
+    "absenceH": 40
+  },
+  {
+    "squad": "beta",
+    "weekStart": "2025-07-21",
+    "role": "designer",
+    "plannedH": 40,
+    "loggedH": 29.5,
+    "absenceH": 0
+  },
+  {
+    "squad": "beta",
+    "weekStart": "2025-07-21",
+    "role": "engineer",
+    "plannedH": 160,
+    "loggedH": 115.5,
+    "absenceH": 0
+  },
+  {
+    "squad": "beta",
+    "weekStart": "2025-07-21",
+    "role": "qa",
+    "plannedH": 40,
+    "loggedH": 30,
+    "absenceH": 0
+  },
+  {
+    "squad": "beta",
+    "weekStart": "2025-07-21",
+    "role": "legal",
+    "plannedH": 40,
+    "loggedH": 21.5,
+    "absenceH": 8
+  },
+  {
+    "squad": "gamma",
+    "weekStart": "2025-07-21",
+    "role": "pm",
+    "plannedH": 40,
+    "loggedH": 30,
+    "absenceH": 0
+  },
+  {
+    "squad": "gamma",
+    "weekStart": "2025-07-21",
+    "role": "engineer",
+    "plannedH": 80,
+    "loggedH": 57.5,
+    "absenceH": 0
+  },
+  {
+    "squad": "gamma",
+    "weekStart": "2025-07-21",
+    "role": "qa",
+    "plannedH": 40,
+    "loggedH": 31.5,
+    "absenceH": 0
+  },
+  {
+    "squad": "alpha",
+    "weekStart": "2025-07-28",
+    "role": "pm",
+    "plannedH": 40,
+    "loggedH": 31,
+    "absenceH": 0
+  },
+  {
+    "squad": "alpha",
+    "weekStart": "2025-07-28",
+    "role": "designer",
+    "plannedH": 40,
+    "loggedH": 32,
+    "absenceH": 0
+  },
+  {
+    "squad": "alpha",
+    "weekStart": "2025-07-28",
+    "role": "engineer",
+    "plannedH": 120,
+    "loggedH": 75.5,
+    "absenceH": 16
+  },
+  {
+    "squad": "alpha",
+    "weekStart": "2025-07-28",
+    "role": "qa",
+    "plannedH": 40,
+    "loggedH": 29.5,
+    "absenceH": 0
+  },
+  {
+    "squad": "beta",
+    "weekStart": "2025-07-28",
+    "role": "pm",
+    "plannedH": 40,
+    "loggedH": 26.5,
+    "absenceH": 0
+  },
+  {
+    "squad": "beta",
+    "weekStart": "2025-07-28",
+    "role": "designer",
+    "plannedH": 40,
+    "loggedH": 26,
+    "absenceH": 0
+  },
+  {
+    "squad": "beta",
+    "weekStart": "2025-07-28",
+    "role": "engineer",
+    "plannedH": 160,
+    "loggedH": 114,
+    "absenceH": 8
+  },
+  {
+    "squad": "beta",
+    "weekStart": "2025-07-28",
+    "role": "qa",
+    "plannedH": 40,
+    "loggedH": 27.5,
+    "absenceH": 0
+  },
+  {
+    "squad": "beta",
+    "weekStart": "2025-07-28",
+    "role": "legal",
+    "plannedH": 40,
+    "loggedH": 31,
+    "absenceH": 0
+  },
+  {
+    "squad": "gamma",
+    "weekStart": "2025-07-28",
+    "role": "pm",
+    "plannedH": 40,
+    "loggedH": 29.5,
+    "absenceH": 0
+  },
+  {
+    "squad": "gamma",
+    "weekStart": "2025-07-28",
+    "role": "engineer",
+    "plannedH": 80,
+    "loggedH": 60.5,
+    "absenceH": 8
+  },
+  {
+    "squad": "gamma",
+    "weekStart": "2025-07-28",
+    "role": "qa",
+    "plannedH": 40,
+    "loggedH": 33,
+    "absenceH": 0
+  },
+  {
+    "squad": "alpha",
+    "weekStart": "2025-08-04",
+    "role": "pm",
+    "plannedH": 40,
+    "loggedH": 31,
+    "absenceH": 0
+  },
+  {
+    "squad": "alpha",
+    "weekStart": "2025-08-04",
+    "role": "designer",
+    "plannedH": 40,
+    "loggedH": 28.5,
+    "absenceH": 0
+  },
+  {
+    "squad": "alpha",
+    "weekStart": "2025-08-04",
+    "role": "engineer",
+    "plannedH": 120,
+    "loggedH": 95.5,
+    "absenceH": 0
+  },
+  {
+    "squad": "alpha",
+    "weekStart": "2025-08-04",
+    "role": "qa",
+    "plannedH": 40,
+    "loggedH": 22.5,
+    "absenceH": 8
+  },
+  {
+    "squad": "beta",
+    "weekStart": "2025-08-04",
+    "role": "pm",
+    "plannedH": 40,
+    "loggedH": 29,
+    "absenceH": 0
+  },
+  {
+    "squad": "beta",
+    "weekStart": "2025-08-04",
+    "role": "designer",
+    "plannedH": 40,
+    "loggedH": 30,
+    "absenceH": 0
+  },
+  {
+    "squad": "beta",
+    "weekStart": "2025-08-04",
+    "role": "engineer",
+    "plannedH": 160,
+    "loggedH": 102.5,
+    "absenceH": 16
+  },
+  {
+    "squad": "beta",
+    "weekStart": "2025-08-04",
+    "role": "qa",
+    "plannedH": 40,
+    "loggedH": 31,
+    "absenceH": 0
+  },
+  {
+    "squad": "beta",
+    "weekStart": "2025-08-04",
+    "role": "legal",
+    "plannedH": 40,
+    "loggedH": 21.5,
+    "absenceH": 8
+  },
+  {
+    "squad": "gamma",
+    "weekStart": "2025-08-04",
+    "role": "pm",
+    "plannedH": 40,
+    "loggedH": 32,
+    "absenceH": 0
+  },
+  {
+    "squad": "gamma",
+    "weekStart": "2025-08-04",
+    "role": "engineer",
+    "plannedH": 80,
+    "loggedH": 66,
+    "absenceH": 0
+  },
+  {
+    "squad": "gamma",
+    "weekStart": "2025-08-04",
+    "role": "qa",
+    "plannedH": 40,
+    "loggedH": 33,
+    "absenceH": 0
+  },
+  {
+    "squad": "alpha",
+    "weekStart": "2025-08-11",
+    "role": "pm",
+    "plannedH": 40,
+    "loggedH": 30.5,
+    "absenceH": 0
+  },
+  {
+    "squad": "alpha",
+    "weekStart": "2025-08-11",
+    "role": "designer",
+    "plannedH": 40,
+    "loggedH": 27.5,
+    "absenceH": 0
+  },
+  {
+    "squad": "alpha",
+    "weekStart": "2025-08-11",
+    "role": "engineer",
+    "plannedH": 120,
+    "loggedH": 79.5,
+    "absenceH": 16
+  },
+  {
+    "squad": "alpha",
+    "weekStart": "2025-08-11",
+    "role": "qa",
+    "plannedH": 40,
+    "loggedH": 33,
+    "absenceH": 0
+  },
+  {
+    "squad": "beta",
+    "weekStart": "2025-08-11",
+    "role": "pm",
+    "plannedH": 40,
+    "loggedH": 27.5,
+    "absenceH": 0
+  },
+  {
+    "squad": "beta",
+    "weekStart": "2025-08-11",
+    "role": "designer",
+    "plannedH": 40,
+    "loggedH": 28.5,
+    "absenceH": 0
+  },
+  {
+    "squad": "beta",
+    "weekStart": "2025-08-11",
+    "role": "engineer",
+    "plannedH": 160,
+    "loggedH": 89.5,
+    "absenceH": 40
+  },
+  {
+    "squad": "beta",
+    "weekStart": "2025-08-11",
+    "role": "qa",
+    "plannedH": 40,
+    "loggedH": 30.5,
+    "absenceH": 0
+  },
+  {
+    "squad": "beta",
+    "weekStart": "2025-08-11",
+    "role": "legal",
+    "plannedH": 40,
+    "loggedH": 27.5,
+    "absenceH": 0
+  },
+  {
+    "squad": "gamma",
+    "weekStart": "2025-08-11",
+    "role": "pm",
+    "plannedH": 40,
+    "loggedH": 33,
+    "absenceH": 0
+  },
+  {
+    "squad": "gamma",
+    "weekStart": "2025-08-11",
+    "role": "engineer",
+    "plannedH": 80,
+    "loggedH": 58,
+    "absenceH": 8
+  },
+  {
+    "squad": "gamma",
+    "weekStart": "2025-08-11",
+    "role": "qa",
+    "plannedH": 40,
+    "loggedH": 32.5,
+    "absenceH": 0
+  },
+  {
+    "squad": "alpha",
+    "weekStart": "2025-08-18",
+    "role": "pm",
+    "plannedH": 40,
+    "loggedH": 31,
+    "absenceH": 0
+  },
+  {
+    "squad": "alpha",
+    "weekStart": "2025-08-18",
+    "role": "designer",
+    "plannedH": 40,
+    "loggedH": 18.5,
+    "absenceH": 16
+  },
+  {
+    "squad": "alpha",
+    "weekStart": "2025-08-18",
+    "role": "engineer",
+    "plannedH": 120,
+    "loggedH": 77.5,
+    "absenceH": 16
+  },
+  {
+    "squad": "alpha",
+    "weekStart": "2025-08-18",
+    "role": "qa",
+    "plannedH": 40,
+    "loggedH": 31.5,
+    "absenceH": 0
+  },
+  {
+    "squad": "beta",
+    "weekStart": "2025-08-18",
+    "role": "pm",
+    "plannedH": 40,
+    "loggedH": 28.5,
+    "absenceH": 0
+  },
+  {
+    "squad": "beta",
+    "weekStart": "2025-08-18",
+    "role": "designer",
+    "plannedH": 40,
+    "loggedH": 29.5,
+    "absenceH": 0
+  },
+  {
+    "squad": "beta",
+    "weekStart": "2025-08-18",
+    "role": "engineer",
+    "plannedH": 160,
+    "loggedH": 113.5,
+    "absenceH": 0
+  },
+  {
+    "squad": "beta",
+    "weekStart": "2025-08-18",
+    "role": "qa",
+    "plannedH": 40,
+    "loggedH": 29,
+    "absenceH": 0
+  },
+  {
+    "squad": "beta",
+    "weekStart": "2025-08-18",
+    "role": "legal",
+    "plannedH": 40,
+    "loggedH": 28.5,
+    "absenceH": 0
+  },
+  {
+    "squad": "gamma",
+    "weekStart": "2025-08-18",
+    "role": "pm",
+    "plannedH": 40,
+    "loggedH": 34.5,
+    "absenceH": 0
+  },
+  {
+    "squad": "gamma",
+    "weekStart": "2025-08-18",
+    "role": "engineer",
+    "plannedH": 80,
+    "loggedH": 61.5,
+    "absenceH": 0
+  },
+  {
+    "squad": "gamma",
+    "weekStart": "2025-08-18",
+    "role": "qa",
+    "plannedH": 40,
+    "loggedH": 31,
+    "absenceH": 0
+  },
+  {
+    "squad": "alpha",
+    "weekStart": "2025-08-25",
+    "role": "pm",
+    "plannedH": 40,
+    "loggedH": 29.5,
+    "absenceH": 0
+  },
+  {
+    "squad": "alpha",
+    "weekStart": "2025-08-25",
+    "role": "designer",
+    "plannedH": 40,
+    "loggedH": 30,
+    "absenceH": 0
+  },
+  {
+    "squad": "alpha",
+    "weekStart": "2025-08-25",
+    "role": "engineer",
+    "plannedH": 120,
+    "loggedH": 86.5,
+    "absenceH": 0
+  },
+  {
+    "squad": "alpha",
+    "weekStart": "2025-08-25",
+    "role": "qa",
+    "plannedH": 40,
+    "loggedH": 0,
+    "absenceH": 40
+  },
+  {
+    "squad": "beta",
+    "weekStart": "2025-08-25",
+    "role": "pm",
+    "plannedH": 40,
+    "loggedH": 22,
+    "absenceH": 8
+  },
+  {
+    "squad": "beta",
+    "weekStart": "2025-08-25",
+    "role": "designer",
+    "plannedH": 40,
+    "loggedH": 29,
+    "absenceH": 0
+  },
+  {
+    "squad": "beta",
+    "weekStart": "2025-08-25",
+    "role": "engineer",
+    "plannedH": 160,
+    "loggedH": 83.5,
+    "absenceH": 40
+  },
+  {
+    "squad": "beta",
+    "weekStart": "2025-08-25",
+    "role": "qa",
+    "plannedH": 40,
+    "loggedH": 28.5,
+    "absenceH": 0
+  },
+  {
+    "squad": "beta",
+    "weekStart": "2025-08-25",
+    "role": "legal",
+    "plannedH": 40,
+    "loggedH": 29.5,
+    "absenceH": 0
+  },
+  {
+    "squad": "gamma",
+    "weekStart": "2025-08-25",
+    "role": "pm",
+    "plannedH": 40,
+    "loggedH": 20.5,
+    "absenceH": 16
+  },
+  {
+    "squad": "gamma",
+    "weekStart": "2025-08-25",
+    "role": "engineer",
+    "plannedH": 80,
+    "loggedH": 50,
+    "absenceH": 16
+  },
+  {
+    "squad": "gamma",
+    "weekStart": "2025-08-25",
+    "role": "qa",
+    "plannedH": 40,
+    "loggedH": 29,
+    "absenceH": 0
+  },
+  {
+    "squad": "alpha",
+    "weekStart": "2025-09-01",
+    "role": "pm",
+    "plannedH": 40,
+    "loggedH": 27.5,
+    "absenceH": 0
+  },
+  {
+    "squad": "alpha",
+    "weekStart": "2025-09-01",
+    "role": "designer",
+    "plannedH": 40,
+    "loggedH": 31,
+    "absenceH": 0
+  },
+  {
+    "squad": "alpha",
+    "weekStart": "2025-09-01",
+    "role": "engineer",
+    "plannedH": 120,
+    "loggedH": 97,
+    "absenceH": 0
+  },
+  {
+    "squad": "alpha",
+    "weekStart": "2025-09-01",
+    "role": "qa",
+    "plannedH": 40,
+    "loggedH": 34,
+    "absenceH": 0
+  },
+  {
+    "squad": "beta",
+    "weekStart": "2025-09-01",
+    "role": "pm",
+    "plannedH": 40,
+    "loggedH": 28,
+    "absenceH": 0
+  },
+  {
+    "squad": "beta",
+    "weekStart": "2025-09-01",
+    "role": "designer",
+    "plannedH": 40,
+    "loggedH": 27.5,
+    "absenceH": 0
+  },
+  {
+    "squad": "beta",
+    "weekStart": "2025-09-01",
+    "role": "engineer",
+    "plannedH": 160,
+    "loggedH": 107,
+    "absenceH": 0
+  },
+  {
+    "squad": "beta",
+    "weekStart": "2025-09-01",
+    "role": "qa",
+    "plannedH": 40,
+    "loggedH": 28,
+    "absenceH": 0
+  },
+  {
+    "squad": "beta",
+    "weekStart": "2025-09-01",
+    "role": "legal",
+    "plannedH": 40,
+    "loggedH": 26.5,
+    "absenceH": 0
+  },
+  {
+    "squad": "gamma",
+    "weekStart": "2025-09-01",
+    "role": "pm",
+    "plannedH": 40,
+    "loggedH": 19,
+    "absenceH": 16
+  },
+  {
+    "squad": "gamma",
+    "weekStart": "2025-09-01",
+    "role": "engineer",
+    "plannedH": 80,
+    "loggedH": 61,
+    "absenceH": 0
+  },
+  {
+    "squad": "gamma",
+    "weekStart": "2025-09-01",
+    "role": "qa",
+    "plannedH": 40,
+    "loggedH": 32,
+    "absenceH": 0
+  },
+  {
+    "squad": "alpha",
+    "weekStart": "2025-09-08",
+    "role": "pm",
+    "plannedH": 40,
+    "loggedH": 29,
+    "absenceH": 0
+  },
+  {
+    "squad": "alpha",
+    "weekStart": "2025-09-08",
+    "role": "designer",
+    "plannedH": 40,
+    "loggedH": 32,
+    "absenceH": 0
+  },
+  {
+    "squad": "alpha",
+    "weekStart": "2025-09-08",
+    "role": "engineer",
+    "plannedH": 120,
+    "loggedH": 68,
+    "absenceH": 32
+  },
+  {
+    "squad": "alpha",
+    "weekStart": "2025-09-08",
+    "role": "qa",
+    "plannedH": 40,
+    "loggedH": 31.5,
+    "absenceH": 0
+  },
+  {
+    "squad": "beta",
+    "weekStart": "2025-09-08",
+    "role": "pm",
+    "plannedH": 40,
+    "loggedH": 29.5,
+    "absenceH": 0
+  },
+  {
+    "squad": "beta",
+    "weekStart": "2025-09-08",
+    "role": "designer",
+    "plannedH": 40,
+    "loggedH": 30.5,
+    "absenceH": 0
+  },
+  {
+    "squad": "beta",
+    "weekStart": "2025-09-08",
+    "role": "engineer",
+    "plannedH": 160,
+    "loggedH": 111.5,
+    "absenceH": 0
+  },
+  {
+    "squad": "beta",
+    "weekStart": "2025-09-08",
+    "role": "qa",
+    "plannedH": 40,
+    "loggedH": 26,
+    "absenceH": 0
+  },
+  {
+    "squad": "beta",
+    "weekStart": "2025-09-08",
+    "role": "legal",
+    "plannedH": 40,
+    "loggedH": 28,
+    "absenceH": 0
+  },
+  {
+    "squad": "gamma",
+    "weekStart": "2025-09-08",
+    "role": "pm",
+    "plannedH": 40,
+    "loggedH": 30,
+    "absenceH": 0
+  },
+  {
+    "squad": "gamma",
+    "weekStart": "2025-09-08",
+    "role": "engineer",
+    "plannedH": 80,
+    "loggedH": 56.5,
+    "absenceH": 8
+  },
+  {
+    "squad": "gamma",
+    "weekStart": "2025-09-08",
+    "role": "qa",
+    "plannedH": 40,
+    "loggedH": 30.5,
+    "absenceH": 0
+  },
+  {
+    "squad": "alpha",
+    "weekStart": "2025-09-15",
+    "role": "pm",
+    "plannedH": 40,
+    "loggedH": 28,
+    "absenceH": 0
+  },
+  {
+    "squad": "alpha",
+    "weekStart": "2025-09-15",
+    "role": "designer",
+    "plannedH": 40,
+    "loggedH": 30,
+    "absenceH": 0
+  },
+  {
+    "squad": "alpha",
+    "weekStart": "2025-09-15",
+    "role": "engineer",
+    "plannedH": 120,
+    "loggedH": 91.5,
+    "absenceH": 0
+  },
+  {
+    "squad": "alpha",
+    "weekStart": "2025-09-15",
+    "role": "qa",
+    "plannedH": 40,
+    "loggedH": 18.5,
+    "absenceH": 16
+  },
+  {
+    "squad": "beta",
+    "weekStart": "2025-09-15",
+    "role": "pm",
+    "plannedH": 40,
+    "loggedH": 28.5,
+    "absenceH": 0
+  },
+  {
+    "squad": "beta",
+    "weekStart": "2025-09-15",
+    "role": "designer",
+    "plannedH": 40,
+    "loggedH": 28,
+    "absenceH": 0
+  },
+  {
+    "squad": "beta",
+    "weekStart": "2025-09-15",
+    "role": "engineer",
+    "plannedH": 160,
+    "loggedH": 108,
+    "absenceH": 8
+  },
+  {
+    "squad": "beta",
+    "weekStart": "2025-09-15",
+    "role": "qa",
+    "plannedH": 40,
+    "loggedH": 30.5,
+    "absenceH": 0
+  },
+  {
+    "squad": "beta",
+    "weekStart": "2025-09-15",
+    "role": "legal",
+    "plannedH": 40,
+    "loggedH": 30.5,
+    "absenceH": 0
+  },
+  {
+    "squad": "gamma",
+    "weekStart": "2025-09-15",
+    "role": "pm",
+    "plannedH": 40,
+    "loggedH": 30.5,
+    "absenceH": 0
+  },
+  {
+    "squad": "gamma",
+    "weekStart": "2025-09-15",
+    "role": "engineer",
+    "plannedH": 80,
+    "loggedH": 18.5,
+    "absenceH": 56
+  },
+  {
+    "squad": "gamma",
+    "weekStart": "2025-09-15",
+    "role": "qa",
+    "plannedH": 40,
+    "loggedH": 33,
+    "absenceH": 0
+  },
+  {
+    "squad": "alpha",
+    "weekStart": "2025-09-22",
+    "role": "pm",
+    "plannedH": 40,
+    "loggedH": 31,
+    "absenceH": 0
+  },
+  {
+    "squad": "alpha",
+    "weekStart": "2025-09-22",
+    "role": "designer",
+    "plannedH": 40,
+    "loggedH": 31.5,
+    "absenceH": 0
+  },
+  {
+    "squad": "alpha",
+    "weekStart": "2025-09-22",
+    "role": "engineer",
+    "plannedH": 120,
+    "loggedH": 47,
+    "absenceH": 56
+  },
+  {
+    "squad": "alpha",
+    "weekStart": "2025-09-22",
+    "role": "qa",
+    "plannedH": 40,
+    "loggedH": 16.5,
+    "absenceH": 16
+  },
+  {
+    "squad": "beta",
+    "weekStart": "2025-09-22",
+    "role": "pm",
+    "plannedH": 40,
+    "loggedH": 28.5,
+    "absenceH": 0
+  },
+  {
+    "squad": "beta",
+    "weekStart": "2025-09-22",
+    "role": "designer",
+    "plannedH": 40,
+    "loggedH": 29.5,
+    "absenceH": 0
+  },
+  {
+    "squad": "beta",
+    "weekStart": "2025-09-22",
+    "role": "engineer",
+    "plannedH": 160,
+    "loggedH": 109.5,
+    "absenceH": 16
+  },
+  {
+    "squad": "beta",
+    "weekStart": "2025-09-22",
+    "role": "qa",
+    "plannedH": 40,
+    "loggedH": 28.5,
+    "absenceH": 0
+  },
+  {
+    "squad": "beta",
+    "weekStart": "2025-09-22",
+    "role": "legal",
+    "plannedH": 40,
+    "loggedH": 21.5,
+    "absenceH": 8
+  },
+  {
+    "squad": "gamma",
+    "weekStart": "2025-09-22",
+    "role": "pm",
+    "plannedH": 40,
+    "loggedH": 35.5,
+    "absenceH": 0
+  },
+  {
+    "squad": "gamma",
+    "weekStart": "2025-09-22",
+    "role": "engineer",
+    "plannedH": 80,
+    "loggedH": 62.5,
+    "absenceH": 0
+  },
+  {
+    "squad": "gamma",
+    "weekStart": "2025-09-22",
+    "role": "qa",
+    "plannedH": 40,
+    "loggedH": 19.5,
+    "absenceH": 16
+  },
+  {
+    "squad": "alpha",
+    "weekStart": "2025-09-29",
+    "role": "pm",
+    "plannedH": 40,
+    "loggedH": 31.5,
+    "absenceH": 0
+  },
+  {
+    "squad": "alpha",
+    "weekStart": "2025-09-29",
+    "role": "designer",
+    "plannedH": 40,
+    "loggedH": 32.5,
+    "absenceH": 0
+  },
+  {
+    "squad": "alpha",
+    "weekStart": "2025-09-29",
+    "role": "engineer",
+    "plannedH": 120,
+    "loggedH": 54,
+    "absenceH": 48
+  },
+  {
+    "squad": "alpha",
+    "weekStart": "2025-09-29",
+    "role": "qa",
+    "plannedH": 40,
+    "loggedH": 29,
+    "absenceH": 0
+  },
+  {
+    "squad": "beta",
+    "weekStart": "2025-09-29",
+    "role": "pm",
+    "plannedH": 40,
+    "loggedH": 28,
+    "absenceH": 0
+  },
+  {
+    "squad": "beta",
+    "weekStart": "2025-09-29",
+    "role": "designer",
+    "plannedH": 40,
+    "loggedH": 28,
+    "absenceH": 0
+  },
+  {
+    "squad": "beta",
+    "weekStart": "2025-09-29",
+    "role": "engineer",
+    "plannedH": 160,
+    "loggedH": 122.5,
+    "absenceH": 0
+  },
+  {
+    "squad": "beta",
+    "weekStart": "2025-09-29",
+    "role": "qa",
+    "plannedH": 40,
+    "loggedH": 30.5,
+    "absenceH": 0
+  },
+  {
+    "squad": "beta",
+    "weekStart": "2025-09-29",
+    "role": "legal",
+    "plannedH": 40,
+    "loggedH": 28.5,
+    "absenceH": 0
+  },
+  {
+    "squad": "gamma",
+    "weekStart": "2025-09-29",
+    "role": "pm",
+    "plannedH": 40,
+    "loggedH": 30.5,
+    "absenceH": 0
+  },
+  {
+    "squad": "gamma",
+    "weekStart": "2025-09-29",
+    "role": "engineer",
+    "plannedH": 80,
+    "loggedH": 49,
+    "absenceH": 16
+  },
+  {
+    "squad": "gamma",
+    "weekStart": "2025-09-29",
+    "role": "qa",
+    "plannedH": 40,
+    "loggedH": 30,
+    "absenceH": 0
+  },
+  {
+    "squad": "alpha",
+    "weekStart": "2025-10-06",
+    "role": "pm",
+    "plannedH": 40,
+    "loggedH": 29.5,
+    "absenceH": 0
+  },
+  {
+    "squad": "alpha",
+    "weekStart": "2025-10-06",
+    "role": "designer",
+    "plannedH": 40,
+    "loggedH": 28.5,
+    "absenceH": 0
+  },
+  {
+    "squad": "alpha",
+    "weekStart": "2025-10-06",
+    "role": "engineer",
+    "plannedH": 120,
+    "loggedH": 90.5,
+    "absenceH": 0
+  },
+  {
+    "squad": "alpha",
+    "weekStart": "2025-10-06",
+    "role": "qa",
+    "plannedH": 40,
+    "loggedH": 34,
+    "absenceH": 0
+  },
+  {
+    "squad": "beta",
+    "weekStart": "2025-10-06",
+    "role": "pm",
+    "plannedH": 40,
+    "loggedH": 28,
+    "absenceH": 0
+  },
+  {
+    "squad": "beta",
+    "weekStart": "2025-10-06",
+    "role": "designer",
+    "plannedH": 40,
+    "loggedH": 30,
+    "absenceH": 0
+  },
+  {
+    "squad": "beta",
+    "weekStart": "2025-10-06",
+    "role": "engineer",
+    "plannedH": 160,
+    "loggedH": 94.5,
+    "absenceH": 16
+  },
+  {
+    "squad": "beta",
+    "weekStart": "2025-10-06",
+    "role": "qa",
+    "plannedH": 40,
+    "loggedH": 31,
+    "absenceH": 0
+  },
+  {
+    "squad": "beta",
+    "weekStart": "2025-10-06",
+    "role": "legal",
+    "plannedH": 40,
+    "loggedH": 28.5,
+    "absenceH": 0
+  },
+  {
+    "squad": "gamma",
+    "weekStart": "2025-10-06",
+    "role": "pm",
+    "plannedH": 40,
+    "loggedH": 29,
+    "absenceH": 0
+  },
+  {
+    "squad": "gamma",
+    "weekStart": "2025-10-06",
+    "role": "engineer",
+    "plannedH": 80,
+    "loggedH": 68.5,
+    "absenceH": 0
+  },
+  {
+    "squad": "gamma",
+    "weekStart": "2025-10-06",
+    "role": "qa",
+    "plannedH": 40,
+    "loggedH": 29,
+    "absenceH": 0
+  },
+  {
+    "squad": "alpha",
+    "weekStart": "2025-10-13",
+    "role": "pm",
+    "plannedH": 40,
+    "loggedH": 27.5,
+    "absenceH": 0
+  },
+  {
+    "squad": "alpha",
+    "weekStart": "2025-10-13",
+    "role": "designer",
+    "plannedH": 40,
+    "loggedH": 0,
+    "absenceH": 40
+  },
+  {
+    "squad": "alpha",
+    "weekStart": "2025-10-13",
+    "role": "engineer",
+    "plannedH": 120,
+    "loggedH": 96.5,
+    "absenceH": 0
+  },
+  {
+    "squad": "alpha",
+    "weekStart": "2025-10-13",
+    "role": "qa",
+    "plannedH": 40,
+    "loggedH": 28,
+    "absenceH": 0
+  },
+  {
+    "squad": "beta",
+    "weekStart": "2025-10-13",
+    "role": "pm",
+    "plannedH": 40,
+    "loggedH": 17,
+    "absenceH": 16
+  },
+  {
+    "squad": "beta",
+    "weekStart": "2025-10-13",
+    "role": "designer",
+    "plannedH": 40,
+    "loggedH": 31.5,
+    "absenceH": 0
+  },
+  {
+    "squad": "beta",
+    "weekStart": "2025-10-13",
+    "role": "engineer",
+    "plannedH": 160,
+    "loggedH": 110.5,
+    "absenceH": 0
+  },
+  {
+    "squad": "beta",
+    "weekStart": "2025-10-13",
+    "role": "qa",
+    "plannedH": 40,
+    "loggedH": 27.5,
+    "absenceH": 0
+  },
+  {
+    "squad": "beta",
+    "weekStart": "2025-10-13",
+    "role": "legal",
+    "plannedH": 40,
+    "loggedH": 17,
+    "absenceH": 16
+  },
+  {
+    "squad": "gamma",
+    "weekStart": "2025-10-13",
+    "role": "pm",
+    "plannedH": 40,
+    "loggedH": 34,
+    "absenceH": 0
+  },
+  {
+    "squad": "gamma",
+    "weekStart": "2025-10-13",
+    "role": "engineer",
+    "plannedH": 80,
+    "loggedH": 65,
+    "absenceH": 0
+  },
+  {
+    "squad": "gamma",
+    "weekStart": "2025-10-13",
+    "role": "qa",
+    "plannedH": 40,
+    "loggedH": 0,
+    "absenceH": 40
+  },
+  {
+    "squad": "alpha",
+    "weekStart": "2025-10-20",
+    "role": "pm",
+    "plannedH": 40,
+    "loggedH": 32.5,
+    "absenceH": 0
+  },
+  {
+    "squad": "alpha",
+    "weekStart": "2025-10-20",
+    "role": "designer",
+    "plannedH": 40,
+    "loggedH": 33,
+    "absenceH": 0
+  },
+  {
+    "squad": "alpha",
+    "weekStart": "2025-10-20",
+    "role": "engineer",
+    "plannedH": 120,
+    "loggedH": 30,
+    "absenceH": 80
+  },
+  {
+    "squad": "alpha",
+    "weekStart": "2025-10-20",
+    "role": "qa",
+    "plannedH": 40,
+    "loggedH": 28.5,
+    "absenceH": 0
+  },
+  {
+    "squad": "beta",
+    "weekStart": "2025-10-20",
+    "role": "pm",
+    "plannedH": 40,
+    "loggedH": 29.5,
+    "absenceH": 0
+  },
+  {
+    "squad": "beta",
+    "weekStart": "2025-10-20",
+    "role": "designer",
+    "plannedH": 40,
+    "loggedH": 26.5,
+    "absenceH": 0
+  },
+  {
+    "squad": "beta",
+    "weekStart": "2025-10-20",
+    "role": "engineer",
+    "plannedH": 160,
+    "loggedH": 112.5,
+    "absenceH": 0
+  },
+  {
+    "squad": "beta",
+    "weekStart": "2025-10-20",
+    "role": "qa",
+    "plannedH": 40,
+    "loggedH": 17.5,
+    "absenceH": 16
+  },
+  {
+    "squad": "beta",
+    "weekStart": "2025-10-20",
+    "role": "legal",
+    "plannedH": 40,
+    "loggedH": 29.5,
+    "absenceH": 0
+  },
+  {
+    "squad": "gamma",
+    "weekStart": "2025-10-20",
+    "role": "pm",
+    "plannedH": 40,
+    "loggedH": 34.5,
+    "absenceH": 0
+  },
+  {
+    "squad": "gamma",
+    "weekStart": "2025-10-20",
+    "role": "engineer",
+    "plannedH": 80,
+    "loggedH": 67.5,
+    "absenceH": 0
+  },
+  {
+    "squad": "gamma",
+    "weekStart": "2025-10-20",
+    "role": "qa",
+    "plannedH": 40,
+    "loggedH": 29.5,
+    "absenceH": 0
+  },
+  {
+    "squad": "alpha",
+    "weekStart": "2025-10-27",
+    "role": "pm",
+    "plannedH": 40,
+    "loggedH": 23.5,
+    "absenceH": 8
+  },
+  {
+    "squad": "alpha",
+    "weekStart": "2025-10-27",
+    "role": "designer",
+    "plannedH": 40,
+    "loggedH": 30,
+    "absenceH": 0
+  },
+  {
+    "squad": "alpha",
+    "weekStart": "2025-10-27",
+    "role": "engineer",
+    "plannedH": 120,
+    "loggedH": 94.5,
+    "absenceH": 0
+  },
+  {
+    "squad": "alpha",
+    "weekStart": "2025-10-27",
+    "role": "qa",
+    "plannedH": 40,
+    "loggedH": 18.5,
+    "absenceH": 16
+  },
+  {
+    "squad": "beta",
+    "weekStart": "2025-10-27",
+    "role": "pm",
+    "plannedH": 40,
+    "loggedH": 29,
+    "absenceH": 0
+  },
+  {
+    "squad": "beta",
+    "weekStart": "2025-10-27",
+    "role": "designer",
+    "plannedH": 40,
+    "loggedH": 17.5,
+    "absenceH": 16
+  },
+  {
+    "squad": "beta",
+    "weekStart": "2025-10-27",
+    "role": "engineer",
+    "plannedH": 160,
+    "loggedH": 106,
+    "absenceH": 8
+  },
+  {
+    "squad": "beta",
+    "weekStart": "2025-10-27",
+    "role": "qa",
+    "plannedH": 40,
+    "loggedH": 27.5,
+    "absenceH": 0
+  },
+  {
+    "squad": "beta",
+    "weekStart": "2025-10-27",
+    "role": "legal",
+    "plannedH": 40,
+    "loggedH": 19.5,
+    "absenceH": 16
+  },
+  {
+    "squad": "gamma",
+    "weekStart": "2025-10-27",
+    "role": "pm",
+    "plannedH": 40,
+    "loggedH": 31,
+    "absenceH": 0
+  },
+  {
+    "squad": "gamma",
+    "weekStart": "2025-10-27",
+    "role": "engineer",
+    "plannedH": 80,
+    "loggedH": 51.5,
+    "absenceH": 16
+  },
+  {
+    "squad": "gamma",
+    "weekStart": "2025-10-27",
+    "role": "qa",
+    "plannedH": 40,
+    "loggedH": 34,
+    "absenceH": 0
+  },
+  {
+    "squad": "alpha",
+    "weekStart": "2025-11-03",
+    "role": "pm",
+    "plannedH": 40,
+    "loggedH": 29.5,
+    "absenceH": 0
+  },
+  {
+    "squad": "alpha",
+    "weekStart": "2025-11-03",
+    "role": "designer",
+    "plannedH": 40,
+    "loggedH": 30.5,
+    "absenceH": 0
+  },
+  {
+    "squad": "alpha",
+    "weekStart": "2025-11-03",
+    "role": "engineer",
+    "plannedH": 120,
+    "loggedH": 76.5,
+    "absenceH": 16
+  },
+  {
+    "squad": "alpha",
+    "weekStart": "2025-11-03",
+    "role": "qa",
+    "plannedH": 40,
+    "loggedH": 28.5,
+    "absenceH": 0
+  },
+  {
+    "squad": "beta",
+    "weekStart": "2025-11-03",
+    "role": "pm",
+    "plannedH": 40,
+    "loggedH": 29,
+    "absenceH": 0
+  },
+  {
+    "squad": "beta",
+    "weekStart": "2025-11-03",
+    "role": "designer",
+    "plannedH": 40,
+    "loggedH": 30.5,
+    "absenceH": 0
+  },
+  {
+    "squad": "beta",
+    "weekStart": "2025-11-03",
+    "role": "engineer",
+    "plannedH": 160,
+    "loggedH": 87,
+    "absenceH": 48
+  },
+  {
+    "squad": "beta",
+    "weekStart": "2025-11-03",
+    "role": "qa",
+    "plannedH": 40,
+    "loggedH": 30.5,
+    "absenceH": 0
+  },
+  {
+    "squad": "beta",
+    "weekStart": "2025-11-03",
+    "role": "legal",
+    "plannedH": 40,
+    "loggedH": 26.5,
+    "absenceH": 0
+  },
+  {
+    "squad": "gamma",
+    "weekStart": "2025-11-03",
+    "role": "pm",
+    "plannedH": 40,
+    "loggedH": 35,
+    "absenceH": 0
+  },
+  {
+    "squad": "gamma",
+    "weekStart": "2025-11-03",
+    "role": "engineer",
+    "plannedH": 80,
+    "loggedH": 67.5,
+    "absenceH": 0
+  },
+  {
+    "squad": "gamma",
+    "weekStart": "2025-11-03",
+    "role": "qa",
+    "plannedH": 40,
+    "loggedH": 30,
+    "absenceH": 0
+  },
+  {
+    "squad": "alpha",
+    "weekStart": "2025-11-10",
+    "role": "pm",
+    "plannedH": 40,
+    "loggedH": 31.5,
+    "absenceH": 0
+  },
+  {
+    "squad": "alpha",
+    "weekStart": "2025-11-10",
+    "role": "designer",
+    "plannedH": 40,
+    "loggedH": 19,
+    "absenceH": 16
+  },
+  {
+    "squad": "alpha",
+    "weekStart": "2025-11-10",
+    "role": "engineer",
+    "plannedH": 120,
+    "loggedH": 76.5,
+    "absenceH": 16
+  },
+  {
+    "squad": "alpha",
+    "weekStart": "2025-11-10",
+    "role": "qa",
+    "plannedH": 40,
+    "loggedH": 30,
+    "absenceH": 0
+  },
+  {
+    "squad": "beta",
+    "weekStart": "2025-11-10",
+    "role": "pm",
+    "plannedH": 40,
+    "loggedH": 27.5,
+    "absenceH": 0
+  },
+  {
+    "squad": "beta",
+    "weekStart": "2025-11-10",
+    "role": "designer",
+    "plannedH": 40,
+    "loggedH": 29.5,
+    "absenceH": 0
+  },
+  {
+    "squad": "beta",
+    "weekStart": "2025-11-10",
+    "role": "engineer",
+    "plannedH": 160,
+    "loggedH": 107,
+    "absenceH": 8
+  },
+  {
+    "squad": "beta",
+    "weekStart": "2025-11-10",
+    "role": "qa",
+    "plannedH": 40,
+    "loggedH": 22,
+    "absenceH": 8
+  },
+  {
+    "squad": "beta",
+    "weekStart": "2025-11-10",
+    "role": "legal",
+    "plannedH": 40,
+    "loggedH": 19.5,
+    "absenceH": 16
+  },
+  {
+    "squad": "gamma",
+    "weekStart": "2025-11-10",
+    "role": "pm",
+    "plannedH": 40,
+    "loggedH": 33.5,
+    "absenceH": 0
+  },
+  {
+    "squad": "gamma",
+    "weekStart": "2025-11-10",
+    "role": "engineer",
+    "plannedH": 80,
+    "loggedH": 66,
+    "absenceH": 0
+  },
+  {
+    "squad": "gamma",
+    "weekStart": "2025-11-10",
+    "role": "qa",
+    "plannedH": 40,
+    "loggedH": 0,
+    "absenceH": 40
+  },
+  {
+    "squad": "alpha",
+    "weekStart": "2025-11-17",
+    "role": "pm",
+    "plannedH": 40,
+    "loggedH": 0,
+    "absenceH": 40
+  },
+  {
+    "squad": "alpha",
+    "weekStart": "2025-11-17",
+    "role": "designer",
+    "plannedH": 40,
+    "loggedH": 28,
+    "absenceH": 0
+  },
+  {
+    "squad": "alpha",
+    "weekStart": "2025-11-17",
+    "role": "engineer",
+    "plannedH": 120,
+    "loggedH": 72,
+    "absenceH": 24
+  },
+  {
+    "squad": "alpha",
+    "weekStart": "2025-11-17",
+    "role": "qa",
+    "plannedH": 40,
+    "loggedH": 31,
+    "absenceH": 0
+  },
+  {
+    "squad": "beta",
+    "weekStart": "2025-11-17",
+    "role": "pm",
+    "plannedH": 40,
+    "loggedH": 23,
+    "absenceH": 8
+  },
+  {
+    "squad": "beta",
+    "weekStart": "2025-11-17",
+    "role": "designer",
+    "plannedH": 40,
+    "loggedH": 29,
+    "absenceH": 0
+  },
+  {
+    "squad": "beta",
+    "weekStart": "2025-11-17",
+    "role": "engineer",
+    "plannedH": 160,
+    "loggedH": 118,
+    "absenceH": 0
+  },
+  {
+    "squad": "beta",
+    "weekStart": "2025-11-17",
+    "role": "qa",
+    "plannedH": 40,
+    "loggedH": 27.5,
+    "absenceH": 0
+  },
+  {
+    "squad": "beta",
+    "weekStart": "2025-11-17",
+    "role": "legal",
+    "plannedH": 40,
+    "loggedH": 30,
+    "absenceH": 0
+  },
+  {
+    "squad": "gamma",
+    "weekStart": "2025-11-17",
+    "role": "pm",
+    "plannedH": 40,
+    "loggedH": 33,
+    "absenceH": 0
+  },
+  {
+    "squad": "gamma",
+    "weekStart": "2025-11-17",
+    "role": "engineer",
+    "plannedH": 80,
+    "loggedH": 64.5,
+    "absenceH": 0
+  },
+  {
+    "squad": "gamma",
+    "weekStart": "2025-11-17",
+    "role": "qa",
+    "plannedH": 40,
+    "loggedH": 32,
+    "absenceH": 0
+  },
+  {
+    "squad": "alpha",
+    "weekStart": "2025-11-24",
+    "role": "pm",
+    "plannedH": 40,
+    "loggedH": 31,
+    "absenceH": 0
+  },
+  {
+    "squad": "alpha",
+    "weekStart": "2025-11-24",
+    "role": "designer",
+    "plannedH": 40,
+    "loggedH": 32,
+    "absenceH": 0
+  },
+  {
+    "squad": "alpha",
+    "weekStart": "2025-11-24",
+    "role": "engineer",
+    "plannedH": 120,
+    "loggedH": 85,
+    "absenceH": 16
+  },
+  {
+    "squad": "alpha",
+    "weekStart": "2025-11-24",
+    "role": "qa",
+    "plannedH": 40,
+    "loggedH": 28.5,
+    "absenceH": 0
+  },
+  {
+    "squad": "beta",
+    "weekStart": "2025-11-24",
+    "role": "pm",
+    "plannedH": 40,
+    "loggedH": 31.5,
+    "absenceH": 0
+  },
+  {
+    "squad": "beta",
+    "weekStart": "2025-11-24",
+    "role": "designer",
+    "plannedH": 40,
+    "loggedH": 30.5,
+    "absenceH": 0
+  },
+  {
+    "squad": "beta",
+    "weekStart": "2025-11-24",
+    "role": "engineer",
+    "plannedH": 160,
+    "loggedH": 102.5,
+    "absenceH": 16
+  },
+  {
+    "squad": "beta",
+    "weekStart": "2025-11-24",
+    "role": "qa",
+    "plannedH": 40,
+    "loggedH": 21,
+    "absenceH": 8
+  },
+  {
+    "squad": "beta",
+    "weekStart": "2025-11-24",
+    "role": "legal",
+    "plannedH": 40,
+    "loggedH": 29.5,
+    "absenceH": 0
+  },
+  {
+    "squad": "gamma",
+    "weekStart": "2025-11-24",
+    "role": "pm",
+    "plannedH": 40,
+    "loggedH": 35,
+    "absenceH": 0
+  },
+  {
+    "squad": "gamma",
+    "weekStart": "2025-11-24",
+    "role": "engineer",
+    "plannedH": 80,
+    "loggedH": 70.5,
+    "absenceH": 0
+  },
+  {
+    "squad": "gamma",
+    "weekStart": "2025-11-24",
+    "role": "qa",
+    "plannedH": 40,
+    "loggedH": 32.5,
+    "absenceH": 0
+  },
+  {
+    "squad": "alpha",
+    "weekStart": "2025-12-01",
+    "role": "pm",
+    "plannedH": 40,
+    "loggedH": 32,
+    "absenceH": 0
+  },
+  {
+    "squad": "alpha",
+    "weekStart": "2025-12-01",
+    "role": "designer",
+    "plannedH": 40,
+    "loggedH": 30.5,
+    "absenceH": 0
+  },
+  {
+    "squad": "alpha",
+    "weekStart": "2025-12-01",
+    "role": "engineer",
+    "plannedH": 120,
+    "loggedH": 84.5,
+    "absenceH": 0
+  },
+  {
+    "squad": "alpha",
+    "weekStart": "2025-12-01",
+    "role": "qa",
+    "plannedH": 40,
+    "loggedH": 31,
+    "absenceH": 0
+  },
+  {
+    "squad": "beta",
+    "weekStart": "2025-12-01",
+    "role": "pm",
+    "plannedH": 40,
+    "loggedH": 28.5,
+    "absenceH": 0
+  },
+  {
+    "squad": "beta",
+    "weekStart": "2025-12-01",
+    "role": "designer",
+    "plannedH": 40,
+    "loggedH": 29.5,
+    "absenceH": 0
+  },
+  {
+    "squad": "beta",
+    "weekStart": "2025-12-01",
+    "role": "engineer",
+    "plannedH": 160,
+    "loggedH": 77.5,
+    "absenceH": 56
+  },
+  {
+    "squad": "beta",
+    "weekStart": "2025-12-01",
+    "role": "qa",
+    "plannedH": 40,
+    "loggedH": 15.5,
+    "absenceH": 16
+  },
+  {
+    "squad": "beta",
+    "weekStart": "2025-12-01",
+    "role": "legal",
+    "plannedH": 40,
+    "loggedH": 18.5,
+    "absenceH": 16
+  },
+  {
+    "squad": "gamma",
+    "weekStart": "2025-12-01",
+    "role": "pm",
+    "plannedH": 40,
+    "loggedH": 31.5,
+    "absenceH": 0
+  },
+  {
+    "squad": "gamma",
+    "weekStart": "2025-12-01",
+    "role": "engineer",
+    "plannedH": 80,
+    "loggedH": 56.5,
+    "absenceH": 8
+  },
+  {
+    "squad": "gamma",
+    "weekStart": "2025-12-01",
+    "role": "qa",
+    "plannedH": 40,
+    "loggedH": 29.5,
+    "absenceH": 0
+  },
+  {
+    "squad": "alpha",
+    "weekStart": "2025-12-08",
+    "role": "pm",
+    "plannedH": 40,
+    "loggedH": 30,
+    "absenceH": 0
+  },
+  {
+    "squad": "alpha",
+    "weekStart": "2025-12-08",
+    "role": "designer",
+    "plannedH": 40,
+    "loggedH": 31,
+    "absenceH": 0
+  },
+  {
+    "squad": "alpha",
+    "weekStart": "2025-12-08",
+    "role": "engineer",
+    "plannedH": 120,
+    "loggedH": 72.5,
+    "absenceH": 24
+  },
+  {
+    "squad": "alpha",
+    "weekStart": "2025-12-08",
+    "role": "qa",
+    "plannedH": 40,
+    "loggedH": 31.5,
+    "absenceH": 0
+  },
+  {
+    "squad": "beta",
+    "weekStart": "2025-12-08",
+    "role": "pm",
+    "plannedH": 40,
+    "loggedH": 31.5,
+    "absenceH": 0
+  },
+  {
+    "squad": "beta",
+    "weekStart": "2025-12-08",
+    "role": "designer",
+    "plannedH": 40,
+    "loggedH": 30.5,
+    "absenceH": 0
+  },
+  {
+    "squad": "beta",
+    "weekStart": "2025-12-08",
+    "role": "engineer",
+    "plannedH": 160,
+    "loggedH": 115,
+    "absenceH": 0
+  },
+  {
+    "squad": "beta",
+    "weekStart": "2025-12-08",
+    "role": "qa",
+    "plannedH": 40,
+    "loggedH": 29.5,
+    "absenceH": 0
+  },
+  {
+    "squad": "beta",
+    "weekStart": "2025-12-08",
+    "role": "legal",
+    "plannedH": 40,
+    "loggedH": 18,
+    "absenceH": 16
+  },
+  {
+    "squad": "gamma",
+    "weekStart": "2025-12-08",
+    "role": "pm",
+    "plannedH": 40,
+    "loggedH": 33.5,
+    "absenceH": 0
+  },
+  {
+    "squad": "gamma",
+    "weekStart": "2025-12-08",
+    "role": "engineer",
+    "plannedH": 80,
+    "loggedH": 64,
+    "absenceH": 0
+  },
+  {
+    "squad": "gamma",
+    "weekStart": "2025-12-08",
+    "role": "qa",
+    "plannedH": 40,
+    "loggedH": 33.5,
+    "absenceH": 0
+  },
+  {
+    "squad": "alpha",
+    "weekStart": "2025-12-15",
+    "role": "pm",
+    "plannedH": 40,
+    "loggedH": 28,
+    "absenceH": 0
+  },
+  {
+    "squad": "alpha",
+    "weekStart": "2025-12-15",
+    "role": "designer",
+    "plannedH": 40,
+    "loggedH": 32.5,
+    "absenceH": 0
+  },
+  {
+    "squad": "alpha",
+    "weekStart": "2025-12-15",
+    "role": "engineer",
+    "plannedH": 120,
+    "loggedH": 72.5,
+    "absenceH": 24
+  },
+  {
+    "squad": "alpha",
+    "weekStart": "2025-12-15",
+    "role": "qa",
+    "plannedH": 40,
+    "loggedH": 19.5,
+    "absenceH": 16
+  },
+  {
+    "squad": "beta",
+    "weekStart": "2025-12-15",
+    "role": "pm",
+    "plannedH": 40,
+    "loggedH": 29.5,
+    "absenceH": 0
+  },
+  {
+    "squad": "beta",
+    "weekStart": "2025-12-15",
+    "role": "designer",
+    "plannedH": 40,
+    "loggedH": 16,
+    "absenceH": 16
+  },
+  {
+    "squad": "beta",
+    "weekStart": "2025-12-15",
+    "role": "engineer",
+    "plannedH": 160,
+    "loggedH": 106.5,
+    "absenceH": 16
+  },
+  {
+    "squad": "beta",
+    "weekStart": "2025-12-15",
+    "role": "qa",
+    "plannedH": 40,
+    "loggedH": 28.5,
+    "absenceH": 0
+  },
+  {
+    "squad": "beta",
+    "weekStart": "2025-12-15",
+    "role": "legal",
+    "plannedH": 40,
+    "loggedH": 27,
+    "absenceH": 0
+  },
+  {
+    "squad": "gamma",
+    "weekStart": "2025-12-15",
+    "role": "pm",
+    "plannedH": 40,
+    "loggedH": 25,
+    "absenceH": 8
+  },
+  {
+    "squad": "gamma",
+    "weekStart": "2025-12-15",
+    "role": "engineer",
+    "plannedH": 80,
+    "loggedH": 66.5,
+    "absenceH": 0
+  },
+  {
+    "squad": "gamma",
+    "weekStart": "2025-12-15",
+    "role": "qa",
+    "plannedH": 40,
+    "loggedH": 32,
+    "absenceH": 0
+  },
+  {
+    "squad": "alpha",
+    "weekStart": "2025-12-22",
+    "role": "pm",
+    "plannedH": 40,
+    "loggedH": 22,
+    "absenceH": 8
+  },
+  {
+    "squad": "alpha",
+    "weekStart": "2025-12-22",
+    "role": "designer",
+    "plannedH": 40,
+    "loggedH": 32,
+    "absenceH": 0
+  },
+  {
+    "squad": "alpha",
+    "weekStart": "2025-12-22",
+    "role": "engineer",
+    "plannedH": 120,
+    "loggedH": 88,
+    "absenceH": 8
+  },
+  {
+    "squad": "alpha",
+    "weekStart": "2025-12-22",
+    "role": "qa",
+    "plannedH": 40,
+    "loggedH": 29.5,
+    "absenceH": 0
+  },
+  {
+    "squad": "beta",
+    "weekStart": "2025-12-22",
+    "role": "pm",
+    "plannedH": 40,
+    "loggedH": 30,
+    "absenceH": 0
+  },
+  {
+    "squad": "beta",
+    "weekStart": "2025-12-22",
+    "role": "designer",
+    "plannedH": 40,
+    "loggedH": 28,
+    "absenceH": 0
+  },
+  {
+    "squad": "beta",
+    "weekStart": "2025-12-22",
+    "role": "engineer",
+    "plannedH": 160,
+    "loggedH": 120.5,
+    "absenceH": 0
+  },
+  {
+    "squad": "beta",
+    "weekStart": "2025-12-22",
+    "role": "qa",
+    "plannedH": 40,
+    "loggedH": 27,
+    "absenceH": 0
+  },
+  {
+    "squad": "beta",
+    "weekStart": "2025-12-22",
+    "role": "legal",
+    "plannedH": 40,
+    "loggedH": 26.5,
+    "absenceH": 0
+  },
+  {
+    "squad": "gamma",
+    "weekStart": "2025-12-22",
+    "role": "pm",
+    "plannedH": 40,
+    "loggedH": 34.5,
+    "absenceH": 0
+  },
+  {
+    "squad": "gamma",
+    "weekStart": "2025-12-22",
+    "role": "engineer",
+    "plannedH": 80,
+    "loggedH": 52.5,
+    "absenceH": 16
+  },
+  {
+    "squad": "gamma",
+    "weekStart": "2025-12-22",
+    "role": "qa",
+    "plannedH": 40,
+    "loggedH": 32,
+    "absenceH": 0
+  },
+  {
+    "squad": "alpha",
+    "weekStart": "2025-12-29",
+    "role": "pm",
+    "plannedH": 40,
+    "loggedH": 0,
+    "absenceH": 40
+  },
+  {
+    "squad": "alpha",
+    "weekStart": "2025-12-29",
+    "role": "designer",
+    "plannedH": 40,
+    "loggedH": 31.5,
+    "absenceH": 0
+  },
+  {
+    "squad": "alpha",
+    "weekStart": "2025-12-29",
+    "role": "engineer",
+    "plannedH": 120,
+    "loggedH": 49.5,
+    "absenceH": 56
+  },
+  {
+    "squad": "alpha",
+    "weekStart": "2025-12-29",
+    "role": "qa",
+    "plannedH": 40,
+    "loggedH": 31,
+    "absenceH": 0
+  },
+  {
+    "squad": "beta",
+    "weekStart": "2025-12-29",
+    "role": "pm",
+    "plannedH": 40,
+    "loggedH": 29,
+    "absenceH": 0
+  },
+  {
+    "squad": "beta",
+    "weekStart": "2025-12-29",
+    "role": "designer",
+    "plannedH": 40,
+    "loggedH": 29.5,
+    "absenceH": 0
+  },
+  {
+    "squad": "beta",
+    "weekStart": "2025-12-29",
+    "role": "engineer",
+    "plannedH": 160,
+    "loggedH": 120,
+    "absenceH": 0
+  },
+  {
+    "squad": "beta",
+    "weekStart": "2025-12-29",
+    "role": "qa",
+    "plannedH": 40,
+    "loggedH": 26.5,
+    "absenceH": 0
+  },
+  {
+    "squad": "beta",
+    "weekStart": "2025-12-29",
+    "role": "legal",
+    "plannedH": 40,
+    "loggedH": 24.5,
+    "absenceH": 8
+  },
+  {
+    "squad": "gamma",
+    "weekStart": "2025-12-29",
+    "role": "pm",
+    "plannedH": 40,
+    "loggedH": 32,
+    "absenceH": 0
+  },
+  {
+    "squad": "gamma",
+    "weekStart": "2025-12-29",
+    "role": "engineer",
+    "plannedH": 80,
+    "loggedH": 59,
+    "absenceH": 0
+  },
+  {
+    "squad": "gamma",
+    "weekStart": "2025-12-29",
+    "role": "qa",
+    "plannedH": 40,
+    "loggedH": 25.5,
+    "absenceH": 8
+  },
+  {
+    "squad": "alpha",
+    "weekStart": "2026-01-05",
+    "role": "pm",
+    "plannedH": 40,
+    "loggedH": 29,
+    "absenceH": 0
+  },
+  {
+    "squad": "alpha",
+    "weekStart": "2026-01-05",
+    "role": "designer",
+    "plannedH": 40,
+    "loggedH": 28.5,
+    "absenceH": 0
+  },
+  {
+    "squad": "alpha",
+    "weekStart": "2026-01-05",
+    "role": "engineer",
+    "plannedH": 120,
+    "loggedH": 86.5,
+    "absenceH": 8
+  },
+  {
+    "squad": "alpha",
+    "weekStart": "2026-01-05",
+    "role": "qa",
+    "plannedH": 40,
+    "loggedH": 33,
+    "absenceH": 0
+  },
+  {
+    "squad": "beta",
+    "weekStart": "2026-01-05",
+    "role": "pm",
+    "plannedH": 40,
+    "loggedH": 26,
+    "absenceH": 0
+  },
+  {
+    "squad": "beta",
+    "weekStart": "2026-01-05",
+    "role": "designer",
+    "plannedH": 40,
+    "loggedH": 29.5,
+    "absenceH": 0
+  },
+  {
+    "squad": "beta",
+    "weekStart": "2026-01-05",
+    "role": "engineer",
+    "plannedH": 160,
+    "loggedH": 96.5,
+    "absenceH": 8
+  },
+  {
+    "squad": "beta",
+    "weekStart": "2026-01-05",
+    "role": "qa",
+    "plannedH": 40,
+    "loggedH": 16.5,
+    "absenceH": 16
+  },
+  {
+    "squad": "beta",
+    "weekStart": "2026-01-05",
+    "role": "legal",
+    "plannedH": 40,
+    "loggedH": 31.5,
+    "absenceH": 0
+  },
+  {
+    "squad": "gamma",
+    "weekStart": "2026-01-05",
+    "role": "pm",
+    "plannedH": 40,
+    "loggedH": 33.5,
+    "absenceH": 0
+  },
+  {
+    "squad": "gamma",
+    "weekStart": "2026-01-05",
+    "role": "engineer",
+    "plannedH": 80,
+    "loggedH": 58,
+    "absenceH": 0
+  },
+  {
+    "squad": "gamma",
+    "weekStart": "2026-01-05",
+    "role": "qa",
+    "plannedH": 40,
+    "loggedH": 26,
+    "absenceH": 8
+  },
+  {
+    "squad": "alpha",
+    "weekStart": "2026-01-12",
+    "role": "pm",
+    "plannedH": 40,
+    "loggedH": 29,
+    "absenceH": 0
+  },
+  {
+    "squad": "alpha",
+    "weekStart": "2026-01-12",
+    "role": "designer",
+    "plannedH": 40,
+    "loggedH": 30.5,
+    "absenceH": 0
+  },
+  {
+    "squad": "alpha",
+    "weekStart": "2026-01-12",
+    "role": "engineer",
+    "plannedH": 120,
+    "loggedH": 82,
+    "absenceH": 16
+  },
+  {
+    "squad": "alpha",
+    "weekStart": "2026-01-12",
+    "role": "qa",
+    "plannedH": 40,
+    "loggedH": 31,
+    "absenceH": 0
+  },
+  {
+    "squad": "beta",
+    "weekStart": "2026-01-12",
+    "role": "pm",
+    "plannedH": 40,
+    "loggedH": 29.5,
+    "absenceH": 0
+  },
+  {
+    "squad": "beta",
+    "weekStart": "2026-01-12",
+    "role": "designer",
+    "plannedH": 40,
+    "loggedH": 29,
+    "absenceH": 0
+  },
+  {
+    "squad": "beta",
+    "weekStart": "2026-01-12",
+    "role": "engineer",
+    "plannedH": 160,
+    "loggedH": 126,
+    "absenceH": 0
+  },
+  {
+    "squad": "beta",
+    "weekStart": "2026-01-12",
+    "role": "qa",
+    "plannedH": 40,
+    "loggedH": 29,
+    "absenceH": 0
+  },
+  {
+    "squad": "beta",
+    "weekStart": "2026-01-12",
+    "role": "legal",
+    "plannedH": 40,
+    "loggedH": 28,
+    "absenceH": 0
+  },
+  {
+    "squad": "gamma",
+    "weekStart": "2026-01-12",
+    "role": "pm",
+    "plannedH": 40,
+    "loggedH": 32.5,
+    "absenceH": 0
+  },
+  {
+    "squad": "gamma",
+    "weekStart": "2026-01-12",
+    "role": "engineer",
+    "plannedH": 80,
+    "loggedH": 60.5,
+    "absenceH": 0
+  },
+  {
+    "squad": "gamma",
+    "weekStart": "2026-01-12",
+    "role": "qa",
+    "plannedH": 40,
+    "loggedH": 17,
+    "absenceH": 16
+  },
+  {
+    "squad": "alpha",
+    "weekStart": "2026-01-19",
+    "role": "pm",
+    "plannedH": 40,
+    "loggedH": 31.5,
+    "absenceH": 0
+  },
+  {
+    "squad": "alpha",
+    "weekStart": "2026-01-19",
+    "role": "designer",
+    "plannedH": 40,
+    "loggedH": 26,
+    "absenceH": 8
+  },
+  {
+    "squad": "alpha",
+    "weekStart": "2026-01-19",
+    "role": "engineer",
+    "plannedH": 120,
+    "loggedH": 80.5,
+    "absenceH": 16
+  },
+  {
+    "squad": "alpha",
+    "weekStart": "2026-01-19",
+    "role": "qa",
+    "plannedH": 40,
+    "loggedH": 18,
+    "absenceH": 16
+  },
+  {
+    "squad": "beta",
+    "weekStart": "2026-01-19",
+    "role": "pm",
+    "plannedH": 40,
+    "loggedH": 31,
+    "absenceH": 0
+  },
+  {
+    "squad": "beta",
+    "weekStart": "2026-01-19",
+    "role": "designer",
+    "plannedH": 40,
+    "loggedH": 28.5,
+    "absenceH": 0
+  },
+  {
+    "squad": "beta",
+    "weekStart": "2026-01-19",
+    "role": "engineer",
+    "plannedH": 160,
+    "loggedH": 95.5,
+    "absenceH": 24
+  },
+  {
+    "squad": "beta",
+    "weekStart": "2026-01-19",
+    "role": "qa",
+    "plannedH": 40,
+    "loggedH": 30,
+    "absenceH": 0
+  },
+  {
+    "squad": "beta",
+    "weekStart": "2026-01-19",
+    "role": "legal",
+    "plannedH": 40,
+    "loggedH": 22.5,
+    "absenceH": 8
+  },
+  {
+    "squad": "gamma",
+    "weekStart": "2026-01-19",
+    "role": "pm",
+    "plannedH": 40,
+    "loggedH": 31.5,
+    "absenceH": 0
+  },
+  {
+    "squad": "gamma",
+    "weekStart": "2026-01-19",
+    "role": "engineer",
+    "plannedH": 80,
+    "loggedH": 61,
+    "absenceH": 0
+  },
+  {
+    "squad": "gamma",
+    "weekStart": "2026-01-19",
+    "role": "qa",
+    "plannedH": 40,
+    "loggedH": 31.5,
+    "absenceH": 0
+  },
+  {
+    "squad": "alpha",
+    "weekStart": "2026-01-26",
+    "role": "pm",
+    "plannedH": 40,
+    "loggedH": 31.5,
+    "absenceH": 0
+  },
+  {
+    "squad": "alpha",
+    "weekStart": "2026-01-26",
+    "role": "designer",
+    "plannedH": 40,
+    "loggedH": 32,
+    "absenceH": 0
+  },
+  {
+    "squad": "alpha",
+    "weekStart": "2026-01-26",
+    "role": "engineer",
+    "plannedH": 120,
+    "loggedH": 58,
+    "absenceH": 40
+  },
+  {
+    "squad": "alpha",
+    "weekStart": "2026-01-26",
+    "role": "qa",
+    "plannedH": 40,
+    "loggedH": 27.5,
+    "absenceH": 0
+  },
+  {
+    "squad": "beta",
+    "weekStart": "2026-01-26",
+    "role": "pm",
+    "plannedH": 40,
+    "loggedH": 28,
+    "absenceH": 0
+  },
+  {
+    "squad": "beta",
+    "weekStart": "2026-01-26",
+    "role": "designer",
+    "plannedH": 40,
+    "loggedH": 28.5,
+    "absenceH": 0
+  },
+  {
+    "squad": "beta",
+    "weekStart": "2026-01-26",
+    "role": "engineer",
+    "plannedH": 160,
+    "loggedH": 120,
+    "absenceH": 0
+  },
+  {
+    "squad": "beta",
+    "weekStart": "2026-01-26",
+    "role": "qa",
+    "plannedH": 40,
+    "loggedH": 29,
+    "absenceH": 0
+  },
+  {
+    "squad": "beta",
+    "weekStart": "2026-01-26",
+    "role": "legal",
+    "plannedH": 40,
+    "loggedH": 29,
+    "absenceH": 0
+  },
+  {
+    "squad": "gamma",
+    "weekStart": "2026-01-26",
+    "role": "pm",
+    "plannedH": 40,
+    "loggedH": 33.5,
+    "absenceH": 0
+  },
+  {
+    "squad": "gamma",
+    "weekStart": "2026-01-26",
+    "role": "engineer",
+    "plannedH": 80,
+    "loggedH": 67.5,
+    "absenceH": 0
+  },
+  {
+    "squad": "gamma",
+    "weekStart": "2026-01-26",
+    "role": "qa",
+    "plannedH": 40,
+    "loggedH": 34.5,
+    "absenceH": 0
+  },
+  {
+    "squad": "alpha",
+    "weekStart": "2026-02-02",
+    "role": "pm",
+    "plannedH": 40,
+    "loggedH": 19,
+    "absenceH": 16
+  },
+  {
+    "squad": "alpha",
+    "weekStart": "2026-02-02",
+    "role": "designer",
+    "plannedH": 40,
+    "loggedH": 29,
+    "absenceH": 0
+  },
+  {
+    "squad": "alpha",
+    "weekStart": "2026-02-02",
+    "role": "engineer",
+    "plannedH": 120,
+    "loggedH": 92.5,
+    "absenceH": 0
+  },
+  {
+    "squad": "alpha",
+    "weekStart": "2026-02-02",
+    "role": "qa",
+    "plannedH": 40,
+    "loggedH": 29,
+    "absenceH": 0
+  },
+  {
+    "squad": "beta",
+    "weekStart": "2026-02-02",
+    "role": "pm",
+    "plannedH": 40,
+    "loggedH": 24,
+    "absenceH": 8
+  },
+  {
+    "squad": "beta",
+    "weekStart": "2026-02-02",
+    "role": "designer",
+    "plannedH": 40,
+    "loggedH": 29,
+    "absenceH": 0
+  },
+  {
+    "squad": "beta",
+    "weekStart": "2026-02-02",
+    "role": "engineer",
+    "plannedH": 160,
+    "loggedH": 103,
+    "absenceH": 16
+  },
+  {
+    "squad": "beta",
+    "weekStart": "2026-02-02",
+    "role": "qa",
+    "plannedH": 40,
+    "loggedH": 30.5,
+    "absenceH": 0
+  },
+  {
+    "squad": "beta",
+    "weekStart": "2026-02-02",
+    "role": "legal",
+    "plannedH": 40,
+    "loggedH": 31,
+    "absenceH": 0
+  },
+  {
+    "squad": "gamma",
+    "weekStart": "2026-02-02",
+    "role": "pm",
+    "plannedH": 40,
+    "loggedH": 19,
+    "absenceH": 16
+  },
+  {
+    "squad": "gamma",
+    "weekStart": "2026-02-02",
+    "role": "engineer",
+    "plannedH": 80,
+    "loggedH": 61.5,
+    "absenceH": 0
+  },
+  {
+    "squad": "gamma",
+    "weekStart": "2026-02-02",
+    "role": "qa",
+    "plannedH": 40,
+    "loggedH": 32,
+    "absenceH": 0
+  },
+  {
+    "squad": "alpha",
+    "weekStart": "2026-02-09",
+    "role": "pm",
+    "plannedH": 40,
+    "loggedH": 30.5,
+    "absenceH": 0
+  },
+  {
+    "squad": "alpha",
+    "weekStart": "2026-02-09",
+    "role": "designer",
+    "plannedH": 40,
+    "loggedH": 29.5,
+    "absenceH": 0
+  },
+  {
+    "squad": "alpha",
+    "weekStart": "2026-02-09",
+    "role": "engineer",
+    "plannedH": 120,
+    "loggedH": 76,
+    "absenceH": 16
+  },
+  {
+    "squad": "alpha",
+    "weekStart": "2026-02-09",
+    "role": "qa",
+    "plannedH": 40,
+    "loggedH": 30,
+    "absenceH": 0
+  },
+  {
+    "squad": "beta",
+    "weekStart": "2026-02-09",
+    "role": "pm",
+    "plannedH": 40,
+    "loggedH": 27,
+    "absenceH": 0
+  },
+  {
+    "squad": "beta",
+    "weekStart": "2026-02-09",
+    "role": "designer",
+    "plannedH": 40,
+    "loggedH": 31.5,
+    "absenceH": 0
+  },
+  {
+    "squad": "beta",
+    "weekStart": "2026-02-09",
+    "role": "engineer",
+    "plannedH": 160,
+    "loggedH": 113,
+    "absenceH": 8
+  },
+  {
+    "squad": "beta",
+    "weekStart": "2026-02-09",
+    "role": "qa",
+    "plannedH": 40,
+    "loggedH": 16.5,
+    "absenceH": 16
+  },
+  {
+    "squad": "beta",
+    "weekStart": "2026-02-09",
+    "role": "legal",
+    "plannedH": 40,
+    "loggedH": 27,
+    "absenceH": 0
+  },
+  {
+    "squad": "gamma",
+    "weekStart": "2026-02-09",
+    "role": "pm",
+    "plannedH": 40,
+    "loggedH": 33,
+    "absenceH": 0
+  },
+  {
+    "squad": "gamma",
+    "weekStart": "2026-02-09",
+    "role": "engineer",
+    "plannedH": 80,
+    "loggedH": 62,
+    "absenceH": 0
+  },
+  {
+    "squad": "gamma",
+    "weekStart": "2026-02-09",
+    "role": "qa",
+    "plannedH": 40,
+    "loggedH": 29,
+    "absenceH": 0
+  },
+  {
+    "squad": "alpha",
+    "weekStart": "2026-02-16",
+    "role": "pm",
+    "plannedH": 40,
+    "loggedH": 31.5,
+    "absenceH": 0
+  },
+  {
+    "squad": "alpha",
+    "weekStart": "2026-02-16",
+    "role": "designer",
+    "plannedH": 40,
+    "loggedH": 32.5,
+    "absenceH": 0
+  },
+  {
+    "squad": "alpha",
+    "weekStart": "2026-02-16",
+    "role": "engineer",
+    "plannedH": 120,
+    "loggedH": 85.5,
+    "absenceH": 0
+  },
+  {
+    "squad": "alpha",
+    "weekStart": "2026-02-16",
+    "role": "qa",
+    "plannedH": 40,
+    "loggedH": 29.5,
+    "absenceH": 0
+  },
+  {
+    "squad": "beta",
+    "weekStart": "2026-02-16",
+    "role": "pm",
+    "plannedH": 40,
+    "loggedH": 17.5,
+    "absenceH": 16
+  },
+  {
+    "squad": "beta",
+    "weekStart": "2026-02-16",
+    "role": "designer",
+    "plannedH": 40,
+    "loggedH": 17,
+    "absenceH": 16
+  },
+  {
+    "squad": "beta",
+    "weekStart": "2026-02-16",
+    "role": "engineer",
+    "plannedH": 160,
+    "loggedH": 107,
+    "absenceH": 16
+  },
+  {
+    "squad": "beta",
+    "weekStart": "2026-02-16",
+    "role": "qa",
+    "plannedH": 40,
+    "loggedH": 29.5,
+    "absenceH": 0
+  },
+  {
+    "squad": "beta",
+    "weekStart": "2026-02-16",
+    "role": "legal",
+    "plannedH": 40,
+    "loggedH": 29,
+    "absenceH": 0
+  },
+  {
+    "squad": "gamma",
+    "weekStart": "2026-02-16",
+    "role": "pm",
+    "plannedH": 40,
+    "loggedH": 29.5,
+    "absenceH": 0
+  },
+  {
+    "squad": "gamma",
+    "weekStart": "2026-02-16",
+    "role": "engineer",
+    "plannedH": 80,
+    "loggedH": 65.5,
+    "absenceH": 0
+  },
+  {
+    "squad": "gamma",
+    "weekStart": "2026-02-16",
+    "role": "qa",
+    "plannedH": 40,
+    "loggedH": 31,
+    "absenceH": 0
+  },
+  {
+    "squad": "alpha",
+    "weekStart": "2026-02-23",
+    "role": "pm",
+    "plannedH": 40,
+    "loggedH": 31.5,
+    "absenceH": 0
+  },
+  {
+    "squad": "alpha",
+    "weekStart": "2026-02-23",
+    "role": "designer",
+    "plannedH": 40,
+    "loggedH": 29.5,
+    "absenceH": 0
+  },
+  {
+    "squad": "alpha",
+    "weekStart": "2026-02-23",
+    "role": "engineer",
+    "plannedH": 120,
+    "loggedH": 90.5,
+    "absenceH": 0
+  },
+  {
+    "squad": "alpha",
+    "weekStart": "2026-02-23",
+    "role": "qa",
+    "plannedH": 40,
+    "loggedH": 17.5,
+    "absenceH": 16
+  },
+  {
+    "squad": "beta",
+    "weekStart": "2026-02-23",
+    "role": "pm",
+    "plannedH": 40,
+    "loggedH": 29,
+    "absenceH": 0
+  },
+  {
+    "squad": "beta",
+    "weekStart": "2026-02-23",
+    "role": "designer",
+    "plannedH": 40,
+    "loggedH": 18.5,
+    "absenceH": 16
+  },
+  {
+    "squad": "beta",
+    "weekStart": "2026-02-23",
+    "role": "engineer",
+    "plannedH": 160,
+    "loggedH": 112.5,
+    "absenceH": 16
+  },
+  {
+    "squad": "beta",
+    "weekStart": "2026-02-23",
+    "role": "qa",
+    "plannedH": 40,
+    "loggedH": 29.5,
+    "absenceH": 0
+  },
+  {
+    "squad": "beta",
+    "weekStart": "2026-02-23",
+    "role": "legal",
+    "plannedH": 40,
+    "loggedH": 29,
+    "absenceH": 0
+  },
+  {
+    "squad": "gamma",
+    "weekStart": "2026-02-23",
+    "role": "pm",
+    "plannedH": 40,
+    "loggedH": 32,
+    "absenceH": 0
+  },
+  {
+    "squad": "gamma",
+    "weekStart": "2026-02-23",
+    "role": "engineer",
+    "plannedH": 80,
+    "loggedH": 62,
+    "absenceH": 0
+  },
+  {
+    "squad": "gamma",
+    "weekStart": "2026-02-23",
+    "role": "qa",
+    "plannedH": 40,
+    "loggedH": 29.5,
+    "absenceH": 0
+  },
+  {
+    "squad": "alpha",
+    "weekStart": "2026-03-02",
+    "role": "pm",
+    "plannedH": 40,
+    "loggedH": 29,
+    "absenceH": 0
+  },
+  {
+    "squad": "alpha",
+    "weekStart": "2026-03-02",
+    "role": "designer",
+    "plannedH": 40,
+    "loggedH": 29.5,
+    "absenceH": 0
+  },
+  {
+    "squad": "alpha",
+    "weekStart": "2026-03-02",
+    "role": "engineer",
+    "plannedH": 120,
+    "loggedH": 84,
+    "absenceH": 16
+  },
+  {
+    "squad": "alpha",
+    "weekStart": "2026-03-02",
+    "role": "qa",
+    "plannedH": 40,
+    "loggedH": 29,
+    "absenceH": 0
+  },
+  {
+    "squad": "beta",
+    "weekStart": "2026-03-02",
+    "role": "pm",
+    "plannedH": 40,
+    "loggedH": 18.5,
+    "absenceH": 16
+  },
+  {
+    "squad": "beta",
+    "weekStart": "2026-03-02",
+    "role": "designer",
+    "plannedH": 40,
+    "loggedH": 27.5,
+    "absenceH": 0
+  },
+  {
+    "squad": "beta",
+    "weekStart": "2026-03-02",
+    "role": "engineer",
+    "plannedH": 160,
+    "loggedH": 99.5,
+    "absenceH": 32
+  },
+  {
+    "squad": "beta",
+    "weekStart": "2026-03-02",
+    "role": "qa",
+    "plannedH": 40,
+    "loggedH": 23.5,
+    "absenceH": 8
+  },
+  {
+    "squad": "beta",
+    "weekStart": "2026-03-02",
+    "role": "legal",
+    "plannedH": 40,
+    "loggedH": 15.5,
+    "absenceH": 16
+  },
+  {
+    "squad": "gamma",
+    "weekStart": "2026-03-02",
+    "role": "pm",
+    "plannedH": 40,
+    "loggedH": 30.5,
+    "absenceH": 0
+  },
+  {
+    "squad": "gamma",
+    "weekStart": "2026-03-02",
+    "role": "engineer",
+    "plannedH": 80,
+    "loggedH": 56.5,
+    "absenceH": 8
+  },
+  {
+    "squad": "gamma",
+    "weekStart": "2026-03-02",
+    "role": "qa",
+    "plannedH": 40,
+    "loggedH": 33,
+    "absenceH": 0
+  },
+  {
+    "squad": "alpha",
+    "weekStart": "2026-03-09",
+    "role": "pm",
+    "plannedH": 40,
+    "loggedH": 0,
+    "absenceH": 40
+  },
+  {
+    "squad": "alpha",
+    "weekStart": "2026-03-09",
+    "role": "designer",
+    "plannedH": 40,
+    "loggedH": 31.5,
+    "absenceH": 0
+  },
+  {
+    "squad": "alpha",
+    "weekStart": "2026-03-09",
+    "role": "engineer",
+    "plannedH": 120,
+    "loggedH": 77,
+    "absenceH": 16
+  },
+  {
+    "squad": "alpha",
+    "weekStart": "2026-03-09",
+    "role": "qa",
+    "plannedH": 40,
+    "loggedH": 16,
+    "absenceH": 16
+  },
+  {
+    "squad": "beta",
+    "weekStart": "2026-03-09",
+    "role": "pm",
+    "plannedH": 40,
+    "loggedH": 31,
+    "absenceH": 0
+  },
+  {
+    "squad": "beta",
+    "weekStart": "2026-03-09",
+    "role": "designer",
+    "plannedH": 40,
+    "loggedH": 28,
+    "absenceH": 0
+  },
+  {
+    "squad": "beta",
+    "weekStart": "2026-03-09",
+    "role": "engineer",
+    "plannedH": 160,
+    "loggedH": 100.5,
+    "absenceH": 8
+  },
+  {
+    "squad": "beta",
+    "weekStart": "2026-03-09",
+    "role": "qa",
+    "plannedH": 40,
+    "loggedH": 28.5,
+    "absenceH": 0
+  },
+  {
+    "squad": "beta",
+    "weekStart": "2026-03-09",
+    "role": "legal",
+    "plannedH": 40,
+    "loggedH": 28,
+    "absenceH": 0
+  },
+  {
+    "squad": "gamma",
+    "weekStart": "2026-03-09",
+    "role": "pm",
+    "plannedH": 40,
+    "loggedH": 34,
+    "absenceH": 0
+  },
+  {
+    "squad": "gamma",
+    "weekStart": "2026-03-09",
+    "role": "engineer",
+    "plannedH": 80,
+    "loggedH": 63,
+    "absenceH": 0
+  },
+  {
+    "squad": "gamma",
+    "weekStart": "2026-03-09",
+    "role": "qa",
+    "plannedH": 40,
+    "loggedH": 32,
+    "absenceH": 0
+  },
+  {
+    "squad": "alpha",
+    "weekStart": "2026-03-16",
+    "role": "pm",
+    "plannedH": 40,
+    "loggedH": 26,
+    "absenceH": 8
+  },
+  {
+    "squad": "alpha",
+    "weekStart": "2026-03-16",
+    "role": "designer",
+    "plannedH": 40,
+    "loggedH": 17.5,
+    "absenceH": 16
+  },
+  {
+    "squad": "alpha",
+    "weekStart": "2026-03-16",
+    "role": "engineer",
+    "plannedH": 120,
+    "loggedH": 80.5,
+    "absenceH": 16
+  },
+  {
+    "squad": "alpha",
+    "weekStart": "2026-03-16",
+    "role": "qa",
+    "plannedH": 40,
+    "loggedH": 29,
+    "absenceH": 0
+  },
+  {
+    "squad": "beta",
+    "weekStart": "2026-03-16",
+    "role": "pm",
+    "plannedH": 40,
+    "loggedH": 30.5,
+    "absenceH": 0
+  },
+  {
+    "squad": "beta",
+    "weekStart": "2026-03-16",
+    "role": "designer",
+    "plannedH": 40,
+    "loggedH": 0,
+    "absenceH": 40
+  },
+  {
+    "squad": "beta",
+    "weekStart": "2026-03-16",
+    "role": "engineer",
+    "plannedH": 160,
+    "loggedH": 113,
+    "absenceH": 0
+  },
+  {
+    "squad": "beta",
+    "weekStart": "2026-03-16",
+    "role": "qa",
+    "plannedH": 40,
+    "loggedH": 28,
+    "absenceH": 0
+  },
+  {
+    "squad": "beta",
+    "weekStart": "2026-03-16",
+    "role": "legal",
+    "plannedH": 40,
+    "loggedH": 28.5,
+    "absenceH": 0
+  },
+  {
+    "squad": "gamma",
+    "weekStart": "2026-03-16",
+    "role": "pm",
+    "plannedH": 40,
+    "loggedH": 33,
+    "absenceH": 0
+  },
+  {
+    "squad": "gamma",
+    "weekStart": "2026-03-16",
+    "role": "engineer",
+    "plannedH": 80,
+    "loggedH": 62.5,
+    "absenceH": 0
+  },
+  {
+    "squad": "gamma",
+    "weekStart": "2026-03-16",
+    "role": "qa",
+    "plannedH": 40,
+    "loggedH": 32,
+    "absenceH": 0
+  },
+  {
+    "squad": "alpha",
+    "weekStart": "2026-03-23",
+    "role": "pm",
+    "plannedH": 40,
+    "loggedH": 31,
+    "absenceH": 0
+  },
+  {
+    "squad": "alpha",
+    "weekStart": "2026-03-23",
+    "role": "designer",
+    "plannedH": 40,
+    "loggedH": 30,
+    "absenceH": 0
+  },
+  {
+    "squad": "alpha",
+    "weekStart": "2026-03-23",
+    "role": "engineer",
+    "plannedH": 120,
+    "loggedH": 59.5,
+    "absenceH": 40
+  },
+  {
+    "squad": "alpha",
+    "weekStart": "2026-03-23",
+    "role": "qa",
+    "plannedH": 40,
+    "loggedH": 31,
+    "absenceH": 0
+  },
+  {
+    "squad": "beta",
+    "weekStart": "2026-03-23",
+    "role": "pm",
+    "plannedH": 40,
+    "loggedH": 28.5,
+    "absenceH": 0
+  },
+  {
+    "squad": "beta",
+    "weekStart": "2026-03-23",
+    "role": "designer",
+    "plannedH": 40,
+    "loggedH": 28.5,
+    "absenceH": 0
+  },
+  {
+    "squad": "beta",
+    "weekStart": "2026-03-23",
+    "role": "engineer",
+    "plannedH": 160,
+    "loggedH": 115.5,
+    "absenceH": 8
+  },
+  {
+    "squad": "beta",
+    "weekStart": "2026-03-23",
+    "role": "qa",
+    "plannedH": 40,
+    "loggedH": 31.5,
+    "absenceH": 0
+  },
+  {
+    "squad": "beta",
+    "weekStart": "2026-03-23",
+    "role": "legal",
+    "plannedH": 40,
+    "loggedH": 28.5,
+    "absenceH": 0
+  },
+  {
+    "squad": "gamma",
+    "weekStart": "2026-03-23",
+    "role": "pm",
+    "plannedH": 40,
+    "loggedH": 32,
+    "absenceH": 0
+  },
+  {
+    "squad": "gamma",
+    "weekStart": "2026-03-23",
+    "role": "engineer",
+    "plannedH": 80,
+    "loggedH": 29,
+    "absenceH": 40
+  },
+  {
+    "squad": "gamma",
+    "weekStart": "2026-03-23",
+    "role": "qa",
+    "plannedH": 40,
+    "loggedH": 30.5,
+    "absenceH": 0
+  },
+  {
+    "squad": "alpha",
+    "weekStart": "2026-03-30",
+    "role": "pm",
+    "plannedH": 40,
+    "loggedH": 20,
+    "absenceH": 16
+  },
+  {
+    "squad": "alpha",
+    "weekStart": "2026-03-30",
+    "role": "designer",
+    "plannedH": 40,
+    "loggedH": 23.5,
+    "absenceH": 8
+  },
+  {
+    "squad": "alpha",
+    "weekStart": "2026-03-30",
+    "role": "engineer",
+    "plannedH": 120,
+    "loggedH": 81,
+    "absenceH": 16
+  },
+  {
+    "squad": "alpha",
+    "weekStart": "2026-03-30",
+    "role": "qa",
+    "plannedH": 40,
+    "loggedH": 33.5,
+    "absenceH": 0
+  },
+  {
+    "squad": "beta",
+    "weekStart": "2026-03-30",
+    "role": "pm",
+    "plannedH": 40,
+    "loggedH": 27,
+    "absenceH": 0
+  },
+  {
+    "squad": "beta",
+    "weekStart": "2026-03-30",
+    "role": "designer",
+    "plannedH": 40,
+    "loggedH": 29.5,
+    "absenceH": 0
+  },
+  {
+    "squad": "beta",
+    "weekStart": "2026-03-30",
+    "role": "engineer",
+    "plannedH": 160,
+    "loggedH": 86.5,
+    "absenceH": 48
+  },
+  {
+    "squad": "beta",
+    "weekStart": "2026-03-30",
+    "role": "qa",
+    "plannedH": 40,
+    "loggedH": 28.5,
+    "absenceH": 0
+  },
+  {
+    "squad": "beta",
+    "weekStart": "2026-03-30",
+    "role": "legal",
+    "plannedH": 40,
+    "loggedH": 22.5,
+    "absenceH": 8
+  },
+  {
+    "squad": "gamma",
+    "weekStart": "2026-03-30",
+    "role": "pm",
+    "plannedH": 40,
+    "loggedH": 32,
+    "absenceH": 0
+  },
+  {
+    "squad": "gamma",
+    "weekStart": "2026-03-30",
+    "role": "engineer",
+    "plannedH": 80,
+    "loggedH": 63.5,
+    "absenceH": 0
+  },
+  {
+    "squad": "gamma",
+    "weekStart": "2026-03-30",
+    "role": "qa",
+    "plannedH": 40,
+    "loggedH": 35,
+    "absenceH": 0
+  },
+  {
+    "squad": "alpha",
+    "weekStart": "2026-04-06",
+    "role": "pm",
+    "plannedH": 40,
+    "loggedH": 30,
+    "absenceH": 0
+  },
+  {
+    "squad": "alpha",
+    "weekStart": "2026-04-06",
+    "role": "designer",
+    "plannedH": 40,
+    "loggedH": 33,
+    "absenceH": 0
+  },
+  {
+    "squad": "alpha",
+    "weekStart": "2026-04-06",
+    "role": "engineer",
+    "plannedH": 120,
+    "loggedH": 84.5,
+    "absenceH": 0
+  },
+  {
+    "squad": "alpha",
+    "weekStart": "2026-04-06",
+    "role": "qa",
+    "plannedH": 40,
+    "loggedH": 30,
+    "absenceH": 0
+  },
+  {
+    "squad": "beta",
+    "weekStart": "2026-04-06",
+    "role": "pm",
+    "plannedH": 40,
+    "loggedH": 29.5,
+    "absenceH": 0
+  },
+  {
+    "squad": "beta",
+    "weekStart": "2026-04-06",
+    "role": "designer",
+    "plannedH": 40,
+    "loggedH": 27.5,
+    "absenceH": 0
+  },
+  {
+    "squad": "beta",
+    "weekStart": "2026-04-06",
+    "role": "engineer",
+    "plannedH": 160,
+    "loggedH": 115,
+    "absenceH": 0
+  },
+  {
+    "squad": "beta",
+    "weekStart": "2026-04-06",
+    "role": "qa",
+    "plannedH": 40,
+    "loggedH": 28,
+    "absenceH": 0
+  },
+  {
+    "squad": "beta",
+    "weekStart": "2026-04-06",
+    "role": "legal",
+    "plannedH": 40,
+    "loggedH": 29.5,
+    "absenceH": 0
+  },
+  {
+    "squad": "gamma",
+    "weekStart": "2026-04-06",
+    "role": "pm",
+    "plannedH": 40,
+    "loggedH": 32.5,
+    "absenceH": 0
+  },
+  {
+    "squad": "gamma",
+    "weekStart": "2026-04-06",
+    "role": "engineer",
+    "plannedH": 80,
+    "loggedH": 63,
+    "absenceH": 0
+  },
+  {
+    "squad": "gamma",
+    "weekStart": "2026-04-06",
+    "role": "qa",
+    "plannedH": 40,
+    "loggedH": 18,
+    "absenceH": 16
+  },
+  {
+    "squad": "alpha",
+    "weekStart": "2026-04-13",
+    "role": "pm",
+    "plannedH": 40,
+    "loggedH": 28,
+    "absenceH": 0
+  },
+  {
+    "squad": "alpha",
+    "weekStart": "2026-04-13",
+    "role": "designer",
+    "plannedH": 40,
+    "loggedH": 30.5,
+    "absenceH": 0
+  },
+  {
+    "squad": "alpha",
+    "weekStart": "2026-04-13",
+    "role": "engineer",
+    "plannedH": 120,
+    "loggedH": 89.5,
+    "absenceH": 0
+  },
+  {
+    "squad": "alpha",
+    "weekStart": "2026-04-13",
+    "role": "qa",
+    "plannedH": 40,
+    "loggedH": 27.5,
+    "absenceH": 0
+  },
+  {
+    "squad": "beta",
+    "weekStart": "2026-04-13",
+    "role": "pm",
+    "plannedH": 40,
+    "loggedH": 28.5,
+    "absenceH": 0
+  },
+  {
+    "squad": "beta",
+    "weekStart": "2026-04-13",
+    "role": "designer",
+    "plannedH": 40,
+    "loggedH": 30,
+    "absenceH": 0
+  },
+  {
+    "squad": "beta",
+    "weekStart": "2026-04-13",
+    "role": "engineer",
+    "plannedH": 160,
+    "loggedH": 122,
+    "absenceH": 0
+  },
+  {
+    "squad": "beta",
+    "weekStart": "2026-04-13",
+    "role": "qa",
+    "plannedH": 40,
+    "loggedH": 30,
+    "absenceH": 0
+  },
+  {
+    "squad": "beta",
+    "weekStart": "2026-04-13",
+    "role": "legal",
+    "plannedH": 40,
+    "loggedH": 27.5,
+    "absenceH": 0
+  },
+  {
+    "squad": "gamma",
+    "weekStart": "2026-04-13",
+    "role": "pm",
+    "plannedH": 40,
+    "loggedH": 29,
+    "absenceH": 0
+  },
+  {
+    "squad": "gamma",
+    "weekStart": "2026-04-13",
+    "role": "engineer",
+    "plannedH": 80,
+    "loggedH": 68.5,
+    "absenceH": 0
+  },
+  {
+    "squad": "gamma",
+    "weekStart": "2026-04-13",
+    "role": "qa",
+    "plannedH": 40,
+    "loggedH": 28.5,
+    "absenceH": 0
+  },
+  {
+    "squad": "alpha",
+    "weekStart": "2026-04-20",
+    "role": "pm",
+    "plannedH": 40,
+    "loggedH": 29,
+    "absenceH": 0
+  },
+  {
+    "squad": "alpha",
+    "weekStart": "2026-04-20",
+    "role": "designer",
+    "plannedH": 40,
+    "loggedH": 31,
+    "absenceH": 0
+  },
+  {
+    "squad": "alpha",
+    "weekStart": "2026-04-20",
+    "role": "engineer",
+    "plannedH": 120,
+    "loggedH": 85.5,
+    "absenceH": 0
+  },
+  {
+    "squad": "alpha",
+    "weekStart": "2026-04-20",
+    "role": "qa",
+    "plannedH": 40,
+    "loggedH": 31,
+    "absenceH": 0
+  },
+  {
+    "squad": "beta",
+    "weekStart": "2026-04-20",
+    "role": "pm",
+    "plannedH": 40,
+    "loggedH": 29.5,
+    "absenceH": 0
+  },
+  {
+    "squad": "beta",
+    "weekStart": "2026-04-20",
+    "role": "designer",
+    "plannedH": 40,
+    "loggedH": 30,
+    "absenceH": 0
+  },
+  {
+    "squad": "beta",
+    "weekStart": "2026-04-20",
+    "role": "engineer",
+    "plannedH": 160,
+    "loggedH": 110,
+    "absenceH": 0
+  },
+  {
+    "squad": "beta",
+    "weekStart": "2026-04-20",
+    "role": "qa",
+    "plannedH": 40,
+    "loggedH": 27,
+    "absenceH": 0
+  },
+  {
+    "squad": "beta",
+    "weekStart": "2026-04-20",
+    "role": "legal",
+    "plannedH": 40,
+    "loggedH": 31.5,
+    "absenceH": 0
+  },
+  {
+    "squad": "gamma",
+    "weekStart": "2026-04-20",
+    "role": "pm",
+    "plannedH": 40,
+    "loggedH": 31.5,
+    "absenceH": 0
+  },
+  {
+    "squad": "gamma",
+    "weekStart": "2026-04-20",
+    "role": "engineer",
+    "plannedH": 80,
+    "loggedH": 65,
+    "absenceH": 0
+  },
+  {
+    "squad": "gamma",
+    "weekStart": "2026-04-20",
+    "role": "qa",
+    "plannedH": 40,
+    "loggedH": 26.5,
+    "absenceH": 8
+  },
+  {
+    "squad": "alpha",
+    "weekStart": "2026-04-27",
+    "role": "pm",
+    "plannedH": 40,
+    "loggedH": 30,
+    "absenceH": 0
+  },
+  {
+    "squad": "alpha",
+    "weekStart": "2026-04-27",
+    "role": "designer",
+    "plannedH": 40,
+    "loggedH": 22.5,
+    "absenceH": 8
+  },
+  {
+    "squad": "alpha",
+    "weekStart": "2026-04-27",
+    "role": "engineer",
+    "plannedH": 120,
+    "loggedH": 89.5,
+    "absenceH": 0
+  },
+  {
+    "squad": "alpha",
+    "weekStart": "2026-04-27",
+    "role": "qa",
+    "plannedH": 40,
+    "loggedH": 29.5,
+    "absenceH": 0
+  },
+  {
+    "squad": "beta",
+    "weekStart": "2026-04-27",
+    "role": "pm",
+    "plannedH": 40,
+    "loggedH": 28,
+    "absenceH": 0
+  },
+  {
+    "squad": "beta",
+    "weekStart": "2026-04-27",
+    "role": "designer",
+    "plannedH": 40,
+    "loggedH": 28,
+    "absenceH": 0
+  },
+  {
+    "squad": "beta",
+    "weekStart": "2026-04-27",
+    "role": "engineer",
+    "plannedH": 160,
+    "loggedH": 103.5,
+    "absenceH": 0
+  },
+  {
+    "squad": "beta",
+    "weekStart": "2026-04-27",
+    "role": "qa",
+    "plannedH": 40,
+    "loggedH": 28.5,
+    "absenceH": 0
+  },
+  {
+    "squad": "beta",
+    "weekStart": "2026-04-27",
+    "role": "legal",
+    "plannedH": 40,
+    "loggedH": 27.5,
+    "absenceH": 0
+  },
+  {
+    "squad": "gamma",
+    "weekStart": "2026-04-27",
+    "role": "pm",
+    "plannedH": 40,
+    "loggedH": 34,
+    "absenceH": 0
+  },
+  {
+    "squad": "gamma",
+    "weekStart": "2026-04-27",
+    "role": "engineer",
+    "plannedH": 80,
+    "loggedH": 59.5,
+    "absenceH": 8
+  },
+  {
+    "squad": "gamma",
+    "weekStart": "2026-04-27",
+    "role": "qa",
+    "plannedH": 40,
+    "loggedH": 18.5,
+    "absenceH": 16
+  },
+  {
+    "squad": "alpha",
+    "weekStart": "2026-05-04",
+    "role": "pm",
+    "plannedH": 40,
+    "loggedH": 30.5,
+    "absenceH": 0
+  },
+  {
+    "squad": "alpha",
+    "weekStart": "2026-05-04",
+    "role": "designer",
+    "plannedH": 40,
+    "loggedH": 29.5,
+    "absenceH": 0
+  },
+  {
+    "squad": "alpha",
+    "weekStart": "2026-05-04",
+    "role": "engineer",
+    "plannedH": 120,
+    "loggedH": 90.5,
+    "absenceH": 8
+  },
+  {
+    "squad": "alpha",
+    "weekStart": "2026-05-04",
+    "role": "qa",
+    "plannedH": 40,
+    "loggedH": 20.5,
+    "absenceH": 16
+  },
+  {
+    "squad": "beta",
+    "weekStart": "2026-05-04",
+    "role": "pm",
+    "plannedH": 40,
+    "loggedH": 22.5,
+    "absenceH": 8
+  },
+  {
+    "squad": "beta",
+    "weekStart": "2026-05-04",
+    "role": "designer",
+    "plannedH": 40,
+    "loggedH": 28,
+    "absenceH": 0
+  },
+  {
+    "squad": "beta",
+    "weekStart": "2026-05-04",
+    "role": "engineer",
+    "plannedH": 160,
+    "loggedH": 117,
+    "absenceH": 0
+  },
+  {
+    "squad": "beta",
+    "weekStart": "2026-05-04",
+    "role": "qa",
+    "plannedH": 40,
+    "loggedH": 29.5,
+    "absenceH": 0
+  },
+  {
+    "squad": "beta",
+    "weekStart": "2026-05-04",
+    "role": "legal",
+    "plannedH": 40,
+    "loggedH": 28.5,
+    "absenceH": 0
+  },
+  {
+    "squad": "gamma",
+    "weekStart": "2026-05-04",
+    "role": "pm",
+    "plannedH": 40,
+    "loggedH": 30.5,
+    "absenceH": 0
+  },
+  {
+    "squad": "gamma",
+    "weekStart": "2026-05-04",
+    "role": "engineer",
+    "plannedH": 80,
+    "loggedH": 60.5,
+    "absenceH": 8
+  },
+  {
+    "squad": "gamma",
+    "weekStart": "2026-05-04",
+    "role": "qa",
+    "plannedH": 40,
+    "loggedH": 30.5,
+    "absenceH": 0
+  },
+  {
+    "squad": "alpha",
+    "weekStart": "2026-05-11",
+    "role": "pm",
+    "plannedH": 40,
+    "loggedH": 29.5,
+    "absenceH": 0
+  },
+  {
+    "squad": "alpha",
+    "weekStart": "2026-05-11",
+    "role": "designer",
+    "plannedH": 40,
+    "loggedH": 23.5,
+    "absenceH": 8
+  },
+  {
+    "squad": "alpha",
+    "weekStart": "2026-05-11",
+    "role": "engineer",
+    "plannedH": 120,
+    "loggedH": 80,
+    "absenceH": 8
+  },
+  {
+    "squad": "alpha",
+    "weekStart": "2026-05-11",
+    "role": "qa",
+    "plannedH": 40,
+    "loggedH": 30.5,
+    "absenceH": 0
+  },
+  {
+    "squad": "beta",
+    "weekStart": "2026-05-11",
+    "role": "pm",
+    "plannedH": 40,
+    "loggedH": 30,
+    "absenceH": 0
+  },
+  {
+    "squad": "beta",
+    "weekStart": "2026-05-11",
+    "role": "designer",
+    "plannedH": 40,
+    "loggedH": 29.5,
+    "absenceH": 0
+  },
+  {
+    "squad": "beta",
+    "weekStart": "2026-05-11",
+    "role": "engineer",
+    "plannedH": 160,
+    "loggedH": 108,
+    "absenceH": 8
+  },
+  {
+    "squad": "beta",
+    "weekStart": "2026-05-11",
+    "role": "qa",
+    "plannedH": 40,
+    "loggedH": 29.5,
+    "absenceH": 0
+  },
+  {
+    "squad": "beta",
+    "weekStart": "2026-05-11",
+    "role": "legal",
+    "plannedH": 40,
+    "loggedH": 27.5,
+    "absenceH": 0
+  },
+  {
+    "squad": "gamma",
+    "weekStart": "2026-05-11",
+    "role": "pm",
+    "plannedH": 40,
+    "loggedH": 31.5,
+    "absenceH": 0
+  },
+  {
+    "squad": "gamma",
+    "weekStart": "2026-05-11",
+    "role": "engineer",
+    "plannedH": 80,
+    "loggedH": 64,
+    "absenceH": 0
+  },
+  {
+    "squad": "gamma",
+    "weekStart": "2026-05-11",
+    "role": "qa",
+    "plannedH": 40,
+    "loggedH": 30,
+    "absenceH": 0
+  },
+  {
+    "squad": "alpha",
+    "weekStart": "2026-05-18",
+    "role": "pm",
+    "plannedH": 40,
+    "loggedH": 31,
+    "absenceH": 0
+  },
+  {
+    "squad": "alpha",
+    "weekStart": "2026-05-18",
+    "role": "designer",
+    "plannedH": 40,
+    "loggedH": 31,
+    "absenceH": 0
+  },
+  {
+    "squad": "alpha",
+    "weekStart": "2026-05-18",
+    "role": "engineer",
+    "plannedH": 120,
+    "loggedH": 97.5,
+    "absenceH": 0
+  },
+  {
+    "squad": "alpha",
+    "weekStart": "2026-05-18",
+    "role": "qa",
+    "plannedH": 40,
+    "loggedH": 30.5,
+    "absenceH": 0
+  },
+  {
+    "squad": "beta",
+    "weekStart": "2026-05-18",
+    "role": "pm",
+    "plannedH": 40,
+    "loggedH": 30,
+    "absenceH": 0
+  },
+  {
+    "squad": "beta",
+    "weekStart": "2026-05-18",
+    "role": "designer",
+    "plannedH": 40,
+    "loggedH": 18.5,
+    "absenceH": 16
+  },
+  {
+    "squad": "beta",
+    "weekStart": "2026-05-18",
+    "role": "engineer",
+    "plannedH": 160,
+    "loggedH": 81.5,
+    "absenceH": 56
+  },
+  {
+    "squad": "beta",
+    "weekStart": "2026-05-18",
+    "role": "qa",
+    "plannedH": 40,
+    "loggedH": 0,
+    "absenceH": 40
+  },
+  {
+    "squad": "beta",
+    "weekStart": "2026-05-18",
+    "role": "legal",
+    "plannedH": 40,
+    "loggedH": 29,
+    "absenceH": 0
+  },
+  {
+    "squad": "gamma",
+    "weekStart": "2026-05-18",
+    "role": "pm",
+    "plannedH": 40,
+    "loggedH": 34,
+    "absenceH": 0
+  },
+  {
+    "squad": "gamma",
+    "weekStart": "2026-05-18",
+    "role": "engineer",
+    "plannedH": 80,
+    "loggedH": 70.5,
+    "absenceH": 0
+  },
+  {
+    "squad": "gamma",
+    "weekStart": "2026-05-18",
+    "role": "qa",
+    "plannedH": 40,
+    "loggedH": 34.5,
+    "absenceH": 0
+  },
+  {
+    "squad": "alpha",
+    "weekStart": "2026-05-25",
+    "role": "pm",
+    "plannedH": 40,
+    "loggedH": 29,
+    "absenceH": 0
+  },
+  {
+    "squad": "alpha",
+    "weekStart": "2026-05-25",
+    "role": "designer",
+    "plannedH": 40,
+    "loggedH": 31.5,
+    "absenceH": 0
+  },
+  {
+    "squad": "alpha",
+    "weekStart": "2026-05-25",
+    "role": "engineer",
+    "plannedH": 120,
+    "loggedH": 71,
+    "absenceH": 24
+  },
+  {
+    "squad": "alpha",
+    "weekStart": "2026-05-25",
+    "role": "qa",
+    "plannedH": 40,
+    "loggedH": 31,
+    "absenceH": 0
+  },
+  {
+    "squad": "beta",
+    "weekStart": "2026-05-25",
+    "role": "pm",
+    "plannedH": 40,
+    "loggedH": 17.5,
+    "absenceH": 16
+  },
+  {
+    "squad": "beta",
+    "weekStart": "2026-05-25",
+    "role": "designer",
+    "plannedH": 40,
+    "loggedH": 30,
+    "absenceH": 0
+  },
+  {
+    "squad": "beta",
+    "weekStart": "2026-05-25",
+    "role": "engineer",
+    "plannedH": 160,
+    "loggedH": 121,
+    "absenceH": 0
+  },
+  {
+    "squad": "beta",
+    "weekStart": "2026-05-25",
+    "role": "qa",
+    "plannedH": 40,
+    "loggedH": 27,
+    "absenceH": 0
+  },
+  {
+    "squad": "beta",
+    "weekStart": "2026-05-25",
+    "role": "legal",
+    "plannedH": 40,
+    "loggedH": 16.5,
+    "absenceH": 16
+  },
+  {
+    "squad": "gamma",
+    "weekStart": "2026-05-25",
+    "role": "pm",
+    "plannedH": 40,
+    "loggedH": 31,
+    "absenceH": 0
+  },
+  {
+    "squad": "gamma",
+    "weekStart": "2026-05-25",
+    "role": "engineer",
+    "plannedH": 80,
+    "loggedH": 63.5,
+    "absenceH": 0
+  },
+  {
+    "squad": "gamma",
+    "weekStart": "2026-05-25",
+    "role": "qa",
+    "plannedH": 40,
+    "loggedH": 30,
+    "absenceH": 0
+  },
+  {
+    "squad": "alpha",
+    "weekStart": "2026-06-01",
+    "role": "pm",
+    "plannedH": 40,
+    "loggedH": 30.5,
+    "absenceH": 0
+  },
+  {
+    "squad": "alpha",
+    "weekStart": "2026-06-01",
+    "role": "designer",
+    "plannedH": 40,
+    "loggedH": 32,
+    "absenceH": 0
+  },
+  {
+    "squad": "alpha",
+    "weekStart": "2026-06-01",
+    "role": "engineer",
+    "plannedH": 120,
+    "loggedH": 80.5,
+    "absenceH": 16
+  },
+  {
+    "squad": "alpha",
+    "weekStart": "2026-06-01",
+    "role": "qa",
+    "plannedH": 40,
+    "loggedH": 30.5,
+    "absenceH": 0
+  },
+  {
+    "squad": "beta",
+    "weekStart": "2026-06-01",
+    "role": "pm",
+    "plannedH": 40,
+    "loggedH": 30.5,
+    "absenceH": 0
+  },
+  {
+    "squad": "beta",
+    "weekStart": "2026-06-01",
+    "role": "designer",
+    "plannedH": 40,
+    "loggedH": 27,
+    "absenceH": 0
+  },
+  {
+    "squad": "beta",
+    "weekStart": "2026-06-01",
+    "role": "engineer",
+    "plannedH": 160,
+    "loggedH": 110.5,
+    "absenceH": 0
+  },
+  {
+    "squad": "beta",
+    "weekStart": "2026-06-01",
+    "role": "qa",
+    "plannedH": 40,
+    "loggedH": 29,
+    "absenceH": 0
+  },
+  {
+    "squad": "beta",
+    "weekStart": "2026-06-01",
+    "role": "legal",
+    "plannedH": 40,
+    "loggedH": 28,
+    "absenceH": 0
+  },
+  {
+    "squad": "gamma",
+    "weekStart": "2026-06-01",
+    "role": "pm",
+    "plannedH": 40,
+    "loggedH": 33,
+    "absenceH": 0
+  },
+  {
+    "squad": "gamma",
+    "weekStart": "2026-06-01",
+    "role": "engineer",
+    "plannedH": 80,
+    "loggedH": 50.5,
+    "absenceH": 16
+  },
+  {
+    "squad": "gamma",
+    "weekStart": "2026-06-01",
+    "role": "qa",
+    "plannedH": 40,
+    "loggedH": 30.5,
+    "absenceH": 0
+  },
+  {
+    "squad": "alpha",
+    "weekStart": "2026-06-08",
+    "role": "pm",
+    "plannedH": 40,
+    "loggedH": 29.5,
+    "absenceH": 0
+  },
+  {
+    "squad": "alpha",
+    "weekStart": "2026-06-08",
+    "role": "designer",
+    "plannedH": 40,
+    "loggedH": 30,
+    "absenceH": 0
+  },
+  {
+    "squad": "alpha",
+    "weekStart": "2026-06-08",
+    "role": "engineer",
+    "plannedH": 120,
+    "loggedH": 88.5,
+    "absenceH": 0
+  },
+  {
+    "squad": "alpha",
+    "weekStart": "2026-06-08",
+    "role": "qa",
+    "plannedH": 40,
+    "loggedH": 31,
+    "absenceH": 0
+  },
+  {
+    "squad": "beta",
+    "weekStart": "2026-06-08",
+    "role": "pm",
+    "plannedH": 40,
+    "loggedH": 16.5,
+    "absenceH": 16
+  },
+  {
+    "squad": "beta",
+    "weekStart": "2026-06-08",
+    "role": "designer",
+    "plannedH": 40,
+    "loggedH": 0,
+    "absenceH": 40
+  },
+  {
+    "squad": "beta",
+    "weekStart": "2026-06-08",
+    "role": "engineer",
+    "plannedH": 160,
+    "loggedH": 119,
+    "absenceH": 8
+  },
+  {
+    "squad": "beta",
+    "weekStart": "2026-06-08",
+    "role": "qa",
+    "plannedH": 40,
+    "loggedH": 28.5,
+    "absenceH": 0
+  },
+  {
+    "squad": "beta",
+    "weekStart": "2026-06-08",
+    "role": "legal",
+    "plannedH": 40,
+    "loggedH": 17,
+    "absenceH": 16
+  },
+  {
+    "squad": "gamma",
+    "weekStart": "2026-06-08",
+    "role": "pm",
+    "plannedH": 40,
+    "loggedH": 29.5,
+    "absenceH": 0
+  },
+  {
+    "squad": "gamma",
+    "weekStart": "2026-06-08",
+    "role": "engineer",
+    "plannedH": 80,
+    "loggedH": 63,
+    "absenceH": 8
+  },
+  {
+    "squad": "gamma",
+    "weekStart": "2026-06-08",
+    "role": "qa",
+    "plannedH": 40,
+    "loggedH": 31,
+    "absenceH": 0
+  },
+  {
+    "squad": "alpha",
+    "weekStart": "2026-06-15",
+    "role": "pm",
+    "plannedH": 40,
+    "loggedH": 29.5,
+    "absenceH": 0
+  },
+  {
+    "squad": "alpha",
+    "weekStart": "2026-06-15",
+    "role": "designer",
+    "plannedH": 40,
+    "loggedH": 32.5,
+    "absenceH": 0
+  },
+  {
+    "squad": "alpha",
+    "weekStart": "2026-06-15",
+    "role": "engineer",
+    "plannedH": 120,
+    "loggedH": 58.5,
+    "absenceH": 40
+  },
+  {
+    "squad": "alpha",
+    "weekStart": "2026-06-15",
+    "role": "qa",
+    "plannedH": 40,
+    "loggedH": 26,
+    "absenceH": 8
+  },
+  {
+    "squad": "beta",
+    "weekStart": "2026-06-15",
+    "role": "pm",
+    "plannedH": 40,
+    "loggedH": 26.5,
+    "absenceH": 0
+  },
+  {
+    "squad": "beta",
+    "weekStart": "2026-06-15",
+    "role": "designer",
+    "plannedH": 40,
+    "loggedH": 27.5,
+    "absenceH": 0
+  },
+  {
+    "squad": "beta",
+    "weekStart": "2026-06-15",
+    "role": "engineer",
+    "plannedH": 160,
+    "loggedH": 117,
+    "absenceH": 0
+  },
+  {
+    "squad": "beta",
+    "weekStart": "2026-06-15",
+    "role": "qa",
+    "plannedH": 40,
+    "loggedH": 32,
+    "absenceH": 0
+  },
+  {
+    "squad": "beta",
+    "weekStart": "2026-06-15",
+    "role": "legal",
+    "plannedH": 40,
+    "loggedH": 18,
+    "absenceH": 16
+  },
+  {
+    "squad": "gamma",
+    "weekStart": "2026-06-15",
+    "role": "pm",
+    "plannedH": 40,
+    "loggedH": 33,
+    "absenceH": 0
+  },
+  {
+    "squad": "gamma",
+    "weekStart": "2026-06-15",
+    "role": "engineer",
+    "plannedH": 80,
+    "loggedH": 49.5,
+    "absenceH": 16
+  },
+  {
+    "squad": "gamma",
+    "weekStart": "2026-06-15",
+    "role": "qa",
+    "plannedH": 40,
+    "loggedH": 31.5,
+    "absenceH": 0
+  },
+  {
+    "squad": "alpha",
+    "weekStart": "2026-06-22",
+    "role": "pm",
+    "plannedH": 40,
+    "loggedH": 23.5,
+    "absenceH": 8
+  },
+  {
+    "squad": "alpha",
+    "weekStart": "2026-06-22",
+    "role": "designer",
+    "plannedH": 40,
+    "loggedH": 31.5,
+    "absenceH": 0
+  },
+  {
+    "squad": "alpha",
+    "weekStart": "2026-06-22",
+    "role": "engineer",
+    "plannedH": 120,
+    "loggedH": 86.5,
+    "absenceH": 8
+  },
+  {
+    "squad": "alpha",
+    "weekStart": "2026-06-22",
+    "role": "qa",
+    "plannedH": 40,
+    "loggedH": 31.5,
+    "absenceH": 0
+  },
+  {
+    "squad": "beta",
+    "weekStart": "2026-06-22",
+    "role": "pm",
+    "plannedH": 40,
+    "loggedH": 30.5,
+    "absenceH": 0
+  },
+  {
+    "squad": "beta",
+    "weekStart": "2026-06-22",
+    "role": "designer",
+    "plannedH": 40,
+    "loggedH": 22,
+    "absenceH": 8
+  },
+  {
+    "squad": "beta",
+    "weekStart": "2026-06-22",
+    "role": "engineer",
+    "plannedH": 160,
+    "loggedH": 116,
+    "absenceH": 0
+  },
+  {
+    "squad": "beta",
+    "weekStart": "2026-06-22",
+    "role": "qa",
+    "plannedH": 40,
+    "loggedH": 28.5,
+    "absenceH": 0
+  },
+  {
+    "squad": "beta",
+    "weekStart": "2026-06-22",
+    "role": "legal",
+    "plannedH": 40,
+    "loggedH": 28.5,
+    "absenceH": 0
+  },
+  {
+    "squad": "gamma",
+    "weekStart": "2026-06-22",
+    "role": "pm",
+    "plannedH": 40,
+    "loggedH": 32.5,
+    "absenceH": 0
+  },
+  {
+    "squad": "gamma",
+    "weekStart": "2026-06-22",
+    "role": "engineer",
+    "plannedH": 80,
+    "loggedH": 66.5,
+    "absenceH": 0
+  },
+  {
+    "squad": "gamma",
+    "weekStart": "2026-06-22",
+    "role": "qa",
+    "plannedH": 40,
+    "loggedH": 34,
+    "absenceH": 0
+  },
+  {
+    "squad": "alpha",
+    "weekStart": "2026-06-29",
+    "role": "pm",
+    "plannedH": 40,
+    "loggedH": 29,
+    "absenceH": 0
+  },
+  {
+    "squad": "alpha",
+    "weekStart": "2026-06-29",
+    "role": "designer",
+    "plannedH": 40,
+    "loggedH": 18,
+    "absenceH": 16
+  },
+  {
+    "squad": "alpha",
+    "weekStart": "2026-06-29",
+    "role": "engineer",
+    "plannedH": 120,
+    "loggedH": 87.5,
+    "absenceH": 0
+  },
+  {
+    "squad": "alpha",
+    "weekStart": "2026-06-29",
+    "role": "qa",
+    "plannedH": 40,
+    "loggedH": 27.5,
+    "absenceH": 0
+  },
+  {
+    "squad": "beta",
+    "weekStart": "2026-06-29",
+    "role": "pm",
+    "plannedH": 40,
+    "loggedH": 16.5,
+    "absenceH": 16
+  },
+  {
+    "squad": "beta",
+    "weekStart": "2026-06-29",
+    "role": "designer",
+    "plannedH": 40,
+    "loggedH": 28,
+    "absenceH": 0
+  },
+  {
+    "squad": "beta",
+    "weekStart": "2026-06-29",
+    "role": "engineer",
+    "plannedH": 160,
+    "loggedH": 117.5,
+    "absenceH": 0
+  },
+  {
+    "squad": "beta",
+    "weekStart": "2026-06-29",
+    "role": "qa",
+    "plannedH": 40,
+    "loggedH": 29,
+    "absenceH": 0
+  },
+  {
+    "squad": "beta",
+    "weekStart": "2026-06-29",
+    "role": "legal",
+    "plannedH": 40,
+    "loggedH": 28,
+    "absenceH": 0
+  },
+  {
+    "squad": "gamma",
+    "weekStart": "2026-06-29",
+    "role": "pm",
+    "plannedH": 40,
+    "loggedH": 32,
+    "absenceH": 0
+  },
+  {
+    "squad": "gamma",
+    "weekStart": "2026-06-29",
+    "role": "engineer",
+    "plannedH": 80,
+    "loggedH": 66,
+    "absenceH": 0
+  },
+  {
+    "squad": "gamma",
+    "weekStart": "2026-06-29",
+    "role": "qa",
+    "plannedH": 40,
+    "loggedH": 30.5,
+    "absenceH": 0
+  },
+  {
+    "squad": "alpha",
+    "weekStart": "2026-07-06",
+    "role": "pm",
+    "plannedH": 40,
+    "loggedH": 32,
+    "absenceH": 0
+  },
+  {
+    "squad": "alpha",
+    "weekStart": "2026-07-06",
+    "role": "designer",
+    "plannedH": 40,
+    "loggedH": 32,
+    "absenceH": 0
+  },
+  {
+    "squad": "alpha",
+    "weekStart": "2026-07-06",
+    "role": "engineer",
+    "plannedH": 120,
+    "loggedH": 94,
+    "absenceH": 0
+  },
+  {
+    "squad": "alpha",
+    "weekStart": "2026-07-06",
+    "role": "qa",
+    "plannedH": 40,
+    "loggedH": 30,
+    "absenceH": 0
+  },
+  {
+    "squad": "beta",
+    "weekStart": "2026-07-06",
+    "role": "pm",
+    "plannedH": 40,
+    "loggedH": 18.5,
+    "absenceH": 16
+  },
+  {
+    "squad": "beta",
+    "weekStart": "2026-07-06",
+    "role": "designer",
+    "plannedH": 40,
+    "loggedH": 31.5,
+    "absenceH": 0
+  },
+  {
+    "squad": "beta",
+    "weekStart": "2026-07-06",
+    "role": "engineer",
+    "plannedH": 160,
+    "loggedH": 111.5,
+    "absenceH": 0
+  },
+  {
+    "squad": "beta",
+    "weekStart": "2026-07-06",
+    "role": "qa",
+    "plannedH": 40,
+    "loggedH": 29.5,
+    "absenceH": 0
+  },
+  {
+    "squad": "beta",
+    "weekStart": "2026-07-06",
+    "role": "legal",
+    "plannedH": 40,
+    "loggedH": 17,
+    "absenceH": 16
+  },
+  {
+    "squad": "gamma",
+    "weekStart": "2026-07-06",
+    "role": "pm",
+    "plannedH": 40,
+    "loggedH": 33.5,
+    "absenceH": 0
+  },
+  {
+    "squad": "gamma",
+    "weekStart": "2026-07-06",
+    "role": "engineer",
+    "plannedH": 80,
+    "loggedH": 67.5,
+    "absenceH": 0
+  },
+  {
+    "squad": "gamma",
+    "weekStart": "2026-07-06",
+    "role": "qa",
+    "plannedH": 40,
+    "loggedH": 25.5,
+    "absenceH": 8
+  },
+  {
+    "squad": "alpha",
+    "weekStart": "2026-07-13",
+    "role": "pm",
+    "plannedH": 40,
+    "loggedH": 36,
+    "absenceH": 0
+  },
+  {
+    "squad": "alpha",
+    "weekStart": "2026-07-13",
+    "role": "designer",
+    "plannedH": 40,
+    "loggedH": 29,
+    "absenceH": 0
+  },
+  {
+    "squad": "alpha",
+    "weekStart": "2026-07-13",
+    "role": "engineer",
+    "plannedH": 120,
+    "loggedH": 90.5,
+    "absenceH": 0
+  },
+  {
+    "squad": "alpha",
+    "weekStart": "2026-07-13",
+    "role": "qa",
+    "plannedH": 40,
+    "loggedH": 19,
+    "absenceH": 16
+  },
+  {
+    "squad": "beta",
+    "weekStart": "2026-07-13",
+    "role": "pm",
+    "plannedH": 40,
+    "loggedH": 29.5,
+    "absenceH": 0
+  },
+  {
+    "squad": "beta",
+    "weekStart": "2026-07-13",
+    "role": "designer",
+    "plannedH": 40,
+    "loggedH": 28,
+    "absenceH": 0
+  },
+  {
+    "squad": "beta",
+    "weekStart": "2026-07-13",
+    "role": "engineer",
+    "plannedH": 160,
+    "loggedH": 101.5,
+    "absenceH": 16
+  },
+  {
+    "squad": "beta",
+    "weekStart": "2026-07-13",
+    "role": "qa",
+    "plannedH": 40,
+    "loggedH": 30,
+    "absenceH": 0
+  },
+  {
+    "squad": "beta",
+    "weekStart": "2026-07-13",
+    "role": "legal",
+    "plannedH": 40,
+    "loggedH": 25.5,
+    "absenceH": 0
+  },
+  {
+    "squad": "gamma",
+    "weekStart": "2026-07-13",
+    "role": "pm",
+    "plannedH": 40,
+    "loggedH": 25.5,
+    "absenceH": 8
+  },
+  {
+    "squad": "gamma",
+    "weekStart": "2026-07-13",
+    "role": "engineer",
+    "plannedH": 80,
+    "loggedH": 63.5,
+    "absenceH": 0
+  },
+  {
+    "squad": "gamma",
+    "weekStart": "2026-07-13",
+    "role": "qa",
+    "plannedH": 40,
+    "loggedH": 29.5,
+    "absenceH": 0
+  },
+  {
+    "squad": "alpha",
+    "weekStart": "2026-07-20",
+    "role": "pm",
+    "plannedH": 40,
+    "loggedH": 30.5,
+    "absenceH": 0
+  },
+  {
+    "squad": "alpha",
+    "weekStart": "2026-07-20",
+    "role": "designer",
+    "plannedH": 40,
+    "loggedH": 33,
+    "absenceH": 0
+  },
+  {
+    "squad": "alpha",
+    "weekStart": "2026-07-20",
+    "role": "engineer",
+    "plannedH": 120,
+    "loggedH": 93.5,
+    "absenceH": 0
+  },
+  {
+    "squad": "alpha",
+    "weekStart": "2026-07-20",
+    "role": "qa",
+    "plannedH": 40,
+    "loggedH": 31,
+    "absenceH": 0
+  },
+  {
+    "squad": "beta",
+    "weekStart": "2026-07-20",
+    "role": "pm",
+    "plannedH": 40,
+    "loggedH": 17.5,
+    "absenceH": 16
+  },
+  {
+    "squad": "beta",
+    "weekStart": "2026-07-20",
+    "role": "designer",
+    "plannedH": 40,
+    "loggedH": 27.5,
+    "absenceH": 0
+  },
+  {
+    "squad": "beta",
+    "weekStart": "2026-07-20",
+    "role": "engineer",
+    "plannedH": 160,
+    "loggedH": 119,
+    "absenceH": 8
+  },
+  {
+    "squad": "beta",
+    "weekStart": "2026-07-20",
+    "role": "qa",
+    "plannedH": 40,
+    "loggedH": 28,
+    "absenceH": 0
+  },
+  {
+    "squad": "beta",
+    "weekStart": "2026-07-20",
+    "role": "legal",
+    "plannedH": 40,
+    "loggedH": 30,
+    "absenceH": 0
+  },
+  {
+    "squad": "gamma",
+    "weekStart": "2026-07-20",
+    "role": "pm",
+    "plannedH": 40,
+    "loggedH": 0,
+    "absenceH": 40
+  },
+  {
+    "squad": "gamma",
+    "weekStart": "2026-07-20",
+    "role": "engineer",
+    "plannedH": 80,
+    "loggedH": 55.5,
+    "absenceH": 16
+  },
+  {
+    "squad": "gamma",
+    "weekStart": "2026-07-20",
+    "role": "qa",
+    "plannedH": 40,
+    "loggedH": 32.5,
+    "absenceH": 0
+  },
+  {
+    "squad": "alpha",
+    "weekStart": "2026-07-27",
+    "role": "pm",
+    "plannedH": 40,
+    "loggedH": 30,
+    "absenceH": 0
+  },
+  {
+    "squad": "alpha",
+    "weekStart": "2026-07-27",
+    "role": "designer",
+    "plannedH": 40,
+    "loggedH": 31.5,
+    "absenceH": 0
+  },
+  {
+    "squad": "alpha",
+    "weekStart": "2026-07-27",
+    "role": "engineer",
+    "plannedH": 120,
+    "loggedH": 89.5,
+    "absenceH": 0
+  },
+  {
+    "squad": "alpha",
+    "weekStart": "2026-07-27",
+    "role": "qa",
+    "plannedH": 40,
+    "loggedH": 29.5,
+    "absenceH": 0
+  },
+  {
+    "squad": "beta",
+    "weekStart": "2026-07-27",
+    "role": "pm",
+    "plannedH": 40,
+    "loggedH": 25,
+    "absenceH": 0
+  },
+  {
+    "squad": "beta",
+    "weekStart": "2026-07-27",
+    "role": "designer",
+    "plannedH": 40,
+    "loggedH": 23.5,
+    "absenceH": 8
+  },
+  {
+    "squad": "beta",
+    "weekStart": "2026-07-27",
+    "role": "engineer",
+    "plannedH": 160,
+    "loggedH": 103.5,
+    "absenceH": 16
+  },
+  {
+    "squad": "beta",
+    "weekStart": "2026-07-27",
+    "role": "qa",
+    "plannedH": 40,
+    "loggedH": 30.5,
+    "absenceH": 0
+  },
+  {
+    "squad": "beta",
+    "weekStart": "2026-07-27",
+    "role": "legal",
+    "plannedH": 40,
+    "loggedH": 30,
+    "absenceH": 0
+  },
+  {
+    "squad": "gamma",
+    "weekStart": "2026-07-27",
+    "role": "pm",
+    "plannedH": 40,
+    "loggedH": 30.5,
+    "absenceH": 0
+  },
+  {
+    "squad": "gamma",
+    "weekStart": "2026-07-27",
+    "role": "engineer",
+    "plannedH": 80,
+    "loggedH": 67.5,
+    "absenceH": 0
+  },
+  {
+    "squad": "gamma",
+    "weekStart": "2026-07-27",
+    "role": "qa",
+    "plannedH": 40,
+    "loggedH": 31.5,
+    "absenceH": 0
+  },
+  {
+    "squad": "alpha",
+    "weekStart": "2026-08-03",
+    "role": "pm",
+    "plannedH": 40,
+    "loggedH": 29,
+    "absenceH": 0
+  },
+  {
+    "squad": "alpha",
+    "weekStart": "2026-08-03",
+    "role": "designer",
+    "plannedH": 40,
+    "loggedH": 31.5,
+    "absenceH": 0
+  },
+  {
+    "squad": "alpha",
+    "weekStart": "2026-08-03",
+    "role": "engineer",
+    "plannedH": 120,
+    "loggedH": 78.5,
+    "absenceH": 24
+  },
+  {
+    "squad": "alpha",
+    "weekStart": "2026-08-03",
+    "role": "qa",
+    "plannedH": 40,
+    "loggedH": 22.5,
+    "absenceH": 8
+  },
+  {
+    "squad": "beta",
+    "weekStart": "2026-08-03",
+    "role": "pm",
+    "plannedH": 40,
+    "loggedH": 27.5,
+    "absenceH": 0
+  },
+  {
+    "squad": "beta",
+    "weekStart": "2026-08-03",
+    "role": "designer",
+    "plannedH": 40,
+    "loggedH": 28,
+    "absenceH": 0
+  },
+  {
+    "squad": "beta",
+    "weekStart": "2026-08-03",
+    "role": "engineer",
+    "plannedH": 160,
+    "loggedH": 108,
+    "absenceH": 8
+  },
+  {
+    "squad": "beta",
+    "weekStart": "2026-08-03",
+    "role": "qa",
+    "plannedH": 40,
+    "loggedH": 0,
+    "absenceH": 40
+  },
+  {
+    "squad": "beta",
+    "weekStart": "2026-08-03",
+    "role": "legal",
+    "plannedH": 40,
+    "loggedH": 29.5,
+    "absenceH": 0
+  },
+  {
+    "squad": "gamma",
+    "weekStart": "2026-08-03",
+    "role": "pm",
+    "plannedH": 40,
+    "loggedH": 33.5,
+    "absenceH": 0
+  },
+  {
+    "squad": "gamma",
+    "weekStart": "2026-08-03",
+    "role": "engineer",
+    "plannedH": 80,
+    "loggedH": 51.5,
+    "absenceH": 16
+  },
+  {
+    "squad": "gamma",
+    "weekStart": "2026-08-03",
+    "role": "qa",
+    "plannedH": 40,
+    "loggedH": 36.5,
+    "absenceH": 0
+  },
+  {
+    "squad": "alpha",
+    "weekStart": "2026-08-10",
+    "role": "pm",
+    "plannedH": 40,
+    "loggedH": 17.5,
+    "absenceH": 16
+  },
+  {
+    "squad": "alpha",
+    "weekStart": "2026-08-10",
+    "role": "designer",
+    "plannedH": 40,
+    "loggedH": 32,
+    "absenceH": 0
+  },
+  {
+    "squad": "alpha",
+    "weekStart": "2026-08-10",
+    "role": "engineer",
+    "plannedH": 120,
+    "loggedH": 94.5,
+    "absenceH": 0
+  },
+  {
+    "squad": "alpha",
+    "weekStart": "2026-08-10",
+    "role": "qa",
+    "plannedH": 40,
+    "loggedH": 19.5,
+    "absenceH": 16
+  },
+  {
+    "squad": "beta",
+    "weekStart": "2026-08-10",
+    "role": "pm",
+    "plannedH": 40,
+    "loggedH": 23,
+    "absenceH": 8
+  },
+  {
+    "squad": "beta",
+    "weekStart": "2026-08-10",
+    "role": "designer",
+    "plannedH": 40,
+    "loggedH": 24.5,
+    "absenceH": 8
+  },
+  {
+    "squad": "beta",
+    "weekStart": "2026-08-10",
+    "role": "engineer",
+    "plannedH": 160,
+    "loggedH": 113,
+    "absenceH": 8
+  },
+  {
+    "squad": "beta",
+    "weekStart": "2026-08-10",
+    "role": "qa",
+    "plannedH": 40,
+    "loggedH": 30.5,
+    "absenceH": 0
+  },
+  {
+    "squad": "beta",
+    "weekStart": "2026-08-10",
+    "role": "legal",
+    "plannedH": 40,
+    "loggedH": 29,
+    "absenceH": 0
+  },
+  {
+    "squad": "gamma",
+    "weekStart": "2026-08-10",
+    "role": "pm",
+    "plannedH": 40,
+    "loggedH": 20,
+    "absenceH": 16
+  },
+  {
+    "squad": "gamma",
+    "weekStart": "2026-08-10",
+    "role": "engineer",
+    "plannedH": 80,
+    "loggedH": 62,
+    "absenceH": 0
+  },
+  {
+    "squad": "gamma",
+    "weekStart": "2026-08-10",
+    "role": "qa",
+    "plannedH": 40,
+    "loggedH": 31.5,
+    "absenceH": 0
+  },
+  {
+    "squad": "alpha",
+    "weekStart": "2026-08-17",
+    "role": "pm",
+    "plannedH": 40,
+    "loggedH": 30.5,
+    "absenceH": 0
+  },
+  {
+    "squad": "alpha",
+    "weekStart": "2026-08-17",
+    "role": "designer",
+    "plannedH": 40,
+    "loggedH": 31.5,
+    "absenceH": 0
+  },
+  {
+    "squad": "alpha",
+    "weekStart": "2026-08-17",
+    "role": "engineer",
+    "plannedH": 120,
+    "loggedH": 79,
+    "absenceH": 8
+  },
+  {
+    "squad": "alpha",
+    "weekStart": "2026-08-17",
+    "role": "qa",
+    "plannedH": 40,
+    "loggedH": 32.5,
+    "absenceH": 0
+  },
+  {
+    "squad": "beta",
+    "weekStart": "2026-08-17",
+    "role": "pm",
+    "plannedH": 40,
+    "loggedH": 28.5,
+    "absenceH": 0
+  },
+  {
+    "squad": "beta",
+    "weekStart": "2026-08-17",
+    "role": "designer",
+    "plannedH": 40,
+    "loggedH": 29.5,
+    "absenceH": 0
+  },
+  {
+    "squad": "beta",
+    "weekStart": "2026-08-17",
+    "role": "engineer",
+    "plannedH": 160,
+    "loggedH": 103.5,
+    "absenceH": 0
+  },
+  {
+    "squad": "beta",
+    "weekStart": "2026-08-17",
+    "role": "qa",
+    "plannedH": 40,
+    "loggedH": 30.5,
+    "absenceH": 0
+  },
+  {
+    "squad": "beta",
+    "weekStart": "2026-08-17",
+    "role": "legal",
+    "plannedH": 40,
+    "loggedH": 29,
+    "absenceH": 0
+  },
+  {
+    "squad": "gamma",
+    "weekStart": "2026-08-17",
+    "role": "pm",
+    "plannedH": 40,
+    "loggedH": 31.5,
+    "absenceH": 0
+  },
+  {
+    "squad": "gamma",
+    "weekStart": "2026-08-17",
+    "role": "engineer",
+    "plannedH": 80,
+    "loggedH": 65,
+    "absenceH": 0
+  },
+  {
+    "squad": "gamma",
+    "weekStart": "2026-08-17",
+    "role": "qa",
+    "plannedH": 40,
+    "loggedH": 34,
+    "absenceH": 0
+  },
+  {
+    "squad": "alpha",
+    "weekStart": "2026-08-24",
+    "role": "pm",
+    "plannedH": 40,
+    "loggedH": 30.5,
+    "absenceH": 0
+  },
+  {
+    "squad": "alpha",
+    "weekStart": "2026-08-24",
+    "role": "designer",
+    "plannedH": 40,
+    "loggedH": 29.5,
+    "absenceH": 0
+  },
+  {
+    "squad": "alpha",
+    "weekStart": "2026-08-24",
+    "role": "engineer",
+    "plannedH": 120,
+    "loggedH": 71,
+    "absenceH": 24
+  },
+  {
+    "squad": "alpha",
+    "weekStart": "2026-08-24",
+    "role": "qa",
+    "plannedH": 40,
+    "loggedH": 17,
+    "absenceH": 16
+  },
+  {
+    "squad": "beta",
+    "weekStart": "2026-08-24",
+    "role": "pm",
+    "plannedH": 40,
+    "loggedH": 27,
+    "absenceH": 0
+  },
+  {
+    "squad": "beta",
+    "weekStart": "2026-08-24",
+    "role": "designer",
+    "plannedH": 40,
+    "loggedH": 33.5,
+    "absenceH": 0
+  },
+  {
+    "squad": "beta",
+    "weekStart": "2026-08-24",
+    "role": "engineer",
+    "plannedH": 160,
+    "loggedH": 110,
+    "absenceH": 8
+  },
+  {
+    "squad": "beta",
+    "weekStart": "2026-08-24",
+    "role": "qa",
+    "plannedH": 40,
+    "loggedH": 29,
+    "absenceH": 0
+  },
+  {
+    "squad": "beta",
+    "weekStart": "2026-08-24",
+    "role": "legal",
+    "plannedH": 40,
+    "loggedH": 16.5,
+    "absenceH": 16
+  },
+  {
+    "squad": "gamma",
+    "weekStart": "2026-08-24",
+    "role": "pm",
+    "plannedH": 40,
+    "loggedH": 33,
+    "absenceH": 0
+  },
+  {
+    "squad": "gamma",
+    "weekStart": "2026-08-24",
+    "role": "engineer",
+    "plannedH": 80,
+    "loggedH": 63,
+    "absenceH": 0
+  },
+  {
+    "squad": "gamma",
+    "weekStart": "2026-08-24",
+    "role": "qa",
+    "plannedH": 40,
+    "loggedH": 30.5,
+    "absenceH": 0
+  },
+  {
+    "squad": "alpha",
+    "weekStart": "2026-08-31",
+    "role": "pm",
+    "plannedH": 40,
+    "loggedH": 31,
+    "absenceH": 0
+  },
+  {
+    "squad": "alpha",
+    "weekStart": "2026-08-31",
+    "role": "designer",
+    "plannedH": 40,
+    "loggedH": 32.5,
+    "absenceH": 0
+  },
+  {
+    "squad": "alpha",
+    "weekStart": "2026-08-31",
+    "role": "engineer",
+    "plannedH": 120,
+    "loggedH": 95.5,
+    "absenceH": 0
+  },
+  {
+    "squad": "alpha",
+    "weekStart": "2026-08-31",
+    "role": "qa",
+    "plannedH": 40,
+    "loggedH": 18,
+    "absenceH": 16
+  },
+  {
+    "squad": "beta",
+    "weekStart": "2026-08-31",
+    "role": "pm",
+    "plannedH": 40,
+    "loggedH": 30,
+    "absenceH": 0
+  },
+  {
+    "squad": "beta",
+    "weekStart": "2026-08-31",
+    "role": "designer",
+    "plannedH": 40,
+    "loggedH": 30.5,
+    "absenceH": 0
+  },
+  {
+    "squad": "beta",
+    "weekStart": "2026-08-31",
+    "role": "engineer",
+    "plannedH": 160,
+    "loggedH": 74.5,
+    "absenceH": 56
+  },
+  {
+    "squad": "beta",
+    "weekStart": "2026-08-31",
+    "role": "qa",
+    "plannedH": 40,
+    "loggedH": 24,
+    "absenceH": 8
+  },
+  {
+    "squad": "beta",
+    "weekStart": "2026-08-31",
+    "role": "legal",
+    "plannedH": 40,
+    "loggedH": 28,
+    "absenceH": 0
+  },
+  {
+    "squad": "gamma",
+    "weekStart": "2026-08-31",
+    "role": "pm",
+    "plannedH": 40,
+    "loggedH": 28.5,
+    "absenceH": 0
+  },
+  {
+    "squad": "gamma",
+    "weekStart": "2026-08-31",
+    "role": "engineer",
+    "plannedH": 80,
+    "loggedH": 66,
+    "absenceH": 0
+  },
+  {
+    "squad": "gamma",
+    "weekStart": "2026-08-31",
+    "role": "qa",
+    "plannedH": 40,
+    "loggedH": 19,
+    "absenceH": 16
+  },
+  {
+    "squad": "alpha",
+    "weekStart": "2026-09-07",
+    "role": "pm",
+    "plannedH": 40,
+    "loggedH": 29,
+    "absenceH": 0
+  },
+  {
+    "squad": "alpha",
+    "weekStart": "2026-09-07",
+    "role": "designer",
+    "plannedH": 40,
+    "loggedH": 29.5,
+    "absenceH": 0
+  },
+  {
+    "squad": "alpha",
+    "weekStart": "2026-09-07",
+    "role": "engineer",
+    "plannedH": 120,
+    "loggedH": 88.5,
+    "absenceH": 0
+  },
+  {
+    "squad": "alpha",
+    "weekStart": "2026-09-07",
+    "role": "qa",
+    "plannedH": 40,
+    "loggedH": 31,
+    "absenceH": 0
+  },
+  {
+    "squad": "beta",
+    "weekStart": "2026-09-07",
+    "role": "pm",
+    "plannedH": 40,
+    "loggedH": 29,
+    "absenceH": 0
+  },
+  {
+    "squad": "beta",
+    "weekStart": "2026-09-07",
+    "role": "designer",
+    "plannedH": 40,
+    "loggedH": 30.5,
+    "absenceH": 0
+  },
+  {
+    "squad": "beta",
+    "weekStart": "2026-09-07",
+    "role": "engineer",
+    "plannedH": 160,
+    "loggedH": 117,
+    "absenceH": 0
+  },
+  {
+    "squad": "beta",
+    "weekStart": "2026-09-07",
+    "role": "qa",
+    "plannedH": 40,
+    "loggedH": 28,
+    "absenceH": 0
+  },
+  {
+    "squad": "beta",
+    "weekStart": "2026-09-07",
+    "role": "legal",
+    "plannedH": 40,
+    "loggedH": 17.5,
+    "absenceH": 16
+  },
+  {
+    "squad": "gamma",
+    "weekStart": "2026-09-07",
+    "role": "pm",
+    "plannedH": 40,
+    "loggedH": 30,
+    "absenceH": 0
+  },
+  {
+    "squad": "gamma",
+    "weekStart": "2026-09-07",
+    "role": "engineer",
+    "plannedH": 80,
+    "loggedH": 57,
+    "absenceH": 0
+  },
+  {
+    "squad": "gamma",
+    "weekStart": "2026-09-07",
+    "role": "qa",
+    "plannedH": 40,
+    "loggedH": 32.5,
+    "absenceH": 0
+  },
+  {
+    "squad": "alpha",
+    "weekStart": "2026-09-14",
+    "role": "pm",
+    "plannedH": 40,
+    "loggedH": 23.5,
+    "absenceH": 8
+  },
+  {
+    "squad": "alpha",
+    "weekStart": "2026-09-14",
+    "role": "designer",
+    "plannedH": 40,
+    "loggedH": 31.5,
+    "absenceH": 0
+  },
+  {
+    "squad": "alpha",
+    "weekStart": "2026-09-14",
+    "role": "engineer",
+    "plannedH": 120,
+    "loggedH": 86,
+    "absenceH": 8
+  },
+  {
+    "squad": "alpha",
+    "weekStart": "2026-09-14",
+    "role": "qa",
+    "plannedH": 40,
+    "loggedH": 31,
+    "absenceH": 0
+  },
+  {
+    "squad": "beta",
+    "weekStart": "2026-09-14",
+    "role": "pm",
+    "plannedH": 40,
+    "loggedH": 26,
+    "absenceH": 0
+  },
+  {
+    "squad": "beta",
+    "weekStart": "2026-09-14",
+    "role": "designer",
+    "plannedH": 40,
+    "loggedH": 30,
+    "absenceH": 0
+  },
+  {
+    "squad": "beta",
+    "weekStart": "2026-09-14",
+    "role": "engineer",
+    "plannedH": 160,
+    "loggedH": 97.5,
+    "absenceH": 24
+  },
+  {
+    "squad": "beta",
+    "weekStart": "2026-09-14",
+    "role": "qa",
+    "plannedH": 40,
+    "loggedH": 28.5,
+    "absenceH": 0
+  },
+  {
+    "squad": "beta",
+    "weekStart": "2026-09-14",
+    "role": "legal",
+    "plannedH": 40,
+    "loggedH": 28.5,
+    "absenceH": 0
+  },
+  {
+    "squad": "gamma",
+    "weekStart": "2026-09-14",
+    "role": "pm",
+    "plannedH": 40,
+    "loggedH": 33,
+    "absenceH": 0
+  },
+  {
+    "squad": "gamma",
+    "weekStart": "2026-09-14",
+    "role": "engineer",
+    "plannedH": 80,
+    "loggedH": 60.5,
+    "absenceH": 0
+  },
+  {
+    "squad": "gamma",
+    "weekStart": "2026-09-14",
+    "role": "qa",
+    "plannedH": 40,
+    "loggedH": 32,
+    "absenceH": 0
+  },
+  {
+    "squad": "alpha",
+    "weekStart": "2026-09-21",
+    "role": "pm",
+    "plannedH": 40,
+    "loggedH": 30,
+    "absenceH": 0
+  },
+  {
+    "squad": "alpha",
+    "weekStart": "2026-09-21",
+    "role": "designer",
+    "plannedH": 40,
+    "loggedH": 18,
+    "absenceH": 16
+  },
+  {
+    "squad": "alpha",
+    "weekStart": "2026-09-21",
+    "role": "engineer",
+    "plannedH": 120,
+    "loggedH": 72.5,
+    "absenceH": 24
+  },
+  {
+    "squad": "alpha",
+    "weekStart": "2026-09-21",
+    "role": "qa",
+    "plannedH": 40,
+    "loggedH": 27.5,
+    "absenceH": 0
+  },
+  {
+    "squad": "beta",
+    "weekStart": "2026-09-21",
+    "role": "pm",
+    "plannedH": 40,
+    "loggedH": 29.5,
+    "absenceH": 0
+  },
+  {
+    "squad": "beta",
+    "weekStart": "2026-09-21",
+    "role": "designer",
+    "plannedH": 40,
+    "loggedH": 17,
+    "absenceH": 16
+  },
+  {
+    "squad": "beta",
+    "weekStart": "2026-09-21",
+    "role": "engineer",
+    "plannedH": 160,
+    "loggedH": 79.5,
+    "absenceH": 56
+  },
+  {
+    "squad": "beta",
+    "weekStart": "2026-09-21",
+    "role": "qa",
+    "plannedH": 40,
+    "loggedH": 28,
+    "absenceH": 0
+  },
+  {
+    "squad": "beta",
+    "weekStart": "2026-09-21",
+    "role": "legal",
+    "plannedH": 40,
+    "loggedH": 30,
+    "absenceH": 0
+  },
+  {
+    "squad": "gamma",
+    "weekStart": "2026-09-21",
+    "role": "pm",
+    "plannedH": 40,
+    "loggedH": 26.5,
+    "absenceH": 8
+  },
+  {
+    "squad": "gamma",
+    "weekStart": "2026-09-21",
+    "role": "engineer",
+    "plannedH": 80,
+    "loggedH": 67.5,
+    "absenceH": 0
+  },
+  {
+    "squad": "gamma",
+    "weekStart": "2026-09-21",
+    "role": "qa",
+    "plannedH": 40,
+    "loggedH": 33.5,
+    "absenceH": 0
+  },
+  {
+    "squad": "alpha",
+    "weekStart": "2026-09-28",
+    "role": "pm",
+    "plannedH": 40,
+    "loggedH": 32,
+    "absenceH": 0
+  },
+  {
+    "squad": "alpha",
+    "weekStart": "2026-09-28",
+    "role": "designer",
+    "plannedH": 40,
+    "loggedH": 28.5,
+    "absenceH": 0
+  },
+  {
+    "squad": "alpha",
+    "weekStart": "2026-09-28",
+    "role": "engineer",
+    "plannedH": 120,
+    "loggedH": 91,
+    "absenceH": 8
+  },
+  {
+    "squad": "alpha",
+    "weekStart": "2026-09-28",
+    "role": "qa",
+    "plannedH": 40,
+    "loggedH": 29,
+    "absenceH": 0
+  },
+  {
+    "squad": "beta",
+    "weekStart": "2026-09-28",
+    "role": "pm",
+    "plannedH": 40,
+    "loggedH": 17,
+    "absenceH": 16
+  },
+  {
+    "squad": "beta",
+    "weekStart": "2026-09-28",
+    "role": "designer",
+    "plannedH": 40,
+    "loggedH": 17,
+    "absenceH": 16
+  },
+  {
+    "squad": "beta",
+    "weekStart": "2026-09-28",
+    "role": "engineer",
+    "plannedH": 160,
+    "loggedH": 105,
+    "absenceH": 16
+  },
+  {
+    "squad": "beta",
+    "weekStart": "2026-09-28",
+    "role": "qa",
+    "plannedH": 40,
+    "loggedH": 27.5,
+    "absenceH": 0
+  },
+  {
+    "squad": "beta",
+    "weekStart": "2026-09-28",
+    "role": "legal",
+    "plannedH": 40,
+    "loggedH": 23.5,
+    "absenceH": 8
+  },
+  {
+    "squad": "gamma",
+    "weekStart": "2026-09-28",
+    "role": "pm",
+    "plannedH": 40,
+    "loggedH": 31.5,
+    "absenceH": 0
+  },
+  {
+    "squad": "gamma",
+    "weekStart": "2026-09-28",
+    "role": "engineer",
+    "plannedH": 80,
+    "loggedH": 69.5,
+    "absenceH": 0
+  },
+  {
+    "squad": "gamma",
+    "weekStart": "2026-09-28",
+    "role": "qa",
+    "plannedH": 40,
+    "loggedH": 32.5,
+    "absenceH": 0
+  },
+  {
+    "squad": "alpha",
+    "weekStart": "2026-10-05",
+    "role": "pm",
+    "plannedH": 40,
+    "loggedH": 31,
+    "absenceH": 0
+  },
+  {
+    "squad": "alpha",
+    "weekStart": "2026-10-05",
+    "role": "designer",
+    "plannedH": 40,
+    "loggedH": 30,
+    "absenceH": 0
+  },
+  {
+    "squad": "alpha",
+    "weekStart": "2026-10-05",
+    "role": "engineer",
+    "plannedH": 120,
+    "loggedH": 92.5,
+    "absenceH": 0
+  },
+  {
+    "squad": "alpha",
+    "weekStart": "2026-10-05",
+    "role": "qa",
+    "plannedH": 40,
+    "loggedH": 28.5,
+    "absenceH": 0
+  },
+  {
+    "squad": "beta",
+    "weekStart": "2026-10-05",
+    "role": "pm",
+    "plannedH": 40,
+    "loggedH": 30,
+    "absenceH": 0
+  },
+  {
+    "squad": "beta",
+    "weekStart": "2026-10-05",
+    "role": "designer",
+    "plannedH": 40,
+    "loggedH": 18,
+    "absenceH": 16
+  },
+  {
+    "squad": "beta",
+    "weekStart": "2026-10-05",
+    "role": "engineer",
+    "plannedH": 160,
+    "loggedH": 100,
+    "absenceH": 24
+  },
+  {
+    "squad": "beta",
+    "weekStart": "2026-10-05",
+    "role": "qa",
+    "plannedH": 40,
+    "loggedH": 28.5,
+    "absenceH": 0
+  },
+  {
+    "squad": "beta",
+    "weekStart": "2026-10-05",
+    "role": "legal",
+    "plannedH": 40,
+    "loggedH": 29,
+    "absenceH": 0
+  },
+  {
+    "squad": "gamma",
+    "weekStart": "2026-10-05",
+    "role": "pm",
+    "plannedH": 40,
+    "loggedH": 0,
+    "absenceH": 40
+  },
+  {
+    "squad": "gamma",
+    "weekStart": "2026-10-05",
+    "role": "engineer",
+    "plannedH": 80,
+    "loggedH": 65,
+    "absenceH": 0
+  },
+  {
+    "squad": "gamma",
+    "weekStart": "2026-10-05",
+    "role": "qa",
+    "plannedH": 40,
+    "loggedH": 31.5,
+    "absenceH": 0
+  }
+]

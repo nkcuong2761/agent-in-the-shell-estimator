@@ -1,0 +1,106 @@
+[
+  {
+    "id": "alpha",
+    "name": "Squad Alpha",
+    "members": [
+      {
+        "role": "pm",
+        "count": 1
+      },
+      {
+        "role": "designer",
+        "count": 1
+      },
+      {
+        "role": "engineer",
+        "count": 3
+      },
+      {
+        "role": "qa",
+        "count": 1
+      },
+      {
+        "role": "legal",
+        "count": 0
+      }
+    ],
+    "stats": {
+      "focusFactor": 0.76,
+      "absenceRate": 0.08,
+      "coordinationOverheadPerExtra": 0.1
+    },
+    "plannedLeave": []
+  },
+  {
+    "id": "beta",
+    "name": "Squad Beta",
+    "members": [
+      {
+        "role": "pm",
+        "count": 1
+      },
+      {
+        "role": "designer",
+        "count": 1
+      },
+      {
+        "role": "engineer",
+        "count": 4
+      },
+      {
+        "role": "qa",
+        "count": 1
+      },
+      {
+        "role": "legal",
+        "count": 1
+      }
+    ],
+    "stats": {
+      "focusFactor": 0.72,
+      "absenceRate": 0.08,
+      "coordinationOverheadPerExtra": 0.1
+    },
+    "plannedLeave": []
+  },
+  {
+    "id": "gamma",
+    "name": "Squad Gamma",
+    "members": [
+      {
+        "role": "pm",
+        "count": 1
+      },
+      {
+        "role": "designer",
+        "count": 0
+      },
+      {
+        "role": "engineer",
+        "count": 2
+      },
+      {
+        "role": "qa",
+        "count": 1
+      },
+      {
+        "role": "legal",
+        "count": 0
+      }
+    ],
+    "stats": {
+      "focusFactor": 0.8,
+      "absenceRate": 0.07,
+      "coordinationOverheadPerExtra": 0.1
+    },
+    "plannedLeave": [
+      {
+        "role": "engineer",
+        "start": "2026-11-23",
+        "end": "2026-12-04",
+        "people": 1,
+        "note": "Planned leave: one engineer, two weeks (fake)"
+      }
+    ]
+  }
+]
