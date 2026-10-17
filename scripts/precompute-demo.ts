@@ -176,8 +176,14 @@ async function main() {
   let provenance: Provenance;
   if (live) {
     results = [];
-    for (const p of closed) results.push((await live.runPostmortem(p, seed.items)).result);
-    provenance = { promptVersion: 'postmortem', generatedBy: 'claude', generatedAt: new Date().toISOString().slice(0, 10) };
+    const provenances: Provenance[] = [];
+    for (const p of closed) {
+      const r = await live.runPostmortem(p, seed.items);
+      results.push(r.result);
+      provenances.push(r.provenance);
+    }
+    // One provenance for the file: Claude's if any project used it (runPostmortem falls back per project).
+    provenance = provenances.find((x) => x.generatedBy === 'claude') ?? provenances[0] ?? fixture('offline-heuristic-postmortem@1', 'offline-heuristic');
   } else {
     results = closed.map((p) => offlinePostmortem(p, seed.items));
     provenance = fixture('offline-heuristic-postmortem@1', 'offline-heuristic');

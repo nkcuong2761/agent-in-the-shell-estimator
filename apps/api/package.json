@@ -15,6 +15,7 @@
     "@scopewise/engine": "0.1.0",
     "@scopewise/shared": "0.1.0",
     "hono": "^4.6.14",
+    "postgres": "^3.4.5",
     "unpdf": "^0.12.1",
     "zod": "^4.1.0"
   },

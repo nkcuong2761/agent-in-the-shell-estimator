@@ -1,5 +1,5 @@
 import { z } from 'zod';
-import { Category, Explanation, Impact, Role } from './domain';
+import { Category, Explanation, Impact, ProjectType, Role } from './domain';
 import { LessonCause } from './history';
 
 export const Analog = z.object({
@@ -157,7 +157,7 @@ export const PostmortemResult = z.object({
     z.object({
       cause: LessonCause,
       note: z.string(),
-      appliesTo: z.object({ category: Category.optional(), projectType: z.string().optional() }),
+      appliesTo: z.object({ category: Category.optional(), projectType: ProjectType.optional() }),
     }),
   ),
 });

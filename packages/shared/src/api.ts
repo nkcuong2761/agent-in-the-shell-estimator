@@ -16,7 +16,7 @@ export const HealthResponse = z.object({
 export type HealthResponse = z.infer<typeof HealthResponse>;
 
 export const ScopeRequest = z.object({ brief: BriefPack });
-export const ScopeResponse = z.object({ scope: ScopeResult, provenance: Provenance });
+export const ScopeResponse = z.object({ scope: ScopeResult, provenance: Provenance, brief: BriefPack.optional() });
 export type ScopeResponse = z.infer<typeof ScopeResponse>;
 
 export const PanelRequest = z.object({ brief: BriefPack, scope: ScopeResult });
