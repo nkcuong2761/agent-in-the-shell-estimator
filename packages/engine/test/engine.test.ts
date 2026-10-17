@@ -47,6 +47,7 @@ function scope(overrides: Partial<ScopeResult> = {}): ScopeResult {
   return {
     projectType: 'new-feature',
     size: 'M',
+    title: 'test',
     summary: 'test',
     phases: [
       { id: 'discovery', name: 'Discovery', order: 0, role: 'pm' },

@@ -1793,7 +1793,7 @@
           "actualH": 130,
           "ratio": 10,
           "cause": "data-error",
-          "note": "Partner API discovery and access logged 130h against 13h, which looks like a time-entry error. Excluded from calibration.",
+          "note": "Partner API discovery and access logged 130h against 13h, which looks like a time-entry error. It is left out when learning from history.",
           "suspectedDataError": true
         },
         {
@@ -1892,7 +1892,7 @@
           "actualH": 137.5,
           "ratio": 6.55,
           "cause": "data-error",
-          "note": "Discovery logged 138h against 21h, which looks like a time-entry error. Excluded from calibration.",
+          "note": "Discovery logged 138h against 21h, which looks like a time-entry error. It is left out when learning from history.",
           "suspectedDataError": false
         },
         {
@@ -2846,7 +2846,7 @@
           "actualH": 135,
           "ratio": 10,
           "cause": "data-error",
-          "note": "Report requirements workshop logged 135h against 14h, which looks like a time-entry error. Excluded from calibration.",
+          "note": "Report requirements workshop logged 135h against 14h, which looks like a time-entry error. It is left out when learning from history.",
           "suspectedDataError": true
         },
         {
@@ -2857,7 +2857,7 @@
           "actualH": 135,
           "ratio": 10,
           "cause": "data-error",
-          "note": "Discovery logged 135h against 14h, which looks like a time-entry error. Excluded from calibration.",
+          "note": "Discovery logged 135h against 14h, which looks like a time-entry error. It is left out when learning from history.",
           "suspectedDataError": false
         }
       ],

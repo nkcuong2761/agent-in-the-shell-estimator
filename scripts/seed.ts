@@ -24,13 +24,16 @@ import type {
   Worklog,
 } from '@scopewise/shared';
 import { SeedData as SeedSchema } from '@scopewise/shared';
-import { mulberry32, normal } from '@scopewise/engine';
+import { addWorkingDays, mulberry32, nextWorkingDay, normal, scheduleOnce } from '@scopewise/engine';
+import { PHASE_TEMPLATES } from '@scopewise/shared';
 import { join } from 'node:path';
 import { DATA, writeJson } from './lib';
 
 const SEED = 1789;
 const rng = mulberry32(SEED);
 const lognormal = (sd: number) => Math.exp(sd * normal(rng) - (sd * sd) / 2);
+// Separate stream for calendar noise, so the item draws stay the same whatever the schedule does.
+const durRng = mulberry32(SEED + 1);
 const pick = <T>(xs: readonly T[]): T => xs[Math.floor(rng() * xs.length)] as T;
 const half = (h: number) => Math.max(1, Math.round(h * 2) / 2);
 
@@ -254,7 +257,7 @@ TYPES.forEach((projectType, idx) => {
   const client = CLIENTS[(idx * 7) % CLIENTS.length] as string;
   const projectName = `${client}: ${cat.names[n % cat.names.length]}`;
   const id = `P${String(idx + 1).padStart(3, '0')}`;
-  const startDate = addDays('2025-04-07', idx * 12.5 + rng() * 3);
+  const startDate = nextWorkingDay(addDays('2025-04-07', idx * 10.5 + rng() * 3));
   const leaveOverlap = rng() < 0.15;
 
   const planned = cat.items.filter((t) => !t.optional || rng() < (scale === 'S' ? 0.35 : 0.7));
@@ -316,9 +319,24 @@ TYPES.forEach((projectType, idx) => {
   const actualH = projectItems.reduce((s, i) => s + i.timeSpentH, 0);
   const size = sizeFromHours(estimateH);
   // Calendar length: phases mostly sequential; roughly total hours over squad capacity.
-  const capacityPerDay = squad.members.reduce((s, m) => s + m.count, 0) * 6 * squad.stats.focusFactor * 0.55;
-  const durationDays = Math.max(15, (actualH / capacityPerDay) * 1.4);
-  const endDate = addDays(startDate, durationDays);
+  // Calendar length: the engine's own schedule model run on the actual hours with the squad's team, plus
+  // some noise, so durations in history are consistent with what the engine forecasts.
+  const team: Partial<Record<Role, number>> = {};
+  for (const m of squad.members) team[m.role] = m.count;
+  const sched = scheduleOnce(
+    {
+      phases: PHASE_TEMPLATES[projectType].map((p) => ({ id: p.id, order: p.order })),
+      items: projectItems.map((i) => ({ id: i.id, phaseId: i.phaseId, role: i.role, o: i.timeSpentH, m: i.timeSpentH, p: i.timeSpentH })),
+      teamShape: team,
+      squad: squad.stats,
+      plannedLeave: [],
+      startDate,
+      runs: 1,
+      seed: SEED,
+    },
+    projectItems.map((i) => (i.timeSpentH > i.originalEstimateH * 8 ? i.originalEstimateH : i.timeSpentH)),
+  );
+  const endDate = addWorkingDays(startDate, Math.max(5, sched.finish * Math.exp(0.08 * normal(durRng))));
   for (const it of projectItems) {
     it.resolved = addDays(endDate, -rng() * 5);
     it.labels.splice(1, 0, `size:${size}`);

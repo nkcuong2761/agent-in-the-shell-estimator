@@ -3,6 +3,7 @@
   "scope": {
     "projectType": "integration",
     "size": "L",
+    "title": "Sync with the fund administrator",
     "summary": "Keep investor records in sync between the platform and Northgate Fund Services, with alerts, a change log and human approval for bank details.",
     "phases": [
       {
@@ -394,7 +395,7 @@
     "clientEmailDraft": "Hi Leo,\n\nThanks for setting up the call with Aiko. Here is our first estimate for the Northgate sync. These questions matter most to the estimate and the December 18 date, in order of impact:\n\n{{questions}}\n\nThe sandbox request in particular can run in the background while we start discovery.\n\nBest,\nThe delivery team"
   },
   "scopeProvenance": {
-    "promptVersion": "fixture-scope@1",
+    "promptVersion": "fixture-scope@2",
     "generatedBy": "fixture",
     "generatedAt": "2026-10-17"
   },

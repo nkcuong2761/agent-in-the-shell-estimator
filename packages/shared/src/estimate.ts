@@ -95,6 +95,8 @@ export const Estimate = z.object({
   commitDate: z.string(),
   p50Date: z.string(),
   p80Date: z.string(),
+  /** Working days from start to the P50 / P80 finish and to the commit date (derived from the dates above). */
+  finishDays: z.object({ p50: z.number(), p80: z.number(), commit: z.number() }),
   deadline: z.string().optional(),
   /** null when there's no deadline. */
   onTimeProbability: z.number().nullable(),
@@ -120,6 +122,9 @@ export const BacktestPoint = z.object({
   rawH: z.number(),
   calibratedP50: z.number(),
   calibratedP80: z.number(),
+  /** Finish dates the calibrated engine would have given at kickoff. */
+  calibratedP50Date: z.string(),
+  calibratedP80Date: z.string(),
   rawMRE: z.number(),
   calibratedMRE: z.number(),
   rollingRawMMRE: z.number(),

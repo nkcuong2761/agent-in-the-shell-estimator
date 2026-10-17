@@ -60,12 +60,15 @@ async function call<T>(path: string, init?: RequestInit): Promise<T> {
 }
 
 export const api = {
-  scopeFromFiles(title: string, deadline: string | undefined, files: File[]): Promise<ScopeResponse> {
+  scopeFromFiles(text: string, deadline: string | undefined, files: File[]): Promise<ScopeResponse> {
     const form = new FormData();
-    form.set('title', title);
+    if (text.trim()) form.set('text', text);
     if (deadline) form.set('clientDeadline', deadline);
     for (const f of files) form.append('files', f);
     return call('/scope', { method: 'POST', body: form });
+  },
+  jiraIssue(key: string): Promise<{ key: string; summary: string; text: string }> {
+    return call(`/jira/issue/${encodeURIComponent(key)}`);
   },
   scope(brief: BriefPack): Promise<ScopeResponse> {
     return call('/scope', { method: 'POST', body: JSON.stringify({ brief }) });

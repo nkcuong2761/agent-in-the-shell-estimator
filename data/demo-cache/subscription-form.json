@@ -3,6 +3,7 @@
   "scope": {
     "projectType": "form-digitization",
     "size": "L",
+    "title": "Put the subscription form online",
     "summary": "Replace the 22-page paper subscription agreement with an online form that validates answers, saves drafts, produces a PDF and writes to investor records.",
     "phases": [
       {
@@ -426,7 +427,7 @@
     "clientEmailDraft": "Hi Priya,\n\nThank you for walking us through Subscription Agreement v7. Here is our first estimate for the online form. These questions affect the estimate most, in order of how much each answer would narrow it:\n\n{{questions}}\n\nWith answers we can firm up the plan for the January 29 close.\n\nKind regards,\nThe delivery team"
   },
   "scopeProvenance": {
-    "promptVersion": "fixture-scope@1",
+    "promptVersion": "fixture-scope@2",
     "generatedBy": "fixture",
     "generatedAt": "2026-10-17"
   },

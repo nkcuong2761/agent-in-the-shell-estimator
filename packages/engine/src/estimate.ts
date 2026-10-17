@@ -499,6 +499,7 @@ export function runEstimate(prep: PreparedEstimate, opts: RunOptions = {}): Esti
     commitDate,
     p50Date,
     p80Date,
+    finishDays: { p50: round(finishP50, 2), p80: round(finishP80, 2), commit: round(Math.max(commitDays, finishP50), 2) },
     deadline,
     onTimeProbability,
     confidence,

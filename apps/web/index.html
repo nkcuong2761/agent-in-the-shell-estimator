@@ -3,15 +3,15 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Scopewise turns a client brief into a defensible effort range: phases, open questions, P50/P80, a visible buffer and the chance of meeting the deadline." />
+    <meta name="description" content="Scopewise reads a client brief and tells you how long the work should take, a safe date to promise, and what to ask the client first." />
     <title>Scopewise</title>
-    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8' shape-rendering='crispEdges'%3E%3Crect width='8' height='8' fill='%23E8EAE3'/%3E%3Cpath fill='%231A1F3A' d='M1 5h1v2H1zM3 3h1v4H3zM5 1h1v6H5z'/%3E%3Cpath fill='%232F43D8' d='M2 6h1v1H2zM4 4h1v1H4zM4 6h1v1H4zM6 3h1v1H6zM6 5h1v1H6z'/%3E%3C/svg%3E" />
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='9' fill='%23101828'/%3E%3Crect x='8' y='17' width='4' height='7' rx='2' fill='%23fff'/%3E%3Crect x='14' y='12' width='4' height='12' rx='2' fill='%23fff'/%3E%3Crect x='20' y='8' width='4' height='16' rx='2' fill='%238C99FF'/%3E%3C/svg%3E" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible+Next:ital,wght@0,400;0,600;0,700;1,400&family=Martian+Mono:wdth,wght@75..112.5,300..700&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Geist:wght@300..700&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet" />
     <script>
       try {
-        var t = localStorage.getItem('sw-theme');
+        var t = JSON.parse(localStorage.getItem('sw-theme') || 'null');
         if (t === 'light' || t === 'dark') document.documentElement.dataset.theme = t;
       } catch (e) {}
     </script>

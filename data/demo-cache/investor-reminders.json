@@ -3,6 +3,7 @@
   "scope": {
     "projectType": "new-feature",
     "size": "M",
+    "title": "Remind investors to sign",
     "summary": "Automatic, escalating reminders to investors who haven’t signed their subscription documents, with IR controls to pause and a log of what was sent.",
     "phases": [
       {
@@ -418,7 +419,7 @@
     "clientEmailDraft": "Hi Dana,\n\nThanks for the time on the kickoff call. Below is our first estimate for automated reminders to unsigned investors. A few answers from your side would narrow it considerably. They are listed in the order that helps the estimate most:\n\n{{questions}}\n\nOnce we have these, we’ll send a firm plan and a commit date against your December 11 close.\n\nBest regards,\nThe delivery team"
   },
   "scopeProvenance": {
-    "promptVersion": "fixture-scope@1",
+    "promptVersion": "fixture-scope@2",
     "generatedBy": "fixture",
     "generatedAt": "2026-10-17"
   },

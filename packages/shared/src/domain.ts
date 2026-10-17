@@ -158,6 +158,8 @@ export type ScopeRisk = z.infer<typeof ScopeRisk>;
 export const ScopeResult = z.object({
   projectType: ProjectType,
   size: Size,
+  /** A 4–6 word conversation title, e.g. "Put the subscription form online". */
+  title: z.string().default(''),
   summary: z.string().default(''),
   phases: z.array(Phase).min(1),
   items: z.array(WorkItem).min(1),

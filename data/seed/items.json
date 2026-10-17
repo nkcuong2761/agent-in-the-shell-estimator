@@ -21,7 +21,7 @@
     ],
     "addedAfterKickoff": false,
     "created": "2025-04-09",
-    "resolved": "2025-04-30"
+    "resolved": "2025-06-27"
   },
   {
     "id": "P001-02",
@@ -45,7 +45,7 @@
     ],
     "addedAfterKickoff": false,
     "created": "2025-04-09",
-    "resolved": "2025-04-30"
+    "resolved": "2025-06-27"
   },
   {
     "id": "P001-03",
@@ -69,7 +69,7 @@
     ],
     "addedAfterKickoff": false,
     "created": "2025-04-09",
-    "resolved": "2025-05-01"
+    "resolved": "2025-06-28"
   },
   {
     "id": "P001-04",
@@ -93,7 +93,7 @@
     ],
     "addedAfterKickoff": false,
     "created": "2025-04-09",
-    "resolved": "2025-05-02"
+    "resolved": "2025-06-29"
   },
   {
     "id": "P001-05",
@@ -117,7 +117,7 @@
     ],
     "addedAfterKickoff": false,
     "created": "2025-04-09",
-    "resolved": "2025-05-01"
+    "resolved": "2025-06-28"
   },
   {
     "id": "P001-06",
@@ -141,7 +141,7 @@
     ],
     "addedAfterKickoff": false,
     "created": "2025-04-09",
-    "resolved": "2025-05-03"
+    "resolved": "2025-06-30"
   },
   {
     "id": "P001-07",
@@ -165,7 +165,7 @@
     ],
     "addedAfterKickoff": false,
     "created": "2025-04-09",
-    "resolved": "2025-05-01"
+    "resolved": "2025-06-28"
   },
   {
     "id": "P001-08",
@@ -189,7 +189,7 @@
     ],
     "addedAfterKickoff": false,
     "created": "2025-04-09",
-    "resolved": "2025-05-03"
+    "resolved": "2025-06-30"
   },
   {
     "id": "P001-09",
@@ -213,7 +213,7 @@
     ],
     "addedAfterKickoff": false,
     "created": "2025-04-09",
-    "resolved": "2025-05-01"
+    "resolved": "2025-06-28"
   },
   {
     "id": "P001-10",
@@ -237,7 +237,7 @@
     ],
     "addedAfterKickoff": false,
     "created": "2025-04-09",
-    "resolved": "2025-05-04"
+    "resolved": "2025-07-01"
   },
   {
     "id": "P002-01",
@@ -260,8 +260,8 @@
       "seed:P002-01"
     ],
     "addedAfterKickoff": false,
-    "created": "2025-04-20",
-    "resolved": "2025-05-02"
+    "created": "2025-04-18",
+    "resolved": "2025-05-20"
   },
   {
     "id": "P002-02",
@@ -284,8 +284,8 @@
       "seed:P002-02"
     ],
     "addedAfterKickoff": false,
-    "created": "2025-04-20",
-    "resolved": "2025-05-01"
+    "created": "2025-04-18",
+    "resolved": "2025-05-19"
   },
   {
     "id": "P002-03",
@@ -308,8 +308,8 @@
       "seed:P002-03"
     ],
     "addedAfterKickoff": false,
-    "created": "2025-04-20",
-    "resolved": "2025-05-03"
+    "created": "2025-04-18",
+    "resolved": "2025-05-21"
   },
   {
     "id": "P002-04",
@@ -332,8 +332,8 @@
       "seed:P002-04"
     ],
     "addedAfterKickoff": false,
-    "created": "2025-04-20",
-    "resolved": "2025-05-02"
+    "created": "2025-04-18",
+    "resolved": "2025-05-20"
   },
   {
     "id": "P002-05",
@@ -356,8 +356,8 @@
       "seed:P002-05"
     ],
     "addedAfterKickoff": false,
-    "created": "2025-04-20",
-    "resolved": "2025-05-05"
+    "created": "2025-04-18",
+    "resolved": "2025-05-23"
   },
   {
     "id": "P002-06",
@@ -380,8 +380,8 @@
       "seed:P002-06"
     ],
     "addedAfterKickoff": false,
-    "created": "2025-04-20",
-    "resolved": "2025-05-04"
+    "created": "2025-04-18",
+    "resolved": "2025-05-22"
   },
   {
     "id": "P002-07",
@@ -404,8 +404,8 @@
       "seed:P002-07"
     ],
     "addedAfterKickoff": false,
-    "created": "2025-04-20",
-    "resolved": "2025-05-02"
+    "created": "2025-04-18",
+    "resolved": "2025-05-20"
   },
   {
     "id": "P002-08",
@@ -428,8 +428,8 @@
       "seed:P002-08"
     ],
     "addedAfterKickoff": false,
-    "created": "2025-04-20",
-    "resolved": "2025-05-03"
+    "created": "2025-04-18",
+    "resolved": "2025-05-21"
   },
   {
     "id": "P002-09",
@@ -452,8 +452,8 @@
       "seed:P002-09"
     ],
     "addedAfterKickoff": false,
-    "created": "2025-04-20",
-    "resolved": "2025-05-01"
+    "created": "2025-04-18",
+    "resolved": "2025-05-19"
   },
   {
     "id": "P003-01",
@@ -476,8 +476,8 @@
       "seed:P003-01"
     ],
     "addedAfterKickoff": false,
-    "created": "2025-05-03",
-    "resolved": "2025-05-27"
+    "created": "2025-04-29",
+    "resolved": "2025-06-08"
   },
   {
     "id": "P003-02",
@@ -500,8 +500,8 @@
       "seed:P003-02"
     ],
     "addedAfterKickoff": false,
-    "created": "2025-05-03",
-    "resolved": "2025-05-28"
+    "created": "2025-04-29",
+    "resolved": "2025-06-09"
   },
   {
     "id": "P003-03",
@@ -524,8 +524,8 @@
       "seed:P003-03"
     ],
     "addedAfterKickoff": false,
-    "created": "2025-05-03",
-    "resolved": "2025-05-31"
+    "created": "2025-04-29",
+    "resolved": "2025-06-12"
   },
   {
     "id": "P003-04",
@@ -548,8 +548,8 @@
       "seed:P003-04"
     ],
     "addedAfterKickoff": false,
-    "created": "2025-05-03",
-    "resolved": "2025-05-30"
+    "created": "2025-04-29",
+    "resolved": "2025-06-11"
   },
   {
     "id": "P003-05",
@@ -572,8 +572,8 @@
       "seed:P003-05"
     ],
     "addedAfterKickoff": false,
-    "created": "2025-05-03",
-    "resolved": "2025-05-27"
+    "created": "2025-04-29",
+    "resolved": "2025-06-08"
   },
   {
     "id": "P003-06",
@@ -596,8 +596,8 @@
       "seed:P003-06"
     ],
     "addedAfterKickoff": false,
-    "created": "2025-05-03",
-    "resolved": "2025-05-31"
+    "created": "2025-04-29",
+    "resolved": "2025-06-12"
   },
   {
     "id": "P003-07",
@@ -620,8 +620,8 @@
       "seed:P003-07"
     ],
     "addedAfterKickoff": false,
-    "created": "2025-05-03",
-    "resolved": "2025-05-27"
+    "created": "2025-04-29",
+    "resolved": "2025-06-08"
   },
   {
     "id": "P003-08",
@@ -644,8 +644,8 @@
       "seed:P003-08"
     ],
     "addedAfterKickoff": false,
-    "created": "2025-05-03",
-    "resolved": "2025-05-29"
+    "created": "2025-04-29",
+    "resolved": "2025-06-10"
   },
   {
     "id": "P003-09",
@@ -668,8 +668,8 @@
       "seed:P003-09"
     ],
     "addedAfterKickoff": false,
-    "created": "2025-05-03",
-    "resolved": "2025-05-29"
+    "created": "2025-04-29",
+    "resolved": "2025-06-10"
   },
   {
     "id": "P003-10",
@@ -692,8 +692,8 @@
       "seed:P003-10"
     ],
     "addedAfterKickoff": false,
-    "created": "2025-05-03",
-    "resolved": "2025-05-26"
+    "created": "2025-04-29",
+    "resolved": "2025-06-07"
   },
   {
     "id": "P003-11",
@@ -717,8 +717,8 @@
       "added-after-kickoff"
     ],
     "addedAfterKickoff": true,
-    "created": "2025-05-19",
-    "resolved": "2025-05-30"
+    "created": "2025-05-15",
+    "resolved": "2025-06-11"
   },
   {
     "id": "P004-01",
@@ -741,8 +741,8 @@
       "seed:P004-01"
     ],
     "addedAfterKickoff": false,
-    "created": "2025-05-15",
-    "resolved": "2025-06-30"
+    "created": "2025-05-09",
+    "resolved": "2025-09-09"
   },
   {
     "id": "P004-02",
@@ -765,8 +765,8 @@
       "seed:P004-02"
     ],
     "addedAfterKickoff": false,
-    "created": "2025-05-15",
-    "resolved": "2025-06-29"
+    "created": "2025-05-09",
+    "resolved": "2025-09-08"
   },
   {
     "id": "P004-03",
@@ -789,8 +789,8 @@
       "seed:P004-03"
     ],
     "addedAfterKickoff": false,
-    "created": "2025-05-15",
-    "resolved": "2025-06-26"
+    "created": "2025-05-09",
+    "resolved": "2025-09-05"
   },
   {
     "id": "P004-04",
@@ -813,8 +813,8 @@
       "seed:P004-04"
     ],
     "addedAfterKickoff": false,
-    "created": "2025-05-15",
-    "resolved": "2025-06-28"
+    "created": "2025-05-09",
+    "resolved": "2025-09-07"
   },
   {
     "id": "P004-05",
@@ -837,8 +837,8 @@
       "seed:P004-05"
     ],
     "addedAfterKickoff": false,
-    "created": "2025-05-15",
-    "resolved": "2025-06-29"
+    "created": "2025-05-09",
+    "resolved": "2025-09-08"
   },
   {
     "id": "P004-06",
@@ -861,8 +861,8 @@
       "seed:P004-06"
     ],
     "addedAfterKickoff": false,
-    "created": "2025-05-15",
-    "resolved": "2025-06-30"
+    "created": "2025-05-09",
+    "resolved": "2025-09-09"
   },
   {
     "id": "P004-07",
@@ -885,8 +885,8 @@
       "seed:P004-07"
     ],
     "addedAfterKickoff": false,
-    "created": "2025-05-15",
-    "resolved": "2025-06-28"
+    "created": "2025-05-09",
+    "resolved": "2025-09-07"
   },
   {
     "id": "P004-08",
@@ -909,8 +909,8 @@
       "seed:P004-08"
     ],
     "addedAfterKickoff": false,
-    "created": "2025-05-15",
-    "resolved": "2025-06-30"
+    "created": "2025-05-09",
+    "resolved": "2025-09-09"
   },
   {
     "id": "P004-09",
@@ -933,8 +933,8 @@
       "seed:P004-09"
     ],
     "addedAfterKickoff": false,
-    "created": "2025-05-15",
-    "resolved": "2025-06-30"
+    "created": "2025-05-09",
+    "resolved": "2025-09-09"
   },
   {
     "id": "P004-10",
@@ -957,8 +957,8 @@
       "seed:P004-10"
     ],
     "addedAfterKickoff": false,
-    "created": "2025-05-15",
-    "resolved": "2025-06-28"
+    "created": "2025-05-09",
+    "resolved": "2025-09-07"
   },
   {
     "id": "P004-11",
@@ -981,8 +981,8 @@
       "seed:P004-11"
     ],
     "addedAfterKickoff": false,
-    "created": "2025-05-15",
-    "resolved": "2025-06-27"
+    "created": "2025-05-09",
+    "resolved": "2025-09-06"
   },
   {
     "id": "P004-12",
@@ -1005,8 +1005,8 @@
       "seed:P004-12"
     ],
     "addedAfterKickoff": false,
-    "created": "2025-05-15",
-    "resolved": "2025-06-28"
+    "created": "2025-05-09",
+    "resolved": "2025-09-07"
   },
   {
     "id": "P005-01",
@@ -1029,8 +1029,8 @@
       "seed:P005-01"
     ],
     "addedAfterKickoff": false,
-    "created": "2025-05-29",
-    "resolved": "2025-06-12"
+    "created": "2025-05-21",
+    "resolved": "2025-07-03"
   },
   {
     "id": "P005-02",
@@ -1053,8 +1053,8 @@
       "seed:P005-02"
     ],
     "addedAfterKickoff": false,
-    "created": "2025-05-29",
-    "resolved": "2025-06-12"
+    "created": "2025-05-21",
+    "resolved": "2025-07-03"
   },
   {
     "id": "P005-03",
@@ -1077,8 +1077,8 @@
       "seed:P005-03"
     ],
     "addedAfterKickoff": false,
-    "created": "2025-05-29",
-    "resolved": "2025-06-11"
+    "created": "2025-05-21",
+    "resolved": "2025-07-02"
   },
   {
     "id": "P005-04",
@@ -1102,8 +1102,8 @@
       "blocked"
     ],
     "addedAfterKickoff": false,
-    "created": "2025-05-29",
-    "resolved": "2025-06-10"
+    "created": "2025-05-21",
+    "resolved": "2025-07-01"
   },
   {
     "id": "P005-05",
@@ -1126,8 +1126,8 @@
       "seed:P005-05"
     ],
     "addedAfterKickoff": false,
-    "created": "2025-05-29",
-    "resolved": "2025-06-12"
+    "created": "2025-05-21",
+    "resolved": "2025-07-03"
   },
   {
     "id": "P005-06",
@@ -1150,8 +1150,8 @@
       "seed:P005-06"
     ],
     "addedAfterKickoff": false,
-    "created": "2025-05-29",
-    "resolved": "2025-06-11"
+    "created": "2025-05-21",
+    "resolved": "2025-07-02"
   },
   {
     "id": "P005-07",
@@ -1174,8 +1174,8 @@
       "seed:P005-07"
     ],
     "addedAfterKickoff": false,
-    "created": "2025-05-29",
-    "resolved": "2025-06-08"
+    "created": "2025-05-21",
+    "resolved": "2025-06-29"
   },
   {
     "id": "P005-08",
@@ -1198,8 +1198,8 @@
       "seed:P005-08"
     ],
     "addedAfterKickoff": false,
-    "created": "2025-05-29",
-    "resolved": "2025-06-09"
+    "created": "2025-05-21",
+    "resolved": "2025-06-30"
   },
   {
     "id": "P005-09",
@@ -1222,8 +1222,8 @@
       "seed:P005-09"
     ],
     "addedAfterKickoff": false,
-    "created": "2025-05-29",
-    "resolved": "2025-06-09"
+    "created": "2025-05-21",
+    "resolved": "2025-06-30"
   },
   {
     "id": "P005-10",
@@ -1246,8 +1246,8 @@
       "seed:P005-10"
     ],
     "addedAfterKickoff": false,
-    "created": "2025-05-29",
-    "resolved": "2025-06-08"
+    "created": "2025-05-21",
+    "resolved": "2025-06-29"
   },
   {
     "id": "P005-11",
@@ -1271,8 +1271,8 @@
       "added-after-kickoff"
     ],
     "addedAfterKickoff": true,
-    "created": "2025-06-19",
-    "resolved": "2025-06-13"
+    "created": "2025-06-11",
+    "resolved": "2025-07-04"
   },
   {
     "id": "P005-12",
@@ -1296,8 +1296,8 @@
       "added-after-kickoff"
     ],
     "addedAfterKickoff": true,
-    "created": "2025-06-11",
-    "resolved": "2025-06-12"
+    "created": "2025-06-03",
+    "resolved": "2025-07-03"
   },
   {
     "id": "P006-01",
@@ -1320,8 +1320,8 @@
       "seed:P006-01"
     ],
     "addedAfterKickoff": false,
-    "created": "2025-06-11",
-    "resolved": "2025-07-31"
+    "created": "2025-06-02",
+    "resolved": "2025-09-02"
   },
   {
     "id": "P006-02",
@@ -1344,8 +1344,8 @@
       "seed:P006-02"
     ],
     "addedAfterKickoff": false,
-    "created": "2025-06-11",
-    "resolved": "2025-07-30"
+    "created": "2025-06-02",
+    "resolved": "2025-09-01"
   },
   {
     "id": "P006-03",
@@ -1368,8 +1368,8 @@
       "seed:P006-03"
     ],
     "addedAfterKickoff": false,
-    "created": "2025-06-11",
-    "resolved": "2025-07-31"
+    "created": "2025-06-02",
+    "resolved": "2025-09-02"
   },
   {
     "id": "P006-04",
@@ -1392,8 +1392,8 @@
       "seed:P006-04"
     ],
     "addedAfterKickoff": false,
-    "created": "2025-06-11",
-    "resolved": "2025-07-30"
+    "created": "2025-06-02",
+    "resolved": "2025-09-01"
   },
   {
     "id": "P006-05",
@@ -1416,8 +1416,8 @@
       "seed:P006-05"
     ],
     "addedAfterKickoff": false,
-    "created": "2025-06-11",
-    "resolved": "2025-08-03"
+    "created": "2025-06-02",
+    "resolved": "2025-09-05"
   },
   {
     "id": "P006-06",
@@ -1440,8 +1440,8 @@
       "seed:P006-06"
     ],
     "addedAfterKickoff": false,
-    "created": "2025-06-11",
-    "resolved": "2025-08-02"
+    "created": "2025-06-02",
+    "resolved": "2025-09-04"
   },
   {
     "id": "P006-07",
@@ -1464,8 +1464,8 @@
       "seed:P006-07"
     ],
     "addedAfterKickoff": false,
-    "created": "2025-06-11",
-    "resolved": "2025-07-31"
+    "created": "2025-06-02",
+    "resolved": "2025-09-02"
   },
   {
     "id": "P006-08",
@@ -1488,8 +1488,8 @@
       "seed:P006-08"
     ],
     "addedAfterKickoff": false,
-    "created": "2025-06-11",
-    "resolved": "2025-08-03"
+    "created": "2025-06-02",
+    "resolved": "2025-09-05"
   },
   {
     "id": "P006-09",
@@ -1512,8 +1512,8 @@
       "seed:P006-09"
     ],
     "addedAfterKickoff": false,
-    "created": "2025-06-11",
-    "resolved": "2025-07-30"
+    "created": "2025-06-02",
+    "resolved": "2025-09-01"
   },
   {
     "id": "P006-10",
@@ -1536,8 +1536,8 @@
       "seed:P006-10"
     ],
     "addedAfterKickoff": false,
-    "created": "2025-06-11",
-    "resolved": "2025-08-01"
+    "created": "2025-06-02",
+    "resolved": "2025-09-03"
   },
   {
     "id": "P006-11",
@@ -1560,8 +1560,8 @@
       "seed:P006-11"
     ],
     "addedAfterKickoff": false,
-    "created": "2025-06-11",
-    "resolved": "2025-08-03"
+    "created": "2025-06-02",
+    "resolved": "2025-09-05"
   },
   {
     "id": "P007-01",
@@ -1584,8 +1584,8 @@
       "seed:P007-01"
     ],
     "addedAfterKickoff": false,
-    "created": "2025-06-23",
-    "resolved": "2025-07-07"
+    "created": "2025-06-11",
+    "resolved": "2025-06-30"
   },
   {
     "id": "P007-02",
@@ -1608,8 +1608,8 @@
       "seed:P007-02"
     ],
     "addedAfterKickoff": false,
-    "created": "2025-06-23",
-    "resolved": "2025-07-07"
+    "created": "2025-06-11",
+    "resolved": "2025-06-30"
   },
   {
     "id": "P007-03",
@@ -1632,8 +1632,8 @@
       "seed:P007-03"
     ],
     "addedAfterKickoff": false,
-    "created": "2025-06-23",
-    "resolved": "2025-07-06"
+    "created": "2025-06-11",
+    "resolved": "2025-06-29"
   },
   {
     "id": "P007-04",
@@ -1656,8 +1656,8 @@
       "seed:P007-04"
     ],
     "addedAfterKickoff": false,
-    "created": "2025-06-23",
-    "resolved": "2025-07-06"
+    "created": "2025-06-11",
+    "resolved": "2025-06-29"
   },
   {
     "id": "P007-05",
@@ -1680,8 +1680,8 @@
       "seed:P007-05"
     ],
     "addedAfterKickoff": false,
-    "created": "2025-06-23",
-    "resolved": "2025-07-07"
+    "created": "2025-06-11",
+    "resolved": "2025-06-30"
   },
   {
     "id": "P007-06",
@@ -1704,8 +1704,8 @@
       "seed:P007-06"
     ],
     "addedAfterKickoff": false,
-    "created": "2025-06-23",
-    "resolved": "2025-07-04"
+    "created": "2025-06-11",
+    "resolved": "2025-06-27"
   },
   {
     "id": "P007-07",
@@ -1728,8 +1728,8 @@
       "seed:P007-07"
     ],
     "addedAfterKickoff": false,
-    "created": "2025-06-23",
-    "resolved": "2025-07-04"
+    "created": "2025-06-11",
+    "resolved": "2025-06-27"
   },
   {
     "id": "P008-01",
@@ -1752,8 +1752,8 @@
       "seed:P008-01"
     ],
     "addedAfterKickoff": false,
-    "created": "2025-07-04",
-    "resolved": "2025-08-04"
+    "created": "2025-06-20",
+    "resolved": "2025-10-26"
   },
   {
     "id": "P008-02",
@@ -1776,8 +1776,8 @@
       "seed:P008-02"
     ],
     "addedAfterKickoff": false,
-    "created": "2025-07-04",
-    "resolved": "2025-08-05"
+    "created": "2025-06-20",
+    "resolved": "2025-10-27"
   },
   {
     "id": "P008-03",
@@ -1800,8 +1800,8 @@
       "seed:P008-03"
     ],
     "addedAfterKickoff": false,
-    "created": "2025-07-04",
-    "resolved": "2025-08-07"
+    "created": "2025-06-20",
+    "resolved": "2025-10-29"
   },
   {
     "id": "P008-04",
@@ -1824,8 +1824,8 @@
       "seed:P008-04"
     ],
     "addedAfterKickoff": false,
-    "created": "2025-07-04",
-    "resolved": "2025-08-06"
+    "created": "2025-06-20",
+    "resolved": "2025-10-28"
   },
   {
     "id": "P008-05",
@@ -1848,8 +1848,8 @@
       "seed:P008-05"
     ],
     "addedAfterKickoff": false,
-    "created": "2025-07-04",
-    "resolved": "2025-08-06"
+    "created": "2025-06-20",
+    "resolved": "2025-10-28"
   },
   {
     "id": "P008-06",
@@ -1872,8 +1872,8 @@
       "seed:P008-06"
     ],
     "addedAfterKickoff": false,
-    "created": "2025-07-04",
-    "resolved": "2025-08-04"
+    "created": "2025-06-20",
+    "resolved": "2025-10-26"
   },
   {
     "id": "P008-07",
@@ -1896,8 +1896,8 @@
       "seed:P008-07"
     ],
     "addedAfterKickoff": false,
-    "created": "2025-07-04",
-    "resolved": "2025-08-07"
+    "created": "2025-06-20",
+    "resolved": "2025-10-29"
   },
   {
     "id": "P008-08",
@@ -1920,8 +1920,8 @@
       "seed:P008-08"
     ],
     "addedAfterKickoff": false,
-    "created": "2025-07-04",
-    "resolved": "2025-08-08"
+    "created": "2025-06-20",
+    "resolved": "2025-10-30"
   },
   {
     "id": "P008-09",
@@ -1944,8 +1944,8 @@
       "seed:P008-09"
     ],
     "addedAfterKickoff": false,
-    "created": "2025-07-04",
-    "resolved": "2025-08-03"
+    "created": "2025-06-20",
+    "resolved": "2025-10-25"
   },
   {
     "id": "P008-10",
@@ -1969,8 +1969,8 @@
       "blocked"
     ],
     "addedAfterKickoff": false,
-    "created": "2025-07-04",
-    "resolved": "2025-08-04"
+    "created": "2025-06-20",
+    "resolved": "2025-10-26"
   },
   {
     "id": "P008-11",
@@ -1993,8 +1993,8 @@
       "seed:P008-11"
     ],
     "addedAfterKickoff": false,
-    "created": "2025-07-04",
-    "resolved": "2025-08-07"
+    "created": "2025-06-20",
+    "resolved": "2025-10-29"
   },
   {
     "id": "P008-12",
@@ -2017,8 +2017,8 @@
       "seed:P008-12"
     ],
     "addedAfterKickoff": false,
-    "created": "2025-07-04",
-    "resolved": "2025-08-06"
+    "created": "2025-06-20",
+    "resolved": "2025-10-28"
   },
   {
     "id": "P008-13",
@@ -2041,8 +2041,8 @@
       "seed:P008-13"
     ],
     "addedAfterKickoff": false,
-    "created": "2025-07-04",
-    "resolved": "2025-08-05"
+    "created": "2025-06-20",
+    "resolved": "2025-10-27"
   },
   {
     "id": "P008-14",
@@ -2066,8 +2066,8 @@
       "added-after-kickoff"
     ],
     "addedAfterKickoff": true,
-    "created": "2025-07-22",
-    "resolved": "2025-08-04"
+    "created": "2025-07-08",
+    "resolved": "2025-10-26"
   },
   {
     "id": "P009-01",
@@ -2090,8 +2090,8 @@
       "seed:P009-01"
     ],
     "addedAfterKickoff": false,
-    "created": "2025-07-16",
-    "resolved": "2025-07-28"
+    "created": "2025-06-30",
+    "resolved": "2025-07-19"
   },
   {
     "id": "P009-02",
@@ -2114,8 +2114,8 @@
       "seed:P009-02"
     ],
     "addedAfterKickoff": false,
-    "created": "2025-07-16",
-    "resolved": "2025-07-29"
+    "created": "2025-06-30",
+    "resolved": "2025-07-20"
   },
   {
     "id": "P009-03",
@@ -2138,8 +2138,8 @@
       "seed:P009-03"
     ],
     "addedAfterKickoff": false,
-    "created": "2025-07-16",
-    "resolved": "2025-07-26"
+    "created": "2025-06-30",
+    "resolved": "2025-07-17"
   },
   {
     "id": "P009-04",
@@ -2162,8 +2162,8 @@
       "seed:P009-04"
     ],
     "addedAfterKickoff": false,
-    "created": "2025-07-16",
-    "resolved": "2025-07-27"
+    "created": "2025-06-30",
+    "resolved": "2025-07-18"
   },
   {
     "id": "P009-05",
@@ -2186,8 +2186,8 @@
       "seed:P009-05"
     ],
     "addedAfterKickoff": false,
-    "created": "2025-07-16",
-    "resolved": "2025-07-31"
+    "created": "2025-06-30",
+    "resolved": "2025-07-22"
   },
   {
     "id": "P009-06",
@@ -2210,8 +2210,8 @@
       "seed:P009-06"
     ],
     "addedAfterKickoff": false,
-    "created": "2025-07-16",
-    "resolved": "2025-07-27"
+    "created": "2025-06-30",
+    "resolved": "2025-07-18"
   },
   {
     "id": "P009-07",
@@ -2234,8 +2234,8 @@
       "seed:P009-07"
     ],
     "addedAfterKickoff": false,
-    "created": "2025-07-16",
-    "resolved": "2025-07-26"
+    "created": "2025-06-30",
+    "resolved": "2025-07-17"
   },
   {
     "id": "P009-08",
@@ -2259,8 +2259,8 @@
       "added-after-kickoff"
     ],
     "addedAfterKickoff": true,
-    "created": "2025-08-09",
-    "resolved": "2025-07-30"
+    "created": "2025-07-24",
+    "resolved": "2025-07-21"
   },
   {
     "id": "P010-01",
@@ -2283,8 +2283,8 @@
       "seed:P010-01"
     ],
     "addedAfterKickoff": false,
-    "created": "2025-07-29",
-    "resolved": "2025-08-18"
+    "created": "2025-07-11",
+    "resolved": "2025-09-14"
   },
   {
     "id": "P010-02",
@@ -2307,8 +2307,8 @@
       "seed:P010-02"
     ],
     "addedAfterKickoff": false,
-    "created": "2025-07-29",
-    "resolved": "2025-08-19"
+    "created": "2025-07-11",
+    "resolved": "2025-09-15"
   },
   {
     "id": "P010-03",
@@ -2331,8 +2331,8 @@
       "seed:P010-03"
     ],
     "addedAfterKickoff": false,
-    "created": "2025-07-29",
-    "resolved": "2025-08-17"
+    "created": "2025-07-11",
+    "resolved": "2025-09-13"
   },
   {
     "id": "P010-04",
@@ -2355,8 +2355,8 @@
       "seed:P010-04"
     ],
     "addedAfterKickoff": false,
-    "created": "2025-07-29",
-    "resolved": "2025-08-17"
+    "created": "2025-07-11",
+    "resolved": "2025-09-13"
   },
   {
     "id": "P010-05",
@@ -2379,8 +2379,8 @@
       "seed:P010-05"
     ],
     "addedAfterKickoff": false,
-    "created": "2025-07-29",
-    "resolved": "2025-08-15"
+    "created": "2025-07-11",
+    "resolved": "2025-09-11"
   },
   {
     "id": "P010-06",
@@ -2403,8 +2403,8 @@
       "seed:P010-06"
     ],
     "addedAfterKickoff": false,
-    "created": "2025-07-29",
-    "resolved": "2025-08-19"
+    "created": "2025-07-11",
+    "resolved": "2025-09-15"
   },
   {
     "id": "P010-07",
@@ -2427,8 +2427,8 @@
       "seed:P010-07"
     ],
     "addedAfterKickoff": false,
-    "created": "2025-07-29",
-    "resolved": "2025-08-15"
+    "created": "2025-07-11",
+    "resolved": "2025-09-11"
   },
   {
     "id": "P010-08",
@@ -2452,8 +2452,8 @@
       "added-after-kickoff"
     ],
     "addedAfterKickoff": true,
-    "created": "2025-08-17",
-    "resolved": "2025-08-17"
+    "created": "2025-07-30",
+    "resolved": "2025-09-13"
   },
   {
     "id": "P011-01",
@@ -2476,8 +2476,8 @@
       "seed:P011-01"
     ],
     "addedAfterKickoff": false,
-    "created": "2025-08-13",
-    "resolved": "2025-08-26"
+    "created": "2025-07-24",
+    "resolved": "2025-08-23"
   },
   {
     "id": "P011-02",
@@ -2500,8 +2500,8 @@
       "seed:P011-02"
     ],
     "addedAfterKickoff": false,
-    "created": "2025-08-13",
-    "resolved": "2025-08-27"
+    "created": "2025-07-24",
+    "resolved": "2025-08-24"
   },
   {
     "id": "P011-03",
@@ -2524,8 +2524,8 @@
       "seed:P011-03"
     ],
     "addedAfterKickoff": false,
-    "created": "2025-08-13",
-    "resolved": "2025-08-26"
+    "created": "2025-07-24",
+    "resolved": "2025-08-23"
   },
   {
     "id": "P011-04",
@@ -2548,8 +2548,8 @@
       "seed:P011-04"
     ],
     "addedAfterKickoff": false,
-    "created": "2025-08-13",
-    "resolved": "2025-08-24"
+    "created": "2025-07-24",
+    "resolved": "2025-08-21"
   },
   {
     "id": "P011-05",
@@ -2572,8 +2572,8 @@
       "seed:P011-05"
     ],
     "addedAfterKickoff": false,
-    "created": "2025-08-13",
-    "resolved": "2025-08-25"
+    "created": "2025-07-24",
+    "resolved": "2025-08-22"
   },
   {
     "id": "P011-06",
@@ -2596,8 +2596,8 @@
       "seed:P011-06"
     ],
     "addedAfterKickoff": false,
-    "created": "2025-08-13",
-    "resolved": "2025-08-28"
+    "created": "2025-07-24",
+    "resolved": "2025-08-25"
   },
   {
     "id": "P012-01",
@@ -2620,8 +2620,8 @@
       "seed:P012-01"
     ],
     "addedAfterKickoff": false,
-    "created": "2025-08-24",
-    "resolved": "2025-10-15"
+    "created": "2025-08-04",
+    "resolved": "2025-10-19"
   },
   {
     "id": "P012-02",
@@ -2644,8 +2644,8 @@
       "seed:P012-02"
     ],
     "addedAfterKickoff": false,
-    "created": "2025-08-24",
-    "resolved": "2025-10-16"
+    "created": "2025-08-04",
+    "resolved": "2025-10-20"
   },
   {
     "id": "P012-03",
@@ -2668,8 +2668,8 @@
       "seed:P012-03"
     ],
     "addedAfterKickoff": false,
-    "created": "2025-08-24",
-    "resolved": "2025-10-14"
+    "created": "2025-08-04",
+    "resolved": "2025-10-18"
   },
   {
     "id": "P012-04",
@@ -2692,8 +2692,8 @@
       "seed:P012-04"
     ],
     "addedAfterKickoff": false,
-    "created": "2025-08-24",
-    "resolved": "2025-10-14"
+    "created": "2025-08-04",
+    "resolved": "2025-10-18"
   },
   {
     "id": "P012-05",
@@ -2716,8 +2716,8 @@
       "seed:P012-05"
     ],
     "addedAfterKickoff": false,
-    "created": "2025-08-24",
-    "resolved": "2025-10-17"
+    "created": "2025-08-04",
+    "resolved": "2025-10-21"
   },
   {
     "id": "P012-06",
@@ -2740,8 +2740,8 @@
       "seed:P012-06"
     ],
     "addedAfterKickoff": false,
-    "created": "2025-08-24",
-    "resolved": "2025-10-14"
+    "created": "2025-08-04",
+    "resolved": "2025-10-18"
   },
   {
     "id": "P012-07",
@@ -2764,8 +2764,8 @@
       "seed:P012-07"
     ],
     "addedAfterKickoff": false,
-    "created": "2025-08-24",
-    "resolved": "2025-10-15"
+    "created": "2025-08-04",
+    "resolved": "2025-10-19"
   },
   {
     "id": "P012-08",
@@ -2788,8 +2788,8 @@
       "seed:P012-08"
     ],
     "addedAfterKickoff": false,
-    "created": "2025-08-24",
-    "resolved": "2025-10-14"
+    "created": "2025-08-04",
+    "resolved": "2025-10-18"
   },
   {
     "id": "P012-09",
@@ -2812,8 +2812,8 @@
       "seed:P012-09"
     ],
     "addedAfterKickoff": false,
-    "created": "2025-08-24",
-    "resolved": "2025-10-14"
+    "created": "2025-08-04",
+    "resolved": "2025-10-18"
   },
   {
     "id": "P012-10",
@@ -2836,8 +2836,8 @@
       "seed:P012-10"
     ],
     "addedAfterKickoff": false,
-    "created": "2025-08-24",
-    "resolved": "2025-10-15"
+    "created": "2025-08-04",
+    "resolved": "2025-10-19"
   },
   {
     "id": "P012-11",
@@ -2860,8 +2860,8 @@
       "seed:P012-11"
     ],
     "addedAfterKickoff": false,
-    "created": "2025-08-24",
-    "resolved": "2025-10-14"
+    "created": "2025-08-04",
+    "resolved": "2025-10-18"
   },
   {
     "id": "P013-01",
@@ -2884,8 +2884,8 @@
       "seed:P013-01"
     ],
     "addedAfterKickoff": false,
-    "created": "2025-09-04",
-    "resolved": "2025-09-14"
+    "created": "2025-08-11",
+    "resolved": "2025-08-31"
   },
   {
     "id": "P013-02",
@@ -2908,8 +2908,8 @@
       "seed:P013-02"
     ],
     "addedAfterKickoff": false,
-    "created": "2025-09-04",
-    "resolved": "2025-09-18"
+    "created": "2025-08-11",
+    "resolved": "2025-09-04"
   },
   {
     "id": "P013-03",
@@ -2932,8 +2932,8 @@
       "seed:P013-03"
     ],
     "addedAfterKickoff": false,
-    "created": "2025-09-04",
-    "resolved": "2025-09-17"
+    "created": "2025-08-11",
+    "resolved": "2025-09-03"
   },
   {
     "id": "P013-04",
@@ -2956,8 +2956,8 @@
       "seed:P013-04"
     ],
     "addedAfterKickoff": false,
-    "created": "2025-09-04",
-    "resolved": "2025-09-14"
+    "created": "2025-08-11",
+    "resolved": "2025-08-31"
   },
   {
     "id": "P013-05",
@@ -2980,8 +2980,8 @@
       "seed:P013-05"
     ],
     "addedAfterKickoff": false,
-    "created": "2025-09-04",
-    "resolved": "2025-09-14"
+    "created": "2025-08-11",
+    "resolved": "2025-08-31"
   },
   {
     "id": "P013-06",
@@ -3004,8 +3004,8 @@
       "seed:P013-06"
     ],
     "addedAfterKickoff": false,
-    "created": "2025-09-04",
-    "resolved": "2025-09-17"
+    "created": "2025-08-11",
+    "resolved": "2025-09-03"
   },
   {
     "id": "P013-07",
@@ -3028,8 +3028,8 @@
       "seed:P013-07"
     ],
     "addedAfterKickoff": false,
-    "created": "2025-09-04",
-    "resolved": "2025-09-14"
+    "created": "2025-08-11",
+    "resolved": "2025-08-31"
   },
   {
     "id": "P013-08",
@@ -3052,8 +3052,8 @@
       "seed:P013-08"
     ],
     "addedAfterKickoff": false,
-    "created": "2025-09-04",
-    "resolved": "2025-09-15"
+    "created": "2025-08-11",
+    "resolved": "2025-09-01"
   },
   {
     "id": "P013-09",
@@ -3076,8 +3076,8 @@
       "seed:P013-09"
     ],
     "addedAfterKickoff": false,
-    "created": "2025-09-04",
-    "resolved": "2025-09-16"
+    "created": "2025-08-11",
+    "resolved": "2025-09-02"
   },
   {
     "id": "P013-10",
@@ -3100,8 +3100,8 @@
       "seed:P013-10"
     ],
     "addedAfterKickoff": false,
-    "created": "2025-09-04",
-    "resolved": "2025-09-17"
+    "created": "2025-08-11",
+    "resolved": "2025-09-03"
   },
   {
     "id": "P014-01",
@@ -3124,8 +3124,8 @@
       "seed:P014-01"
     ],
     "addedAfterKickoff": false,
-    "created": "2025-09-17",
-    "resolved": "2025-10-06"
+    "created": "2025-08-22",
+    "resolved": "2025-10-20"
   },
   {
     "id": "P014-02",
@@ -3148,8 +3148,8 @@
       "seed:P014-02"
     ],
     "addedAfterKickoff": false,
-    "created": "2025-09-17",
-    "resolved": "2025-10-07"
+    "created": "2025-08-22",
+    "resolved": "2025-10-21"
   },
   {
     "id": "P014-03",
@@ -3173,8 +3173,8 @@
       "blocked"
     ],
     "addedAfterKickoff": false,
-    "created": "2025-09-17",
-    "resolved": "2025-10-03"
+    "created": "2025-08-22",
+    "resolved": "2025-10-17"
   },
   {
     "id": "P014-04",
@@ -3197,8 +3197,8 @@
       "seed:P014-04"
     ],
     "addedAfterKickoff": false,
-    "created": "2025-09-17",
-    "resolved": "2025-10-04"
+    "created": "2025-08-22",
+    "resolved": "2025-10-18"
   },
   {
     "id": "P014-05",
@@ -3221,8 +3221,8 @@
       "seed:P014-05"
     ],
     "addedAfterKickoff": false,
-    "created": "2025-09-17",
-    "resolved": "2025-10-07"
+    "created": "2025-08-22",
+    "resolved": "2025-10-21"
   },
   {
     "id": "P014-06",
@@ -3245,8 +3245,8 @@
       "seed:P014-06"
     ],
     "addedAfterKickoff": false,
-    "created": "2025-09-17",
-    "resolved": "2025-10-03"
+    "created": "2025-08-22",
+    "resolved": "2025-10-17"
   },
   {
     "id": "P014-07",
@@ -3269,8 +3269,8 @@
       "seed:P014-07"
     ],
     "addedAfterKickoff": false,
-    "created": "2025-09-17",
-    "resolved": "2025-10-07"
+    "created": "2025-08-22",
+    "resolved": "2025-10-21"
   },
   {
     "id": "P014-08",
@@ -3293,8 +3293,8 @@
       "seed:P014-08"
     ],
     "addedAfterKickoff": false,
-    "created": "2025-09-17",
-    "resolved": "2025-10-03"
+    "created": "2025-08-22",
+    "resolved": "2025-10-17"
   },
   {
     "id": "P014-09",
@@ -3317,8 +3317,8 @@
       "seed:P014-09"
     ],
     "addedAfterKickoff": false,
-    "created": "2025-09-17",
-    "resolved": "2025-10-04"
+    "created": "2025-08-22",
+    "resolved": "2025-10-18"
   },
   {
     "id": "P014-10",
@@ -3341,8 +3341,8 @@
       "seed:P014-10"
     ],
     "addedAfterKickoff": false,
-    "created": "2025-09-17",
-    "resolved": "2025-10-07"
+    "created": "2025-08-22",
+    "resolved": "2025-10-21"
   },
   {
     "id": "P014-11",
@@ -3365,8 +3365,8 @@
       "seed:P014-11"
     ],
     "addedAfterKickoff": false,
-    "created": "2025-09-17",
-    "resolved": "2025-10-04"
+    "created": "2025-08-22",
+    "resolved": "2025-10-18"
   },
   {
     "id": "P014-12",
@@ -3390,8 +3390,8 @@
       "added-after-kickoff"
     ],
     "addedAfterKickoff": true,
-    "created": "2025-10-02",
-    "resolved": "2025-10-05"
+    "created": "2025-09-06",
+    "resolved": "2025-10-19"
   },
   {
     "id": "P015-01",
@@ -3414,8 +3414,8 @@
       "seed:P015-01"
     ],
     "addedAfterKickoff": false,
-    "created": "2025-09-29",
-    "resolved": "2025-10-22"
+    "created": "2025-09-01",
+    "resolved": "2025-10-06"
   },
   {
     "id": "P015-02",
@@ -3438,8 +3438,8 @@
       "seed:P015-02"
     ],
     "addedAfterKickoff": false,
-    "created": "2025-09-29",
-    "resolved": "2025-10-21"
+    "created": "2025-09-01",
+    "resolved": "2025-10-05"
   },
   {
     "id": "P015-03",
@@ -3462,8 +3462,8 @@
       "seed:P015-03"
     ],
     "addedAfterKickoff": false,
-    "created": "2025-09-29",
-    "resolved": "2025-10-20"
+    "created": "2025-09-01",
+    "resolved": "2025-10-04"
   },
   {
     "id": "P015-04",
@@ -3486,8 +3486,8 @@
       "seed:P015-04"
     ],
     "addedAfterKickoff": false,
-    "created": "2025-09-29",
-    "resolved": "2025-10-22"
+    "created": "2025-09-01",
+    "resolved": "2025-10-06"
   },
   {
     "id": "P015-05",
@@ -3510,8 +3510,8 @@
       "seed:P015-05"
     ],
     "addedAfterKickoff": false,
-    "created": "2025-09-29",
-    "resolved": "2025-10-19"
+    "created": "2025-09-01",
+    "resolved": "2025-10-03"
   },
   {
     "id": "P015-06",
@@ -3534,8 +3534,8 @@
       "seed:P015-06"
     ],
     "addedAfterKickoff": false,
-    "created": "2025-09-29",
-    "resolved": "2025-10-20"
+    "created": "2025-09-01",
+    "resolved": "2025-10-04"
   },
   {
     "id": "P015-07",
@@ -3558,8 +3558,8 @@
       "seed:P015-07"
     ],
     "addedAfterKickoff": false,
-    "created": "2025-09-29",
-    "resolved": "2025-10-21"
+    "created": "2025-09-01",
+    "resolved": "2025-10-05"
   },
   {
     "id": "P015-08",
@@ -3582,8 +3582,8 @@
       "seed:P015-08"
     ],
     "addedAfterKickoff": false,
-    "created": "2025-09-29",
-    "resolved": "2025-10-21"
+    "created": "2025-09-01",
+    "resolved": "2025-10-05"
   },
   {
     "id": "P015-09",
@@ -3606,8 +3606,8 @@
       "seed:P015-09"
     ],
     "addedAfterKickoff": false,
-    "created": "2025-09-29",
-    "resolved": "2025-10-19"
+    "created": "2025-09-01",
+    "resolved": "2025-10-03"
   },
   {
     "id": "P015-10",
@@ -3630,8 +3630,8 @@
       "seed:P015-10"
     ],
     "addedAfterKickoff": false,
-    "created": "2025-09-29",
-    "resolved": "2025-10-19"
+    "created": "2025-09-01",
+    "resolved": "2025-10-03"
   },
   {
     "id": "P015-11",
@@ -3654,8 +3654,8 @@
       "seed:P015-11"
     ],
     "addedAfterKickoff": false,
-    "created": "2025-09-29",
-    "resolved": "2025-10-20"
+    "created": "2025-09-01",
+    "resolved": "2025-10-04"
   },
   {
     "id": "P015-12",
@@ -3679,8 +3679,8 @@
       "added-after-kickoff"
     ],
     "addedAfterKickoff": true,
-    "created": "2025-10-21",
-    "resolved": "2025-10-21"
+    "created": "2025-09-23",
+    "resolved": "2025-10-05"
   },
   {
     "id": "P015-13",
@@ -3704,8 +3704,8 @@
       "added-after-kickoff"
     ],
     "addedAfterKickoff": true,
-    "created": "2025-10-21",
-    "resolved": "2025-10-21"
+    "created": "2025-09-23",
+    "resolved": "2025-10-05"
   },
   {
     "id": "P016-01",
@@ -3728,8 +3728,8 @@
       "seed:P016-01"
     ],
     "addedAfterKickoff": false,
-    "created": "2025-10-13",
-    "resolved": "2025-11-13"
+    "created": "2025-09-15",
+    "resolved": "2025-11-23"
   },
   {
     "id": "P016-02",
@@ -3752,8 +3752,8 @@
       "seed:P016-02"
     ],
     "addedAfterKickoff": false,
-    "created": "2025-10-13",
-    "resolved": "2025-11-13"
+    "created": "2025-09-15",
+    "resolved": "2025-11-23"
   },
   {
     "id": "P016-03",
@@ -3776,8 +3776,8 @@
       "seed:P016-03"
     ],
     "addedAfterKickoff": false,
-    "created": "2025-10-13",
-    "resolved": "2025-11-14"
+    "created": "2025-09-15",
+    "resolved": "2025-11-24"
   },
   {
     "id": "P016-04",
@@ -3800,8 +3800,8 @@
       "seed:P016-04"
     ],
     "addedAfterKickoff": false,
-    "created": "2025-10-13",
-    "resolved": "2025-11-14"
+    "created": "2025-09-15",
+    "resolved": "2025-11-24"
   },
   {
     "id": "P016-05",
@@ -3824,8 +3824,8 @@
       "seed:P016-05"
     ],
     "addedAfterKickoff": false,
-    "created": "2025-10-13",
-    "resolved": "2025-11-11"
+    "created": "2025-09-15",
+    "resolved": "2025-11-21"
   },
   {
     "id": "P016-06",
@@ -3848,8 +3848,8 @@
       "seed:P016-06"
     ],
     "addedAfterKickoff": false,
-    "created": "2025-10-13",
-    "resolved": "2025-11-14"
+    "created": "2025-09-15",
+    "resolved": "2025-11-24"
   },
   {
     "id": "P016-07",
@@ -3872,8 +3872,8 @@
       "seed:P016-07"
     ],
     "addedAfterKickoff": false,
-    "created": "2025-10-13",
-    "resolved": "2025-11-10"
+    "created": "2025-09-15",
+    "resolved": "2025-11-20"
   },
   {
     "id": "P016-08",
@@ -3896,8 +3896,8 @@
       "seed:P016-08"
     ],
     "addedAfterKickoff": false,
-    "created": "2025-10-13",
-    "resolved": "2025-11-11"
+    "created": "2025-09-15",
+    "resolved": "2025-11-21"
   },
   {
     "id": "P016-09",
@@ -3920,8 +3920,8 @@
       "seed:P016-09"
     ],
     "addedAfterKickoff": false,
-    "created": "2025-10-13",
-    "resolved": "2025-11-10"
+    "created": "2025-09-15",
+    "resolved": "2025-11-20"
   },
   {
     "id": "P016-10",
@@ -3944,8 +3944,8 @@
       "seed:P016-10"
     ],
     "addedAfterKickoff": false,
-    "created": "2025-10-13",
-    "resolved": "2025-11-11"
+    "created": "2025-09-15",
+    "resolved": "2025-11-21"
   },
   {
     "id": "P016-11",
@@ -3968,8 +3968,8 @@
       "seed:P016-11"
     ],
     "addedAfterKickoff": false,
-    "created": "2025-10-13",
-    "resolved": "2025-11-13"
+    "created": "2025-09-15",
+    "resolved": "2025-11-23"
   },
   {
     "id": "P016-12",
@@ -3992,8 +3992,8 @@
       "seed:P016-12"
     ],
     "addedAfterKickoff": false,
-    "created": "2025-10-13",
-    "resolved": "2025-11-13"
+    "created": "2025-09-15",
+    "resolved": "2025-11-23"
   },
   {
     "id": "P016-13",
@@ -4016,8 +4016,8 @@
       "seed:P016-13"
     ],
     "addedAfterKickoff": false,
-    "created": "2025-10-13",
-    "resolved": "2025-11-14"
+    "created": "2025-09-15",
+    "resolved": "2025-11-24"
   },
   {
     "id": "P016-14",
@@ -4041,8 +4041,8 @@
       "added-after-kickoff"
     ],
     "addedAfterKickoff": true,
-    "created": "2025-10-23",
-    "resolved": "2025-11-10"
+    "created": "2025-09-25",
+    "resolved": "2025-11-20"
   },
   {
     "id": "P017-01",
@@ -4065,8 +4065,8 @@
       "seed:P017-01"
     ],
     "addedAfterKickoff": false,
-    "created": "2025-10-24",
-    "resolved": "2025-11-08"
+    "created": "2025-09-22",
+    "resolved": "2025-11-17"
   },
   {
     "id": "P017-02",
@@ -4089,8 +4089,8 @@
       "seed:P017-02"
     ],
     "addedAfterKickoff": false,
-    "created": "2025-10-24",
-    "resolved": "2025-11-11"
+    "created": "2025-09-22",
+    "resolved": "2025-11-20"
   },
   {
     "id": "P017-03",
@@ -4113,8 +4113,8 @@
       "seed:P017-03"
     ],
     "addedAfterKickoff": false,
-    "created": "2025-10-24",
-    "resolved": "2025-11-06"
+    "created": "2025-09-22",
+    "resolved": "2025-11-15"
   },
   {
     "id": "P017-04",
@@ -4137,8 +4137,8 @@
       "seed:P017-04"
     ],
     "addedAfterKickoff": false,
-    "created": "2025-10-24",
-    "resolved": "2025-11-07"
+    "created": "2025-09-22",
+    "resolved": "2025-11-16"
   },
   {
     "id": "P017-05",
@@ -4161,8 +4161,8 @@
       "seed:P017-05"
     ],
     "addedAfterKickoff": false,
-    "created": "2025-10-24",
-    "resolved": "2025-11-10"
+    "created": "2025-09-22",
+    "resolved": "2025-11-19"
   },
   {
     "id": "P017-06",
@@ -4185,8 +4185,8 @@
       "seed:P017-06"
     ],
     "addedAfterKickoff": false,
-    "created": "2025-10-24",
-    "resolved": "2025-11-11"
+    "created": "2025-09-22",
+    "resolved": "2025-11-20"
   },
   {
     "id": "P017-07",
@@ -4209,8 +4209,8 @@
       "seed:P017-07"
     ],
     "addedAfterKickoff": false,
-    "created": "2025-10-24",
-    "resolved": "2025-11-09"
+    "created": "2025-09-22",
+    "resolved": "2025-11-18"
   },
   {
     "id": "P017-08",
@@ -4234,8 +4234,8 @@
       "blocked"
     ],
     "addedAfterKickoff": false,
-    "created": "2025-10-24",
-    "resolved": "2025-11-10"
+    "created": "2025-09-22",
+    "resolved": "2025-11-19"
   },
   {
     "id": "P017-09",
@@ -4258,8 +4258,8 @@
       "seed:P017-09"
     ],
     "addedAfterKickoff": false,
-    "created": "2025-10-24",
-    "resolved": "2025-11-08"
+    "created": "2025-09-22",
+    "resolved": "2025-11-17"
   },
   {
     "id": "P017-10",
@@ -4282,8 +4282,8 @@
       "seed:P017-10"
     ],
     "addedAfterKickoff": false,
-    "created": "2025-10-24",
-    "resolved": "2025-11-11"
+    "created": "2025-09-22",
+    "resolved": "2025-11-20"
   },
   {
     "id": "P017-11",
@@ -4306,8 +4306,8 @@
       "seed:P017-11"
     ],
     "addedAfterKickoff": false,
-    "created": "2025-10-24",
-    "resolved": "2025-11-10"
+    "created": "2025-09-22",
+    "resolved": "2025-11-19"
   },
   {
     "id": "P017-12",
@@ -4331,8 +4331,8 @@
       "added-after-kickoff"
     ],
     "addedAfterKickoff": true,
-    "created": "2025-11-05",
-    "resolved": "2025-11-07"
+    "created": "2025-10-04",
+    "resolved": "2025-11-16"
   },
   {
     "id": "P018-01",
@@ -4355,8 +4355,8 @@
       "seed:P018-01"
     ],
     "addedAfterKickoff": false,
-    "created": "2025-11-07",
-    "resolved": "2025-12-29"
+    "created": "2025-10-06",
+    "resolved": "2025-12-14"
   },
   {
     "id": "P018-02",
@@ -4379,8 +4379,8 @@
       "seed:P018-02"
     ],
     "addedAfterKickoff": false,
-    "created": "2025-11-07",
-    "resolved": "2025-12-28"
+    "created": "2025-10-06",
+    "resolved": "2025-12-13"
   },
   {
     "id": "P018-03",
@@ -4403,8 +4403,8 @@
       "seed:P018-03"
     ],
     "addedAfterKickoff": false,
-    "created": "2025-11-07",
-    "resolved": "2025-12-29"
+    "created": "2025-10-06",
+    "resolved": "2025-12-14"
   },
   {
     "id": "P018-04",
@@ -4427,8 +4427,8 @@
       "seed:P018-04"
     ],
     "addedAfterKickoff": false,
-    "created": "2025-11-07",
-    "resolved": "2025-12-28"
+    "created": "2025-10-06",
+    "resolved": "2025-12-13"
   },
   {
     "id": "P018-05",
@@ -4452,8 +4452,8 @@
       "blocked"
     ],
     "addedAfterKickoff": false,
-    "created": "2025-11-07",
-    "resolved": "2025-12-28"
+    "created": "2025-10-06",
+    "resolved": "2025-12-13"
   },
   {
     "id": "P018-06",
@@ -4476,8 +4476,8 @@
       "seed:P018-06"
     ],
     "addedAfterKickoff": false,
-    "created": "2025-11-07",
-    "resolved": "2025-12-28"
+    "created": "2025-10-06",
+    "resolved": "2025-12-13"
   },
   {
     "id": "P018-07",
@@ -4500,8 +4500,8 @@
       "seed:P018-07"
     ],
     "addedAfterKickoff": false,
-    "created": "2025-11-07",
-    "resolved": "2025-12-30"
+    "created": "2025-10-06",
+    "resolved": "2025-12-15"
   },
   {
     "id": "P018-08",
@@ -4524,8 +4524,8 @@
       "seed:P018-08"
     ],
     "addedAfterKickoff": false,
-    "created": "2025-11-07",
-    "resolved": "2025-12-30"
+    "created": "2025-10-06",
+    "resolved": "2025-12-15"
   },
   {
     "id": "P018-09",
@@ -4548,8 +4548,8 @@
       "seed:P018-09"
     ],
     "addedAfterKickoff": false,
-    "created": "2025-11-07",
-    "resolved": "2025-12-27"
+    "created": "2025-10-06",
+    "resolved": "2025-12-12"
   },
   {
     "id": "P018-10",
@@ -4572,8 +4572,8 @@
       "seed:P018-10"
     ],
     "addedAfterKickoff": false,
-    "created": "2025-11-07",
-    "resolved": "2025-12-31"
+    "created": "2025-10-06",
+    "resolved": "2025-12-16"
   },
   {
     "id": "P018-11",
@@ -4596,8 +4596,8 @@
       "seed:P018-11"
     ],
     "addedAfterKickoff": false,
-    "created": "2025-11-07",
-    "resolved": "2025-12-27"
+    "created": "2025-10-06",
+    "resolved": "2025-12-12"
   },
   {
     "id": "P018-12",
@@ -4621,8 +4621,8 @@
       "added-after-kickoff"
     ],
     "addedAfterKickoff": true,
-    "created": "2025-11-26",
-    "resolved": "2025-12-27"
+    "created": "2025-10-25",
+    "resolved": "2025-12-12"
   },
   {
     "id": "P019-01",
@@ -4645,8 +4645,8 @@
       "seed:P019-01"
     ],
     "addedAfterKickoff": false,
-    "created": "2025-11-19",
-    "resolved": "2025-11-30"
+    "created": "2025-10-14",
+    "resolved": "2025-11-07"
   },
   {
     "id": "P019-02",
@@ -4669,8 +4669,8 @@
       "seed:P019-02"
     ],
     "addedAfterKickoff": false,
-    "created": "2025-11-19",
-    "resolved": "2025-12-01"
+    "created": "2025-10-14",
+    "resolved": "2025-11-08"
   },
   {
     "id": "P019-03",
@@ -4693,8 +4693,8 @@
       "seed:P019-03"
     ],
     "addedAfterKickoff": false,
-    "created": "2025-11-19",
-    "resolved": "2025-12-01"
+    "created": "2025-10-14",
+    "resolved": "2025-11-08"
   },
   {
     "id": "P019-04",
@@ -4717,8 +4717,8 @@
       "seed:P019-04"
     ],
     "addedAfterKickoff": false,
-    "created": "2025-11-19",
-    "resolved": "2025-12-01"
+    "created": "2025-10-14",
+    "resolved": "2025-11-08"
   },
   {
     "id": "P019-05",
@@ -4741,8 +4741,8 @@
       "seed:P019-05"
     ],
     "addedAfterKickoff": false,
-    "created": "2025-11-19",
-    "resolved": "2025-12-03"
+    "created": "2025-10-14",
+    "resolved": "2025-11-10"
   },
   {
     "id": "P019-06",
@@ -4765,8 +4765,8 @@
       "seed:P019-06"
     ],
     "addedAfterKickoff": false,
-    "created": "2025-11-19",
-    "resolved": "2025-12-04"
+    "created": "2025-10-14",
+    "resolved": "2025-11-11"
   },
   {
     "id": "P019-07",
@@ -4789,8 +4789,8 @@
       "seed:P019-07"
     ],
     "addedAfterKickoff": false,
-    "created": "2025-11-19",
-    "resolved": "2025-11-30"
+    "created": "2025-10-14",
+    "resolved": "2025-11-07"
   },
   {
     "id": "P020-01",
@@ -4813,7 +4813,7 @@
       "seed:P020-01"
     ],
     "addedAfterKickoff": false,
-    "created": "2025-12-01",
+    "created": "2025-10-24",
     "resolved": "2025-12-11"
   },
   {
@@ -4837,7 +4837,7 @@
       "seed:P020-02"
     ],
     "addedAfterKickoff": false,
-    "created": "2025-12-01",
+    "created": "2025-10-24",
     "resolved": "2025-12-13"
   },
   {
@@ -4861,7 +4861,7 @@
       "seed:P020-03"
     ],
     "addedAfterKickoff": false,
-    "created": "2025-12-01",
+    "created": "2025-10-24",
     "resolved": "2025-12-12"
   },
   {
@@ -4885,7 +4885,7 @@
       "seed:P020-04"
     ],
     "addedAfterKickoff": false,
-    "created": "2025-12-01",
+    "created": "2025-10-24",
     "resolved": "2025-12-15"
   },
   {
@@ -4909,7 +4909,7 @@
       "seed:P020-05"
     ],
     "addedAfterKickoff": false,
-    "created": "2025-12-01",
+    "created": "2025-10-24",
     "resolved": "2025-12-13"
   },
   {
@@ -4933,7 +4933,7 @@
       "seed:P020-06"
     ],
     "addedAfterKickoff": false,
-    "created": "2025-12-01",
+    "created": "2025-10-24",
     "resolved": "2025-12-14"
   },
   {
@@ -4957,7 +4957,7 @@
       "seed:P020-07"
     ],
     "addedAfterKickoff": false,
-    "created": "2025-12-01",
+    "created": "2025-10-24",
     "resolved": "2025-12-14"
   },
   {
@@ -4981,8 +4981,8 @@
       "seed:P021-01"
     ],
     "addedAfterKickoff": false,
-    "created": "2025-12-15",
-    "resolved": "2026-01-23"
+    "created": "2025-11-05",
+    "resolved": "2026-01-10"
   },
   {
     "id": "P021-02",
@@ -5005,8 +5005,8 @@
       "seed:P021-02"
     ],
     "addedAfterKickoff": false,
-    "created": "2025-12-15",
-    "resolved": "2026-01-26"
+    "created": "2025-11-05",
+    "resolved": "2026-01-13"
   },
   {
     "id": "P021-03",
@@ -5029,8 +5029,8 @@
       "seed:P021-03"
     ],
     "addedAfterKickoff": false,
-    "created": "2025-12-15",
-    "resolved": "2026-01-26"
+    "created": "2025-11-05",
+    "resolved": "2026-01-13"
   },
   {
     "id": "P021-04",
@@ -5053,8 +5053,8 @@
       "seed:P021-04"
     ],
     "addedAfterKickoff": false,
-    "created": "2025-12-15",
-    "resolved": "2026-01-27"
+    "created": "2025-11-05",
+    "resolved": "2026-01-14"
   },
   {
     "id": "P021-05",
@@ -5077,8 +5077,8 @@
       "seed:P021-05"
     ],
     "addedAfterKickoff": false,
-    "created": "2025-12-15",
-    "resolved": "2026-01-25"
+    "created": "2025-11-05",
+    "resolved": "2026-01-12"
   },
   {
     "id": "P021-06",
@@ -5101,8 +5101,8 @@
       "seed:P021-06"
     ],
     "addedAfterKickoff": false,
-    "created": "2025-12-15",
-    "resolved": "2026-01-24"
+    "created": "2025-11-05",
+    "resolved": "2026-01-11"
   },
   {
     "id": "P021-07",
@@ -5125,8 +5125,8 @@
       "seed:P021-07"
     ],
     "addedAfterKickoff": false,
-    "created": "2025-12-15",
-    "resolved": "2026-01-27"
+    "created": "2025-11-05",
+    "resolved": "2026-01-14"
   },
   {
     "id": "P021-08",
@@ -5149,8 +5149,8 @@
       "seed:P021-08"
     ],
     "addedAfterKickoff": false,
-    "created": "2025-12-15",
-    "resolved": "2026-01-22"
+    "created": "2025-11-05",
+    "resolved": "2026-01-09"
   },
   {
     "id": "P021-09",
@@ -5173,8 +5173,8 @@
       "seed:P021-09"
     ],
     "addedAfterKickoff": false,
-    "created": "2025-12-15",
-    "resolved": "2026-01-25"
+    "created": "2025-11-05",
+    "resolved": "2026-01-12"
   },
   {
     "id": "P021-10",
@@ -5197,8 +5197,8 @@
       "seed:P021-10"
     ],
     "addedAfterKickoff": false,
-    "created": "2025-12-15",
-    "resolved": "2026-01-23"
+    "created": "2025-11-05",
+    "resolved": "2026-01-10"
   },
   {
     "id": "P021-11",
@@ -5221,8 +5221,8 @@
       "seed:P021-11"
     ],
     "addedAfterKickoff": false,
-    "created": "2025-12-15",
-    "resolved": "2026-01-25"
+    "created": "2025-11-05",
+    "resolved": "2026-01-12"
   },
   {
     "id": "P022-01",
@@ -5245,8 +5245,8 @@
       "seed:P022-01"
     ],
     "addedAfterKickoff": false,
-    "created": "2025-12-26",
-    "resolved": "2026-01-06"
+    "created": "2025-11-14",
+    "resolved": "2025-12-08"
   },
   {
     "id": "P022-02",
@@ -5269,8 +5269,8 @@
       "seed:P022-02"
     ],
     "addedAfterKickoff": false,
-    "created": "2025-12-26",
-    "resolved": "2026-01-08"
+    "created": "2025-11-14",
+    "resolved": "2025-12-10"
   },
   {
     "id": "P022-03",
@@ -5293,8 +5293,8 @@
       "seed:P022-03"
     ],
     "addedAfterKickoff": false,
-    "created": "2025-12-26",
-    "resolved": "2026-01-09"
+    "created": "2025-11-14",
+    "resolved": "2025-12-11"
   },
   {
     "id": "P022-04",
@@ -5317,8 +5317,8 @@
       "seed:P022-04"
     ],
     "addedAfterKickoff": false,
-    "created": "2025-12-26",
-    "resolved": "2026-01-07"
+    "created": "2025-11-14",
+    "resolved": "2025-12-09"
   },
   {
     "id": "P022-05",
@@ -5341,8 +5341,8 @@
       "seed:P022-05"
     ],
     "addedAfterKickoff": false,
-    "created": "2025-12-26",
-    "resolved": "2026-01-07"
+    "created": "2025-11-14",
+    "resolved": "2025-12-09"
   },
   {
     "id": "P022-06",
@@ -5365,8 +5365,8 @@
       "seed:P022-06"
     ],
     "addedAfterKickoff": false,
-    "created": "2025-12-26",
-    "resolved": "2026-01-08"
+    "created": "2025-11-14",
+    "resolved": "2025-12-10"
   },
   {
     "id": "P022-07",
@@ -5389,8 +5389,8 @@
       "seed:P022-07"
     ],
     "addedAfterKickoff": false,
-    "created": "2025-12-26",
-    "resolved": "2026-01-06"
+    "created": "2025-11-14",
+    "resolved": "2025-12-08"
   },
   {
     "id": "P023-01",
@@ -5413,8 +5413,8 @@
       "seed:P023-01"
     ],
     "addedAfterKickoff": false,
-    "created": "2026-01-07",
-    "resolved": "2026-01-18"
+    "created": "2025-11-24",
+    "resolved": "2026-01-17"
   },
   {
     "id": "P023-02",
@@ -5437,8 +5437,8 @@
       "seed:P023-02"
     ],
     "addedAfterKickoff": false,
-    "created": "2026-01-07",
-    "resolved": "2026-01-22"
+    "created": "2025-11-24",
+    "resolved": "2026-01-21"
   },
   {
     "id": "P023-03",
@@ -5461,8 +5461,8 @@
       "seed:P023-03"
     ],
     "addedAfterKickoff": false,
-    "created": "2026-01-07",
-    "resolved": "2026-01-18"
+    "created": "2025-11-24",
+    "resolved": "2026-01-17"
   },
   {
     "id": "P023-04",
@@ -5485,8 +5485,8 @@
       "seed:P023-04"
     ],
     "addedAfterKickoff": false,
-    "created": "2026-01-07",
-    "resolved": "2026-01-18"
+    "created": "2025-11-24",
+    "resolved": "2026-01-17"
   },
   {
     "id": "P023-05",
@@ -5509,8 +5509,8 @@
       "seed:P023-05"
     ],
     "addedAfterKickoff": false,
-    "created": "2026-01-07",
-    "resolved": "2026-01-21"
+    "created": "2025-11-24",
+    "resolved": "2026-01-20"
   },
   {
     "id": "P023-06",
@@ -5533,8 +5533,8 @@
       "seed:P023-06"
     ],
     "addedAfterKickoff": false,
-    "created": "2026-01-07",
-    "resolved": "2026-01-20"
+    "created": "2025-11-24",
+    "resolved": "2026-01-19"
   },
   {
     "id": "P023-07",
@@ -5557,8 +5557,8 @@
       "seed:P023-07"
     ],
     "addedAfterKickoff": false,
-    "created": "2026-01-07",
-    "resolved": "2026-01-21"
+    "created": "2025-11-24",
+    "resolved": "2026-01-20"
   },
   {
     "id": "P024-01",
@@ -5581,8 +5581,8 @@
       "seed:P024-01"
     ],
     "addedAfterKickoff": false,
-    "created": "2026-01-21",
-    "resolved": "2026-02-04"
+    "created": "2025-12-08",
+    "resolved": "2025-12-16"
   },
   {
     "id": "P024-02",
@@ -5605,8 +5605,8 @@
       "seed:P024-02"
     ],
     "addedAfterKickoff": false,
-    "created": "2026-01-21",
-    "resolved": "2026-02-05"
+    "created": "2025-12-08",
+    "resolved": "2025-12-17"
   },
   {
     "id": "P024-03",
@@ -5629,8 +5629,8 @@
       "seed:P024-03"
     ],
     "addedAfterKickoff": false,
-    "created": "2026-01-21",
-    "resolved": "2026-02-02"
+    "created": "2025-12-08",
+    "resolved": "2025-12-14"
   },
   {
     "id": "P024-04",
@@ -5653,8 +5653,8 @@
       "seed:P024-04"
     ],
     "addedAfterKickoff": false,
-    "created": "2026-01-21",
-    "resolved": "2026-01-31"
+    "created": "2025-12-08",
+    "resolved": "2025-12-12"
   },
   {
     "id": "P024-05",
@@ -5677,8 +5677,8 @@
       "seed:P024-05"
     ],
     "addedAfterKickoff": false,
-    "created": "2026-01-21",
-    "resolved": "2026-02-03"
+    "created": "2025-12-08",
+    "resolved": "2025-12-15"
   },
   {
     "id": "P024-06",
@@ -5701,8 +5701,8 @@
       "seed:P024-06"
     ],
     "addedAfterKickoff": false,
-    "created": "2026-01-21",
-    "resolved": "2026-02-02"
+    "created": "2025-12-08",
+    "resolved": "2025-12-14"
   },
   {
     "id": "P024-07",
@@ -5726,8 +5726,8 @@
       "added-after-kickoff"
     ],
     "addedAfterKickoff": true,
-    "created": "2026-02-08",
-    "resolved": "2026-02-03"
+    "created": "2025-12-26",
+    "resolved": "2025-12-15"
   },
   {
     "id": "P025-01",
@@ -5750,8 +5750,8 @@
       "seed:P025-01"
     ],
     "addedAfterKickoff": false,
-    "created": "2026-02-02",
-    "resolved": "2026-03-09"
+    "created": "2025-12-16",
+    "resolved": "2026-04-03"
   },
   {
     "id": "P025-02",
@@ -5774,8 +5774,8 @@
       "seed:P025-02"
     ],
     "addedAfterKickoff": false,
-    "created": "2026-02-02",
-    "resolved": "2026-03-09"
+    "created": "2025-12-16",
+    "resolved": "2026-04-03"
   },
   {
     "id": "P025-03",
@@ -5798,8 +5798,8 @@
       "seed:P025-03"
     ],
     "addedAfterKickoff": false,
-    "created": "2026-02-02",
-    "resolved": "2026-03-12"
+    "created": "2025-12-16",
+    "resolved": "2026-04-06"
   },
   {
     "id": "P025-04",
@@ -5822,8 +5822,8 @@
       "seed:P025-04"
     ],
     "addedAfterKickoff": false,
-    "created": "2026-02-02",
-    "resolved": "2026-03-10"
+    "created": "2025-12-16",
+    "resolved": "2026-04-04"
   },
   {
     "id": "P025-05",
@@ -5846,8 +5846,8 @@
       "seed:P025-05"
     ],
     "addedAfterKickoff": false,
-    "created": "2026-02-02",
-    "resolved": "2026-03-09"
+    "created": "2025-12-16",
+    "resolved": "2026-04-03"
   },
   {
     "id": "P025-06",
@@ -5870,8 +5870,8 @@
       "seed:P025-06"
     ],
     "addedAfterKickoff": false,
-    "created": "2026-02-02",
-    "resolved": "2026-03-10"
+    "created": "2025-12-16",
+    "resolved": "2026-04-04"
   },
   {
     "id": "P025-07",
@@ -5894,8 +5894,8 @@
       "seed:P025-07"
     ],
     "addedAfterKickoff": false,
-    "created": "2026-02-02",
-    "resolved": "2026-03-09"
+    "created": "2025-12-16",
+    "resolved": "2026-04-03"
   },
   {
     "id": "P025-08",
@@ -5918,8 +5918,8 @@
       "seed:P025-08"
     ],
     "addedAfterKickoff": false,
-    "created": "2026-02-02",
-    "resolved": "2026-03-09"
+    "created": "2025-12-16",
+    "resolved": "2026-04-03"
   },
   {
     "id": "P025-09",
@@ -5942,8 +5942,8 @@
       "seed:P025-09"
     ],
     "addedAfterKickoff": false,
-    "created": "2026-02-02",
-    "resolved": "2026-03-12"
+    "created": "2025-12-16",
+    "resolved": "2026-04-06"
   },
   {
     "id": "P025-10",
@@ -5966,8 +5966,8 @@
       "seed:P025-10"
     ],
     "addedAfterKickoff": false,
-    "created": "2026-02-02",
-    "resolved": "2026-03-08"
+    "created": "2025-12-16",
+    "resolved": "2026-04-02"
   },
   {
     "id": "P025-11",
@@ -5990,8 +5990,8 @@
       "seed:P025-11"
     ],
     "addedAfterKickoff": false,
-    "created": "2026-02-02",
-    "resolved": "2026-03-09"
+    "created": "2025-12-16",
+    "resolved": "2026-04-03"
   },
   {
     "id": "P025-12",
@@ -6016,8 +6016,8 @@
       "added-after-kickoff"
     ],
     "addedAfterKickoff": true,
-    "created": "2026-02-25",
-    "resolved": "2026-03-10"
+    "created": "2026-01-08",
+    "resolved": "2026-04-04"
   },
   {
     "id": "P026-01",
@@ -6040,8 +6040,8 @@
       "seed:P026-01"
     ],
     "addedAfterKickoff": false,
-    "created": "2026-02-16",
-    "resolved": "2026-03-03"
+    "created": "2025-12-29",
+    "resolved": "2026-03-05"
   },
   {
     "id": "P026-02",
@@ -6064,8 +6064,8 @@
       "seed:P026-02"
     ],
     "addedAfterKickoff": false,
-    "created": "2026-02-16",
-    "resolved": "2026-03-07"
+    "created": "2025-12-29",
+    "resolved": "2026-03-09"
   },
   {
     "id": "P026-03",
@@ -6088,8 +6088,8 @@
       "seed:P026-03"
     ],
     "addedAfterKickoff": false,
-    "created": "2026-02-16",
-    "resolved": "2026-03-03"
+    "created": "2025-12-29",
+    "resolved": "2026-03-05"
   },
   {
     "id": "P026-04",
@@ -6112,8 +6112,8 @@
       "seed:P026-04"
     ],
     "addedAfterKickoff": false,
-    "created": "2026-02-16",
-    "resolved": "2026-03-04"
+    "created": "2025-12-29",
+    "resolved": "2026-03-06"
   },
   {
     "id": "P026-05",
@@ -6136,8 +6136,8 @@
       "seed:P026-05"
     ],
     "addedAfterKickoff": false,
-    "created": "2026-02-16",
-    "resolved": "2026-03-07"
+    "created": "2025-12-29",
+    "resolved": "2026-03-09"
   },
   {
     "id": "P026-06",
@@ -6160,8 +6160,8 @@
       "seed:P026-06"
     ],
     "addedAfterKickoff": false,
-    "created": "2026-02-16",
-    "resolved": "2026-03-06"
+    "created": "2025-12-29",
+    "resolved": "2026-03-08"
   },
   {
     "id": "P026-07",
@@ -6184,8 +6184,8 @@
       "seed:P026-07"
     ],
     "addedAfterKickoff": false,
-    "created": "2026-02-16",
-    "resolved": "2026-03-05"
+    "created": "2025-12-29",
+    "resolved": "2026-03-07"
   },
   {
     "id": "P026-08",
@@ -6208,8 +6208,8 @@
       "seed:P026-08"
     ],
     "addedAfterKickoff": false,
-    "created": "2026-02-16",
-    "resolved": "2026-03-04"
+    "created": "2025-12-29",
+    "resolved": "2026-03-06"
   },
   {
     "id": "P026-09",
@@ -6232,8 +6232,8 @@
       "seed:P026-09"
     ],
     "addedAfterKickoff": false,
-    "created": "2026-02-16",
-    "resolved": "2026-03-03"
+    "created": "2025-12-29",
+    "resolved": "2026-03-05"
   },
   {
     "id": "P026-10",
@@ -6256,8 +6256,8 @@
       "seed:P026-10"
     ],
     "addedAfterKickoff": false,
-    "created": "2026-02-16",
-    "resolved": "2026-03-02"
+    "created": "2025-12-29",
+    "resolved": "2026-03-04"
   },
   {
     "id": "P026-11",
@@ -6280,8 +6280,8 @@
       "seed:P026-11"
     ],
     "addedAfterKickoff": false,
-    "created": "2026-02-16",
-    "resolved": "2026-03-04"
+    "created": "2025-12-29",
+    "resolved": "2026-03-06"
   },
   {
     "id": "P026-12",
@@ -6304,8 +6304,8 @@
       "seed:P026-12"
     ],
     "addedAfterKickoff": false,
-    "created": "2026-02-16",
-    "resolved": "2026-03-06"
+    "created": "2025-12-29",
+    "resolved": "2026-03-08"
   },
   {
     "id": "P026-13",
@@ -6329,8 +6329,8 @@
       "added-after-kickoff"
     ],
     "addedAfterKickoff": true,
-    "created": "2026-03-01",
-    "resolved": "2026-03-06"
+    "created": "2026-01-11",
+    "resolved": "2026-03-08"
   },
   {
     "id": "P027-01",
@@ -6353,8 +6353,8 @@
       "seed:P027-01"
     ],
     "addedAfterKickoff": false,
-    "created": "2026-02-26",
-    "resolved": "2026-04-09"
+    "created": "2026-01-05",
+    "resolved": "2026-03-12"
   },
   {
     "id": "P027-02",
@@ -6377,8 +6377,8 @@
       "seed:P027-02"
     ],
     "addedAfterKickoff": false,
-    "created": "2026-02-26",
-    "resolved": "2026-04-09"
+    "created": "2026-01-05",
+    "resolved": "2026-03-12"
   },
   {
     "id": "P027-03",
@@ -6401,8 +6401,8 @@
       "seed:P027-03"
     ],
     "addedAfterKickoff": false,
-    "created": "2026-02-26",
-    "resolved": "2026-04-12"
+    "created": "2026-01-05",
+    "resolved": "2026-03-15"
   },
   {
     "id": "P027-04",
@@ -6425,8 +6425,8 @@
       "seed:P027-04"
     ],
     "addedAfterKickoff": false,
-    "created": "2026-02-26",
-    "resolved": "2026-04-11"
+    "created": "2026-01-05",
+    "resolved": "2026-03-14"
   },
   {
     "id": "P027-05",
@@ -6449,8 +6449,8 @@
       "seed:P027-05"
     ],
     "addedAfterKickoff": false,
-    "created": "2026-02-26",
-    "resolved": "2026-04-13"
+    "created": "2026-01-05",
+    "resolved": "2026-03-16"
   },
   {
     "id": "P027-06",
@@ -6473,8 +6473,8 @@
       "seed:P027-06"
     ],
     "addedAfterKickoff": false,
-    "created": "2026-02-26",
-    "resolved": "2026-04-13"
+    "created": "2026-01-05",
+    "resolved": "2026-03-16"
   },
   {
     "id": "P027-07",
@@ -6497,8 +6497,8 @@
       "seed:P027-07"
     ],
     "addedAfterKickoff": false,
-    "created": "2026-02-26",
-    "resolved": "2026-04-12"
+    "created": "2026-01-05",
+    "resolved": "2026-03-15"
   },
   {
     "id": "P027-08",
@@ -6521,8 +6521,8 @@
       "seed:P027-08"
     ],
     "addedAfterKickoff": false,
-    "created": "2026-02-26",
-    "resolved": "2026-04-13"
+    "created": "2026-01-05",
+    "resolved": "2026-03-16"
   },
   {
     "id": "P027-09",
@@ -6545,8 +6545,8 @@
       "seed:P027-09"
     ],
     "addedAfterKickoff": false,
-    "created": "2026-02-26",
-    "resolved": "2026-04-09"
+    "created": "2026-01-05",
+    "resolved": "2026-03-12"
   },
   {
     "id": "P027-10",
@@ -6569,8 +6569,8 @@
       "seed:P027-10"
     ],
     "addedAfterKickoff": false,
-    "created": "2026-02-26",
-    "resolved": "2026-04-10"
+    "created": "2026-01-05",
+    "resolved": "2026-03-13"
   },
   {
     "id": "P027-11",
@@ -6593,8 +6593,8 @@
       "seed:P027-11"
     ],
     "addedAfterKickoff": false,
-    "created": "2026-02-26",
-    "resolved": "2026-04-10"
+    "created": "2026-01-05",
+    "resolved": "2026-03-13"
   },
   {
     "id": "P027-12",
@@ -6617,8 +6617,8 @@
       "seed:P027-12"
     ],
     "addedAfterKickoff": false,
-    "created": "2026-02-26",
-    "resolved": "2026-04-13"
+    "created": "2026-01-05",
+    "resolved": "2026-03-16"
   },
   {
     "id": "P027-13",
@@ -6641,8 +6641,8 @@
       "seed:P027-13"
     ],
     "addedAfterKickoff": false,
-    "created": "2026-02-26",
-    "resolved": "2026-04-13"
+    "created": "2026-01-05",
+    "resolved": "2026-03-16"
   },
   {
     "id": "P027-14",
@@ -6666,8 +6666,8 @@
       "added-after-kickoff"
     ],
     "addedAfterKickoff": true,
-    "created": "2026-03-14",
-    "resolved": "2026-04-13"
+    "created": "2026-01-21",
+    "resolved": "2026-03-16"
   },
   {
     "id": "P028-01",
@@ -6690,8 +6690,8 @@
       "seed:P028-01"
     ],
     "addedAfterKickoff": false,
-    "created": "2026-03-12",
-    "resolved": "2026-04-27"
+    "created": "2026-01-19",
+    "resolved": "2026-04-29"
   },
   {
     "id": "P028-02",
@@ -6714,8 +6714,8 @@
       "seed:P028-02"
     ],
     "addedAfterKickoff": false,
-    "created": "2026-03-12",
-    "resolved": "2026-05-02"
+    "created": "2026-01-19",
+    "resolved": "2026-05-04"
   },
   {
     "id": "P028-03",
@@ -6738,8 +6738,8 @@
       "seed:P028-03"
     ],
     "addedAfterKickoff": false,
-    "created": "2026-03-12",
-    "resolved": "2026-04-30"
+    "created": "2026-01-19",
+    "resolved": "2026-05-02"
   },
   {
     "id": "P028-04",
@@ -6763,8 +6763,8 @@
       "blocked"
     ],
     "addedAfterKickoff": false,
-    "created": "2026-03-12",
-    "resolved": "2026-04-27"
+    "created": "2026-01-19",
+    "resolved": "2026-04-29"
   },
   {
     "id": "P028-05",
@@ -6788,8 +6788,8 @@
       "blocked"
     ],
     "addedAfterKickoff": false,
-    "created": "2026-03-12",
-    "resolved": "2026-04-28"
+    "created": "2026-01-19",
+    "resolved": "2026-04-30"
   },
   {
     "id": "P028-06",
@@ -6812,8 +6812,8 @@
       "seed:P028-06"
     ],
     "addedAfterKickoff": false,
-    "created": "2026-03-12",
-    "resolved": "2026-05-01"
+    "created": "2026-01-19",
+    "resolved": "2026-05-03"
   },
   {
     "id": "P028-07",
@@ -6836,8 +6836,8 @@
       "seed:P028-07"
     ],
     "addedAfterKickoff": false,
-    "created": "2026-03-12",
-    "resolved": "2026-05-01"
+    "created": "2026-01-19",
+    "resolved": "2026-05-03"
   },
   {
     "id": "P028-08",
@@ -6860,8 +6860,8 @@
       "seed:P028-08"
     ],
     "addedAfterKickoff": false,
-    "created": "2026-03-12",
-    "resolved": "2026-04-29"
+    "created": "2026-01-19",
+    "resolved": "2026-05-01"
   },
   {
     "id": "P028-09",
@@ -6884,8 +6884,8 @@
       "seed:P028-09"
     ],
     "addedAfterKickoff": false,
-    "created": "2026-03-12",
-    "resolved": "2026-04-29"
+    "created": "2026-01-19",
+    "resolved": "2026-05-01"
   },
   {
     "id": "P028-10",
@@ -6908,8 +6908,8 @@
       "seed:P028-10"
     ],
     "addedAfterKickoff": false,
-    "created": "2026-03-12",
-    "resolved": "2026-04-29"
+    "created": "2026-01-19",
+    "resolved": "2026-05-01"
   },
   {
     "id": "P028-11",
@@ -6932,8 +6932,8 @@
       "seed:P028-11"
     ],
     "addedAfterKickoff": false,
-    "created": "2026-03-12",
-    "resolved": "2026-04-30"
+    "created": "2026-01-19",
+    "resolved": "2026-05-02"
   },
   {
     "id": "P029-01",
@@ -6956,8 +6956,8 @@
       "seed:P029-01"
     ],
     "addedAfterKickoff": false,
-    "created": "2026-03-25",
-    "resolved": "2026-04-14"
+    "created": "2026-01-28",
+    "resolved": "2026-04-19"
   },
   {
     "id": "P029-02",
@@ -6980,8 +6980,8 @@
       "seed:P029-02"
     ],
     "addedAfterKickoff": false,
-    "created": "2026-03-25",
-    "resolved": "2026-04-17"
+    "created": "2026-01-28",
+    "resolved": "2026-04-22"
   },
   {
     "id": "P029-03",
@@ -7004,8 +7004,8 @@
       "seed:P029-03"
     ],
     "addedAfterKickoff": false,
-    "created": "2026-03-25",
-    "resolved": "2026-04-13"
+    "created": "2026-01-28",
+    "resolved": "2026-04-18"
   },
   {
     "id": "P029-04",
@@ -7028,8 +7028,8 @@
       "seed:P029-04"
     ],
     "addedAfterKickoff": false,
-    "created": "2026-03-25",
-    "resolved": "2026-04-16"
+    "created": "2026-01-28",
+    "resolved": "2026-04-21"
   },
   {
     "id": "P029-05",
@@ -7052,8 +7052,8 @@
       "seed:P029-05"
     ],
     "addedAfterKickoff": false,
-    "created": "2026-03-25",
-    "resolved": "2026-04-15"
+    "created": "2026-01-28",
+    "resolved": "2026-04-20"
   },
   {
     "id": "P029-06",
@@ -7076,8 +7076,8 @@
       "seed:P029-06"
     ],
     "addedAfterKickoff": false,
-    "created": "2026-03-25",
-    "resolved": "2026-04-15"
+    "created": "2026-01-28",
+    "resolved": "2026-04-20"
   },
   {
     "id": "P029-07",
@@ -7100,8 +7100,8 @@
       "seed:P029-07"
     ],
     "addedAfterKickoff": false,
-    "created": "2026-03-25",
-    "resolved": "2026-04-15"
+    "created": "2026-01-28",
+    "resolved": "2026-04-20"
   },
   {
     "id": "P029-08",
@@ -7125,8 +7125,8 @@
       "blocked"
     ],
     "addedAfterKickoff": false,
-    "created": "2026-03-25",
-    "resolved": "2026-04-17"
+    "created": "2026-01-28",
+    "resolved": "2026-04-22"
   },
   {
     "id": "P029-09",
@@ -7149,8 +7149,8 @@
       "seed:P029-09"
     ],
     "addedAfterKickoff": false,
-    "created": "2026-03-25",
-    "resolved": "2026-04-14"
+    "created": "2026-01-28",
+    "resolved": "2026-04-19"
   },
   {
     "id": "P029-10",
@@ -7173,8 +7173,8 @@
       "seed:P029-10"
     ],
     "addedAfterKickoff": false,
-    "created": "2026-03-25",
-    "resolved": "2026-04-15"
+    "created": "2026-01-28",
+    "resolved": "2026-04-20"
   },
   {
     "id": "P029-11",
@@ -7197,8 +7197,8 @@
       "seed:P029-11"
     ],
     "addedAfterKickoff": false,
-    "created": "2026-03-25",
-    "resolved": "2026-04-14"
+    "created": "2026-01-28",
+    "resolved": "2026-04-19"
   },
   {
     "id": "P029-12",
@@ -7221,8 +7221,8 @@
       "seed:P029-12"
     ],
     "addedAfterKickoff": false,
-    "created": "2026-03-25",
-    "resolved": "2026-04-15"
+    "created": "2026-01-28",
+    "resolved": "2026-04-20"
   },
   {
     "id": "P029-13",
@@ -7246,8 +7246,8 @@
       "added-after-kickoff"
     ],
     "addedAfterKickoff": true,
-    "created": "2026-04-13",
-    "resolved": "2026-04-17"
+    "created": "2026-02-16",
+    "resolved": "2026-04-22"
   },
   {
     "id": "P030-01",
@@ -7270,8 +7270,8 @@
       "seed:P030-01"
     ],
     "addedAfterKickoff": false,
-    "created": "2026-04-05",
-    "resolved": "2026-05-02"
+    "created": "2026-02-06",
+    "resolved": "2026-03-06"
   },
   {
     "id": "P030-02",
@@ -7294,8 +7294,8 @@
       "seed:P030-02"
     ],
     "addedAfterKickoff": false,
-    "created": "2026-04-05",
-    "resolved": "2026-05-03"
+    "created": "2026-02-06",
+    "resolved": "2026-03-07"
   },
   {
     "id": "P030-03",
@@ -7318,8 +7318,8 @@
       "seed:P030-03"
     ],
     "addedAfterKickoff": false,
-    "created": "2026-04-05",
-    "resolved": "2026-05-07"
+    "created": "2026-02-06",
+    "resolved": "2026-03-11"
   },
   {
     "id": "P030-04",
@@ -7342,8 +7342,8 @@
       "seed:P030-04"
     ],
     "addedAfterKickoff": false,
-    "created": "2026-04-05",
-    "resolved": "2026-05-06"
+    "created": "2026-02-06",
+    "resolved": "2026-03-10"
   },
   {
     "id": "P030-05",
@@ -7366,8 +7366,8 @@
       "seed:P030-05"
     ],
     "addedAfterKickoff": false,
-    "created": "2026-04-05",
-    "resolved": "2026-05-07"
+    "created": "2026-02-06",
+    "resolved": "2026-03-11"
   },
   {
     "id": "P030-06",
@@ -7390,8 +7390,8 @@
       "seed:P030-06"
     ],
     "addedAfterKickoff": false,
-    "created": "2026-04-05",
-    "resolved": "2026-05-05"
+    "created": "2026-02-06",
+    "resolved": "2026-03-09"
   },
   {
     "id": "P031-01",
@@ -7414,8 +7414,8 @@
       "seed:P031-01"
     ],
     "addedAfterKickoff": false,
-    "created": "2026-04-19",
-    "resolved": "2026-05-06"
+    "created": "2026-02-18",
+    "resolved": "2026-04-04"
   },
   {
     "id": "P031-02",
@@ -7438,8 +7438,8 @@
       "seed:P031-02"
     ],
     "addedAfterKickoff": false,
-    "created": "2026-04-19",
-    "resolved": "2026-05-09"
+    "created": "2026-02-18",
+    "resolved": "2026-04-07"
   },
   {
     "id": "P031-03",
@@ -7462,8 +7462,8 @@
       "seed:P031-03"
     ],
     "addedAfterKickoff": false,
-    "created": "2026-04-19",
-    "resolved": "2026-05-05"
+    "created": "2026-02-18",
+    "resolved": "2026-04-03"
   },
   {
     "id": "P031-04",
@@ -7486,8 +7486,8 @@
       "seed:P031-04"
     ],
     "addedAfterKickoff": false,
-    "created": "2026-04-19",
-    "resolved": "2026-05-04"
+    "created": "2026-02-18",
+    "resolved": "2026-04-02"
   },
   {
     "id": "P031-05",
@@ -7510,8 +7510,8 @@
       "seed:P031-05"
     ],
     "addedAfterKickoff": false,
-    "created": "2026-04-19",
-    "resolved": "2026-05-07"
+    "created": "2026-02-18",
+    "resolved": "2026-04-05"
   },
   {
     "id": "P031-06",
@@ -7534,8 +7534,8 @@
       "seed:P031-06"
     ],
     "addedAfterKickoff": false,
-    "created": "2026-04-19",
-    "resolved": "2026-05-07"
+    "created": "2026-02-18",
+    "resolved": "2026-04-05"
   },
   {
     "id": "P031-07",
@@ -7558,8 +7558,8 @@
       "seed:P031-07"
     ],
     "addedAfterKickoff": false,
-    "created": "2026-04-19",
-    "resolved": "2026-05-05"
+    "created": "2026-02-18",
+    "resolved": "2026-04-03"
   },
   {
     "id": "P031-08",
@@ -7582,8 +7582,8 @@
       "seed:P031-08"
     ],
     "addedAfterKickoff": false,
-    "created": "2026-04-19",
-    "resolved": "2026-05-08"
+    "created": "2026-02-18",
+    "resolved": "2026-04-06"
   },
   {
     "id": "P031-09",
@@ -7606,8 +7606,8 @@
       "seed:P031-09"
     ],
     "addedAfterKickoff": false,
-    "created": "2026-04-19",
-    "resolved": "2026-05-05"
+    "created": "2026-02-18",
+    "resolved": "2026-04-03"
   },
   {
     "id": "P031-10",
@@ -7630,8 +7630,8 @@
       "seed:P031-10"
     ],
     "addedAfterKickoff": false,
-    "created": "2026-04-19",
-    "resolved": "2026-05-08"
+    "created": "2026-02-18",
+    "resolved": "2026-04-06"
   },
   {
     "id": "P032-01",
@@ -7654,8 +7654,8 @@
       "seed:P032-01"
     ],
     "addedAfterKickoff": false,
-    "created": "2026-05-01",
-    "resolved": "2026-05-18"
+    "created": "2026-03-02",
+    "resolved": "2026-05-15"
   },
   {
     "id": "P032-02",
@@ -7678,8 +7678,8 @@
       "seed:P032-02"
     ],
     "addedAfterKickoff": false,
-    "created": "2026-05-01",
-    "resolved": "2026-05-21"
+    "created": "2026-03-02",
+    "resolved": "2026-05-18"
   },
   {
     "id": "P032-03",
@@ -7702,8 +7702,8 @@
       "seed:P032-03"
     ],
     "addedAfterKickoff": false,
-    "created": "2026-05-01",
-    "resolved": "2026-05-22"
+    "created": "2026-03-02",
+    "resolved": "2026-05-19"
   },
   {
     "id": "P032-04",
@@ -7726,8 +7726,8 @@
       "seed:P032-04"
     ],
     "addedAfterKickoff": false,
-    "created": "2026-05-01",
-    "resolved": "2026-05-17"
+    "created": "2026-03-02",
+    "resolved": "2026-05-14"
   },
   {
     "id": "P032-05",
@@ -7750,8 +7750,8 @@
       "seed:P032-05"
     ],
     "addedAfterKickoff": false,
-    "created": "2026-05-01",
-    "resolved": "2026-05-18"
+    "created": "2026-03-02",
+    "resolved": "2026-05-15"
   },
   {
     "id": "P032-06",
@@ -7774,8 +7774,8 @@
       "seed:P032-06"
     ],
     "addedAfterKickoff": false,
-    "created": "2026-05-01",
-    "resolved": "2026-05-17"
+    "created": "2026-03-02",
+    "resolved": "2026-05-14"
   },
   {
     "id": "P032-07",
@@ -7798,8 +7798,8 @@
       "seed:P032-07"
     ],
     "addedAfterKickoff": false,
-    "created": "2026-05-01",
-    "resolved": "2026-05-21"
+    "created": "2026-03-02",
+    "resolved": "2026-05-18"
   },
   {
     "id": "P032-08",
@@ -7822,8 +7822,8 @@
       "seed:P032-08"
     ],
     "addedAfterKickoff": false,
-    "created": "2026-05-01",
-    "resolved": "2026-05-20"
+    "created": "2026-03-02",
+    "resolved": "2026-05-17"
   },
   {
     "id": "P032-09",
@@ -7847,8 +7847,8 @@
       "blocked"
     ],
     "addedAfterKickoff": false,
-    "created": "2026-05-01",
-    "resolved": "2026-05-17"
+    "created": "2026-03-02",
+    "resolved": "2026-05-14"
   },
   {
     "id": "P032-10",
@@ -7871,8 +7871,8 @@
       "seed:P032-10"
     ],
     "addedAfterKickoff": false,
-    "created": "2026-05-01",
-    "resolved": "2026-05-22"
+    "created": "2026-03-02",
+    "resolved": "2026-05-19"
   },
   {
     "id": "P032-11",
@@ -7895,8 +7895,8 @@
       "seed:P032-11"
     ],
     "addedAfterKickoff": false,
-    "created": "2026-05-01",
-    "resolved": "2026-05-21"
+    "created": "2026-03-02",
+    "resolved": "2026-05-18"
   },
   {
     "id": "P033-01",
@@ -7919,8 +7919,8 @@
       "seed:P033-01"
     ],
     "addedAfterKickoff": false,
-    "created": "2026-05-13",
-    "resolved": "2026-06-05"
+    "created": "2026-03-10",
+    "resolved": "2026-04-24"
   },
   {
     "id": "P033-02",
@@ -7943,8 +7943,8 @@
       "seed:P033-02"
     ],
     "addedAfterKickoff": false,
-    "created": "2026-05-13",
-    "resolved": "2026-06-06"
+    "created": "2026-03-10",
+    "resolved": "2026-04-25"
   },
   {
     "id": "P033-03",
@@ -7967,8 +7967,8 @@
       "seed:P033-03"
     ],
     "addedAfterKickoff": false,
-    "created": "2026-05-13",
-    "resolved": "2026-06-05"
+    "created": "2026-03-10",
+    "resolved": "2026-04-24"
   },
   {
     "id": "P033-04",
@@ -7991,8 +7991,8 @@
       "seed:P033-04"
     ],
     "addedAfterKickoff": false,
-    "created": "2026-05-13",
-    "resolved": "2026-06-05"
+    "created": "2026-03-10",
+    "resolved": "2026-04-24"
   },
   {
     "id": "P033-05",
@@ -8015,8 +8015,8 @@
       "seed:P033-05"
     ],
     "addedAfterKickoff": false,
-    "created": "2026-05-13",
-    "resolved": "2026-06-04"
+    "created": "2026-03-10",
+    "resolved": "2026-04-23"
   },
   {
     "id": "P033-06",
@@ -8040,8 +8040,8 @@
       "blocked"
     ],
     "addedAfterKickoff": false,
-    "created": "2026-05-13",
-    "resolved": "2026-06-08"
+    "created": "2026-03-10",
+    "resolved": "2026-04-27"
   },
   {
     "id": "P033-07",
@@ -8064,8 +8064,8 @@
       "seed:P033-07"
     ],
     "addedAfterKickoff": false,
-    "created": "2026-05-13",
-    "resolved": "2026-06-05"
+    "created": "2026-03-10",
+    "resolved": "2026-04-24"
   },
   {
     "id": "P033-08",
@@ -8088,8 +8088,8 @@
       "seed:P033-08"
     ],
     "addedAfterKickoff": false,
-    "created": "2026-05-13",
-    "resolved": "2026-06-09"
+    "created": "2026-03-10",
+    "resolved": "2026-04-28"
   },
   {
     "id": "P033-09",
@@ -8112,8 +8112,8 @@
       "seed:P033-09"
     ],
     "addedAfterKickoff": false,
-    "created": "2026-05-13",
-    "resolved": "2026-06-07"
+    "created": "2026-03-10",
+    "resolved": "2026-04-26"
   },
   {
     "id": "P033-10",
@@ -8136,8 +8136,8 @@
       "seed:P033-10"
     ],
     "addedAfterKickoff": false,
-    "created": "2026-05-13",
-    "resolved": "2026-06-07"
+    "created": "2026-03-10",
+    "resolved": "2026-04-26"
   },
   {
     "id": "P033-11",
@@ -8161,8 +8161,8 @@
       "added-after-kickoff"
     ],
     "addedAfterKickoff": true,
-    "created": "2026-05-29",
-    "resolved": "2026-06-04"
+    "created": "2026-03-26",
+    "resolved": "2026-04-23"
   },
   {
     "id": "P033-12",
@@ -8186,8 +8186,8 @@
       "added-after-kickoff"
     ],
     "addedAfterKickoff": true,
-    "created": "2026-05-27",
-    "resolved": "2026-06-06"
+    "created": "2026-03-24",
+    "resolved": "2026-04-25"
   },
   {
     "id": "P034-01",
@@ -8210,8 +8210,8 @@
       "seed:P034-01"
     ],
     "addedAfterKickoff": false,
-    "created": "2026-05-25",
-    "resolved": "2026-06-19"
+    "created": "2026-03-20",
+    "resolved": "2026-05-18"
   },
   {
     "id": "P034-02",
@@ -8234,8 +8234,8 @@
       "seed:P034-02"
     ],
     "addedAfterKickoff": false,
-    "created": "2026-05-25",
-    "resolved": "2026-06-17"
+    "created": "2026-03-20",
+    "resolved": "2026-05-16"
   },
   {
     "id": "P034-03",
@@ -8258,8 +8258,8 @@
       "seed:P034-03"
     ],
     "addedAfterKickoff": false,
-    "created": "2026-05-25",
-    "resolved": "2026-06-17"
+    "created": "2026-03-20",
+    "resolved": "2026-05-16"
   },
   {
     "id": "P034-04",
@@ -8283,8 +8283,8 @@
       "blocked"
     ],
     "addedAfterKickoff": false,
-    "created": "2026-05-25",
-    "resolved": "2026-06-19"
+    "created": "2026-03-20",
+    "resolved": "2026-05-18"
   },
   {
     "id": "P034-05",
@@ -8307,8 +8307,8 @@
       "seed:P034-05"
     ],
     "addedAfterKickoff": false,
-    "created": "2026-05-25",
-    "resolved": "2026-06-18"
+    "created": "2026-03-20",
+    "resolved": "2026-05-17"
   },
   {
     "id": "P034-06",
@@ -8331,8 +8331,8 @@
       "seed:P034-06"
     ],
     "addedAfterKickoff": false,
-    "created": "2026-05-25",
-    "resolved": "2026-06-17"
+    "created": "2026-03-20",
+    "resolved": "2026-05-16"
   },
   {
     "id": "P034-07",
@@ -8355,8 +8355,8 @@
       "seed:P034-07"
     ],
     "addedAfterKickoff": false,
-    "created": "2026-05-25",
-    "resolved": "2026-06-16"
+    "created": "2026-03-20",
+    "resolved": "2026-05-15"
   },
   {
     "id": "P034-08",
@@ -8379,8 +8379,8 @@
       "seed:P034-08"
     ],
     "addedAfterKickoff": false,
-    "created": "2026-05-25",
-    "resolved": "2026-06-18"
+    "created": "2026-03-20",
+    "resolved": "2026-05-17"
   },
   {
     "id": "P034-09",
@@ -8403,8 +8403,8 @@
       "seed:P034-09"
     ],
     "addedAfterKickoff": false,
-    "created": "2026-05-25",
-    "resolved": "2026-06-20"
+    "created": "2026-03-20",
+    "resolved": "2026-05-19"
   },
   {
     "id": "P034-10",
@@ -8427,8 +8427,8 @@
       "seed:P034-10"
     ],
     "addedAfterKickoff": false,
-    "created": "2026-05-25",
-    "resolved": "2026-06-17"
+    "created": "2026-03-20",
+    "resolved": "2026-05-16"
   },
   {
     "id": "P034-11",
@@ -8451,8 +8451,8 @@
       "seed:P034-11"
     ],
     "addedAfterKickoff": false,
-    "created": "2026-05-25",
-    "resolved": "2026-06-20"
+    "created": "2026-03-20",
+    "resolved": "2026-05-19"
   },
   {
     "id": "P034-12",
@@ -8476,8 +8476,8 @@
       "added-after-kickoff"
     ],
     "addedAfterKickoff": true,
-    "created": "2026-06-06",
-    "resolved": "2026-06-18"
+    "created": "2026-04-01",
+    "resolved": "2026-05-17"
   },
   {
     "id": "P035-01",
@@ -8500,8 +8500,8 @@
       "seed:P035-01"
     ],
     "addedAfterKickoff": false,
-    "created": "2026-06-08",
-    "resolved": "2026-06-23"
+    "created": "2026-04-01",
+    "resolved": "2026-05-24"
   },
   {
     "id": "P035-02",
@@ -8524,8 +8524,8 @@
       "seed:P035-02"
     ],
     "addedAfterKickoff": false,
-    "created": "2026-06-08",
-    "resolved": "2026-06-24"
+    "created": "2026-04-01",
+    "resolved": "2026-05-25"
   },
   {
     "id": "P035-03",
@@ -8548,8 +8548,8 @@
       "seed:P035-03"
     ],
     "addedAfterKickoff": false,
-    "created": "2026-06-08",
-    "resolved": "2026-06-23"
+    "created": "2026-04-01",
+    "resolved": "2026-05-24"
   },
   {
     "id": "P035-04",
@@ -8572,8 +8572,8 @@
       "seed:P035-04"
     ],
     "addedAfterKickoff": false,
-    "created": "2026-06-08",
-    "resolved": "2026-06-21"
+    "created": "2026-04-01",
+    "resolved": "2026-05-22"
   },
   {
     "id": "P035-05",
@@ -8596,8 +8596,8 @@
       "seed:P035-05"
     ],
     "addedAfterKickoff": false,
-    "created": "2026-06-08",
-    "resolved": "2026-06-26"
+    "created": "2026-04-01",
+    "resolved": "2026-05-27"
   },
   {
     "id": "P035-06",
@@ -8620,8 +8620,8 @@
       "seed:P035-06"
     ],
     "addedAfterKickoff": false,
-    "created": "2026-06-08",
-    "resolved": "2026-06-21"
+    "created": "2026-04-01",
+    "resolved": "2026-05-22"
   },
   {
     "id": "P035-07",
@@ -8644,8 +8644,8 @@
       "seed:P035-07"
     ],
     "addedAfterKickoff": false,
-    "created": "2026-06-08",
-    "resolved": "2026-06-23"
+    "created": "2026-04-01",
+    "resolved": "2026-05-24"
   },
   {
     "id": "P035-08",
@@ -8668,8 +8668,8 @@
       "seed:P035-08"
     ],
     "addedAfterKickoff": false,
-    "created": "2026-06-08",
-    "resolved": "2026-06-22"
+    "created": "2026-04-01",
+    "resolved": "2026-05-23"
   },
   {
     "id": "P035-09",
@@ -8692,8 +8692,8 @@
       "seed:P035-09"
     ],
     "addedAfterKickoff": false,
-    "created": "2026-06-08",
-    "resolved": "2026-06-22"
+    "created": "2026-04-01",
+    "resolved": "2026-05-23"
   },
   {
     "id": "P035-10",
@@ -8716,8 +8716,8 @@
       "seed:P035-10"
     ],
     "addedAfterKickoff": false,
-    "created": "2026-06-08",
-    "resolved": "2026-06-24"
+    "created": "2026-04-01",
+    "resolved": "2026-05-25"
   },
   {
     "id": "P035-11",
@@ -8740,8 +8740,8 @@
       "seed:P035-11"
     ],
     "addedAfterKickoff": false,
-    "created": "2026-06-08",
-    "resolved": "2026-06-25"
+    "created": "2026-04-01",
+    "resolved": "2026-05-26"
   },
   {
     "id": "P035-12",
@@ -8764,8 +8764,8 @@
       "seed:P035-12"
     ],
     "addedAfterKickoff": false,
-    "created": "2026-06-08",
-    "resolved": "2026-06-24"
+    "created": "2026-04-01",
+    "resolved": "2026-05-25"
   },
   {
     "id": "P035-13",
@@ -8788,8 +8788,8 @@
       "seed:P035-13"
     ],
     "addedAfterKickoff": false,
-    "created": "2026-06-08",
-    "resolved": "2026-06-23"
+    "created": "2026-04-01",
+    "resolved": "2026-05-24"
   },
   {
     "id": "P035-14",
@@ -8813,8 +8813,8 @@
       "added-after-kickoff"
     ],
     "addedAfterKickoff": true,
-    "created": "2026-06-29",
-    "resolved": "2026-06-25"
+    "created": "2026-04-22",
+    "resolved": "2026-05-26"
   },
   {
     "id": "P035-15",
@@ -8838,8 +8838,8 @@
       "added-after-kickoff"
     ],
     "addedAfterKickoff": true,
-    "created": "2026-06-28",
-    "resolved": "2026-06-22"
+    "created": "2026-04-21",
+    "resolved": "2026-05-23"
   },
   {
     "id": "P036-01",
@@ -8862,8 +8862,8 @@
       "seed:P036-01"
     ],
     "addedAfterKickoff": false,
-    "created": "2026-06-19",
-    "resolved": "2026-07-01"
+    "created": "2026-04-10",
+    "resolved": "2026-04-27"
   },
   {
     "id": "P036-02",
@@ -8886,8 +8886,8 @@
       "seed:P036-02"
     ],
     "addedAfterKickoff": false,
-    "created": "2026-06-19",
-    "resolved": "2026-07-02"
+    "created": "2026-04-10",
+    "resolved": "2026-04-28"
   },
   {
     "id": "P036-03",
@@ -8910,8 +8910,8 @@
       "seed:P036-03"
     ],
     "addedAfterKickoff": false,
-    "created": "2026-06-19",
-    "resolved": "2026-07-02"
+    "created": "2026-04-10",
+    "resolved": "2026-04-28"
   },
   {
     "id": "P036-04",
@@ -8934,8 +8934,8 @@
       "seed:P036-04"
     ],
     "addedAfterKickoff": false,
-    "created": "2026-06-19",
-    "resolved": "2026-07-02"
+    "created": "2026-04-10",
+    "resolved": "2026-04-28"
   },
   {
     "id": "P036-05",
@@ -8958,8 +8958,8 @@
       "seed:P036-05"
     ],
     "addedAfterKickoff": false,
-    "created": "2026-06-19",
-    "resolved": "2026-07-01"
+    "created": "2026-04-10",
+    "resolved": "2026-04-27"
   },
   {
     "id": "P036-06",
@@ -8982,8 +8982,8 @@
       "seed:P036-06"
     ],
     "addedAfterKickoff": false,
-    "created": "2026-06-19",
-    "resolved": "2026-06-30"
+    "created": "2026-04-10",
+    "resolved": "2026-04-26"
   },
   {
     "id": "P037-01",
@@ -9006,8 +9006,8 @@
       "seed:P037-01"
     ],
     "addedAfterKickoff": false,
-    "created": "2026-07-03",
-    "resolved": "2026-07-18"
+    "created": "2026-04-22",
+    "resolved": "2026-05-13"
   },
   {
     "id": "P037-02",
@@ -9030,8 +9030,8 @@
       "seed:P037-02"
     ],
     "addedAfterKickoff": false,
-    "created": "2026-07-03",
-    "resolved": "2026-07-13"
+    "created": "2026-04-22",
+    "resolved": "2026-05-08"
   },
   {
     "id": "P037-03",
@@ -9054,8 +9054,8 @@
       "seed:P037-03"
     ],
     "addedAfterKickoff": false,
-    "created": "2026-07-03",
-    "resolved": "2026-07-16"
+    "created": "2026-04-22",
+    "resolved": "2026-05-11"
   },
   {
     "id": "P037-04",
@@ -9078,8 +9078,8 @@
       "seed:P037-04"
     ],
     "addedAfterKickoff": false,
-    "created": "2026-07-03",
-    "resolved": "2026-07-15"
+    "created": "2026-04-22",
+    "resolved": "2026-05-10"
   },
   {
     "id": "P037-05",
@@ -9102,8 +9102,8 @@
       "seed:P037-05"
     ],
     "addedAfterKickoff": false,
-    "created": "2026-07-03",
-    "resolved": "2026-07-16"
+    "created": "2026-04-22",
+    "resolved": "2026-05-11"
   },
   {
     "id": "P037-06",
@@ -9126,8 +9126,8 @@
       "seed:P037-06"
     ],
     "addedAfterKickoff": false,
-    "created": "2026-07-03",
-    "resolved": "2026-07-16"
+    "created": "2026-04-22",
+    "resolved": "2026-05-11"
   },
   {
     "id": "P037-07",
@@ -9150,8 +9150,8 @@
       "seed:P037-07"
     ],
     "addedAfterKickoff": false,
-    "created": "2026-07-03",
-    "resolved": "2026-07-13"
+    "created": "2026-04-22",
+    "resolved": "2026-05-08"
   },
   {
     "id": "P038-01",
@@ -9174,8 +9174,8 @@
       "seed:P038-01"
     ],
     "addedAfterKickoff": false,
-    "created": "2026-07-15",
-    "resolved": "2026-07-29"
+    "created": "2026-05-04",
+    "resolved": "2026-06-28"
   },
   {
     "id": "P038-02",
@@ -9198,8 +9198,8 @@
       "seed:P038-02"
     ],
     "addedAfterKickoff": false,
-    "created": "2026-07-15",
-    "resolved": "2026-07-27"
+    "created": "2026-05-04",
+    "resolved": "2026-06-26"
   },
   {
     "id": "P038-03",
@@ -9222,8 +9222,8 @@
       "seed:P038-03"
     ],
     "addedAfterKickoff": false,
-    "created": "2026-07-15",
-    "resolved": "2026-07-26"
+    "created": "2026-05-04",
+    "resolved": "2026-06-25"
   },
   {
     "id": "P038-04",
@@ -9246,8 +9246,8 @@
       "seed:P038-04"
     ],
     "addedAfterKickoff": false,
-    "created": "2026-07-15",
-    "resolved": "2026-07-26"
+    "created": "2026-05-04",
+    "resolved": "2026-06-25"
   },
   {
     "id": "P038-05",
@@ -9270,8 +9270,8 @@
       "seed:P038-05"
     ],
     "addedAfterKickoff": false,
-    "created": "2026-07-15",
-    "resolved": "2026-07-25"
+    "created": "2026-05-04",
+    "resolved": "2026-06-24"
   },
   {
     "id": "P038-06",
@@ -9294,8 +9294,8 @@
       "seed:P038-06"
     ],
     "addedAfterKickoff": false,
-    "created": "2026-07-15",
-    "resolved": "2026-07-25"
+    "created": "2026-05-04",
+    "resolved": "2026-06-24"
   },
   {
     "id": "P038-07",
@@ -9318,8 +9318,8 @@
       "seed:P038-07"
     ],
     "addedAfterKickoff": false,
-    "created": "2026-07-15",
-    "resolved": "2026-07-27"
+    "created": "2026-05-04",
+    "resolved": "2026-06-26"
   },
   {
     "id": "P038-08",
@@ -9342,8 +9342,8 @@
       "seed:P038-08"
     ],
     "addedAfterKickoff": false,
-    "created": "2026-07-15",
-    "resolved": "2026-07-28"
+    "created": "2026-05-04",
+    "resolved": "2026-06-27"
   },
   {
     "id": "P038-09",
@@ -9366,8 +9366,8 @@
       "seed:P038-09"
     ],
     "addedAfterKickoff": false,
-    "created": "2026-07-15",
-    "resolved": "2026-07-30"
+    "created": "2026-05-04",
+    "resolved": "2026-06-29"
   },
   {
     "id": "P038-10",
@@ -9390,8 +9390,8 @@
       "seed:P038-10"
     ],
     "addedAfterKickoff": false,
-    "created": "2026-07-15",
-    "resolved": "2026-07-25"
+    "created": "2026-05-04",
+    "resolved": "2026-06-24"
   },
   {
     "id": "P038-11",
@@ -9414,8 +9414,8 @@
       "seed:P038-11"
     ],
     "addedAfterKickoff": false,
-    "created": "2026-07-15",
-    "resolved": "2026-07-28"
+    "created": "2026-05-04",
+    "resolved": "2026-06-27"
   },
   {
     "id": "P039-01",
@@ -9438,8 +9438,8 @@
       "seed:P039-01"
     ],
     "addedAfterKickoff": false,
-    "created": "2026-07-27",
-    "resolved": "2026-09-18"
+    "created": "2026-05-12",
+    "resolved": "2026-08-08"
   },
   {
     "id": "P039-02",
@@ -9462,8 +9462,8 @@
       "seed:P039-02"
     ],
     "addedAfterKickoff": false,
-    "created": "2026-07-27",
-    "resolved": "2026-09-18"
+    "created": "2026-05-12",
+    "resolved": "2026-08-08"
   },
   {
     "id": "P039-03",
@@ -9486,8 +9486,8 @@
       "seed:P039-03"
     ],
     "addedAfterKickoff": false,
-    "created": "2026-07-27",
-    "resolved": "2026-09-18"
+    "created": "2026-05-12",
+    "resolved": "2026-08-08"
   },
   {
     "id": "P039-04",
@@ -9510,8 +9510,8 @@
       "seed:P039-04"
     ],
     "addedAfterKickoff": false,
-    "created": "2026-07-27",
-    "resolved": "2026-09-20"
+    "created": "2026-05-12",
+    "resolved": "2026-08-10"
   },
   {
     "id": "P039-05",
@@ -9534,8 +9534,8 @@
       "seed:P039-05"
     ],
     "addedAfterKickoff": false,
-    "created": "2026-07-27",
-    "resolved": "2026-09-18"
+    "created": "2026-05-12",
+    "resolved": "2026-08-08"
   },
   {
     "id": "P039-06",
@@ -9558,8 +9558,8 @@
       "seed:P039-06"
     ],
     "addedAfterKickoff": false,
-    "created": "2026-07-27",
-    "resolved": "2026-09-17"
+    "created": "2026-05-12",
+    "resolved": "2026-08-07"
   },
   {
     "id": "P039-07",
@@ -9582,8 +9582,8 @@
       "seed:P039-07"
     ],
     "addedAfterKickoff": false,
-    "created": "2026-07-27",
-    "resolved": "2026-09-21"
+    "created": "2026-05-12",
+    "resolved": "2026-08-11"
   },
   {
     "id": "P039-08",
@@ -9606,8 +9606,8 @@
       "seed:P039-08"
     ],
     "addedAfterKickoff": false,
-    "created": "2026-07-27",
-    "resolved": "2026-09-19"
+    "created": "2026-05-12",
+    "resolved": "2026-08-09"
   },
   {
     "id": "P039-09",
@@ -9630,8 +9630,8 @@
       "seed:P039-09"
     ],
     "addedAfterKickoff": false,
-    "created": "2026-07-27",
-    "resolved": "2026-09-21"
+    "created": "2026-05-12",
+    "resolved": "2026-08-11"
   },
   {
     "id": "P039-10",
@@ -9654,8 +9654,8 @@
       "seed:P039-10"
     ],
     "addedAfterKickoff": false,
-    "created": "2026-07-27",
-    "resolved": "2026-09-19"
+    "created": "2026-05-12",
+    "resolved": "2026-08-09"
   },
   {
     "id": "P039-11",
@@ -9678,8 +9678,8 @@
       "seed:P039-11"
     ],
     "addedAfterKickoff": false,
-    "created": "2026-07-27",
-    "resolved": "2026-09-19"
+    "created": "2026-05-12",
+    "resolved": "2026-08-09"
   },
   {
     "id": "P039-12",
@@ -9702,8 +9702,8 @@
       "seed:P039-12"
     ],
     "addedAfterKickoff": false,
-    "created": "2026-07-27",
-    "resolved": "2026-09-19"
+    "created": "2026-05-12",
+    "resolved": "2026-08-09"
   },
   {
     "id": "P039-13",
@@ -9727,8 +9727,8 @@
       "added-after-kickoff"
     ],
     "addedAfterKickoff": true,
-    "created": "2026-08-13",
-    "resolved": "2026-09-18"
+    "created": "2026-05-29",
+    "resolved": "2026-08-08"
   },
   {
     "id": "P040-01",
@@ -9751,8 +9751,8 @@
       "seed:P040-01"
     ],
     "addedAfterKickoff": false,
-    "created": "2026-08-08",
-    "resolved": "2026-08-27"
+    "created": "2026-05-22",
+    "resolved": "2026-07-14"
   },
   {
     "id": "P040-02",
@@ -9775,8 +9775,8 @@
       "seed:P040-02"
     ],
     "addedAfterKickoff": false,
-    "created": "2026-08-08",
-    "resolved": "2026-08-25"
+    "created": "2026-05-22",
+    "resolved": "2026-07-12"
   },
   {
     "id": "P040-03",
@@ -9799,8 +9799,8 @@
       "seed:P040-03"
     ],
     "addedAfterKickoff": false,
-    "created": "2026-08-08",
-    "resolved": "2026-08-25"
+    "created": "2026-05-22",
+    "resolved": "2026-07-12"
   },
   {
     "id": "P040-04",
@@ -9823,8 +9823,8 @@
       "seed:P040-04"
     ],
     "addedAfterKickoff": false,
-    "created": "2026-08-08",
-    "resolved": "2026-08-28"
+    "created": "2026-05-22",
+    "resolved": "2026-07-15"
   },
   {
     "id": "P040-05",
@@ -9847,8 +9847,8 @@
       "seed:P040-05"
     ],
     "addedAfterKickoff": false,
-    "created": "2026-08-08",
-    "resolved": "2026-08-25"
+    "created": "2026-05-22",
+    "resolved": "2026-07-12"
   },
   {
     "id": "P040-06",
@@ -9871,8 +9871,8 @@
       "seed:P040-06"
     ],
     "addedAfterKickoff": false,
-    "created": "2026-08-08",
-    "resolved": "2026-08-28"
+    "created": "2026-05-22",
+    "resolved": "2026-07-15"
   },
   {
     "id": "P040-07",
@@ -9895,8 +9895,8 @@
       "seed:P040-07"
     ],
     "addedAfterKickoff": false,
-    "created": "2026-08-08",
-    "resolved": "2026-08-25"
+    "created": "2026-05-22",
+    "resolved": "2026-07-12"
   },
   {
     "id": "P040-08",
@@ -9919,8 +9919,8 @@
       "seed:P040-08"
     ],
     "addedAfterKickoff": false,
-    "created": "2026-08-08",
-    "resolved": "2026-08-27"
+    "created": "2026-05-22",
+    "resolved": "2026-07-14"
   },
   {
     "id": "P040-09",
@@ -9943,8 +9943,8 @@
       "seed:P040-09"
     ],
     "addedAfterKickoff": false,
-    "created": "2026-08-08",
-    "resolved": "2026-08-28"
+    "created": "2026-05-22",
+    "resolved": "2026-07-15"
   },
   {
     "id": "P040-10",
@@ -9967,8 +9967,8 @@
       "seed:P040-10"
     ],
     "addedAfterKickoff": false,
-    "created": "2026-08-08",
-    "resolved": "2026-08-29"
+    "created": "2026-05-22",
+    "resolved": "2026-07-16"
   },
   {
     "id": "P040-11",
@@ -9991,7 +9991,7 @@
       "seed:P040-11"
     ],
     "addedAfterKickoff": false,
-    "created": "2026-08-08",
-    "resolved": "2026-08-29"
+    "created": "2026-05-22",
+    "resolved": "2026-07-16"
   }
 ]

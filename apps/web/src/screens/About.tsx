@@ -1,5 +1,17 @@
-import { Box } from '../components/Ascii';
-import { useStore } from '../lib/store';
+import type { ReactNode } from 'react';
+import { Card } from '../components/ui';
+import { useConversations } from '../state/conversations';
+
+function Box({ title, labelledBy, children }: { title: string; labelledBy: string; children: ReactNode }) {
+  return (
+    <Card inner="p-5 sm:p-6 flex flex-col gap-4 h-full" aria-labelledby={labelledBy}>
+      <h2 id={labelledBy} className="h-card m-0">
+        {title}
+      </h2>
+      <div>{children}</div>
+    </Card>
+  );
+}
 
 type Kind = 'agent' | 'browser' | 'system';
 
@@ -26,19 +38,19 @@ const NODES: Record<string, Node> = {
   ask: { x: 820, y: 230, w: 130, title: 'Ask agent', lines: ['tools call', 'the engine'], kind: 'agent' },
 };
 
-const stroke: Record<Kind, string> = { agent: 'var(--blue)', browser: 'var(--ink)', system: 'var(--graphite)' };
+const stroke: Record<Kind, string> = { agent: 'var(--blue)', browser: 'var(--ink)', system: 'var(--muted)' };
 
 function NodeBox({ n }: { n: Node }) {
   return (
-    <g style={{ fontStretch: '75%' }}>
-      <rect x={n.x} y={n.y} width={n.w} height={H} fill="var(--paper)" stroke={stroke[n.kind]} strokeWidth={n.kind === 'browser' ? 2 : 1} strokeDasharray={n.kind === 'system' ? '4 3' : undefined} />
-      <text x={n.x + 10} y={n.y + 22} fontFamily="var(--font-mono)" fontSize="13" fontWeight="600" fill="var(--ink)">
+    <g>
+      <rect x={n.x} y={n.y} width={n.w} height={H} rx={12} fill="var(--surface)" stroke={stroke[n.kind]} strokeWidth={n.kind === 'browser' ? 2 : 1} strokeDasharray={n.kind === 'system' ? '4 3' : undefined} />
+      <text x={n.x + 10} y={n.y + 22} fontFamily="var(--font-sans)" fontSize="13" fontWeight="600" fill="var(--ink)">
         {n.title}
       </text>
-      <text x={n.x + 10} y={n.y + 44} fontFamily="var(--font-mono)" fontSize="11" fill="var(--ink-2)">
+      <text x={n.x + 10} y={n.y + 44} fontFamily="var(--font-sans)" fontSize="11" fill="var(--ink-2)">
         {n.lines[0]}
       </text>
-      <text x={n.x + 10} y={n.y + 60} fontFamily="var(--font-mono)" fontSize="11" fill="var(--ink-2)">
+      <text x={n.x + 10} y={n.y + 60} fontFamily="var(--font-sans)" fontSize="11" fill="var(--ink-2)">
         {n.lines[1]}
       </text>
     </g>
@@ -51,10 +63,10 @@ const left = (n: Node) => [n.x, n.y + H / 2] as const;
 function Arrow({ d, label, lx, ly, dashed }: { d: string; label?: string; lx?: number; ly?: number; dashed?: boolean }) {
   return (
     <g>
-      <path d={d} fill="none" stroke="var(--paper)" strokeWidth={6} />
+      <path d={d} fill="none" stroke="var(--surface)" strokeWidth={6} />
       <path d={d} fill="none" stroke="var(--ink)" strokeWidth={1.25} markerEnd="url(#arrow)" strokeDasharray={dashed ? '5 4' : undefined} />
       {label ? (
-        <text x={lx} y={ly} fontFamily="var(--font-mono)" fontSize="11" style={{ fontStretch: '75%' }} fill="var(--graphite)" textAnchor="middle">
+        <text x={lx} y={ly} fontFamily="var(--font-sans)" fontSize="11" fill="var(--muted)" textAnchor="middle">
           {label}
         </text>
       ) : null}
@@ -123,13 +135,15 @@ const METHODS: [string, string, string][] = [
 ];
 
 export function About() {
-  const { setViewMode, viewMode } = useStore();
+  const { readOnly, setReadOnly } = useConversations();
+  const viewMode = readOnly ? 'overseer' : 'manager';
+  const setViewMode = (v: 'manager' | 'overseer') => setReadOnly(v === 'overseer');
   return (
-    <div className="flex flex-col gap-12">
+    <div className="thread !max-w-[64rem] gap-6">
       <header className="flex flex-col gap-3">
-        <h1 className="h-page m-0">How Scopewise works</h1>
-        <p className="lede m-0">
-          Language models read the brief, guess and explain. They never set a final number. Every figure on screen is computed by a small, deterministic engine that runs in your browser and can show its working.
+        <h1 className="h-page m-0">How estimates are worked out</h1>
+        <p className="m-0 text-lg leading-relaxed" style={{ color: 'var(--ink-2)' }}>
+          Language models read the brief, make rough guesses and explain. They never set a final number. Every figure is computed by a small, deterministic estimating engine that runs in your browser and can show its working. This page uses the technical names for each method.
         </p>
       </header>
 
@@ -147,7 +161,7 @@ export function About() {
             <span aria-hidden="true" style={{ width: 22, height: 12, border: '2px solid var(--ink)' }} /> Runs in the browser on GitHub Pages
           </li>
           <li className="inline-flex items-center gap-2">
-            <span aria-hidden="true" style={{ width: 22, height: 12, border: '1px dashed var(--graphite)' }} /> Data and outside systems
+            <span aria-hidden="true" style={{ width: 22, height: 12, border: '1px dashed var(--muted)' }} /> Data and outside systems
           </li>
         </ul>
         <p className="text-sm muted m-0 mt-3 measure">
@@ -180,7 +194,7 @@ export function About() {
         <p className="text-sm muted m-0 mt-3">Two additions of ours, both explained in the drawers: a shared project-level error factor, measured from history, so items can run late together; and a shared factor per open question, so an unanswered question moves all its items at once.</p>
       </Box>
 
-      <div className="grid gap-12 md:grid-cols-2">
+      <div className="grid gap-6 md:grid-cols-2">
         <Box title="Manager and Overseer views" labelledBy="views-title">
           <div className="flex flex-col gap-3">
             <p className="m-0">

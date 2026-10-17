@@ -66,7 +66,7 @@ const CAUSE_TEMPLATES: Record<LessonCause, (f: MissFinding) => string> = {
   underestimated: (f) => `${f.title} took ${f.ratio}× its estimate. Similar work needs a larger likely value.`,
   blocked: (f) => `${f.title} waited on an outside dependency and ran ${f.ratio}× over. Confirm access and owners before build starts.`,
   availability: (f) => `${f.title} ran ${f.ratio}× over while capacity was reduced by planned leave. Plan around known leave windows.`,
-  'data-error': (f) => `${f.title} logged ${Math.round(f.actualH)}h against ${Math.round(f.estimateH)}h, which looks like a time-entry error. Excluded from calibration.`,
+  'data-error': (f) => `${f.title} logged ${Math.round(f.actualH)}h against ${Math.round(f.estimateH)}h, which looks like a time-entry error. It is left out when learning from history.`,
 };
 
 /** Template notes, used offline (no Claude) and as a fallback when the agent fails validation. */

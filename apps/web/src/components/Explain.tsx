@@ -1,9 +1,19 @@
 import { createContext, useCallback, useContext, useEffect, useMemo, useRef, useState, type ReactNode } from 'react';
 import type { Explanation } from '@scopewise/shared';
+import { Icon } from './ui';
 
-interface Open {
+/**
+ * "See the full working and methods": the only place technical terms appear, always after a plain sentence.
+ * The drawer root is marked data-methods so the banned-terms test can skip it.
+ */
+interface Entry {
   title: string;
   explanation: Explanation;
+}
+interface Open {
+  title: string;
+  intro?: string;
+  entries: Entry[];
 }
 
 const Ctx = createContext<{ open: (o: Open) => void } | null>(null);
@@ -15,9 +25,15 @@ export function ExplainProvider({ children }: { children: ReactNode }) {
   return (
     <Ctx.Provider value={value}>
       {children}
-      {current ? <ExplainDrawer {...current} onClose={() => setCurrent(null)} /> : null}
+      {current ? <MethodsDrawer {...current} onClose={() => setCurrent(null)} /> : null}
     </Ctx.Provider>
   );
+}
+
+export function useMethods() {
+  const ctx = useContext(Ctx);
+  if (!ctx) throw new Error('useMethods outside ExplainProvider');
+  return ctx.open;
 }
 
 function fmt(v: number | string): string {
@@ -26,7 +42,7 @@ function fmt(v: number | string): string {
   return Math.abs(v) < 1 ? v.toFixed(3) : v.toLocaleString('en-US', { maximumFractionDigits: 2 });
 }
 
-function ExplainDrawer({ title, explanation: e, onClose }: Open & { onClose: () => void }) {
+function MethodsDrawer({ title, intro, entries, onClose }: Open & { onClose: () => void }) {
   const closeRef = useRef<HTMLButtonElement>(null);
   const prev = useRef<Element | null>(null);
   useEffect(() => {
@@ -42,69 +58,58 @@ function ExplainDrawer({ title, explanation: e, onClose }: Open & { onClose: () 
   return (
     <>
       <div className="scrim" onClick={onClose} aria-hidden="true" />
-      <div className="drawer" role="dialog" aria-modal="true" aria-labelledby="explain-title">
-        <div className="drawer-head">
-          <div>
-            <p className="mono text-xs muted m-0">How was this calculated?</p>
-            <h2 id="explain-title" className="h-section m-0">
-              {title}
-            </h2>
+      <div className="drawer bezel" role="dialog" aria-modal="true" aria-labelledby="methods-title" data-methods>
+        <div className="bezel-core">
+          <div className="drawer-head">
+            <div>
+              <p className="text-sm muted m-0">The full working</p>
+              <h2 id="methods-title" className="h-card m-0">
+                {title}
+              </h2>
+            </div>
+            <button ref={closeRef} className="btn btn-ghost btn-sm" onClick={onClose} aria-label="Close">
+              <Icon name="close" />
+            </button>
           </div>
-          <button ref={closeRef} className="btn btn-sm" onClick={onClose}>
-            Close
-          </button>
-        </div>
-        <div className="drawer-body flex flex-col gap-6">
-          <p className="text-lg leading-relaxed m-0">{e.plainWords}</p>
-          <dl className="grid gap-4 m-0">
-            <div>
-              <dt className="text-sm muted">Method</dt>
-              <dd className="m-0 font-semibold">{e.method}</dd>
-            </div>
-            {e.formula ? (
-              <div>
-                <dt className="text-sm muted">Formula</dt>
-                <dd className="m-0">
-                  <code className="mono block text-[13px] leading-relaxed p-3 box-well" style={{ background: 'var(--paper-2)', wordBreak: 'break-word' }}>
-                    {e.formula}
-                  </code>
-                </dd>
-              </div>
-            ) : null}
-            <div>
-              <dt className="text-sm muted">Source</dt>
-              <dd className="m-0">{e.citation}</dd>
-            </div>
-          </dl>
-          {Object.keys(e.inputs).length ? (
-            <div>
-              <h3 className="text-sm muted font-normal mb-2">Inputs</h3>
-              <table className="table">
-                <tbody>
-                  {Object.entries(e.inputs).map(([k, v]) => (
-                    <tr key={k}>
-                      <td className="mono text-[13px]">{k}</td>
-                      <td className="mono text-[13px] r">{fmt(v)}</td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
-            </div>
-          ) : null}
-          <p className="text-sm muted m-0">The language model never sets this number. It comes from the engine, which is deterministic: the same inputs and seed always give the same result.</p>
+          <div className="drawer-body flex flex-col gap-5">
+            {intro ? <p className="m-0 text-[15px] leading-relaxed">{intro}</p> : null}
+            {entries.map((e) => (
+              <details key={e.title} className="panel p-4 group" open={entries.length <= 2}>
+                <summary className="cursor-pointer list-none flex items-center justify-between gap-3">
+                  <span className="font-semibold">{e.title}</span>
+                  <Icon name="down" className="muted transition-transform group-open:rotate-180" />
+                </summary>
+                <div className="flex flex-col gap-3 mt-3">
+                  <p className="m-0 leading-relaxed">{e.explanation.plainWords}</p>
+                  <p className="m-0 text-sm">
+                    <span className="muted">Method: </span>
+                    {e.explanation.method}
+                  </p>
+                  {e.explanation.formula ? (
+                    <code className="code block text-[13px] leading-relaxed p-3 rounded-xl" style={{ background: 'var(--surface)', wordBreak: 'break-word' }}>
+                      {e.explanation.formula}
+                    </code>
+                  ) : null}
+                  <p className="m-0 text-sm muted">Source: {e.explanation.citation}</p>
+                  {Object.keys(e.explanation.inputs).length ? (
+                    <table className="table">
+                      <tbody>
+                        {Object.entries(e.explanation.inputs).map(([k, v]) => (
+                          <tr key={k}>
+                            <td className="code text-[13px]">{k}</td>
+                            <td className="code text-[13px] r">{fmt(v)}</td>
+                          </tr>
+                        ))}
+                      </tbody>
+                    </table>
+                  ) : null}
+                </div>
+              </details>
+            ))}
+            <p className="text-sm muted m-0">The language model never sets these numbers. They come from the estimating engine, which is deterministic: the same inputs always give the same result.</p>
+          </div>
         </div>
       </div>
     </>
-  );
-}
-
-/** The small [?] next to every number. */
-export function ExplainButton({ title, explanation, label }: { title: string; explanation: Explanation | undefined; label?: string }) {
-  const ctx = useContext(Ctx);
-  if (!explanation || !ctx) return null;
-  return (
-    <button type="button" className="explain-btn" aria-label={`How was this calculated: ${label ?? title}`} title="How was this calculated?" onClick={() => ctx.open({ title, explanation })}>
-      ?
-    </button>
   );
 }

@@ -7,7 +7,7 @@
 import type { Category, Complexity, MissingInfo, Phase, ProjectType, Role, ScopeResult, Size, WorkItem } from '@scopewise/shared';
 import { PHASE_TEMPLATES } from '@scopewise/shared';
 
-export const SCOPE_FIXTURE_VERSION = 'fixture-scope@1';
+export const SCOPE_FIXTURE_VERSION = 'fixture-scope@2';
 
 type Ref = [source: 'email.md' | 'meeting-notes.md' | 'jira-ticket.md', quote?: string];
 
@@ -44,6 +44,7 @@ function link(items: WorkItem[], missing: Omit<MissingInfo, 'affectedItemIds'>[]
 function scope(
   projectType: ProjectType,
   size: Size,
+  title: string,
   summary: string,
   items: WorkItem[],
   missing: Omit<MissingInfo, 'affectedItemIds'>[],
@@ -51,7 +52,7 @@ function scope(
 ): ScopeResult {
   const used = new Set(items.map((i) => i.phaseId));
   const phases: Phase[] = PHASE_TEMPLATES[projectType].filter((p) => used.has(p.id));
-  return { projectType, size, summary, phases, items, missingInfo: link(items, missing), scopeRisks: [], ...rest };
+  return { projectType, size, title, summary, phases, items, missingInfo: link(items, missing), scopeRisks: [], ...rest };
 }
 
 // --- 1. investor reminders ---------------------------------------------------------------
@@ -77,6 +78,7 @@ const remindersItems: WorkItem[] = [
 export const remindersScope = scope(
   'new-feature',
   'M',
+  'Remind investors to sign',
   'Automatic, escalating reminders to investors who haven’t signed their subscription documents, with IR controls to pause and a log of what was sent.',
   remindersItems,
   [
@@ -124,6 +126,7 @@ const formItems: WorkItem[] = [
 export const formScope = scope(
   'form-digitization',
   'L',
+  'Put the subscription form online',
   'Replace the 22-page paper subscription agreement with an online form that validates answers, saves drafts, produces a PDF and writes to investor records.',
   formItems,
   [
@@ -166,6 +169,7 @@ const syncItems: WorkItem[] = [
 export const syncScope = scope(
   'integration',
   'L',
+  'Sync with the fund administrator',
   'Keep investor records in sync between the platform and Northgate Fund Services, with alerts, a change log and human approval for bank details.',
   syncItems,
   [

@@ -46,6 +46,7 @@ export function scopeFromHistory(project: HistoryProject, items: readonly Histor
   return {
     projectType: project.projectType,
     size: project.size,
+    title: project.name,
     summary: project.name,
     phases: phasesFor(project, planned),
     items: planned.map((i) => ({
@@ -122,6 +123,8 @@ export function backtest(
     rawH: round(r.project.estimateH),
     calibratedP50: r.est.total.p50,
     calibratedP80: r.est.total.p80,
+    calibratedP50Date: r.est.p50Date,
+    calibratedP80Date: r.est.p80Date,
     rawMRE: round(rawErr[i] ?? 0, 4),
     calibratedMRE: round(calErr[i] ?? 0, 4),
     rollingRawMMRE: round(rollRaw[i] ?? 0, 4),
