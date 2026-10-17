@@ -26,6 +26,7 @@ export const copy = {
   estimateButton: 'Estimate',
   tryExample: 'No brief to hand? Try an example:',
   demoNeedsApi: 'Live estimates need the API. Try an example to see how it works.',
+  liveNoClaude: "The API is running but has no Claude key yet, so it can't read new briefs. Try an example to see how it works.",
 
   workingIntro: "Got it. I'm reading everything and comparing it with past projects.",
   stepRead: (n: number) => `Read ${n} document${n === 1 ? '' : 's'}`,

@@ -38,7 +38,7 @@ const NODES: Record<string, Node> = {
   ask: { x: 820, y: 230, w: 130, title: 'Ask agent', lines: ['tools call', 'the engine'], kind: 'agent' },
 };
 
-const stroke: Record<Kind, string> = { agent: 'var(--blue)', browser: 'var(--ink)', system: 'var(--muted)' };
+const stroke: Record<Kind, string> = { agent: 'var(--accent)', browser: 'var(--ink)', system: 'var(--muted)' };
 
 function NodeBox({ n }: { n: Node }) {
   return (
@@ -155,7 +155,7 @@ export function About() {
         </div>
         <ul className="list-none m-0 p-0 mt-4 flex flex-wrap gap-x-6 gap-y-2 text-sm">
           <li className="inline-flex items-center gap-2">
-            <span aria-hidden="true" style={{ width: 22, height: 12, border: '1px solid var(--blue)' }} /> Claude agent (API)
+            <span aria-hidden="true" style={{ width: 22, height: 12, border: '1px solid var(--accent)' }} /> Claude agent (API)
           </li>
           <li className="inline-flex items-center gap-2">
             <span aria-hidden="true" style={{ width: 22, height: 12, border: '2px solid var(--ink)' }} /> Runs in the browser on GitHub Pages

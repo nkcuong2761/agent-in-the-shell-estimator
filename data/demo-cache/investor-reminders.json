@@ -410,8 +410,8 @@
           "P039"
         ],
         "addedHoursRange": [
-          16.5,
-          27.9
+          16.8,
+          28.8
         ],
         "clientQuestion": "Similar projects often added “status dashboard for operations team” after kickoff. Should we plan for it now?"
       }
@@ -430,17 +430,17 @@
         "items": [
           {
             "itemId": "rem-d1",
-            "o": 7.9,
-            "m": 9.9,
-            "p": 14.4,
-            "reason": "Anchored on 3 similar past items (median 11h) and the plan as scoped."
+            "o": 8.3,
+            "m": 10.3,
+            "p": 15,
+            "reason": "Anchored on 3 similar past items (median 12h) and the plan as scoped."
           },
           {
             "itemId": "rem-d2",
-            "o": 4.2,
-            "m": 5.2,
-            "p": 7.6,
-            "reason": "Anchored on 3 similar past items (median 6h) and the plan as scoped."
+            "o": 4.3,
+            "m": 5.4,
+            "p": 7.8,
+            "reason": "Anchored on 3 similar past items (median 6.5h) and the plan as scoped."
           },
           {
             "itemId": "rem-ds1",
@@ -451,24 +451,24 @@
           },
           {
             "itemId": "rem-ds2",
-            "o": 5.9,
-            "m": 7.4,
-            "p": 10.7,
-            "reason": "Anchored on 3 similar past items (median 7.5h) and the plan as scoped."
+            "o": 5.7,
+            "m": 7.2,
+            "p": 10.4,
+            "reason": "Anchored on 3 similar past items (median 7h) and the plan as scoped."
           },
           {
             "itemId": "rem-ds3",
-            "o": 5.5,
-            "m": 6.8,
-            "p": 9.9,
-            "reason": "Anchored on 3 similar past items (median 6.5h) and the plan as scoped."
+            "o": 4.9,
+            "m": 6.2,
+            "p": 9,
+            "reason": "Anchored on 3 similar past items (median 5h) and the plan as scoped."
           },
           {
             "itemId": "rem-b1",
-            "o": 25.2,
-            "m": 31.5,
-            "p": 45.7,
-            "reason": "Anchored on 3 similar past items (median 26.4h) and the plan as scoped."
+            "o": 25.1,
+            "m": 31.3,
+            "p": 45.4,
+            "reason": "Anchored on 3 similar past items (median 25.9h) and the plan as scoped."
           },
           {
             "itemId": "rem-b2",
@@ -479,363 +479,31 @@
           },
           {
             "itemId": "rem-b3",
-            "o": 11.4,
-            "m": 14.3,
-            "p": 20.7,
-            "reason": "Anchored on 3 similar past items (median 16.5h) and the plan as scoped."
-          },
-          {
-            "itemId": "rem-b4",
-            "o": 13.5,
-            "m": 16.9,
-            "p": 24.5,
-            "reason": "Anchored on 3 similar past items (median 26.4h) and the plan as scoped."
-          },
-          {
-            "itemId": "rem-b5",
-            "o": 15.4,
-            "m": 19.2,
-            "p": 27.9,
-            "reason": "Anchored on 3 similar past items (median 17.5h) and the plan as scoped."
-          },
-          {
-            "itemId": "rem-b6",
-            "o": 14.9,
-            "m": 18.7,
-            "p": 27.1,
-            "reason": "Anchored on 3 similar past items (median 24.6h) and the plan as scoped."
-          },
-          {
-            "itemId": "rem-b7",
-            "o": 6.6,
-            "m": 8.2,
-            "p": 11.9,
-            "reason": "Anchored on 3 similar past items (median 9.6h) and the plan as scoped."
-          },
-          {
-            "itemId": "rem-q1",
-            "o": 12.5,
-            "m": 15.6,
-            "p": 22.7,
-            "reason": "Anchored on 3 similar past items (median 18.5h) and the plan as scoped."
-          },
-          {
-            "itemId": "rem-q2",
-            "o": 6.7,
-            "m": 8.3,
-            "p": 12.1,
-            "reason": "Anchored on 3 similar past items (median 10.5h) and the plan as scoped."
-          },
-          {
-            "itemId": "rem-g1",
-            "o": 5.5,
-            "m": 6.9,
-            "p": 9.9,
-            "reason": "Anchored on 3 similar past items (median 9.2h) and the plan as scoped."
-          }
-        ]
-      },
-      {
-        "persona": "qa-lead",
-        "items": [
-          {
-            "itemId": "rem-d1",
-            "o": 8.6,
-            "m": 10.8,
-            "p": 16.2,
-            "reason": "Low test surface; small allowance for review and fixes."
-          },
-          {
-            "itemId": "rem-d2",
-            "o": 4.1,
-            "m": 5.1,
-            "p": 7.6,
-            "reason": "Low test surface; small allowance for review and fixes."
-          },
-          {
-            "itemId": "rem-ds1",
-            "o": 13.6,
-            "m": 17,
-            "p": 25.4,
-            "reason": "Low test surface; small allowance for review and fixes."
-          },
-          {
-            "itemId": "rem-ds2",
-            "o": 5,
-            "m": 6.2,
-            "p": 9.3,
-            "reason": "Low test surface; small allowance for review and fixes."
-          },
-          {
-            "itemId": "rem-ds3",
-            "o": 4.4,
-            "m": 5.5,
-            "p": 8.3,
-            "reason": "Low test surface; small allowance for review and fixes."
-          },
-          {
-            "itemId": "rem-b1",
-            "o": 30.4,
-            "m": 38,
-            "p": 57,
-            "reason": "Low test surface; small allowance for review and fixes."
-          },
-          {
-            "itemId": "rem-b2",
-            "o": 17.6,
-            "m": 22,
-            "p": 38.5,
-            "reason": "Test surface is wide here (backend); I allowed for a second pass after fixes."
-          },
-          {
-            "itemId": "rem-b3",
-            "o": 12,
-            "m": 15,
-            "p": 26.3,
-            "reason": "Test surface is wide here (backend); I allowed for a second pass after fixes."
+            "o": 11.8,
+            "m": 14.7,
+            "p": 21.4,
+            "reason": "Anchored on 3 similar past items (median 17.7h) and the plan as scoped."
           },
           {
             "itemId": "rem-b4",
             "o": 13.4,
-            "m": 16.8,
-            "p": 25.2,
-            "reason": "Low test surface; small allowance for review and fixes."
+            "m": 16.7,
+            "p": 24.2,
+            "reason": "Anchored on 3 similar past items (median 25.9h) and the plan as scoped."
           },
           {
             "itemId": "rem-b5",
-            "o": 13.3,
-            "m": 16.6,
-            "p": 24.8,
-            "reason": "Low test surface; small allowance for review and fixes."
+            "o": 14.7,
+            "m": 18.3,
+            "p": 26.6,
+            "reason": "Anchored on 3 similar past items (median 15.5h) and the plan as scoped."
           },
           {
             "itemId": "rem-b6",
-            "o": 15.9,
-            "m": 19.9,
-            "p": 29.8,
-            "reason": "Low test surface; small allowance for review and fixes."
-          },
-          {
-            "itemId": "rem-b7",
-            "o": 6.3,
-            "m": 7.9,
-            "p": 13.8,
-            "reason": "Test surface is wide here (backend); I allowed for a second pass after fixes."
-          },
-          {
-            "itemId": "rem-q1",
-            "o": 14.1,
-            "m": 17.6,
-            "p": 30.8,
-            "reason": "Test surface is wide here (qa); I allowed for a second pass after fixes."
-          },
-          {
-            "itemId": "rem-q2",
-            "o": 6.8,
-            "m": 8.5,
-            "p": 14.9,
-            "reason": "Test surface is wide here (qa); I allowed for a second pass after fixes."
-          },
-          {
-            "itemId": "rem-g1",
-            "o": 6.2,
-            "m": 7.8,
-            "p": 11.7,
-            "reason": "Low test surface; small allowance for review and fixes."
-          }
-        ]
-      },
-      {
-        "persona": "domain-expert",
-        "items": [
-          {
-            "itemId": "rem-d1",
-            "o": 8,
-            "m": 10.3,
-            "p": 17.5,
-            "reason": "Depends on 1 open question; the answer could change what gets built."
-          },
-          {
-            "itemId": "rem-d2",
-            "o": 5.1,
-            "m": 6.5,
-            "p": 9.8,
-            "reason": "Well understood work; little domain risk."
-          },
-          {
-            "itemId": "rem-ds1",
-            "o": 12.4,
-            "m": 15.9,
-            "p": 27,
-            "reason": "Depends on 1 open question; the answer could change what gets built."
-          },
-          {
-            "itemId": "rem-ds2",
-            "o": 7,
-            "m": 9,
-            "p": 15.3,
-            "reason": "Depends on 1 open question; the answer could change what gets built."
-          },
-          {
-            "itemId": "rem-ds3",
-            "o": 5.6,
-            "m": 7.2,
-            "p": 10.9,
-            "reason": "Well understood work; little domain risk."
-          },
-          {
-            "itemId": "rem-b1",
-            "o": 26.9,
-            "m": 34.5,
-            "p": 65.5,
-            "reason": "Depends on 2 open questions; the answer could change what gets built."
-          },
-          {
-            "itemId": "rem-b2",
-            "o": 14.8,
-            "m": 19,
-            "p": 32.3,
-            "reason": "Depends on 1 open question; the answer could change what gets built."
-          },
-          {
-            "itemId": "rem-b3",
-            "o": 10.1,
-            "m": 12.9,
-            "p": 19.4,
-            "reason": "Well understood work; little domain risk."
-          },
-          {
-            "itemId": "rem-b4",
-            "o": 19,
-            "m": 24.4,
-            "p": 41.4,
-            "reason": "Depends on 1 open question; the answer could change what gets built."
-          },
-          {
-            "itemId": "rem-b5",
-            "o": 15.2,
-            "m": 19.4,
-            "p": 29.1,
-            "reason": "Well understood work; little domain risk."
-          },
-          {
-            "itemId": "rem-b6",
-            "o": 17.4,
-            "m": 22.3,
-            "p": 37.9,
-            "reason": "Depends on 1 open question; the answer could change what gets built."
-          },
-          {
-            "itemId": "rem-b7",
-            "o": 7.1,
-            "m": 9,
-            "p": 15.4,
-            "reason": "Depends on 1 open question; the answer could change what gets built."
-          },
-          {
-            "itemId": "rem-q1",
-            "o": 15.6,
-            "m": 20,
-            "p": 33.9,
-            "reason": "Depends on 1 open question; the answer could change what gets built."
-          },
-          {
-            "itemId": "rem-q2",
-            "o": 7.1,
-            "m": 9.1,
-            "p": 13.6,
-            "reason": "Well understood work; little domain risk."
-          },
-          {
-            "itemId": "rem-g1",
-            "o": 5.6,
-            "m": 7.2,
-            "p": 12.2,
-            "reason": "Depends on 1 open question; the answer could change what gets built."
-          }
-        ]
-      }
-    ],
-    "round1": [
-      {
-        "persona": "delivery-lead",
-        "items": [
-          {
-            "itemId": "rem-d1",
-            "o": 7.6,
-            "m": 9.5,
-            "p": 13.8,
-            "reason": "Anchored on 3 similar past items (median 11h) and the plan as scoped."
-          },
-          {
-            "itemId": "rem-d2",
-            "o": 4.2,
-            "m": 5.2,
-            "p": 7.6,
-            "reason": "Anchored on 3 similar past items (median 6h) and the plan as scoped."
-          },
-          {
-            "itemId": "rem-ds1",
-            "o": 11.8,
-            "m": 14.7,
-            "p": 21.4,
-            "reason": "Anchored on 3 similar past items (median 16.5h) and the plan as scoped."
-          },
-          {
-            "itemId": "rem-ds2",
-            "o": 5.9,
-            "m": 7.4,
-            "p": 10.7,
-            "reason": "Anchored on 3 similar past items (median 7.5h) and the plan as scoped."
-          },
-          {
-            "itemId": "rem-ds3",
-            "o": 5.5,
-            "m": 6.8,
-            "p": 9.9,
-            "reason": "Anchored on 3 similar past items (median 6.5h) and the plan as scoped."
-          },
-          {
-            "itemId": "rem-b1",
-            "o": 22.9,
-            "m": 28.6,
-            "p": 41.5,
-            "reason": "Anchored on 3 similar past items (median 26.4h) and the plan as scoped."
-          },
-          {
-            "itemId": "rem-b2",
-            "o": 12.5,
-            "m": 15.6,
-            "p": 22.6,
-            "reason": "Anchored on 3 similar past items (median 21.4h) and the plan as scoped."
-          },
-          {
-            "itemId": "rem-b3",
-            "o": 11.4,
-            "m": 14.3,
-            "p": 20.7,
-            "reason": "Anchored on 3 similar past items (median 16.5h) and the plan as scoped."
-          },
-          {
-            "itemId": "rem-b4",
-            "o": 13.5,
-            "m": 16.9,
-            "p": 24.5,
-            "reason": "Anchored on 3 similar past items (median 26.4h) and the plan as scoped."
-          },
-          {
-            "itemId": "rem-b5",
-            "o": 15.4,
-            "m": 19.2,
-            "p": 27.9,
-            "reason": "Anchored on 3 similar past items (median 17.5h) and the plan as scoped."
-          },
-          {
-            "itemId": "rem-b6",
-            "o": 14,
-            "m": 17.5,
-            "p": 25.4,
-            "reason": "Anchored on 3 similar past items (median 24.6h) and the plan as scoped."
+            "o": 14.3,
+            "m": 17.9,
+            "p": 26,
+            "reason": "Anchored on 3 similar past items (median 22.7h) and the plan as scoped."
           },
           {
             "itemId": "rem-b7",
@@ -846,24 +514,24 @@
           },
           {
             "itemId": "rem-q1",
-            "o": 11,
-            "m": 13.7,
-            "p": 19.9,
-            "reason": "Anchored on 3 similar past items (median 18.5h) and the plan as scoped."
+            "o": 12.3,
+            "m": 15.4,
+            "p": 22.4,
+            "reason": "Anchored on 3 similar past items (median 18h) and the plan as scoped."
           },
           {
             "itemId": "rem-q2",
-            "o": 6.5,
-            "m": 8.2,
-            "p": 11.9,
-            "reason": "Anchored on 3 similar past items (median 10.5h) and the plan as scoped."
+            "o": 6.3,
+            "m": 7.9,
+            "p": 11.4,
+            "reason": "Anchored on 3 similar past items (median 9.5h) and the plan as scoped."
           },
           {
             "itemId": "rem-g1",
-            "o": 5.2,
-            "m": 6.5,
-            "p": 9.5,
-            "reason": "Anchored on 3 similar past items (median 9.2h) and the plan as scoped."
+            "o": 5.3,
+            "m": 6.7,
+            "p": 9.7,
+            "reason": "Anchored on 3 similar past items (median 8.8h) and the plan as scoped."
           }
         ]
       },
@@ -879,100 +547,100 @@
           },
           {
             "itemId": "rem-d2",
-            "o": 4,
-            "m": 5,
-            "p": 7.4,
+            "o": 4.2,
+            "m": 5.3,
+            "p": 7.9,
             "reason": "Low test surface; small allowance for review and fixes."
           },
           {
             "itemId": "rem-ds1",
-            "o": 14.4,
-            "m": 18,
-            "p": 27,
+            "o": 13.6,
+            "m": 17,
+            "p": 25.4,
             "reason": "Low test surface; small allowance for review and fixes."
           },
           {
             "itemId": "rem-ds2",
-            "o": 4,
-            "m": 5,
-            "p": 7.5,
+            "o": 4.8,
+            "m": 6,
+            "p": 9,
             "reason": "Low test surface; small allowance for review and fixes."
           },
           {
             "itemId": "rem-ds3",
-            "o": 3.4,
-            "m": 4.2,
-            "p": 6.3,
+            "o": 4,
+            "m": 4.9,
+            "p": 7.4,
             "reason": "Low test surface; small allowance for review and fixes."
           },
           {
             "itemId": "rem-b1",
-            "o": 33.2,
-            "m": 41.5,
-            "p": 62.3,
+            "o": 30.2,
+            "m": 37.7,
+            "p": 56.6,
             "reason": "Low test surface; small allowance for review and fixes."
           },
           {
             "itemId": "rem-b2",
-            "o": 20,
-            "m": 25,
-            "p": 43.7,
+            "o": 17.6,
+            "m": 22,
+            "p": 38.5,
             "reason": "Test surface is wide here (backend); I allowed for a second pass after fixes."
           },
           {
             "itemId": "rem-b3",
-            "o": 12.6,
-            "m": 15.7,
-            "p": 27.5,
+            "o": 12.4,
+            "m": 15.6,
+            "p": 27.2,
             "reason": "Test surface is wide here (backend); I allowed for a second pass after fixes."
           },
           {
             "itemId": "rem-b4",
-            "o": 13.4,
-            "m": 16.7,
-            "p": 25.1,
+            "o": 13.3,
+            "m": 16.6,
+            "p": 24.9,
             "reason": "Low test surface; small allowance for review and fixes."
           },
           {
             "itemId": "rem-b5",
-            "o": 11.1,
-            "m": 13.9,
-            "p": 20.9,
+            "o": 12.6,
+            "m": 15.7,
+            "p": 23.6,
             "reason": "Low test surface; small allowance for review and fixes."
           },
           {
             "itemId": "rem-b6",
-            "o": 15.9,
-            "m": 19.9,
-            "p": 29.8,
+            "o": 15.2,
+            "m": 19,
+            "p": 28.4,
             "reason": "Low test surface; small allowance for review and fixes."
           },
           {
             "itemId": "rem-b7",
-            "o": 6.1,
-            "m": 7.6,
-            "p": 13.3,
+            "o": 6.3,
+            "m": 7.9,
+            "p": 13.8,
             "reason": "Test surface is wide here (backend); I allowed for a second pass after fixes."
           },
           {
             "itemId": "rem-q1",
-            "o": 14.1,
-            "m": 17.6,
-            "p": 30.8,
+            "o": 13.9,
+            "m": 17.3,
+            "p": 30.3,
             "reason": "Test surface is wide here (qa); I allowed for a second pass after fixes."
           },
           {
             "itemId": "rem-q2",
-            "o": 6.8,
-            "m": 8.5,
-            "p": 14.9,
+            "o": 6.4,
+            "m": 8,
+            "p": 14,
             "reason": "Test surface is wide here (qa); I allowed for a second pass after fixes."
           },
           {
             "itemId": "rem-g1",
-            "o": 6.8,
-            "m": 8.4,
-            "p": 12.7,
+            "o": 6.1,
+            "m": 7.6,
+            "p": 11.4,
             "reason": "Low test surface; small allowance for review and fixes."
           }
         ]
@@ -982,16 +650,16 @@
         "items": [
           {
             "itemId": "rem-d1",
-            "o": 8,
-            "m": 10.3,
-            "p": 17.5,
+            "o": 8.4,
+            "m": 10.7,
+            "p": 18.2,
             "reason": "Depends on 1 open question; the answer could change what gets built."
           },
           {
             "itemId": "rem-d2",
-            "o": 6.1,
-            "m": 7.9,
-            "p": 11.8,
+            "o": 5.3,
+            "m": 6.8,
+            "p": 10.2,
             "reason": "Well understood work; little domain risk."
           },
           {
@@ -1003,23 +671,23 @@
           },
           {
             "itemId": "rem-ds2",
-            "o": 8.2,
-            "m": 10.6,
-            "p": 18,
+            "o": 6.8,
+            "m": 8.7,
+            "p": 14.8,
             "reason": "Depends on 1 open question; the answer could change what gets built."
           },
           {
             "itemId": "rem-ds3",
-            "o": 6,
-            "m": 7.6,
-            "p": 11.5,
+            "o": 5.1,
+            "m": 6.5,
+            "p": 9.7,
             "reason": "Well understood work; little domain risk."
           },
           {
             "itemId": "rem-b1",
-            "o": 26.9,
-            "m": 34.5,
-            "p": 65.5,
+            "o": 26.7,
+            "m": 34.2,
+            "p": 65,
             "reason": "Depends on 2 open questions; the answer could change what gets built."
           },
           {
@@ -1031,30 +699,362 @@
           },
           {
             "itemId": "rem-b3",
-            "o": 9,
-            "m": 11.6,
-            "p": 17.3,
+            "o": 10.4,
+            "m": 13.4,
+            "p": 20,
             "reason": "Well understood work; little domain risk."
           },
           {
             "itemId": "rem-b4",
-            "o": 24.8,
-            "m": 31.8,
-            "p": 54.1,
+            "o": 18.8,
+            "m": 24.1,
+            "p": 41,
             "reason": "Depends on 1 open question; the answer could change what gets built."
           },
           {
             "itemId": "rem-b5",
-            "o": 15.3,
-            "m": 19.6,
-            "p": 29.5,
+            "o": 14.4,
+            "m": 18.5,
+            "p": 27.7,
             "reason": "Well understood work; little domain risk."
           },
           {
             "itemId": "rem-b6",
-            "o": 19.3,
-            "m": 24.8,
-            "p": 42.1,
+            "o": 16.7,
+            "m": 21.3,
+            "p": 36.3,
+            "reason": "Depends on 1 open question; the answer could change what gets built."
+          },
+          {
+            "itemId": "rem-b7",
+            "o": 7.1,
+            "m": 9,
+            "p": 15.4,
+            "reason": "Depends on 1 open question; the answer could change what gets built."
+          },
+          {
+            "itemId": "rem-q1",
+            "o": 15.3,
+            "m": 19.7,
+            "p": 33.4,
+            "reason": "Depends on 1 open question; the answer could change what gets built."
+          },
+          {
+            "itemId": "rem-q2",
+            "o": 6.7,
+            "m": 8.5,
+            "p": 12.8,
+            "reason": "Well understood work; little domain risk."
+          },
+          {
+            "itemId": "rem-g1",
+            "o": 5.5,
+            "m": 7,
+            "p": 11.9,
+            "reason": "Depends on 1 open question; the answer could change what gets built."
+          }
+        ]
+      }
+    ],
+    "round1": [
+      {
+        "persona": "delivery-lead",
+        "items": [
+          {
+            "itemId": "rem-d1",
+            "o": 7.9,
+            "m": 9.9,
+            "p": 14.4,
+            "reason": "Anchored on 3 similar past items (median 12h) and the plan as scoped."
+          },
+          {
+            "itemId": "rem-d2",
+            "o": 4.3,
+            "m": 5.4,
+            "p": 7.8,
+            "reason": "Anchored on 3 similar past items (median 6.5h) and the plan as scoped."
+          },
+          {
+            "itemId": "rem-ds1",
+            "o": 11.8,
+            "m": 14.7,
+            "p": 21.4,
+            "reason": "Anchored on 3 similar past items (median 16.5h) and the plan as scoped."
+          },
+          {
+            "itemId": "rem-ds2",
+            "o": 5.7,
+            "m": 7.2,
+            "p": 10.4,
+            "reason": "Anchored on 3 similar past items (median 7h) and the plan as scoped."
+          },
+          {
+            "itemId": "rem-ds3",
+            "o": 4.9,
+            "m": 6.2,
+            "p": 9,
+            "reason": "Anchored on 3 similar past items (median 5h) and the plan as scoped."
+          },
+          {
+            "itemId": "rem-b1",
+            "o": 22.8,
+            "m": 28.5,
+            "p": 41.3,
+            "reason": "Anchored on 3 similar past items (median 25.9h) and the plan as scoped."
+          },
+          {
+            "itemId": "rem-b2",
+            "o": 12.5,
+            "m": 15.6,
+            "p": 22.6,
+            "reason": "Anchored on 3 similar past items (median 21.4h) and the plan as scoped."
+          },
+          {
+            "itemId": "rem-b3",
+            "o": 11.8,
+            "m": 14.7,
+            "p": 21.4,
+            "reason": "Anchored on 3 similar past items (median 17.7h) and the plan as scoped."
+          },
+          {
+            "itemId": "rem-b4",
+            "o": 13.4,
+            "m": 16.7,
+            "p": 24.2,
+            "reason": "Anchored on 3 similar past items (median 25.9h) and the plan as scoped."
+          },
+          {
+            "itemId": "rem-b5",
+            "o": 14.7,
+            "m": 18.3,
+            "p": 26.6,
+            "reason": "Anchored on 3 similar past items (median 15.5h) and the plan as scoped."
+          },
+          {
+            "itemId": "rem-b6",
+            "o": 13.5,
+            "m": 16.8,
+            "p": 24.4,
+            "reason": "Anchored on 3 similar past items (median 22.7h) and the plan as scoped."
+          },
+          {
+            "itemId": "rem-b7",
+            "o": 6.6,
+            "m": 8.2,
+            "p": 11.9,
+            "reason": "Anchored on 3 similar past items (median 9.6h) and the plan as scoped."
+          },
+          {
+            "itemId": "rem-q1",
+            "o": 10.8,
+            "m": 13.5,
+            "p": 19.6,
+            "reason": "Anchored on 3 similar past items (median 18h) and the plan as scoped."
+          },
+          {
+            "itemId": "rem-q2",
+            "o": 6.2,
+            "m": 7.8,
+            "p": 11.3,
+            "reason": "Anchored on 3 similar past items (median 9.5h) and the plan as scoped."
+          },
+          {
+            "itemId": "rem-g1",
+            "o": 5.1,
+            "m": 6.4,
+            "p": 9.3,
+            "reason": "Anchored on 3 similar past items (median 8.8h) and the plan as scoped."
+          }
+        ]
+      },
+      {
+        "persona": "qa-lead",
+        "items": [
+          {
+            "itemId": "rem-d1",
+            "o": 9.5,
+            "m": 11.8,
+            "p": 17.7,
+            "reason": "Low test surface; small allowance for review and fixes."
+          },
+          {
+            "itemId": "rem-d2",
+            "o": 4.1,
+            "m": 5.2,
+            "p": 7.7,
+            "reason": "Low test surface; small allowance for review and fixes."
+          },
+          {
+            "itemId": "rem-ds1",
+            "o": 14.4,
+            "m": 18,
+            "p": 27,
+            "reason": "Low test surface; small allowance for review and fixes."
+          },
+          {
+            "itemId": "rem-ds2",
+            "o": 3.9,
+            "m": 4.8,
+            "p": 7.3,
+            "reason": "Low test surface; small allowance for review and fixes."
+          },
+          {
+            "itemId": "rem-ds3",
+            "o": 3,
+            "m": 3.7,
+            "p": 5.6,
+            "reason": "Low test surface; small allowance for review and fixes."
+          },
+          {
+            "itemId": "rem-b1",
+            "o": 33,
+            "m": 41.2,
+            "p": 61.8,
+            "reason": "Low test surface; small allowance for review and fixes."
+          },
+          {
+            "itemId": "rem-b2",
+            "o": 20,
+            "m": 25,
+            "p": 43.7,
+            "reason": "Test surface is wide here (backend); I allowed for a second pass after fixes."
+          },
+          {
+            "itemId": "rem-b3",
+            "o": 13.1,
+            "m": 16.4,
+            "p": 28.7,
+            "reason": "Test surface is wide here (backend); I allowed for a second pass after fixes."
+          },
+          {
+            "itemId": "rem-b4",
+            "o": 13.2,
+            "m": 16.5,
+            "p": 24.8,
+            "reason": "Low test surface; small allowance for review and fixes."
+          },
+          {
+            "itemId": "rem-b5",
+            "o": 10.5,
+            "m": 13.1,
+            "p": 19.7,
+            "reason": "Low test surface; small allowance for review and fixes."
+          },
+          {
+            "itemId": "rem-b6",
+            "o": 15.2,
+            "m": 19,
+            "p": 28.4,
+            "reason": "Low test surface; small allowance for review and fixes."
+          },
+          {
+            "itemId": "rem-b7",
+            "o": 6.1,
+            "m": 7.6,
+            "p": 13.3,
+            "reason": "Test surface is wide here (backend); I allowed for a second pass after fixes."
+          },
+          {
+            "itemId": "rem-q1",
+            "o": 13.9,
+            "m": 17.3,
+            "p": 30.3,
+            "reason": "Test surface is wide here (qa); I allowed for a second pass after fixes."
+          },
+          {
+            "itemId": "rem-q2",
+            "o": 6.4,
+            "m": 8,
+            "p": 14,
+            "reason": "Test surface is wide here (qa); I allowed for a second pass after fixes."
+          },
+          {
+            "itemId": "rem-g1",
+            "o": 6.6,
+            "m": 8.2,
+            "p": 12.3,
+            "reason": "Low test surface; small allowance for review and fixes."
+          }
+        ]
+      },
+      {
+        "persona": "domain-expert",
+        "items": [
+          {
+            "itemId": "rem-d1",
+            "o": 8.4,
+            "m": 10.7,
+            "p": 18.2,
+            "reason": "Depends on 1 open question; the answer could change what gets built."
+          },
+          {
+            "itemId": "rem-d2",
+            "o": 6.4,
+            "m": 8.2,
+            "p": 12.3,
+            "reason": "Well understood work; little domain risk."
+          },
+          {
+            "itemId": "rem-ds1",
+            "o": 12.4,
+            "m": 15.9,
+            "p": 27,
+            "reason": "Depends on 1 open question; the answer could change what gets built."
+          },
+          {
+            "itemId": "rem-ds2",
+            "o": 8,
+            "m": 10.3,
+            "p": 17.5,
+            "reason": "Depends on 1 open question; the answer could change what gets built."
+          },
+          {
+            "itemId": "rem-ds3",
+            "o": 5.3,
+            "m": 6.8,
+            "p": 10.2,
+            "reason": "Well understood work; little domain risk."
+          },
+          {
+            "itemId": "rem-b1",
+            "o": 26.7,
+            "m": 34.2,
+            "p": 65,
+            "reason": "Depends on 2 open questions; the answer could change what gets built."
+          },
+          {
+            "itemId": "rem-b2",
+            "o": 14.8,
+            "m": 19,
+            "p": 32.3,
+            "reason": "Depends on 1 open question; the answer could change what gets built."
+          },
+          {
+            "itemId": "rem-b3",
+            "o": 9.3,
+            "m": 12,
+            "p": 18,
+            "reason": "Well understood work; little domain risk."
+          },
+          {
+            "itemId": "rem-b4",
+            "o": 24.6,
+            "m": 31.5,
+            "p": 53.5,
+            "reason": "Depends on 1 open question; the answer could change what gets built."
+          },
+          {
+            "itemId": "rem-b5",
+            "o": 14.5,
+            "m": 18.6,
+            "p": 27.9,
+            "reason": "Well understood work; little domain risk."
+          },
+          {
+            "itemId": "rem-b6",
+            "o": 18.5,
+            "m": 23.7,
+            "p": 40.3,
             "reason": "Depends on 1 open question; the answer could change what gets built."
           },
           {
@@ -1066,23 +1066,23 @@
           },
           {
             "itemId": "rem-q1",
-            "o": 17.4,
-            "m": 22.3,
-            "p": 37.9,
+            "o": 17.2,
+            "m": 22,
+            "p": 37.4,
             "reason": "Depends on 1 open question; the answer could change what gets built."
           },
           {
             "itemId": "rem-q2",
-            "o": 7.5,
-            "m": 9.6,
-            "p": 14.5,
+            "o": 7.1,
+            "m": 9.1,
+            "p": 13.7,
             "reason": "Well understood work; little domain risk."
           },
           {
             "itemId": "rem-g1",
-            "o": 5.6,
-            "m": 7.2,
-            "p": 12.2,
+            "o": 5.5,
+            "m": 7,
+            "p": 11.9,
             "reason": "Depends on 1 open question; the answer could change what gets built."
           }
         ]
@@ -1099,17 +1099,17 @@
   "ask": [
     {
       "question": "Why is the range so wide?",
-      "answer": "The work is 286h at P50 and 339h at P80. 5 questions are still open, and each one widens the items it touches. The biggest is “Can reminders go by SMS as well as email, or email only?”: answering it narrows the range by about 17h.",
+      "answer": "The work is 279h at P50 and 332h at P80. 5 questions are still open, and each one widens the items it touches. The biggest is “Can reminders go by SMS as well as email, or email only?”: answering it narrows the range by about 17h.",
       "toolCalls": [
         {
           "name": "get_estimate",
-          "summary": "P50 286h, P80 339h, confidence Low"
+          "summary": "P50 279h, P80 332h, confidence Low"
         }
       ]
     },
     {
       "question": "What if we add another engineer?",
-      "answer": "With 4 engineers instead of 3, the P50 finish moves from 2026-12-16 to 2026-12-14, and the chance of meeting 2026-12-11 goes from 34% to 44%. Total effort rises slightly, from 286h to 304h, because each extra person adds coordination time.",
+      "answer": "With 4 engineers instead of 3, the P50 finish moves from 2026-12-15 to 2026-12-11, and the chance of meeting 2026-12-11 goes from 40% to 52%. Total effort rises slightly, from 279h to 294h, because each extra person adds coordination time.",
       "toolCalls": [
         {
           "name": "run_what_if",
@@ -1119,7 +1119,7 @@
     },
     {
       "question": "Which question should I ask the client first?",
-      "answer": "Ask “Can reminders go by SMS as well as email, or email only?” first. It narrows the range by about 17h, more than any other open question. Next is “Will IR set the reminder schedule per closing themselves, or is one default schedule enough?” (~7h).",
+      "answer": "Ask “Can reminders go by SMS as well as email, or email only?” first. It narrows the range by about 17h, more than any other open question. Next is “Will IR set the reminder schedule per closing themselves, or is one default schedule enough?” (~6h).",
       "toolCalls": [
         {
           "name": "get_estimate",
@@ -1129,7 +1129,7 @@
     },
     {
       "question": "How was the buffer calculated?",
-      "answer": "The buffer is 68h, in three parts. Task risk is 15h: the root-square of each item's P80−P50 gap. Open questions add 32h, and absence adds 21h (8% of P50 hours). Committing to ΣP50 + buffer gives 329h, landing on 2026-12-24.",
+      "answer": "The buffer is 66h, in three parts. Task risk is 15h: the root-square of each item's P80−P50 gap. Open questions add 31h, and absence adds 20h (8% of P50 hours). Committing to ΣP50 + buffer gives 321h, landing on 2026-12-23.",
       "toolCalls": [
         {
           "name": "explain_number",
@@ -1139,7 +1139,7 @@
     },
     {
       "question": "What have past new-feature projects taught us?",
-      "answer": "Projects like this took 207h–218h (median 210h, 3 projects). The engine corrects guesses by category:\n- devops: ×0.89 from 40 past items\n- frontend: ×0.91 from 24 past items\n- backend: ×0.91 from 33 past items\nWatch for scope additions: Status dashboard for operations team was added after kickoff in 3 of 10 similar projects.",
+      "answer": "Projects like this took 207h–218h (median 208h, 3 projects). The engine corrects guesses by category:\n- devops: ×0.88 from 40 past items\n- discovery: ×0.90 from 48 past items\n- backend: ×0.90 from 33 past items\nWatch for scope additions: Status dashboard for operations team was added after kickoff in 3 of 10 similar projects.",
       "toolCalls": [
         {
           "name": "explain_number",

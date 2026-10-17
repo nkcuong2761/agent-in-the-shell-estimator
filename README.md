@@ -24,12 +24,36 @@ Change the team shape and the timeline moves. Push the approved estimate to Jira
 
 ## What to try (no install)
 
-1. Open a sample on the home page. One click goes from the brief to a phased estimate with a buffer.
-2. Press any **?** next to a number. A drawer shows the method, formula, inputs and citation. No number on screen comes from the language model.
-3. Under **Answer a question**, mark the top question answered. The range tightens live, and the confidence level and buffer update.
-4. On **Team & timeline**, add an engineer. The finish date moves earlier, but effort rises because of coordination overhead (Brooks). The integration sample also has a planned leave inside its window.
-5. On **Learning**, the walk-forward backtest shows calibrated error against the raw panel. The P80 hit rate is ~78%. Press **Why** on a project to see the post-mortem.
-6. Press `/` anywhere to Ask. Demo mode gives prepared answers; live mode uses Claude, which calls the engine as tools.
+Scopewise works like a chat with an estimating agent.
+
+1. On **New estimate**, pick an example: "Put a paper form online", "Remind investors to sign" or "Sync with a fund administrator". A progress checklist plays, and in under 3 seconds you get the estimate:
+   - how many weeks it will take;
+   - the most likely finish date, and a safe date to promise;
+   - how sure the estimate is.
+2. Open a stage under **What happens when** to see its work items, each linked to the source it came from.
+3. **Ask the client before you commit** lists the three questions whose answers would tighten the estimate most. Copy the email, or answer them yourself to re-estimate.
+4. Ask follow-ups in plain words. They run on the real engine in your browser, even in demo mode:
+   - "What if we add another developer?" shows a comparison. **Use this** makes it the current estimate.
+   - "Can we finish by 11 Dec?"
+   - "Why does build take so long?"
+   - "What if we skip QA?"
+   - "The client says email only, no SMS"
+5. Under **Finished — how did we do?** in the sidebar, each closed project shows:
+   - what we said against what it took;
+   - what happened and the lesson learned;
+   - whether estimates are getting better.
+6. **See the full working and methods** and **How estimates are worked out** show every formula, input and citation. Technical terms appear only there.
+
+## Screens
+
+| Route | What it shows |
+| --- | --- |
+| `#/` | New estimate: paste a brief, drop files, add a Jira link (live), or try an example |
+| `#/estimate/:id` | One conversation: brief → progress → estimate → follow-ups, with earlier versions collapsed |
+| `#/project/:id` | A finished project: estimate vs actual, what happened, what I learned, accuracy over time |
+| `#/about` | Architecture, methods with citations, data disclaimer, Manager/Overseer view |
+
+The look follows taste-skill's soft-skill: Geist type, double-bezel cards, pill buttons and a silver-grey ground, with light and dark themes.
 
 ## Architecture
 
@@ -46,7 +70,7 @@ Change the team shape and the timeline moves. Push the approved estimate to Jira
 
 | Part | What it is |
 |---|---|
-| `apps/web` | Vite + React + TypeScript + Tailwind, HashRouter, static build for GitHub Pages. The engine runs in the browser. Demo data is bundled from `data/`. |
+| `apps/web` | Vite + React + TypeScript + Tailwind, HashRouter, static build for GitHub Pages. The engine runs in the browser. `present/` turns its output into plain language, and `copy.ts` holds every phrase. Conversations are stored in localStorage. Demo data is bundled from `data/`. |
 | `apps/api` | Hono API (Node + Vercel adapters). It holds the secrets and handles Claude calls, Jira read/write and the lessons store (Postgres or a JSON file). |
 | `packages/engine` | The estimation engine: pure TypeScript with no I/O and no LLM. Every function returns its result plus an `Explanation`. 31 Vitest tests. |
 | `packages/shared` | zod schemas and types used at every boundary. |
@@ -54,7 +78,12 @@ Change the team shape and the timeline moves. Push the approved estimate to Jira
 | `data/` | `seed/` (fake history), `samples/` (3 brief packs), `demo-cache/` (precomputed AI outputs). |
 | `scripts/` | `seed.ts`, `precompute-demo.ts`, `push-to-jira.ts`, `eval.ts`. |
 
-**Demo mode vs live mode.** The site calls `GET /health` on `VITE_API_BASE_URL`. With no API, or an API that doesn't respond, the full demo still works: the engine, bundled history and precomputed agent outputs. Live-only features (upload your own brief, Jira sync, Push to Jira, live Ask) show as disabled, each with a one-line reason.
+**Demo mode vs live mode.** The site calls `GET /health` on `VITE_API_BASE_URL`. With no API, or an API that doesn't respond, the full demo still works: the engine, bundled history, precomputed agent outputs and a rule-based follow-up parser. Live-only features say why they're off:
+- reading your own brief or a Jira link;
+- Send to Jira;
+- open-ended questions answered by the Ask agent.
+
+In live mode, conversations are also saved to the API store.
 
 ## Methods
 
@@ -76,7 +105,7 @@ Two modelling choices go beyond the brief. Both are documented in the drawers an
 - **Items run late together.** Without a shared project-level factor, independent items average out and P80 sits only ~4% above P50. With it, the backtest's P80 hit rate is ~78%.
 - **An open question is one unknown.** It moves all its items together, which makes value of information meaningful: answering the SMS question narrows the reminders estimate by ~17h.
 
-Backtest on the seed history: raw panel MMRE **19%**, calibrated engine **15%**. PRED(25) rises from 68% to 83%.
+Backtest on the seed history: the raw panel is off by **19%** on average, the calibrated engine by **15%**. Within-25% accuracy rises from 68% to 83%, and the first five projects are ~24% off against ~14% for the last five.
 
 ## Run locally
 
@@ -91,6 +120,7 @@ Checks (all run in CI):
 
 ```bash
 npm run typecheck && npm run lint && npm test && npm run eval && npm run build
+# npm test runs the engine tests (31) and the web tests (present/*, intent parser, banned terms)
 ```
 
 Data:

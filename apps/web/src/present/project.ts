@@ -1,5 +1,5 @@
-import type { BacktestPoint, HistoryProject, PostmortemResult } from '@scopewise/shared';
-import { copy } from '../copy';
+import type { BacktestPoint, HistoryProject, LessonCause, PostmortemResult } from '@scopewise/shared';
+import { CATEGORY_WORDS, copy } from '../copy';
 import { formatLongDate, formatWeeks } from './format';
 
 const weeksBetween = (a: string, b: string) => (Date.parse(`${b}T00:00:00Z`) - Date.parse(`${a}T00:00:00Z`)) / (7 * 864e5);
@@ -38,11 +38,31 @@ export function toHappened(pm: PostmortemResult | undefined): string[] {
     .filter(Boolean);
 }
 
-export function toLesson(pm: PostmortemResult | undefined): { text: string; addsRule: boolean } | undefined {
+/** The lesson in one forward-looking sentence, built from its cause and the kind of work it applies to. */
+export function toLesson(pm: PostmortemResult | undefined, project?: HistoryProject): { text: string; addsRule: boolean } | undefined {
   const l = pm?.lessons[0];
   if (!l) return undefined;
-  return { text: l.note, addsRule: l.cause === 'scope-added' };
+  const finding = pm?.findings.find((f) => f.scope === 'item' && f.note === l.note);
+  const what = finding?.title.toLowerCase() ?? (l.appliesTo.category ? CATEGORY_WORDS[l.appliesTo.category] : 'this kind of work');
+  const kind = project ? PROJECT_WORDS[project.projectType] : 'similar projects';
+  const text: Record<LessonCause, string> = {
+    'scope-added': `${capitalise(what)} tends to be added after kickoff on ${kind}, so I now ask about it before giving a date.`,
+    underestimated: `Work like ${what} takes longer than it looks on ${kind}, so I now allow more time for it.`,
+    blocked: `${capitalise(what)} waited on another team, so I now check who owns access and sign-off before build starts.`,
+    availability: `Planned time off overlapped this work, so I now plan around known leave dates.`,
+    'data-error': `One time entry looked wrong, so I left it out when learning from this project.`,
+  };
+  return { text: text[l.cause], addsRule: l.cause === 'scope-added' };
 }
+
+const capitalise = (s: string) => s.charAt(0).toUpperCase() + s.slice(1);
+const PROJECT_WORDS: Record<HistoryProject['projectType'], string> = {
+  'new-feature': 'new features',
+  'form-digitization': 'form projects',
+  integration: 'integrations',
+  'data-migration': 'data migrations',
+  reporting: 'reporting projects',
+};
 
 export interface Improvement {
   bars: { projectId: string; offPct: number; highlight: boolean }[];

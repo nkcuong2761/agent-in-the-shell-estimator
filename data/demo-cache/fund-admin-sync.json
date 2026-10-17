@@ -371,8 +371,8 @@
           "P034"
         ],
         "addedHoursRange": [
-          17.3,
-          40.8
+          15.7,
+          38.9
         ],
         "clientQuestion": "Similar projects often added “second partner file format” after kickoff. Should we plan for it now?"
       },
@@ -386,8 +386,8 @@
           "P033"
         ],
         "addedHoursRange": [
-          17.1,
-          21.9
+          17.7,
+          22.2
         ],
         "clientQuestion": "Similar projects often added “backfill of historical records” after kickoff. Should we plan for it now?"
       }
@@ -406,10 +406,10 @@
         "items": [
           {
             "itemId": "fas-d1",
-            "o": 10.2,
-            "m": 12.7,
-            "p": 18.4,
-            "reason": "Anchored on 3 similar past items (median 11.5h) and the plan as scoped."
+            "o": 9.5,
+            "m": 11.9,
+            "p": 17.3,
+            "reason": "Anchored on 3 similar past items (median 10h) and the plan as scoped."
           },
           {
             "itemId": "fas-d2",
@@ -420,10 +420,10 @@
           },
           {
             "itemId": "fas-am1",
-            "o": 19.3,
-            "m": 24.1,
-            "p": 35,
-            "reason": "Anchored on 3 similar past items (median 27.3h) and the plan as scoped."
+            "o": 20,
+            "m": 25,
+            "p": 36.3,
+            "reason": "Anchored on 3 similar past items (median 29.2h) and the plan as scoped."
           },
           {
             "itemId": "fas-am2",
@@ -434,38 +434,38 @@
           },
           {
             "itemId": "fas-b1",
-            "o": 17.5,
-            "m": 21.9,
-            "p": 31.8,
-            "reason": "Anchored on 3 similar past items (median 20h) and the plan as scoped."
+            "o": 18.3,
+            "m": 22.9,
+            "p": 33.3,
+            "reason": "Anchored on 3 similar past items (median 22.1h) and the plan as scoped."
           },
           {
             "itemId": "fas-b2",
-            "o": 39.2,
-            "m": 49,
-            "p": 71.1,
-            "reason": "Anchored on 3 similar past items (median 69.6h) and the plan as scoped."
+            "o": 38.9,
+            "m": 48.6,
+            "p": 70.5,
+            "reason": "Anchored on 3 similar past items (median 68.6h) and the plan as scoped."
           },
           {
             "itemId": "fas-b3",
-            "o": 17.8,
-            "m": 22.2,
-            "p": 32.2,
-            "reason": "Anchored on 3 similar past items (median 20h) and the plan as scoped."
+            "o": 16.3,
+            "m": 20.4,
+            "p": 29.6,
+            "reason": "Anchored on 3 similar past items (median 16.5h) and the plan as scoped."
           },
           {
             "itemId": "fas-b4",
-            "o": 18.7,
-            "m": 23.4,
-            "p": 33.9,
-            "reason": "Anchored on 3 similar past items (median 31.9h) and the plan as scoped."
+            "o": 17.9,
+            "m": 22.4,
+            "p": 32.4,
+            "reason": "Anchored on 3 similar past items (median 29.6h) and the plan as scoped."
           },
           {
             "itemId": "fas-b5",
-            "o": 13.1,
-            "m": 16.3,
-            "p": 23.7,
-            "reason": "Anchored on 3 similar past items (median 16.5h) and the plan as scoped."
+            "o": 13.5,
+            "m": 16.8,
+            "p": 24.4,
+            "reason": "Anchored on 3 similar past items (median 17.7h) and the plan as scoped."
           },
           {
             "itemId": "fas-b6",
@@ -476,24 +476,24 @@
           },
           {
             "itemId": "fas-it1",
-            "o": 18.6,
-            "m": 23.2,
-            "p": 33.6,
-            "reason": "Anchored on 3 similar past items (median 25.5h) and the plan as scoped."
+            "o": 18.4,
+            "m": 23,
+            "p": 33.3,
+            "reason": "Anchored on 3 similar past items (median 25h) and the plan as scoped."
           },
           {
             "itemId": "fas-it2",
-            "o": 9.8,
-            "m": 12.2,
-            "p": 17.7,
-            "reason": "Anchored on 3 similar past items (median 17.5h) and the plan as scoped."
+            "o": 9.6,
+            "m": 12,
+            "p": 17.4,
+            "reason": "Anchored on 3 similar past items (median 17h) and the plan as scoped."
           },
           {
             "itemId": "fas-gl1",
-            "o": 7.6,
-            "m": 9.5,
-            "p": 13.7,
-            "reason": "Anchored on 3 similar past items (median 14.6h) and the plan as scoped."
+            "o": 7.2,
+            "m": 9,
+            "p": 13.1,
+            "reason": "Anchored on 3 similar past items (median 13.2h) and the plan as scoped."
           }
         ]
       },
@@ -502,9 +502,9 @@
         "items": [
           {
             "itemId": "fas-d1",
-            "o": 10.2,
-            "m": 12.7,
-            "p": 19.1,
+            "o": 9.5,
+            "m": 11.8,
+            "p": 17.8,
             "reason": "Low test surface; small allowance for review and fixes."
           },
           {
@@ -516,9 +516,9 @@
           },
           {
             "itemId": "fas-am1",
-            "o": 19.7,
-            "m": 24.7,
-            "p": 43.2,
+            "o": 20.5,
+            "m": 25.7,
+            "p": 44.9,
             "reason": "Test surface is wide here (integration); I allowed for a second pass after fixes."
           },
           {
@@ -530,37 +530,37 @@
           },
           {
             "itemId": "fas-b1",
-            "o": 18.2,
-            "m": 22.7,
-            "p": 39.8,
+            "o": 19.1,
+            "m": 23.9,
+            "p": 41.8,
             "reason": "Test surface is wide here (integration); I allowed for a second pass after fixes."
           },
           {
             "itemId": "fas-b2",
-            "o": 45.3,
-            "m": 56.6,
-            "p": 99.1,
+            "o": 44.9,
+            "m": 56.1,
+            "p": 98.2,
             "reason": "Test surface is wide here (integration); I allowed for a second pass after fixes."
           },
           {
             "itemId": "fas-b3",
-            "o": 17.9,
-            "m": 22.4,
-            "p": 39.2,
+            "o": 16.3,
+            "m": 20.4,
+            "p": 35.7,
             "reason": "Test surface is wide here (integration); I allowed for a second pass after fixes."
           },
           {
             "itemId": "fas-b4",
-            "o": 27.9,
-            "m": 34.9,
-            "p": 61.1,
+            "o": 26.6,
+            "m": 33.3,
+            "p": 58.3,
             "reason": "Test surface is wide here (integration); I allowed for a second pass after fixes."
           },
           {
             "itemId": "fas-b5",
-            "o": 14.4,
-            "m": 18.1,
-            "p": 31.6,
+            "o": 14.9,
+            "m": 18.7,
+            "p": 32.7,
             "reason": "Test surface is wide here (backend); I allowed for a second pass after fixes."
           },
           {
@@ -572,23 +572,23 @@
           },
           {
             "itemId": "fas-it1",
-            "o": 18.3,
-            "m": 22.9,
-            "p": 40,
+            "o": 18.1,
+            "m": 22.6,
+            "p": 39.6,
             "reason": "Test surface is wide here (qa); I allowed for a second pass after fixes."
           },
           {
             "itemId": "fas-it2",
-            "o": 8.7,
-            "m": 10.8,
-            "p": 19,
+            "o": 8.5,
+            "m": 10.7,
+            "p": 18.6,
             "reason": "Test surface is wide here (qa); I allowed for a second pass after fixes."
           },
           {
             "itemId": "fas-gl1",
-            "o": 8.9,
-            "m": 11.2,
-            "p": 16.8,
+            "o": 8.5,
+            "m": 10.6,
+            "p": 15.9,
             "reason": "Low test surface; small allowance for review and fixes."
           }
         ]
@@ -598,9 +598,9 @@
         "items": [
           {
             "itemId": "fas-d1",
-            "o": 8.6,
-            "m": 11,
-            "p": 18.8,
+            "o": 8,
+            "m": 10.3,
+            "p": 17.5,
             "reason": "Depends on 1 open question; the answer could change what gets built."
           },
           {
@@ -612,9 +612,9 @@
           },
           {
             "itemId": "fas-am1",
-            "o": 19,
-            "m": 24.4,
-            "p": 36.5,
+            "o": 19.7,
+            "m": 25.3,
+            "p": 37.9,
             "reason": "Rules in this area tend to surface late; I added room for rework."
           },
           {
@@ -626,37 +626,37 @@
           },
           {
             "itemId": "fas-b1",
-            "o": 19.7,
-            "m": 25.3,
-            "p": 43,
+            "o": 20.7,
+            "m": 26.5,
+            "p": 45.1,
             "reason": "Depends on 1 open question; the answer could change what gets built."
           },
           {
             "itemId": "fas-b2",
-            "o": 38,
-            "m": 48.8,
-            "p": 82.9,
+            "o": 37.7,
+            "m": 48.4,
+            "p": 82.2,
             "reason": "Depends on 1 open question; the answer could change what gets built."
           },
           {
             "itemId": "fas-b3",
-            "o": 20.7,
-            "m": 26.5,
-            "p": 45,
+            "o": 18.9,
+            "m": 24.2,
+            "p": 41.2,
             "reason": "Depends on 1 open question; the answer could change what gets built."
           },
           {
             "itemId": "fas-b4",
-            "o": 25.8,
-            "m": 33.1,
-            "p": 56.3,
+            "o": 24.7,
+            "m": 31.6,
+            "p": 53.7,
             "reason": "Depends on 1 open question; the answer could change what gets built."
           },
           {
             "itemId": "fas-b5",
-            "o": 11,
-            "m": 14.1,
-            "p": 21.1,
+            "o": 11.3,
+            "m": 14.5,
+            "p": 21.8,
             "reason": "Well understood work; little domain risk."
           },
           {
@@ -668,23 +668,23 @@
           },
           {
             "itemId": "fas-it1",
-            "o": 22,
-            "m": 28.2,
-            "p": 53.6,
+            "o": 21.8,
+            "m": 27.9,
+            "p": 53,
             "reason": "Depends on 2 open questions; the answer could change what gets built."
           },
           {
             "itemId": "fas-it2",
-            "o": 8,
-            "m": 10.3,
-            "p": 17.5,
+            "o": 7.9,
+            "m": 10.1,
+            "p": 17.2,
             "reason": "Depends on 1 open question; the answer could change what gets built."
           },
           {
             "itemId": "fas-gl1",
-            "o": 7.2,
-            "m": 9.2,
-            "p": 15.7,
+            "o": 6.8,
+            "m": 8.8,
+            "p": 14.9,
             "reason": "Depends on 1 open question; the answer could change what gets built."
           }
         ]
@@ -696,10 +696,10 @@
         "items": [
           {
             "itemId": "fas-d1",
-            "o": 10.2,
-            "m": 12.7,
-            "p": 18.4,
-            "reason": "Anchored on 3 similar past items (median 11.5h) and the plan as scoped."
+            "o": 9.6,
+            "m": 12,
+            "p": 17.4,
+            "reason": "Anchored on 3 similar past items (median 10h) and the plan as scoped."
           },
           {
             "itemId": "fas-d2",
@@ -710,10 +710,10 @@
           },
           {
             "itemId": "fas-am1",
-            "o": 19.2,
-            "m": 23.9,
-            "p": 34.7,
-            "reason": "Anchored on 3 similar past items (median 27.3h) and the plan as scoped."
+            "o": 19.8,
+            "m": 24.8,
+            "p": 35.9,
+            "reason": "Anchored on 3 similar past items (median 29.2h) and the plan as scoped."
           },
           {
             "itemId": "fas-am2",
@@ -724,38 +724,38 @@
           },
           {
             "itemId": "fas-b1",
-            "o": 16.9,
-            "m": 21.1,
-            "p": 30.6,
-            "reason": "Anchored on 3 similar past items (median 20h) and the plan as scoped."
-          },
-          {
-            "itemId": "fas-b2",
-            "o": 39.2,
-            "m": 49,
-            "p": 71.1,
-            "reason": "Anchored on 3 similar past items (median 69.6h) and the plan as scoped."
-          },
-          {
-            "itemId": "fas-b3",
             "o": 17.6,
             "m": 22,
             "p": 31.9,
-            "reason": "Anchored on 3 similar past items (median 20h) and the plan as scoped."
+            "reason": "Anchored on 3 similar past items (median 22.1h) and the plan as scoped."
+          },
+          {
+            "itemId": "fas-b2",
+            "o": 38.9,
+            "m": 48.6,
+            "p": 70.5,
+            "reason": "Anchored on 3 similar past items (median 68.6h) and the plan as scoped."
+          },
+          {
+            "itemId": "fas-b3",
+            "o": 16.3,
+            "m": 20.4,
+            "p": 29.6,
+            "reason": "Anchored on 3 similar past items (median 16.5h) and the plan as scoped."
           },
           {
             "itemId": "fas-b4",
-            "o": 11,
-            "m": 13.7,
-            "p": 19.9,
-            "reason": "Anchored on 3 similar past items (median 31.9h) and the plan as scoped."
+            "o": 10.5,
+            "m": 13.1,
+            "p": 19.1,
+            "reason": "Anchored on 3 similar past items (median 29.6h) and the plan as scoped."
           },
           {
             "itemId": "fas-b5",
-            "o": 13.1,
-            "m": 16.3,
-            "p": 23.7,
-            "reason": "Anchored on 3 similar past items (median 16.5h) and the plan as scoped."
+            "o": 13.5,
+            "m": 16.8,
+            "p": 24.4,
+            "reason": "Anchored on 3 similar past items (median 17.7h) and the plan as scoped."
           },
           {
             "itemId": "fas-b6",
@@ -766,24 +766,24 @@
           },
           {
             "itemId": "fas-it1",
-            "o": 18.6,
-            "m": 23.2,
-            "p": 33.6,
-            "reason": "Anchored on 3 similar past items (median 25.5h) and the plan as scoped."
+            "o": 18.4,
+            "m": 23,
+            "p": 33.3,
+            "reason": "Anchored on 3 similar past items (median 25h) and the plan as scoped."
           },
           {
             "itemId": "fas-it2",
-            "o": 10.8,
-            "m": 13.5,
-            "p": 19.6,
-            "reason": "Anchored on 3 similar past items (median 17.5h) and the plan as scoped."
+            "o": 10.7,
+            "m": 13.3,
+            "p": 19.4,
+            "reason": "Anchored on 3 similar past items (median 17h) and the plan as scoped."
           },
           {
             "itemId": "fas-gl1",
-            "o": 7.6,
-            "m": 9.5,
-            "p": 13.7,
-            "reason": "Anchored on 3 similar past items (median 14.6h) and the plan as scoped."
+            "o": 7.2,
+            "m": 9,
+            "p": 13.1,
+            "reason": "Anchored on 3 similar past items (median 13.2h) and the plan as scoped."
           }
         ]
       },
@@ -792,9 +792,9 @@
         "items": [
           {
             "itemId": "fas-d1",
-            "o": 10.2,
-            "m": 12.7,
-            "p": 19.1,
+            "o": 9.5,
+            "m": 11.8,
+            "p": 17.8,
             "reason": "Low test surface; small allowance for review and fixes."
           },
           {
@@ -806,9 +806,9 @@
           },
           {
             "itemId": "fas-am1",
-            "o": 20,
-            "m": 25,
-            "p": 43.7,
+            "o": 20.8,
+            "m": 26,
+            "p": 45.6,
             "reason": "Test surface is wide here (integration); I allowed for a second pass after fixes."
           },
           {
@@ -820,37 +820,37 @@
           },
           {
             "itemId": "fas-b1",
-            "o": 18.2,
-            "m": 22.7,
-            "p": 39.8,
+            "o": 19.1,
+            "m": 23.9,
+            "p": 41.8,
             "reason": "Test surface is wide here (integration); I allowed for a second pass after fixes."
           },
           {
             "itemId": "fas-b2",
-            "o": 51.3,
-            "m": 64.2,
-            "p": 112.3,
+            "o": 50.9,
+            "m": 63.6,
+            "p": 111.3,
             "reason": "Test surface is wide here (integration); I allowed for a second pass after fixes."
           },
           {
             "itemId": "fas-b3",
-            "o": 17.9,
-            "m": 22.4,
-            "p": 39.2,
+            "o": 16.3,
+            "m": 20.4,
+            "p": 35.6,
             "reason": "Test surface is wide here (integration); I allowed for a second pass after fixes."
           },
           {
             "itemId": "fas-b4",
-            "o": 29.4,
-            "m": 36.7,
-            "p": 64.3,
+            "o": 28,
+            "m": 35,
+            "p": 61.2,
             "reason": "Test surface is wide here (integration); I allowed for a second pass after fixes."
           },
           {
             "itemId": "fas-b5",
-            "o": 15.8,
-            "m": 19.8,
-            "p": 34.6,
+            "o": 16.4,
+            "m": 20.5,
+            "p": 35.9,
             "reason": "Test surface is wide here (backend); I allowed for a second pass after fixes."
           },
           {
@@ -862,23 +862,23 @@
           },
           {
             "itemId": "fas-it1",
-            "o": 18,
-            "m": 22.5,
-            "p": 39.5,
+            "o": 17.8,
+            "m": 22.3,
+            "p": 39,
             "reason": "Test surface is wide here (qa); I allowed for a second pass after fixes."
           },
           {
             "itemId": "fas-it2",
-            "o": 8.7,
-            "m": 10.8,
-            "p": 19,
+            "o": 8.5,
+            "m": 10.7,
+            "p": 18.6,
             "reason": "Test surface is wide here (qa); I allowed for a second pass after fixes."
           },
           {
             "itemId": "fas-gl1",
-            "o": 10.3,
-            "m": 12.9,
-            "p": 19.3,
+            "o": 9.7,
+            "m": 12.2,
+            "p": 18.2,
             "reason": "Low test surface; small allowance for review and fixes."
           }
         ]
@@ -888,9 +888,9 @@
         "items": [
           {
             "itemId": "fas-d1",
-            "o": 7.3,
-            "m": 9.4,
-            "p": 15.9,
+            "o": 6.8,
+            "m": 8.8,
+            "p": 14.9,
             "reason": "Depends on 1 open question; the answer could change what gets built."
           },
           {
@@ -902,9 +902,9 @@
           },
           {
             "itemId": "fas-am1",
-            "o": 19,
-            "m": 24.4,
-            "p": 36.5,
+            "o": 19.7,
+            "m": 25.3,
+            "p": 37.9,
             "reason": "Rules in this area tend to surface late; I added room for rework."
           },
           {
@@ -916,37 +916,37 @@
           },
           {
             "itemId": "fas-b1",
-            "o": 21.8,
-            "m": 27.9,
-            "p": 47.4,
+            "o": 22.8,
+            "m": 29.2,
+            "p": 49.6,
             "reason": "Depends on 1 open question; the answer could change what gets built."
           },
           {
             "itemId": "fas-b2",
-            "o": 37.8,
-            "m": 48.5,
-            "p": 82.5,
+            "o": 37.5,
+            "m": 48.1,
+            "p": 81.8,
             "reason": "Depends on 1 open question; the answer could change what gets built."
           },
           {
             "itemId": "fas-b3",
-            "o": 23.8,
-            "m": 30.6,
-            "p": 52,
+            "o": 21.9,
+            "m": 28.1,
+            "p": 47.7,
             "reason": "Depends on 1 open question; the answer could change what gets built."
           },
           {
             "itemId": "fas-b4",
-            "o": 25.8,
-            "m": 33.1,
-            "p": 56.3,
+            "o": 24.7,
+            "m": 31.6,
+            "p": 53.7,
             "reason": "Depends on 1 open question; the answer could change what gets built."
           },
           {
             "itemId": "fas-b5",
-            "o": 9.2,
-            "m": 11.8,
-            "p": 17.7,
+            "o": 9.5,
+            "m": 12.2,
+            "p": 18.3,
             "reason": "Well understood work; little domain risk."
           },
           {
@@ -958,23 +958,23 @@
           },
           {
             "itemId": "fas-it1",
-            "o": 23,
-            "m": 29.5,
-            "p": 56,
+            "o": 22.7,
+            "m": 29.2,
+            "p": 55.4,
             "reason": "Depends on 2 open questions; the answer could change what gets built."
           },
           {
             "itemId": "fas-it2",
-            "o": 7.6,
-            "m": 9.7,
-            "p": 16.6,
+            "o": 7.5,
+            "m": 9.6,
+            "p": 16.3,
             "reason": "Depends on 1 open question; the answer could change what gets built."
           },
           {
             "itemId": "fas-gl1",
-            "o": 7,
-            "m": 9,
-            "p": 15.3,
+            "o": 6.6,
+            "m": 8.5,
+            "p": 14.5,
             "reason": "Depends on 1 open question; the answer could change what gets built."
           }
         ]
@@ -991,17 +991,17 @@
   "ask": [
     {
       "question": "Why is the range so wide?",
-      "answer": "The work is 401h at P50 and 473h at P80. 5 questions are still open, and each one widens the items it touches. The biggest is “Does Tidewell’s Northgate contract include the REST API, or only nightly SFTP files?”: answering it narrows the range by about 8h.",
+      "answer": "The work is 392h at P50 and 465h at P80. 5 questions are still open, and each one widens the items it touches. The biggest is “Does Tidewell’s Northgate contract include the REST API, or only nightly SFTP files?”: answering it narrows the range by about 9h.",
       "toolCalls": [
         {
           "name": "get_estimate",
-          "summary": "P50 401h, P80 473h, confidence Low"
+          "summary": "P50 392h, P80 465h, confidence Low"
         }
       ]
     },
     {
       "question": "What if we add another engineer?",
-      "answer": "With 3 engineers instead of 2, the P50 finish moves from 2027-01-19 to 2027-01-12, and the chance of meeting 2026-12-18 goes from 1% to 6%. Total effort rises slightly, from 401h to 433h, because each extra person adds coordination time.",
+      "answer": "With 3 engineers instead of 2, the P50 finish moves from 2027-01-15 to 2027-01-08, and the chance of meeting 2026-12-18 goes from 2% to 8%. Total effort rises slightly, from 392h to 422h, because each extra person adds coordination time.",
       "toolCalls": [
         {
           "name": "run_what_if",
@@ -1011,7 +1011,7 @@
     },
     {
       "question": "Which question should I ask the client first?",
-      "answer": "Ask “Does Tidewell’s Northgate contract include the REST API, or only nightly SFTP files?” first. It narrows the range by about 8h, more than any other open question. Next is “Should the sync run one way (Northgate to the platform) or both ways?” (~6h).",
+      "answer": "Ask “Does Tidewell’s Northgate contract include the REST API, or only nightly SFTP files?” first. It narrows the range by about 9h, more than any other open question. Next is “Should the sync run one way (Northgate to the platform) or both ways?” (~7h).",
       "toolCalls": [
         {
           "name": "get_estimate",
@@ -1021,7 +1021,7 @@
     },
     {
       "question": "How was the buffer calculated?",
-      "answer": "The buffer is 87h, in three parts. Task risk is 23h: the root-square of each item's P80−P50 gap. Open questions add 38h, and absence adds 26h (7% of P50 hours). Committing to ΣP50 + buffer gives 452h, landing on 2027-01-28.",
+      "answer": "The buffer is 86h, in three parts. Task risk is 23h: the root-square of each item's P80−P50 gap. Open questions add 38h, and absence adds 25h (7% of P50 hours). Committing to ΣP50 + buffer gives 443h, landing on 2027-01-26.",
       "toolCalls": [
         {
           "name": "explain_number",
@@ -1031,7 +1031,7 @@
     },
     {
       "question": "What have past integration projects taught us?",
-      "answer": "Projects like this took 250h–419h (median 401h, 9 projects). The engine corrects guesses by category:\n- integration: ×1.18 from 63 past items\n- devops: ×0.89 from 40 past items\n- backend: ×0.91 from 33 past items\nWatch for scope additions: Second partner file format was added after kickoff in 5 of 9 similar projects.",
+      "answer": "Projects like this took 246h–421h (median 365h, 9 projects). The engine corrects guesses by category:\n- integration: ×1.17 from 63 past items\n- devops: ×0.88 from 40 past items\n- discovery: ×0.90 from 48 past items\nWatch for scope additions: Second partner file format was added after kickoff in 5 of 9 similar projects.",
       "toolCalls": [
         {
           "name": "explain_number",

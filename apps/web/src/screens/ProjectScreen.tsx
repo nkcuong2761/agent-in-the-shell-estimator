@@ -4,6 +4,8 @@ import { Card, Spinner } from '../components/ui';
 import { finishedLine, toHappened, toImprovement, toLesson } from '../present';
 import { useHistory, usePostmortems } from '../state/history';
 
+const capitalise = (s: string) => s.charAt(0).toUpperCase() + s.slice(1);
+
 export function ProjectScreen() {
   const { id = '' } = useParams();
   const history = useHistory();
@@ -28,7 +30,7 @@ export function ProjectScreen() {
   }
   const pm = pms?.results.find((r) => r.projectId === id);
   const happened = toHappened(pm);
-  const lesson = toLesson(pm);
+  const lesson = toLesson(pm, f.project);
   const imp = toImprovement(history.points, id);
   const o = f.outcome;
   const scale = Math.max(o.tookWeeks, o.said.high) * 1.15;
@@ -40,7 +42,7 @@ export function ProjectScreen() {
     <div className="thread">
       <header className="flex flex-col gap-2 enter">
         <p className="m-0 text-[15px] muted">{client}</p>
-        <h1 className="h-page m-0">{name ?? f.project.name}</h1>
+        <h1 className="h-page m-0">{capitalise(name ?? f.project.name)}</h1>
         <p className="m-0 muted">{finishedLine(f.project)}</p>
       </header>
 

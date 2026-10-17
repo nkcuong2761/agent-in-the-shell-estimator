@@ -222,9 +222,9 @@ function Composer({ conv, draft, setDraft }: { conv: Conversation; draft: string
     <div className="composer-dock">
       <div className="flex flex-col gap-2">
         {ready && !readOnly ? (
-          <div className="flex flex-wrap gap-1.5">
+          <div className="flex gap-1.5 overflow-x-auto sm:flex-wrap -mx-1 px-1 pb-0.5" style={{ scrollbarWidth: 'none' }}>
             {suggestions.map((s) => (
-              <button key={s} className="chip text-[14px]" onClick={() => send(conv.id, s)} disabled={disabled}>
+              <button key={s} className="chip text-[14px] shrink-0" onClick={() => send(conv.id, s)} disabled={disabled}>
                 {s}
               </button>
             ))}

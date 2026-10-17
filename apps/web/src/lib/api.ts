@@ -6,6 +6,7 @@ import type {
   AskResponse,
   BriefPack,
   ChatMessage,
+  Conversation,
   EstimateRequest,
   HealthResponse,
   HistoryItem,
@@ -87,6 +88,9 @@ export const api = {
   },
   jiraPush(req: JiraPushRequest): Promise<JiraPushResponse> {
     return call('/jira/push', { method: 'POST', body: JSON.stringify(req) });
+  },
+  saveConversation(conv: Conversation): Promise<{ ok: true }> {
+    return call(`/conversations/${encodeURIComponent(conv.id)}`, { method: 'PUT', body: JSON.stringify(conv) });
   },
   lessons(): Promise<{ lessons: Lesson[] }> {
     return call('/lessons');

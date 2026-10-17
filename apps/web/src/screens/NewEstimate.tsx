@@ -129,7 +129,7 @@ export function NewEstimate() {
           </div>
           {showDemoNote ? (
             <p className="m-0 mt-3 text-[15px]" role="status" style={{ color: 'var(--ink-2)' }}>
-              {copy.demoNeedsApi}
+              {mode.kind === 'live' ? copy.liveNoClaude : copy.demoNeedsApi}
             </p>
           ) : null}
         </form>

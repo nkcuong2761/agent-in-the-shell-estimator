@@ -268,7 +268,7 @@ TYPES.forEach((projectType, idx) => {
     const estimate = half(t.h * SIZE_MULT[scale] * lognormal(0.18));
     // Complexity reflects the size of the piece of work, so S projects have S items.
     const complexity: Complexity = estimate < 12 ? 'S' : estimate < 28 ? 'M' : 'L';
-    const noise = lognormal(noisy ? 0.42 : 0.16);
+    const noise = lognormal(noisy ? 0.6 : 0.1);
     // Observed actual/estimate includes the squad's own coordination overhead; the engine divides it out.
     let actual = estimate * CATEGORY_BIAS[t.category] * noise;
     const blocked = t.category === 'integration' && rng() < 0.2;

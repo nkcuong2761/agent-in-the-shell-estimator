@@ -130,7 +130,7 @@ Every exported function also returns an `Explanation`, which the UI shows in a "
 2. form-digitization: paper subscription form online, connected to records;
 3. integration: sync investor data with a fund administrator's system.
 
-**Screens:**
+**Screens (v1, superseded by "User journey v2" below):**
 1. Home/Intake: start card, 3 sample cards, mode indicator, upload, deadline, team shape.
 2. Scope: phases + items with source chips, assumptions, missing info, scope risks, client email with ranked questions (copy).
 3. Estimate: headline range + commit date, on-time chance, confidence badge, per-phase range bars with a separate buffer segment, Gantt timeline, analogs, and "answer a question" (tightens live). A "How was this calculated?" drawer on every number.
@@ -154,25 +154,62 @@ One line of helper text under each key number; no tours. Keyboard navigable, suf
 - README covers: problem, live URL, architecture, methods + citations, run locally, deploy (Pages + API), what is fake.
 - If a decision isn't covered here, pick the simplest option that keeps demo mode working on Pages, record it under **Decisions**, and continue.
 
-## Design system ("dithered printout")
+## User journey v2 (current)
 
-The user asked for an ASCII-art and dithering theme. The concept: **the estimate is a printout from an estimating machine, and dither density encodes certainty.**
+The app is a chat with an estimating agent, like Claude:
+- **Left sidebar:** New estimate, recent estimates (title plus "range · date"), finished projects ("how did we do?"), and "How estimates are worked out".
+- **Main area:** one conversation per estimate.
 
-- **Palette (light, "ledger paper"):** paper `#E8EAE3`, ink `#1A1F3A`, riso blue `#2F43D8`, fluoro pink `#E8366A` (buffer, risk, deadline), graphite `#5D6177`.
-- **Palette (dark, "screen"):** `#0F1226` bg, `#E3E6F0` ink, `#8C99FF` blue, `#FF6F93` pink, `#9AA0B8` graphite.
-- **Type:** Martian Mono for display, numbers and ASCII art; Atkinson Hyperlegible Next for body text.
-- **Signature element:** ordered (Bayer 4×4) dither in range bars and distributions.
-  - P50 core: solid ink.
-  - P50→P80: 50% dither.
-  - Tail: 12.5% dither.
-  - Buffer: pink dither.
-  The hero is a Monte Carlo histogram filling in with dithered ink. It is the only autonomous motion.
-- **ASCII:** pure 7-bit ASCII only (`+ - | = # . :`), so glyph coverage is never an issue. Boxes have `+` corners, rules are drawn with `-`, and buttons read `[ Run estimate ]`.
-- **Rules:**
-  - sentence case everywhere and no all-caps eyebrows;
-  - no gradients and no drop shadows: depth comes from dither and offset ink only;
-  - square corners;
-  - `prefers-reduced-motion` disables the histogram animation.
+| Route | Screen |
+| --- | --- |
+| `#/` | New estimate. Asks "What's the brief you'd like me to estimate?". Has a paste box, a drop zone, an attach button, Add a Jira link (live only), and 3 example chips. |
+| `#/estimate/:id` | One conversation: brief, then progress checklist, then estimate, then follow-ups. |
+| `#/project/:id` | A finished project: how the estimate did, what happened, what I learned, whether estimates are getting better. |
+| `#/about` | Methods, architecture, data disclaimer, and the Manager/Overseer switch. |
+
+- **The estimate message:**
+  - a headline card: weeks, team, most likely date, safe date with margin, how sure;
+  - "What happens when": stages, which expand to their work items with source chips;
+  - "Ask the client before you commit": the top 3 questions, with copy-email and answer-inline;
+  - "Why this number?": template bullets, and a link to the methods drawer.
+- **Follow-ups go through an intent parser** (`present/intent.ts`): `team_what_if`, `drop_what_if`, `deadline_check`, `explain`, `new_info`, `other`.
+  - What-ifs post a comparison with Use this / Keep the current one.
+  - Changes post a new estimate version with an "Updated:" line. Older versions collapse.
+- **State:** `Conversation` and `Message` live in `packages/shared/src/conversation.ts`.
+  - Conversations are kept in localStorage (`scopewise.conversations.v1`), and also saved to `PUT /conversations/:id` in live mode.
+  - Each estimate version stores its inputs (`EstimateSpec`); the numbers are recomputed by the engine, which is deterministic.
+  - The 3 samples are seeded as ready conversations on first load.
+- **Presentation layer:** `apps/web/src/present/` turns engine output into words. Components never read raw engine fields for display. All phrases live in `apps/web/src/copy.ts`.
+
+### Glossary (plain language on the main screens)
+
+| Technical | Show instead |
+| --- | --- |
+| Total P50–P80 range | "This will take about **6–8 weeks**" (P50 days/5 rounded; P80 days/5 rounded up) |
+| P50 finish date | "Most likely finished: **Fri 4 Dec**" |
+| P80 / commit date | "Safe date to promise the client: **Fri 11 Dec**" |
+| Buffer | "Safety margin" ("Includes about 1 week of safety margin") |
+| Confidence High / Medium / Low | "How sure am I?": "Very sure" / "Fairly sure" / "Not sure yet" (3 / 2 / 1 bars) |
+| Value of information ranking | "Ask the client before you commit" (most important first) |
+| Phases | "Stages" / "What happens when" |
+| Bias factor ≥ 1.2 for a category | "often runs long" next to that stage (observed actual/estimate, coordination included) |
+| Focus factor | "Your team spends about 7 of every 10 work hours on project work" |
+| MMRE / accuracy | "How far off was each estimate?" |
+
+`P50`, `P80`, `MMRE`, `PRED`, `PERT`, `Monte Carlo`, `buffer`, `calibrat` and `FTE` must not appear on the main screens. They may appear only in the methods drawer (`[data-methods]`) and on About. `src/test/banned-terms.test.tsx` enforces this.
+
+## Design system (v2: "soft structuralism", taste-skill / soft-skill)
+
+The user asked for a more professional, business-oriented look using taste-skill's soft-skill. This replaces the v1 ASCII/dither theme.
+
+- **Ground:** silver-grey `#EEF0F3`; white surfaces; ink `#101828`; one accent `#2F43D8`. Success, warning and danger tones mark status only.
+- **Dark mode:** `#0B0D12` ground, `#151821` surfaces, accent `#8C99FF`. Defined on `:root` in `styles.css`.
+- **Type:** Geist (Geist Mono only for formulas and inputs in the methods drawer).
+- **Cards are "double bezel":** an outer tray (`.bezel`: faint fill, hairline ring, 6px padding, 1.75rem radius) holding an inner plate (`.bezel-core`: white, concentric radius, top highlight, soft diffused shadow).
+- **Buttons** are pills with a nested icon island (`.btn-icon`). Press scales to 0.98.
+- **Motion:** spring easing `cubic-bezier(0.32,0.72,0,1)`. Messages fade up with a slight blur. `prefers-reduced-motion` turns motion off.
+- **Icons** are light 1.5px line icons drawn inline (`components/ui.tsx`).
+- **Bars:** the one detail kept from v1 is a light Bayer-dither stipple on the uncertain part of timeline bars (to P80, and the safety margin).
 
 ## Decisions
 
@@ -194,3 +231,9 @@ The user asked for an ASCII-art and dithering theme. The concept: **the estimate
   - `/estimate`, `/panel` and `/ask` use seed history, so they match demo mode.
   - Vercel uses the `@hono/node-server/vercel` adapter.
 - **Web:** the dev server uses base `/`; builds use `VITE_BASE` (default `/agent-in-the-shell-estimator/`). The Learning page (Recharts) is lazy-loaded. Bundled JSON is zod-validated at load.
+- **Journey v2 deviations from the UX prompt:**
+  - The user asked for soft-skill styling, so the visual design changed despite the prompt's "do not change the visual design" rule.
+  - Live mode handles the follow-up intents it recognises locally with the engine, the same as demo mode, so comparisons stay structured. Only `other` goes to the Ask agent.
+- **Default team** is one person per role the work needs (spec). Durations are long with one developer; the "add another developer" follow-up shows the difference.
+- **Seed durations** come from the engine's own schedule model (`scheduleOnce` on actual hours, plus noise from a separate PRNG stream), so finished projects compare like with like. First-10 noise is 0.6 and later noise 0.1, so the backtest visibly improves (first five ~24% off, last five ~14%).
+- **Derived engine outputs** (no method changes): `Estimate.finishDays`, plus `BacktestPoint.calibratedP50Date` and `calibratedP80Date`.

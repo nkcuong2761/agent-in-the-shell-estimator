@@ -158,10 +158,20 @@ export function ConversationsProvider({ children }: { children: ReactNode }) {
     };
   }, []);
 
+  // Save locally always; in live mode also to the API store (only conversations that changed).
+  const saved = useRef(new Map<string, string>());
   useEffect(() => {
-    const t = window.setTimeout(() => writeStore(STORE_KEY, { version: 1, conversations }), 250);
+    const t = window.setTimeout(() => {
+      writeStore(STORE_KEY, { version: 1, conversations });
+      if (mode.kind !== 'live') return;
+      for (const c of conversations) {
+        if (c.status === 'working' || saved.current.get(c.id) === c.updatedAt) continue;
+        saved.current.set(c.id, c.updatedAt);
+        api.saveConversation(c).catch(() => saved.current.delete(c.id));
+      }
+    }, 400);
     return () => window.clearTimeout(t);
-  }, [conversations]);
+  }, [conversations, mode]);
 
   const setReadOnly = useCallback((v: boolean) => {
     setReadOnlyState(v);
@@ -235,11 +245,23 @@ export function ConversationsProvider({ children }: { children: ReactNode }) {
       const docs = c.brief.sources.length || files.current.get(id)?.length || 1;
       try {
         setProgress(id, steps({ docs, stages: 0, similar: 0 }, 0, 0));
-        const text = c.brief.sources.map((s) => s.text).join('\n\n');
-        const scoped = files.current.get(id)?.length
-          ? await api.scopeFromFiles(text, c.clientDeadline, files.current.get(id) ?? [])
-          : await api.scope(c.brief);
-        const brief = scoped.brief ?? c.brief;
+        // Jira links: pull each issue's summary and description into the brief.
+        const sources = await Promise.all(
+          c.brief.sources.map(async (s) => {
+            if (s.kind !== 'jira') return s;
+            const key = s.text.match(/[A-Z][A-Z0-9]+-\d+/)?.[0];
+            if (!key) return s;
+            const issue = await api.jiraIssue(key);
+            return { ...s, text: issue.text };
+          }),
+        );
+        if (sources.some((s, i) => s !== c.brief.sources[i])) patch(id, (x) => ({ ...x, brief: { ...x.brief, sources } }));
+        const withJira: BriefPack = { ...c.brief, sources };
+        const text = sources.filter((s) => s.kind !== 'jira').map((s) => s.text).join('\n\n');
+        const upload = files.current.get(id) ?? [];
+        const jiraFiles = sources.filter((s) => s.kind === 'jira').map((s) => new File([s.text], s.name, { type: 'text/markdown' }));
+        const scoped = upload.length ? await api.scopeFromFiles(text, c.clientDeadline, [...upload, ...jiraFiles]) : await api.scope(withJira);
+        const brief = scoped.brief ?? withJira;
         const scope = scoped.scope;
         const similar = similarCount(scope);
         const n = { docs: brief.sources.length, stages: scope.phases.length, similar };

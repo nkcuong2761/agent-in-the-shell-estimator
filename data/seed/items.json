@@ -9,7 +9,7 @@
     "complexity": "M",
     "role": "pm",
     "originalEstimateH": 21.5,
-    "timeSpentH": 13,
+    "timeSpentH": 10,
     "labels": [
       "type:new-feature",
       "size:L",
@@ -21,7 +21,7 @@
     ],
     "addedAfterKickoff": false,
     "created": "2025-04-09",
-    "resolved": "2025-06-27"
+    "resolved": "2025-06-21"
   },
   {
     "id": "P001-02",
@@ -33,7 +33,7 @@
     "complexity": "M",
     "role": "pm",
     "originalEstimateH": 16,
-    "timeSpentH": 9,
+    "timeSpentH": 7,
     "labels": [
       "type:new-feature",
       "size:L",
@@ -45,7 +45,7 @@
     ],
     "addedAfterKickoff": false,
     "created": "2025-04-09",
-    "resolved": "2025-06-27"
+    "resolved": "2025-06-21"
   },
   {
     "id": "P001-03",
@@ -57,7 +57,7 @@
     "complexity": "M",
     "role": "designer",
     "originalEstimateH": 26,
-    "timeSpentH": 34.5,
+    "timeSpentH": 37,
     "labels": [
       "type:new-feature",
       "size:L",
@@ -69,7 +69,7 @@
     ],
     "addedAfterKickoff": false,
     "created": "2025-04-09",
-    "resolved": "2025-06-28"
+    "resolved": "2025-06-22"
   },
   {
     "id": "P001-04",
@@ -81,7 +81,7 @@
     "complexity": "L",
     "role": "designer",
     "originalEstimateH": 42.5,
-    "timeSpentH": 37,
+    "timeSpentH": 33,
     "labels": [
       "type:new-feature",
       "size:L",
@@ -93,7 +93,7 @@
     ],
     "addedAfterKickoff": false,
     "created": "2025-04-09",
-    "resolved": "2025-06-29"
+    "resolved": "2025-06-23"
   },
   {
     "id": "P001-05",
@@ -105,7 +105,7 @@
     "complexity": "M",
     "role": "designer",
     "originalEstimateH": 13.5,
-    "timeSpentH": 5.5,
+    "timeSpentH": 4,
     "labels": [
       "type:new-feature",
       "size:L",
@@ -117,7 +117,7 @@
     ],
     "addedAfterKickoff": false,
     "created": "2025-04-09",
-    "resolved": "2025-06-28"
+    "resolved": "2025-06-22"
   },
   {
     "id": "P001-06",
@@ -129,7 +129,7 @@
     "complexity": "L",
     "role": "engineer",
     "originalEstimateH": 76.5,
-    "timeSpentH": 51,
+    "timeSpentH": 39,
     "labels": [
       "type:new-feature",
       "size:L",
@@ -141,7 +141,7 @@
     ],
     "addedAfterKickoff": false,
     "created": "2025-04-09",
-    "resolved": "2025-06-30"
+    "resolved": "2025-06-24"
   },
   {
     "id": "P001-07",
@@ -153,7 +153,7 @@
     "complexity": "L",
     "role": "engineer",
     "originalEstimateH": 56,
-    "timeSpentH": 50.5,
+    "timeSpentH": 44.5,
     "labels": [
       "type:new-feature",
       "size:L",
@@ -165,7 +165,7 @@
     ],
     "addedAfterKickoff": false,
     "created": "2025-04-09",
-    "resolved": "2025-06-28"
+    "resolved": "2025-06-22"
   },
   {
     "id": "P001-08",
@@ -177,7 +177,7 @@
     "complexity": "L",
     "role": "qa",
     "originalEstimateH": 34.5,
-    "timeSpentH": 46,
+    "timeSpentH": 48,
     "labels": [
       "type:new-feature",
       "size:L",
@@ -189,7 +189,7 @@
     ],
     "addedAfterKickoff": false,
     "created": "2025-04-09",
-    "resolved": "2025-06-30"
+    "resolved": "2025-06-24"
   },
   {
     "id": "P001-09",
@@ -201,7 +201,7 @@
     "complexity": "M",
     "role": "qa",
     "originalEstimateH": 15.5,
-    "timeSpentH": 12,
+    "timeSpentH": 10,
     "labels": [
       "type:new-feature",
       "size:L",
@@ -213,7 +213,7 @@
     ],
     "addedAfterKickoff": false,
     "created": "2025-04-09",
-    "resolved": "2025-06-28"
+    "resolved": "2025-06-22"
   },
   {
     "id": "P001-10",
@@ -225,7 +225,7 @@
     "complexity": "M",
     "role": "engineer",
     "originalEstimateH": 16,
-    "timeSpentH": 17,
+    "timeSpentH": 16.5,
     "labels": [
       "type:new-feature",
       "size:L",
@@ -237,7 +237,7 @@
     ],
     "addedAfterKickoff": false,
     "created": "2025-04-09",
-    "resolved": "2025-07-01"
+    "resolved": "2025-06-25"
   },
   {
     "id": "P002-01",
@@ -249,7 +249,7 @@
     "complexity": "S",
     "role": "pm",
     "originalEstimateH": 6,
-    "timeSpentH": 7.5,
+    "timeSpentH": 8,
     "labels": [
       "type:new-feature",
       "size:S",
@@ -261,7 +261,7 @@
     ],
     "addedAfterKickoff": false,
     "created": "2025-04-18",
-    "resolved": "2025-05-20"
+    "resolved": "2025-05-30"
   },
   {
     "id": "P002-02",
@@ -273,7 +273,7 @@
     "complexity": "S",
     "role": "pm",
     "originalEstimateH": 5.5,
-    "timeSpentH": 3.5,
+    "timeSpentH": 2.5,
     "labels": [
       "type:new-feature",
       "size:S",
@@ -285,7 +285,7 @@
     ],
     "addedAfterKickoff": false,
     "created": "2025-04-18",
-    "resolved": "2025-05-19"
+    "resolved": "2025-05-29"
   },
   {
     "id": "P002-03",
@@ -297,7 +297,7 @@
     "complexity": "S",
     "role": "designer",
     "originalEstimateH": 8,
-    "timeSpentH": 5,
+    "timeSpentH": 4,
     "labels": [
       "type:new-feature",
       "size:S",
@@ -309,7 +309,7 @@
     ],
     "addedAfterKickoff": false,
     "created": "2025-04-18",
-    "resolved": "2025-05-21"
+    "resolved": "2025-05-31"
   },
   {
     "id": "P002-04",
@@ -333,7 +333,7 @@
     ],
     "addedAfterKickoff": false,
     "created": "2025-04-18",
-    "resolved": "2025-05-20"
+    "resolved": "2025-05-30"
   },
   {
     "id": "P002-05",
@@ -345,7 +345,7 @@
     "complexity": "M",
     "role": "engineer",
     "originalEstimateH": 14.5,
-    "timeSpentH": 21.5,
+    "timeSpentH": 23,
     "labels": [
       "type:new-feature",
       "size:S",
@@ -357,7 +357,7 @@
     ],
     "addedAfterKickoff": false,
     "created": "2025-04-18",
-    "resolved": "2025-05-23"
+    "resolved": "2025-06-02"
   },
   {
     "id": "P002-06",
@@ -369,7 +369,7 @@
     "complexity": "M",
     "role": "engineer",
     "originalEstimateH": 16,
-    "timeSpentH": 44.5,
+    "timeSpentH": 64.5,
     "labels": [
       "type:new-feature",
       "size:S",
@@ -381,7 +381,7 @@
     ],
     "addedAfterKickoff": false,
     "created": "2025-04-18",
-    "resolved": "2025-05-22"
+    "resolved": "2025-06-01"
   },
   {
     "id": "P002-07",
@@ -393,7 +393,7 @@
     "complexity": "S",
     "role": "engineer",
     "originalEstimateH": 6,
-    "timeSpentH": 4.5,
+    "timeSpentH": 3.5,
     "labels": [
       "type:new-feature",
       "size:S",
@@ -405,7 +405,7 @@
     ],
     "addedAfterKickoff": false,
     "created": "2025-04-18",
-    "resolved": "2025-05-20"
+    "resolved": "2025-05-30"
   },
   {
     "id": "P002-08",
@@ -417,7 +417,7 @@
     "complexity": "S",
     "role": "qa",
     "originalEstimateH": 10.5,
-    "timeSpentH": 5.5,
+    "timeSpentH": 4,
     "labels": [
       "type:new-feature",
       "size:S",
@@ -429,7 +429,7 @@
     ],
     "addedAfterKickoff": false,
     "created": "2025-04-18",
-    "resolved": "2025-05-21"
+    "resolved": "2025-05-31"
   },
   {
     "id": "P002-09",
@@ -441,7 +441,7 @@
     "complexity": "S",
     "role": "engineer",
     "originalEstimateH": 5.5,
-    "timeSpentH": 4.5,
+    "timeSpentH": 4,
     "labels": [
       "type:new-feature",
       "size:S",
@@ -453,7 +453,7 @@
     ],
     "addedAfterKickoff": false,
     "created": "2025-04-18",
-    "resolved": "2025-05-19"
+    "resolved": "2025-05-29"
   },
   {
     "id": "P003-01",
@@ -465,7 +465,7 @@
     "complexity": "M",
     "role": "pm",
     "originalEstimateH": 14,
-    "timeSpentH": 11.5,
+    "timeSpentH": 10.5,
     "labels": [
       "type:new-feature",
       "size:M",
@@ -477,7 +477,7 @@
     ],
     "addedAfterKickoff": false,
     "created": "2025-04-29",
-    "resolved": "2025-06-08"
+    "resolved": "2025-06-07"
   },
   {
     "id": "P003-02",
@@ -489,7 +489,7 @@
     "complexity": "S",
     "role": "pm",
     "originalEstimateH": 9.5,
-    "timeSpentH": 12.5,
+    "timeSpentH": 13.5,
     "labels": [
       "type:new-feature",
       "size:M",
@@ -501,7 +501,7 @@
     ],
     "addedAfterKickoff": false,
     "created": "2025-04-29",
-    "resolved": "2025-06-09"
+    "resolved": "2025-06-08"
   },
   {
     "id": "P003-03",
@@ -513,7 +513,7 @@
     "complexity": "M",
     "role": "designer",
     "originalEstimateH": 18,
-    "timeSpentH": 13.5,
+    "timeSpentH": 11,
     "labels": [
       "type:new-feature",
       "size:M",
@@ -525,7 +525,7 @@
     ],
     "addedAfterKickoff": false,
     "created": "2025-04-29",
-    "resolved": "2025-06-12"
+    "resolved": "2025-06-11"
   },
   {
     "id": "P003-04",
@@ -537,7 +537,7 @@
     "complexity": "M",
     "role": "designer",
     "originalEstimateH": 22.5,
-    "timeSpentH": 27.5,
+    "timeSpentH": 28,
     "labels": [
       "type:new-feature",
       "size:M",
@@ -549,7 +549,7 @@
     ],
     "addedAfterKickoff": false,
     "created": "2025-04-29",
-    "resolved": "2025-06-11"
+    "resolved": "2025-06-10"
   },
   {
     "id": "P003-05",
@@ -561,7 +561,7 @@
     "complexity": "L",
     "role": "engineer",
     "originalEstimateH": 37.5,
-    "timeSpentH": 14.5,
+    "timeSpentH": 9,
     "labels": [
       "type:new-feature",
       "size:M",
@@ -573,7 +573,7 @@
     ],
     "addedAfterKickoff": false,
     "created": "2025-04-29",
-    "resolved": "2025-06-08"
+    "resolved": "2025-06-07"
   },
   {
     "id": "P003-06",
@@ -585,7 +585,7 @@
     "complexity": "L",
     "role": "engineer",
     "originalEstimateH": 33.5,
-    "timeSpentH": 51.5,
+    "timeSpentH": 57.5,
     "labels": [
       "type:new-feature",
       "size:M",
@@ -597,7 +597,7 @@
     ],
     "addedAfterKickoff": false,
     "created": "2025-04-29",
-    "resolved": "2025-06-12"
+    "resolved": "2025-06-11"
   },
   {
     "id": "P003-07",
@@ -609,7 +609,7 @@
     "complexity": "M",
     "role": "engineer",
     "originalEstimateH": 24,
-    "timeSpentH": 29,
+    "timeSpentH": 28.5,
     "labels": [
       "type:new-feature",
       "size:M",
@@ -621,7 +621,7 @@
     ],
     "addedAfterKickoff": false,
     "created": "2025-04-29",
-    "resolved": "2025-06-08"
+    "resolved": "2025-06-07"
   },
   {
     "id": "P003-08",
@@ -633,7 +633,7 @@
     "complexity": "M",
     "role": "engineer",
     "originalEstimateH": 12,
-    "timeSpentH": 10,
+    "timeSpentH": 8,
     "labels": [
       "type:new-feature",
       "size:M",
@@ -645,7 +645,7 @@
     ],
     "addedAfterKickoff": false,
     "created": "2025-04-29",
-    "resolved": "2025-06-10"
+    "resolved": "2025-06-09"
   },
   {
     "id": "P003-09",
@@ -657,7 +657,7 @@
     "complexity": "M",
     "role": "qa",
     "originalEstimateH": 17,
-    "timeSpentH": 11.5,
+    "timeSpentH": 9,
     "labels": [
       "type:new-feature",
       "size:M",
@@ -669,7 +669,7 @@
     ],
     "addedAfterKickoff": false,
     "created": "2025-04-29",
-    "resolved": "2025-06-10"
+    "resolved": "2025-06-09"
   },
   {
     "id": "P003-10",
@@ -681,7 +681,7 @@
     "complexity": "S",
     "role": "engineer",
     "originalEstimateH": 8.5,
-    "timeSpentH": 12,
+    "timeSpentH": 13.5,
     "labels": [
       "type:new-feature",
       "size:M",
@@ -693,7 +693,7 @@
     ],
     "addedAfterKickoff": false,
     "created": "2025-04-29",
-    "resolved": "2025-06-07"
+    "resolved": "2025-06-06"
   },
   {
     "id": "P003-11",
@@ -705,7 +705,7 @@
     "complexity": "M",
     "role": "engineer",
     "originalEstimateH": 12.5,
-    "timeSpentH": 16,
+    "timeSpentH": 17,
     "labels": [
       "type:new-feature",
       "size:M",
@@ -718,7 +718,7 @@
     ],
     "addedAfterKickoff": true,
     "created": "2025-05-15",
-    "resolved": "2025-06-11"
+    "resolved": "2025-06-10"
   },
   {
     "id": "P004-01",
@@ -730,7 +730,7 @@
     "complexity": "M",
     "role": "pm",
     "originalEstimateH": 18.5,
-    "timeSpentH": 39,
+    "timeSpentH": 49,
     "labels": [
       "type:form-digitization",
       "size:XL",
@@ -742,7 +742,7 @@
     ],
     "addedAfterKickoff": false,
     "created": "2025-05-09",
-    "resolved": "2025-09-09"
+    "resolved": "2025-09-22"
   },
   {
     "id": "P004-02",
@@ -754,7 +754,7 @@
     "complexity": "M",
     "role": "pm",
     "originalEstimateH": 18,
-    "timeSpentH": 15.5,
+    "timeSpentH": 13.5,
     "labels": [
       "type:form-digitization",
       "size:XL",
@@ -766,7 +766,7 @@
     ],
     "addedAfterKickoff": false,
     "created": "2025-05-09",
-    "resolved": "2025-09-08"
+    "resolved": "2025-09-21"
   },
   {
     "id": "P004-03",
@@ -778,7 +778,7 @@
     "complexity": "M",
     "role": "legal",
     "originalEstimateH": 21.5,
-    "timeSpentH": 15.5,
+    "timeSpentH": 12.5,
     "labels": [
       "type:form-digitization",
       "size:XL",
@@ -790,7 +790,7 @@
     ],
     "addedAfterKickoff": false,
     "created": "2025-05-09",
-    "resolved": "2025-09-05"
+    "resolved": "2025-09-18"
   },
   {
     "id": "P004-04",
@@ -802,7 +802,7 @@
     "complexity": "L",
     "role": "engineer",
     "originalEstimateH": 64.5,
-    "timeSpentH": 99,
+    "timeSpentH": 103,
     "labels": [
       "type:form-digitization",
       "size:XL",
@@ -814,7 +814,7 @@
     ],
     "addedAfterKickoff": false,
     "created": "2025-05-09",
-    "resolved": "2025-09-07"
+    "resolved": "2025-09-20"
   },
   {
     "id": "P004-05",
@@ -826,7 +826,7 @@
     "complexity": "L",
     "role": "engineer",
     "originalEstimateH": 32,
-    "timeSpentH": 46.5,
+    "timeSpentH": 47,
     "labels": [
       "type:form-digitization",
       "size:XL",
@@ -838,7 +838,7 @@
     ],
     "addedAfterKickoff": false,
     "created": "2025-05-09",
-    "resolved": "2025-09-08"
+    "resolved": "2025-09-21"
   },
   {
     "id": "P004-06",
@@ -850,7 +850,7 @@
     "complexity": "M",
     "role": "engineer",
     "originalEstimateH": 24,
-    "timeSpentH": 21,
+    "timeSpentH": 17.5,
     "labels": [
       "type:form-digitization",
       "size:XL",
@@ -862,7 +862,7 @@
     ],
     "addedAfterKickoff": false,
     "created": "2025-05-09",
-    "resolved": "2025-09-09"
+    "resolved": "2025-09-22"
   },
   {
     "id": "P004-07",
@@ -874,7 +874,7 @@
     "complexity": "L",
     "role": "engineer",
     "originalEstimateH": 32.5,
-    "timeSpentH": 89.5,
+    "timeSpentH": 119.5,
     "labels": [
       "type:form-digitization",
       "size:XL",
@@ -886,7 +886,7 @@
     ],
     "addedAfterKickoff": false,
     "created": "2025-05-09",
-    "resolved": "2025-09-07"
+    "resolved": "2025-09-20"
   },
   {
     "id": "P004-08",
@@ -898,7 +898,7 @@
     "complexity": "L",
     "role": "engineer",
     "originalEstimateH": 29.5,
-    "timeSpentH": 19,
+    "timeSpentH": 12,
     "labels": [
       "type:form-digitization",
       "size:XL",
@@ -910,7 +910,7 @@
     ],
     "addedAfterKickoff": false,
     "created": "2025-05-09",
-    "resolved": "2025-09-09"
+    "resolved": "2025-09-22"
   },
   {
     "id": "P004-09",
@@ -934,7 +934,7 @@
     ],
     "addedAfterKickoff": false,
     "created": "2025-05-09",
-    "resolved": "2025-09-09"
+    "resolved": "2025-09-22"
   },
   {
     "id": "P004-10",
@@ -946,7 +946,7 @@
     "complexity": "L",
     "role": "qa",
     "originalEstimateH": 31.5,
-    "timeSpentH": 60,
+    "timeSpentH": 74,
     "labels": [
       "type:form-digitization",
       "size:XL",
@@ -958,7 +958,7 @@
     ],
     "addedAfterKickoff": false,
     "created": "2025-05-09",
-    "resolved": "2025-09-07"
+    "resolved": "2025-09-20"
   },
   {
     "id": "P004-11",
@@ -970,7 +970,7 @@
     "complexity": "S",
     "role": "qa",
     "originalEstimateH": 10,
-    "timeSpentH": 4.5,
+    "timeSpentH": 3,
     "labels": [
       "type:form-digitization",
       "size:XL",
@@ -982,7 +982,7 @@
     ],
     "addedAfterKickoff": false,
     "created": "2025-05-09",
-    "resolved": "2025-09-06"
+    "resolved": "2025-09-19"
   },
   {
     "id": "P004-12",
@@ -994,7 +994,7 @@
     "complexity": "M",
     "role": "engineer",
     "originalEstimateH": 12.5,
-    "timeSpentH": 8.5,
+    "timeSpentH": 6.5,
     "labels": [
       "type:form-digitization",
       "size:XL",
@@ -1006,7 +1006,7 @@
     ],
     "addedAfterKickoff": false,
     "created": "2025-05-09",
-    "resolved": "2025-09-07"
+    "resolved": "2025-09-20"
   },
   {
     "id": "P005-01",
@@ -1030,7 +1030,7 @@
     ],
     "addedAfterKickoff": false,
     "created": "2025-05-21",
-    "resolved": "2025-07-03"
+    "resolved": "2025-07-06"
   },
   {
     "id": "P005-02",
@@ -1042,7 +1042,7 @@
     "complexity": "S",
     "role": "pm",
     "originalEstimateH": 6,
-    "timeSpentH": 4.5,
+    "timeSpentH": 3.5,
     "labels": [
       "type:integration",
       "size:S",
@@ -1054,7 +1054,7 @@
     ],
     "addedAfterKickoff": false,
     "created": "2025-05-21",
-    "resolved": "2025-07-03"
+    "resolved": "2025-07-06"
   },
   {
     "id": "P005-03",
@@ -1066,7 +1066,7 @@
     "complexity": "S",
     "role": "engineer",
     "originalEstimateH": 11,
-    "timeSpentH": 23.5,
+    "timeSpentH": 25.5,
     "labels": [
       "type:integration",
       "size:S",
@@ -1078,7 +1078,7 @@
     ],
     "addedAfterKickoff": false,
     "created": "2025-05-21",
-    "resolved": "2025-07-02"
+    "resolved": "2025-07-05"
   },
   {
     "id": "P005-04",
@@ -1090,7 +1090,7 @@
     "complexity": "S",
     "role": "engineer",
     "originalEstimateH": 8.5,
-    "timeSpentH": 15.5,
+    "timeSpentH": 13.5,
     "labels": [
       "type:integration",
       "size:S",
@@ -1103,7 +1103,7 @@
     ],
     "addedAfterKickoff": false,
     "created": "2025-05-21",
-    "resolved": "2025-07-01"
+    "resolved": "2025-07-04"
   },
   {
     "id": "P005-05",
@@ -1115,7 +1115,7 @@
     "complexity": "S",
     "role": "engineer",
     "originalEstimateH": 11,
-    "timeSpentH": 14.5,
+    "timeSpentH": 12.5,
     "labels": [
       "type:integration",
       "size:S",
@@ -1127,7 +1127,7 @@
     ],
     "addedAfterKickoff": false,
     "created": "2025-05-21",
-    "resolved": "2025-07-03"
+    "resolved": "2025-07-06"
   },
   {
     "id": "P005-06",
@@ -1139,7 +1139,7 @@
     "complexity": "M",
     "role": "engineer",
     "originalEstimateH": 24,
-    "timeSpentH": 46.5,
+    "timeSpentH": 48,
     "labels": [
       "type:integration",
       "size:S",
@@ -1151,7 +1151,7 @@
     ],
     "addedAfterKickoff": false,
     "created": "2025-05-21",
-    "resolved": "2025-07-02"
+    "resolved": "2025-07-05"
   },
   {
     "id": "P005-07",
@@ -1163,7 +1163,7 @@
     "complexity": "M",
     "role": "engineer",
     "originalEstimateH": 14.5,
-    "timeSpentH": 23,
+    "timeSpentH": 21.5,
     "labels": [
       "type:integration",
       "size:S",
@@ -1175,7 +1175,7 @@
     ],
     "addedAfterKickoff": false,
     "created": "2025-05-21",
-    "resolved": "2025-06-29"
+    "resolved": "2025-07-02"
   },
   {
     "id": "P005-08",
@@ -1187,7 +1187,7 @@
     "complexity": "S",
     "role": "qa",
     "originalEstimateH": 10.5,
-    "timeSpentH": 9,
+    "timeSpentH": 7.5,
     "labels": [
       "type:integration",
       "size:S",
@@ -1199,7 +1199,7 @@
     ],
     "addedAfterKickoff": false,
     "created": "2025-05-21",
-    "resolved": "2025-06-30"
+    "resolved": "2025-07-03"
   },
   {
     "id": "P005-09",
@@ -1211,7 +1211,7 @@
     "complexity": "S",
     "role": "qa",
     "originalEstimateH": 7,
-    "timeSpentH": 8.5,
+    "timeSpentH": 8,
     "labels": [
       "type:integration",
       "size:S",
@@ -1223,7 +1223,7 @@
     ],
     "addedAfterKickoff": false,
     "created": "2025-05-21",
-    "resolved": "2025-06-30"
+    "resolved": "2025-07-03"
   },
   {
     "id": "P005-10",
@@ -1235,7 +1235,7 @@
     "complexity": "S",
     "role": "engineer",
     "originalEstimateH": 11,
-    "timeSpentH": 16.5,
+    "timeSpentH": 17.5,
     "labels": [
       "type:integration",
       "size:S",
@@ -1247,7 +1247,7 @@
     ],
     "addedAfterKickoff": false,
     "created": "2025-05-21",
-    "resolved": "2025-06-29"
+    "resolved": "2025-07-02"
   },
   {
     "id": "P005-11",
@@ -1272,7 +1272,7 @@
     ],
     "addedAfterKickoff": true,
     "created": "2025-06-11",
-    "resolved": "2025-07-04"
+    "resolved": "2025-07-07"
   },
   {
     "id": "P005-12",
@@ -1284,7 +1284,7 @@
     "complexity": "S",
     "role": "engineer",
     "originalEstimateH": 9,
-    "timeSpentH": 6.5,
+    "timeSpentH": 4.5,
     "labels": [
       "type:integration",
       "size:S",
@@ -1297,7 +1297,7 @@
     ],
     "addedAfterKickoff": true,
     "created": "2025-06-03",
-    "resolved": "2025-07-03"
+    "resolved": "2025-07-06"
   },
   {
     "id": "P006-01",
@@ -1309,7 +1309,7 @@
     "complexity": "M",
     "role": "pm",
     "originalEstimateH": 24,
-    "timeSpentH": 12.5,
+    "timeSpentH": 9.5,
     "labels": [
       "type:integration",
       "size:XL",
@@ -1321,7 +1321,7 @@
     ],
     "addedAfterKickoff": false,
     "created": "2025-06-02",
-    "resolved": "2025-09-02"
+    "resolved": "2025-08-29"
   },
   {
     "id": "P006-02",
@@ -1333,7 +1333,7 @@
     "complexity": "M",
     "role": "pm",
     "originalEstimateH": 13.5,
-    "timeSpentH": 8,
+    "timeSpentH": 6,
     "labels": [
       "type:integration",
       "size:XL",
@@ -1345,7 +1345,7 @@
     ],
     "addedAfterKickoff": false,
     "created": "2025-06-02",
-    "resolved": "2025-09-01"
+    "resolved": "2025-08-28"
   },
   {
     "id": "P006-03",
@@ -1357,7 +1357,7 @@
     "complexity": "L",
     "role": "engineer",
     "originalEstimateH": 47.5,
-    "timeSpentH": 68.5,
+    "timeSpentH": 66,
     "labels": [
       "type:integration",
       "size:XL",
@@ -1369,7 +1369,7 @@
     ],
     "addedAfterKickoff": false,
     "created": "2025-06-02",
-    "resolved": "2025-09-02"
+    "resolved": "2025-08-29"
   },
   {
     "id": "P006-04",
@@ -1381,7 +1381,7 @@
     "complexity": "M",
     "role": "engineer",
     "originalEstimateH": 22.5,
-    "timeSpentH": 22,
+    "timeSpentH": 18,
     "labels": [
       "type:integration",
       "size:XL",
@@ -1393,7 +1393,7 @@
     ],
     "addedAfterKickoff": false,
     "created": "2025-06-02",
-    "resolved": "2025-09-01"
+    "resolved": "2025-08-28"
   },
   {
     "id": "P006-05",
@@ -1405,7 +1405,7 @@
     "complexity": "L",
     "role": "engineer",
     "originalEstimateH": 36.5,
-    "timeSpentH": 42.5,
+    "timeSpentH": 37,
     "labels": [
       "type:integration",
       "size:XL",
@@ -1417,7 +1417,7 @@
     ],
     "addedAfterKickoff": false,
     "created": "2025-06-02",
-    "resolved": "2025-09-05"
+    "resolved": "2025-09-01"
   },
   {
     "id": "P006-06",
@@ -1429,7 +1429,7 @@
     "complexity": "L",
     "role": "engineer",
     "originalEstimateH": 66,
-    "timeSpentH": 109.5,
+    "timeSpentH": 111.5,
     "labels": [
       "type:integration",
       "size:XL",
@@ -1441,7 +1441,7 @@
     ],
     "addedAfterKickoff": false,
     "created": "2025-06-02",
-    "resolved": "2025-09-04"
+    "resolved": "2025-08-31"
   },
   {
     "id": "P006-07",
@@ -1453,7 +1453,7 @@
     "complexity": "L",
     "role": "engineer",
     "originalEstimateH": 37,
-    "timeSpentH": 22.5,
+    "timeSpentH": 15,
     "labels": [
       "type:integration",
       "size:XL",
@@ -1465,7 +1465,7 @@
     ],
     "addedAfterKickoff": false,
     "created": "2025-06-02",
-    "resolved": "2025-09-02"
+    "resolved": "2025-08-29"
   },
   {
     "id": "P006-08",
@@ -1477,7 +1477,7 @@
     "complexity": "M",
     "role": "engineer",
     "originalEstimateH": 25.5,
-    "timeSpentH": 27,
+    "timeSpentH": 25.5,
     "labels": [
       "type:integration",
       "size:XL",
@@ -1489,7 +1489,7 @@
     ],
     "addedAfterKickoff": false,
     "created": "2025-06-02",
-    "resolved": "2025-09-05"
+    "resolved": "2025-09-01"
   },
   {
     "id": "P006-09",
@@ -1501,7 +1501,7 @@
     "complexity": "L",
     "role": "qa",
     "originalEstimateH": 44.5,
-    "timeSpentH": 43.5,
+    "timeSpentH": 40,
     "labels": [
       "type:integration",
       "size:XL",
@@ -1513,7 +1513,7 @@
     ],
     "addedAfterKickoff": false,
     "created": "2025-06-02",
-    "resolved": "2025-09-01"
+    "resolved": "2025-08-28"
   },
   {
     "id": "P006-10",
@@ -1525,7 +1525,7 @@
     "complexity": "M",
     "role": "qa",
     "originalEstimateH": 27.5,
-    "timeSpentH": 22.5,
+    "timeSpentH": 19,
     "labels": [
       "type:integration",
       "size:XL",
@@ -1537,7 +1537,7 @@
     ],
     "addedAfterKickoff": false,
     "created": "2025-06-02",
-    "resolved": "2025-09-03"
+    "resolved": "2025-08-30"
   },
   {
     "id": "P006-11",
@@ -1549,7 +1549,7 @@
     "complexity": "L",
     "role": "engineer",
     "originalEstimateH": 34,
-    "timeSpentH": 22.5,
+    "timeSpentH": 17.5,
     "labels": [
       "type:integration",
       "size:XL",
@@ -1561,7 +1561,7 @@
     ],
     "addedAfterKickoff": false,
     "created": "2025-06-02",
-    "resolved": "2025-09-05"
+    "resolved": "2025-09-01"
   },
   {
     "id": "P007-01",
@@ -1585,7 +1585,7 @@
     ],
     "addedAfterKickoff": false,
     "created": "2025-06-11",
-    "resolved": "2025-06-30"
+    "resolved": "2025-06-29"
   },
   {
     "id": "P007-02",
@@ -1597,7 +1597,7 @@
     "complexity": "S",
     "role": "designer",
     "originalEstimateH": 11.5,
-    "timeSpentH": 6.5,
+    "timeSpentH": 5,
     "labels": [
       "type:reporting",
       "size:S",
@@ -1609,7 +1609,7 @@
     ],
     "addedAfterKickoff": false,
     "created": "2025-06-11",
-    "resolved": "2025-06-30"
+    "resolved": "2025-06-29"
   },
   {
     "id": "P007-03",
@@ -1621,7 +1621,7 @@
     "complexity": "L",
     "role": "engineer",
     "originalEstimateH": 32,
-    "timeSpentH": 27.5,
+    "timeSpentH": 25.5,
     "labels": [
       "type:reporting",
       "size:S",
@@ -1633,7 +1633,7 @@
     ],
     "addedAfterKickoff": false,
     "created": "2025-06-11",
-    "resolved": "2025-06-29"
+    "resolved": "2025-06-28"
   },
   {
     "id": "P007-04",
@@ -1645,7 +1645,7 @@
     "complexity": "M",
     "role": "engineer",
     "originalEstimateH": 17,
-    "timeSpentH": 16.5,
+    "timeSpentH": 16,
     "labels": [
       "type:reporting",
       "size:S",
@@ -1657,7 +1657,7 @@
     ],
     "addedAfterKickoff": false,
     "created": "2025-06-11",
-    "resolved": "2025-06-29"
+    "resolved": "2025-06-28"
   },
   {
     "id": "P007-05",
@@ -1681,7 +1681,7 @@
     ],
     "addedAfterKickoff": false,
     "created": "2025-06-11",
-    "resolved": "2025-06-30"
+    "resolved": "2025-06-29"
   },
   {
     "id": "P007-06",
@@ -1693,7 +1693,7 @@
     "complexity": "S",
     "role": "qa",
     "originalEstimateH": 10,
-    "timeSpentH": 5.5,
+    "timeSpentH": 4,
     "labels": [
       "type:reporting",
       "size:S",
@@ -1705,7 +1705,7 @@
     ],
     "addedAfterKickoff": false,
     "created": "2025-06-11",
-    "resolved": "2025-06-27"
+    "resolved": "2025-06-26"
   },
   {
     "id": "P007-07",
@@ -1717,7 +1717,7 @@
     "complexity": "S",
     "role": "engineer",
     "originalEstimateH": 2.5,
-    "timeSpentH": 5,
+    "timeSpentH": 6.5,
     "labels": [
       "type:reporting",
       "size:S",
@@ -1729,7 +1729,7 @@
     ],
     "addedAfterKickoff": false,
     "created": "2025-06-11",
-    "resolved": "2025-06-27"
+    "resolved": "2025-06-26"
   },
   {
     "id": "P008-01",
@@ -1741,7 +1741,7 @@
     "complexity": "M",
     "role": "pm",
     "originalEstimateH": 20,
-    "timeSpentH": 24,
+    "timeSpentH": 23.5,
     "labels": [
       "type:form-digitization",
       "size:XL",
@@ -1753,7 +1753,7 @@
     ],
     "addedAfterKickoff": false,
     "created": "2025-06-20",
-    "resolved": "2025-10-26"
+    "resolved": "2025-10-23"
   },
   {
     "id": "P008-02",
@@ -1765,7 +1765,7 @@
     "complexity": "M",
     "role": "pm",
     "originalEstimateH": 17.5,
-    "timeSpentH": 16,
+    "timeSpentH": 14,
     "labels": [
       "type:form-digitization",
       "size:XL",
@@ -1777,7 +1777,7 @@
     ],
     "addedAfterKickoff": false,
     "created": "2025-06-20",
-    "resolved": "2025-10-27"
+    "resolved": "2025-10-24"
   },
   {
     "id": "P008-03",
@@ -1789,7 +1789,7 @@
     "complexity": "M",
     "role": "legal",
     "originalEstimateH": 23,
-    "timeSpentH": 25.5,
+    "timeSpentH": 24,
     "labels": [
       "type:form-digitization",
       "size:XL",
@@ -1801,7 +1801,7 @@
     ],
     "addedAfterKickoff": false,
     "created": "2025-06-20",
-    "resolved": "2025-10-29"
+    "resolved": "2025-10-26"
   },
   {
     "id": "P008-04",
@@ -1813,7 +1813,7 @@
     "complexity": "S",
     "role": "legal",
     "originalEstimateH": 10.5,
-    "timeSpentH": 16.5,
+    "timeSpentH": 18,
     "labels": [
       "type:form-digitization",
       "size:XL",
@@ -1825,7 +1825,7 @@
     ],
     "addedAfterKickoff": false,
     "created": "2025-06-20",
-    "resolved": "2025-10-28"
+    "resolved": "2025-10-25"
   },
   {
     "id": "P008-05",
@@ -1837,7 +1837,7 @@
     "complexity": "L",
     "role": "engineer",
     "originalEstimateH": 61,
-    "timeSpentH": 45.5,
+    "timeSpentH": 37,
     "labels": [
       "type:form-digitization",
       "size:XL",
@@ -1849,7 +1849,7 @@
     ],
     "addedAfterKickoff": false,
     "created": "2025-06-20",
-    "resolved": "2025-10-28"
+    "resolved": "2025-10-25"
   },
   {
     "id": "P008-06",
@@ -1861,7 +1861,7 @@
     "complexity": "L",
     "role": "engineer",
     "originalEstimateH": 38,
-    "timeSpentH": 32.5,
+    "timeSpentH": 27.5,
     "labels": [
       "type:form-digitization",
       "size:XL",
@@ -1873,7 +1873,7 @@
     ],
     "addedAfterKickoff": false,
     "created": "2025-06-20",
-    "resolved": "2025-10-26"
+    "resolved": "2025-10-23"
   },
   {
     "id": "P008-07",
@@ -1885,7 +1885,7 @@
     "complexity": "M",
     "role": "engineer",
     "originalEstimateH": 27.5,
-    "timeSpentH": 29,
+    "timeSpentH": 27.5,
     "labels": [
       "type:form-digitization",
       "size:XL",
@@ -1897,7 +1897,7 @@
     ],
     "addedAfterKickoff": false,
     "created": "2025-06-20",
-    "resolved": "2025-10-29"
+    "resolved": "2025-10-26"
   },
   {
     "id": "P008-08",
@@ -1909,7 +1909,7 @@
     "complexity": "L",
     "role": "engineer",
     "originalEstimateH": 28.5,
-    "timeSpentH": 23,
+    "timeSpentH": 19,
     "labels": [
       "type:form-digitization",
       "size:XL",
@@ -1921,7 +1921,7 @@
     ],
     "addedAfterKickoff": false,
     "created": "2025-06-20",
-    "resolved": "2025-10-30"
+    "resolved": "2025-10-27"
   },
   {
     "id": "P008-09",
@@ -1933,7 +1933,7 @@
     "complexity": "L",
     "role": "engineer",
     "originalEstimateH": 33.5,
-    "timeSpentH": 56,
+    "timeSpentH": 57.5,
     "labels": [
       "type:form-digitization",
       "size:XL",
@@ -1945,7 +1945,7 @@
     ],
     "addedAfterKickoff": false,
     "created": "2025-06-20",
-    "resolved": "2025-10-25"
+    "resolved": "2025-10-22"
   },
   {
     "id": "P008-10",
@@ -1957,7 +1957,7 @@
     "complexity": "L",
     "role": "engineer",
     "originalEstimateH": 40.5,
-    "timeSpentH": 69,
+    "timeSpentH": 62.5,
     "labels": [
       "type:form-digitization",
       "size:XL",
@@ -1970,7 +1970,7 @@
     ],
     "addedAfterKickoff": false,
     "created": "2025-06-20",
-    "resolved": "2025-10-26"
+    "resolved": "2025-10-23"
   },
   {
     "id": "P008-11",
@@ -1982,7 +1982,7 @@
     "complexity": "L",
     "role": "qa",
     "originalEstimateH": 33,
-    "timeSpentH": 49.5,
+    "timeSpentH": 54.5,
     "labels": [
       "type:form-digitization",
       "size:XL",
@@ -1994,7 +1994,7 @@
     ],
     "addedAfterKickoff": false,
     "created": "2025-06-20",
-    "resolved": "2025-10-29"
+    "resolved": "2025-10-26"
   },
   {
     "id": "P008-12",
@@ -2006,7 +2006,7 @@
     "complexity": "M",
     "role": "qa",
     "originalEstimateH": 13.5,
-    "timeSpentH": 12,
+    "timeSpentH": 10.5,
     "labels": [
       "type:form-digitization",
       "size:XL",
@@ -2018,7 +2018,7 @@
     ],
     "addedAfterKickoff": false,
     "created": "2025-06-20",
-    "resolved": "2025-10-28"
+    "resolved": "2025-10-25"
   },
   {
     "id": "P008-13",
@@ -2030,7 +2030,7 @@
     "complexity": "M",
     "role": "engineer",
     "originalEstimateH": 17.5,
-    "timeSpentH": 15.5,
+    "timeSpentH": 13.5,
     "labels": [
       "type:form-digitization",
       "size:XL",
@@ -2042,7 +2042,7 @@
     ],
     "addedAfterKickoff": false,
     "created": "2025-06-20",
-    "resolved": "2025-10-27"
+    "resolved": "2025-10-24"
   },
   {
     "id": "P008-14",
@@ -2054,7 +2054,7 @@
     "complexity": "L",
     "role": "engineer",
     "originalEstimateH": 51.5,
-    "timeSpentH": 65.5,
+    "timeSpentH": 63.5,
     "labels": [
       "type:form-digitization",
       "size:XL",
@@ -2067,7 +2067,7 @@
     ],
     "addedAfterKickoff": true,
     "created": "2025-07-08",
-    "resolved": "2025-10-26"
+    "resolved": "2025-10-23"
   },
   {
     "id": "P009-01",
@@ -2079,7 +2079,7 @@
     "complexity": "M",
     "role": "pm",
     "originalEstimateH": 12,
-    "timeSpentH": 19,
+    "timeSpentH": 22.5,
     "labels": [
       "type:reporting",
       "size:S",
@@ -2103,7 +2103,7 @@
     "complexity": "S",
     "role": "designer",
     "originalEstimateH": 11.5,
-    "timeSpentH": 10,
+    "timeSpentH": 9,
     "labels": [
       "type:reporting",
       "size:S",
@@ -2127,7 +2127,7 @@
     "complexity": "M",
     "role": "engineer",
     "originalEstimateH": 24,
-    "timeSpentH": 13.5,
+    "timeSpentH": 10,
     "labels": [
       "type:reporting",
       "size:S",
@@ -2151,7 +2151,7 @@
     "complexity": "M",
     "role": "engineer",
     "originalEstimateH": 14,
-    "timeSpentH": 10.5,
+    "timeSpentH": 9,
     "labels": [
       "type:reporting",
       "size:S",
@@ -2175,7 +2175,7 @@
     "complexity": "S",
     "role": "engineer",
     "originalEstimateH": 9,
-    "timeSpentH": 12,
+    "timeSpentH": 12.5,
     "labels": [
       "type:reporting",
       "size:S",
@@ -2199,7 +2199,7 @@
     "complexity": "S",
     "role": "qa",
     "originalEstimateH": 10,
-    "timeSpentH": 13,
+    "timeSpentH": 13.5,
     "labels": [
       "type:reporting",
       "size:S",
@@ -2223,7 +2223,7 @@
     "complexity": "S",
     "role": "engineer",
     "originalEstimateH": 5,
-    "timeSpentH": 7.5,
+    "timeSpentH": 8,
     "labels": [
       "type:reporting",
       "size:S",
@@ -2247,7 +2247,7 @@
     "complexity": "S",
     "role": "engineer",
     "originalEstimateH": 7,
-    "timeSpentH": 3.5,
+    "timeSpentH": 2.5,
     "labels": [
       "type:reporting",
       "size:S",
@@ -2272,7 +2272,7 @@
     "complexity": "M",
     "role": "pm",
     "originalEstimateH": 16.5,
-    "timeSpentH": 13.5,
+    "timeSpentH": 12,
     "labels": [
       "type:data-migration",
       "size:M",
@@ -2284,7 +2284,7 @@
     ],
     "addedAfterKickoff": false,
     "created": "2025-07-11",
-    "resolved": "2025-09-14"
+    "resolved": "2025-09-17"
   },
   {
     "id": "P010-02",
@@ -2296,7 +2296,7 @@
     "complexity": "M",
     "role": "engineer",
     "originalEstimateH": 23,
-    "timeSpentH": 19.5,
+    "timeSpentH": 16,
     "labels": [
       "type:data-migration",
       "size:M",
@@ -2308,7 +2308,7 @@
     ],
     "addedAfterKickoff": false,
     "created": "2025-07-11",
-    "resolved": "2025-09-15"
+    "resolved": "2025-09-18"
   },
   {
     "id": "P010-03",
@@ -2320,7 +2320,7 @@
     "complexity": "M",
     "role": "engineer",
     "originalEstimateH": 21,
-    "timeSpentH": 33,
+    "timeSpentH": 35,
     "labels": [
       "type:data-migration",
       "size:M",
@@ -2332,7 +2332,7 @@
     ],
     "addedAfterKickoff": false,
     "created": "2025-07-11",
-    "resolved": "2025-09-13"
+    "resolved": "2025-09-16"
   },
   {
     "id": "P010-04",
@@ -2344,7 +2344,7 @@
     "complexity": "L",
     "role": "engineer",
     "originalEstimateH": 45.5,
-    "timeSpentH": 39,
+    "timeSpentH": 32,
     "labels": [
       "type:data-migration",
       "size:M",
@@ -2356,7 +2356,7 @@
     ],
     "addedAfterKickoff": false,
     "created": "2025-07-11",
-    "resolved": "2025-09-13"
+    "resolved": "2025-09-16"
   },
   {
     "id": "P010-05",
@@ -2368,7 +2368,7 @@
     "complexity": "M",
     "role": "engineer",
     "originalEstimateH": 26.5,
-    "timeSpentH": 46.5,
+    "timeSpentH": 51.5,
     "labels": [
       "type:data-migration",
       "size:M",
@@ -2380,7 +2380,7 @@
     ],
     "addedAfterKickoff": false,
     "created": "2025-07-11",
-    "resolved": "2025-09-11"
+    "resolved": "2025-09-14"
   },
   {
     "id": "P010-06",
@@ -2392,7 +2392,7 @@
     "complexity": "M",
     "role": "qa",
     "originalEstimateH": 27.5,
-    "timeSpentH": 39.5,
+    "timeSpentH": 42.5,
     "labels": [
       "type:data-migration",
       "size:M",
@@ -2404,7 +2404,7 @@
     ],
     "addedAfterKickoff": false,
     "created": "2025-07-11",
-    "resolved": "2025-09-15"
+    "resolved": "2025-09-18"
   },
   {
     "id": "P010-07",
@@ -2416,7 +2416,7 @@
     "complexity": "M",
     "role": "engineer",
     "originalEstimateH": 17.5,
-    "timeSpentH": 24,
+    "timeSpentH": 26,
     "labels": [
       "type:data-migration",
       "size:M",
@@ -2428,7 +2428,7 @@
     ],
     "addedAfterKickoff": false,
     "created": "2025-07-11",
-    "resolved": "2025-09-11"
+    "resolved": "2025-09-14"
   },
   {
     "id": "P010-08",
@@ -2440,7 +2440,7 @@
     "complexity": "M",
     "role": "engineer",
     "originalEstimateH": 24,
-    "timeSpentH": 16.5,
+    "timeSpentH": 12,
     "labels": [
       "type:data-migration",
       "size:M",
@@ -2453,7 +2453,7 @@
     ],
     "addedAfterKickoff": true,
     "created": "2025-07-30",
-    "resolved": "2025-09-13"
+    "resolved": "2025-09-16"
   },
   {
     "id": "P011-01",
@@ -2465,7 +2465,7 @@
     "complexity": "M",
     "role": "pm",
     "originalEstimateH": 18,
-    "timeSpentH": 19,
+    "timeSpentH": 18.5,
     "labels": [
       "type:reporting",
       "size:S",
@@ -2489,7 +2489,7 @@
     "complexity": "M",
     "role": "designer",
     "originalEstimateH": 12.5,
-    "timeSpentH": 11,
+    "timeSpentH": 11.5,
     "labels": [
       "type:reporting",
       "size:S",
@@ -2513,7 +2513,7 @@
     "complexity": "M",
     "role": "engineer",
     "originalEstimateH": 25.5,
-    "timeSpentH": 27,
+    "timeSpentH": 25.5,
     "labels": [
       "type:reporting",
       "size:S",
@@ -2537,7 +2537,7 @@
     "complexity": "L",
     "role": "engineer",
     "originalEstimateH": 30.5,
-    "timeSpentH": 31.5,
+    "timeSpentH": 30,
     "labels": [
       "type:reporting",
       "size:S",
@@ -2561,7 +2561,7 @@
     "complexity": "S",
     "role": "qa",
     "originalEstimateH": 10.5,
-    "timeSpentH": 10,
+    "timeSpentH": 10.5,
     "labels": [
       "type:reporting",
       "size:S",
@@ -2585,7 +2585,7 @@
     "complexity": "S",
     "role": "engineer",
     "originalEstimateH": 5,
-    "timeSpentH": 4,
+    "timeSpentH": 4.5,
     "labels": [
       "type:reporting",
       "size:S",
@@ -2609,7 +2609,7 @@
     "complexity": "M",
     "role": "pm",
     "originalEstimateH": 25.5,
-    "timeSpentH": 33,
+    "timeSpentH": 29.5,
     "labels": [
       "type:integration",
       "size:XL",
@@ -2621,7 +2621,7 @@
     ],
     "addedAfterKickoff": false,
     "created": "2025-08-04",
-    "resolved": "2025-10-19"
+    "resolved": "2025-10-20"
   },
   {
     "id": "P012-02",
@@ -2633,7 +2633,7 @@
     "complexity": "M",
     "role": "pm",
     "originalEstimateH": 14,
-    "timeSpentH": 11,
+    "timeSpentH": 12,
     "labels": [
       "type:integration",
       "size:XL",
@@ -2645,7 +2645,7 @@
     ],
     "addedAfterKickoff": false,
     "created": "2025-08-04",
-    "resolved": "2025-10-20"
+    "resolved": "2025-10-21"
   },
   {
     "id": "P012-03",
@@ -2657,7 +2657,7 @@
     "complexity": "M",
     "role": "engineer",
     "originalEstimateH": 27,
-    "timeSpentH": 34.5,
+    "timeSpentH": 36,
     "labels": [
       "type:integration",
       "size:XL",
@@ -2669,7 +2669,7 @@
     ],
     "addedAfterKickoff": false,
     "created": "2025-08-04",
-    "resolved": "2025-10-18"
+    "resolved": "2025-10-19"
   },
   {
     "id": "P012-04",
@@ -2681,7 +2681,7 @@
     "complexity": "L",
     "role": "engineer",
     "originalEstimateH": 37.5,
-    "timeSpentH": 51,
+    "timeSpentH": 52,
     "labels": [
       "type:integration",
       "size:XL",
@@ -2693,7 +2693,7 @@
     ],
     "addedAfterKickoff": false,
     "created": "2025-08-04",
-    "resolved": "2025-10-18"
+    "resolved": "2025-10-19"
   },
   {
     "id": "P012-05",
@@ -2705,7 +2705,7 @@
     "complexity": "L",
     "role": "engineer",
     "originalEstimateH": 37.5,
-    "timeSpentH": 42.5,
+    "timeSpentH": 46,
     "labels": [
       "type:integration",
       "size:XL",
@@ -2717,7 +2717,7 @@
     ],
     "addedAfterKickoff": false,
     "created": "2025-08-04",
-    "resolved": "2025-10-21"
+    "resolved": "2025-10-22"
   },
   {
     "id": "P012-06",
@@ -2729,7 +2729,7 @@
     "complexity": "L",
     "role": "engineer",
     "originalEstimateH": 52,
-    "timeSpentH": 76.5,
+    "timeSpentH": 75.5,
     "labels": [
       "type:integration",
       "size:XL",
@@ -2741,7 +2741,7 @@
     ],
     "addedAfterKickoff": false,
     "created": "2025-08-04",
-    "resolved": "2025-10-18"
+    "resolved": "2025-10-19"
   },
   {
     "id": "P012-07",
@@ -2753,7 +2753,7 @@
     "complexity": "L",
     "role": "engineer",
     "originalEstimateH": 56.5,
-    "timeSpentH": 71,
+    "timeSpentH": 74.5,
     "labels": [
       "type:integration",
       "size:XL",
@@ -2765,7 +2765,7 @@
     ],
     "addedAfterKickoff": false,
     "created": "2025-08-04",
-    "resolved": "2025-10-19"
+    "resolved": "2025-10-20"
   },
   {
     "id": "P012-08",
@@ -2789,7 +2789,7 @@
     ],
     "addedAfterKickoff": false,
     "created": "2025-08-04",
-    "resolved": "2025-10-18"
+    "resolved": "2025-10-19"
   },
   {
     "id": "P012-09",
@@ -2801,7 +2801,7 @@
     "complexity": "L",
     "role": "qa",
     "originalEstimateH": 30,
-    "timeSpentH": 33,
+    "timeSpentH": 32.5,
     "labels": [
       "type:integration",
       "size:XL",
@@ -2813,7 +2813,7 @@
     ],
     "addedAfterKickoff": false,
     "created": "2025-08-04",
-    "resolved": "2025-10-18"
+    "resolved": "2025-10-19"
   },
   {
     "id": "P012-10",
@@ -2825,7 +2825,7 @@
     "complexity": "M",
     "role": "qa",
     "originalEstimateH": 16,
-    "timeSpentH": 17.5,
+    "timeSpentH": 17,
     "labels": [
       "type:integration",
       "size:XL",
@@ -2837,7 +2837,7 @@
     ],
     "addedAfterKickoff": false,
     "created": "2025-08-04",
-    "resolved": "2025-10-19"
+    "resolved": "2025-10-20"
   },
   {
     "id": "P012-11",
@@ -2849,7 +2849,7 @@
     "complexity": "M",
     "role": "engineer",
     "originalEstimateH": 18.5,
-    "timeSpentH": 18,
+    "timeSpentH": 18.5,
     "labels": [
       "type:integration",
       "size:XL",
@@ -2861,7 +2861,7 @@
     ],
     "addedAfterKickoff": false,
     "created": "2025-08-04",
-    "resolved": "2025-10-18"
+    "resolved": "2025-10-19"
   },
   {
     "id": "P013-01",
@@ -2897,7 +2897,7 @@
     "complexity": "S",
     "role": "pm",
     "originalEstimateH": 5,
-    "timeSpentH": 7,
+    "timeSpentH": 6.5,
     "labels": [
       "type:form-digitization",
       "size:S",
@@ -2945,7 +2945,7 @@
     "complexity": "M",
     "role": "engineer",
     "originalEstimateH": 23,
-    "timeSpentH": 20,
+    "timeSpentH": 22,
     "labels": [
       "type:form-digitization",
       "size:S",
@@ -2969,7 +2969,7 @@
     "complexity": "M",
     "role": "engineer",
     "originalEstimateH": 16.5,
-    "timeSpentH": 20.5,
+    "timeSpentH": 20,
     "labels": [
       "type:form-digitization",
       "size:S",
@@ -2993,7 +2993,7 @@
     "complexity": "S",
     "role": "engineer",
     "originalEstimateH": 10.5,
-    "timeSpentH": 14.5,
+    "timeSpentH": 13.5,
     "labels": [
       "type:form-digitization",
       "size:S",
@@ -3017,7 +3017,7 @@
     "complexity": "S",
     "role": "engineer",
     "originalEstimateH": 6.5,
-    "timeSpentH": 7,
+    "timeSpentH": 7.5,
     "labels": [
       "type:form-digitization",
       "size:S",
@@ -3041,7 +3041,7 @@
     "complexity": "M",
     "role": "engineer",
     "originalEstimateH": 12.5,
-    "timeSpentH": 16,
+    "timeSpentH": 16.5,
     "labels": [
       "type:form-digitization",
       "size:S",
@@ -3089,7 +3089,7 @@
     "complexity": "S",
     "role": "engineer",
     "originalEstimateH": 5,
-    "timeSpentH": 6,
+    "timeSpentH": 5.5,
     "labels": [
       "type:form-digitization",
       "size:S",
@@ -3113,7 +3113,7 @@
     "complexity": "S",
     "role": "pm",
     "originalEstimateH": 8.5,
-    "timeSpentH": 9,
+    "timeSpentH": 8.5,
     "labels": [
       "type:integration",
       "size:M",
@@ -3161,7 +3161,7 @@
     "complexity": "M",
     "role": "engineer",
     "originalEstimateH": 22.5,
-    "timeSpentH": 35.5,
+    "timeSpentH": 38,
     "labels": [
       "type:integration",
       "size:M",
@@ -3186,7 +3186,7 @@
     "complexity": "M",
     "role": "engineer",
     "originalEstimateH": 13.5,
-    "timeSpentH": 17.5,
+    "timeSpentH": 18,
     "labels": [
       "type:integration",
       "size:M",
@@ -3210,7 +3210,7 @@
     "complexity": "M",
     "role": "engineer",
     "originalEstimateH": 12.5,
-    "timeSpentH": 19,
+    "timeSpentH": 18.5,
     "labels": [
       "type:integration",
       "size:M",
@@ -3234,7 +3234,7 @@
     "complexity": "L",
     "role": "engineer",
     "originalEstimateH": 28,
-    "timeSpentH": 37,
+    "timeSpentH": 38,
     "labels": [
       "type:integration",
       "size:M",
@@ -3258,7 +3258,7 @@
     "complexity": "M",
     "role": "engineer",
     "originalEstimateH": 24,
-    "timeSpentH": 41.5,
+    "timeSpentH": 38.5,
     "labels": [
       "type:integration",
       "size:M",
@@ -3282,7 +3282,7 @@
     "complexity": "M",
     "role": "engineer",
     "originalEstimateH": 13,
-    "timeSpentH": 15.5,
+    "timeSpentH": 15,
     "labels": [
       "type:integration",
       "size:M",
@@ -3306,7 +3306,7 @@
     "complexity": "M",
     "role": "qa",
     "originalEstimateH": 23,
-    "timeSpentH": 27.5,
+    "timeSpentH": 26,
     "labels": [
       "type:integration",
       "size:M",
@@ -3330,7 +3330,7 @@
     "complexity": "M",
     "role": "qa",
     "originalEstimateH": 15,
-    "timeSpentH": 13.5,
+    "timeSpentH": 14.5,
     "labels": [
       "type:integration",
       "size:M",
@@ -3354,7 +3354,7 @@
     "complexity": "M",
     "role": "engineer",
     "originalEstimateH": 14.5,
-    "timeSpentH": 15.5,
+    "timeSpentH": 15,
     "labels": [
       "type:integration",
       "size:M",
@@ -3378,7 +3378,7 @@
     "complexity": "M",
     "role": "engineer",
     "originalEstimateH": 23.5,
-    "timeSpentH": 38.5,
+    "timeSpentH": 36.5,
     "labels": [
       "type:integration",
       "size:M",
@@ -3415,7 +3415,7 @@
     ],
     "addedAfterKickoff": false,
     "created": "2025-09-01",
-    "resolved": "2025-10-06"
+    "resolved": "2025-10-05"
   },
   {
     "id": "P015-02",
@@ -3439,7 +3439,7 @@
     ],
     "addedAfterKickoff": false,
     "created": "2025-09-01",
-    "resolved": "2025-10-05"
+    "resolved": "2025-10-04"
   },
   {
     "id": "P015-03",
@@ -3451,7 +3451,7 @@
     "complexity": "S",
     "role": "legal",
     "originalEstimateH": 8.5,
-    "timeSpentH": 13,
+    "timeSpentH": 12,
     "labels": [
       "type:form-digitization",
       "size:S",
@@ -3463,7 +3463,7 @@
     ],
     "addedAfterKickoff": false,
     "created": "2025-09-01",
-    "resolved": "2025-10-04"
+    "resolved": "2025-10-03"
   },
   {
     "id": "P015-04",
@@ -3475,7 +3475,7 @@
     "complexity": "M",
     "role": "engineer",
     "originalEstimateH": 23,
-    "timeSpentH": 25,
+    "timeSpentH": 26.5,
     "labels": [
       "type:form-digitization",
       "size:S",
@@ -3487,7 +3487,7 @@
     ],
     "addedAfterKickoff": false,
     "created": "2025-09-01",
-    "resolved": "2025-10-06"
+    "resolved": "2025-10-05"
   },
   {
     "id": "P015-05",
@@ -3499,7 +3499,7 @@
     "complexity": "S",
     "role": "engineer",
     "originalEstimateH": 9,
-    "timeSpentH": 12.5,
+    "timeSpentH": 12,
     "labels": [
       "type:form-digitization",
       "size:S",
@@ -3511,7 +3511,7 @@
     ],
     "addedAfterKickoff": false,
     "created": "2025-09-01",
-    "resolved": "2025-10-03"
+    "resolved": "2025-10-02"
   },
   {
     "id": "P015-06",
@@ -3535,7 +3535,7 @@
     ],
     "addedAfterKickoff": false,
     "created": "2025-09-01",
-    "resolved": "2025-10-04"
+    "resolved": "2025-10-03"
   },
   {
     "id": "P015-07",
@@ -3547,7 +3547,7 @@
     "complexity": "S",
     "role": "engineer",
     "originalEstimateH": 7,
-    "timeSpentH": 7,
+    "timeSpentH": 7.5,
     "labels": [
       "type:form-digitization",
       "size:S",
@@ -3559,7 +3559,7 @@
     ],
     "addedAfterKickoff": false,
     "created": "2025-09-01",
-    "resolved": "2025-10-05"
+    "resolved": "2025-10-04"
   },
   {
     "id": "P015-08",
@@ -3583,7 +3583,7 @@
     ],
     "addedAfterKickoff": false,
     "created": "2025-09-01",
-    "resolved": "2025-10-05"
+    "resolved": "2025-10-04"
   },
   {
     "id": "P015-09",
@@ -3595,7 +3595,7 @@
     "complexity": "S",
     "role": "engineer",
     "originalEstimateH": 9.5,
-    "timeSpentH": 19.5,
+    "timeSpentH": 17.5,
     "labels": [
       "type:form-digitization",
       "size:S",
@@ -3607,7 +3607,7 @@
     ],
     "addedAfterKickoff": false,
     "created": "2025-09-01",
-    "resolved": "2025-10-03"
+    "resolved": "2025-10-02"
   },
   {
     "id": "P015-10",
@@ -3619,7 +3619,7 @@
     "complexity": "S",
     "role": "qa",
     "originalEstimateH": 9,
-    "timeSpentH": 8.5,
+    "timeSpentH": 9,
     "labels": [
       "type:form-digitization",
       "size:S",
@@ -3631,7 +3631,7 @@
     ],
     "addedAfterKickoff": false,
     "created": "2025-09-01",
-    "resolved": "2025-10-03"
+    "resolved": "2025-10-02"
   },
   {
     "id": "P015-11",
@@ -3655,7 +3655,7 @@
     ],
     "addedAfterKickoff": false,
     "created": "2025-09-01",
-    "resolved": "2025-10-04"
+    "resolved": "2025-10-03"
   },
   {
     "id": "P015-12",
@@ -3667,7 +3667,7 @@
     "complexity": "M",
     "role": "engineer",
     "originalEstimateH": 26,
-    "timeSpentH": 48,
+    "timeSpentH": 43,
     "labels": [
       "type:form-digitization",
       "size:S",
@@ -3680,7 +3680,7 @@
     ],
     "addedAfterKickoff": true,
     "created": "2025-09-23",
-    "resolved": "2025-10-05"
+    "resolved": "2025-10-04"
   },
   {
     "id": "P015-13",
@@ -3692,7 +3692,7 @@
     "complexity": "S",
     "role": "engineer",
     "originalEstimateH": 7.5,
-    "timeSpentH": 7.5,
+    "timeSpentH": 8,
     "labels": [
       "type:form-digitization",
       "size:S",
@@ -3705,7 +3705,7 @@
     ],
     "addedAfterKickoff": true,
     "created": "2025-09-23",
-    "resolved": "2025-10-05"
+    "resolved": "2025-10-04"
   },
   {
     "id": "P016-01",
@@ -3717,7 +3717,7 @@
     "complexity": "M",
     "role": "pm",
     "originalEstimateH": 18.5,
-    "timeSpentH": 16.5,
+    "timeSpentH": 17,
     "labels": [
       "type:new-feature",
       "size:XL",
@@ -3741,7 +3741,7 @@
     "complexity": "S",
     "role": "pm",
     "originalEstimateH": 8,
-    "timeSpentH": 6,
+    "timeSpentH": 6.5,
     "labels": [
       "type:new-feature",
       "size:XL",
@@ -3765,7 +3765,7 @@
     "complexity": "M",
     "role": "designer",
     "originalEstimateH": 19.5,
-    "timeSpentH": 18.5,
+    "timeSpentH": 19,
     "labels": [
       "type:new-feature",
       "size:XL",
@@ -3837,7 +3837,7 @@
     "complexity": "L",
     "role": "engineer",
     "originalEstimateH": 56.5,
-    "timeSpentH": 60,
+    "timeSpentH": 61,
     "labels": [
       "type:new-feature",
       "size:XL",
@@ -3861,7 +3861,7 @@
     "complexity": "L",
     "role": "engineer",
     "originalEstimateH": 64.5,
-    "timeSpentH": 56.5,
+    "timeSpentH": 60.5,
     "labels": [
       "type:new-feature",
       "size:XL",
@@ -3885,7 +3885,7 @@
     "complexity": "M",
     "role": "engineer",
     "originalEstimateH": 27.5,
-    "timeSpentH": 32.5,
+    "timeSpentH": 32,
     "labels": [
       "type:new-feature",
       "size:XL",
@@ -3909,7 +3909,7 @@
     "complexity": "M",
     "role": "engineer",
     "originalEstimateH": 19.5,
-    "timeSpentH": 17.5,
+    "timeSpentH": 18.5,
     "labels": [
       "type:new-feature",
       "size:XL",
@@ -3933,7 +3933,7 @@
     "complexity": "M",
     "role": "engineer",
     "originalEstimateH": 20.5,
-    "timeSpentH": 31.5,
+    "timeSpentH": 28,
     "labels": [
       "type:new-feature",
       "size:XL",
@@ -3957,7 +3957,7 @@
     "complexity": "L",
     "role": "qa",
     "originalEstimateH": 32.5,
-    "timeSpentH": 25.5,
+    "timeSpentH": 28.5,
     "labels": [
       "type:new-feature",
       "size:XL",
@@ -3981,7 +3981,7 @@
     "complexity": "M",
     "role": "qa",
     "originalEstimateH": 17,
-    "timeSpentH": 19,
+    "timeSpentH": 18.5,
     "labels": [
       "type:new-feature",
       "size:XL",
@@ -4005,7 +4005,7 @@
     "complexity": "S",
     "role": "engineer",
     "originalEstimateH": 10.5,
-    "timeSpentH": 11,
+    "timeSpentH": 10.5,
     "labels": [
       "type:new-feature",
       "size:XL",
@@ -4066,7 +4066,7 @@
     ],
     "addedAfterKickoff": false,
     "created": "2025-09-22",
-    "resolved": "2025-11-17"
+    "resolved": "2025-11-16"
   },
   {
     "id": "P017-02",
@@ -4078,7 +4078,7 @@
     "complexity": "S",
     "role": "pm",
     "originalEstimateH": 8,
-    "timeSpentH": 11.5,
+    "timeSpentH": 10.5,
     "labels": [
       "type:form-digitization",
       "size:M",
@@ -4090,7 +4090,7 @@
     ],
     "addedAfterKickoff": false,
     "created": "2025-09-22",
-    "resolved": "2025-11-20"
+    "resolved": "2025-11-19"
   },
   {
     "id": "P017-03",
@@ -4102,7 +4102,7 @@
     "complexity": "S",
     "role": "legal",
     "originalEstimateH": 11.5,
-    "timeSpentH": 11.5,
+    "timeSpentH": 12,
     "labels": [
       "type:form-digitization",
       "size:M",
@@ -4114,7 +4114,7 @@
     ],
     "addedAfterKickoff": false,
     "created": "2025-09-22",
-    "resolved": "2025-11-15"
+    "resolved": "2025-11-14"
   },
   {
     "id": "P017-04",
@@ -4138,7 +4138,7 @@
     ],
     "addedAfterKickoff": false,
     "created": "2025-09-22",
-    "resolved": "2025-11-16"
+    "resolved": "2025-11-15"
   },
   {
     "id": "P017-05",
@@ -4150,7 +4150,7 @@
     "complexity": "L",
     "role": "engineer",
     "originalEstimateH": 28.5,
-    "timeSpentH": 27.5,
+    "timeSpentH": 29,
     "labels": [
       "type:form-digitization",
       "size:M",
@@ -4162,7 +4162,7 @@
     ],
     "addedAfterKickoff": false,
     "created": "2025-09-22",
-    "resolved": "2025-11-19"
+    "resolved": "2025-11-18"
   },
   {
     "id": "P017-06",
@@ -4174,7 +4174,7 @@
     "complexity": "M",
     "role": "engineer",
     "originalEstimateH": 22.5,
-    "timeSpentH": 27,
+    "timeSpentH": 26,
     "labels": [
       "type:form-digitization",
       "size:M",
@@ -4186,7 +4186,7 @@
     ],
     "addedAfterKickoff": false,
     "created": "2025-09-22",
-    "resolved": "2025-11-20"
+    "resolved": "2025-11-19"
   },
   {
     "id": "P017-07",
@@ -4198,7 +4198,7 @@
     "complexity": "M",
     "role": "engineer",
     "originalEstimateH": 12.5,
-    "timeSpentH": 10,
+    "timeSpentH": 11,
     "labels": [
       "type:form-digitization",
       "size:M",
@@ -4210,7 +4210,7 @@
     ],
     "addedAfterKickoff": false,
     "created": "2025-09-22",
-    "resolved": "2025-11-18"
+    "resolved": "2025-11-17"
   },
   {
     "id": "P017-08",
@@ -4222,7 +4222,7 @@
     "complexity": "M",
     "role": "engineer",
     "originalEstimateH": 17.5,
-    "timeSpentH": 28.5,
+    "timeSpentH": 30,
     "labels": [
       "type:form-digitization",
       "size:M",
@@ -4235,7 +4235,7 @@
     ],
     "addedAfterKickoff": false,
     "created": "2025-09-22",
-    "resolved": "2025-11-19"
+    "resolved": "2025-11-18"
   },
   {
     "id": "P017-09",
@@ -4247,7 +4247,7 @@
     "complexity": "M",
     "role": "engineer",
     "originalEstimateH": 23,
-    "timeSpentH": 35,
+    "timeSpentH": 34,
     "labels": [
       "type:form-digitization",
       "size:M",
@@ -4259,7 +4259,7 @@
     ],
     "addedAfterKickoff": false,
     "created": "2025-09-22",
-    "resolved": "2025-11-17"
+    "resolved": "2025-11-16"
   },
   {
     "id": "P017-10",
@@ -4283,7 +4283,7 @@
     ],
     "addedAfterKickoff": false,
     "created": "2025-09-22",
-    "resolved": "2025-11-20"
+    "resolved": "2025-11-19"
   },
   {
     "id": "P017-11",
@@ -4295,7 +4295,7 @@
     "complexity": "S",
     "role": "engineer",
     "originalEstimateH": 7,
-    "timeSpentH": 8,
+    "timeSpentH": 7.5,
     "labels": [
       "type:form-digitization",
       "size:M",
@@ -4307,7 +4307,7 @@
     ],
     "addedAfterKickoff": false,
     "created": "2025-09-22",
-    "resolved": "2025-11-19"
+    "resolved": "2025-11-18"
   },
   {
     "id": "P017-12",
@@ -4332,7 +4332,7 @@
     ],
     "addedAfterKickoff": true,
     "created": "2025-10-04",
-    "resolved": "2025-11-16"
+    "resolved": "2025-11-15"
   },
   {
     "id": "P018-01",
@@ -4356,7 +4356,7 @@
     ],
     "addedAfterKickoff": false,
     "created": "2025-10-06",
-    "resolved": "2025-12-14"
+    "resolved": "2025-12-13"
   },
   {
     "id": "P018-02",
@@ -4380,7 +4380,7 @@
     ],
     "addedAfterKickoff": false,
     "created": "2025-10-06",
-    "resolved": "2025-12-13"
+    "resolved": "2025-12-12"
   },
   {
     "id": "P018-03",
@@ -4392,7 +4392,7 @@
     "complexity": "M",
     "role": "engineer",
     "originalEstimateH": 17.5,
-    "timeSpentH": 22.5,
+    "timeSpentH": 23.5,
     "labels": [
       "type:integration",
       "size:M",
@@ -4404,7 +4404,7 @@
     ],
     "addedAfterKickoff": false,
     "created": "2025-10-06",
-    "resolved": "2025-12-14"
+    "resolved": "2025-12-13"
   },
   {
     "id": "P018-04",
@@ -4416,7 +4416,7 @@
     "complexity": "M",
     "role": "engineer",
     "originalEstimateH": 18.5,
-    "timeSpentH": 30.5,
+    "timeSpentH": 28.5,
     "labels": [
       "type:integration",
       "size:M",
@@ -4428,7 +4428,7 @@
     ],
     "addedAfterKickoff": false,
     "created": "2025-10-06",
-    "resolved": "2025-12-13"
+    "resolved": "2025-12-12"
   },
   {
     "id": "P018-05",
@@ -4440,7 +4440,7 @@
     "complexity": "M",
     "role": "engineer",
     "originalEstimateH": 19,
-    "timeSpentH": 42.5,
+    "timeSpentH": 40,
     "labels": [
       "type:integration",
       "size:M",
@@ -4453,7 +4453,7 @@
     ],
     "addedAfterKickoff": false,
     "created": "2025-10-06",
-    "resolved": "2025-12-13"
+    "resolved": "2025-12-12"
   },
   {
     "id": "P018-06",
@@ -4465,7 +4465,7 @@
     "complexity": "L",
     "role": "engineer",
     "originalEstimateH": 35.5,
-    "timeSpentH": 45.5,
+    "timeSpentH": 47,
     "labels": [
       "type:integration",
       "size:M",
@@ -4477,7 +4477,7 @@
     ],
     "addedAfterKickoff": false,
     "created": "2025-10-06",
-    "resolved": "2025-12-13"
+    "resolved": "2025-12-12"
   },
   {
     "id": "P018-07",
@@ -4501,7 +4501,7 @@
     ],
     "addedAfterKickoff": false,
     "created": "2025-10-06",
-    "resolved": "2025-12-15"
+    "resolved": "2025-12-14"
   },
   {
     "id": "P018-08",
@@ -4525,7 +4525,7 @@
     ],
     "addedAfterKickoff": false,
     "created": "2025-10-06",
-    "resolved": "2025-12-15"
+    "resolved": "2025-12-14"
   },
   {
     "id": "P018-09",
@@ -4537,7 +4537,7 @@
     "complexity": "M",
     "role": "qa",
     "originalEstimateH": 22.5,
-    "timeSpentH": 25.5,
+    "timeSpentH": 25,
     "labels": [
       "type:integration",
       "size:M",
@@ -4549,7 +4549,7 @@
     ],
     "addedAfterKickoff": false,
     "created": "2025-10-06",
-    "resolved": "2025-12-12"
+    "resolved": "2025-12-11"
   },
   {
     "id": "P018-10",
@@ -4561,7 +4561,7 @@
     "complexity": "M",
     "role": "qa",
     "originalEstimateH": 16,
-    "timeSpentH": 23,
+    "timeSpentH": 20.5,
     "labels": [
       "type:integration",
       "size:M",
@@ -4573,7 +4573,7 @@
     ],
     "addedAfterKickoff": false,
     "created": "2025-10-06",
-    "resolved": "2025-12-16"
+    "resolved": "2025-12-15"
   },
   {
     "id": "P018-11",
@@ -4585,7 +4585,7 @@
     "complexity": "M",
     "role": "engineer",
     "originalEstimateH": 12,
-    "timeSpentH": 16,
+    "timeSpentH": 14.5,
     "labels": [
       "type:integration",
       "size:M",
@@ -4597,7 +4597,7 @@
     ],
     "addedAfterKickoff": false,
     "created": "2025-10-06",
-    "resolved": "2025-12-12"
+    "resolved": "2025-12-11"
   },
   {
     "id": "P018-12",
@@ -4609,7 +4609,7 @@
     "complexity": "M",
     "role": "engineer",
     "originalEstimateH": 20.5,
-    "timeSpentH": 23.5,
+    "timeSpentH": 24,
     "labels": [
       "type:integration",
       "size:M",
@@ -4622,7 +4622,7 @@
     ],
     "addedAfterKickoff": true,
     "created": "2025-10-25",
-    "resolved": "2025-12-12"
+    "resolved": "2025-12-11"
   },
   {
     "id": "P019-01",
@@ -4634,7 +4634,7 @@
     "complexity": "S",
     "role": "pm",
     "originalEstimateH": 8.5,
-    "timeSpentH": 7.5,
+    "timeSpentH": 8,
     "labels": [
       "type:reporting",
       "size:S",
@@ -4646,7 +4646,7 @@
     ],
     "addedAfterKickoff": false,
     "created": "2025-10-14",
-    "resolved": "2025-11-07"
+    "resolved": "2025-11-06"
   },
   {
     "id": "P019-02",
@@ -4658,7 +4658,7 @@
     "complexity": "M",
     "role": "designer",
     "originalEstimateH": 17,
-    "timeSpentH": 16.5,
+    "timeSpentH": 17,
     "labels": [
       "type:reporting",
       "size:S",
@@ -4670,7 +4670,7 @@
     ],
     "addedAfterKickoff": false,
     "created": "2025-10-14",
-    "resolved": "2025-11-08"
+    "resolved": "2025-11-07"
   },
   {
     "id": "P019-03",
@@ -4682,7 +4682,7 @@
     "complexity": "L",
     "role": "engineer",
     "originalEstimateH": 35,
-    "timeSpentH": 34.5,
+    "timeSpentH": 33.5,
     "labels": [
       "type:reporting",
       "size:S",
@@ -4694,7 +4694,7 @@
     ],
     "addedAfterKickoff": false,
     "created": "2025-10-14",
-    "resolved": "2025-11-08"
+    "resolved": "2025-11-07"
   },
   {
     "id": "P019-04",
@@ -4706,7 +4706,7 @@
     "complexity": "L",
     "role": "engineer",
     "originalEstimateH": 31,
-    "timeSpentH": 21.5,
+    "timeSpentH": 23.5,
     "labels": [
       "type:reporting",
       "size:S",
@@ -4718,7 +4718,7 @@
     ],
     "addedAfterKickoff": false,
     "created": "2025-10-14",
-    "resolved": "2025-11-08"
+    "resolved": "2025-11-07"
   },
   {
     "id": "P019-05",
@@ -4730,7 +4730,7 @@
     "complexity": "M",
     "role": "engineer",
     "originalEstimateH": 13,
-    "timeSpentH": 13.5,
+    "timeSpentH": 13,
     "labels": [
       "type:reporting",
       "size:S",
@@ -4742,7 +4742,7 @@
     ],
     "addedAfterKickoff": false,
     "created": "2025-10-14",
-    "resolved": "2025-11-10"
+    "resolved": "2025-11-09"
   },
   {
     "id": "P019-06",
@@ -4754,7 +4754,7 @@
     "complexity": "M",
     "role": "qa",
     "originalEstimateH": 13.5,
-    "timeSpentH": 18.5,
+    "timeSpentH": 16.5,
     "labels": [
       "type:reporting",
       "size:S",
@@ -4766,7 +4766,7 @@
     ],
     "addedAfterKickoff": false,
     "created": "2025-10-14",
-    "resolved": "2025-11-11"
+    "resolved": "2025-11-10"
   },
   {
     "id": "P019-07",
@@ -4790,7 +4790,7 @@
     ],
     "addedAfterKickoff": false,
     "created": "2025-10-14",
-    "resolved": "2025-11-07"
+    "resolved": "2025-11-06"
   },
   {
     "id": "P020-01",
@@ -4814,7 +4814,7 @@
     ],
     "addedAfterKickoff": false,
     "created": "2025-10-24",
-    "resolved": "2025-12-11"
+    "resolved": "2025-12-10"
   },
   {
     "id": "P020-02",
@@ -4838,7 +4838,7 @@
     ],
     "addedAfterKickoff": false,
     "created": "2025-10-24",
-    "resolved": "2025-12-13"
+    "resolved": "2025-12-12"
   },
   {
     "id": "P020-03",
@@ -4850,7 +4850,7 @@
     "complexity": "M",
     "role": "engineer",
     "originalEstimateH": 17,
-    "timeSpentH": 24,
+    "timeSpentH": 22.5,
     "labels": [
       "type:data-migration",
       "size:M",
@@ -4862,7 +4862,7 @@
     ],
     "addedAfterKickoff": false,
     "created": "2025-10-24",
-    "resolved": "2025-12-12"
+    "resolved": "2025-12-11"
   },
   {
     "id": "P020-04",
@@ -4874,7 +4874,7 @@
     "complexity": "L",
     "role": "engineer",
     "originalEstimateH": 48.5,
-    "timeSpentH": 48.5,
+    "timeSpentH": 52,
     "labels": [
       "type:data-migration",
       "size:M",
@@ -4886,7 +4886,7 @@
     ],
     "addedAfterKickoff": false,
     "created": "2025-10-24",
-    "resolved": "2025-12-15"
+    "resolved": "2025-12-14"
   },
   {
     "id": "P020-05",
@@ -4898,7 +4898,7 @@
     "complexity": "M",
     "role": "engineer",
     "originalEstimateH": 20.5,
-    "timeSpentH": 24,
+    "timeSpentH": 24.5,
     "labels": [
       "type:data-migration",
       "size:M",
@@ -4910,7 +4910,7 @@
     ],
     "addedAfterKickoff": false,
     "created": "2025-10-24",
-    "resolved": "2025-12-13"
+    "resolved": "2025-12-12"
   },
   {
     "id": "P020-06",
@@ -4922,7 +4922,7 @@
     "complexity": "M",
     "role": "qa",
     "originalEstimateH": 25.5,
-    "timeSpentH": 34,
+    "timeSpentH": 31.5,
     "labels": [
       "type:data-migration",
       "size:M",
@@ -4934,7 +4934,7 @@
     ],
     "addedAfterKickoff": false,
     "created": "2025-10-24",
-    "resolved": "2025-12-14"
+    "resolved": "2025-12-13"
   },
   {
     "id": "P020-07",
@@ -4946,7 +4946,7 @@
     "complexity": "M",
     "role": "engineer",
     "originalEstimateH": 16.5,
-    "timeSpentH": 25,
+    "timeSpentH": 21.5,
     "labels": [
       "type:data-migration",
       "size:M",
@@ -4958,7 +4958,7 @@
     ],
     "addedAfterKickoff": false,
     "created": "2025-10-24",
-    "resolved": "2025-12-14"
+    "resolved": "2025-12-13"
   },
   {
     "id": "P021-01",
@@ -4982,7 +4982,7 @@
     ],
     "addedAfterKickoff": false,
     "created": "2025-11-05",
-    "resolved": "2026-01-10"
+    "resolved": "2026-01-08"
   },
   {
     "id": "P021-02",
@@ -4994,7 +4994,7 @@
     "complexity": "M",
     "role": "pm",
     "originalEstimateH": 14,
-    "timeSpentH": 12,
+    "timeSpentH": 12.5,
     "labels": [
       "type:new-feature",
       "size:L",
@@ -5006,7 +5006,7 @@
     ],
     "addedAfterKickoff": false,
     "created": "2025-11-05",
-    "resolved": "2026-01-13"
+    "resolved": "2026-01-11"
   },
   {
     "id": "P021-03",
@@ -5018,7 +5018,7 @@
     "complexity": "M",
     "role": "designer",
     "originalEstimateH": 18.5,
-    "timeSpentH": 19.5,
+    "timeSpentH": 19,
     "labels": [
       "type:new-feature",
       "size:L",
@@ -5030,7 +5030,7 @@
     ],
     "addedAfterKickoff": false,
     "created": "2025-11-05",
-    "resolved": "2026-01-13"
+    "resolved": "2026-01-11"
   },
   {
     "id": "P021-04",
@@ -5042,7 +5042,7 @@
     "complexity": "L",
     "role": "designer",
     "originalEstimateH": 30.5,
-    "timeSpentH": 32.5,
+    "timeSpentH": 32,
     "labels": [
       "type:new-feature",
       "size:L",
@@ -5054,7 +5054,7 @@
     ],
     "addedAfterKickoff": false,
     "created": "2025-11-05",
-    "resolved": "2026-01-14"
+    "resolved": "2026-01-12"
   },
   {
     "id": "P021-05",
@@ -5066,7 +5066,7 @@
     "complexity": "L",
     "role": "engineer",
     "originalEstimateH": 60,
-    "timeSpentH": 73,
+    "timeSpentH": 70.5,
     "labels": [
       "type:new-feature",
       "size:L",
@@ -5078,7 +5078,7 @@
     ],
     "addedAfterKickoff": false,
     "created": "2025-11-05",
-    "resolved": "2026-01-12"
+    "resolved": "2026-01-10"
   },
   {
     "id": "P021-06",
@@ -5090,7 +5090,7 @@
     "complexity": "L",
     "role": "engineer",
     "originalEstimateH": 30.5,
-    "timeSpentH": 41,
+    "timeSpentH": 37.5,
     "labels": [
       "type:new-feature",
       "size:L",
@@ -5102,7 +5102,7 @@
     ],
     "addedAfterKickoff": false,
     "created": "2025-11-05",
-    "resolved": "2026-01-11"
+    "resolved": "2026-01-09"
   },
   {
     "id": "P021-07",
@@ -5114,7 +5114,7 @@
     "complexity": "L",
     "role": "engineer",
     "originalEstimateH": 33.5,
-    "timeSpentH": 43.5,
+    "timeSpentH": 41,
     "labels": [
       "type:new-feature",
       "size:L",
@@ -5126,7 +5126,7 @@
     ],
     "addedAfterKickoff": false,
     "created": "2025-11-05",
-    "resolved": "2026-01-14"
+    "resolved": "2026-01-12"
   },
   {
     "id": "P021-08",
@@ -5138,7 +5138,7 @@
     "complexity": "M",
     "role": "engineer",
     "originalEstimateH": 21,
-    "timeSpentH": 27,
+    "timeSpentH": 25,
     "labels": [
       "type:new-feature",
       "size:L",
@@ -5150,7 +5150,7 @@
     ],
     "addedAfterKickoff": false,
     "created": "2025-11-05",
-    "resolved": "2026-01-09"
+    "resolved": "2026-01-07"
   },
   {
     "id": "P021-09",
@@ -5162,7 +5162,7 @@
     "complexity": "M",
     "role": "engineer",
     "originalEstimateH": 12,
-    "timeSpentH": 14.5,
+    "timeSpentH": 14,
     "labels": [
       "type:new-feature",
       "size:L",
@@ -5174,7 +5174,7 @@
     ],
     "addedAfterKickoff": false,
     "created": "2025-11-05",
-    "resolved": "2026-01-12"
+    "resolved": "2026-01-10"
   },
   {
     "id": "P021-10",
@@ -5186,7 +5186,7 @@
     "complexity": "M",
     "role": "qa",
     "originalEstimateH": 24.5,
-    "timeSpentH": 33,
+    "timeSpentH": 30,
     "labels": [
       "type:new-feature",
       "size:L",
@@ -5198,7 +5198,7 @@
     ],
     "addedAfterKickoff": false,
     "created": "2025-11-05",
-    "resolved": "2026-01-10"
+    "resolved": "2026-01-08"
   },
   {
     "id": "P021-11",
@@ -5210,7 +5210,7 @@
     "complexity": "M",
     "role": "engineer",
     "originalEstimateH": 13,
-    "timeSpentH": 12,
+    "timeSpentH": 12.5,
     "labels": [
       "type:new-feature",
       "size:L",
@@ -5222,7 +5222,7 @@
     ],
     "addedAfterKickoff": false,
     "created": "2025-11-05",
-    "resolved": "2026-01-12"
+    "resolved": "2026-01-10"
   },
   {
     "id": "P022-01",
@@ -5246,7 +5246,7 @@
     ],
     "addedAfterKickoff": false,
     "created": "2025-11-14",
-    "resolved": "2025-12-08"
+    "resolved": "2025-12-07"
   },
   {
     "id": "P022-02",
@@ -5258,7 +5258,7 @@
     "complexity": "S",
     "role": "engineer",
     "originalEstimateH": 10.5,
-    "timeSpentH": 16.5,
+    "timeSpentH": 15.5,
     "labels": [
       "type:data-migration",
       "size:S",
@@ -5270,7 +5270,7 @@
     ],
     "addedAfterKickoff": false,
     "created": "2025-11-14",
-    "resolved": "2025-12-10"
+    "resolved": "2025-12-09"
   },
   {
     "id": "P022-03",
@@ -5294,7 +5294,7 @@
     ],
     "addedAfterKickoff": false,
     "created": "2025-11-14",
-    "resolved": "2025-12-11"
+    "resolved": "2025-12-10"
   },
   {
     "id": "P022-04",
@@ -5318,7 +5318,7 @@
     ],
     "addedAfterKickoff": false,
     "created": "2025-11-14",
-    "resolved": "2025-12-09"
+    "resolved": "2025-12-08"
   },
   {
     "id": "P022-05",
@@ -5330,7 +5330,7 @@
     "complexity": "M",
     "role": "engineer",
     "originalEstimateH": 13,
-    "timeSpentH": 19.5,
+    "timeSpentH": 19,
     "labels": [
       "type:data-migration",
       "size:S",
@@ -5342,7 +5342,7 @@
     ],
     "addedAfterKickoff": false,
     "created": "2025-11-14",
-    "resolved": "2025-12-09"
+    "resolved": "2025-12-08"
   },
   {
     "id": "P022-06",
@@ -5354,7 +5354,7 @@
     "complexity": "M",
     "role": "qa",
     "originalEstimateH": 12,
-    "timeSpentH": 17,
+    "timeSpentH": 15,
     "labels": [
       "type:data-migration",
       "size:S",
@@ -5366,7 +5366,7 @@
     ],
     "addedAfterKickoff": false,
     "created": "2025-11-14",
-    "resolved": "2025-12-10"
+    "resolved": "2025-12-09"
   },
   {
     "id": "P022-07",
@@ -5378,7 +5378,7 @@
     "complexity": "S",
     "role": "engineer",
     "originalEstimateH": 8.5,
-    "timeSpentH": 8,
+    "timeSpentH": 8.5,
     "labels": [
       "type:data-migration",
       "size:S",
@@ -5390,7 +5390,7 @@
     ],
     "addedAfterKickoff": false,
     "created": "2025-11-14",
-    "resolved": "2025-12-08"
+    "resolved": "2025-12-07"
   },
   {
     "id": "P023-01",
@@ -5402,7 +5402,7 @@
     "complexity": "S",
     "role": "pm",
     "originalEstimateH": 9,
-    "timeSpentH": 10,
+    "timeSpentH": 9.5,
     "labels": [
       "type:data-migration",
       "size:M",
@@ -5414,7 +5414,7 @@
     ],
     "addedAfterKickoff": false,
     "created": "2025-11-24",
-    "resolved": "2026-01-17"
+    "resolved": "2026-01-15"
   },
   {
     "id": "P023-02",
@@ -5426,7 +5426,7 @@
     "complexity": "M",
     "role": "engineer",
     "originalEstimateH": 20.5,
-    "timeSpentH": 23,
+    "timeSpentH": 24,
     "labels": [
       "type:data-migration",
       "size:M",
@@ -5438,7 +5438,7 @@
     ],
     "addedAfterKickoff": false,
     "created": "2025-11-24",
-    "resolved": "2026-01-21"
+    "resolved": "2026-01-19"
   },
   {
     "id": "P023-03",
@@ -5450,7 +5450,7 @@
     "complexity": "M",
     "role": "engineer",
     "originalEstimateH": 18.5,
-    "timeSpentH": 19.5,
+    "timeSpentH": 20.5,
     "labels": [
       "type:data-migration",
       "size:M",
@@ -5462,7 +5462,7 @@
     ],
     "addedAfterKickoff": false,
     "created": "2025-11-24",
-    "resolved": "2026-01-17"
+    "resolved": "2026-01-15"
   },
   {
     "id": "P023-04",
@@ -5474,7 +5474,7 @@
     "complexity": "L",
     "role": "engineer",
     "originalEstimateH": 49.5,
-    "timeSpentH": 75,
+    "timeSpentH": 69,
     "labels": [
       "type:data-migration",
       "size:M",
@@ -5486,7 +5486,7 @@
     ],
     "addedAfterKickoff": false,
     "created": "2025-11-24",
-    "resolved": "2026-01-17"
+    "resolved": "2026-01-15"
   },
   {
     "id": "P023-05",
@@ -5510,7 +5510,7 @@
     ],
     "addedAfterKickoff": false,
     "created": "2025-11-24",
-    "resolved": "2026-01-20"
+    "resolved": "2026-01-18"
   },
   {
     "id": "P023-06",
@@ -5534,7 +5534,7 @@
     ],
     "addedAfterKickoff": false,
     "created": "2025-11-24",
-    "resolved": "2026-01-19"
+    "resolved": "2026-01-17"
   },
   {
     "id": "P023-07",
@@ -5546,7 +5546,7 @@
     "complexity": "S",
     "role": "engineer",
     "originalEstimateH": 10,
-    "timeSpentH": 11,
+    "timeSpentH": 10.5,
     "labels": [
       "type:data-migration",
       "size:M",
@@ -5558,7 +5558,7 @@
     ],
     "addedAfterKickoff": false,
     "created": "2025-11-24",
-    "resolved": "2026-01-20"
+    "resolved": "2026-01-18"
   },
   {
     "id": "P024-01",
@@ -5594,7 +5594,7 @@
     "complexity": "S",
     "role": "designer",
     "originalEstimateH": 6.5,
-    "timeSpentH": 7.5,
+    "timeSpentH": 7,
     "labels": [
       "type:reporting",
       "size:S",
@@ -5618,7 +5618,7 @@
     "complexity": "S",
     "role": "engineer",
     "originalEstimateH": 11,
-    "timeSpentH": 13.5,
+    "timeSpentH": 12.5,
     "labels": [
       "type:reporting",
       "size:S",
@@ -5642,7 +5642,7 @@
     "complexity": "S",
     "role": "engineer",
     "originalEstimateH": 10,
-    "timeSpentH": 9,
+    "timeSpentH": 9.5,
     "labels": [
       "type:reporting",
       "size:S",
@@ -5739,7 +5739,7 @@
     "complexity": "M",
     "role": "pm",
     "originalEstimateH": 16.5,
-    "timeSpentH": 15,
+    "timeSpentH": 15.5,
     "labels": [
       "type:integration",
       "size:L",
@@ -5751,7 +5751,7 @@
     ],
     "addedAfterKickoff": false,
     "created": "2025-12-16",
-    "resolved": "2026-04-03"
+    "resolved": "2026-04-02"
   },
   {
     "id": "P025-02",
@@ -5763,7 +5763,7 @@
     "complexity": "S",
     "role": "pm",
     "originalEstimateH": 11,
-    "timeSpentH": 11.5,
+    "timeSpentH": 11,
     "labels": [
       "type:integration",
       "size:L",
@@ -5775,7 +5775,7 @@
     ],
     "addedAfterKickoff": false,
     "created": "2025-12-16",
-    "resolved": "2026-04-03"
+    "resolved": "2026-04-02"
   },
   {
     "id": "P025-03",
@@ -5787,7 +5787,7 @@
     "complexity": "M",
     "role": "engineer",
     "originalEstimateH": 27,
-    "timeSpentH": 48,
+    "timeSpentH": 44,
     "labels": [
       "type:integration",
       "size:L",
@@ -5799,7 +5799,7 @@
     ],
     "addedAfterKickoff": false,
     "created": "2025-12-16",
-    "resolved": "2026-04-06"
+    "resolved": "2026-04-05"
   },
   {
     "id": "P025-04",
@@ -5811,7 +5811,7 @@
     "complexity": "M",
     "role": "engineer",
     "originalEstimateH": 16,
-    "timeSpentH": 18,
+    "timeSpentH": 19.5,
     "labels": [
       "type:integration",
       "size:L",
@@ -5823,7 +5823,7 @@
     ],
     "addedAfterKickoff": false,
     "created": "2025-12-16",
-    "resolved": "2026-04-04"
+    "resolved": "2026-04-03"
   },
   {
     "id": "P025-05",
@@ -5835,7 +5835,7 @@
     "complexity": "M",
     "role": "engineer",
     "originalEstimateH": 22,
-    "timeSpentH": 24,
+    "timeSpentH": 26.5,
     "labels": [
       "type:integration",
       "size:L",
@@ -5847,7 +5847,7 @@
     ],
     "addedAfterKickoff": false,
     "created": "2025-12-16",
-    "resolved": "2026-04-03"
+    "resolved": "2026-04-02"
   },
   {
     "id": "P025-06",
@@ -5859,7 +5859,7 @@
     "complexity": "L",
     "role": "engineer",
     "originalEstimateH": 96,
-    "timeSpentH": 133,
+    "timeSpentH": 134,
     "labels": [
       "type:integration",
       "size:L",
@@ -5871,7 +5871,7 @@
     ],
     "addedAfterKickoff": false,
     "created": "2025-12-16",
-    "resolved": "2026-04-04"
+    "resolved": "2026-04-03"
   },
   {
     "id": "P025-07",
@@ -5883,7 +5883,7 @@
     "complexity": "L",
     "role": "engineer",
     "originalEstimateH": 30,
-    "timeSpentH": 36,
+    "timeSpentH": 38,
     "labels": [
       "type:integration",
       "size:L",
@@ -5895,7 +5895,7 @@
     ],
     "addedAfterKickoff": false,
     "created": "2025-12-16",
-    "resolved": "2026-04-03"
+    "resolved": "2026-04-02"
   },
   {
     "id": "P025-08",
@@ -5907,7 +5907,7 @@
     "complexity": "M",
     "role": "engineer",
     "originalEstimateH": 16,
-    "timeSpentH": 17,
+    "timeSpentH": 17.5,
     "labels": [
       "type:integration",
       "size:L",
@@ -5919,7 +5919,7 @@
     ],
     "addedAfterKickoff": false,
     "created": "2025-12-16",
-    "resolved": "2026-04-03"
+    "resolved": "2026-04-02"
   },
   {
     "id": "P025-09",
@@ -5931,7 +5931,7 @@
     "complexity": "L",
     "role": "qa",
     "originalEstimateH": 28.5,
-    "timeSpentH": 32.5,
+    "timeSpentH": 31.5,
     "labels": [
       "type:integration",
       "size:L",
@@ -5943,7 +5943,7 @@
     ],
     "addedAfterKickoff": false,
     "created": "2025-12-16",
-    "resolved": "2026-04-06"
+    "resolved": "2026-04-05"
   },
   {
     "id": "P025-10",
@@ -5967,7 +5967,7 @@
     ],
     "addedAfterKickoff": false,
     "created": "2025-12-16",
-    "resolved": "2026-04-02"
+    "resolved": "2026-04-01"
   },
   {
     "id": "P025-11",
@@ -5979,7 +5979,7 @@
     "complexity": "M",
     "role": "engineer",
     "originalEstimateH": 21.5,
-    "timeSpentH": 19,
+    "timeSpentH": 20,
     "labels": [
       "type:integration",
       "size:L",
@@ -5991,7 +5991,7 @@
     ],
     "addedAfterKickoff": false,
     "created": "2025-12-16",
-    "resolved": "2026-04-03"
+    "resolved": "2026-04-02"
   },
   {
     "id": "P025-12",
@@ -6003,7 +6003,7 @@
     "complexity": "M",
     "role": "engineer",
     "originalEstimateH": 24,
-    "timeSpentH": 50,
+    "timeSpentH": 48.5,
     "labels": [
       "type:integration",
       "size:L",
@@ -6017,7 +6017,7 @@
     ],
     "addedAfterKickoff": true,
     "created": "2026-01-08",
-    "resolved": "2026-04-04"
+    "resolved": "2026-04-03"
   },
   {
     "id": "P026-01",
@@ -6029,7 +6029,7 @@
     "complexity": "M",
     "role": "pm",
     "originalEstimateH": 14.5,
-    "timeSpentH": 12.5,
+    "timeSpentH": 13,
     "labels": [
       "type:new-feature",
       "size:L",
@@ -6041,7 +6041,7 @@
     ],
     "addedAfterKickoff": false,
     "created": "2025-12-29",
-    "resolved": "2026-03-05"
+    "resolved": "2026-02-28"
   },
   {
     "id": "P026-02",
@@ -6053,7 +6053,7 @@
     "complexity": "S",
     "role": "pm",
     "originalEstimateH": 9,
-    "timeSpentH": 6.5,
+    "timeSpentH": 7.5,
     "labels": [
       "type:new-feature",
       "size:L",
@@ -6065,7 +6065,7 @@
     ],
     "addedAfterKickoff": false,
     "created": "2025-12-29",
-    "resolved": "2026-03-09"
+    "resolved": "2026-03-04"
   },
   {
     "id": "P026-03",
@@ -6077,7 +6077,7 @@
     "complexity": "M",
     "role": "designer",
     "originalEstimateH": 16.5,
-    "timeSpentH": 18.5,
+    "timeSpentH": 18,
     "labels": [
       "type:new-feature",
       "size:L",
@@ -6089,7 +6089,7 @@
     ],
     "addedAfterKickoff": false,
     "created": "2025-12-29",
-    "resolved": "2026-03-05"
+    "resolved": "2026-02-28"
   },
   {
     "id": "P026-04",
@@ -6101,7 +6101,7 @@
     "complexity": "M",
     "role": "designer",
     "originalEstimateH": 26.5,
-    "timeSpentH": 28.5,
+    "timeSpentH": 27.5,
     "labels": [
       "type:new-feature",
       "size:L",
@@ -6113,7 +6113,7 @@
     ],
     "addedAfterKickoff": false,
     "created": "2025-12-29",
-    "resolved": "2026-03-06"
+    "resolved": "2026-03-01"
   },
   {
     "id": "P026-05",
@@ -6125,7 +6125,7 @@
     "complexity": "L",
     "role": "engineer",
     "originalEstimateH": 42,
-    "timeSpentH": 60,
+    "timeSpentH": 54.5,
     "labels": [
       "type:new-feature",
       "size:L",
@@ -6137,7 +6137,7 @@
     ],
     "addedAfterKickoff": false,
     "created": "2025-12-29",
-    "resolved": "2026-03-09"
+    "resolved": "2026-03-04"
   },
   {
     "id": "P026-06",
@@ -6149,7 +6149,7 @@
     "complexity": "L",
     "role": "engineer",
     "originalEstimateH": 33.5,
-    "timeSpentH": 32,
+    "timeSpentH": 33.5,
     "labels": [
       "type:new-feature",
       "size:L",
@@ -6161,7 +6161,7 @@
     ],
     "addedAfterKickoff": false,
     "created": "2025-12-29",
-    "resolved": "2026-03-08"
+    "resolved": "2026-03-03"
   },
   {
     "id": "P026-07",
@@ -6173,7 +6173,7 @@
     "complexity": "L",
     "role": "engineer",
     "originalEstimateH": 31,
-    "timeSpentH": 28,
+    "timeSpentH": 30,
     "labels": [
       "type:new-feature",
       "size:L",
@@ -6185,7 +6185,7 @@
     ],
     "addedAfterKickoff": false,
     "created": "2025-12-29",
-    "resolved": "2026-03-07"
+    "resolved": "2026-03-02"
   },
   {
     "id": "P026-08",
@@ -6197,7 +6197,7 @@
     "complexity": "M",
     "role": "engineer",
     "originalEstimateH": 12,
-    "timeSpentH": 10,
+    "timeSpentH": 11,
     "labels": [
       "type:new-feature",
       "size:L",
@@ -6209,7 +6209,7 @@
     ],
     "addedAfterKickoff": false,
     "created": "2025-12-29",
-    "resolved": "2026-03-06"
+    "resolved": "2026-03-01"
   },
   {
     "id": "P026-09",
@@ -6233,7 +6233,7 @@
     ],
     "addedAfterKickoff": false,
     "created": "2025-12-29",
-    "resolved": "2026-03-05"
+    "resolved": "2026-02-28"
   },
   {
     "id": "P026-10",
@@ -6245,7 +6245,7 @@
     "complexity": "M",
     "role": "qa",
     "originalEstimateH": 16.5,
-    "timeSpentH": 18.5,
+    "timeSpentH": 18,
     "labels": [
       "type:new-feature",
       "size:L",
@@ -6257,7 +6257,7 @@
     ],
     "addedAfterKickoff": false,
     "created": "2025-12-29",
-    "resolved": "2026-03-04"
+    "resolved": "2026-02-27"
   },
   {
     "id": "P026-11",
@@ -6269,7 +6269,7 @@
     "complexity": "S",
     "role": "qa",
     "originalEstimateH": 11,
-    "timeSpentH": 12.5,
+    "timeSpentH": 12,
     "labels": [
       "type:new-feature",
       "size:L",
@@ -6281,7 +6281,7 @@
     ],
     "addedAfterKickoff": false,
     "created": "2025-12-29",
-    "resolved": "2026-03-06"
+    "resolved": "2026-03-01"
   },
   {
     "id": "P026-12",
@@ -6305,7 +6305,7 @@
     ],
     "addedAfterKickoff": false,
     "created": "2025-12-29",
-    "resolved": "2026-03-08"
+    "resolved": "2026-03-03"
   },
   {
     "id": "P026-13",
@@ -6317,7 +6317,7 @@
     "complexity": "M",
     "role": "engineer",
     "originalEstimateH": 16,
-    "timeSpentH": 12.5,
+    "timeSpentH": 13,
     "labels": [
       "type:new-feature",
       "size:L",
@@ -6330,7 +6330,7 @@
     ],
     "addedAfterKickoff": true,
     "created": "2026-01-11",
-    "resolved": "2026-03-08"
+    "resolved": "2026-03-03"
   },
   {
     "id": "P027-01",
@@ -6342,7 +6342,7 @@
     "complexity": "M",
     "role": "pm",
     "originalEstimateH": 13.5,
-    "timeSpentH": 14,
+    "timeSpentH": 14.5,
     "labels": [
       "type:form-digitization",
       "size:L",
@@ -6366,7 +6366,7 @@
     "complexity": "M",
     "role": "pm",
     "originalEstimateH": 15,
-    "timeSpentH": 13.5,
+    "timeSpentH": 14.5,
     "labels": [
       "type:form-digitization",
       "size:L",
@@ -6390,7 +6390,7 @@
     "complexity": "M",
     "role": "legal",
     "originalEstimateH": 20,
-    "timeSpentH": 24.5,
+    "timeSpentH": 24,
     "labels": [
       "type:form-digitization",
       "size:L",
@@ -6414,7 +6414,7 @@
     "complexity": "S",
     "role": "legal",
     "originalEstimateH": 7,
-    "timeSpentH": 5.5,
+    "timeSpentH": 6.5,
     "labels": [
       "type:form-digitization",
       "size:L",
@@ -6438,7 +6438,7 @@
     "complexity": "L",
     "role": "engineer",
     "originalEstimateH": 37,
-    "timeSpentH": 50,
+    "timeSpentH": 48.5,
     "labels": [
       "type:form-digitization",
       "size:L",
@@ -6462,7 +6462,7 @@
     "complexity": "M",
     "role": "engineer",
     "originalEstimateH": 19.5,
-    "timeSpentH": 26,
+    "timeSpentH": 25,
     "labels": [
       "type:form-digitization",
       "size:L",
@@ -6486,7 +6486,7 @@
     "complexity": "M",
     "role": "engineer",
     "originalEstimateH": 19,
-    "timeSpentH": 20.5,
+    "timeSpentH": 21,
     "labels": [
       "type:form-digitization",
       "size:L",
@@ -6510,7 +6510,7 @@
     "complexity": "M",
     "role": "engineer",
     "originalEstimateH": 20,
-    "timeSpentH": 22,
+    "timeSpentH": 23,
     "labels": [
       "type:form-digitization",
       "size:L",
@@ -6534,7 +6534,7 @@
     "complexity": "M",
     "role": "engineer",
     "originalEstimateH": 26,
-    "timeSpentH": 37,
+    "timeSpentH": 38.5,
     "labels": [
       "type:form-digitization",
       "size:L",
@@ -6558,7 +6558,7 @@
     "complexity": "L",
     "role": "engineer",
     "originalEstimateH": 30.5,
-    "timeSpentH": 45,
+    "timeSpentH": 46,
     "labels": [
       "type:form-digitization",
       "size:L",
@@ -6582,7 +6582,7 @@
     "complexity": "M",
     "role": "qa",
     "originalEstimateH": 22,
-    "timeSpentH": 21,
+    "timeSpentH": 21.5,
     "labels": [
       "type:form-digitization",
       "size:L",
@@ -6606,7 +6606,7 @@
     "complexity": "S",
     "role": "qa",
     "originalEstimateH": 11.5,
-    "timeSpentH": 13,
+    "timeSpentH": 12.5,
     "labels": [
       "type:form-digitization",
       "size:L",
@@ -6630,7 +6630,7 @@
     "complexity": "M",
     "role": "engineer",
     "originalEstimateH": 12,
-    "timeSpentH": 12.5,
+    "timeSpentH": 13,
     "labels": [
       "type:form-digitization",
       "size:L",
@@ -6654,7 +6654,7 @@
     "complexity": "M",
     "role": "engineer",
     "originalEstimateH": 24,
-    "timeSpentH": 40,
+    "timeSpentH": 37,
     "labels": [
       "type:form-digitization",
       "size:L",
@@ -6691,7 +6691,7 @@
     ],
     "addedAfterKickoff": false,
     "created": "2026-01-19",
-    "resolved": "2026-04-29"
+    "resolved": "2026-04-23"
   },
   {
     "id": "P028-02",
@@ -6703,7 +6703,7 @@
     "complexity": "M",
     "role": "pm",
     "originalEstimateH": 14.5,
-    "timeSpentH": 12.5,
+    "timeSpentH": 13,
     "labels": [
       "type:integration",
       "size:XL",
@@ -6715,7 +6715,7 @@
     ],
     "addedAfterKickoff": false,
     "created": "2026-01-19",
-    "resolved": "2026-05-04"
+    "resolved": "2026-04-28"
   },
   {
     "id": "P028-03",
@@ -6727,7 +6727,7 @@
     "complexity": "L",
     "role": "engineer",
     "originalEstimateH": 40.5,
-    "timeSpentH": 70.5,
+    "timeSpentH": 65,
     "labels": [
       "type:integration",
       "size:XL",
@@ -6739,7 +6739,7 @@
     ],
     "addedAfterKickoff": false,
     "created": "2026-01-19",
-    "resolved": "2026-05-02"
+    "resolved": "2026-04-26"
   },
   {
     "id": "P028-04",
@@ -6751,7 +6751,7 @@
     "complexity": "M",
     "role": "engineer",
     "originalEstimateH": 24,
-    "timeSpentH": 43.5,
+    "timeSpentH": 44.5,
     "labels": [
       "type:integration",
       "size:XL",
@@ -6764,7 +6764,7 @@
     ],
     "addedAfterKickoff": false,
     "created": "2026-01-19",
-    "resolved": "2026-04-29"
+    "resolved": "2026-04-23"
   },
   {
     "id": "P028-05",
@@ -6776,7 +6776,7 @@
     "complexity": "L",
     "role": "engineer",
     "originalEstimateH": 41,
-    "timeSpentH": 108.5,
+    "timeSpentH": 96,
     "labels": [
       "type:integration",
       "size:XL",
@@ -6789,7 +6789,7 @@
     ],
     "addedAfterKickoff": false,
     "created": "2026-01-19",
-    "resolved": "2026-04-30"
+    "resolved": "2026-04-24"
   },
   {
     "id": "P028-06",
@@ -6801,7 +6801,7 @@
     "complexity": "L",
     "role": "engineer",
     "originalEstimateH": 67.5,
-    "timeSpentH": 83.5,
+    "timeSpentH": 87.5,
     "labels": [
       "type:integration",
       "size:XL",
@@ -6813,7 +6813,7 @@
     ],
     "addedAfterKickoff": false,
     "created": "2026-01-19",
-    "resolved": "2026-05-03"
+    "resolved": "2026-04-27"
   },
   {
     "id": "P028-07",
@@ -6825,7 +6825,7 @@
     "complexity": "L",
     "role": "engineer",
     "originalEstimateH": 69.5,
-    "timeSpentH": 92,
+    "timeSpentH": 94.5,
     "labels": [
       "type:integration",
       "size:XL",
@@ -6837,7 +6837,7 @@
     ],
     "addedAfterKickoff": false,
     "created": "2026-01-19",
-    "resolved": "2026-05-03"
+    "resolved": "2026-04-27"
   },
   {
     "id": "P028-08",
@@ -6849,7 +6849,7 @@
     "complexity": "M",
     "role": "engineer",
     "originalEstimateH": 21.5,
-    "timeSpentH": 32,
+    "timeSpentH": 28.5,
     "labels": [
       "type:integration",
       "size:XL",
@@ -6861,7 +6861,7 @@
     ],
     "addedAfterKickoff": false,
     "created": "2026-01-19",
-    "resolved": "2026-05-01"
+    "resolved": "2026-04-25"
   },
   {
     "id": "P028-09",
@@ -6885,7 +6885,7 @@
     ],
     "addedAfterKickoff": false,
     "created": "2026-01-19",
-    "resolved": "2026-05-01"
+    "resolved": "2026-04-25"
   },
   {
     "id": "P028-10",
@@ -6897,7 +6897,7 @@
     "complexity": "M",
     "role": "qa",
     "originalEstimateH": 24.5,
-    "timeSpentH": 24,
+    "timeSpentH": 24.5,
     "labels": [
       "type:integration",
       "size:XL",
@@ -6909,7 +6909,7 @@
     ],
     "addedAfterKickoff": false,
     "created": "2026-01-19",
-    "resolved": "2026-05-01"
+    "resolved": "2026-04-25"
   },
   {
     "id": "P028-11",
@@ -6921,7 +6921,7 @@
     "complexity": "M",
     "role": "engineer",
     "originalEstimateH": 26,
-    "timeSpentH": 34,
+    "timeSpentH": 31,
     "labels": [
       "type:integration",
       "size:XL",
@@ -6933,7 +6933,7 @@
     ],
     "addedAfterKickoff": false,
     "created": "2026-01-19",
-    "resolved": "2026-05-02"
+    "resolved": "2026-04-26"
   },
   {
     "id": "P029-01",
@@ -6945,7 +6945,7 @@
     "complexity": "M",
     "role": "pm",
     "originalEstimateH": 22,
-    "timeSpentH": 19,
+    "timeSpentH": 20.5,
     "labels": [
       "type:form-digitization",
       "size:L",
@@ -6957,7 +6957,7 @@
     ],
     "addedAfterKickoff": false,
     "created": "2026-01-28",
-    "resolved": "2026-04-19"
+    "resolved": "2026-04-20"
   },
   {
     "id": "P029-02",
@@ -6969,7 +6969,7 @@
     "complexity": "M",
     "role": "pm",
     "originalEstimateH": 16.5,
-    "timeSpentH": 13,
+    "timeSpentH": 15,
     "labels": [
       "type:form-digitization",
       "size:L",
@@ -6981,7 +6981,7 @@
     ],
     "addedAfterKickoff": false,
     "created": "2026-01-28",
-    "resolved": "2026-04-22"
+    "resolved": "2026-04-23"
   },
   {
     "id": "P029-03",
@@ -6993,7 +6993,7 @@
     "complexity": "M",
     "role": "legal",
     "originalEstimateH": 19.5,
-    "timeSpentH": 24.5,
+    "timeSpentH": 23.5,
     "labels": [
       "type:form-digitization",
       "size:L",
@@ -7005,7 +7005,7 @@
     ],
     "addedAfterKickoff": false,
     "created": "2026-01-28",
-    "resolved": "2026-04-18"
+    "resolved": "2026-04-19"
   },
   {
     "id": "P029-04",
@@ -7017,7 +7017,7 @@
     "complexity": "L",
     "role": "engineer",
     "originalEstimateH": 44,
-    "timeSpentH": 51,
+    "timeSpentH": 50,
     "labels": [
       "type:form-digitization",
       "size:L",
@@ -7029,7 +7029,7 @@
     ],
     "addedAfterKickoff": false,
     "created": "2026-01-28",
-    "resolved": "2026-04-21"
+    "resolved": "2026-04-22"
   },
   {
     "id": "P029-05",
@@ -7041,7 +7041,7 @@
     "complexity": "M",
     "role": "engineer",
     "originalEstimateH": 26.5,
-    "timeSpentH": 28,
+    "timeSpentH": 28.5,
     "labels": [
       "type:form-digitization",
       "size:L",
@@ -7053,7 +7053,7 @@
     ],
     "addedAfterKickoff": false,
     "created": "2026-01-28",
-    "resolved": "2026-04-20"
+    "resolved": "2026-04-21"
   },
   {
     "id": "P029-06",
@@ -7065,7 +7065,7 @@
     "complexity": "M",
     "role": "engineer",
     "originalEstimateH": 19.5,
-    "timeSpentH": 23,
+    "timeSpentH": 22,
     "labels": [
       "type:form-digitization",
       "size:L",
@@ -7077,7 +7077,7 @@
     ],
     "addedAfterKickoff": false,
     "created": "2026-01-28",
-    "resolved": "2026-04-20"
+    "resolved": "2026-04-21"
   },
   {
     "id": "P029-07",
@@ -7089,7 +7089,7 @@
     "complexity": "M",
     "role": "engineer",
     "originalEstimateH": 26,
-    "timeSpentH": 21.5,
+    "timeSpentH": 24,
     "labels": [
       "type:form-digitization",
       "size:L",
@@ -7101,7 +7101,7 @@
     ],
     "addedAfterKickoff": false,
     "created": "2026-01-28",
-    "resolved": "2026-04-20"
+    "resolved": "2026-04-21"
   },
   {
     "id": "P029-08",
@@ -7113,7 +7113,7 @@
     "complexity": "L",
     "role": "engineer",
     "originalEstimateH": 29,
-    "timeSpentH": 46.5,
+    "timeSpentH": 49.5,
     "labels": [
       "type:form-digitization",
       "size:L",
@@ -7126,7 +7126,7 @@
     ],
     "addedAfterKickoff": false,
     "created": "2026-01-28",
-    "resolved": "2026-04-22"
+    "resolved": "2026-04-23"
   },
   {
     "id": "P029-09",
@@ -7138,7 +7138,7 @@
     "complexity": "L",
     "role": "engineer",
     "originalEstimateH": 31,
-    "timeSpentH": 28.5,
+    "timeSpentH": 33.5,
     "labels": [
       "type:form-digitization",
       "size:L",
@@ -7150,7 +7150,7 @@
     ],
     "addedAfterKickoff": false,
     "created": "2026-01-28",
-    "resolved": "2026-04-19"
+    "resolved": "2026-04-20"
   },
   {
     "id": "P029-10",
@@ -7162,7 +7162,7 @@
     "complexity": "M",
     "role": "qa",
     "originalEstimateH": 20.5,
-    "timeSpentH": 23,
+    "timeSpentH": 22.5,
     "labels": [
       "type:form-digitization",
       "size:L",
@@ -7174,7 +7174,7 @@
     ],
     "addedAfterKickoff": false,
     "created": "2026-01-28",
-    "resolved": "2026-04-20"
+    "resolved": "2026-04-21"
   },
   {
     "id": "P029-11",
@@ -7198,7 +7198,7 @@
     ],
     "addedAfterKickoff": false,
     "created": "2026-01-28",
-    "resolved": "2026-04-19"
+    "resolved": "2026-04-20"
   },
   {
     "id": "P029-12",
@@ -7210,7 +7210,7 @@
     "complexity": "S",
     "role": "engineer",
     "originalEstimateH": 11,
-    "timeSpentH": 8,
+    "timeSpentH": 9,
     "labels": [
       "type:form-digitization",
       "size:L",
@@ -7222,7 +7222,7 @@
     ],
     "addedAfterKickoff": false,
     "created": "2026-01-28",
-    "resolved": "2026-04-20"
+    "resolved": "2026-04-21"
   },
   {
     "id": "P029-13",
@@ -7234,7 +7234,7 @@
     "complexity": "M",
     "role": "engineer",
     "originalEstimateH": 17.5,
-    "timeSpentH": 18,
+    "timeSpentH": 18.5,
     "labels": [
       "type:form-digitization",
       "size:L",
@@ -7247,7 +7247,7 @@
     ],
     "addedAfterKickoff": true,
     "created": "2026-02-16",
-    "resolved": "2026-04-22"
+    "resolved": "2026-04-23"
   },
   {
     "id": "P030-01",
@@ -7271,7 +7271,7 @@
     ],
     "addedAfterKickoff": false,
     "created": "2026-02-06",
-    "resolved": "2026-03-06"
+    "resolved": "2026-03-07"
   },
   {
     "id": "P030-02",
@@ -7283,7 +7283,7 @@
     "complexity": "M",
     "role": "designer",
     "originalEstimateH": 18.5,
-    "timeSpentH": 16,
+    "timeSpentH": 17,
     "labels": [
       "type:reporting",
       "size:M",
@@ -7295,7 +7295,7 @@
     ],
     "addedAfterKickoff": false,
     "created": "2026-02-06",
-    "resolved": "2026-03-07"
+    "resolved": "2026-03-08"
   },
   {
     "id": "P030-03",
@@ -7307,7 +7307,7 @@
     "complexity": "L",
     "role": "engineer",
     "originalEstimateH": 55.5,
-    "timeSpentH": 44.5,
+    "timeSpentH": 46.5,
     "labels": [
       "type:reporting",
       "size:M",
@@ -7319,7 +7319,7 @@
     ],
     "addedAfterKickoff": false,
     "created": "2026-02-06",
-    "resolved": "2026-03-11"
+    "resolved": "2026-03-12"
   },
   {
     "id": "P030-04",
@@ -7331,7 +7331,7 @@
     "complexity": "L",
     "role": "engineer",
     "originalEstimateH": 33.5,
-    "timeSpentH": 26.5,
+    "timeSpentH": 28,
     "labels": [
       "type:reporting",
       "size:M",
@@ -7343,7 +7343,7 @@
     ],
     "addedAfterKickoff": false,
     "created": "2026-02-06",
-    "resolved": "2026-03-10"
+    "resolved": "2026-03-11"
   },
   {
     "id": "P030-05",
@@ -7355,7 +7355,7 @@
     "complexity": "S",
     "role": "qa",
     "originalEstimateH": 11,
-    "timeSpentH": 11,
+    "timeSpentH": 11.5,
     "labels": [
       "type:reporting",
       "size:M",
@@ -7367,7 +7367,7 @@
     ],
     "addedAfterKickoff": false,
     "created": "2026-02-06",
-    "resolved": "2026-03-11"
+    "resolved": "2026-03-12"
   },
   {
     "id": "P030-06",
@@ -7379,7 +7379,7 @@
     "complexity": "S",
     "role": "engineer",
     "originalEstimateH": 8,
-    "timeSpentH": 7.5,
+    "timeSpentH": 8,
     "labels": [
       "type:reporting",
       "size:M",
@@ -7391,7 +7391,7 @@
     ],
     "addedAfterKickoff": false,
     "created": "2026-02-06",
-    "resolved": "2026-03-09"
+    "resolved": "2026-03-10"
   },
   {
     "id": "P031-01",
@@ -7403,7 +7403,7 @@
     "complexity": "M",
     "role": "pm",
     "originalEstimateH": 23.5,
-    "timeSpentH": 26,
+    "timeSpentH": 24.5,
     "labels": [
       "type:new-feature",
       "size:L",
@@ -7415,7 +7415,7 @@
     ],
     "addedAfterKickoff": false,
     "created": "2026-02-18",
-    "resolved": "2026-04-04"
+    "resolved": "2026-04-05"
   },
   {
     "id": "P031-02",
@@ -7427,7 +7427,7 @@
     "complexity": "S",
     "role": "pm",
     "originalEstimateH": 10.5,
-    "timeSpentH": 12,
+    "timeSpentH": 11.5,
     "labels": [
       "type:new-feature",
       "size:L",
@@ -7439,7 +7439,7 @@
     ],
     "addedAfterKickoff": false,
     "created": "2026-02-18",
-    "resolved": "2026-04-07"
+    "resolved": "2026-04-08"
   },
   {
     "id": "P031-03",
@@ -7451,7 +7451,7 @@
     "complexity": "M",
     "role": "designer",
     "originalEstimateH": 27.5,
-    "timeSpentH": 14.5,
+    "timeSpentH": 18.5,
     "labels": [
       "type:new-feature",
       "size:L",
@@ -7463,7 +7463,7 @@
     ],
     "addedAfterKickoff": false,
     "created": "2026-02-18",
-    "resolved": "2026-04-03"
+    "resolved": "2026-04-04"
   },
   {
     "id": "P031-04",
@@ -7487,7 +7487,7 @@
     ],
     "addedAfterKickoff": false,
     "created": "2026-02-18",
-    "resolved": "2026-04-02"
+    "resolved": "2026-04-03"
   },
   {
     "id": "P031-05",
@@ -7499,7 +7499,7 @@
     "complexity": "L",
     "role": "engineer",
     "originalEstimateH": 36,
-    "timeSpentH": 31,
+    "timeSpentH": 34,
     "labels": [
       "type:new-feature",
       "size:L",
@@ -7511,7 +7511,7 @@
     ],
     "addedAfterKickoff": false,
     "created": "2026-02-18",
-    "resolved": "2026-04-05"
+    "resolved": "2026-04-06"
   },
   {
     "id": "P031-06",
@@ -7523,7 +7523,7 @@
     "complexity": "L",
     "role": "engineer",
     "originalEstimateH": 49,
-    "timeSpentH": 44,
+    "timeSpentH": 46.5,
     "labels": [
       "type:new-feature",
       "size:L",
@@ -7535,7 +7535,7 @@
     ],
     "addedAfterKickoff": false,
     "created": "2026-02-18",
-    "resolved": "2026-04-05"
+    "resolved": "2026-04-06"
   },
   {
     "id": "P031-07",
@@ -7559,7 +7559,7 @@
     ],
     "addedAfterKickoff": false,
     "created": "2026-02-18",
-    "resolved": "2026-04-03"
+    "resolved": "2026-04-04"
   },
   {
     "id": "P031-08",
@@ -7571,7 +7571,7 @@
     "complexity": "M",
     "role": "engineer",
     "originalEstimateH": 14,
-    "timeSpentH": 12,
+    "timeSpentH": 13.5,
     "labels": [
       "type:new-feature",
       "size:L",
@@ -7583,7 +7583,7 @@
     ],
     "addedAfterKickoff": false,
     "created": "2026-02-18",
-    "resolved": "2026-04-06"
+    "resolved": "2026-04-07"
   },
   {
     "id": "P031-09",
@@ -7595,7 +7595,7 @@
     "complexity": "M",
     "role": "qa",
     "originalEstimateH": 27.5,
-    "timeSpentH": 27.5,
+    "timeSpentH": 28,
     "labels": [
       "type:new-feature",
       "size:L",
@@ -7607,7 +7607,7 @@
     ],
     "addedAfterKickoff": false,
     "created": "2026-02-18",
-    "resolved": "2026-04-03"
+    "resolved": "2026-04-04"
   },
   {
     "id": "P031-10",
@@ -7631,7 +7631,7 @@
     ],
     "addedAfterKickoff": false,
     "created": "2026-02-18",
-    "resolved": "2026-04-06"
+    "resolved": "2026-04-07"
   },
   {
     "id": "P032-01",
@@ -7643,7 +7643,7 @@
     "complexity": "M",
     "role": "pm",
     "originalEstimateH": 19,
-    "timeSpentH": 25,
+    "timeSpentH": 23.5,
     "labels": [
       "type:form-digitization",
       "size:L",
@@ -7655,7 +7655,7 @@
     ],
     "addedAfterKickoff": false,
     "created": "2026-03-02",
-    "resolved": "2026-05-15"
+    "resolved": "2026-05-17"
   },
   {
     "id": "P032-02",
@@ -7679,7 +7679,7 @@
     ],
     "addedAfterKickoff": false,
     "created": "2026-03-02",
-    "resolved": "2026-05-18"
+    "resolved": "2026-05-20"
   },
   {
     "id": "P032-03",
@@ -7691,7 +7691,7 @@
     "complexity": "M",
     "role": "legal",
     "originalEstimateH": 13,
-    "timeSpentH": 19,
+    "timeSpentH": 17.5,
     "labels": [
       "type:form-digitization",
       "size:L",
@@ -7703,7 +7703,7 @@
     ],
     "addedAfterKickoff": false,
     "created": "2026-03-02",
-    "resolved": "2026-05-19"
+    "resolved": "2026-05-21"
   },
   {
     "id": "P032-04",
@@ -7715,7 +7715,7 @@
     "complexity": "L",
     "role": "engineer",
     "originalEstimateH": 46.5,
-    "timeSpentH": 42,
+    "timeSpentH": 45.5,
     "labels": [
       "type:form-digitization",
       "size:L",
@@ -7727,7 +7727,7 @@
     ],
     "addedAfterKickoff": false,
     "created": "2026-03-02",
-    "resolved": "2026-05-14"
+    "resolved": "2026-05-16"
   },
   {
     "id": "P032-05",
@@ -7739,7 +7739,7 @@
     "complexity": "M",
     "role": "engineer",
     "originalEstimateH": 20,
-    "timeSpentH": 23.5,
+    "timeSpentH": 23,
     "labels": [
       "type:form-digitization",
       "size:L",
@@ -7751,7 +7751,7 @@
     ],
     "addedAfterKickoff": false,
     "created": "2026-03-02",
-    "resolved": "2026-05-15"
+    "resolved": "2026-05-17"
   },
   {
     "id": "P032-06",
@@ -7763,7 +7763,7 @@
     "complexity": "M",
     "role": "engineer",
     "originalEstimateH": 20.5,
-    "timeSpentH": 18.5,
+    "timeSpentH": 19.5,
     "labels": [
       "type:form-digitization",
       "size:L",
@@ -7775,7 +7775,7 @@
     ],
     "addedAfterKickoff": false,
     "created": "2026-03-02",
-    "resolved": "2026-05-14"
+    "resolved": "2026-05-16"
   },
   {
     "id": "P032-07",
@@ -7787,7 +7787,7 @@
     "complexity": "M",
     "role": "engineer",
     "originalEstimateH": 20.5,
-    "timeSpentH": 27,
+    "timeSpentH": 25,
     "labels": [
       "type:form-digitization",
       "size:L",
@@ -7799,7 +7799,7 @@
     ],
     "addedAfterKickoff": false,
     "created": "2026-03-02",
-    "resolved": "2026-05-18"
+    "resolved": "2026-05-20"
   },
   {
     "id": "P032-08",
@@ -7811,7 +7811,7 @@
     "complexity": "M",
     "role": "engineer",
     "originalEstimateH": 23,
-    "timeSpentH": 33.5,
+    "timeSpentH": 33,
     "labels": [
       "type:form-digitization",
       "size:L",
@@ -7823,7 +7823,7 @@
     ],
     "addedAfterKickoff": false,
     "created": "2026-03-02",
-    "resolved": "2026-05-17"
+    "resolved": "2026-05-19"
   },
   {
     "id": "P032-09",
@@ -7835,7 +7835,7 @@
     "complexity": "M",
     "role": "engineer",
     "originalEstimateH": 25,
-    "timeSpentH": 43,
+    "timeSpentH": 44.5,
     "labels": [
       "type:form-digitization",
       "size:L",
@@ -7848,7 +7848,7 @@
     ],
     "addedAfterKickoff": false,
     "created": "2026-03-02",
-    "resolved": "2026-05-14"
+    "resolved": "2026-05-16"
   },
   {
     "id": "P032-10",
@@ -7872,7 +7872,7 @@
     ],
     "addedAfterKickoff": false,
     "created": "2026-03-02",
-    "resolved": "2026-05-19"
+    "resolved": "2026-05-21"
   },
   {
     "id": "P032-11",
@@ -7884,7 +7884,7 @@
     "complexity": "M",
     "role": "engineer",
     "originalEstimateH": 13.5,
-    "timeSpentH": 10.5,
+    "timeSpentH": 11.5,
     "labels": [
       "type:form-digitization",
       "size:L",
@@ -7896,7 +7896,7 @@
     ],
     "addedAfterKickoff": false,
     "created": "2026-03-02",
-    "resolved": "2026-05-18"
+    "resolved": "2026-05-20"
   },
   {
     "id": "P033-01",
@@ -7908,7 +7908,7 @@
     "complexity": "S",
     "role": "pm",
     "originalEstimateH": 6.5,
-    "timeSpentH": 9,
+    "timeSpentH": 8,
     "labels": [
       "type:integration",
       "size:S",
@@ -7920,7 +7920,7 @@
     ],
     "addedAfterKickoff": false,
     "created": "2026-03-10",
-    "resolved": "2026-04-24"
+    "resolved": "2026-04-23"
   },
   {
     "id": "P033-02",
@@ -7944,7 +7944,7 @@
     ],
     "addedAfterKickoff": false,
     "created": "2026-03-10",
-    "resolved": "2026-04-25"
+    "resolved": "2026-04-24"
   },
   {
     "id": "P033-03",
@@ -7956,7 +7956,7 @@
     "complexity": "M",
     "role": "engineer",
     "originalEstimateH": 16,
-    "timeSpentH": 29.5,
+    "timeSpentH": 26.5,
     "labels": [
       "type:integration",
       "size:S",
@@ -7968,7 +7968,7 @@
     ],
     "addedAfterKickoff": false,
     "created": "2026-03-10",
-    "resolved": "2026-04-24"
+    "resolved": "2026-04-23"
   },
   {
     "id": "P033-04",
@@ -7980,7 +7980,7 @@
     "complexity": "S",
     "role": "engineer",
     "originalEstimateH": 9,
-    "timeSpentH": 11.5,
+    "timeSpentH": 12,
     "labels": [
       "type:integration",
       "size:S",
@@ -7992,7 +7992,7 @@
     ],
     "addedAfterKickoff": false,
     "created": "2026-03-10",
-    "resolved": "2026-04-24"
+    "resolved": "2026-04-23"
   },
   {
     "id": "P033-05",
@@ -8004,7 +8004,7 @@
     "complexity": "M",
     "role": "engineer",
     "originalEstimateH": 13,
-    "timeSpentH": 12.5,
+    "timeSpentH": 14.5,
     "labels": [
       "type:integration",
       "size:S",
@@ -8016,7 +8016,7 @@
     ],
     "addedAfterKickoff": false,
     "created": "2026-03-10",
-    "resolved": "2026-04-23"
+    "resolved": "2026-04-22"
   },
   {
     "id": "P033-06",
@@ -8028,7 +8028,7 @@
     "complexity": "M",
     "role": "engineer",
     "originalEstimateH": 27,
-    "timeSpentH": 57,
+    "timeSpentH": 55,
     "labels": [
       "type:integration",
       "size:S",
@@ -8041,7 +8041,7 @@
     ],
     "addedAfterKickoff": false,
     "created": "2026-03-10",
-    "resolved": "2026-04-27"
+    "resolved": "2026-04-26"
   },
   {
     "id": "P033-07",
@@ -8053,7 +8053,7 @@
     "complexity": "S",
     "role": "engineer",
     "originalEstimateH": 10.5,
-    "timeSpentH": 13,
+    "timeSpentH": 13.5,
     "labels": [
       "type:integration",
       "size:S",
@@ -8065,7 +8065,7 @@
     ],
     "addedAfterKickoff": false,
     "created": "2026-03-10",
-    "resolved": "2026-04-24"
+    "resolved": "2026-04-23"
   },
   {
     "id": "P033-08",
@@ -8089,7 +8089,7 @@
     ],
     "addedAfterKickoff": false,
     "created": "2026-03-10",
-    "resolved": "2026-04-28"
+    "resolved": "2026-04-27"
   },
   {
     "id": "P033-09",
@@ -8113,7 +8113,7 @@
     ],
     "addedAfterKickoff": false,
     "created": "2026-03-10",
-    "resolved": "2026-04-26"
+    "resolved": "2026-04-25"
   },
   {
     "id": "P033-10",
@@ -8125,7 +8125,7 @@
     "complexity": "S",
     "role": "engineer",
     "originalEstimateH": 10,
-    "timeSpentH": 12.5,
+    "timeSpentH": 11.5,
     "labels": [
       "type:integration",
       "size:S",
@@ -8137,7 +8137,7 @@
     ],
     "addedAfterKickoff": false,
     "created": "2026-03-10",
-    "resolved": "2026-04-26"
+    "resolved": "2026-04-25"
   },
   {
     "id": "P033-11",
@@ -8149,7 +8149,7 @@
     "complexity": "M",
     "role": "engineer",
     "originalEstimateH": 15,
-    "timeSpentH": 15.5,
+    "timeSpentH": 16.5,
     "labels": [
       "type:integration",
       "size:S",
@@ -8162,7 +8162,7 @@
     ],
     "addedAfterKickoff": true,
     "created": "2026-03-26",
-    "resolved": "2026-04-23"
+    "resolved": "2026-04-22"
   },
   {
     "id": "P033-12",
@@ -8174,7 +8174,7 @@
     "complexity": "S",
     "role": "engineer",
     "originalEstimateH": 11.5,
-    "timeSpentH": 20,
+    "timeSpentH": 18.5,
     "labels": [
       "type:integration",
       "size:S",
@@ -8187,7 +8187,7 @@
     ],
     "addedAfterKickoff": true,
     "created": "2026-03-24",
-    "resolved": "2026-04-25"
+    "resolved": "2026-04-24"
   },
   {
     "id": "P034-01",
@@ -8199,7 +8199,7 @@
     "complexity": "S",
     "role": "pm",
     "originalEstimateH": 9.5,
-    "timeSpentH": 9.5,
+    "timeSpentH": 9,
     "labels": [
       "type:integration",
       "size:M",
@@ -8211,7 +8211,7 @@
     ],
     "addedAfterKickoff": false,
     "created": "2026-03-20",
-    "resolved": "2026-05-18"
+    "resolved": "2026-05-17"
   },
   {
     "id": "P034-02",
@@ -8235,7 +8235,7 @@
     ],
     "addedAfterKickoff": false,
     "created": "2026-03-20",
-    "resolved": "2026-05-16"
+    "resolved": "2026-05-15"
   },
   {
     "id": "P034-03",
@@ -8247,7 +8247,7 @@
     "complexity": "L",
     "role": "engineer",
     "originalEstimateH": 31,
-    "timeSpentH": 38,
+    "timeSpentH": 40,
     "labels": [
       "type:integration",
       "size:M",
@@ -8259,7 +8259,7 @@
     ],
     "addedAfterKickoff": false,
     "created": "2026-03-20",
-    "resolved": "2026-05-16"
+    "resolved": "2026-05-15"
   },
   {
     "id": "P034-04",
@@ -8271,7 +8271,7 @@
     "complexity": "S",
     "role": "engineer",
     "originalEstimateH": 11.5,
-    "timeSpentH": 19.5,
+    "timeSpentH": 20.5,
     "labels": [
       "type:integration",
       "size:M",
@@ -8284,7 +8284,7 @@
     ],
     "addedAfterKickoff": false,
     "created": "2026-03-20",
-    "resolved": "2026-05-18"
+    "resolved": "2026-05-17"
   },
   {
     "id": "P034-05",
@@ -8296,7 +8296,7 @@
     "complexity": "M",
     "role": "engineer",
     "originalEstimateH": 18,
-    "timeSpentH": 30.5,
+    "timeSpentH": 28.5,
     "labels": [
       "type:integration",
       "size:M",
@@ -8308,7 +8308,7 @@
     ],
     "addedAfterKickoff": false,
     "created": "2026-03-20",
-    "resolved": "2026-05-17"
+    "resolved": "2026-05-16"
   },
   {
     "id": "P034-06",
@@ -8320,7 +8320,7 @@
     "complexity": "L",
     "role": "engineer",
     "originalEstimateH": 33,
-    "timeSpentH": 57.5,
+    "timeSpentH": 53,
     "labels": [
       "type:integration",
       "size:M",
@@ -8332,7 +8332,7 @@
     ],
     "addedAfterKickoff": false,
     "created": "2026-03-20",
-    "resolved": "2026-05-16"
+    "resolved": "2026-05-15"
   },
   {
     "id": "P034-07",
@@ -8344,7 +8344,7 @@
     "complexity": "L",
     "role": "engineer",
     "originalEstimateH": 32.5,
-    "timeSpentH": 39.5,
+    "timeSpentH": 41.5,
     "labels": [
       "type:integration",
       "size:M",
@@ -8356,7 +8356,7 @@
     ],
     "addedAfterKickoff": false,
     "created": "2026-03-20",
-    "resolved": "2026-05-15"
+    "resolved": "2026-05-14"
   },
   {
     "id": "P034-08",
@@ -8368,7 +8368,7 @@
     "complexity": "S",
     "role": "engineer",
     "originalEstimateH": 11,
-    "timeSpentH": 14,
+    "timeSpentH": 13.5,
     "labels": [
       "type:integration",
       "size:M",
@@ -8380,7 +8380,7 @@
     ],
     "addedAfterKickoff": false,
     "created": "2026-03-20",
-    "resolved": "2026-05-17"
+    "resolved": "2026-05-16"
   },
   {
     "id": "P034-09",
@@ -8392,7 +8392,7 @@
     "complexity": "M",
     "role": "qa",
     "originalEstimateH": 15,
-    "timeSpentH": 18.5,
+    "timeSpentH": 17.5,
     "labels": [
       "type:integration",
       "size:M",
@@ -8404,7 +8404,7 @@
     ],
     "addedAfterKickoff": false,
     "created": "2026-03-20",
-    "resolved": "2026-05-19"
+    "resolved": "2026-05-18"
   },
   {
     "id": "P034-10",
@@ -8428,7 +8428,7 @@
     ],
     "addedAfterKickoff": false,
     "created": "2026-03-20",
-    "resolved": "2026-05-16"
+    "resolved": "2026-05-15"
   },
   {
     "id": "P034-11",
@@ -8452,7 +8452,7 @@
     ],
     "addedAfterKickoff": false,
     "created": "2026-03-20",
-    "resolved": "2026-05-19"
+    "resolved": "2026-05-18"
   },
   {
     "id": "P034-12",
@@ -8477,7 +8477,7 @@
     ],
     "addedAfterKickoff": true,
     "created": "2026-04-01",
-    "resolved": "2026-05-17"
+    "resolved": "2026-05-16"
   },
   {
     "id": "P035-01",
@@ -8489,7 +8489,7 @@
     "complexity": "M",
     "role": "pm",
     "originalEstimateH": 15,
-    "timeSpentH": 15.5,
+    "timeSpentH": 16,
     "labels": [
       "type:form-digitization",
       "size:M",
@@ -8513,7 +8513,7 @@
     "complexity": "S",
     "role": "pm",
     "originalEstimateH": 8,
-    "timeSpentH": 7,
+    "timeSpentH": 7.5,
     "labels": [
       "type:form-digitization",
       "size:M",
@@ -8537,7 +8537,7 @@
     "complexity": "S",
     "role": "legal",
     "originalEstimateH": 9.5,
-    "timeSpentH": 9,
+    "timeSpentH": 9.5,
     "labels": [
       "type:form-digitization",
       "size:M",
@@ -8585,7 +8585,7 @@
     "complexity": "M",
     "role": "engineer",
     "originalEstimateH": 26.5,
-    "timeSpentH": 21.5,
+    "timeSpentH": 24.5,
     "labels": [
       "type:form-digitization",
       "size:M",
@@ -8681,7 +8681,7 @@
     "complexity": "M",
     "role": "engineer",
     "originalEstimateH": 23,
-    "timeSpentH": 29,
+    "timeSpentH": 30,
     "labels": [
       "type:form-digitization",
       "size:M",
@@ -8705,7 +8705,7 @@
     "complexity": "M",
     "role": "engineer",
     "originalEstimateH": 21,
-    "timeSpentH": 22,
+    "timeSpentH": 24.5,
     "labels": [
       "type:form-digitization",
       "size:M",
@@ -8777,7 +8777,7 @@
     "complexity": "M",
     "role": "engineer",
     "originalEstimateH": 12.5,
-    "timeSpentH": 12,
+    "timeSpentH": 12.5,
     "labels": [
       "type:form-digitization",
       "size:M",
@@ -8801,7 +8801,7 @@
     "complexity": "M",
     "role": "engineer",
     "originalEstimateH": 21.5,
-    "timeSpentH": 31,
+    "timeSpentH": 29,
     "labels": [
       "type:form-digitization",
       "size:M",
@@ -8826,7 +8826,7 @@
     "complexity": "S",
     "role": "engineer",
     "originalEstimateH": 10.5,
-    "timeSpentH": 14.5,
+    "timeSpentH": 13.5,
     "labels": [
       "type:form-digitization",
       "size:M",
@@ -8851,7 +8851,7 @@
     "complexity": "S",
     "role": "pm",
     "originalEstimateH": 9.5,
-    "timeSpentH": 8,
+    "timeSpentH": 8.5,
     "labels": [
       "type:reporting",
       "size:S",
@@ -8875,7 +8875,7 @@
     "complexity": "M",
     "role": "designer",
     "originalEstimateH": 14,
-    "timeSpentH": 11,
+    "timeSpentH": 12,
     "labels": [
       "type:reporting",
       "size:S",
@@ -8899,7 +8899,7 @@
     "complexity": "L",
     "role": "engineer",
     "originalEstimateH": 31.5,
-    "timeSpentH": 32.5,
+    "timeSpentH": 31,
     "labels": [
       "type:reporting",
       "size:S",
@@ -8923,7 +8923,7 @@
     "complexity": "M",
     "role": "engineer",
     "originalEstimateH": 20,
-    "timeSpentH": 15.5,
+    "timeSpentH": 16.5,
     "labels": [
       "type:reporting",
       "size:S",
@@ -8947,7 +8947,7 @@
     "complexity": "M",
     "role": "qa",
     "originalEstimateH": 12.5,
-    "timeSpentH": 10.5,
+    "timeSpentH": 11.5,
     "labels": [
       "type:reporting",
       "size:S",
@@ -9019,7 +9019,7 @@
     "complexity": "M",
     "role": "engineer",
     "originalEstimateH": 12,
-    "timeSpentH": 10.5,
+    "timeSpentH": 12,
     "labels": [
       "type:data-migration",
       "size:S",
@@ -9067,7 +9067,7 @@
     "complexity": "M",
     "role": "engineer",
     "originalEstimateH": 13.5,
-    "timeSpentH": 13.5,
+    "timeSpentH": 14.5,
     "labels": [
       "type:data-migration",
       "size:S",
@@ -9091,7 +9091,7 @@
     "complexity": "M",
     "role": "engineer",
     "originalEstimateH": 12.5,
-    "timeSpentH": 17,
+    "timeSpentH": 16,
     "labels": [
       "type:data-migration",
       "size:S",
@@ -9163,7 +9163,7 @@
     "complexity": "M",
     "role": "pm",
     "originalEstimateH": 18.5,
-    "timeSpentH": 16.5,
+    "timeSpentH": 17,
     "labels": [
       "type:new-feature",
       "size:M",
@@ -9187,7 +9187,7 @@
     "complexity": "S",
     "role": "pm",
     "originalEstimateH": 8,
-    "timeSpentH": 7,
+    "timeSpentH": 7.5,
     "labels": [
       "type:new-feature",
       "size:M",
@@ -9259,7 +9259,7 @@
     "complexity": "S",
     "role": "designer",
     "originalEstimateH": 7,
-    "timeSpentH": 7.5,
+    "timeSpentH": 7,
     "labels": [
       "type:new-feature",
       "size:M",
@@ -9283,7 +9283,7 @@
     "complexity": "L",
     "role": "engineer",
     "originalEstimateH": 38.5,
-    "timeSpentH": 42.5,
+    "timeSpentH": 44.5,
     "labels": [
       "type:new-feature",
       "size:M",
@@ -9307,7 +9307,7 @@
     "complexity": "L",
     "role": "engineer",
     "originalEstimateH": 41,
-    "timeSpentH": 50,
+    "timeSpentH": 49.5,
     "labels": [
       "type:new-feature",
       "size:M",
@@ -9355,7 +9355,7 @@
     "complexity": "M",
     "role": "qa",
     "originalEstimateH": 18,
-    "timeSpentH": 17,
+    "timeSpentH": 18,
     "labels": [
       "type:new-feature",
       "size:M",
@@ -9379,7 +9379,7 @@
     "complexity": "S",
     "role": "qa",
     "originalEstimateH": 8,
-    "timeSpentH": 7.5,
+    "timeSpentH": 8,
     "labels": [
       "type:new-feature",
       "size:M",
@@ -9403,7 +9403,7 @@
     "complexity": "S",
     "role": "engineer",
     "originalEstimateH": 9,
-    "timeSpentH": 11.5,
+    "timeSpentH": 11,
     "labels": [
       "type:new-feature",
       "size:M",
@@ -9427,7 +9427,7 @@
     "complexity": "L",
     "role": "pm",
     "originalEstimateH": 30,
-    "timeSpentH": 24.5,
+    "timeSpentH": 26,
     "labels": [
       "type:new-feature",
       "size:XL",
@@ -9439,7 +9439,7 @@
     ],
     "addedAfterKickoff": false,
     "created": "2026-05-12",
-    "resolved": "2026-08-08"
+    "resolved": "2026-08-09"
   },
   {
     "id": "P039-02",
@@ -9451,7 +9451,7 @@
     "complexity": "M",
     "role": "pm",
     "originalEstimateH": 17,
-    "timeSpentH": 15,
+    "timeSpentH": 15.5,
     "labels": [
       "type:new-feature",
       "size:XL",
@@ -9463,7 +9463,7 @@
     ],
     "addedAfterKickoff": false,
     "created": "2026-05-12",
-    "resolved": "2026-08-08"
+    "resolved": "2026-08-09"
   },
   {
     "id": "P039-03",
@@ -9487,7 +9487,7 @@
     ],
     "addedAfterKickoff": false,
     "created": "2026-05-12",
-    "resolved": "2026-08-08"
+    "resolved": "2026-08-09"
   },
   {
     "id": "P039-04",
@@ -9499,7 +9499,7 @@
     "complexity": "L",
     "role": "designer",
     "originalEstimateH": 34,
-    "timeSpentH": 40.5,
+    "timeSpentH": 38,
     "labels": [
       "type:new-feature",
       "size:XL",
@@ -9511,7 +9511,7 @@
     ],
     "addedAfterKickoff": false,
     "created": "2026-05-12",
-    "resolved": "2026-08-10"
+    "resolved": "2026-08-11"
   },
   {
     "id": "P039-05",
@@ -9523,7 +9523,7 @@
     "complexity": "M",
     "role": "designer",
     "originalEstimateH": 16,
-    "timeSpentH": 14.5,
+    "timeSpentH": 15,
     "labels": [
       "type:new-feature",
       "size:XL",
@@ -9535,7 +9535,7 @@
     ],
     "addedAfterKickoff": false,
     "created": "2026-05-12",
-    "resolved": "2026-08-08"
+    "resolved": "2026-08-09"
   },
   {
     "id": "P039-06",
@@ -9547,7 +9547,7 @@
     "complexity": "L",
     "role": "engineer",
     "originalEstimateH": 99,
-    "timeSpentH": 94.5,
+    "timeSpentH": 100,
     "labels": [
       "type:new-feature",
       "size:XL",
@@ -9559,7 +9559,7 @@
     ],
     "addedAfterKickoff": false,
     "created": "2026-05-12",
-    "resolved": "2026-08-07"
+    "resolved": "2026-08-08"
   },
   {
     "id": "P039-07",
@@ -9571,7 +9571,7 @@
     "complexity": "L",
     "role": "engineer",
     "originalEstimateH": 49,
-    "timeSpentH": 50.5,
+    "timeSpentH": 51,
     "labels": [
       "type:new-feature",
       "size:XL",
@@ -9583,7 +9583,7 @@
     ],
     "addedAfterKickoff": false,
     "created": "2026-05-12",
-    "resolved": "2026-08-11"
+    "resolved": "2026-08-12"
   },
   {
     "id": "P039-08",
@@ -9595,7 +9595,7 @@
     "complexity": "M",
     "role": "engineer",
     "originalEstimateH": 26.5,
-    "timeSpentH": 31,
+    "timeSpentH": 30,
     "labels": [
       "type:new-feature",
       "size:XL",
@@ -9607,7 +9607,7 @@
     ],
     "addedAfterKickoff": false,
     "created": "2026-05-12",
-    "resolved": "2026-08-09"
+    "resolved": "2026-08-10"
   },
   {
     "id": "P039-09",
@@ -9619,7 +9619,7 @@
     "complexity": "M",
     "role": "engineer",
     "originalEstimateH": 18.5,
-    "timeSpentH": 17.5,
+    "timeSpentH": 18.5,
     "labels": [
       "type:new-feature",
       "size:XL",
@@ -9631,7 +9631,7 @@
     ],
     "addedAfterKickoff": false,
     "created": "2026-05-12",
-    "resolved": "2026-08-11"
+    "resolved": "2026-08-12"
   },
   {
     "id": "P039-10",
@@ -9643,7 +9643,7 @@
     "complexity": "L",
     "role": "qa",
     "originalEstimateH": 35,
-    "timeSpentH": 27.5,
+    "timeSpentH": 30.5,
     "labels": [
       "type:new-feature",
       "size:XL",
@@ -9655,7 +9655,7 @@
     ],
     "addedAfterKickoff": false,
     "created": "2026-05-12",
-    "resolved": "2026-08-09"
+    "resolved": "2026-08-10"
   },
   {
     "id": "P039-11",
@@ -9667,7 +9667,7 @@
     "complexity": "M",
     "role": "qa",
     "originalEstimateH": 18.5,
-    "timeSpentH": 20.5,
+    "timeSpentH": 20,
     "labels": [
       "type:new-feature",
       "size:XL",
@@ -9679,7 +9679,7 @@
     ],
     "addedAfterKickoff": false,
     "created": "2026-05-12",
-    "resolved": "2026-08-09"
+    "resolved": "2026-08-10"
   },
   {
     "id": "P039-12",
@@ -9691,7 +9691,7 @@
     "complexity": "M",
     "role": "engineer",
     "originalEstimateH": 20.5,
-    "timeSpentH": 24,
+    "timeSpentH": 22.5,
     "labels": [
       "type:new-feature",
       "size:XL",
@@ -9703,7 +9703,7 @@
     ],
     "addedAfterKickoff": false,
     "created": "2026-05-12",
-    "resolved": "2026-08-09"
+    "resolved": "2026-08-10"
   },
   {
     "id": "P039-13",
@@ -9715,7 +9715,7 @@
     "complexity": "L",
     "role": "engineer",
     "originalEstimateH": 39.5,
-    "timeSpentH": 31.5,
+    "timeSpentH": 33,
     "labels": [
       "type:new-feature",
       "size:XL",
@@ -9728,7 +9728,7 @@
     ],
     "addedAfterKickoff": true,
     "created": "2026-05-29",
-    "resolved": "2026-08-08"
+    "resolved": "2026-08-09"
   },
   {
     "id": "P040-01",
@@ -9740,7 +9740,7 @@
     "complexity": "S",
     "role": "pm",
     "originalEstimateH": 11,
-    "timeSpentH": 8,
+    "timeSpentH": 9,
     "labels": [
       "type:new-feature",
       "size:M",
@@ -9788,7 +9788,7 @@
     "complexity": "M",
     "role": "designer",
     "originalEstimateH": 20.5,
-    "timeSpentH": 19.5,
+    "timeSpentH": 20,
     "labels": [
       "type:new-feature",
       "size:M",
@@ -9812,7 +9812,7 @@
     "complexity": "M",
     "role": "designer",
     "originalEstimateH": 24.5,
-    "timeSpentH": 18.5,
+    "timeSpentH": 20.5,
     "labels": [
       "type:new-feature",
       "size:M",
@@ -9836,7 +9836,7 @@
     "complexity": "L",
     "role": "engineer",
     "originalEstimateH": 42.5,
-    "timeSpentH": 50.5,
+    "timeSpentH": 49,
     "labels": [
       "type:new-feature",
       "size:M",
@@ -9860,7 +9860,7 @@
     "complexity": "L",
     "role": "engineer",
     "originalEstimateH": 36.5,
-    "timeSpentH": 46.5,
+    "timeSpentH": 43.5,
     "labels": [
       "type:new-feature",
       "size:M",
@@ -9884,7 +9884,7 @@
     "complexity": "M",
     "role": "engineer",
     "originalEstimateH": 24.5,
-    "timeSpentH": 26,
+    "timeSpentH": 26.5,
     "labels": [
       "type:new-feature",
       "size:M",
@@ -9908,7 +9908,7 @@
     "complexity": "M",
     "role": "engineer",
     "originalEstimateH": 14.5,
-    "timeSpentH": 12.5,
+    "timeSpentH": 13.5,
     "labels": [
       "type:new-feature",
       "size:M",
@@ -9932,7 +9932,7 @@
     "complexity": "M",
     "role": "qa",
     "originalEstimateH": 16.5,
-    "timeSpentH": 17,
+    "timeSpentH": 17.5,
     "labels": [
       "type:new-feature",
       "size:M",
@@ -9956,7 +9956,7 @@
     "complexity": "S",
     "role": "qa",
     "originalEstimateH": 7.5,
-    "timeSpentH": 10.5,
+    "timeSpentH": 9.5,
     "labels": [
       "type:new-feature",
       "size:M",
