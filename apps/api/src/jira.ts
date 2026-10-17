@@ -434,3 +434,24 @@ export async function pushEstimate(client: JiraClient | null, req: JiraPushReque
   );
   return { epicKey: epic.key, storyKeys, dryRun: false, plan };
 }
+
+/** Flatten Atlassian Document Format to plain text (paragraphs and list items on their own lines). */
+export function adfToText(node: unknown): string {
+  if (!node || typeof node !== 'object') return typeof node === 'string' ? node : '';
+  const n = node as { type?: string; text?: string; content?: unknown[] };
+  if (n.type === 'text') return n.text ?? '';
+  const inner = (n.content ?? []).map(adfToText).join('');
+  return ['paragraph', 'heading', 'listItem', 'codeBlock', 'blockquote'].includes(n.type ?? '') ? `${inner}\n` : inner;
+}
+
+const IssueForBrief = z.object({
+  key: z.string(),
+  fields: z.object({ summary: z.string().default(''), description: z.unknown().optional() }),
+});
+
+/** One Jira issue as brief text: "KEY: summary" plus its description. */
+export async function readIssueForBrief(client: JiraClient, key: string): Promise<{ key: string; summary: string; text: string }> {
+  const issue = IssueForBrief.parse(await client.request('GET', `/rest/api/3/issue/${encodeURIComponent(key)}?fields=summary,description`));
+  const description = adfToText(issue.fields.description).trim();
+  return { key: issue.key, summary: issue.fields.summary, text: `# ${issue.key}: ${issue.fields.summary}\n\n${description}`.trim() };
+}

@@ -11,7 +11,7 @@ import { fileURLToPath } from 'node:url';
 import { tmpdir } from 'node:os';
 import { randomUUID } from 'node:crypto';
 import { z } from 'zod';
-import { HistoryItem, HistoryProject, Lesson, Worklog } from '@scopewise/shared';
+import { Conversation, HistoryItem, HistoryProject, Lesson, Worklog } from '@scopewise/shared';
 import { seedLessons } from './data';
 import { env } from './env';
 
@@ -30,7 +30,12 @@ export interface Store {
   addLessons(lessons: Lesson[]): Promise<Lesson[]>;
   getJiraCache(): Promise<JiraCache | null>;
   setJiraCache(cache: JiraCache): Promise<void>;
+  listConversations(): Promise<Conversation[]>;
+  putConversation(conv: Conversation): Promise<void>;
 }
+
+/** Conversations kept per store, newest first; older ones beyond this are dropped. */
+export const MAX_CONVERSATIONS = 200;
 
 export function normaliseLesson(l: Lesson, source: Lesson['source'] = 'user'): Lesson {
   return { ...l, id: l.id ?? `l-${randomUUID()}`, createdAt: l.createdAt ?? new Date().toISOString(), source: l.source ?? source };
@@ -42,6 +47,7 @@ const FileShape = z.object({
   version: z.literal(1),
   lessons: z.array(Lesson),
   jiraCache: JiraCache.nullable().default(null),
+  conversations: z.array(Conversation).default([]),
 });
 type FileShape = z.infer<typeof FileShape>;
 
@@ -66,7 +72,7 @@ export class JsonFileStore implements Store {
         console.warn(`[store] ${this.path} is unreadable (${err instanceof Error ? err.message : err}); starting fresh.`);
       }
     }
-    this.data = { version: 1, lessons: seedLessons(), jiraCache: null };
+    this.data = { version: 1, lessons: seedLessons(), jiraCache: null, conversations: [] };
     this.persist();
     return this.data;
   }
@@ -102,6 +108,15 @@ export class JsonFileStore implements Store {
   }
   async setJiraCache(cache: JiraCache) {
     this.load().jiraCache = cache;
+    this.persist();
+    await this.writeChain;
+  }
+  async listConversations() {
+    return [...this.load().conversations];
+  }
+  async putConversation(conv: Conversation) {
+    const d = this.load();
+    d.conversations = [conv, ...d.conversations.filter((c) => c.id !== conv.id)].slice(0, MAX_CONVERSATIONS);
     this.persist();
     await this.writeChain;
   }
@@ -173,6 +188,21 @@ export class PostgresStore implements Store {
     const sql = await this.sql();
     const json = sql.json(cache as unknown as Parameters<typeof sql.json>[0]);
     await sql`insert into scopewise_kv (key, value, updated_at) values ('jira-cache', ${json}, now()) on conflict (key) do update set value = excluded.value, updated_at = now()`;
+  }
+  async listConversations() {
+    await this.init();
+    const sql = await this.sql();
+    const rows = await sql<{ value: unknown }[]>`select value from scopewise_kv where key like 'conv:%' order by updated_at desc limit ${MAX_CONVERSATIONS}`;
+    return rows.flatMap((r) => {
+      const p = Conversation.safeParse(r.value);
+      return p.success ? [p.data] : [];
+    });
+  }
+  async putConversation(conv: Conversation) {
+    await this.init();
+    const sql = await this.sql();
+    const json = sql.json(conv as unknown as Parameters<typeof sql.json>[0]);
+    await sql`insert into scopewise_kv (key, value, updated_at) values (${`conv:${conv.id}`}, ${json}, now()) on conflict (key) do update set value = excluded.value, updated_at = now()`;
   }
 }
 

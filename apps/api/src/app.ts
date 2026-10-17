@@ -8,6 +8,7 @@ import { bodyLimit } from 'hono/body-limit';
 import { HTTPException } from 'hono/http-exception';
 import { z } from 'zod';
 import {
+  Conversation,
   AskRequest,
   AskResponse,
   BriefPack,
@@ -33,7 +34,7 @@ import { API_VERSION, loadSeedHistory, type SeedHistory } from './data';
 import { analogsFor, prepareFromRequest } from './engineRun';
 import { env } from './env';
 import { ApiError, claudeNotConfigured, errorBody, jiraNotConfigured } from './errors';
-import { JiraClient, pushEstimate, readHistory } from './jira';
+import { JiraClient, pushEstimate, readHistory, readIssueForBrief } from './jira';
 import { rateLimit } from './rateLimit';
 import { getStore, type JiraCache } from './store';
 import { parseTimesheetCsv } from './timesheet';
@@ -97,7 +98,7 @@ export function createApp() {
     '*',
     cors({
       origin: (origin) => (origin && isAllowedOrigin(origin) ? origin : null),
-      allowMethods: ['GET', 'POST', 'OPTIONS'],
+      allowMethods: ['GET', 'POST', 'PUT', 'OPTIONS'],
       allowHeaders: ['Content-Type', 'Authorization'],
       exposeHeaders: ['RateLimit-Limit', 'RateLimit-Remaining', 'RateLimit-Reset', 'Retry-After'],
       maxAge: 86400,
@@ -196,6 +197,22 @@ export function createApp() {
     const squads = [...new Set(cache.projects.map((p) => p.squad))];
     const squadStats = Object.fromEntries(squads.map((s) => [s, squadStatsFromWorklogs(cache.worklogs, s).value]));
     return c.json({ source: 'jira', cached, ...cache, squadStats });
+  });
+
+  // One issue's summary and description, so a Jira link can join a brief.
+  app.get('/jira/issue/:key', jiraLimit, async (c) => {
+    const key = c.req.param('key').toUpperCase();
+    if (!/^[A-Z][A-Z0-9]+-\d+$/.test(key)) throw new ApiError(400, 'bad_issue_key', `"${key}" is not a Jira issue key (for example SUB-142).`);
+    return c.json(await readIssueForBrief(jiraClient(), key));
+  });
+
+  // Conversations, saved from the web app in live mode (the browser keeps its own copy too).
+  app.get('/conversations', async (c) => c.json({ conversations: await getStore().listConversations() }));
+  app.put('/conversations/:id', async (c) => {
+    const conv = await jsonBody(c, Conversation);
+    if (conv.id !== c.req.param('id')) throw new ApiError(400, 'id_mismatch', 'The conversation id in the URL and the body differ.');
+    await getStore().putConversation(conv);
+    return c.json({ ok: true });
   });
 
   app.post('/jira/push', jiraLimit, async (c) => {
