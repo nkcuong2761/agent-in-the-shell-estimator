@@ -1,0 +1,15 @@
+{
+  "id": "subscription-form",
+  "title": "Paper subscription form online",
+  "client": "Oakmere Capital (fictional)",
+  "clientDeadline": "2027-01-29",
+  "projectType": "form-digitization",
+  "squad": "beta",
+  "startDate": "2026-10-26",
+  "plantedGaps": [
+    { "id": "signature", "keywords": ["signature", "sign", "e-sign", "esign"] },
+    { "id": "investor-types", "keywords": ["entity", "trust", "investor type", "individual"] },
+    { "id": "records-system", "keywords": ["records system", "investor records", "crm", "database", "api"] },
+    { "id": "supporting-docs", "keywords": ["upload", "supporting document", "attachment", "w-9", "passport"] }
+  ]
+}

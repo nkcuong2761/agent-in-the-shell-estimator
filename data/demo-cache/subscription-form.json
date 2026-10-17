@@ -1,0 +1,1116 @@
+{
+  "briefId": "subscription-form",
+  "scope": {
+    "projectType": "form-digitization",
+    "size": "L",
+    "summary": "Replace the 22-page paper subscription agreement with an online form that validates answers, saves drafts, produces a PDF and writes to investor records.",
+    "phases": [
+      {
+        "id": "form-analysis",
+        "name": "Form analysis",
+        "order": 0,
+        "role": "pm"
+      },
+      {
+        "id": "legal-review",
+        "name": "Legal review",
+        "order": 1,
+        "role": "legal"
+      },
+      {
+        "id": "build-form",
+        "name": "Build form",
+        "order": 2,
+        "role": "engineer"
+      },
+      {
+        "id": "integration",
+        "name": "Integration",
+        "order": 3,
+        "role": "engineer"
+      },
+      {
+        "id": "qa",
+        "name": "QA",
+        "order": 4,
+        "role": "qa"
+      },
+      {
+        "id": "go-live",
+        "name": "Go-live",
+        "order": 5,
+        "role": "engineer"
+      }
+    ],
+    "items": [
+      {
+        "id": "sub-fa1",
+        "phaseId": "form-analysis",
+        "title": "Field inventory of the 22-page v7 form",
+        "category": "forms",
+        "complexity": "M",
+        "role": "pm",
+        "o": 10,
+        "m": 14,
+        "p": 22,
+        "sourceRefs": [
+          {
+            "source": "email.md",
+            "quote": "22-page paper form"
+          },
+          {
+            "source": "meeting-notes.md",
+            "quote": "~140 fields"
+          }
+        ],
+        "affectedByQuestions": []
+      },
+      {
+        "id": "sub-fa2",
+        "phaseId": "form-analysis",
+        "title": "Conditional logic map for branching sections",
+        "category": "forms",
+        "complexity": "M",
+        "role": "pm",
+        "o": 8,
+        "m": 12,
+        "p": 20,
+        "sourceRefs": [
+          {
+            "source": "meeting-notes.md",
+            "quote": "30% of fields are conditional"
+          }
+        ],
+        "affectedByQuestions": [
+          "q-variants"
+        ]
+      },
+      {
+        "id": "sub-lr1",
+        "phaseId": "legal-review",
+        "title": "Counsel review of disclosures and consent wording",
+        "category": "legal",
+        "complexity": "M",
+        "role": "legal",
+        "o": 10,
+        "m": 14,
+        "p": 26,
+        "sourceRefs": [
+          {
+            "source": "meeting-notes.md",
+            "quote": "needs to review every disclosure and consent sentence"
+          }
+        ],
+        "affectedByQuestions": [
+          "q-signature"
+        ]
+      },
+      {
+        "id": "sub-bf1",
+        "phaseId": "build-form",
+        "title": "Multi-step form with investor, tax, accreditation, funds and bank sections",
+        "category": "forms",
+        "complexity": "L",
+        "role": "engineer",
+        "o": 28,
+        "m": 40,
+        "p": 64,
+        "sourceRefs": [
+          {
+            "source": "email.md",
+            "quote": "sections for investor details, tax status, accreditation, source of funds and bank details"
+          }
+        ],
+        "affectedByQuestions": [
+          "q-variants",
+          "q-signature",
+          "q-docs"
+        ]
+      },
+      {
+        "id": "sub-bf2",
+        "phaseId": "build-form",
+        "title": "Field validation and conditional sections",
+        "category": "forms",
+        "complexity": "M",
+        "role": "engineer",
+        "o": 16,
+        "m": 22,
+        "p": 36,
+        "sourceRefs": [
+          {
+            "source": "email.md",
+            "quote": "can’t submit with missing or inconsistent answers"
+          }
+        ],
+        "affectedByQuestions": [
+          "q-variants"
+        ]
+      },
+      {
+        "id": "sub-bf3",
+        "phaseId": "build-form",
+        "title": "Save and resume draft",
+        "category": "frontend",
+        "complexity": "M",
+        "role": "engineer",
+        "o": 10,
+        "m": 14,
+        "p": 22,
+        "sourceRefs": [
+          {
+            "source": "meeting-notes.md",
+            "quote": "definitely needed, it’s a long form"
+          }
+        ],
+        "affectedByQuestions": []
+      },
+      {
+        "id": "sub-bf4",
+        "phaseId": "build-form",
+        "title": "PDF of the completed submission",
+        "category": "backend",
+        "complexity": "M",
+        "role": "engineer",
+        "o": 12,
+        "m": 16,
+        "p": 26,
+        "sourceRefs": [
+          {
+            "source": "email.md",
+            "quote": "A PDF copy of what they submitted"
+          }
+        ],
+        "affectedByQuestions": [
+          "q-signature"
+        ]
+      },
+      {
+        "id": "sub-bf5",
+        "phaseId": "build-form",
+        "title": "Bank details capture with masking",
+        "category": "forms",
+        "complexity": "S",
+        "role": "engineer",
+        "o": 6,
+        "m": 8,
+        "p": 14,
+        "sourceRefs": [
+          {
+            "source": "email.md",
+            "quote": "bank details"
+          }
+        ],
+        "affectedByQuestions": []
+      },
+      {
+        "id": "sub-bf6",
+        "phaseId": "build-form",
+        "title": "Accessible form patterns: keyboard, screen readers, large text",
+        "category": "frontend",
+        "complexity": "M",
+        "role": "engineer",
+        "o": 8,
+        "m": 12,
+        "p": 22,
+        "sourceRefs": [
+          {
+            "source": "meeting-notes.md",
+            "quote": "some older investors struggle with web forms"
+          }
+        ],
+        "affectedByQuestions": [
+          "q-a11y"
+        ]
+      },
+      {
+        "id": "sub-in1",
+        "phaseId": "integration",
+        "title": "Map form fields to investor records",
+        "category": "integration",
+        "complexity": "M",
+        "role": "engineer",
+        "o": 12,
+        "m": 18,
+        "p": 30,
+        "sourceRefs": [
+          {
+            "source": "email.md",
+            "quote": "going straight into our investor records"
+          }
+        ],
+        "affectedByQuestions": [
+          "q-records"
+        ]
+      },
+      {
+        "id": "sub-in2",
+        "phaseId": "integration",
+        "title": "Write submissions to the investor database",
+        "category": "integration",
+        "complexity": "L",
+        "role": "engineer",
+        "o": 16,
+        "m": 24,
+        "p": 44,
+        "sourceRefs": [
+          {
+            "source": "meeting-notes.md",
+            "quote": "whether it has an API"
+          }
+        ],
+        "affectedByQuestions": [
+          "q-records"
+        ]
+      },
+      {
+        "id": "sub-qa1",
+        "phaseId": "qa",
+        "title": "Form QA across branches and edge cases",
+        "category": "qa",
+        "complexity": "M",
+        "role": "qa",
+        "o": 14,
+        "m": 20,
+        "p": 32,
+        "sourceRefs": [
+          {
+            "source": "meeting-notes.md"
+          }
+        ],
+        "affectedByQuestions": [
+          "q-variants",
+          "q-docs"
+        ]
+      },
+      {
+        "id": "sub-qa2",
+        "phaseId": "qa",
+        "title": "Accessibility check",
+        "category": "qa",
+        "complexity": "S",
+        "role": "qa",
+        "o": 6,
+        "m": 8,
+        "p": 14,
+        "sourceRefs": [
+          {
+            "source": "meeting-notes.md"
+          }
+        ],
+        "affectedByQuestions": [
+          "q-a11y"
+        ]
+      },
+      {
+        "id": "sub-gl1",
+        "phaseId": "go-live",
+        "title": "Launch and paper-to-online cutover plan",
+        "category": "devops",
+        "complexity": "S",
+        "role": "engineer",
+        "o": 6,
+        "m": 8,
+        "p": 12,
+        "sourceRefs": [
+          {
+            "source": "jira-ticket.md"
+          }
+        ],
+        "affectedByQuestions": []
+      }
+    ],
+    "assumptions": [
+      "Fields and wording follow Subscription Agreement v7.",
+      "Counsel’s review runs in parallel with form analysis, but holidays may slow it.",
+      "Investors use a modern desktop or mobile browser."
+    ],
+    "outOfScope": [
+      "Migrating past paper submissions into the new form.",
+      "Investor identity verification (KYC checks)."
+    ],
+    "missingInfo": [
+      {
+        "id": "q-signature",
+        "question": "How will investors sign at launch: an e-signature inside the form, or print and sign the PDF?",
+        "why": "“We can figure out signatures later” leaves the biggest piece of work undecided; counsel looked unconvinced.",
+        "affectedItemIds": [
+          "sub-lr1",
+          "sub-bf1",
+          "sub-bf4"
+        ],
+        "spreadMultiplier": 2,
+        "impact": "high"
+      },
+      {
+        "id": "q-variants",
+        "question": "How many form variants are there: individual, entity, and trust?",
+        "why": "Each variant multiplies branches to build and test.",
+        "affectedItemIds": [
+          "sub-fa2",
+          "sub-bf1",
+          "sub-bf2",
+          "sub-qa1"
+        ],
+        "spreadMultiplier": 1.8,
+        "impact": "high"
+      },
+      {
+        "id": "q-records",
+        "question": "Does the investor database have an API we can write to, and who owns it?",
+        "why": "Writing directly is very different from a file export or a manual import.",
+        "affectedItemIds": [
+          "sub-in1",
+          "sub-in2"
+        ],
+        "spreadMultiplier": 1.8,
+        "impact": "high"
+      },
+      {
+        "id": "q-docs",
+        "question": "Should supporting documents (ID, W-9/W-8) be uploaded through the form?",
+        "why": "Uploads add storage, virus scanning and review screens.",
+        "affectedItemIds": [
+          "sub-bf1",
+          "sub-qa1"
+        ],
+        "spreadMultiplier": 1.4,
+        "impact": "medium"
+      },
+      {
+        "id": "q-a11y",
+        "question": "Is there an accessibility standard you need to meet, for example WCAG 2.1 AA?",
+        "why": "Sets how much accessibility work and testing is needed.",
+        "affectedItemIds": [
+          "sub-bf6",
+          "sub-qa2"
+        ],
+        "spreadMultiplier": 1.3,
+        "impact": "low"
+      }
+    ],
+    "scopeRisks": [
+      {
+        "id": "risk-signature-step",
+        "description": "E-signature step was added after kickoff in 5 of 9 similar projects.",
+        "likelihood": 0.56,
+        "evidenceProjectIds": [
+          "P008",
+          "P015",
+          "P017",
+          "P027",
+          "P035"
+        ],
+        "addedHoursRange": [
+          37,
+          51.5
+        ],
+        "clientQuestion": "Similar projects often added “e-signature step” after kickoff. Should we plan for it now?"
+      },
+      {
+        "id": "risk-supporting-document-upload",
+        "description": "Supporting document upload was added after kickoff in 3 of 9 similar projects.",
+        "likelihood": 0.33,
+        "evidenceProjectIds": [
+          "P015",
+          "P029",
+          "P035"
+        ],
+        "addedHoursRange": [
+          10.3,
+          16.6
+        ],
+        "clientQuestion": "Similar projects often added “supporting document upload” after kickoff. Should we plan for it now?"
+      }
+    ],
+    "clientEmailDraft": "Hi Priya,\n\nThank you for walking us through Subscription Agreement v7. Here is our first estimate for the online form. These questions affect the estimate most, in order of how much each answer would narrow it:\n\n{{questions}}\n\nWith answers we can firm up the plan for the January 29 close.\n\nKind regards,\nThe delivery team"
+  },
+  "scopeProvenance": {
+    "promptVersion": "fixture-scope@1",
+    "generatedBy": "fixture",
+    "generatedAt": "2026-10-17"
+  },
+  "panel": {
+    "agents": [
+      {
+        "persona": "delivery-lead",
+        "items": [
+          {
+            "itemId": "sub-fa1",
+            "o": 15.6,
+            "m": 19.5,
+            "p": 28.3,
+            "reason": "Anchored on 3 similar past items (median 24h) and the plan as scoped."
+          },
+          {
+            "itemId": "sub-fa2",
+            "o": 13.7,
+            "m": 17.1,
+            "p": 24.8,
+            "reason": "Anchored on 3 similar past items (median 20.8h) and the plan as scoped."
+          },
+          {
+            "itemId": "sub-lr1",
+            "o": 16.5,
+            "m": 20.6,
+            "p": 29.9,
+            "reason": "Anchored on 3 similar past items (median 24.5h) and the plan as scoped."
+          },
+          {
+            "itemId": "sub-bf1",
+            "o": 31.3,
+            "m": 39.1,
+            "p": 56.7,
+            "reason": "Anchored on 3 similar past items (median 35h) and the plan as scoped."
+          },
+          {
+            "itemId": "sub-bf2",
+            "o": 19.5,
+            "m": 24.4,
+            "p": 35.4,
+            "reason": "Anchored on 3 similar past items (median 20.8h) and the plan as scoped."
+          },
+          {
+            "itemId": "sub-bf3",
+            "o": 10.1,
+            "m": 12.7,
+            "p": 18.4,
+            "reason": "Anchored on 3 similar past items (median 18.6h) and the plan as scoped."
+          },
+          {
+            "itemId": "sub-bf4",
+            "o": 10.7,
+            "m": 13.3,
+            "p": 19.3,
+            "reason": "Anchored on 3 similar past items (median 16.5h) and the plan as scoped."
+          },
+          {
+            "itemId": "sub-bf5",
+            "o": 4.8,
+            "m": 6,
+            "p": 8.7,
+            "reason": "Anchored on 3 similar past items (median 7h) and the plan as scoped."
+          },
+          {
+            "itemId": "sub-bf6",
+            "o": 10.3,
+            "m": 12.9,
+            "p": 18.7,
+            "reason": "Anchored on 3 similar past items (median 17.5h) and the plan as scoped."
+          },
+          {
+            "itemId": "sub-in1",
+            "o": 17.4,
+            "m": 21.7,
+            "p": 31.5,
+            "reason": "Anchored on 3 similar past items (median 25.8h) and the plan as scoped."
+          },
+          {
+            "itemId": "sub-in2",
+            "o": 32.3,
+            "m": 40.4,
+            "p": 58.6,
+            "reason": "Anchored on 3 similar past items (median 53.1h) and the plan as scoped."
+          },
+          {
+            "itemId": "sub-qa1",
+            "o": 17.8,
+            "m": 22.2,
+            "p": 32.2,
+            "reason": "Anchored on 3 similar past items (median 21.5h) and the plan as scoped."
+          },
+          {
+            "itemId": "sub-qa2",
+            "o": 4.8,
+            "m": 5.9,
+            "p": 8.6,
+            "reason": "Anchored on 3 similar past items (median 9.5h) and the plan as scoped."
+          },
+          {
+            "itemId": "sub-gl1",
+            "o": 4.9,
+            "m": 6.2,
+            "p": 9,
+            "reason": "Anchored on 3 similar past items (median 5h) and the plan as scoped."
+          }
+        ]
+      },
+      {
+        "persona": "qa-lead",
+        "items": [
+          {
+            "itemId": "sub-fa1",
+            "o": 15.9,
+            "m": 19.9,
+            "p": 34.8,
+            "reason": "Test surface is wide here (forms); I allowed for a second pass after fixes."
+          },
+          {
+            "itemId": "sub-fa2",
+            "o": 13.9,
+            "m": 17.4,
+            "p": 30.4,
+            "reason": "Test surface is wide here (forms); I allowed for a second pass after fixes."
+          },
+          {
+            "itemId": "sub-lr1",
+            "o": 16.3,
+            "m": 20.3,
+            "p": 30.5,
+            "reason": "Low test surface; small allowance for review and fixes."
+          },
+          {
+            "itemId": "sub-bf1",
+            "o": 28.6,
+            "m": 35.8,
+            "p": 62.6,
+            "reason": "Test surface is wide here (forms); I allowed for a second pass after fixes."
+          },
+          {
+            "itemId": "sub-bf2",
+            "o": 19.6,
+            "m": 24.4,
+            "p": 42.8,
+            "reason": "Test surface is wide here (forms); I allowed for a second pass after fixes."
+          },
+          {
+            "itemId": "sub-bf3",
+            "o": 10.9,
+            "m": 13.6,
+            "p": 20.4,
+            "reason": "Low test surface; small allowance for review and fixes."
+          },
+          {
+            "itemId": "sub-bf4",
+            "o": 13.5,
+            "m": 16.8,
+            "p": 29.5,
+            "reason": "Test surface is wide here (backend); I allowed for a second pass after fixes."
+          },
+          {
+            "itemId": "sub-bf5",
+            "o": 5.4,
+            "m": 6.7,
+            "p": 11.8,
+            "reason": "Test surface is wide here (forms); I allowed for a second pass after fixes."
+          },
+          {
+            "itemId": "sub-bf6",
+            "o": 9.3,
+            "m": 11.6,
+            "p": 17.4,
+            "reason": "Low test surface; small allowance for review and fixes."
+          },
+          {
+            "itemId": "sub-in1",
+            "o": 18.8,
+            "m": 23.5,
+            "p": 41.1,
+            "reason": "Test surface is wide here (integration); I allowed for a second pass after fixes."
+          },
+          {
+            "itemId": "sub-in2",
+            "o": 39.8,
+            "m": 49.8,
+            "p": 87.2,
+            "reason": "Test surface is wide here (integration); I allowed for a second pass after fixes."
+          },
+          {
+            "itemId": "sub-qa1",
+            "o": 21.1,
+            "m": 26.4,
+            "p": 46.2,
+            "reason": "Test surface is wide here (qa); I allowed for a second pass after fixes."
+          },
+          {
+            "itemId": "sub-qa2",
+            "o": 6,
+            "m": 7.5,
+            "p": 13.1,
+            "reason": "Test surface is wide here (qa); I allowed for a second pass after fixes."
+          },
+          {
+            "itemId": "sub-gl1",
+            "o": 4.4,
+            "m": 5.5,
+            "p": 8.3,
+            "reason": "Low test surface; small allowance for review and fixes."
+          }
+        ]
+      },
+      {
+        "persona": "domain-expert",
+        "items": [
+          {
+            "itemId": "sub-fa1",
+            "o": 17.3,
+            "m": 22.1,
+            "p": 33.2,
+            "reason": "Rules in this area tend to surface late; I added room for rework."
+          },
+          {
+            "itemId": "sub-fa2",
+            "o": 16.7,
+            "m": 21.4,
+            "p": 36.4,
+            "reason": "Depends on 1 open question; the answer could change what gets built."
+          },
+          {
+            "itemId": "sub-lr1",
+            "o": 13.4,
+            "m": 17.2,
+            "p": 29.2,
+            "reason": "Depends on 1 open question; the answer could change what gets built."
+          },
+          {
+            "itemId": "sub-bf1",
+            "o": 39.3,
+            "m": 50.4,
+            "p": 105.8,
+            "reason": "Depends on 3 open questions; the answer could change what gets built."
+          },
+          {
+            "itemId": "sub-bf2",
+            "o": 20.8,
+            "m": 26.6,
+            "p": 45.2,
+            "reason": "Depends on 1 open question; the answer could change what gets built."
+          },
+          {
+            "itemId": "sub-bf3",
+            "o": 11.5,
+            "m": 14.8,
+            "p": 22.2,
+            "reason": "Well understood work; little domain risk."
+          },
+          {
+            "itemId": "sub-bf4",
+            "o": 16.8,
+            "m": 21.5,
+            "p": 36.6,
+            "reason": "Depends on 1 open question; the answer could change what gets built."
+          },
+          {
+            "itemId": "sub-bf5",
+            "o": 5.1,
+            "m": 6.6,
+            "p": 9.9,
+            "reason": "Rules in this area tend to surface late; I added room for rework."
+          },
+          {
+            "itemId": "sub-bf6",
+            "o": 10.7,
+            "m": 13.7,
+            "p": 23.3,
+            "reason": "Depends on 1 open question; the answer could change what gets built."
+          },
+          {
+            "itemId": "sub-in1",
+            "o": 15.3,
+            "m": 19.6,
+            "p": 33.4,
+            "reason": "Depends on 1 open question; the answer could change what gets built."
+          },
+          {
+            "itemId": "sub-in2",
+            "o": 34.5,
+            "m": 44.3,
+            "p": 75.3,
+            "reason": "Depends on 1 open question; the answer could change what gets built."
+          },
+          {
+            "itemId": "sub-qa1",
+            "o": 24.4,
+            "m": 31.3,
+            "p": 59.5,
+            "reason": "Depends on 2 open questions; the answer could change what gets built."
+          },
+          {
+            "itemId": "sub-qa2",
+            "o": 5,
+            "m": 6.4,
+            "p": 10.8,
+            "reason": "Depends on 1 open question; the answer could change what gets built."
+          },
+          {
+            "itemId": "sub-gl1",
+            "o": 4.1,
+            "m": 5.3,
+            "p": 7.9,
+            "reason": "Well understood work; little domain risk."
+          }
+        ]
+      }
+    ],
+    "round1": [
+      {
+        "persona": "delivery-lead",
+        "items": [
+          {
+            "itemId": "sub-fa1",
+            "o": 15.3,
+            "m": 19.1,
+            "p": 27.7,
+            "reason": "Anchored on 3 similar past items (median 24h) and the plan as scoped."
+          },
+          {
+            "itemId": "sub-fa2",
+            "o": 13.5,
+            "m": 16.8,
+            "p": 24.4,
+            "reason": "Anchored on 3 similar past items (median 20.8h) and the plan as scoped."
+          },
+          {
+            "itemId": "sub-lr1",
+            "o": 16.7,
+            "m": 20.9,
+            "p": 30.3,
+            "reason": "Anchored on 3 similar past items (median 24.5h) and the plan as scoped."
+          },
+          {
+            "itemId": "sub-bf1",
+            "o": 31.3,
+            "m": 39.1,
+            "p": 56.7,
+            "reason": "Anchored on 3 similar past items (median 35h) and the plan as scoped."
+          },
+          {
+            "itemId": "sub-bf2",
+            "o": 19.5,
+            "m": 24.3,
+            "p": 35.3,
+            "reason": "Anchored on 3 similar past items (median 20.8h) and the plan as scoped."
+          },
+          {
+            "itemId": "sub-bf3",
+            "o": 9.4,
+            "m": 11.7,
+            "p": 17,
+            "reason": "Anchored on 3 similar past items (median 18.6h) and the plan as scoped."
+          },
+          {
+            "itemId": "sub-bf4",
+            "o": 7.9,
+            "m": 9.8,
+            "p": 14.3,
+            "reason": "Anchored on 3 similar past items (median 16.5h) and the plan as scoped."
+          },
+          {
+            "itemId": "sub-bf5",
+            "o": 4.3,
+            "m": 5.4,
+            "p": 7.9,
+            "reason": "Anchored on 3 similar past items (median 7h) and the plan as scoped."
+          },
+          {
+            "itemId": "sub-bf6",
+            "o": 10.3,
+            "m": 12.9,
+            "p": 18.7,
+            "reason": "Anchored on 3 similar past items (median 17.5h) and the plan as scoped."
+          },
+          {
+            "itemId": "sub-in1",
+            "o": 17.4,
+            "m": 21.7,
+            "p": 31.5,
+            "reason": "Anchored on 3 similar past items (median 25.8h) and the plan as scoped."
+          },
+          {
+            "itemId": "sub-in2",
+            "o": 29.2,
+            "m": 36.5,
+            "p": 52.9,
+            "reason": "Anchored on 3 similar past items (median 53.1h) and the plan as scoped."
+          },
+          {
+            "itemId": "sub-qa1",
+            "o": 14.5,
+            "m": 18.1,
+            "p": 26.2,
+            "reason": "Anchored on 3 similar past items (median 21.5h) and the plan as scoped."
+          },
+          {
+            "itemId": "sub-qa2",
+            "o": 4.4,
+            "m": 5.5,
+            "p": 8,
+            "reason": "Anchored on 3 similar past items (median 9.5h) and the plan as scoped."
+          },
+          {
+            "itemId": "sub-gl1",
+            "o": 5.5,
+            "m": 6.8,
+            "p": 9.9,
+            "reason": "Anchored on 3 similar past items (median 5h) and the plan as scoped."
+          }
+        ]
+      },
+      {
+        "persona": "qa-lead",
+        "items": [
+          {
+            "itemId": "sub-fa1",
+            "o": 15.9,
+            "m": 19.9,
+            "p": 34.8,
+            "reason": "Test surface is wide here (forms); I allowed for a second pass after fixes."
+          },
+          {
+            "itemId": "sub-fa2",
+            "o": 13.9,
+            "m": 17.4,
+            "p": 30.4,
+            "reason": "Test surface is wide here (forms); I allowed for a second pass after fixes."
+          },
+          {
+            "itemId": "sub-lr1",
+            "o": 16.3,
+            "m": 20.3,
+            "p": 30.5,
+            "reason": "Low test surface; small allowance for review and fixes."
+          },
+          {
+            "itemId": "sub-bf1",
+            "o": 25.9,
+            "m": 32.4,
+            "p": 56.7,
+            "reason": "Test surface is wide here (forms); I allowed for a second pass after fixes."
+          },
+          {
+            "itemId": "sub-bf2",
+            "o": 19.6,
+            "m": 24.4,
+            "p": 42.8,
+            "reason": "Test surface is wide here (forms); I allowed for a second pass after fixes."
+          },
+          {
+            "itemId": "sub-bf3",
+            "o": 10.9,
+            "m": 13.6,
+            "p": 20.4,
+            "reason": "Low test surface; small allowance for review and fixes."
+          },
+          {
+            "itemId": "sub-bf4",
+            "o": 13.5,
+            "m": 16.8,
+            "p": 29.5,
+            "reason": "Test surface is wide here (backend); I allowed for a second pass after fixes."
+          },
+          {
+            "itemId": "sub-bf5",
+            "o": 5.5,
+            "m": 6.9,
+            "p": 12.1,
+            "reason": "Test surface is wide here (forms); I allowed for a second pass after fixes."
+          },
+          {
+            "itemId": "sub-bf6",
+            "o": 8.2,
+            "m": 10.2,
+            "p": 15.4,
+            "reason": "Low test surface; small allowance for review and fixes."
+          },
+          {
+            "itemId": "sub-in1",
+            "o": 20.2,
+            "m": 25.2,
+            "p": 44.2,
+            "reason": "Test surface is wide here (integration); I allowed for a second pass after fixes."
+          },
+          {
+            "itemId": "sub-in2",
+            "o": 44.3,
+            "m": 55.3,
+            "p": 96.9,
+            "reason": "Test surface is wide here (integration); I allowed for a second pass after fixes."
+          },
+          {
+            "itemId": "sub-qa1",
+            "o": 21.1,
+            "m": 26.4,
+            "p": 46.2,
+            "reason": "Test surface is wide here (qa); I allowed for a second pass after fixes."
+          },
+          {
+            "itemId": "sub-qa2",
+            "o": 6.9,
+            "m": 8.6,
+            "p": 15,
+            "reason": "Test surface is wide here (qa); I allowed for a second pass after fixes."
+          },
+          {
+            "itemId": "sub-gl1",
+            "o": 4.4,
+            "m": 5.5,
+            "p": 8.3,
+            "reason": "Low test surface; small allowance for review and fixes."
+          }
+        ]
+      },
+      {
+        "persona": "domain-expert",
+        "items": [
+          {
+            "itemId": "sub-fa1",
+            "o": 19,
+            "m": 24.4,
+            "p": 36.6,
+            "reason": "Rules in this area tend to surface late; I added room for rework."
+          },
+          {
+            "itemId": "sub-fa2",
+            "o": 19.8,
+            "m": 25.4,
+            "p": 43.2,
+            "reason": "Depends on 1 open question; the answer could change what gets built."
+          },
+          {
+            "itemId": "sub-lr1",
+            "o": 11,
+            "m": 14.1,
+            "p": 23.9,
+            "reason": "Depends on 1 open question; the answer could change what gets built."
+          },
+          {
+            "itemId": "sub-bf1",
+            "o": 41.5,
+            "m": 53.2,
+            "p": 111.7,
+            "reason": "Depends on 3 open questions; the answer could change what gets built."
+          },
+          {
+            "itemId": "sub-bf2",
+            "o": 22.4,
+            "m": 28.8,
+            "p": 48.9,
+            "reason": "Depends on 1 open question; the answer could change what gets built."
+          },
+          {
+            "itemId": "sub-bf3",
+            "o": 12.4,
+            "m": 16,
+            "p": 23.9,
+            "reason": "Well understood work; little domain risk."
+          },
+          {
+            "itemId": "sub-bf4",
+            "o": 20.4,
+            "m": 26.2,
+            "p": 44.5,
+            "reason": "Depends on 1 open question; the answer could change what gets built."
+          },
+          {
+            "itemId": "sub-bf5",
+            "o": 5.1,
+            "m": 6.6,
+            "p": 9.9,
+            "reason": "Rules in this area tend to surface late; I added room for rework."
+          },
+          {
+            "itemId": "sub-bf6",
+            "o": 11.3,
+            "m": 14.5,
+            "p": 24.6,
+            "reason": "Depends on 1 open question; the answer could change what gets built."
+          },
+          {
+            "itemId": "sub-in1",
+            "o": 13.7,
+            "m": 17.5,
+            "p": 29.8,
+            "reason": "Depends on 1 open question; the answer could change what gets built."
+          },
+          {
+            "itemId": "sub-in2",
+            "o": 34.5,
+            "m": 44.3,
+            "p": 75.3,
+            "reason": "Depends on 1 open question; the answer could change what gets built."
+          },
+          {
+            "itemId": "sub-qa1",
+            "o": 25.4,
+            "m": 32.6,
+            "p": 61.9,
+            "reason": "Depends on 2 open questions; the answer could change what gets built."
+          },
+          {
+            "itemId": "sub-qa2",
+            "o": 5,
+            "m": 6.4,
+            "p": 10.8,
+            "reason": "Depends on 1 open question; the answer could change what gets built."
+          },
+          {
+            "itemId": "sub-gl1",
+            "o": 3.9,
+            "m": 5,
+            "p": 7.5,
+            "reason": "Well understood work; little domain risk."
+          }
+        ]
+      }
+    ],
+    "rounds": 2,
+    "disagreementFlags": []
+  },
+  "panelProvenance": {
+    "promptVersion": "offline-heuristic-panel@1",
+    "generatedBy": "offline-heuristic",
+    "generatedAt": "2026-10-17"
+  },
+  "ask": [
+    {
+      "question": "Why is the range so wide?",
+      "answer": "The work is 440h at P50 and 538h at P80. 5 questions are still open, and each one widens the items it touches. The biggest is “How many form variants are there: individual, entity, and trust?”: answering it narrows the range by about 18h.",
+      "toolCalls": [
+        {
+          "name": "get_estimate",
+          "summary": "P50 440h, P80 538h, confidence Low"
+        }
+      ]
+    },
+    {
+      "question": "What if we add another engineer?",
+      "answer": "With 5 engineers instead of 4, the P50 finish moves from 2027-02-02 to 2027-02-05, and the chance of meeting 2027-01-29 goes from 46% to 42%. Total effort rises slightly, from 440h to 462h, because each extra person adds coordination time.",
+      "toolCalls": [
+        {
+          "name": "run_what_if",
+          "summary": "Engineering: 4 → 5"
+        }
+      ]
+    },
+    {
+      "question": "Which question should I ask the client first?",
+      "answer": "Ask “How many form variants are there: individual, entity, and trust?” first. It narrows the range by about 18h, more than any other open question. Next is “How will investors sign at launch: an e-signature inside the form, or print and sign the PDF?” (~17h).",
+      "toolCalls": [
+        {
+          "name": "get_estimate",
+          "summary": "5 ranked questions"
+        }
+      ]
+    },
+    {
+      "question": "How was the buffer calculated?",
+      "answer": "The buffer is 117h, in three parts. Task risk is 27h: the root-square of each item's P80−P50 gap. Open questions add 60h, and absence adds 31h (8% of P50 hours). Committing to ΣP50 + buffer gives 501h, landing on 2027-02-12.",
+      "toolCalls": [
+        {
+          "name": "explain_number",
+          "summary": "buffer.total"
+        }
+      ]
+    },
+    {
+      "question": "What have past form-digitization projects taught us?",
+      "answer": "Projects like this took 297h–333h (median 317h, 3 projects). The engine corrects guesses by category:\n- integration: ×1.18 from 63 past items\n- devops: ×0.89 from 40 past items\n- frontend: ×0.91 from 24 past items\nWatch for scope additions: E-signature step was added after kickoff in 5 of 9 similar projects.",
+      "toolCalls": [
+        {
+          "name": "explain_number",
+          "summary": "referenceClass"
+        }
+      ]
+    }
+  ]
+}

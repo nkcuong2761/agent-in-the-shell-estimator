@@ -1,0 +1,224 @@
+[
+  {
+    "meta": {
+      "id": "investor-reminders",
+      "title": "Reminders for investors who haven't signed",
+      "client": "Harborlight Partners (fictional)",
+      "clientDeadline": "2026-12-11",
+      "projectType": "new-feature",
+      "squad": "alpha",
+      "startDate": "2026-10-26",
+      "plantedGaps": [
+        {
+          "id": "channels",
+          "keywords": [
+            "sms",
+            "channel",
+            "text message"
+          ]
+        },
+        {
+          "id": "cadence-owner",
+          "keywords": [
+            "cadence",
+            "schedule",
+            "configure",
+            "frequency"
+          ]
+        },
+        {
+          "id": "partial-signature",
+          "keywords": [
+            "partial",
+            "co-signer",
+            "countersign",
+            "joint"
+          ]
+        },
+        {
+          "id": "opt-out",
+          "keywords": [
+            "opt out",
+            "opt-out",
+            "unsubscribe",
+            "consent"
+          ]
+        }
+      ]
+    },
+    "brief": {
+      "id": "investor-reminders",
+      "title": "Reminders for investors who haven't signed",
+      "clientDeadline": "2026-12-11",
+      "sources": [
+        {
+          "kind": "email",
+          "name": "email.md",
+          "text": "From: Dana Ruiz <dana.ruiz@harborlight.example>\nTo: Delivery team\nSubject: Chasing unsigned subscription docs. Can we automate this?\n\nHi team,\n\nEvery closing, our investor relations folks spend the better part of two weeks chasing investors who haven't signed their subscription documents. Right now it's a spreadsheet, a shared inbox and a lot of copy-paste.\n\nWhat we'd like:\n\n- Automatic reminders to investors who still haven't signed, starting a few days after the documents go out.\n- The reminders should get more insistent as the closing date approaches. Maybe a final notice 48 hours before.\n- Our IR team needs to see who has been reminded and when, and be able to pause reminders for a specific investor (some of them are sensitive relationships).\n- The reminders should use our branding and come from the fund's address, not a no-reply.\n\nWe have a closing for Fund IV coming up, and it would be great to have this live before then. Our year-end close is December 11, so realistically that's the date.\n\nWe'd also love it if the investor could reply to the reminder and it lands with the right IR person, but that may be a stretch.\n\nThanks,\nDana\nHead of Investor Relations, Harborlight Partners (fictional)\n"
+        },
+        {
+          "kind": "notes",
+          "name": "meeting-notes.md",
+          "text": "# Kickoff call: unsigned investor reminders\n\nAttendees: Dana Ruiz (Harborlight IR), Sam Okafor (Harborlight ops), delivery lead, designer\n\n## Notes\n\n- Volume: about 300–400 investors per closing, 3–4 closings a year. Some investors are entities with several signatories.\n- Sam: \"Some of our investors would much prefer a text message.\" Dana wasn't sure whether compliance would allow SMS. **Not decided.**\n- Escalation: Dana wants the reminder schedule to be adjustable per closing. It's unclear whether IR configures this themselves or asks us each time.\n- Pausing: IR must be able to pause reminders for one investor or for a whole closing.\n- Reporting: Dana would like a simple view of \"who's outstanding\". Sam mentioned the board likes a weekly summary, but no one committed to it.\n- Branding: they'll send logo and colours. Email templates need legal sign-off on their side. Unknown how long that takes.\n- Existing system: documents are already sent and signed through our platform, so we know who has and hasn't signed. Joint and entity investors where only one of several people has signed: Dana said \"good question\" and will check.\n- Time zones: investors are in the US, UK and Singapore. Reminders shouldn't go out at 3am.\n- Unsubscribe / opt-out: not discussed.\n\n## Actions\n\n- Dana: confirm SMS with compliance.\n- Sam: send the current reminder spreadsheet as an example.\n- Delivery: send an estimate and a list of open questions.\n"
+        },
+        {
+          "kind": "jira",
+          "name": "jira-ticket.md",
+          "text": "# HLP-412: Automated reminders for unsigned subscription documents\n\n**Type:** Story · **Priority:** High · **Reporter:** Dana Ruiz · **Due:** 2026-12-11\n\n## Description\n\nAs an IR manager, I want investors who haven't signed their subscription documents to receive automatic reminders, so that closings aren't delayed by manual chasing.\n\n## Acceptance criteria\n\n1. A reminder is sent N days after documents are sent if the investor hasn't signed.\n2. Reminders repeat on an escalating schedule up to the closing date, with a final notice 48h before.\n3. IR can pause or resume reminders per investor and per closing.\n4. Every reminder sent is logged and visible to IR.\n5. Emails use the fund's branding and sender address.\n\n## Notes\n\n- Reply routing to the right IR person: nice to have.\n- Outstanding signatures view: TBD.\n"
+        }
+      ]
+    }
+  },
+  {
+    "meta": {
+      "id": "subscription-form",
+      "title": "Paper subscription form online",
+      "client": "Oakmere Capital (fictional)",
+      "clientDeadline": "2027-01-29",
+      "projectType": "form-digitization",
+      "squad": "beta",
+      "startDate": "2026-10-26",
+      "plantedGaps": [
+        {
+          "id": "signature",
+          "keywords": [
+            "signature",
+            "sign",
+            "e-sign",
+            "esign"
+          ]
+        },
+        {
+          "id": "investor-types",
+          "keywords": [
+            "entity",
+            "trust",
+            "investor type",
+            "individual"
+          ]
+        },
+        {
+          "id": "records-system",
+          "keywords": [
+            "records system",
+            "investor records",
+            "crm",
+            "database",
+            "api"
+          ]
+        },
+        {
+          "id": "supporting-docs",
+          "keywords": [
+            "upload",
+            "supporting document",
+            "attachment",
+            "w-9",
+            "passport"
+          ]
+        }
+      ]
+    },
+    "brief": {
+      "id": "subscription-form",
+      "title": "Paper subscription form online",
+      "clientDeadline": "2027-01-29",
+      "sources": [
+        {
+          "kind": "email",
+          "name": "email.md",
+          "text": "From: Priya Natarajan <priya.n@oakmere.example>\nTo: Delivery team\nSubject: Getting our subscription form off paper\n\nHello,\n\nWe still run subscriptions for Oakmere Growth Fund II on a 22-page paper form (PDF attached in the original email: \"Subscription Agreement v7\"). Investors print it, fill it in by hand, scan it and email it back. Half come back with missing fields, and our operations team re-keys everything into our investor records.\n\nWe'd like:\n\n1. An online version of the form that investors fill in through a browser.\n2. Validation so they can't submit with missing or inconsistent answers.\n3. The completed data going straight into our investor records, with no re-keying.\n4. A PDF copy of what they submitted, for our files.\n\nThe form has sections for investor details, tax status, accreditation, source of funds and bank details. Different investors see different sections depending on their answers.\n\nOur first close for Fund II is planned for late January 2027, so we'd need this live by January 29.\n\nBest,\nPriya\nCOO, Oakmere Capital (fictional)\n"
+        },
+        {
+          "kind": "notes",
+          "name": "meeting-notes.md",
+          "text": "# Discovery call: online subscription form\n\nAttendees: Priya Natarajan (COO), Marcus Bell (fund counsel, external), Oakmere ops lead, delivery lead\n\n## What we heard\n\n- The paper form has ~140 fields. Ops estimates 30% of fields are conditional.\n- Marcus (counsel) needs to review every disclosure and consent sentence before launch. He said \"two weeks, maybe more around the holidays\".\n- There are separate paper versions for individuals and for entities. There may also be a trust version: Priya to check. Unclear whether we build one form with branches or several forms.\n- Signing: today investors sign by hand on the last page. Priya: \"Let's just get the form online first, we can figure out signatures later.\" Marcus looked unconvinced.\n- Records: ops keeps investor records in \"the investor database\". We didn't establish whether it has an API or whether we'd write to it some other way.\n- Investors also send supporting documents (ID, W-9/W-8). No one said whether those come through the new form.\n- Accessibility: Priya mentioned some older investors struggle with web forms. No specific standard requested.\n- Save and come back later: \"definitely needed, it's a long form\".\n\n## Open\n\n- Number of form variants (individual / entity / trust?).\n- How signatures will work at launch.\n- How data gets into the investor database.\n"
+        },
+        {
+          "kind": "jira",
+          "name": "jira-ticket.md",
+          "text": "# OAK-88: Digitize Fund II subscription agreement\n\n**Type:** Epic · **Priority:** Highest · **Reporter:** Priya Natarajan · **Due:** 2027-01-29\n\n## Summary\n\nReplace the paper subscription agreement (v7, 22 pages) with an online form that validates answers, saves drafts, produces a PDF and writes the data to investor records.\n\n## Scope (as written by the client)\n\n- Online form with all sections of v7 and conditional logic\n- Field-level validation\n- Save and resume\n- PDF of submission\n- Data into investor records\n\n## Not yet decided\n\n- Signature step\n- Form variants\n"
+        }
+      ]
+    }
+  },
+  {
+    "meta": {
+      "id": "fund-admin-sync",
+      "title": "Sync investor data with the fund administrator",
+      "client": "Tidewell Fund III (fictional)",
+      "clientDeadline": "2026-12-18",
+      "projectType": "integration",
+      "squad": "gamma",
+      "startDate": "2026-10-26",
+      "plantedGaps": [
+        {
+          "id": "transport",
+          "keywords": [
+            "api",
+            "sftp",
+            "file",
+            "csv"
+          ]
+        },
+        {
+          "id": "direction",
+          "keywords": [
+            "one-way",
+            "two-way",
+            "direction",
+            "both ways",
+            "bidirectional"
+          ]
+        },
+        {
+          "id": "source-of-truth",
+          "keywords": [
+            "source of truth",
+            "conflict",
+            "wins",
+            "master"
+          ]
+        },
+        {
+          "id": "sandbox",
+          "keywords": [
+            "sandbox",
+            "test environment",
+            "staging"
+          ]
+        },
+        {
+          "id": "backfill",
+          "keywords": [
+            "backfill",
+            "historical",
+            "existing records"
+          ]
+        }
+      ]
+    },
+    "brief": {
+      "id": "fund-admin-sync",
+      "title": "Sync investor data with the fund administrator",
+      "clientDeadline": "2026-12-18",
+      "sources": [
+        {
+          "kind": "email",
+          "name": "email.md",
+          "text": "From: Leo Varga <leo.varga@tidewell.example>\nTo: Delivery team\nSubject: Fund admin sync before year end\n\nHi all,\n\nOur fund administrator, Northgate Fund Services (fictional), keeps the official register of investors for Tidewell Fund III. Our team keeps investor contact and commitment details in your platform. The two drift apart constantly, and every quarter someone spends days reconciling them by hand.\n\nWe'd like the two systems to stay in sync automatically: investor names, entities, addresses, commitment amounts, and bank details. When something changes on one side, the other side should reflect it.\n\nNorthgate says they \"have an integration option\". I've asked them for the documentation.\n\nWe need this running before the year-end capital account statements, so December 18 at the latest.\n\nThanks,\nLeo\nHead of Fund Operations, Tidewell (fictional)\n"
+        },
+        {
+          "kind": "notes",
+          "name": "meeting-notes.md",
+          "text": "# Call with Tidewell + Northgate\n\nAttendees: Leo Varga (Tidewell ops), Aiko Brandt (Northgate client services), delivery lead, engineer\n\n## Notes\n\n- Aiko: Northgate offers a REST API for \"some clients\" and nightly SFTP CSV files for others. She'll check which Tidewell's contract covers.\n- Direction: Leo said \"both ways\" in the email, but on the call he mostly talked about pulling Northgate's register into the platform. Not settled.\n- Conflicts: if an address is updated in both places on the same day, nobody knew which should win.\n- Identifiers: Northgate uses its own investor IDs. We'd need to match them to ours. Some investors are duplicated on Northgate's side (\"we know, we're cleaning it up\").\n- Test environment: Aiko \"thinks\" there's a sandbox but access needs a separate request, which \"usually takes a couple of weeks\".\n- Volume: ~1,200 investors, low change rate (tens of changes per week).\n- Leo would like an alert when the sync fails, and a page showing what changed.\n- Existing records: nobody discussed whether the first run should reconcile all existing records or only new changes.\n- Bank details are sensitive. Leo wants changes to bank details to be reviewed by a person before they're applied.\n"
+        },
+        {
+          "kind": "jira",
+          "name": "jira-ticket.md",
+          "text": "# TWF-231: Northgate fund admin sync\n\n**Type:** Epic · **Priority:** High · **Reporter:** Leo Varga · **Due:** 2026-12-18\n\n## Description\n\nKeep investor records in sync between the platform and Northgate Fund Services (fictional): names, entities, addresses, commitments, bank details.\n\n## Acceptance criteria\n\n- Changes in Northgate show up in the platform within one business day\n- Sync failures alert the ops team\n- Ops can see a log of what changed\n- Bank detail changes require human approval before applying\n\n## Dependencies\n\n- Northgate integration docs (requested)\n- Sandbox access (not requested yet)\n"
+        }
+      ]
+    }
+  }
+]

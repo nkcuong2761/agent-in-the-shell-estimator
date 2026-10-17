@@ -1,0 +1,3442 @@
+{
+  "provenance": {
+    "promptVersion": "offline-heuristic-postmortem@1",
+    "generatedBy": "offline-heuristic",
+    "generatedAt": "2026-10-17"
+  },
+  "results": [
+    {
+      "projectId": "P001",
+      "summary": "Harborlight Partners: investor reminders came in at 276h against 318h estimated (-42h). Most of the gap was underestimated.",
+      "findings": [
+        {
+          "scope": "item",
+          "refId": "P001-01",
+          "title": "Stakeholder interviews and requirements",
+          "estimateH": 21.5,
+          "actualH": 13,
+          "ratio": 0.6,
+          "cause": "underestimated",
+          "note": "Stakeholder interviews and requirements took 0.6× its estimate. Similar work needs a larger likely value.",
+          "suspectedDataError": false
+        },
+        {
+          "scope": "item",
+          "refId": "P001-02",
+          "title": "User stories and acceptance criteria",
+          "estimateH": 16,
+          "actualH": 9,
+          "ratio": 0.56,
+          "cause": "underestimated",
+          "note": "User stories and acceptance criteria took 0.56× its estimate. Similar work needs a larger likely value.",
+          "suspectedDataError": false
+        },
+        {
+          "scope": "item",
+          "refId": "P001-03",
+          "title": "Wireframes for the main flow",
+          "estimateH": 26,
+          "actualH": 34.5,
+          "ratio": 1.33,
+          "cause": "underestimated",
+          "note": "Wireframes for the main flow took 1.33× its estimate. Similar work needs a larger likely value.",
+          "suspectedDataError": false
+        },
+        {
+          "scope": "item",
+          "refId": "P001-05",
+          "title": "Notification template design",
+          "estimateH": 13.5,
+          "actualH": 5.5,
+          "ratio": 0.41,
+          "cause": "underestimated",
+          "note": "Notification template design took 0.41× its estimate. Similar work needs a larger likely value.",
+          "suspectedDataError": false
+        },
+        {
+          "scope": "item",
+          "refId": "P001-06",
+          "title": "Backend service and data model",
+          "estimateH": 76.5,
+          "actualH": 51,
+          "ratio": 0.67,
+          "cause": "underestimated",
+          "note": "Backend service and data model took 0.67× its estimate. Similar work needs a larger likely value.",
+          "suspectedDataError": false
+        },
+        {
+          "scope": "item",
+          "refId": "P001-08",
+          "title": "Test plan and regression",
+          "estimateH": 34.5,
+          "actualH": 46,
+          "ratio": 1.33,
+          "cause": "underestimated",
+          "note": "Test plan and regression took 1.33× its estimate. Similar work needs a larger likely value.",
+          "suspectedDataError": false
+        },
+        {
+          "scope": "phase",
+          "refId": "discovery",
+          "title": "Discovery",
+          "estimateH": 37.5,
+          "actualH": 22,
+          "ratio": 0.59,
+          "cause": "underestimated",
+          "note": "Discovery took 0.59× its estimate. Similar work needs a larger likely value.",
+          "suspectedDataError": false
+        }
+      ],
+      "lessons": [
+        {
+          "cause": "underestimated",
+          "note": "Test plan and regression took 1.33× its estimate. Similar work needs a larger likely value.",
+          "appliesTo": {
+            "category": "qa",
+            "projectType": "new-feature"
+          }
+        },
+        {
+          "cause": "underestimated",
+          "note": "Wireframes for the main flow took 1.33× its estimate. Similar work needs a larger likely value.",
+          "appliesTo": {
+            "category": "design",
+            "projectType": "new-feature"
+          }
+        }
+      ]
+    },
+    {
+      "projectId": "P002",
+      "summary": "Quillstone Partners: capital call notices came in at 113h against 86h estimated (+27h). Most of the gap was underestimated.",
+      "findings": [
+        {
+          "scope": "item",
+          "refId": "P002-02",
+          "title": "User stories and acceptance criteria",
+          "estimateH": 5.5,
+          "actualH": 3.5,
+          "ratio": 0.64,
+          "cause": "underestimated",
+          "note": "User stories and acceptance criteria took 0.64× its estimate. Similar work needs a larger likely value.",
+          "suspectedDataError": false
+        },
+        {
+          "scope": "item",
+          "refId": "P002-03",
+          "title": "Wireframes for the main flow",
+          "estimateH": 8,
+          "actualH": 5,
+          "ratio": 0.63,
+          "cause": "underestimated",
+          "note": "Wireframes for the main flow took 0.63× its estimate. Similar work needs a larger likely value.",
+          "suspectedDataError": false
+        },
+        {
+          "scope": "item",
+          "refId": "P002-05",
+          "title": "Backend service and data model",
+          "estimateH": 14.5,
+          "actualH": 21.5,
+          "ratio": 1.48,
+          "cause": "underestimated",
+          "note": "Backend service and data model took 1.48× its estimate. Similar work needs a larger likely value.",
+          "suspectedDataError": false
+        },
+        {
+          "scope": "item",
+          "refId": "P002-06",
+          "title": "Frontend screens",
+          "estimateH": 16,
+          "actualH": 44.5,
+          "ratio": 2.78,
+          "cause": "underestimated",
+          "note": "Frontend screens took 2.78× its estimate. Similar work needs a larger likely value.",
+          "suspectedDataError": false
+        },
+        {
+          "scope": "item",
+          "refId": "P002-08",
+          "title": "Test plan and regression",
+          "estimateH": 10.5,
+          "actualH": 5.5,
+          "ratio": 0.52,
+          "cause": "underestimated",
+          "note": "Test plan and regression took 0.52× its estimate. Similar work needs a larger likely value.",
+          "suspectedDataError": false
+        },
+        {
+          "scope": "phase",
+          "refId": "build",
+          "title": "Build",
+          "estimateH": 36.5,
+          "actualH": 70.5,
+          "ratio": 1.93,
+          "cause": "underestimated",
+          "note": "Build took 1.93× its estimate. Similar work needs a larger likely value.",
+          "suspectedDataError": false
+        },
+        {
+          "scope": "phase",
+          "refId": "qa",
+          "title": "QA",
+          "estimateH": 10.5,
+          "actualH": 5.5,
+          "ratio": 0.52,
+          "cause": "underestimated",
+          "note": "QA took 0.52× its estimate. Similar work needs a larger likely value.",
+          "suspectedDataError": false
+        }
+      ],
+      "lessons": [
+        {
+          "cause": "underestimated",
+          "note": "Frontend screens took 2.78× its estimate. Similar work needs a larger likely value.",
+          "appliesTo": {
+            "category": "frontend",
+            "projectType": "new-feature"
+          }
+        },
+        {
+          "cause": "underestimated",
+          "note": "Backend service and data model took 1.48× its estimate. Similar work needs a larger likely value.",
+          "appliesTo": {
+            "category": "backend",
+            "projectType": "new-feature"
+          }
+        }
+      ]
+    },
+    {
+      "projectId": "P003",
+      "summary": "Bluestem & Vale: document expiry alerts came in at 210h against 197h estimated (+13h). Most of the gap was scope added.",
+      "findings": [
+        {
+          "scope": "item",
+          "refId": "P003-02",
+          "title": "User stories and acceptance criteria",
+          "estimateH": 9.5,
+          "actualH": 12.5,
+          "ratio": 1.32,
+          "cause": "underestimated",
+          "note": "User stories and acceptance criteria took 1.32× its estimate. Similar work needs a larger likely value.",
+          "suspectedDataError": false
+        },
+        {
+          "scope": "item",
+          "refId": "P003-05",
+          "title": "Backend service and data model",
+          "estimateH": 37.5,
+          "actualH": 14.5,
+          "ratio": 0.39,
+          "cause": "underestimated",
+          "note": "Backend service and data model took 0.39× its estimate. Similar work needs a larger likely value.",
+          "suspectedDataError": false
+        },
+        {
+          "scope": "item",
+          "refId": "P003-06",
+          "title": "Frontend screens",
+          "estimateH": 33.5,
+          "actualH": 51.5,
+          "ratio": 1.54,
+          "cause": "underestimated",
+          "note": "Frontend screens took 1.54× its estimate. Similar work needs a larger likely value.",
+          "suspectedDataError": false
+        },
+        {
+          "scope": "item",
+          "refId": "P003-09",
+          "title": "Test plan and regression",
+          "estimateH": 17,
+          "actualH": 11.5,
+          "ratio": 0.68,
+          "cause": "underestimated",
+          "note": "Test plan and regression took 0.68× its estimate. Similar work needs a larger likely value.",
+          "suspectedDataError": false
+        },
+        {
+          "scope": "item",
+          "refId": "P003-10",
+          "title": "Release, feature flag and monitoring",
+          "estimateH": 8.5,
+          "actualH": 12,
+          "ratio": 1.41,
+          "cause": "underestimated",
+          "note": "Release, feature flag and monitoring took 1.41× its estimate. Similar work needs a larger likely value.",
+          "suspectedDataError": false
+        },
+        {
+          "scope": "item",
+          "refId": "P003-11",
+          "title": "Localised notification templates",
+          "estimateH": 0,
+          "actualH": 16,
+          "ratio": 0,
+          "cause": "scope-added",
+          "note": "Localised notification templates wasn't in the kickoff scope and cost 16h. Ask about it up front next time.",
+          "suspectedDataError": false
+        },
+        {
+          "scope": "phase",
+          "refId": "qa",
+          "title": "QA",
+          "estimateH": 17,
+          "actualH": 11.5,
+          "ratio": 0.68,
+          "cause": "underestimated",
+          "note": "QA took 0.68× its estimate. Similar work needs a larger likely value.",
+          "suspectedDataError": false
+        },
+        {
+          "scope": "phase",
+          "refId": "go-live",
+          "title": "Go-live",
+          "estimateH": 8.5,
+          "actualH": 12,
+          "ratio": 1.41,
+          "cause": "underestimated",
+          "note": "Go-live took 1.41× its estimate. Similar work needs a larger likely value.",
+          "suspectedDataError": false
+        }
+      ],
+      "lessons": [
+        {
+          "cause": "underestimated",
+          "note": "Frontend screens took 1.54× its estimate. Similar work needs a larger likely value.",
+          "appliesTo": {
+            "category": "frontend",
+            "projectType": "new-feature"
+          }
+        },
+        {
+          "cause": "scope-added",
+          "note": "Localised notification templates wasn't in the kickoff scope and cost 16h. Ask about it up front next time.",
+          "appliesTo": {
+            "category": "frontend",
+            "projectType": "new-feature"
+          }
+        }
+      ]
+    },
+    {
+      "projectId": "P004",
+      "summary": "Copperfen Ventures: subscription form online came in at 506h against 344h estimated (+162h). Most of the gap was availability.",
+      "findings": [
+        {
+          "scope": "item",
+          "refId": "P004-01",
+          "title": "Field inventory of the paper form",
+          "estimateH": 18.5,
+          "actualH": 39,
+          "ratio": 2.11,
+          "cause": "availability",
+          "note": "Field inventory of the paper form ran 2.11× over while capacity was reduced by planned leave. Plan around known leave windows.",
+          "suspectedDataError": false
+        },
+        {
+          "scope": "item",
+          "refId": "P004-03",
+          "title": "Legal review of disclosures and consent wording",
+          "estimateH": 21.5,
+          "actualH": 15.5,
+          "ratio": 0.72,
+          "cause": "underestimated",
+          "note": "Legal review of disclosures and consent wording took 0.72× its estimate. Similar work needs a larger likely value.",
+          "suspectedDataError": false
+        },
+        {
+          "scope": "item",
+          "refId": "P004-04",
+          "title": "Multi-step form UI",
+          "estimateH": 64.5,
+          "actualH": 99,
+          "ratio": 1.53,
+          "cause": "availability",
+          "note": "Multi-step form UI ran 1.53× over while capacity was reduced by planned leave. Plan around known leave windows.",
+          "suspectedDataError": false
+        },
+        {
+          "scope": "item",
+          "refId": "P004-05",
+          "title": "Field validation and conditional sections",
+          "estimateH": 32,
+          "actualH": 46.5,
+          "ratio": 1.45,
+          "cause": "availability",
+          "note": "Field validation and conditional sections ran 1.45× over while capacity was reduced by planned leave. Plan around known leave windows.",
+          "suspectedDataError": false
+        },
+        {
+          "scope": "item",
+          "refId": "P004-07",
+          "title": "PDF of the completed form",
+          "estimateH": 32.5,
+          "actualH": 89.5,
+          "ratio": 2.75,
+          "cause": "availability",
+          "note": "PDF of the completed form ran 2.75× over while capacity was reduced by planned leave. Plan around known leave windows.",
+          "suspectedDataError": false
+        },
+        {
+          "scope": "item",
+          "refId": "P004-08",
+          "title": "Map form fields to investor records",
+          "estimateH": 29.5,
+          "actualH": 19,
+          "ratio": 0.64,
+          "cause": "underestimated",
+          "note": "Map form fields to investor records took 0.64× its estimate. Similar work needs a larger likely value.",
+          "suspectedDataError": false
+        },
+        {
+          "scope": "item",
+          "refId": "P004-09",
+          "title": "Write submissions to the records system",
+          "estimateH": 49.5,
+          "actualH": 88,
+          "ratio": 1.78,
+          "cause": "availability",
+          "note": "Write submissions to the records system ran 1.78× over while capacity was reduced by planned leave. Plan around known leave windows.",
+          "suspectedDataError": false
+        },
+        {
+          "scope": "item",
+          "refId": "P004-10",
+          "title": "Form QA with edge cases",
+          "estimateH": 31.5,
+          "actualH": 60,
+          "ratio": 1.9,
+          "cause": "availability",
+          "note": "Form QA with edge cases ran 1.9× over while capacity was reduced by planned leave. Plan around known leave windows.",
+          "suspectedDataError": false
+        },
+        {
+          "scope": "item",
+          "refId": "P004-11",
+          "title": "Accessibility check",
+          "estimateH": 10,
+          "actualH": 4.5,
+          "ratio": 0.45,
+          "cause": "underestimated",
+          "note": "Accessibility check took 0.45× its estimate. Similar work needs a larger likely value.",
+          "suspectedDataError": false
+        },
+        {
+          "scope": "item",
+          "refId": "P004-12",
+          "title": "Launch and paper-to-online cutover",
+          "estimateH": 12.5,
+          "actualH": 8.5,
+          "ratio": 0.68,
+          "cause": "underestimated",
+          "note": "Launch and paper-to-online cutover took 0.68× its estimate. Similar work needs a larger likely value.",
+          "suspectedDataError": false
+        },
+        {
+          "scope": "phase",
+          "refId": "form-analysis",
+          "title": "Form analysis",
+          "estimateH": 36.5,
+          "actualH": 54.5,
+          "ratio": 1.49,
+          "cause": "availability",
+          "note": "Form analysis ran 1.49× over while capacity was reduced by planned leave. Plan around known leave windows.",
+          "suspectedDataError": false
+        },
+        {
+          "scope": "phase",
+          "refId": "legal-review",
+          "title": "Legal review",
+          "estimateH": 21.5,
+          "actualH": 15.5,
+          "ratio": 0.72,
+          "cause": "underestimated",
+          "note": "Legal review took 0.72× its estimate. Similar work needs a larger likely value.",
+          "suspectedDataError": false
+        },
+        {
+          "scope": "phase",
+          "refId": "build-form",
+          "title": "Build form",
+          "estimateH": 153,
+          "actualH": 256,
+          "ratio": 1.67,
+          "cause": "availability",
+          "note": "Build form ran 1.67× over while capacity was reduced by planned leave. Plan around known leave windows.",
+          "suspectedDataError": false
+        },
+        {
+          "scope": "phase",
+          "refId": "integration",
+          "title": "Integration",
+          "estimateH": 79,
+          "actualH": 107,
+          "ratio": 1.35,
+          "cause": "availability",
+          "note": "Integration ran 1.35× over while capacity was reduced by planned leave. Plan around known leave windows.",
+          "suspectedDataError": false
+        },
+        {
+          "scope": "phase",
+          "refId": "qa",
+          "title": "QA",
+          "estimateH": 41.5,
+          "actualH": 64.5,
+          "ratio": 1.55,
+          "cause": "availability",
+          "note": "QA ran 1.55× over while capacity was reduced by planned leave. Plan around known leave windows.",
+          "suspectedDataError": false
+        },
+        {
+          "scope": "phase",
+          "refId": "go-live",
+          "title": "Go-live",
+          "estimateH": 12.5,
+          "actualH": 8.5,
+          "ratio": 0.68,
+          "cause": "underestimated",
+          "note": "Go-live took 0.68× its estimate. Similar work needs a larger likely value.",
+          "suspectedDataError": false
+        }
+      ],
+      "lessons": [
+        {
+          "cause": "availability",
+          "note": "PDF of the completed form ran 2.75× over while capacity was reduced by planned leave. Plan around known leave windows.",
+          "appliesTo": {
+            "category": "backend",
+            "projectType": "form-digitization"
+          }
+        },
+        {
+          "cause": "availability",
+          "note": "Write submissions to the records system ran 1.78× over while capacity was reduced by planned leave. Plan around known leave windows.",
+          "appliesTo": {
+            "category": "integration",
+            "projectType": "form-digitization"
+          }
+        }
+      ]
+    },
+    {
+      "projectId": "P005",
+      "summary": "Saltbrook Ventures: fund administrator sync came in at 194h against 110h estimated (+84h). Most of the gap was availability.",
+      "findings": [
+        {
+          "scope": "item",
+          "refId": "P005-03",
+          "title": "Field mapping between systems",
+          "estimateH": 11,
+          "actualH": 23.5,
+          "ratio": 2.14,
+          "cause": "availability",
+          "note": "Field mapping between systems ran 2.14× over while capacity was reduced by planned leave. Plan around known leave windows.",
+          "suspectedDataError": false
+        },
+        {
+          "scope": "item",
+          "refId": "P005-04",
+          "title": "Identifier matching strategy",
+          "estimateH": 8.5,
+          "actualH": 15.5,
+          "ratio": 1.82,
+          "cause": "blocked",
+          "note": "Identifier matching strategy waited on an outside dependency and ran 1.82× over. Confirm access and owners before build starts.",
+          "suspectedDataError": false
+        },
+        {
+          "scope": "item",
+          "refId": "P005-05",
+          "title": "API client and authentication",
+          "estimateH": 11,
+          "actualH": 14.5,
+          "ratio": 1.32,
+          "cause": "availability",
+          "note": "API client and authentication ran 1.32× over while capacity was reduced by planned leave. Plan around known leave windows.",
+          "suspectedDataError": false
+        },
+        {
+          "scope": "item",
+          "refId": "P005-06",
+          "title": "Sync job with retries",
+          "estimateH": 24,
+          "actualH": 46.5,
+          "ratio": 1.94,
+          "cause": "availability",
+          "note": "Sync job with retries ran 1.94× over while capacity was reduced by planned leave. Plan around known leave windows.",
+          "suspectedDataError": false
+        },
+        {
+          "scope": "item",
+          "refId": "P005-07",
+          "title": "Conflict handling and reconciliation",
+          "estimateH": 14.5,
+          "actualH": 23,
+          "ratio": 1.59,
+          "cause": "availability",
+          "note": "Conflict handling and reconciliation ran 1.59× over while capacity was reduced by planned leave. Plan around known leave windows.",
+          "suspectedDataError": false
+        },
+        {
+          "scope": "item",
+          "refId": "P005-10",
+          "title": "Production cutover and backfill",
+          "estimateH": 11,
+          "actualH": 16.5,
+          "ratio": 1.5,
+          "cause": "availability",
+          "note": "Production cutover and backfill ran 1.5× over while capacity was reduced by planned leave. Plan around known leave windows.",
+          "suspectedDataError": false
+        },
+        {
+          "scope": "item",
+          "refId": "P005-11",
+          "title": "Backfill of historical records",
+          "estimateH": 0,
+          "actualH": 19.5,
+          "ratio": 0,
+          "cause": "scope-added",
+          "note": "Backfill of historical records wasn't in the kickoff scope and cost 20h. Ask about it up front next time.",
+          "suspectedDataError": false
+        },
+        {
+          "scope": "item",
+          "refId": "P005-12",
+          "title": "Second partner file format",
+          "estimateH": 0,
+          "actualH": 6.5,
+          "ratio": 0,
+          "cause": "scope-added",
+          "note": "Second partner file format wasn't in the kickoff scope and cost 7h. Ask about it up front next time.",
+          "suspectedDataError": false
+        },
+        {
+          "scope": "phase",
+          "refId": "api-mapping",
+          "title": "API mapping",
+          "estimateH": 19.5,
+          "actualH": 39,
+          "ratio": 2,
+          "cause": "availability",
+          "note": "API mapping ran 2× over while capacity was reduced by planned leave. Plan around known leave windows.",
+          "suspectedDataError": false
+        },
+        {
+          "scope": "phase",
+          "refId": "build",
+          "title": "Build",
+          "estimateH": 49.5,
+          "actualH": 110,
+          "ratio": 2.22,
+          "cause": "availability",
+          "note": "Build ran 2.22× over while capacity was reduced by planned leave. Plan around known leave windows.",
+          "suspectedDataError": false
+        },
+        {
+          "scope": "phase",
+          "refId": "go-live",
+          "title": "Go-live",
+          "estimateH": 11,
+          "actualH": 16.5,
+          "ratio": 1.5,
+          "cause": "availability",
+          "note": "Go-live ran 1.5× over while capacity was reduced by planned leave. Plan around known leave windows.",
+          "suspectedDataError": false
+        }
+      ],
+      "lessons": [
+        {
+          "cause": "availability",
+          "note": "Sync job with retries ran 1.94× over while capacity was reduced by planned leave. Plan around known leave windows.",
+          "appliesTo": {
+            "category": "integration",
+            "projectType": "integration"
+          }
+        },
+        {
+          "cause": "scope-added",
+          "note": "Backfill of historical records wasn't in the kickoff scope and cost 20h. Ask about it up front next time.",
+          "appliesTo": {
+            "category": "data",
+            "projectType": "integration"
+          }
+        }
+      ]
+    },
+    {
+      "projectId": "P006",
+      "summary": "Junoridge Holdings: CRM contact sync came in at 401h against 379h estimated (+23h). Most of the gap was underestimated.",
+      "findings": [
+        {
+          "scope": "item",
+          "refId": "P006-01",
+          "title": "Partner API discovery and access",
+          "estimateH": 24,
+          "actualH": 12.5,
+          "ratio": 0.52,
+          "cause": "underestimated",
+          "note": "Partner API discovery and access took 0.52× its estimate. Similar work needs a larger likely value.",
+          "suspectedDataError": false
+        },
+        {
+          "scope": "item",
+          "refId": "P006-02",
+          "title": "Data ownership and sync rules",
+          "estimateH": 13.5,
+          "actualH": 8,
+          "ratio": 0.59,
+          "cause": "underestimated",
+          "note": "Data ownership and sync rules took 0.59× its estimate. Similar work needs a larger likely value.",
+          "suspectedDataError": false
+        },
+        {
+          "scope": "item",
+          "refId": "P006-03",
+          "title": "Field mapping between systems",
+          "estimateH": 47.5,
+          "actualH": 68.5,
+          "ratio": 1.44,
+          "cause": "underestimated",
+          "note": "Field mapping between systems took 1.44× its estimate. Similar work needs a larger likely value.",
+          "suspectedDataError": false
+        },
+        {
+          "scope": "item",
+          "refId": "P006-06",
+          "title": "Sync job with retries",
+          "estimateH": 66,
+          "actualH": 109.5,
+          "ratio": 1.66,
+          "cause": "underestimated",
+          "note": "Sync job with retries took 1.66× its estimate. Similar work needs a larger likely value.",
+          "suspectedDataError": false
+        },
+        {
+          "scope": "item",
+          "refId": "P006-07",
+          "title": "Conflict handling and reconciliation",
+          "estimateH": 37,
+          "actualH": 22.5,
+          "ratio": 0.61,
+          "cause": "underestimated",
+          "note": "Conflict handling and reconciliation took 0.61× its estimate. Similar work needs a larger likely value.",
+          "suspectedDataError": false
+        },
+        {
+          "scope": "item",
+          "refId": "P006-11",
+          "title": "Production cutover and backfill",
+          "estimateH": 34,
+          "actualH": 22.5,
+          "ratio": 0.66,
+          "cause": "underestimated",
+          "note": "Production cutover and backfill took 0.66× its estimate. Similar work needs a larger likely value.",
+          "suspectedDataError": false
+        },
+        {
+          "scope": "phase",
+          "refId": "discovery",
+          "title": "Discovery",
+          "estimateH": 37.5,
+          "actualH": 20.5,
+          "ratio": 0.55,
+          "cause": "underestimated",
+          "note": "Discovery took 0.55× its estimate. Similar work needs a larger likely value.",
+          "suspectedDataError": false
+        },
+        {
+          "scope": "phase",
+          "refId": "api-mapping",
+          "title": "API mapping",
+          "estimateH": 70,
+          "actualH": 90.5,
+          "ratio": 1.29,
+          "cause": "underestimated",
+          "note": "API mapping took 1.29× its estimate. Similar work needs a larger likely value.",
+          "suspectedDataError": false
+        },
+        {
+          "scope": "phase",
+          "refId": "go-live",
+          "title": "Go-live",
+          "estimateH": 34,
+          "actualH": 22.5,
+          "ratio": 0.66,
+          "cause": "underestimated",
+          "note": "Go-live took 0.66× its estimate. Similar work needs a larger likely value.",
+          "suspectedDataError": false
+        }
+      ],
+      "lessons": [
+        {
+          "cause": "underestimated",
+          "note": "Sync job with retries took 1.66× its estimate. Similar work needs a larger likely value.",
+          "appliesTo": {
+            "category": "integration",
+            "projectType": "integration"
+          }
+        },
+        {
+          "cause": "underestimated",
+          "note": "Field mapping between systems took 1.44× its estimate. Similar work needs a larger likely value.",
+          "appliesTo": {
+            "category": "integration",
+            "projectType": "integration"
+          }
+        }
+      ]
+    },
+    {
+      "projectId": "P007",
+      "summary": "Tidewell Fund III: quarterly investor report came in at 78h against 89h estimated (-11h). Most of the gap was underestimated.",
+      "findings": [
+        {
+          "scope": "item",
+          "refId": "P007-02",
+          "title": "Report layouts",
+          "estimateH": 11.5,
+          "actualH": 6.5,
+          "ratio": 0.57,
+          "cause": "underestimated",
+          "note": "Report layouts took 0.57× its estimate. Similar work needs a larger likely value.",
+          "suspectedDataError": false
+        },
+        {
+          "scope": "item",
+          "refId": "P007-06",
+          "title": "Figures verification",
+          "estimateH": 10,
+          "actualH": 5.5,
+          "ratio": 0.55,
+          "cause": "underestimated",
+          "note": "Figures verification took 0.55× its estimate. Similar work needs a larger likely value.",
+          "suspectedDataError": false
+        },
+        {
+          "scope": "item",
+          "refId": "P007-07",
+          "title": "Release",
+          "estimateH": 2.5,
+          "actualH": 5,
+          "ratio": 2,
+          "cause": "underestimated",
+          "note": "Release took 2× its estimate. Similar work needs a larger likely value.",
+          "suspectedDataError": false
+        },
+        {
+          "scope": "phase",
+          "refId": "design",
+          "title": "Report design",
+          "estimateH": 11.5,
+          "actualH": 6.5,
+          "ratio": 0.57,
+          "cause": "underestimated",
+          "note": "Report design took 0.57× its estimate. Similar work needs a larger likely value.",
+          "suspectedDataError": false
+        },
+        {
+          "scope": "phase",
+          "refId": "qa",
+          "title": "QA",
+          "estimateH": 10,
+          "actualH": 5.5,
+          "ratio": 0.55,
+          "cause": "underestimated",
+          "note": "QA took 0.55× its estimate. Similar work needs a larger likely value.",
+          "suspectedDataError": false
+        },
+        {
+          "scope": "phase",
+          "refId": "go-live",
+          "title": "Go-live",
+          "estimateH": 2.5,
+          "actualH": 5,
+          "ratio": 2,
+          "cause": "underestimated",
+          "note": "Go-live took 2× its estimate. Similar work needs a larger likely value.",
+          "suspectedDataError": false
+        }
+      ],
+      "lessons": [
+        {
+          "cause": "underestimated",
+          "note": "Release took 2× its estimate. Similar work needs a larger likely value.",
+          "appliesTo": {
+            "category": "devops",
+            "projectType": "reporting"
+          }
+        },
+        {
+          "cause": "underestimated",
+          "note": "Figures verification took 0.55× its estimate. Similar work needs a larger likely value.",
+          "appliesTo": {
+            "category": "qa",
+            "projectType": "reporting"
+          }
+        }
+      ]
+    },
+    {
+      "projectId": "P008",
+      "summary": "Emberwood Real Assets: W-9 intake came in at 480h against 364h estimated (+116h). Most of the gap was scope added.",
+      "findings": [
+        {
+          "scope": "item",
+          "refId": "P008-04",
+          "title": "Data retention sign-off",
+          "estimateH": 10.5,
+          "actualH": 16.5,
+          "ratio": 1.57,
+          "cause": "underestimated",
+          "note": "Data retention sign-off took 1.57× its estimate. Similar work needs a larger likely value.",
+          "suspectedDataError": false
+        },
+        {
+          "scope": "item",
+          "refId": "P008-05",
+          "title": "Multi-step form UI",
+          "estimateH": 61,
+          "actualH": 45.5,
+          "ratio": 0.75,
+          "cause": "underestimated",
+          "note": "Multi-step form UI took 0.75× its estimate. Similar work needs a larger likely value.",
+          "suspectedDataError": false
+        },
+        {
+          "scope": "item",
+          "refId": "P008-09",
+          "title": "Map form fields to investor records",
+          "estimateH": 33.5,
+          "actualH": 56,
+          "ratio": 1.67,
+          "cause": "underestimated",
+          "note": "Map form fields to investor records took 1.67× its estimate. Similar work needs a larger likely value.",
+          "suspectedDataError": false
+        },
+        {
+          "scope": "item",
+          "refId": "P008-10",
+          "title": "Write submissions to the records system",
+          "estimateH": 40.5,
+          "actualH": 69,
+          "ratio": 1.7,
+          "cause": "blocked",
+          "note": "Write submissions to the records system waited on an outside dependency and ran 1.7× over. Confirm access and owners before build starts.",
+          "suspectedDataError": false
+        },
+        {
+          "scope": "item",
+          "refId": "P008-11",
+          "title": "Form QA with edge cases",
+          "estimateH": 33,
+          "actualH": 49.5,
+          "ratio": 1.5,
+          "cause": "underestimated",
+          "note": "Form QA with edge cases took 1.5× its estimate. Similar work needs a larger likely value.",
+          "suspectedDataError": false
+        },
+        {
+          "scope": "item",
+          "refId": "P008-14",
+          "title": "E-signature step",
+          "estimateH": 0,
+          "actualH": 65.5,
+          "ratio": 0,
+          "cause": "scope-added",
+          "note": "E-signature step wasn't in the kickoff scope and cost 66h. Ask about it up front next time.",
+          "suspectedDataError": false
+        },
+        {
+          "scope": "phase",
+          "refId": "legal-review",
+          "title": "Legal review",
+          "estimateH": 33.5,
+          "actualH": 42,
+          "ratio": 1.25,
+          "cause": "underestimated",
+          "note": "Legal review took 1.25× its estimate. Similar work needs a larger likely value.",
+          "suspectedDataError": false
+        },
+        {
+          "scope": "phase",
+          "refId": "build-form",
+          "title": "Build form",
+          "estimateH": 155,
+          "actualH": 195.5,
+          "ratio": 1.26,
+          "cause": "scope-added",
+          "note": "Build form wasn't in the kickoff scope and cost 196h. Ask about it up front next time.",
+          "suspectedDataError": false
+        },
+        {
+          "scope": "phase",
+          "refId": "integration",
+          "title": "Integration",
+          "estimateH": 74,
+          "actualH": 125,
+          "ratio": 1.69,
+          "cause": "blocked",
+          "note": "Integration waited on an outside dependency and ran 1.69× over. Confirm access and owners before build starts.",
+          "suspectedDataError": false
+        },
+        {
+          "scope": "phase",
+          "refId": "qa",
+          "title": "QA",
+          "estimateH": 46.5,
+          "actualH": 61.5,
+          "ratio": 1.32,
+          "cause": "underestimated",
+          "note": "QA took 1.32× its estimate. Similar work needs a larger likely value.",
+          "suspectedDataError": false
+        }
+      ],
+      "lessons": [
+        {
+          "cause": "scope-added",
+          "note": "E-signature step wasn't in the kickoff scope and cost 66h. Ask about it up front next time.",
+          "appliesTo": {
+            "category": "esign",
+            "projectType": "form-digitization"
+          }
+        },
+        {
+          "cause": "blocked",
+          "note": "Write submissions to the records system waited on an outside dependency and ran 1.7× over. Confirm access and owners before build starts.",
+          "appliesTo": {
+            "category": "integration",
+            "projectType": "form-digitization"
+          }
+        }
+      ]
+    },
+    {
+      "projectId": "P009",
+      "summary": "Larkfield Credit: fundraising pipeline report came in at 89h against 86h estimated (+4h). Most of the gap was availability.",
+      "findings": [
+        {
+          "scope": "item",
+          "refId": "P009-01",
+          "title": "Report requirements workshop",
+          "estimateH": 12,
+          "actualH": 19,
+          "ratio": 1.58,
+          "cause": "availability",
+          "note": "Report requirements workshop ran 1.58× over while capacity was reduced by planned leave. Plan around known leave windows.",
+          "suspectedDataError": false
+        },
+        {
+          "scope": "item",
+          "refId": "P009-03",
+          "title": "Data queries and aggregation",
+          "estimateH": 24,
+          "actualH": 13.5,
+          "ratio": 0.56,
+          "cause": "underestimated",
+          "note": "Data queries and aggregation took 0.56× its estimate. Similar work needs a larger likely value.",
+          "suspectedDataError": false
+        },
+        {
+          "scope": "item",
+          "refId": "P009-05",
+          "title": "Scheduled delivery",
+          "estimateH": 9,
+          "actualH": 12,
+          "ratio": 1.33,
+          "cause": "availability",
+          "note": "Scheduled delivery ran 1.33× over while capacity was reduced by planned leave. Plan around known leave windows.",
+          "suspectedDataError": false
+        },
+        {
+          "scope": "item",
+          "refId": "P009-06",
+          "title": "Figures verification",
+          "estimateH": 10,
+          "actualH": 13,
+          "ratio": 1.3,
+          "cause": "availability",
+          "note": "Figures verification ran 1.3× over while capacity was reduced by planned leave. Plan around known leave windows.",
+          "suspectedDataError": false
+        },
+        {
+          "scope": "item",
+          "refId": "P009-07",
+          "title": "Release",
+          "estimateH": 5,
+          "actualH": 7.5,
+          "ratio": 1.5,
+          "cause": "availability",
+          "note": "Release ran 1.5× over while capacity was reduced by planned leave. Plan around known leave windows.",
+          "suspectedDataError": false
+        },
+        {
+          "scope": "item",
+          "refId": "P009-08",
+          "title": "Additional filter set",
+          "estimateH": 0,
+          "actualH": 3.5,
+          "ratio": 0,
+          "cause": "scope-added",
+          "note": "Additional filter set wasn't in the kickoff scope and cost 4h. Ask about it up front next time.",
+          "suspectedDataError": false
+        },
+        {
+          "scope": "phase",
+          "refId": "discovery",
+          "title": "Discovery",
+          "estimateH": 12,
+          "actualH": 19,
+          "ratio": 1.58,
+          "cause": "availability",
+          "note": "Discovery ran 1.58× over while capacity was reduced by planned leave. Plan around known leave windows.",
+          "suspectedDataError": false
+        },
+        {
+          "scope": "phase",
+          "refId": "qa",
+          "title": "QA",
+          "estimateH": 10,
+          "actualH": 13,
+          "ratio": 1.3,
+          "cause": "availability",
+          "note": "QA ran 1.3× over while capacity was reduced by planned leave. Plan around known leave windows.",
+          "suspectedDataError": false
+        },
+        {
+          "scope": "phase",
+          "refId": "go-live",
+          "title": "Go-live",
+          "estimateH": 5,
+          "actualH": 7.5,
+          "ratio": 1.5,
+          "cause": "availability",
+          "note": "Go-live ran 1.5× over while capacity was reduced by planned leave. Plan around known leave windows.",
+          "suspectedDataError": false
+        }
+      ],
+      "lessons": [
+        {
+          "cause": "availability",
+          "note": "Report requirements workshop ran 1.58× over while capacity was reduced by planned leave. Plan around known leave windows.",
+          "appliesTo": {
+            "category": "discovery",
+            "projectType": "reporting"
+          }
+        },
+        {
+          "cause": "scope-added",
+          "note": "Additional filter set wasn't in the kickoff scope and cost 4h. Ask about it up front next time.",
+          "appliesTo": {
+            "category": "reporting",
+            "projectType": "reporting"
+          }
+        }
+      ]
+    },
+    {
+      "projectId": "P010",
+      "summary": "Oakmere Capital: legacy CRM migration came in at 232h against 178h estimated (+54h). Most of the gap was underestimated.",
+      "findings": [
+        {
+          "scope": "item",
+          "refId": "P010-03",
+          "title": "Cleansing rules",
+          "estimateH": 21,
+          "actualH": 33,
+          "ratio": 1.57,
+          "cause": "underestimated",
+          "note": "Cleansing rules took 1.57× its estimate. Similar work needs a larger likely value.",
+          "suspectedDataError": false
+        },
+        {
+          "scope": "item",
+          "refId": "P010-05",
+          "title": "Load scripts with validation",
+          "estimateH": 26.5,
+          "actualH": 46.5,
+          "ratio": 1.75,
+          "cause": "underestimated",
+          "note": "Load scripts with validation took 1.75× its estimate. Similar work needs a larger likely value.",
+          "suspectedDataError": false
+        },
+        {
+          "scope": "item",
+          "refId": "P010-06",
+          "title": "Trial migration and reconciliation",
+          "estimateH": 27.5,
+          "actualH": 39.5,
+          "ratio": 1.44,
+          "cause": "underestimated",
+          "note": "Trial migration and reconciliation took 1.44× its estimate. Similar work needs a larger likely value.",
+          "suspectedDataError": false
+        },
+        {
+          "scope": "item",
+          "refId": "P010-07",
+          "title": "Cutover run",
+          "estimateH": 17.5,
+          "actualH": 24,
+          "ratio": 1.37,
+          "cause": "underestimated",
+          "note": "Cutover run took 1.37× its estimate. Similar work needs a larger likely value.",
+          "suspectedDataError": false
+        },
+        {
+          "scope": "item",
+          "refId": "P010-08",
+          "title": "Archive of legacy attachments",
+          "estimateH": 0,
+          "actualH": 16.5,
+          "ratio": 0,
+          "cause": "scope-added",
+          "note": "Archive of legacy attachments wasn't in the kickoff scope and cost 17h. Ask about it up front next time.",
+          "suspectedDataError": false
+        },
+        {
+          "scope": "phase",
+          "refId": "build",
+          "title": "Build scripts",
+          "estimateH": 72,
+          "actualH": 102,
+          "ratio": 1.42,
+          "cause": "underestimated",
+          "note": "Build scripts took 1.42× its estimate. Similar work needs a larger likely value.",
+          "suspectedDataError": false
+        },
+        {
+          "scope": "phase",
+          "refId": "trial-migration",
+          "title": "Trial migration",
+          "estimateH": 27.5,
+          "actualH": 39.5,
+          "ratio": 1.44,
+          "cause": "underestimated",
+          "note": "Trial migration took 1.44× its estimate. Similar work needs a larger likely value.",
+          "suspectedDataError": false
+        },
+        {
+          "scope": "phase",
+          "refId": "go-live",
+          "title": "Cutover",
+          "estimateH": 17.5,
+          "actualH": 24,
+          "ratio": 1.37,
+          "cause": "underestimated",
+          "note": "Cutover took 1.37× its estimate. Similar work needs a larger likely value.",
+          "suspectedDataError": false
+        }
+      ],
+      "lessons": [
+        {
+          "cause": "underestimated",
+          "note": "Load scripts with validation took 1.75× its estimate. Similar work needs a larger likely value.",
+          "appliesTo": {
+            "category": "data",
+            "projectType": "data-migration"
+          }
+        },
+        {
+          "cause": "scope-added",
+          "note": "Archive of legacy attachments wasn't in the kickoff scope and cost 17h. Ask about it up front next time.",
+          "appliesTo": {
+            "category": "data",
+            "projectType": "data-migration"
+          }
+        }
+      ]
+    },
+    {
+      "projectId": "P011",
+      "summary": "Harborlight Partners: commitment summary export came in at 103h against 102h estimated (+1h).",
+      "findings": [],
+      "lessons": []
+    },
+    {
+      "projectId": "P012",
+      "summary": "Quillstone Partners: custodian holdings feed came in at 412h against 336h estimated (+76h). Most of the gap was underestimated.",
+      "findings": [
+        {
+          "scope": "item",
+          "refId": "P012-01",
+          "title": "Partner API discovery and access",
+          "estimateH": 25.5,
+          "actualH": 33,
+          "ratio": 1.29,
+          "cause": "underestimated",
+          "note": "Partner API discovery and access took 1.29× its estimate. Similar work needs a larger likely value.",
+          "suspectedDataError": false
+        },
+        {
+          "scope": "item",
+          "refId": "P012-03",
+          "title": "Field mapping between systems",
+          "estimateH": 27,
+          "actualH": 34.5,
+          "ratio": 1.28,
+          "cause": "underestimated",
+          "note": "Field mapping between systems took 1.28× its estimate. Similar work needs a larger likely value.",
+          "suspectedDataError": false
+        },
+        {
+          "scope": "item",
+          "refId": "P012-04",
+          "title": "Identifier matching strategy",
+          "estimateH": 37.5,
+          "actualH": 51,
+          "ratio": 1.36,
+          "cause": "underestimated",
+          "note": "Identifier matching strategy took 1.36× its estimate. Similar work needs a larger likely value.",
+          "suspectedDataError": false
+        },
+        {
+          "scope": "item",
+          "refId": "P012-06",
+          "title": "Sync job with retries",
+          "estimateH": 52,
+          "actualH": 76.5,
+          "ratio": 1.47,
+          "cause": "underestimated",
+          "note": "Sync job with retries took 1.47× its estimate. Similar work needs a larger likely value.",
+          "suspectedDataError": false
+        },
+        {
+          "scope": "item",
+          "refId": "P012-07",
+          "title": "Conflict handling and reconciliation",
+          "estimateH": 56.5,
+          "actualH": 71,
+          "ratio": 1.26,
+          "cause": "underestimated",
+          "note": "Conflict handling and reconciliation took 1.26× its estimate. Similar work needs a larger likely value.",
+          "suspectedDataError": false
+        },
+        {
+          "scope": "phase",
+          "refId": "api-mapping",
+          "title": "API mapping",
+          "estimateH": 64.5,
+          "actualH": 85.5,
+          "ratio": 1.33,
+          "cause": "underestimated",
+          "note": "API mapping took 1.33× its estimate. Similar work needs a larger likely value.",
+          "suspectedDataError": false
+        },
+        {
+          "scope": "phase",
+          "refId": "build",
+          "title": "Build",
+          "estimateH": 167,
+          "actualH": 213.5,
+          "ratio": 1.28,
+          "cause": "underestimated",
+          "note": "Build took 1.28× its estimate. Similar work needs a larger likely value.",
+          "suspectedDataError": false
+        }
+      ],
+      "lessons": [
+        {
+          "cause": "underestimated",
+          "note": "Sync job with retries took 1.47× its estimate. Similar work needs a larger likely value.",
+          "appliesTo": {
+            "category": "integration",
+            "projectType": "integration"
+          }
+        },
+        {
+          "cause": "underestimated",
+          "note": "Conflict handling and reconciliation took 1.26× its estimate. Similar work needs a larger likely value.",
+          "appliesTo": {
+            "category": "integration",
+            "projectType": "integration"
+          }
+        }
+      ]
+    },
+    {
+      "projectId": "P013",
+      "summary": "Bluestem & Vale: transfer request form came in at 119h against 103h estimated (+16h). Most of the gap was underestimated.",
+      "findings": [
+        {
+          "scope": "item",
+          "refId": "P013-02",
+          "title": "Validation and conditional logic rules",
+          "estimateH": 5,
+          "actualH": 7,
+          "ratio": 1.4,
+          "cause": "underestimated",
+          "note": "Validation and conditional logic rules took 1.4× its estimate. Similar work needs a larger likely value.",
+          "suspectedDataError": false
+        },
+        {
+          "scope": "item",
+          "refId": "P013-06",
+          "title": "PDF of the completed form",
+          "estimateH": 10.5,
+          "actualH": 14.5,
+          "ratio": 1.38,
+          "cause": "underestimated",
+          "note": "PDF of the completed form took 1.38× its estimate. Similar work needs a larger likely value.",
+          "suspectedDataError": false
+        },
+        {
+          "scope": "item",
+          "refId": "P013-08",
+          "title": "Write submissions to the records system",
+          "estimateH": 12.5,
+          "actualH": 16,
+          "ratio": 1.28,
+          "cause": "underestimated",
+          "note": "Write submissions to the records system took 1.28× its estimate. Similar work needs a larger likely value.",
+          "suspectedDataError": false
+        }
+      ],
+      "lessons": [
+        {
+          "cause": "underestimated",
+          "note": "PDF of the completed form took 1.38× its estimate. Similar work needs a larger likely value.",
+          "appliesTo": {
+            "category": "backend",
+            "projectType": "form-digitization"
+          }
+        },
+        {
+          "cause": "underestimated",
+          "note": "Write submissions to the records system took 1.28× its estimate. Similar work needs a larger likely value.",
+          "appliesTo": {
+            "category": "integration",
+            "projectType": "form-digitization"
+          }
+        }
+      ]
+    },
+    {
+      "projectId": "P014",
+      "summary": "Copperfen Ventures: KYC provider hookup came in at 279h against 185h estimated (+95h). Most of the gap was scope added.",
+      "findings": [
+        {
+          "scope": "item",
+          "refId": "P014-03",
+          "title": "Field mapping between systems",
+          "estimateH": 22.5,
+          "actualH": 35.5,
+          "ratio": 1.58,
+          "cause": "blocked",
+          "note": "Field mapping between systems waited on an outside dependency and ran 1.58× over. Confirm access and owners before build starts.",
+          "suspectedDataError": false
+        },
+        {
+          "scope": "item",
+          "refId": "P014-04",
+          "title": "Identifier matching strategy",
+          "estimateH": 13.5,
+          "actualH": 17.5,
+          "ratio": 1.3,
+          "cause": "underestimated",
+          "note": "Identifier matching strategy took 1.3× its estimate. Similar work needs a larger likely value.",
+          "suspectedDataError": false
+        },
+        {
+          "scope": "item",
+          "refId": "P014-05",
+          "title": "API client and authentication",
+          "estimateH": 12.5,
+          "actualH": 19,
+          "ratio": 1.52,
+          "cause": "underestimated",
+          "note": "API client and authentication took 1.52× its estimate. Similar work needs a larger likely value.",
+          "suspectedDataError": false
+        },
+        {
+          "scope": "item",
+          "refId": "P014-06",
+          "title": "Sync job with retries",
+          "estimateH": 28,
+          "actualH": 37,
+          "ratio": 1.32,
+          "cause": "underestimated",
+          "note": "Sync job with retries took 1.32× its estimate. Similar work needs a larger likely value.",
+          "suspectedDataError": false
+        },
+        {
+          "scope": "item",
+          "refId": "P014-07",
+          "title": "Conflict handling and reconciliation",
+          "estimateH": 24,
+          "actualH": 41.5,
+          "ratio": 1.73,
+          "cause": "underestimated",
+          "note": "Conflict handling and reconciliation took 1.73× its estimate. Similar work needs a larger likely value.",
+          "suspectedDataError": false
+        },
+        {
+          "scope": "item",
+          "refId": "P014-12",
+          "title": "Second partner file format",
+          "estimateH": 0,
+          "actualH": 38.5,
+          "ratio": 0,
+          "cause": "scope-added",
+          "note": "Second partner file format wasn't in the kickoff scope and cost 39h. Ask about it up front next time.",
+          "suspectedDataError": false
+        },
+        {
+          "scope": "phase",
+          "refId": "api-mapping",
+          "title": "API mapping",
+          "estimateH": 36,
+          "actualH": 53,
+          "ratio": 1.47,
+          "cause": "blocked",
+          "note": "API mapping waited on an outside dependency and ran 1.47× over. Confirm access and owners before build starts.",
+          "suspectedDataError": false
+        },
+        {
+          "scope": "phase",
+          "refId": "build",
+          "title": "Build",
+          "estimateH": 77.5,
+          "actualH": 151.5,
+          "ratio": 1.95,
+          "cause": "scope-added",
+          "note": "Build wasn't in the kickoff scope and cost 152h. Ask about it up front next time.",
+          "suspectedDataError": false
+        }
+      ],
+      "lessons": [
+        {
+          "cause": "scope-added",
+          "note": "Second partner file format wasn't in the kickoff scope and cost 39h. Ask about it up front next time.",
+          "appliesTo": {
+            "category": "integration",
+            "projectType": "integration"
+          }
+        },
+        {
+          "cause": "underestimated",
+          "note": "Conflict handling and reconciliation took 1.73× its estimate. Similar work needs a larger likely value.",
+          "appliesTo": {
+            "category": "integration",
+            "projectType": "integration"
+          }
+        }
+      ]
+    },
+    {
+      "projectId": "P015",
+      "summary": "Saltbrook Ventures: accredited investor questionnaire came in at 178h against 96h estimated (+82h). Most of the gap was scope added.",
+      "findings": [
+        {
+          "scope": "item",
+          "refId": "P015-03",
+          "title": "Legal review of disclosures and consent wording",
+          "estimateH": 8.5,
+          "actualH": 13,
+          "ratio": 1.53,
+          "cause": "availability",
+          "note": "Legal review of disclosures and consent wording ran 1.53× over while capacity was reduced by planned leave. Plan around known leave windows.",
+          "suspectedDataError": false
+        },
+        {
+          "scope": "item",
+          "refId": "P015-05",
+          "title": "Field validation and conditional sections",
+          "estimateH": 9,
+          "actualH": 12.5,
+          "ratio": 1.39,
+          "cause": "availability",
+          "note": "Field validation and conditional sections ran 1.39× over while capacity was reduced by planned leave. Plan around known leave windows.",
+          "suspectedDataError": false
+        },
+        {
+          "scope": "item",
+          "refId": "P015-08",
+          "title": "Map form fields to investor records",
+          "estimateH": 8.5,
+          "actualH": 14,
+          "ratio": 1.65,
+          "cause": "availability",
+          "note": "Map form fields to investor records ran 1.65× over while capacity was reduced by planned leave. Plan around known leave windows.",
+          "suspectedDataError": false
+        },
+        {
+          "scope": "item",
+          "refId": "P015-09",
+          "title": "Write submissions to the records system",
+          "estimateH": 9.5,
+          "actualH": 19.5,
+          "ratio": 2.05,
+          "cause": "availability",
+          "note": "Write submissions to the records system ran 2.05× over while capacity was reduced by planned leave. Plan around known leave windows.",
+          "suspectedDataError": false
+        },
+        {
+          "scope": "item",
+          "refId": "P015-12",
+          "title": "E-signature step",
+          "estimateH": 0,
+          "actualH": 48,
+          "ratio": 0,
+          "cause": "scope-added",
+          "note": "E-signature step wasn't in the kickoff scope and cost 48h. Ask about it up front next time.",
+          "suspectedDataError": false
+        },
+        {
+          "scope": "item",
+          "refId": "P015-13",
+          "title": "Supporting document upload",
+          "estimateH": 0,
+          "actualH": 7.5,
+          "ratio": 0,
+          "cause": "scope-added",
+          "note": "Supporting document upload wasn't in the kickoff scope and cost 8h. Ask about it up front next time.",
+          "suspectedDataError": false
+        },
+        {
+          "scope": "phase",
+          "refId": "legal-review",
+          "title": "Legal review",
+          "estimateH": 8.5,
+          "actualH": 13,
+          "ratio": 1.53,
+          "cause": "availability",
+          "note": "Legal review ran 1.53× over while capacity was reduced by planned leave. Plan around known leave windows.",
+          "suspectedDataError": false
+        },
+        {
+          "scope": "phase",
+          "refId": "build-form",
+          "title": "Build form",
+          "estimateH": 46,
+          "actualH": 107.5,
+          "ratio": 2.34,
+          "cause": "scope-added",
+          "note": "Build form wasn't in the kickoff scope and cost 108h. Ask about it up front next time.",
+          "suspectedDataError": false
+        },
+        {
+          "scope": "phase",
+          "refId": "integration",
+          "title": "Integration",
+          "estimateH": 18,
+          "actualH": 33.5,
+          "ratio": 1.86,
+          "cause": "availability",
+          "note": "Integration ran 1.86× over while capacity was reduced by planned leave. Plan around known leave windows.",
+          "suspectedDataError": false
+        }
+      ],
+      "lessons": [
+        {
+          "cause": "scope-added",
+          "note": "E-signature step wasn't in the kickoff scope and cost 48h. Ask about it up front next time.",
+          "appliesTo": {
+            "category": "esign",
+            "projectType": "form-digitization"
+          }
+        },
+        {
+          "cause": "availability",
+          "note": "Write submissions to the records system ran 2.05× over while capacity was reduced by planned leave. Plan around known leave windows.",
+          "appliesTo": {
+            "category": "integration",
+            "projectType": "form-digitization"
+          }
+        }
+      ]
+    },
+    {
+      "projectId": "P016",
+      "summary": "Junoridge Holdings: bulk invite flow came in at 356h against 333h estimated (+23h). Most of the gap was scope added.",
+      "findings": [
+        {
+          "scope": "item",
+          "refId": "P016-10",
+          "title": "Audit log events",
+          "estimateH": 20.5,
+          "actualH": 31.5,
+          "ratio": 1.54,
+          "cause": "underestimated",
+          "note": "Audit log events took 1.54× its estimate. Similar work needs a larger likely value.",
+          "suspectedDataError": false
+        },
+        {
+          "scope": "item",
+          "refId": "P016-14",
+          "title": "Status dashboard for operations team",
+          "estimateH": 0,
+          "actualH": 22.5,
+          "ratio": 0,
+          "cause": "scope-added",
+          "note": "Status dashboard for operations team wasn't in the kickoff scope and cost 23h. Ask about it up front next time.",
+          "suspectedDataError": false
+        }
+      ],
+      "lessons": [
+        {
+          "cause": "scope-added",
+          "note": "Status dashboard for operations team wasn't in the kickoff scope and cost 23h. Ask about it up front next time.",
+          "appliesTo": {
+            "category": "reporting",
+            "projectType": "new-feature"
+          }
+        },
+        {
+          "cause": "underestimated",
+          "note": "Audit log events took 1.54× its estimate. Similar work needs a larger likely value.",
+          "appliesTo": {
+            "category": "backend",
+            "projectType": "new-feature"
+          }
+        }
+      ]
+    },
+    {
+      "projectId": "P017",
+      "summary": "Tidewell Fund III: redemption request form came in at 241h against 171h estimated (+71h). Most of the gap was scope added.",
+      "findings": [
+        {
+          "scope": "item",
+          "refId": "P017-02",
+          "title": "Validation and conditional logic rules",
+          "estimateH": 8,
+          "actualH": 11.5,
+          "ratio": 1.44,
+          "cause": "underestimated",
+          "note": "Validation and conditional logic rules took 1.44× its estimate. Similar work needs a larger likely value.",
+          "suspectedDataError": false
+        },
+        {
+          "scope": "item",
+          "refId": "P017-08",
+          "title": "Map form fields to investor records",
+          "estimateH": 17.5,
+          "actualH": 28.5,
+          "ratio": 1.63,
+          "cause": "blocked",
+          "note": "Map form fields to investor records waited on an outside dependency and ran 1.63× over. Confirm access and owners before build starts.",
+          "suspectedDataError": false
+        },
+        {
+          "scope": "item",
+          "refId": "P017-09",
+          "title": "Write submissions to the records system",
+          "estimateH": 23,
+          "actualH": 35,
+          "ratio": 1.52,
+          "cause": "underestimated",
+          "note": "Write submissions to the records system took 1.52× its estimate. Similar work needs a larger likely value.",
+          "suspectedDataError": false
+        },
+        {
+          "scope": "item",
+          "refId": "P017-12",
+          "title": "E-signature step",
+          "estimateH": 0,
+          "actualH": 38.5,
+          "ratio": 0,
+          "cause": "scope-added",
+          "note": "E-signature step wasn't in the kickoff scope and cost 39h. Ask about it up front next time.",
+          "suspectedDataError": false
+        },
+        {
+          "scope": "phase",
+          "refId": "build-form",
+          "title": "Build form",
+          "estimateH": 63.5,
+          "actualH": 103,
+          "ratio": 1.62,
+          "cause": "scope-added",
+          "note": "Build form wasn't in the kickoff scope and cost 103h. Ask about it up front next time.",
+          "suspectedDataError": false
+        },
+        {
+          "scope": "phase",
+          "refId": "integration",
+          "title": "Integration",
+          "estimateH": 40.5,
+          "actualH": 63.5,
+          "ratio": 1.57,
+          "cause": "underestimated",
+          "note": "Integration took 1.57× its estimate. Similar work needs a larger likely value.",
+          "suspectedDataError": false
+        }
+      ],
+      "lessons": [
+        {
+          "cause": "scope-added",
+          "note": "E-signature step wasn't in the kickoff scope and cost 39h. Ask about it up front next time.",
+          "appliesTo": {
+            "category": "esign",
+            "projectType": "form-digitization"
+          }
+        },
+        {
+          "cause": "underestimated",
+          "note": "Write submissions to the records system took 1.52× its estimate. Similar work needs a larger likely value.",
+          "appliesTo": {
+            "category": "integration",
+            "projectType": "form-digitization"
+          }
+        }
+      ]
+    },
+    {
+      "projectId": "P018",
+      "summary": "Emberwood Real Assets: bank statement import came in at 416h against 200h estimated (+216h). Most of the gap was data error.",
+      "findings": [
+        {
+          "scope": "item",
+          "refId": "P018-01",
+          "title": "Partner API discovery and access",
+          "estimateH": 13,
+          "actualH": 130,
+          "ratio": 10,
+          "cause": "data-error",
+          "note": "Partner API discovery and access logged 130h against 13h, which looks like a time-entry error. Excluded from calibration.",
+          "suspectedDataError": true
+        },
+        {
+          "scope": "item",
+          "refId": "P018-03",
+          "title": "Field mapping between systems",
+          "estimateH": 17.5,
+          "actualH": 22.5,
+          "ratio": 1.29,
+          "cause": "underestimated",
+          "note": "Field mapping between systems took 1.29× its estimate. Similar work needs a larger likely value.",
+          "suspectedDataError": false
+        },
+        {
+          "scope": "item",
+          "refId": "P018-04",
+          "title": "Identifier matching strategy",
+          "estimateH": 18.5,
+          "actualH": 30.5,
+          "ratio": 1.65,
+          "cause": "underestimated",
+          "note": "Identifier matching strategy took 1.65× its estimate. Similar work needs a larger likely value.",
+          "suspectedDataError": false
+        },
+        {
+          "scope": "item",
+          "refId": "P018-05",
+          "title": "API client and authentication",
+          "estimateH": 19,
+          "actualH": 42.5,
+          "ratio": 2.24,
+          "cause": "blocked",
+          "note": "API client and authentication waited on an outside dependency and ran 2.24× over. Confirm access and owners before build starts.",
+          "suspectedDataError": false
+        },
+        {
+          "scope": "item",
+          "refId": "P018-06",
+          "title": "Sync job with retries",
+          "estimateH": 35.5,
+          "actualH": 45.5,
+          "ratio": 1.28,
+          "cause": "underestimated",
+          "note": "Sync job with retries took 1.28× its estimate. Similar work needs a larger likely value.",
+          "suspectedDataError": false
+        },
+        {
+          "scope": "item",
+          "refId": "P018-07",
+          "title": "Conflict handling and reconciliation",
+          "estimateH": 28,
+          "actualH": 39,
+          "ratio": 1.39,
+          "cause": "underestimated",
+          "note": "Conflict handling and reconciliation took 1.39× its estimate. Similar work needs a larger likely value.",
+          "suspectedDataError": false
+        },
+        {
+          "scope": "item",
+          "refId": "P018-10",
+          "title": "Reconciliation test run",
+          "estimateH": 16,
+          "actualH": 23,
+          "ratio": 1.44,
+          "cause": "underestimated",
+          "note": "Reconciliation test run took 1.44× its estimate. Similar work needs a larger likely value.",
+          "suspectedDataError": false
+        },
+        {
+          "scope": "item",
+          "refId": "P018-11",
+          "title": "Production cutover and backfill",
+          "estimateH": 12,
+          "actualH": 16,
+          "ratio": 1.33,
+          "cause": "underestimated",
+          "note": "Production cutover and backfill took 1.33× its estimate. Similar work needs a larger likely value.",
+          "suspectedDataError": false
+        },
+        {
+          "scope": "item",
+          "refId": "P018-12",
+          "title": "Backfill of historical records",
+          "estimateH": 0,
+          "actualH": 23.5,
+          "ratio": 0,
+          "cause": "scope-added",
+          "note": "Backfill of historical records wasn't in the kickoff scope and cost 24h. Ask about it up front next time.",
+          "suspectedDataError": false
+        },
+        {
+          "scope": "phase",
+          "refId": "discovery",
+          "title": "Discovery",
+          "estimateH": 21,
+          "actualH": 137.5,
+          "ratio": 6.55,
+          "cause": "data-error",
+          "note": "Discovery logged 138h against 21h, which looks like a time-entry error. Excluded from calibration.",
+          "suspectedDataError": false
+        },
+        {
+          "scope": "phase",
+          "refId": "api-mapping",
+          "title": "API mapping",
+          "estimateH": 36,
+          "actualH": 53,
+          "ratio": 1.47,
+          "cause": "underestimated",
+          "note": "API mapping took 1.47× its estimate. Similar work needs a larger likely value.",
+          "suspectedDataError": false
+        },
+        {
+          "scope": "phase",
+          "refId": "build",
+          "title": "Build",
+          "estimateH": 92.5,
+          "actualH": 161,
+          "ratio": 1.74,
+          "cause": "blocked",
+          "note": "Build waited on an outside dependency and ran 1.74× over. Confirm access and owners before build starts.",
+          "suspectedDataError": false
+        },
+        {
+          "scope": "phase",
+          "refId": "integration-testing",
+          "title": "Integration testing",
+          "estimateH": 38.5,
+          "actualH": 48.5,
+          "ratio": 1.26,
+          "cause": "underestimated",
+          "note": "Integration testing took 1.26× its estimate. Similar work needs a larger likely value.",
+          "suspectedDataError": false
+        },
+        {
+          "scope": "phase",
+          "refId": "go-live",
+          "title": "Go-live",
+          "estimateH": 12,
+          "actualH": 16,
+          "ratio": 1.33,
+          "cause": "underestimated",
+          "note": "Go-live took 1.33× its estimate. Similar work needs a larger likely value.",
+          "suspectedDataError": false
+        }
+      ],
+      "lessons": [
+        {
+          "cause": "blocked",
+          "note": "API client and authentication waited on an outside dependency and ran 2.24× over. Confirm access and owners before build starts.",
+          "appliesTo": {
+            "category": "integration",
+            "projectType": "integration"
+          }
+        },
+        {
+          "cause": "scope-added",
+          "note": "Backfill of historical records wasn't in the kickoff scope and cost 24h. Ask about it up front next time.",
+          "appliesTo": {
+            "category": "data",
+            "projectType": "integration"
+          }
+        }
+      ]
+    },
+    {
+      "projectId": "P019",
+      "summary": "Larkfield Credit: fee breakdown report came in at 117h against 123h estimated (-6h). Most of the gap was underestimated.",
+      "findings": [
+        {
+          "scope": "item",
+          "refId": "P019-04",
+          "title": "Report UI and export",
+          "estimateH": 31,
+          "actualH": 21.5,
+          "ratio": 0.69,
+          "cause": "underestimated",
+          "note": "Report UI and export took 0.69× its estimate. Similar work needs a larger likely value.",
+          "suspectedDataError": false
+        },
+        {
+          "scope": "item",
+          "refId": "P019-06",
+          "title": "Figures verification",
+          "estimateH": 13.5,
+          "actualH": 18.5,
+          "ratio": 1.37,
+          "cause": "underestimated",
+          "note": "Figures verification took 1.37× its estimate. Similar work needs a larger likely value.",
+          "suspectedDataError": false
+        },
+        {
+          "scope": "phase",
+          "refId": "qa",
+          "title": "QA",
+          "estimateH": 13.5,
+          "actualH": 18.5,
+          "ratio": 1.37,
+          "cause": "underestimated",
+          "note": "QA took 1.37× its estimate. Similar work needs a larger likely value.",
+          "suspectedDataError": false
+        }
+      ],
+      "lessons": [
+        {
+          "cause": "underestimated",
+          "note": "Figures verification took 1.37× its estimate. Similar work needs a larger likely value.",
+          "appliesTo": {
+            "category": "qa",
+            "projectType": "reporting"
+          }
+        },
+        {
+          "cause": "underestimated",
+          "note": "Report UI and export took 0.69× its estimate. Similar work needs a larger likely value.",
+          "appliesTo": {
+            "category": "reporting",
+            "projectType": "reporting"
+          }
+        }
+      ]
+    },
+    {
+      "projectId": "P020",
+      "summary": "Oakmere Capital: document archive move came in at 194h against 163h estimated (+31h). Most of the gap was underestimated.",
+      "findings": [
+        {
+          "scope": "item",
+          "refId": "P020-03",
+          "title": "Cleansing rules",
+          "estimateH": 17,
+          "actualH": 24,
+          "ratio": 1.41,
+          "cause": "underestimated",
+          "note": "Cleansing rules took 1.41× its estimate. Similar work needs a larger likely value.",
+          "suspectedDataError": false
+        },
+        {
+          "scope": "item",
+          "refId": "P020-06",
+          "title": "Trial migration and reconciliation",
+          "estimateH": 25.5,
+          "actualH": 34,
+          "ratio": 1.33,
+          "cause": "underestimated",
+          "note": "Trial migration and reconciliation took 1.33× its estimate. Similar work needs a larger likely value.",
+          "suspectedDataError": false
+        },
+        {
+          "scope": "item",
+          "refId": "P020-07",
+          "title": "Cutover run",
+          "estimateH": 16.5,
+          "actualH": 25,
+          "ratio": 1.52,
+          "cause": "underestimated",
+          "note": "Cutover run took 1.52× its estimate. Similar work needs a larger likely value.",
+          "suspectedDataError": false
+        },
+        {
+          "scope": "phase",
+          "refId": "mapping",
+          "title": "Data mapping",
+          "estimateH": 35.5,
+          "actualH": 46,
+          "ratio": 1.3,
+          "cause": "underestimated",
+          "note": "Data mapping took 1.3× its estimate. Similar work needs a larger likely value.",
+          "suspectedDataError": false
+        },
+        {
+          "scope": "phase",
+          "refId": "trial-migration",
+          "title": "Trial migration",
+          "estimateH": 25.5,
+          "actualH": 34,
+          "ratio": 1.33,
+          "cause": "underestimated",
+          "note": "Trial migration took 1.33× its estimate. Similar work needs a larger likely value.",
+          "suspectedDataError": false
+        },
+        {
+          "scope": "phase",
+          "refId": "go-live",
+          "title": "Cutover",
+          "estimateH": 16.5,
+          "actualH": 25,
+          "ratio": 1.52,
+          "cause": "underestimated",
+          "note": "Cutover took 1.52× its estimate. Similar work needs a larger likely value.",
+          "suspectedDataError": false
+        }
+      ],
+      "lessons": [
+        {
+          "cause": "underestimated",
+          "note": "Trial migration and reconciliation took 1.33× its estimate. Similar work needs a larger likely value.",
+          "appliesTo": {
+            "category": "qa",
+            "projectType": "data-migration"
+          }
+        },
+        {
+          "cause": "underestimated",
+          "note": "Cutover run took 1.52× its estimate. Similar work needs a larger likely value.",
+          "appliesTo": {
+            "category": "devops",
+            "projectType": "data-migration"
+          }
+        }
+      ]
+    },
+    {
+      "projectId": "P021",
+      "summary": "Harborlight Partners: side-letter tracker came in at 327h against 277h estimated (+50h). Most of the gap was underestimated.",
+      "findings": [
+        {
+          "scope": "item",
+          "refId": "P021-06",
+          "title": "Frontend screens",
+          "estimateH": 30.5,
+          "actualH": 41,
+          "ratio": 1.34,
+          "cause": "underestimated",
+          "note": "Frontend screens took 1.34× its estimate. Similar work needs a larger likely value.",
+          "suspectedDataError": false
+        },
+        {
+          "scope": "item",
+          "refId": "P021-07",
+          "title": "Notification scheduler",
+          "estimateH": 33.5,
+          "actualH": 43.5,
+          "ratio": 1.3,
+          "cause": "underestimated",
+          "note": "Notification scheduler took 1.3× its estimate. Similar work needs a larger likely value.",
+          "suspectedDataError": false
+        },
+        {
+          "scope": "item",
+          "refId": "P021-08",
+          "title": "Admin settings page",
+          "estimateH": 21,
+          "actualH": 27,
+          "ratio": 1.29,
+          "cause": "underestimated",
+          "note": "Admin settings page took 1.29× its estimate. Similar work needs a larger likely value.",
+          "suspectedDataError": false
+        },
+        {
+          "scope": "item",
+          "refId": "P021-10",
+          "title": "Test plan and regression",
+          "estimateH": 24.5,
+          "actualH": 33,
+          "ratio": 1.35,
+          "cause": "underestimated",
+          "note": "Test plan and regression took 1.35× its estimate. Similar work needs a larger likely value.",
+          "suspectedDataError": false
+        },
+        {
+          "scope": "phase",
+          "refId": "build",
+          "title": "Build",
+          "estimateH": 157,
+          "actualH": 199,
+          "ratio": 1.27,
+          "cause": "underestimated",
+          "note": "Build took 1.27× its estimate. Similar work needs a larger likely value.",
+          "suspectedDataError": false
+        },
+        {
+          "scope": "phase",
+          "refId": "qa",
+          "title": "QA",
+          "estimateH": 24.5,
+          "actualH": 33,
+          "ratio": 1.35,
+          "cause": "underestimated",
+          "note": "QA took 1.35× its estimate. Similar work needs a larger likely value.",
+          "suspectedDataError": false
+        }
+      ],
+      "lessons": [
+        {
+          "cause": "underestimated",
+          "note": "Frontend screens took 1.34× its estimate. Similar work needs a larger likely value.",
+          "appliesTo": {
+            "category": "frontend",
+            "projectType": "new-feature"
+          }
+        },
+        {
+          "cause": "underestimated",
+          "note": "Notification scheduler took 1.3× its estimate. Similar work needs a larger likely value.",
+          "appliesTo": {
+            "category": "notifications",
+            "projectType": "new-feature"
+          }
+        }
+      ]
+    },
+    {
+      "projectId": "P022",
+      "summary": "Quillstone Partners: investor ledger migration came in at 107h against 80h estimated (+27h). Most of the gap was availability.",
+      "findings": [
+        {
+          "scope": "item",
+          "refId": "P022-02",
+          "title": "Data mapping specification",
+          "estimateH": 10.5,
+          "actualH": 16.5,
+          "ratio": 1.57,
+          "cause": "availability",
+          "note": "Data mapping specification ran 1.57× over while capacity was reduced by planned leave. Plan around known leave windows.",
+          "suspectedDataError": false
+        },
+        {
+          "scope": "item",
+          "refId": "P022-03",
+          "title": "Cleansing rules",
+          "estimateH": 10.5,
+          "actualH": 14,
+          "ratio": 1.33,
+          "cause": "availability",
+          "note": "Cleansing rules ran 1.33× over while capacity was reduced by planned leave. Plan around known leave windows.",
+          "suspectedDataError": false
+        },
+        {
+          "scope": "item",
+          "refId": "P022-04",
+          "title": "Extract and transform scripts",
+          "estimateH": 17.5,
+          "actualH": 24,
+          "ratio": 1.37,
+          "cause": "availability",
+          "note": "Extract and transform scripts ran 1.37× over while capacity was reduced by planned leave. Plan around known leave windows.",
+          "suspectedDataError": false
+        },
+        {
+          "scope": "item",
+          "refId": "P022-05",
+          "title": "Load scripts with validation",
+          "estimateH": 13,
+          "actualH": 19.5,
+          "ratio": 1.5,
+          "cause": "availability",
+          "note": "Load scripts with validation ran 1.5× over while capacity was reduced by planned leave. Plan around known leave windows.",
+          "suspectedDataError": false
+        },
+        {
+          "scope": "item",
+          "refId": "P022-06",
+          "title": "Trial migration and reconciliation",
+          "estimateH": 12,
+          "actualH": 17,
+          "ratio": 1.42,
+          "cause": "availability",
+          "note": "Trial migration and reconciliation ran 1.42× over while capacity was reduced by planned leave. Plan around known leave windows.",
+          "suspectedDataError": false
+        },
+        {
+          "scope": "phase",
+          "refId": "mapping",
+          "title": "Data mapping",
+          "estimateH": 21,
+          "actualH": 30.5,
+          "ratio": 1.45,
+          "cause": "availability",
+          "note": "Data mapping ran 1.45× over while capacity was reduced by planned leave. Plan around known leave windows.",
+          "suspectedDataError": false
+        },
+        {
+          "scope": "phase",
+          "refId": "build",
+          "title": "Build scripts",
+          "estimateH": 30.5,
+          "actualH": 43.5,
+          "ratio": 1.43,
+          "cause": "availability",
+          "note": "Build scripts ran 1.43× over while capacity was reduced by planned leave. Plan around known leave windows.",
+          "suspectedDataError": false
+        },
+        {
+          "scope": "phase",
+          "refId": "trial-migration",
+          "title": "Trial migration",
+          "estimateH": 12,
+          "actualH": 17,
+          "ratio": 1.42,
+          "cause": "availability",
+          "note": "Trial migration ran 1.42× over while capacity was reduced by planned leave. Plan around known leave windows.",
+          "suspectedDataError": false
+        }
+      ],
+      "lessons": [
+        {
+          "cause": "availability",
+          "note": "Extract and transform scripts ran 1.37× over while capacity was reduced by planned leave. Plan around known leave windows.",
+          "appliesTo": {
+            "category": "data",
+            "projectType": "data-migration"
+          }
+        },
+        {
+          "cause": "availability",
+          "note": "Load scripts with validation ran 1.5× over while capacity was reduced by planned leave. Plan around known leave windows.",
+          "appliesTo": {
+            "category": "data",
+            "projectType": "data-migration"
+          }
+        }
+      ]
+    },
+    {
+      "projectId": "P023",
+      "summary": "Bluestem & Vale: old portal sunset came in at 180h against 144h estimated (+36h). Most of the gap was underestimated.",
+      "findings": [
+        {
+          "scope": "item",
+          "refId": "P023-04",
+          "title": "Extract and transform scripts",
+          "estimateH": 49.5,
+          "actualH": 75,
+          "ratio": 1.52,
+          "cause": "underestimated",
+          "note": "Extract and transform scripts took 1.52× its estimate. Similar work needs a larger likely value.",
+          "suspectedDataError": false
+        },
+        {
+          "scope": "phase",
+          "refId": "build",
+          "title": "Build scripts",
+          "estimateH": 65,
+          "actualH": 93.5,
+          "ratio": 1.44,
+          "cause": "underestimated",
+          "note": "Build scripts took 1.44× its estimate. Similar work needs a larger likely value.",
+          "suspectedDataError": false
+        }
+      ],
+      "lessons": [
+        {
+          "cause": "underestimated",
+          "note": "Extract and transform scripts took 1.52× its estimate. Similar work needs a larger likely value.",
+          "appliesTo": {
+            "category": "data",
+            "projectType": "data-migration"
+          }
+        }
+      ]
+    },
+    {
+      "projectId": "P024",
+      "summary": "Copperfen Ventures: compliance activity report came in at 47h against 40h estimated (+7h). Most of the gap was scope added.",
+      "findings": [
+        {
+          "scope": "item",
+          "refId": "P024-07",
+          "title": "Additional filter set",
+          "estimateH": 0,
+          "actualH": 4.5,
+          "ratio": 0,
+          "cause": "scope-added",
+          "note": "Additional filter set wasn't in the kickoff scope and cost 5h. Ask about it up front next time.",
+          "suspectedDataError": false
+        },
+        {
+          "scope": "phase",
+          "refId": "build",
+          "title": "Build",
+          "estimateH": 21,
+          "actualH": 27,
+          "ratio": 1.29,
+          "cause": "scope-added",
+          "note": "Build wasn't in the kickoff scope and cost 27h. Ask about it up front next time.",
+          "suspectedDataError": false
+        }
+      ],
+      "lessons": [
+        {
+          "cause": "scope-added",
+          "note": "Additional filter set wasn't in the kickoff scope and cost 5h. Ask about it up front next time.",
+          "appliesTo": {
+            "category": "reporting",
+            "projectType": "reporting"
+          }
+        }
+      ]
+    },
+    {
+      "projectId": "P025",
+      "summary": "Saltbrook Ventures: general ledger export came in at 425h against 304h estimated (+121h). Most of the gap was underestimated.",
+      "findings": [
+        {
+          "scope": "item",
+          "refId": "P025-03",
+          "title": "Field mapping between systems",
+          "estimateH": 27,
+          "actualH": 48,
+          "ratio": 1.78,
+          "cause": "underestimated",
+          "note": "Field mapping between systems took 1.78× its estimate. Similar work needs a larger likely value.",
+          "suspectedDataError": false
+        },
+        {
+          "scope": "item",
+          "refId": "P025-06",
+          "title": "Sync job with retries",
+          "estimateH": 96,
+          "actualH": 133,
+          "ratio": 1.39,
+          "cause": "underestimated",
+          "note": "Sync job with retries took 1.39× its estimate. Similar work needs a larger likely value.",
+          "suspectedDataError": false
+        },
+        {
+          "scope": "item",
+          "refId": "P025-12",
+          "title": "Second partner file format",
+          "estimateH": 0,
+          "actualH": 50,
+          "ratio": 0,
+          "cause": "scope-added",
+          "note": "Second partner file format wasn't in the kickoff scope and cost 50h. Ask about it up front next time.",
+          "suspectedDataError": false
+        },
+        {
+          "scope": "phase",
+          "refId": "api-mapping",
+          "title": "API mapping",
+          "estimateH": 43,
+          "actualH": 66,
+          "ratio": 1.53,
+          "cause": "underestimated",
+          "note": "API mapping took 1.53× its estimate. Similar work needs a larger likely value.",
+          "suspectedDataError": false
+        },
+        {
+          "scope": "phase",
+          "refId": "build",
+          "title": "Build",
+          "estimateH": 164,
+          "actualH": 260,
+          "ratio": 1.59,
+          "cause": "scope-added",
+          "note": "Build wasn't in the kickoff scope and cost 260h. Ask about it up front next time.",
+          "suspectedDataError": false
+        }
+      ],
+      "lessons": [
+        {
+          "cause": "scope-added",
+          "note": "Second partner file format wasn't in the kickoff scope and cost 50h. Ask about it up front next time.",
+          "appliesTo": {
+            "category": "integration",
+            "projectType": "integration"
+          }
+        },
+        {
+          "cause": "underestimated",
+          "note": "Sync job with retries took 1.39× its estimate. Similar work needs a larger likely value.",
+          "appliesTo": {
+            "category": "integration",
+            "projectType": "integration"
+          }
+        }
+      ]
+    },
+    {
+      "projectId": "P026",
+      "summary": "Junoridge Holdings: approval routing came in at 260h against 232h estimated (+28h). Most of the gap was underestimated.",
+      "findings": [
+        {
+          "scope": "item",
+          "refId": "P026-02",
+          "title": "User stories and acceptance criteria",
+          "estimateH": 9,
+          "actualH": 6.5,
+          "ratio": 0.72,
+          "cause": "underestimated",
+          "note": "User stories and acceptance criteria took 0.72× its estimate. Similar work needs a larger likely value.",
+          "suspectedDataError": false
+        },
+        {
+          "scope": "item",
+          "refId": "P026-05",
+          "title": "Backend service and data model",
+          "estimateH": 42,
+          "actualH": 60,
+          "ratio": 1.43,
+          "cause": "underestimated",
+          "note": "Backend service and data model took 1.43× its estimate. Similar work needs a larger likely value.",
+          "suspectedDataError": false
+        },
+        {
+          "scope": "item",
+          "refId": "P026-13",
+          "title": "Status dashboard for operations team",
+          "estimateH": 0,
+          "actualH": 12.5,
+          "ratio": 0,
+          "cause": "scope-added",
+          "note": "Status dashboard for operations team wasn't in the kickoff scope and cost 13h. Ask about it up front next time.",
+          "suspectedDataError": false
+        }
+      ],
+      "lessons": [
+        {
+          "cause": "underestimated",
+          "note": "Backend service and data model took 1.43× its estimate. Similar work needs a larger likely value.",
+          "appliesTo": {
+            "category": "backend",
+            "projectType": "new-feature"
+          }
+        },
+        {
+          "cause": "scope-added",
+          "note": "Status dashboard for operations team wasn't in the kickoff scope and cost 13h. Ask about it up front next time.",
+          "appliesTo": {
+            "category": "reporting",
+            "projectType": "new-feature"
+          }
+        }
+      ]
+    },
+    {
+      "projectId": "P027",
+      "summary": "Tidewell Fund III: beneficial owner form came in at 345h against 253h estimated (+92h). Most of the gap was availability.",
+      "findings": [
+        {
+          "scope": "item",
+          "refId": "P027-05",
+          "title": "Multi-step form UI",
+          "estimateH": 37,
+          "actualH": 50,
+          "ratio": 1.35,
+          "cause": "availability",
+          "note": "Multi-step form UI ran 1.35× over while capacity was reduced by planned leave. Plan around known leave windows.",
+          "suspectedDataError": false
+        },
+        {
+          "scope": "item",
+          "refId": "P027-06",
+          "title": "Field validation and conditional sections",
+          "estimateH": 19.5,
+          "actualH": 26,
+          "ratio": 1.33,
+          "cause": "availability",
+          "note": "Field validation and conditional sections ran 1.33× over while capacity was reduced by planned leave. Plan around known leave windows.",
+          "suspectedDataError": false
+        },
+        {
+          "scope": "item",
+          "refId": "P027-09",
+          "title": "Map form fields to investor records",
+          "estimateH": 26,
+          "actualH": 37,
+          "ratio": 1.42,
+          "cause": "availability",
+          "note": "Map form fields to investor records ran 1.42× over while capacity was reduced by planned leave. Plan around known leave windows.",
+          "suspectedDataError": false
+        },
+        {
+          "scope": "item",
+          "refId": "P027-10",
+          "title": "Write submissions to the records system",
+          "estimateH": 30.5,
+          "actualH": 45,
+          "ratio": 1.48,
+          "cause": "availability",
+          "note": "Write submissions to the records system ran 1.48× over while capacity was reduced by planned leave. Plan around known leave windows.",
+          "suspectedDataError": false
+        },
+        {
+          "scope": "item",
+          "refId": "P027-14",
+          "title": "E-signature step",
+          "estimateH": 0,
+          "actualH": 40,
+          "ratio": 0,
+          "cause": "scope-added",
+          "note": "E-signature step wasn't in the kickoff scope and cost 40h. Ask about it up front next time.",
+          "suspectedDataError": false
+        },
+        {
+          "scope": "phase",
+          "refId": "build-form",
+          "title": "Build form",
+          "estimateH": 95.5,
+          "actualH": 158.5,
+          "ratio": 1.66,
+          "cause": "scope-added",
+          "note": "Build form wasn't in the kickoff scope and cost 159h. Ask about it up front next time.",
+          "suspectedDataError": false
+        },
+        {
+          "scope": "phase",
+          "refId": "integration",
+          "title": "Integration",
+          "estimateH": 56.5,
+          "actualH": 82,
+          "ratio": 1.45,
+          "cause": "availability",
+          "note": "Integration ran 1.45× over while capacity was reduced by planned leave. Plan around known leave windows.",
+          "suspectedDataError": false
+        }
+      ],
+      "lessons": [
+        {
+          "cause": "scope-added",
+          "note": "E-signature step wasn't in the kickoff scope and cost 40h. Ask about it up front next time.",
+          "appliesTo": {
+            "category": "esign",
+            "projectType": "form-digitization"
+          }
+        },
+        {
+          "cause": "availability",
+          "note": "Write submissions to the records system ran 1.48× over while capacity was reduced by planned leave. Plan around known leave windows.",
+          "appliesTo": {
+            "category": "integration",
+            "projectType": "form-digitization"
+          }
+        }
+      ]
+    },
+    {
+      "projectId": "P028",
+      "summary": "Emberwood Real Assets: transfer agent sync came in at 553h against 381h estimated (+172h). Most of the gap was blocked.",
+      "findings": [
+        {
+          "scope": "item",
+          "refId": "P028-03",
+          "title": "Field mapping between systems",
+          "estimateH": 40.5,
+          "actualH": 70.5,
+          "ratio": 1.74,
+          "cause": "underestimated",
+          "note": "Field mapping between systems took 1.74× its estimate. Similar work needs a larger likely value.",
+          "suspectedDataError": false
+        },
+        {
+          "scope": "item",
+          "refId": "P028-04",
+          "title": "Identifier matching strategy",
+          "estimateH": 24,
+          "actualH": 43.5,
+          "ratio": 1.81,
+          "cause": "blocked",
+          "note": "Identifier matching strategy waited on an outside dependency and ran 1.81× over. Confirm access and owners before build starts.",
+          "suspectedDataError": false
+        },
+        {
+          "scope": "item",
+          "refId": "P028-05",
+          "title": "API client and authentication",
+          "estimateH": 41,
+          "actualH": 108.5,
+          "ratio": 2.65,
+          "cause": "blocked",
+          "note": "API client and authentication waited on an outside dependency and ran 2.65× over. Confirm access and owners before build starts.",
+          "suspectedDataError": false
+        },
+        {
+          "scope": "item",
+          "refId": "P028-07",
+          "title": "Conflict handling and reconciliation",
+          "estimateH": 69.5,
+          "actualH": 92,
+          "ratio": 1.32,
+          "cause": "underestimated",
+          "note": "Conflict handling and reconciliation took 1.32× its estimate. Similar work needs a larger likely value.",
+          "suspectedDataError": false
+        },
+        {
+          "scope": "item",
+          "refId": "P028-08",
+          "title": "Error alerts and sync status page",
+          "estimateH": 21.5,
+          "actualH": 32,
+          "ratio": 1.49,
+          "cause": "underestimated",
+          "note": "Error alerts and sync status page took 1.49× its estimate. Similar work needs a larger likely value.",
+          "suspectedDataError": false
+        },
+        {
+          "scope": "item",
+          "refId": "P028-11",
+          "title": "Production cutover and backfill",
+          "estimateH": 26,
+          "actualH": 34,
+          "ratio": 1.31,
+          "cause": "underestimated",
+          "note": "Production cutover and backfill took 1.31× its estimate. Similar work needs a larger likely value.",
+          "suspectedDataError": false
+        },
+        {
+          "scope": "phase",
+          "refId": "api-mapping",
+          "title": "API mapping",
+          "estimateH": 64.5,
+          "actualH": 114,
+          "ratio": 1.77,
+          "cause": "underestimated",
+          "note": "API mapping took 1.77× its estimate. Similar work needs a larger likely value.",
+          "suspectedDataError": false
+        },
+        {
+          "scope": "phase",
+          "refId": "build",
+          "title": "Build",
+          "estimateH": 199.5,
+          "actualH": 316,
+          "ratio": 1.58,
+          "cause": "blocked",
+          "note": "Build waited on an outside dependency and ran 1.58× over. Confirm access and owners before build starts.",
+          "suspectedDataError": false
+        },
+        {
+          "scope": "phase",
+          "refId": "go-live",
+          "title": "Go-live",
+          "estimateH": 26,
+          "actualH": 34,
+          "ratio": 1.31,
+          "cause": "underestimated",
+          "note": "Go-live took 1.31× its estimate. Similar work needs a larger likely value.",
+          "suspectedDataError": false
+        }
+      ],
+      "lessons": [
+        {
+          "cause": "blocked",
+          "note": "API client and authentication waited on an outside dependency and ran 2.65× over. Confirm access and owners before build starts.",
+          "appliesTo": {
+            "category": "integration",
+            "projectType": "integration"
+          }
+        },
+        {
+          "cause": "underestimated",
+          "note": "Field mapping between systems took 1.74× its estimate. Similar work needs a larger likely value.",
+          "appliesTo": {
+            "category": "integration",
+            "projectType": "integration"
+          }
+        }
+      ]
+    },
+    {
+      "projectId": "P029",
+      "summary": "Larkfield Credit: tax residency form came in at 317h against 278h estimated (+39h). Most of the gap was scope added.",
+      "findings": [
+        {
+          "scope": "item",
+          "refId": "P029-03",
+          "title": "Legal review of disclosures and consent wording",
+          "estimateH": 19.5,
+          "actualH": 24.5,
+          "ratio": 1.26,
+          "cause": "underestimated",
+          "note": "Legal review of disclosures and consent wording took 1.26× its estimate. Similar work needs a larger likely value.",
+          "suspectedDataError": false
+        },
+        {
+          "scope": "item",
+          "refId": "P029-08",
+          "title": "Map form fields to investor records",
+          "estimateH": 29,
+          "actualH": 46.5,
+          "ratio": 1.6,
+          "cause": "blocked",
+          "note": "Map form fields to investor records waited on an outside dependency and ran 1.6× over. Confirm access and owners before build starts.",
+          "suspectedDataError": false
+        },
+        {
+          "scope": "item",
+          "refId": "P029-12",
+          "title": "Launch and paper-to-online cutover",
+          "estimateH": 11,
+          "actualH": 8,
+          "ratio": 0.73,
+          "cause": "underestimated",
+          "note": "Launch and paper-to-online cutover took 0.73× its estimate. Similar work needs a larger likely value.",
+          "suspectedDataError": false
+        },
+        {
+          "scope": "item",
+          "refId": "P029-13",
+          "title": "Supporting document upload",
+          "estimateH": 0,
+          "actualH": 18,
+          "ratio": 0,
+          "cause": "scope-added",
+          "note": "Supporting document upload wasn't in the kickoff scope and cost 18h. Ask about it up front next time.",
+          "suspectedDataError": false
+        },
+        {
+          "scope": "phase",
+          "refId": "legal-review",
+          "title": "Legal review",
+          "estimateH": 19.5,
+          "actualH": 24.5,
+          "ratio": 1.26,
+          "cause": "underestimated",
+          "note": "Legal review took 1.26× its estimate. Similar work needs a larger likely value.",
+          "suspectedDataError": false
+        },
+        {
+          "scope": "phase",
+          "refId": "go-live",
+          "title": "Go-live",
+          "estimateH": 11,
+          "actualH": 8,
+          "ratio": 0.73,
+          "cause": "underestimated",
+          "note": "Go-live took 0.73× its estimate. Similar work needs a larger likely value.",
+          "suspectedDataError": false
+        }
+      ],
+      "lessons": [
+        {
+          "cause": "scope-added",
+          "note": "Supporting document upload wasn't in the kickoff scope and cost 18h. Ask about it up front next time.",
+          "appliesTo": {
+            "category": "forms",
+            "projectType": "form-digitization"
+          }
+        },
+        {
+          "cause": "blocked",
+          "note": "Map form fields to investor records waited on an outside dependency and ran 1.6× over. Confirm access and owners before build starts.",
+          "appliesTo": {
+            "category": "integration",
+            "projectType": "form-digitization"
+          }
+        }
+      ]
+    },
+    {
+      "projectId": "P030",
+      "summary": "Oakmere Capital: LP exposure report came in at 241h against 140h estimated (+101h). Most of the gap was data error.",
+      "findings": [
+        {
+          "scope": "item",
+          "refId": "P030-01",
+          "title": "Report requirements workshop",
+          "estimateH": 13.5,
+          "actualH": 135,
+          "ratio": 10,
+          "cause": "data-error",
+          "note": "Report requirements workshop logged 135h against 14h, which looks like a time-entry error. Excluded from calibration.",
+          "suspectedDataError": true
+        },
+        {
+          "scope": "phase",
+          "refId": "discovery",
+          "title": "Discovery",
+          "estimateH": 13.5,
+          "actualH": 135,
+          "ratio": 10,
+          "cause": "data-error",
+          "note": "Discovery logged 135h against 14h, which looks like a time-entry error. Excluded from calibration.",
+          "suspectedDataError": false
+        }
+      ],
+      "lessons": []
+    },
+    {
+      "projectId": "P031",
+      "summary": "Harborlight Partners: investor portal search came in at 219h against 240h estimated (-21h). Most of the gap was underestimated.",
+      "findings": [
+        {
+          "scope": "item",
+          "refId": "P031-03",
+          "title": "Wireframes for the main flow",
+          "estimateH": 27.5,
+          "actualH": 14.5,
+          "ratio": 0.53,
+          "cause": "underestimated",
+          "note": "Wireframes for the main flow took 0.53× its estimate. Similar work needs a larger likely value.",
+          "suspectedDataError": false
+        },
+        {
+          "scope": "phase",
+          "refId": "design",
+          "title": "Design",
+          "estimateH": 49.5,
+          "actualH": 36,
+          "ratio": 0.73,
+          "cause": "underestimated",
+          "note": "Design took 0.73× its estimate. Similar work needs a larger likely value.",
+          "suspectedDataError": false
+        }
+      ],
+      "lessons": [
+        {
+          "cause": "underestimated",
+          "note": "Wireframes for the main flow took 0.53× its estimate. Similar work needs a larger likely value.",
+          "appliesTo": {
+            "category": "design",
+            "projectType": "new-feature"
+          }
+        }
+      ]
+    },
+    {
+      "projectId": "P032",
+      "summary": "Quillstone Partners: change of address form came in at 284h against 239h estimated (+45h). Most of the gap was underestimated.",
+      "findings": [
+        {
+          "scope": "item",
+          "refId": "P032-01",
+          "title": "Field inventory of the paper form",
+          "estimateH": 19,
+          "actualH": 25,
+          "ratio": 1.32,
+          "cause": "underestimated",
+          "note": "Field inventory of the paper form took 1.32× its estimate. Similar work needs a larger likely value.",
+          "suspectedDataError": false
+        },
+        {
+          "scope": "item",
+          "refId": "P032-03",
+          "title": "Legal review of disclosures and consent wording",
+          "estimateH": 13,
+          "actualH": 19,
+          "ratio": 1.46,
+          "cause": "underestimated",
+          "note": "Legal review of disclosures and consent wording took 1.46× its estimate. Similar work needs a larger likely value.",
+          "suspectedDataError": false
+        },
+        {
+          "scope": "item",
+          "refId": "P032-07",
+          "title": "PDF of the completed form",
+          "estimateH": 20.5,
+          "actualH": 27,
+          "ratio": 1.32,
+          "cause": "underestimated",
+          "note": "PDF of the completed form took 1.32× its estimate. Similar work needs a larger likely value.",
+          "suspectedDataError": false
+        },
+        {
+          "scope": "item",
+          "refId": "P032-08",
+          "title": "Map form fields to investor records",
+          "estimateH": 23,
+          "actualH": 33.5,
+          "ratio": 1.46,
+          "cause": "underestimated",
+          "note": "Map form fields to investor records took 1.46× its estimate. Similar work needs a larger likely value.",
+          "suspectedDataError": false
+        },
+        {
+          "scope": "item",
+          "refId": "P032-09",
+          "title": "Write submissions to the records system",
+          "estimateH": 25,
+          "actualH": 43,
+          "ratio": 1.72,
+          "cause": "blocked",
+          "note": "Write submissions to the records system waited on an outside dependency and ran 1.72× over. Confirm access and owners before build starts.",
+          "suspectedDataError": false
+        },
+        {
+          "scope": "phase",
+          "refId": "legal-review",
+          "title": "Legal review",
+          "estimateH": 13,
+          "actualH": 19,
+          "ratio": 1.46,
+          "cause": "underestimated",
+          "note": "Legal review took 1.46× its estimate. Similar work needs a larger likely value.",
+          "suspectedDataError": false
+        },
+        {
+          "scope": "phase",
+          "refId": "integration",
+          "title": "Integration",
+          "estimateH": 48,
+          "actualH": 76.5,
+          "ratio": 1.59,
+          "cause": "blocked",
+          "note": "Integration waited on an outside dependency and ran 1.59× over. Confirm access and owners before build starts.",
+          "suspectedDataError": false
+        }
+      ],
+      "lessons": [
+        {
+          "cause": "blocked",
+          "note": "Write submissions to the records system waited on an outside dependency and ran 1.72× over. Confirm access and owners before build starts.",
+          "appliesTo": {
+            "category": "integration",
+            "projectType": "form-digitization"
+          }
+        },
+        {
+          "cause": "underestimated",
+          "note": "Map form fields to investor records took 1.46× its estimate. Similar work needs a larger likely value.",
+          "appliesTo": {
+            "category": "integration",
+            "projectType": "form-digitization"
+          }
+        }
+      ]
+    },
+    {
+      "projectId": "P033",
+      "summary": "Bluestem & Vale: e-sign provider callback came in at 207h against 117h estimated (+90h). Most of the gap was scope added.",
+      "findings": [
+        {
+          "scope": "item",
+          "refId": "P033-01",
+          "title": "Partner API discovery and access",
+          "estimateH": 6.5,
+          "actualH": 9,
+          "ratio": 1.38,
+          "cause": "underestimated",
+          "note": "Partner API discovery and access took 1.38× its estimate. Similar work needs a larger likely value.",
+          "suspectedDataError": false
+        },
+        {
+          "scope": "item",
+          "refId": "P033-03",
+          "title": "Field mapping between systems",
+          "estimateH": 16,
+          "actualH": 29.5,
+          "ratio": 1.84,
+          "cause": "underestimated",
+          "note": "Field mapping between systems took 1.84× its estimate. Similar work needs a larger likely value.",
+          "suspectedDataError": false
+        },
+        {
+          "scope": "item",
+          "refId": "P033-04",
+          "title": "Identifier matching strategy",
+          "estimateH": 9,
+          "actualH": 11.5,
+          "ratio": 1.28,
+          "cause": "underestimated",
+          "note": "Identifier matching strategy took 1.28× its estimate. Similar work needs a larger likely value.",
+          "suspectedDataError": false
+        },
+        {
+          "scope": "item",
+          "refId": "P033-06",
+          "title": "Sync job with retries",
+          "estimateH": 27,
+          "actualH": 57,
+          "ratio": 2.11,
+          "cause": "blocked",
+          "note": "Sync job with retries waited on an outside dependency and ran 2.11× over. Confirm access and owners before build starts.",
+          "suspectedDataError": false
+        },
+        {
+          "scope": "item",
+          "refId": "P033-11",
+          "title": "Backfill of historical records",
+          "estimateH": 0,
+          "actualH": 15.5,
+          "ratio": 0,
+          "cause": "scope-added",
+          "note": "Backfill of historical records wasn't in the kickoff scope and cost 16h. Ask about it up front next time.",
+          "suspectedDataError": false
+        },
+        {
+          "scope": "item",
+          "refId": "P033-12",
+          "title": "Second partner file format",
+          "estimateH": 0,
+          "actualH": 20,
+          "ratio": 0,
+          "cause": "scope-added",
+          "note": "Second partner file format wasn't in the kickoff scope and cost 20h. Ask about it up front next time.",
+          "suspectedDataError": false
+        },
+        {
+          "scope": "phase",
+          "refId": "api-mapping",
+          "title": "API mapping",
+          "estimateH": 25,
+          "actualH": 41,
+          "ratio": 1.64,
+          "cause": "underestimated",
+          "note": "API mapping took 1.64× its estimate. Similar work needs a larger likely value.",
+          "suspectedDataError": false
+        },
+        {
+          "scope": "phase",
+          "refId": "build",
+          "title": "Build",
+          "estimateH": 50.5,
+          "actualH": 118,
+          "ratio": 2.34,
+          "cause": "blocked",
+          "note": "Build waited on an outside dependency and ran 2.34× over. Confirm access and owners before build starts.",
+          "suspectedDataError": false
+        }
+      ],
+      "lessons": [
+        {
+          "cause": "blocked",
+          "note": "Sync job with retries waited on an outside dependency and ran 2.11× over. Confirm access and owners before build starts.",
+          "appliesTo": {
+            "category": "integration",
+            "projectType": "integration"
+          }
+        },
+        {
+          "cause": "scope-added",
+          "note": "Second partner file format wasn't in the kickoff scope and cost 20h. Ask about it up front next time.",
+          "appliesTo": {
+            "category": "integration",
+            "projectType": "integration"
+          }
+        }
+      ]
+    },
+    {
+      "projectId": "P034",
+      "summary": "Copperfen Ventures: data warehouse feed came in at 288h against 199h estimated (+89h). Most of the gap was underestimated.",
+      "findings": [
+        {
+          "scope": "item",
+          "refId": "P034-04",
+          "title": "Identifier matching strategy",
+          "estimateH": 11.5,
+          "actualH": 19.5,
+          "ratio": 1.7,
+          "cause": "blocked",
+          "note": "Identifier matching strategy waited on an outside dependency and ran 1.7× over. Confirm access and owners before build starts.",
+          "suspectedDataError": false
+        },
+        {
+          "scope": "item",
+          "refId": "P034-05",
+          "title": "API client and authentication",
+          "estimateH": 18,
+          "actualH": 30.5,
+          "ratio": 1.69,
+          "cause": "underestimated",
+          "note": "API client and authentication took 1.69× its estimate. Similar work needs a larger likely value.",
+          "suspectedDataError": false
+        },
+        {
+          "scope": "item",
+          "refId": "P034-06",
+          "title": "Sync job with retries",
+          "estimateH": 33,
+          "actualH": 57.5,
+          "ratio": 1.74,
+          "cause": "underestimated",
+          "note": "Sync job with retries took 1.74× its estimate. Similar work needs a larger likely value.",
+          "suspectedDataError": false
+        },
+        {
+          "scope": "item",
+          "refId": "P034-08",
+          "title": "Error alerts and sync status page",
+          "estimateH": 11,
+          "actualH": 14,
+          "ratio": 1.27,
+          "cause": "underestimated",
+          "note": "Error alerts and sync status page took 1.27× its estimate. Similar work needs a larger likely value.",
+          "suspectedDataError": false
+        },
+        {
+          "scope": "item",
+          "refId": "P034-12",
+          "title": "Second partner file format",
+          "estimateH": 0,
+          "actualH": 23,
+          "ratio": 0,
+          "cause": "scope-added",
+          "note": "Second partner file format wasn't in the kickoff scope and cost 23h. Ask about it up front next time.",
+          "suspectedDataError": false
+        },
+        {
+          "scope": "phase",
+          "refId": "api-mapping",
+          "title": "API mapping",
+          "estimateH": 42.5,
+          "actualH": 57.5,
+          "ratio": 1.35,
+          "cause": "blocked",
+          "note": "API mapping waited on an outside dependency and ran 1.35× over. Confirm access and owners before build starts.",
+          "suspectedDataError": false
+        },
+        {
+          "scope": "phase",
+          "refId": "build",
+          "title": "Build",
+          "estimateH": 94.5,
+          "actualH": 164.5,
+          "ratio": 1.74,
+          "cause": "underestimated",
+          "note": "Build took 1.74× its estimate. Similar work needs a larger likely value.",
+          "suspectedDataError": false
+        }
+      ],
+      "lessons": [
+        {
+          "cause": "underestimated",
+          "note": "Sync job with retries took 1.74× its estimate. Similar work needs a larger likely value.",
+          "appliesTo": {
+            "category": "integration",
+            "projectType": "integration"
+          }
+        },
+        {
+          "cause": "scope-added",
+          "note": "Second partner file format wasn't in the kickoff scope and cost 23h. Ask about it up front next time.",
+          "appliesTo": {
+            "category": "integration",
+            "projectType": "integration"
+          }
+        }
+      ]
+    },
+    {
+      "projectId": "P035",
+      "summary": "Saltbrook Ventures: wire instruction form came in at 247h against 196h estimated (+52h). Most of the gap was scope added.",
+      "findings": [
+        {
+          "scope": "item",
+          "refId": "P035-09",
+          "title": "Map form fields to investor records",
+          "estimateH": 23,
+          "actualH": 29,
+          "ratio": 1.26,
+          "cause": "underestimated",
+          "note": "Map form fields to investor records took 1.26× its estimate. Similar work needs a larger likely value.",
+          "suspectedDataError": false
+        },
+        {
+          "scope": "item",
+          "refId": "P035-14",
+          "title": "E-signature step",
+          "estimateH": 0,
+          "actualH": 31,
+          "ratio": 0,
+          "cause": "scope-added",
+          "note": "E-signature step wasn't in the kickoff scope and cost 31h. Ask about it up front next time.",
+          "suspectedDataError": false
+        },
+        {
+          "scope": "item",
+          "refId": "P035-15",
+          "title": "Supporting document upload",
+          "estimateH": 0,
+          "actualH": 14.5,
+          "ratio": 0,
+          "cause": "scope-added",
+          "note": "Supporting document upload wasn't in the kickoff scope and cost 15h. Ask about it up front next time.",
+          "suspectedDataError": false
+        },
+        {
+          "scope": "phase",
+          "refId": "build-form",
+          "title": "Build form",
+          "estimateH": 74,
+          "actualH": 119,
+          "ratio": 1.61,
+          "cause": "scope-added",
+          "note": "Build form wasn't in the kickoff scope and cost 119h. Ask about it up front next time.",
+          "suspectedDataError": false
+        }
+      ],
+      "lessons": [
+        {
+          "cause": "scope-added",
+          "note": "E-signature step wasn't in the kickoff scope and cost 31h. Ask about it up front next time.",
+          "appliesTo": {
+            "category": "esign",
+            "projectType": "form-digitization"
+          }
+        },
+        {
+          "cause": "scope-added",
+          "note": "Supporting document upload wasn't in the kickoff scope and cost 15h. Ask about it up front next time.",
+          "appliesTo": {
+            "category": "forms",
+            "projectType": "form-digitization"
+          }
+        }
+      ]
+    },
+    {
+      "projectId": "P036",
+      "summary": "Junoridge Holdings: ops SLA dashboard came in at 83h against 93h estimated (-10h).",
+      "findings": [],
+      "lessons": []
+    },
+    {
+      "projectId": "P037",
+      "summary": "Tidewell Fund III: entity data consolidation came in at 70h against 67h estimated (+3h). Most of the gap was underestimated.",
+      "findings": [
+        {
+          "scope": "item",
+          "refId": "P037-05",
+          "title": "Load scripts with validation",
+          "estimateH": 12.5,
+          "actualH": 17,
+          "ratio": 1.36,
+          "cause": "underestimated",
+          "note": "Load scripts with validation took 1.36× its estimate. Similar work needs a larger likely value.",
+          "suspectedDataError": false
+        }
+      ],
+      "lessons": [
+        {
+          "cause": "underestimated",
+          "note": "Load scripts with validation took 1.36× its estimate. Similar work needs a larger likely value.",
+          "appliesTo": {
+            "category": "data",
+            "projectType": "data-migration"
+          }
+        }
+      ]
+    },
+    {
+      "projectId": "P038",
+      "summary": "Emberwood Real Assets: distribution notices came in at 205h against 191h estimated (+14h). Most of the gap was availability.",
+      "findings": [
+        {
+          "scope": "item",
+          "refId": "P038-11",
+          "title": "Release, feature flag and monitoring",
+          "estimateH": 9,
+          "actualH": 11.5,
+          "ratio": 1.28,
+          "cause": "availability",
+          "note": "Release, feature flag and monitoring ran 1.28× over while capacity was reduced by planned leave. Plan around known leave windows.",
+          "suspectedDataError": false
+        },
+        {
+          "scope": "phase",
+          "refId": "go-live",
+          "title": "Go-live",
+          "estimateH": 9,
+          "actualH": 11.5,
+          "ratio": 1.28,
+          "cause": "availability",
+          "note": "Go-live ran 1.28× over while capacity was reduced by planned leave. Plan around known leave windows.",
+          "suspectedDataError": false
+        }
+      ],
+      "lessons": [
+        {
+          "cause": "availability",
+          "note": "Release, feature flag and monitoring ran 1.28× over while capacity was reduced by planned leave. Plan around known leave windows.",
+          "appliesTo": {
+            "category": "devops",
+            "projectType": "new-feature"
+          }
+        }
+      ]
+    },
+    {
+      "projectId": "P039",
+      "summary": "Larkfield Credit: KYC refresh prompts came in at 420h against 392h estimated (+28h). Most of the gap was scope added.",
+      "findings": [
+        {
+          "scope": "item",
+          "refId": "P039-13",
+          "title": "Status dashboard for operations team",
+          "estimateH": 0,
+          "actualH": 31.5,
+          "ratio": 0,
+          "cause": "scope-added",
+          "note": "Status dashboard for operations team wasn't in the kickoff scope and cost 32h. Ask about it up front next time.",
+          "suspectedDataError": false
+        }
+      ],
+      "lessons": [
+        {
+          "cause": "scope-added",
+          "note": "Status dashboard for operations team wasn't in the kickoff scope and cost 32h. Ask about it up front next time.",
+          "appliesTo": {
+            "category": "reporting",
+            "projectType": "new-feature"
+          }
+        }
+      ]
+    },
+    {
+      "projectId": "P040",
+      "summary": "Oakmere Capital: commitment changes came in at 224h against 213h estimated (+11h). Most of the gap was underestimated.",
+      "findings": [
+        {
+          "scope": "item",
+          "refId": "P040-01",
+          "title": "Stakeholder interviews and requirements",
+          "estimateH": 11,
+          "actualH": 8,
+          "ratio": 0.73,
+          "cause": "underestimated",
+          "note": "Stakeholder interviews and requirements took 0.73× its estimate. Similar work needs a larger likely value.",
+          "suspectedDataError": false
+        },
+        {
+          "scope": "item",
+          "refId": "P040-06",
+          "title": "Frontend screens",
+          "estimateH": 36.5,
+          "actualH": 46.5,
+          "ratio": 1.27,
+          "cause": "underestimated",
+          "note": "Frontend screens took 1.27× its estimate. Similar work needs a larger likely value.",
+          "suspectedDataError": false
+        },
+        {
+          "scope": "item",
+          "refId": "P040-10",
+          "title": "Email client and browser testing",
+          "estimateH": 7.5,
+          "actualH": 10.5,
+          "ratio": 1.4,
+          "cause": "underestimated",
+          "note": "Email client and browser testing took 1.4× its estimate. Similar work needs a larger likely value.",
+          "suspectedDataError": false
+        }
+      ],
+      "lessons": [
+        {
+          "cause": "underestimated",
+          "note": "Frontend screens took 1.27× its estimate. Similar work needs a larger likely value.",
+          "appliesTo": {
+            "category": "frontend",
+            "projectType": "new-feature"
+          }
+        },
+        {
+          "cause": "underestimated",
+          "note": "Email client and browser testing took 1.4× its estimate. Similar work needs a larger likely value.",
+          "appliesTo": {
+            "category": "qa",
+            "projectType": "new-feature"
+          }
+        }
+      ]
+    }
+  ]
+}

@@ -37,11 +37,12 @@ export function biasFactors(
     groups.set(it.category, arr);
   }
   const out = new Map<Category, Explained<BiasFactor>>();
-  for (const [category, logs] of groups) out.set(category, biasFor(category, logs, k));
+  const net = overhead !== noOverhead;
+  for (const [category, logs] of groups) out.set(category, biasFor(category, logs, k, net));
   return out;
 }
 
-function biasFor(category: Category, logs: number[], k: number): Explained<BiasFactor> {
+function biasFor(category: Category, logs: number[], k: number, netOfOverhead = false): Explained<BiasFactor> {
   const n = logs.length;
   const ml = mean(logs);
   const weight = n / (n + k);
@@ -55,7 +56,7 @@ function biasFor(category: Category, logs: number[], k: number): Explained<BiasF
       plainWords:
         pct === 0
           ? `Past ${category} work landed on estimate, so no correction.`
-          : `Past ${category} work ran ${pct > 0 ? `${pct}% over` : `${-pct}% under`} estimate (after shrinking toward 0% for ${n} data points), so guesses are scaled by ×${round(factor, 2)}.`,
+          : `Past ${category} work ran ${pct > 0 ? `${pct}% over` : `${-pct}% under`} estimate${netOfOverhead ? ' once team coordination time is set aside (it is added back for your team)' : ''}, shrunk toward 0% for ${n} data points, so guesses are scaled by ×${round(factor, 2)}.`,
       formula: 'log r_c = (n_c / (n_c + k)) · mean(log((actual / overhead) / estimate)), k = 5',
       inputs: { category, n, k, meanLogRatio: round(ml, 4), shrinkWeight: round(weight, 3), factor: round(factor, 4) },
     },

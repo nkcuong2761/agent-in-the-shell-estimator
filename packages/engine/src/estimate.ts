@@ -6,7 +6,6 @@ import type {
   HistoryItem,
   HistoryProject,
   ItemAnalogs,
-  MissingInfo,
   PanelResult,
   PhaseEstimate,
   PlannedLeave,
@@ -26,10 +25,11 @@ import { CITATIONS, type Explained } from './explain';
 import { aggregatePanel, type AggregatedGuess } from './panel';
 import { projectErrorSigma } from './correlation';
 import { historyOverhead, noOverhead } from './overhead';
-import { pertQuantiles } from './pert';
+import { samplePert } from './pert';
+import { mulberry32, normal } from './prng';
 import { subSeed } from './prng';
 import { referenceClass } from './referenceClass';
-import { scheduleOnce, simulate, sortedCopy, effectiveHeadcount, type SimConfig, type SimItem } from './simulate';
+import { effectiveHeadcount, overheadFactor, scheduleOnce, simulate, sortedCopy, type SimConfig, type SimItem } from './simulate';
 import { histogram, quantileSorted, round } from './stats';
 
 export const DEFAULT_RUNS = 5000;
@@ -119,18 +119,16 @@ export function questionLinks(scope: ScopeResult): Map<string, Set<string>> {
   return links;
 }
 
-function openSpreadFor(itemId: string, open: readonly MissingInfo[], links: Map<string, Set<string>>): number {
-  let s = 1;
-  for (const q of open) if (links.get(q.id)?.has(itemId)) s *= q.spreadMultiplier;
-  return Math.min(MAX_SPREAD, s);
+/**
+ * An open question is one unknown that moves every item it touches together. Each run draws one shared
+ * factor per question: exp(σ·z) on the unfavourable side, exp(σ·z/3) on the favourable side, with
+ * σ = ln(spreadMultiplier) / 1.645, so `spreadMultiplier` is the 95th-percentile factor and the median is 1.
+ */
+export function questionSigma(spreadMultiplier: number): number {
+  return Math.log(Math.min(MAX_SPREAD, Math.max(1, spreadMultiplier))) / 1.645;
 }
 
-/** Widen the pessimistic side by the open-question spread: p' = m + (p − m)·s. */
-function widen(o: number, m: number, p: number, s: number): { o: number; m: number; p: number } {
-  return { o, m, p: m + (p - m) * s };
-}
-
-function simConfig(prep: PreparedEstimate, items: SimItem[], team: TeamShape, runs: number, seed: number): SimConfig {
+function simConfig(prep: PreparedEstimate, items: SimItem[], team: TeamShape, runs: number, seed: number, sigmas: number[]): SimConfig {
   const { inputs } = prep;
   return {
     phases: inputs.scope.phases.map((p) => ({ id: p.id, order: p.order })),
@@ -142,17 +140,28 @@ function simConfig(prep: PreparedEstimate, items: SimItem[], team: TeamShape, ru
     runs,
     seed,
     projectSigma: prep.sigma.value,
+    questionSigmas: sigmas,
   };
 }
 
-function simItems(prep: PreparedEstimate, open: readonly MissingInfo[], dropped: ReadonlySet<string>, links: Map<string, Set<string>>): SimItem[] {
+function simItems(prep: PreparedEstimate, dropped: ReadonlySet<string>, links: Map<string, Set<string>>): SimItem[] {
+  const qs = prep.inputs.scope.missingInfo;
   return prep.calibrated
     .filter((c) => !dropped.has(c.item.id))
-    .map((c) => {
-      const s = openSpreadFor(c.item.id, open, links);
-      const w = widen(c.o, c.m, c.p, s);
-      return { id: c.item.id, phaseId: c.item.phaseId, role: c.item.role, ...w };
-    });
+    .map((c) => ({
+      id: c.item.id,
+      phaseId: c.item.phaseId,
+      role: c.item.role,
+      o: c.o,
+      m: c.m,
+      p: c.p,
+      questions: qs.flatMap((q, qi) => (links.get(q.id)?.has(c.item.id) ? [qi] : [])),
+    }));
+}
+
+/** σ per scope question in scope order; 0 for answered questions (draws stay aligned across scenarios). */
+function sigmasFor(scope: ScopeResult, open: ReadonlySet<string>): number[] {
+  return scope.missingInfo.map((q) => (open.has(q.id) ? questionSigma(q.spreadMultiplier) : 0));
 }
 
 function spreadOf(totals: Float64Array): number {
@@ -160,6 +169,7 @@ function spreadOf(totals: Float64Array): number {
   return quantileSorted(s, 0.8) - quantileSorted(s, 0.5);
 }
 
+const ITEM_SAMPLES = 2000;
 const fmtH = (h: number) => `${Math.round(h).toLocaleString('en-US')}h`;
 
 export function runEstimate(prep: PreparedEstimate, opts: RunOptions = {}): Estimate {
@@ -177,9 +187,12 @@ export function runEstimate(prep: PreparedEstimate, opts: RunOptions = {}): Esti
   const startDate = nextWorkingDay(inputs.startDate);
   const links = questionLinks(scope);
   const open = scope.missingInfo.filter((q) => !answered.has(q.id));
+  const openIds = new Set(open.map((q) => q.id));
+  const c = inputs.squad.coordinationOverheadPerExtra;
 
-  const items = simItems(prep, open, dropped, links);
-  const cfg = simConfig(prep, items, team, runs, seed);
+  const items = simItems(prep, dropped, links);
+  const sigmas = sigmasFor(scope, openIds);
+  const cfg = simConfig(prep, items, team, runs, seed, sigmas);
   const sim = simulate(cfg);
   const explanations: Record<string, Explanation> = {};
 
@@ -198,7 +211,7 @@ export function runEstimate(prep: PreparedEstimate, opts: RunOptions = {}): Esti
     openQuestions: open.length,
     focusFactor: inputs.squad.focusFactor,
     absenceRate: inputs.squad.absenceRate,
-    overheadPerExtraPerson: inputs.squad.coordinationOverheadPerExtra,
+    overheadPerExtraPerson: c,
     hoursPerPersonDay: HOURS_PER_DAY,
     projectSigma: prep.sigma.value,
   };
@@ -206,7 +219,7 @@ export function runEstimate(prep: PreparedEstimate, opts: RunOptions = {}): Esti
     method: 'Monte Carlo simulation of Beta-PERT items',
     citation: `${CITATIONS.monteCarlo}; ${CITATIONS.pert}`,
     plainWords: `In half of ${runs.toLocaleString('en-US')} simulated projects the work took less than ${fmtH(total.p50)}.`,
-    formula: 'P50 over runs of shared factor × Σ Beta-PERT(o, m′, p) × coordination overhead',
+    formula: 'P50 over runs of Σᵢ Beta-PERT(oᵢ, m′ᵢ, pᵢ) × project factor × open-question factors × (1 + c(n−1))',
     inputs: mcInputs,
   };
   explanations['total.p80'] = {
@@ -217,59 +230,93 @@ export function runEstimate(prep: PreparedEstimate, opts: RunOptions = {}): Esti
     inputs: mcInputs,
   };
 
-  // --- per item -------------------------------------------------------------
+  // --- per item: seeded samples with and without open-question factors ---------
+  const qDraws = new Map<string, Float64Array>();
+  for (const q of open) {
+    const rng = mulberry32(subSeed(seed, `q:${q.id}`));
+    const s = questionSigma(q.spreadMultiplier);
+    const g = new Float64Array(ITEM_SAMPLES);
+    for (let k = 0; k < ITEM_SAMPLES; k++) {
+      const z = normal(rng);
+      g[k] = Math.exp(z > 0 ? s * z : (s * z) / 3);
+    }
+    qDraws.set(q.id, g);
+  }
   const calibratedOut: CalibratedItem[] = [];
+  const baseSamples = new Map<string, Float64Array>();
+  const rawP50ById = new Map<string, number>();
   let sumP50 = 0;
   let taskSq = 0;
-  const extraByQuestion = new Map<string, number>();
-  const baseP50ById = new Map<string, number>();
-  for (const c of prep.calibrated) {
-    if (dropped.has(c.item.id)) continue;
-    const qSeed = subSeed(seed, c.item.id);
-    const base = pertQuantiles(c.o, c.m, c.p, qSeed).value;
-    const s = openSpreadFor(c.item.id, open, links);
-    const w = widen(c.o, c.m, c.p, s);
-    const withOpen = s > 1 ? pertQuantiles(w.o, w.m, w.p, qSeed).value : base;
-    sumP50 += base.p50;
-    baseP50ById.set(c.item.id, base.p50);
-    taskSq += (base.p80 - base.p50) ** 2;
-    if (s > 1) {
-      const extra = withOpen.p80 - base.p80;
-      const qs = open.filter((q) => links.get(q.id)?.has(c.item.id));
-      const logTotal = qs.reduce((acc, q) => acc + Math.log(q.spreadMultiplier), 0) || 1;
-      for (const q of qs) {
-        extraByQuestion.set(q.id, (extraByQuestion.get(q.id) ?? 0) + (extra * Math.log(q.spreadMultiplier)) / logTotal);
-      }
+  for (const cal of prep.calibrated) {
+    if (dropped.has(cal.item.id)) continue;
+    const oh = overheadFactor(effectiveHeadcount(team, cal.item.role), c);
+    const rng = mulberry32(subSeed(seed, cal.item.id));
+    const base = new Float64Array(ITEM_SAMPLES);
+    const withOpen = new Float64Array(ITEM_SAMPLES);
+    const qs = open.filter((q) => links.get(q.id)?.has(cal.item.id));
+    for (let k = 0; k < ITEM_SAMPLES; k++) {
+      const h = samplePert(rng, cal.o, cal.m, cal.p) * oh;
+      base[k] = h;
+      let g = 1;
+      for (const q of qs) g *= (qDraws.get(q.id) as Float64Array)[k] as number;
+      withOpen[k] = h * g;
     }
+    baseSamples.set(cal.item.id, base);
+    const bs = sortedCopy(base);
+    const os = sortedCopy(withOpen);
+    const b50 = quantileSorted(bs, 0.5);
+    const b80 = quantileSorted(bs, 0.8);
+    rawP50ById.set(cal.item.id, b50 / oh);
+    sumP50 += b50;
+    taskSq += (b80 - b50) ** 2;
+    const s = qs.reduce((acc, q) => acc * q.spreadMultiplier, 1);
+    const o50 = quantileSorted(os, 0.5);
+    const o80 = quantileSorted(os, 0.8);
     calibratedOut.push({
-      itemId: c.item.id,
-      phaseId: c.item.phaseId,
-      role: c.item.role,
-      category: c.item.category,
-      panel: { o: c.panel.o, m: c.panel.m, p: c.panel.p },
-      blendWeight: c.weight,
-      biasFactor: c.bias,
-      openSpread: round(s, 3),
-      o: round(w.o, 1),
-      m: round(w.m, 1),
-      p: round(w.p, 1),
-      p50: round(withOpen.p50, 1),
-      p80: round(withOpen.p80, 1),
+      itemId: cal.item.id,
+      phaseId: cal.item.phaseId,
+      role: cal.item.role,
+      category: cal.item.category,
+      panel: { o: cal.panel.o, m: cal.panel.m, p: cal.panel.p },
+      blendWeight: cal.weight,
+      biasFactor: cal.bias,
+      openSpread: round(Math.min(MAX_SPREAD, s), 3),
+      o: round(cal.o, 1),
+      m: round(cal.m, 1),
+      p: round(cal.p, 1),
+      p50: round(o50, 1),
+      p80: round(o80, 1),
     });
-    explanations[`item.${c.item.id}`] = c.blend;
-    explanations[`item.${c.item.id}.range`] = {
+    explanations[`item.${cal.item.id}`] = cal.blend;
+    explanations[`item.${cal.item.id}.range`] = {
       method: 'Three-point estimate as a Beta-PERT distribution',
       citation: CITATIONS.pert,
       plainWords:
-        s > 1
-          ? `Calibrated to ${round(c.o)}–${round(w.p)}h (most likely ${round(c.m)}h). Open questions widen the pessimistic side ×${round(s, 2)}.`
-          : `Calibrated to ${round(c.o)}–${round(c.p)}h (most likely ${round(c.m)}h): P50 ${round(base.p50)}h, P80 ${round(base.p80)}h.`,
-      formula: "p′ = m + (p − m)·s for open-question spread s; P50/P80 of Beta-PERT(o, m′, p′)",
-      inputs: { o: round(c.o, 2), m: round(c.m, 2), p: round(w.p, 2), spread: round(s, 3), p50: round(withOpen.p50, 2), p80: round(withOpen.p80, 2) },
+        qs.length > 0
+          ? `Calibrated to ${round(cal.o)}–${round(cal.p)}h (most likely ${round(cal.m)}h). ${qs.length} open question${qs.length === 1 ? '' : 's'} could push it up to ×${round(Math.min(MAX_SPREAD, s), 2)}: P80 ${round(o80)}h now, ${round(b80)}h once answered.`
+          : `Calibrated to ${round(cal.o)}–${round(cal.p)}h (most likely ${round(cal.m)}h): P50 ${round(o50)}h, P80 ${round(o80)}h${oh > 1 ? `, including ×${round(oh, 2)} coordination overhead` : ''}.`,
+      formula: 'hours = Beta-PERT(o, m′, p) × Π open-question factors × (1 + c(n − 1))',
+      inputs: { o: round(cal.o, 2), m: round(cal.m, 2), p: round(cal.p, 2), openQuestions: qs.length, overhead: round(oh, 3), p50: round(o50, 2), p80: round(o80, 2) },
     };
   }
 
   // --- buffer ---------------------------------------------------------------
+  const extraByQuestion = new Map<string, number>();
+  for (const q of open) {
+    const g = qDraws.get(q.id) as Float64Array;
+    const without = new Float64Array(ITEM_SAMPLES);
+    const withQ = new Float64Array(ITEM_SAMPLES);
+    for (const id of links.get(q.id) ?? []) {
+      const b = baseSamples.get(id);
+      if (!b) continue;
+      for (let k = 0; k < ITEM_SAMPLES; k++) {
+        const v = b[k] as number;
+        without[k] = (without[k] as number) + v;
+        withQ[k] = (withQ[k] as number) + v * (g[k] as number);
+      }
+    }
+    extraByQuestion.set(q.id, Math.max(0, quantileSorted(sortedCopy(withQ), 0.8) - quantileSorted(sortedCopy(without), 0.8)));
+  }
   const bTask = Math.sqrt(taskSq);
   let missingSq = 0;
   for (const v of extraByQuestion.values()) missingSq += v * v;
@@ -282,7 +329,7 @@ export function runEstimate(prep: PreparedEstimate, opts: RunOptions = {}): Esti
     citation: CITATIONS.buffer,
     plainWords: `Each item's gap between P50 and P80, combined as independent risks: not every item runs late at once, so this is less than adding them up.`,
     formula: 'B_task = √Σ(P80ᵢ − P50ᵢ)²',
-    inputs: { items: calibratedOut.length, sumOfGaps: round(calibratedOut.reduce((a, c) => a + (c.p80 - c.p50), 0)), bufferH: buffer.task },
+    inputs: { items: calibratedOut.length, sumP50: round(sumP50), bufferH: buffer.task },
   };
   explanations['buffer.missingInfo'] = {
     method: 'Missing-information buffer',
@@ -290,8 +337,8 @@ export function runEstimate(prep: PreparedEstimate, opts: RunOptions = {}): Esti
     plainWords:
       open.length === 0
         ? 'Every question is answered, so no extra buffer is held for unknowns.'
-        : `${open.length} open question${open.length === 1 ? '' : 's'} widen the items they touch. This is the extra P80 those items need until the client answers.`,
-    formula: 'extra_q = Σᵢ∈q (P80ᵢ with spread − P80ᵢ without); B_missing = √Σ extra_q²',
+        : `${open.length} open question${open.length === 1 ? '' : 's'} could each make the items they touch bigger. This is the extra P80 those items need until the client answers.`,
+    formula: 'extra_q = P80(Σᵢ∈q hᵢ·g_q) − P80(Σᵢ∈q hᵢ); B_missing = √Σ extra_q²',
     inputs: Object.fromEntries([['openQuestions', open.length], ...[...extraByQuestion].map(([k, v]) => [k, round(v)])]),
   };
   explanations['buffer.availability'] = {
@@ -313,10 +360,8 @@ export function runEstimate(prep: PreparedEstimate, opts: RunOptions = {}): Esti
   const finishSorted = sortedCopy(sim.finishDays);
   const finishP50 = quantileSorted(finishSorted, 0.5);
   const finishP80 = quantileSorted(finishSorted, 0.8);
-  const p50Hours = items.map((it) => baseP50ById.get(it.id) ?? it.m);
-  const det = scheduleOnce(cfg, p50Hours);
-  const baseP50Sum = sumP50 || 1;
-  const commitDays = det.finish * (commitHours / baseP50Sum);
+  const det = scheduleOnce(cfg, items.map((it) => rawP50ById.get(it.id) ?? it.m));
+  const commitDays = det.effort > 0 ? det.finish * (commitHours / det.effort) : 0;
   const p50Date = addWorkingDays(startDate, finishP50);
   const p80Date = addWorkingDays(startDate, finishP80);
   const commitDate = addWorkingDays(startDate, Math.max(commitDays, finishP50));
@@ -340,8 +385,8 @@ export function runEstimate(prep: PreparedEstimate, opts: RunOptions = {}): Esti
     method: 'Critical-chain commit date',
     citation: CITATIONS.buffer,
     plainWords: `Plan every item at its P50, then add the ${fmtH(buffer.total)} buffer at the end: ${fmtH(commitHours)} of work lands on ${commitDate}.`,
-    formula: 'commit days = P50 schedule days × (ΣP50 + B) / ΣP50',
-    inputs: { p50ScheduleDays: round(det.finish), commitHours, sumP50: round(baseP50Sum), commitWorkingDays: round(commitDays) },
+    formula: 'commit days = P50 schedule days × (ΣP50 + B) / ΣP50 (P50 schedule includes absence and planned leave)',
+    inputs: { p50ScheduleDays: round(det.finish), commitHours, sumP50: round(sumP50), commitWorkingDays: round(commitDays) },
   };
 
   let onTimeProbability: number | null = null;
@@ -414,11 +459,10 @@ export function runEstimate(prep: PreparedEstimate, opts: RunOptions = {}): Esti
   // --- value of information -------------------------------------------------
   const rankedQuestions: RankedQuestion[] = [];
   if (!skipVoi && open.length > 0) {
-    const baseCfg = simConfig(prep, items, team, voiRuns, seed);
-    const baseSpread = spreadOf(simulate(baseCfg).totalHours);
+    const baseSpread = spreadOf(simulate(simConfig(prep, items, team, voiRuns, seed, sigmas)).totalHours);
     for (const q of open) {
-      const others = open.filter((o) => o.id !== q.id);
-      const without = simConfig(prep, simItems(prep, others, dropped, links), team, voiRuns, seed);
+      const others = new Set([...openIds].filter((id) => id !== q.id));
+      const without = simConfig(prep, items, team, voiRuns, seed, sigmasFor(scope, others));
       const narrows = Math.max(0, baseSpread - spreadOf(simulate(without).totalHours));
       rankedQuestions.push({
         questionId: q.id,
@@ -430,8 +474,8 @@ export function runEstimate(prep: PreparedEstimate, opts: RunOptions = {}): Esti
       explanations[`question.${q.id}`] = {
         method: 'Value of information',
         citation: CITATIONS.voi,
-        plainWords: `Ask this first: it narrows the range by ~${fmtH(narrows)}. Answering it removes the extra spread on ${links.get(q.id)?.size ?? 0} item${(links.get(q.id)?.size ?? 0) === 1 ? '' : 's'}.`,
-        formula: 'VOI_q = (P80 − P50) with all questions open − (P80 − P50) with q answered (same seed)',
+        plainWords: `Ask this first: it narrows the range by ~${fmtH(narrows)}. Answering it removes the shared uncertainty on ${links.get(q.id)?.size ?? 0} item${(links.get(q.id)?.size ?? 0) === 1 ? '' : 's'}.`,
+        formula: 'VOI_q = (P80 − P50) with all questions open − (P80 − P50) with q answered (same seed, common random numbers)',
         inputs: { runs: voiRuns, seed, spreadMultiplier: q.spreadMultiplier, baseSpreadH: round(baseSpread), narrowsByH: round(narrows) },
       };
     }

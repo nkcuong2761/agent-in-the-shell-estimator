@@ -1,0 +1,15 @@
+{
+  "id": "investor-reminders",
+  "title": "Reminders for investors who haven't signed",
+  "client": "Harborlight Partners (fictional)",
+  "clientDeadline": "2026-12-11",
+  "projectType": "new-feature",
+  "squad": "alpha",
+  "startDate": "2026-10-26",
+  "plantedGaps": [
+    { "id": "channels", "keywords": ["sms", "channel", "text message"] },
+    { "id": "cadence-owner", "keywords": ["cadence", "schedule", "configure", "frequency"] },
+    { "id": "partial-signature", "keywords": ["partial", "co-signer", "countersign", "joint"] },
+    { "id": "opt-out", "keywords": ["opt out", "opt-out", "unsubscribe", "consent"] }
+  ]
+}

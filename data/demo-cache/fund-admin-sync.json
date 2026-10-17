@@ -1,0 +1,1042 @@
+{
+  "briefId": "fund-admin-sync",
+  "scope": {
+    "projectType": "integration",
+    "size": "L",
+    "summary": "Keep investor records in sync between the platform and Northgate Fund Services, with alerts, a change log and human approval for bank details.",
+    "phases": [
+      {
+        "id": "discovery",
+        "name": "Discovery",
+        "order": 0,
+        "role": "pm"
+      },
+      {
+        "id": "api-mapping",
+        "name": "API mapping",
+        "order": 1,
+        "role": "engineer"
+      },
+      {
+        "id": "build",
+        "name": "Build",
+        "order": 2,
+        "role": "engineer"
+      },
+      {
+        "id": "integration-testing",
+        "name": "Integration testing",
+        "order": 3,
+        "role": "qa"
+      },
+      {
+        "id": "go-live",
+        "name": "Go-live",
+        "order": 4,
+        "role": "engineer"
+      }
+    ],
+    "items": [
+      {
+        "id": "fas-d1",
+        "phaseId": "discovery",
+        "title": "Confirm Northgate integration option and contract scope",
+        "category": "discovery",
+        "complexity": "M",
+        "role": "pm",
+        "o": 6,
+        "m": 10,
+        "p": 18,
+        "sourceRefs": [
+          {
+            "source": "meeting-notes.md",
+            "quote": "REST API for “some clients” and nightly SFTP CSV files for others"
+          }
+        ],
+        "affectedByQuestions": [
+          "q-transport"
+        ]
+      },
+      {
+        "id": "fas-d2",
+        "phaseId": "discovery",
+        "title": "Agree sync direction and source-of-truth rules",
+        "category": "discovery",
+        "complexity": "S",
+        "role": "pm",
+        "o": 4,
+        "m": 8,
+        "p": 14,
+        "sourceRefs": [
+          {
+            "source": "meeting-notes.md",
+            "quote": "Not settled"
+          }
+        ],
+        "affectedByQuestions": [
+          "q-direction",
+          "q-truth"
+        ]
+      },
+      {
+        "id": "fas-am1",
+        "phaseId": "api-mapping",
+        "title": "Field mapping: names, entities, addresses, commitments, bank details",
+        "category": "integration",
+        "complexity": "M",
+        "role": "engineer",
+        "o": 12,
+        "m": 18,
+        "p": 30,
+        "sourceRefs": [
+          {
+            "source": "email.md",
+            "quote": "investor names, entities, addresses, commitment amounts, and bank details"
+          }
+        ],
+        "affectedByQuestions": []
+      },
+      {
+        "id": "fas-am2",
+        "phaseId": "api-mapping",
+        "title": "Investor ID matching and duplicate handling",
+        "category": "integration",
+        "complexity": "L",
+        "role": "engineer",
+        "o": 14,
+        "m": 22,
+        "p": 40,
+        "sourceRefs": [
+          {
+            "source": "meeting-notes.md",
+            "quote": "Some investors are duplicated on Northgate’s side"
+          }
+        ],
+        "affectedByQuestions": []
+      },
+      {
+        "id": "fas-b1",
+        "phaseId": "build",
+        "title": "Northgate connector: API client or SFTP file ingestion",
+        "category": "integration",
+        "complexity": "M",
+        "role": "engineer",
+        "o": 12,
+        "m": 20,
+        "p": 36,
+        "sourceRefs": [
+          {
+            "source": "meeting-notes.md"
+          }
+        ],
+        "affectedByQuestions": [
+          "q-transport"
+        ]
+      },
+      {
+        "id": "fas-b2",
+        "phaseId": "build",
+        "title": "Daily sync job with retries",
+        "category": "integration",
+        "complexity": "L",
+        "role": "engineer",
+        "o": 20,
+        "m": 30,
+        "p": 48,
+        "sourceRefs": [
+          {
+            "source": "jira-ticket.md",
+            "quote": "within one business day"
+          }
+        ],
+        "affectedByQuestions": [
+          "q-transport"
+        ]
+      },
+      {
+        "id": "fas-b3",
+        "phaseId": "build",
+        "title": "Outbound updates to Northgate",
+        "category": "integration",
+        "complexity": "M",
+        "role": "engineer",
+        "o": 12,
+        "m": 18,
+        "p": 32,
+        "sourceRefs": [
+          {
+            "source": "email.md",
+            "quote": "the other side should reflect it"
+          }
+        ],
+        "affectedByQuestions": [
+          "q-direction"
+        ]
+      },
+      {
+        "id": "fas-b4",
+        "phaseId": "build",
+        "title": "Conflict handling rules",
+        "category": "integration",
+        "complexity": "M",
+        "role": "engineer",
+        "o": 10,
+        "m": 16,
+        "p": 30,
+        "sourceRefs": [
+          {
+            "source": "meeting-notes.md",
+            "quote": "nobody knew which should win"
+          }
+        ],
+        "affectedByQuestions": [
+          "q-truth"
+        ]
+      },
+      {
+        "id": "fas-b5",
+        "phaseId": "build",
+        "title": "Approval queue for bank detail changes",
+        "category": "backend",
+        "complexity": "M",
+        "role": "engineer",
+        "o": 10,
+        "m": 14,
+        "p": 24,
+        "sourceRefs": [
+          {
+            "source": "jira-ticket.md",
+            "quote": "Bank detail changes require human approval"
+          }
+        ],
+        "affectedByQuestions": []
+      },
+      {
+        "id": "fas-b6",
+        "phaseId": "build",
+        "title": "Failure alerts and change log page",
+        "category": "backend",
+        "complexity": "M",
+        "role": "engineer",
+        "o": 8,
+        "m": 12,
+        "p": 20,
+        "sourceRefs": [
+          {
+            "source": "jira-ticket.md",
+            "quote": "Sync failures alert the ops team"
+          }
+        ],
+        "affectedByQuestions": []
+      },
+      {
+        "id": "fas-it1",
+        "phaseId": "integration-testing",
+        "title": "End-to-end tests against the Northgate sandbox",
+        "category": "qa",
+        "complexity": "M",
+        "role": "qa",
+        "o": 12,
+        "m": 18,
+        "p": 32,
+        "sourceRefs": [
+          {
+            "source": "meeting-notes.md",
+            "quote": "access needs a separate request"
+          }
+        ],
+        "affectedByQuestions": [
+          "q-sandbox",
+          "q-direction"
+        ]
+      },
+      {
+        "id": "fas-it2",
+        "phaseId": "integration-testing",
+        "title": "Reconciliation run on ~1,200 investors",
+        "category": "qa",
+        "complexity": "M",
+        "role": "qa",
+        "o": 8,
+        "m": 12,
+        "p": 20,
+        "sourceRefs": [
+          {
+            "source": "meeting-notes.md",
+            "quote": "~1,200 investors"
+          }
+        ],
+        "affectedByQuestions": [
+          "q-backfill"
+        ]
+      },
+      {
+        "id": "fas-gl1",
+        "phaseId": "go-live",
+        "title": "Production cutover and first full sync",
+        "category": "devops",
+        "complexity": "M",
+        "role": "engineer",
+        "o": 6,
+        "m": 10,
+        "p": 18,
+        "sourceRefs": [
+          {
+            "source": "email.md"
+          }
+        ],
+        "affectedByQuestions": [
+          "q-backfill"
+        ]
+      }
+    ],
+    "assumptions": [
+      "About 1,200 investors with tens of changes per week.",
+      "Northgate will share integration documentation before build starts.",
+      "Bank detail changes are applied only after a person approves them."
+    ],
+    "outOfScope": [
+      "Cleaning up duplicate investors on Northgate’s side (Northgate is doing this).",
+      "Syncing documents or capital account statements."
+    ],
+    "missingInfo": [
+      {
+        "id": "q-direction",
+        "question": "Should the sync run one way (Northgate to the platform) or both ways?",
+        "why": "The email says both ways; the call mostly described a one-way pull. Two-way roughly doubles the build and testing.",
+        "affectedItemIds": [
+          "fas-d2",
+          "fas-b3",
+          "fas-it1"
+        ],
+        "spreadMultiplier": 2,
+        "impact": "high"
+      },
+      {
+        "id": "q-transport",
+        "question": "Does Tidewell’s Northgate contract include the REST API, or only nightly SFTP files?",
+        "why": "Decides the connector design and how fresh the data can be.",
+        "affectedItemIds": [
+          "fas-d1",
+          "fas-b1",
+          "fas-b2"
+        ],
+        "spreadMultiplier": 1.8,
+        "impact": "high"
+      },
+      {
+        "id": "q-sandbox",
+        "question": "Can you request Northgate sandbox access this week? It usually takes two weeks.",
+        "why": "Without a sandbox, integration testing can’t start.",
+        "affectedItemIds": [
+          "fas-it1"
+        ],
+        "spreadMultiplier": 1.6,
+        "impact": "high"
+      },
+      {
+        "id": "q-truth",
+        "question": "When the same field changes on both sides, which system should win?",
+        "why": "Conflict rules decide how much reconciliation logic is needed.",
+        "affectedItemIds": [
+          "fas-d2",
+          "fas-b4"
+        ],
+        "spreadMultiplier": 1.5,
+        "impact": "medium"
+      },
+      {
+        "id": "q-backfill",
+        "question": "Should the first run reconcile all ~1,200 existing records, or only new changes?",
+        "why": "A full backfill adds a reconciliation pass and clean-up of known duplicates.",
+        "affectedItemIds": [
+          "fas-it2",
+          "fas-gl1"
+        ],
+        "spreadMultiplier": 1.5,
+        "impact": "medium"
+      }
+    ],
+    "scopeRisks": [
+      {
+        "id": "risk-second-partner-file-format",
+        "description": "Second partner file format was added after kickoff in 5 of 9 similar projects.",
+        "likelihood": 0.56,
+        "evidenceProjectIds": [
+          "P005",
+          "P014",
+          "P025",
+          "P033",
+          "P034"
+        ],
+        "addedHoursRange": [
+          17.3,
+          40.8
+        ],
+        "clientQuestion": "Similar projects often added “second partner file format” after kickoff. Should we plan for it now?"
+      },
+      {
+        "id": "risk-backfill-historical-record",
+        "description": "Backfill of historical records was added after kickoff in 3 of 9 similar projects.",
+        "likelihood": 0.33,
+        "evidenceProjectIds": [
+          "P005",
+          "P018",
+          "P033"
+        ],
+        "addedHoursRange": [
+          17.1,
+          21.9
+        ],
+        "clientQuestion": "Similar projects often added “backfill of historical records” after kickoff. Should we plan for it now?"
+      }
+    ],
+    "clientEmailDraft": "Hi Leo,\n\nThanks for setting up the call with Aiko. Here is our first estimate for the Northgate sync. These questions matter most to the estimate and the December 18 date, in order of impact:\n\n{{questions}}\n\nThe sandbox request in particular can run in the background while we start discovery.\n\nBest,\nThe delivery team"
+  },
+  "scopeProvenance": {
+    "promptVersion": "fixture-scope@1",
+    "generatedBy": "fixture",
+    "generatedAt": "2026-10-17"
+  },
+  "panel": {
+    "agents": [
+      {
+        "persona": "delivery-lead",
+        "items": [
+          {
+            "itemId": "fas-d1",
+            "o": 10.2,
+            "m": 12.7,
+            "p": 18.4,
+            "reason": "Anchored on 3 similar past items (median 11.5h) and the plan as scoped."
+          },
+          {
+            "itemId": "fas-d2",
+            "o": 6.8,
+            "m": 8.5,
+            "p": 12.3,
+            "reason": "Anchored on 3 similar past items (median 7.5h) and the plan as scoped."
+          },
+          {
+            "itemId": "fas-am1",
+            "o": 19.3,
+            "m": 24.1,
+            "p": 35,
+            "reason": "Anchored on 3 similar past items (median 27.3h) and the plan as scoped."
+          },
+          {
+            "itemId": "fas-am2",
+            "o": 15.9,
+            "m": 19.9,
+            "p": 28.8,
+            "reason": "Anchored on 3 similar past items (median 35.5h) and the plan as scoped."
+          },
+          {
+            "itemId": "fas-b1",
+            "o": 17.5,
+            "m": 21.9,
+            "p": 31.8,
+            "reason": "Anchored on 3 similar past items (median 20h) and the plan as scoped."
+          },
+          {
+            "itemId": "fas-b2",
+            "o": 39.2,
+            "m": 49,
+            "p": 71.1,
+            "reason": "Anchored on 3 similar past items (median 69.6h) and the plan as scoped."
+          },
+          {
+            "itemId": "fas-b3",
+            "o": 17.8,
+            "m": 22.2,
+            "p": 32.2,
+            "reason": "Anchored on 3 similar past items (median 20h) and the plan as scoped."
+          },
+          {
+            "itemId": "fas-b4",
+            "o": 18.7,
+            "m": 23.4,
+            "p": 33.9,
+            "reason": "Anchored on 3 similar past items (median 31.9h) and the plan as scoped."
+          },
+          {
+            "itemId": "fas-b5",
+            "o": 13.1,
+            "m": 16.3,
+            "p": 23.7,
+            "reason": "Anchored on 3 similar past items (median 16.5h) and the plan as scoped."
+          },
+          {
+            "itemId": "fas-b6",
+            "o": 12.5,
+            "m": 15.6,
+            "p": 22.7,
+            "reason": "Anchored on 3 similar past items (median 21.4h) and the plan as scoped."
+          },
+          {
+            "itemId": "fas-it1",
+            "o": 18.6,
+            "m": 23.2,
+            "p": 33.6,
+            "reason": "Anchored on 3 similar past items (median 25.5h) and the plan as scoped."
+          },
+          {
+            "itemId": "fas-it2",
+            "o": 9.8,
+            "m": 12.2,
+            "p": 17.7,
+            "reason": "Anchored on 3 similar past items (median 17.5h) and the plan as scoped."
+          },
+          {
+            "itemId": "fas-gl1",
+            "o": 7.6,
+            "m": 9.5,
+            "p": 13.7,
+            "reason": "Anchored on 3 similar past items (median 14.6h) and the plan as scoped."
+          }
+        ]
+      },
+      {
+        "persona": "qa-lead",
+        "items": [
+          {
+            "itemId": "fas-d1",
+            "o": 10.2,
+            "m": 12.7,
+            "p": 19.1,
+            "reason": "Low test surface; small allowance for review and fixes."
+          },
+          {
+            "itemId": "fas-d2",
+            "o": 5.5,
+            "m": 6.9,
+            "p": 10.4,
+            "reason": "Low test surface; small allowance for review and fixes."
+          },
+          {
+            "itemId": "fas-am1",
+            "o": 19.7,
+            "m": 24.7,
+            "p": 43.2,
+            "reason": "Test surface is wide here (integration); I allowed for a second pass after fixes."
+          },
+          {
+            "itemId": "fas-am2",
+            "o": 25,
+            "m": 31.3,
+            "p": 54.7,
+            "reason": "Test surface is wide here (integration); I allowed for a second pass after fixes."
+          },
+          {
+            "itemId": "fas-b1",
+            "o": 18.2,
+            "m": 22.7,
+            "p": 39.8,
+            "reason": "Test surface is wide here (integration); I allowed for a second pass after fixes."
+          },
+          {
+            "itemId": "fas-b2",
+            "o": 45.3,
+            "m": 56.6,
+            "p": 99.1,
+            "reason": "Test surface is wide here (integration); I allowed for a second pass after fixes."
+          },
+          {
+            "itemId": "fas-b3",
+            "o": 17.9,
+            "m": 22.4,
+            "p": 39.2,
+            "reason": "Test surface is wide here (integration); I allowed for a second pass after fixes."
+          },
+          {
+            "itemId": "fas-b4",
+            "o": 27.9,
+            "m": 34.9,
+            "p": 61.1,
+            "reason": "Test surface is wide here (integration); I allowed for a second pass after fixes."
+          },
+          {
+            "itemId": "fas-b5",
+            "o": 14.4,
+            "m": 18.1,
+            "p": 31.6,
+            "reason": "Test surface is wide here (backend); I allowed for a second pass after fixes."
+          },
+          {
+            "itemId": "fas-b6",
+            "o": 14,
+            "m": 17.5,
+            "p": 30.6,
+            "reason": "Test surface is wide here (backend); I allowed for a second pass after fixes."
+          },
+          {
+            "itemId": "fas-it1",
+            "o": 18.3,
+            "m": 22.9,
+            "p": 40,
+            "reason": "Test surface is wide here (qa); I allowed for a second pass after fixes."
+          },
+          {
+            "itemId": "fas-it2",
+            "o": 8.7,
+            "m": 10.8,
+            "p": 19,
+            "reason": "Test surface is wide here (qa); I allowed for a second pass after fixes."
+          },
+          {
+            "itemId": "fas-gl1",
+            "o": 8.9,
+            "m": 11.2,
+            "p": 16.8,
+            "reason": "Low test surface; small allowance for review and fixes."
+          }
+        ]
+      },
+      {
+        "persona": "domain-expert",
+        "items": [
+          {
+            "itemId": "fas-d1",
+            "o": 8.6,
+            "m": 11,
+            "p": 18.8,
+            "reason": "Depends on 1 open question; the answer could change what gets built."
+          },
+          {
+            "itemId": "fas-d2",
+            "o": 7.2,
+            "m": 9.3,
+            "p": 17.6,
+            "reason": "Depends on 2 open questions; the answer could change what gets built."
+          },
+          {
+            "itemId": "fas-am1",
+            "o": 19,
+            "m": 24.4,
+            "p": 36.5,
+            "reason": "Rules in this area tend to surface late; I added room for rework."
+          },
+          {
+            "itemId": "fas-am2",
+            "o": 19.9,
+            "m": 25.5,
+            "p": 38.2,
+            "reason": "Rules in this area tend to surface late; I added room for rework."
+          },
+          {
+            "itemId": "fas-b1",
+            "o": 19.7,
+            "m": 25.3,
+            "p": 43,
+            "reason": "Depends on 1 open question; the answer could change what gets built."
+          },
+          {
+            "itemId": "fas-b2",
+            "o": 38,
+            "m": 48.8,
+            "p": 82.9,
+            "reason": "Depends on 1 open question; the answer could change what gets built."
+          },
+          {
+            "itemId": "fas-b3",
+            "o": 20.7,
+            "m": 26.5,
+            "p": 45,
+            "reason": "Depends on 1 open question; the answer could change what gets built."
+          },
+          {
+            "itemId": "fas-b4",
+            "o": 25.8,
+            "m": 33.1,
+            "p": 56.3,
+            "reason": "Depends on 1 open question; the answer could change what gets built."
+          },
+          {
+            "itemId": "fas-b5",
+            "o": 11,
+            "m": 14.1,
+            "p": 21.1,
+            "reason": "Well understood work; little domain risk."
+          },
+          {
+            "itemId": "fas-b6",
+            "o": 10,
+            "m": 12.8,
+            "p": 19.1,
+            "reason": "Well understood work; little domain risk."
+          },
+          {
+            "itemId": "fas-it1",
+            "o": 22,
+            "m": 28.2,
+            "p": 53.6,
+            "reason": "Depends on 2 open questions; the answer could change what gets built."
+          },
+          {
+            "itemId": "fas-it2",
+            "o": 8,
+            "m": 10.3,
+            "p": 17.5,
+            "reason": "Depends on 1 open question; the answer could change what gets built."
+          },
+          {
+            "itemId": "fas-gl1",
+            "o": 7.2,
+            "m": 9.2,
+            "p": 15.7,
+            "reason": "Depends on 1 open question; the answer could change what gets built."
+          }
+        ]
+      }
+    ],
+    "round1": [
+      {
+        "persona": "delivery-lead",
+        "items": [
+          {
+            "itemId": "fas-d1",
+            "o": 10.2,
+            "m": 12.7,
+            "p": 18.4,
+            "reason": "Anchored on 3 similar past items (median 11.5h) and the plan as scoped."
+          },
+          {
+            "itemId": "fas-d2",
+            "o": 6.8,
+            "m": 8.5,
+            "p": 12.3,
+            "reason": "Anchored on 3 similar past items (median 7.5h) and the plan as scoped."
+          },
+          {
+            "itemId": "fas-am1",
+            "o": 19.2,
+            "m": 23.9,
+            "p": 34.7,
+            "reason": "Anchored on 3 similar past items (median 27.3h) and the plan as scoped."
+          },
+          {
+            "itemId": "fas-am2",
+            "o": 11.4,
+            "m": 14.3,
+            "p": 20.7,
+            "reason": "Anchored on 3 similar past items (median 35.5h) and the plan as scoped."
+          },
+          {
+            "itemId": "fas-b1",
+            "o": 16.9,
+            "m": 21.1,
+            "p": 30.6,
+            "reason": "Anchored on 3 similar past items (median 20h) and the plan as scoped."
+          },
+          {
+            "itemId": "fas-b2",
+            "o": 39.2,
+            "m": 49,
+            "p": 71.1,
+            "reason": "Anchored on 3 similar past items (median 69.6h) and the plan as scoped."
+          },
+          {
+            "itemId": "fas-b3",
+            "o": 17.6,
+            "m": 22,
+            "p": 31.9,
+            "reason": "Anchored on 3 similar past items (median 20h) and the plan as scoped."
+          },
+          {
+            "itemId": "fas-b4",
+            "o": 11,
+            "m": 13.7,
+            "p": 19.9,
+            "reason": "Anchored on 3 similar past items (median 31.9h) and the plan as scoped."
+          },
+          {
+            "itemId": "fas-b5",
+            "o": 13.1,
+            "m": 16.3,
+            "p": 23.7,
+            "reason": "Anchored on 3 similar past items (median 16.5h) and the plan as scoped."
+          },
+          {
+            "itemId": "fas-b6",
+            "o": 12.5,
+            "m": 15.6,
+            "p": 22.7,
+            "reason": "Anchored on 3 similar past items (median 21.4h) and the plan as scoped."
+          },
+          {
+            "itemId": "fas-it1",
+            "o": 18.6,
+            "m": 23.2,
+            "p": 33.6,
+            "reason": "Anchored on 3 similar past items (median 25.5h) and the plan as scoped."
+          },
+          {
+            "itemId": "fas-it2",
+            "o": 10.8,
+            "m": 13.5,
+            "p": 19.6,
+            "reason": "Anchored on 3 similar past items (median 17.5h) and the plan as scoped."
+          },
+          {
+            "itemId": "fas-gl1",
+            "o": 7.6,
+            "m": 9.5,
+            "p": 13.7,
+            "reason": "Anchored on 3 similar past items (median 14.6h) and the plan as scoped."
+          }
+        ]
+      },
+      {
+        "persona": "qa-lead",
+        "items": [
+          {
+            "itemId": "fas-d1",
+            "o": 10.2,
+            "m": 12.7,
+            "p": 19.1,
+            "reason": "Low test surface; small allowance for review and fixes."
+          },
+          {
+            "itemId": "fas-d2",
+            "o": 4.3,
+            "m": 5.3,
+            "p": 8,
+            "reason": "Low test surface; small allowance for review and fixes."
+          },
+          {
+            "itemId": "fas-am1",
+            "o": 20,
+            "m": 25,
+            "p": 43.7,
+            "reason": "Test surface is wide here (integration); I allowed for a second pass after fixes."
+          },
+          {
+            "itemId": "fas-am2",
+            "o": 29.7,
+            "m": 37.1,
+            "p": 64.9,
+            "reason": "Test surface is wide here (integration); I allowed for a second pass after fixes."
+          },
+          {
+            "itemId": "fas-b1",
+            "o": 18.2,
+            "m": 22.7,
+            "p": 39.8,
+            "reason": "Test surface is wide here (integration); I allowed for a second pass after fixes."
+          },
+          {
+            "itemId": "fas-b2",
+            "o": 51.3,
+            "m": 64.2,
+            "p": 112.3,
+            "reason": "Test surface is wide here (integration); I allowed for a second pass after fixes."
+          },
+          {
+            "itemId": "fas-b3",
+            "o": 17.9,
+            "m": 22.4,
+            "p": 39.2,
+            "reason": "Test surface is wide here (integration); I allowed for a second pass after fixes."
+          },
+          {
+            "itemId": "fas-b4",
+            "o": 29.4,
+            "m": 36.7,
+            "p": 64.3,
+            "reason": "Test surface is wide here (integration); I allowed for a second pass after fixes."
+          },
+          {
+            "itemId": "fas-b5",
+            "o": 15.8,
+            "m": 19.8,
+            "p": 34.6,
+            "reason": "Test surface is wide here (backend); I allowed for a second pass after fixes."
+          },
+          {
+            "itemId": "fas-b6",
+            "o": 15.5,
+            "m": 19.4,
+            "p": 33.9,
+            "reason": "Test surface is wide here (backend); I allowed for a second pass after fixes."
+          },
+          {
+            "itemId": "fas-it1",
+            "o": 18,
+            "m": 22.5,
+            "p": 39.5,
+            "reason": "Test surface is wide here (qa); I allowed for a second pass after fixes."
+          },
+          {
+            "itemId": "fas-it2",
+            "o": 8.7,
+            "m": 10.8,
+            "p": 19,
+            "reason": "Test surface is wide here (qa); I allowed for a second pass after fixes."
+          },
+          {
+            "itemId": "fas-gl1",
+            "o": 10.3,
+            "m": 12.9,
+            "p": 19.3,
+            "reason": "Low test surface; small allowance for review and fixes."
+          }
+        ]
+      },
+      {
+        "persona": "domain-expert",
+        "items": [
+          {
+            "itemId": "fas-d1",
+            "o": 7.3,
+            "m": 9.4,
+            "p": 15.9,
+            "reason": "Depends on 1 open question; the answer could change what gets built."
+          },
+          {
+            "itemId": "fas-d2",
+            "o": 7.4,
+            "m": 9.5,
+            "p": 18,
+            "reason": "Depends on 2 open questions; the answer could change what gets built."
+          },
+          {
+            "itemId": "fas-am1",
+            "o": 19,
+            "m": 24.4,
+            "p": 36.5,
+            "reason": "Rules in this area tend to surface late; I added room for rework."
+          },
+          {
+            "itemId": "fas-am2",
+            "o": 19.9,
+            "m": 25.5,
+            "p": 38.2,
+            "reason": "Rules in this area tend to surface late; I added room for rework."
+          },
+          {
+            "itemId": "fas-b1",
+            "o": 21.8,
+            "m": 27.9,
+            "p": 47.4,
+            "reason": "Depends on 1 open question; the answer could change what gets built."
+          },
+          {
+            "itemId": "fas-b2",
+            "o": 37.8,
+            "m": 48.5,
+            "p": 82.5,
+            "reason": "Depends on 1 open question; the answer could change what gets built."
+          },
+          {
+            "itemId": "fas-b3",
+            "o": 23.8,
+            "m": 30.6,
+            "p": 52,
+            "reason": "Depends on 1 open question; the answer could change what gets built."
+          },
+          {
+            "itemId": "fas-b4",
+            "o": 25.8,
+            "m": 33.1,
+            "p": 56.3,
+            "reason": "Depends on 1 open question; the answer could change what gets built."
+          },
+          {
+            "itemId": "fas-b5",
+            "o": 9.2,
+            "m": 11.8,
+            "p": 17.7,
+            "reason": "Well understood work; little domain risk."
+          },
+          {
+            "itemId": "fas-b6",
+            "o": 7.7,
+            "m": 9.9,
+            "p": 14.8,
+            "reason": "Well understood work; little domain risk."
+          },
+          {
+            "itemId": "fas-it1",
+            "o": 23,
+            "m": 29.5,
+            "p": 56,
+            "reason": "Depends on 2 open questions; the answer could change what gets built."
+          },
+          {
+            "itemId": "fas-it2",
+            "o": 7.6,
+            "m": 9.7,
+            "p": 16.6,
+            "reason": "Depends on 1 open question; the answer could change what gets built."
+          },
+          {
+            "itemId": "fas-gl1",
+            "o": 7,
+            "m": 9,
+            "p": 15.3,
+            "reason": "Depends on 1 open question; the answer could change what gets built."
+          }
+        ]
+      }
+    ],
+    "rounds": 2,
+    "disagreementFlags": []
+  },
+  "panelProvenance": {
+    "promptVersion": "offline-heuristic-panel@1",
+    "generatedBy": "offline-heuristic",
+    "generatedAt": "2026-10-17"
+  },
+  "ask": [
+    {
+      "question": "Why is the range so wide?",
+      "answer": "The work is 401h at P50 and 473h at P80. 5 questions are still open, and each one widens the items it touches. The biggest is “Does Tidewell’s Northgate contract include the REST API, or only nightly SFTP files?”: answering it narrows the range by about 8h.",
+      "toolCalls": [
+        {
+          "name": "get_estimate",
+          "summary": "P50 401h, P80 473h, confidence Low"
+        }
+      ]
+    },
+    {
+      "question": "What if we add another engineer?",
+      "answer": "With 3 engineers instead of 2, the P50 finish moves from 2027-01-19 to 2027-01-12, and the chance of meeting 2026-12-18 goes from 1% to 6%. Total effort rises slightly, from 401h to 433h, because each extra person adds coordination time.",
+      "toolCalls": [
+        {
+          "name": "run_what_if",
+          "summary": "Engineering: 2 → 3"
+        }
+      ]
+    },
+    {
+      "question": "Which question should I ask the client first?",
+      "answer": "Ask “Does Tidewell’s Northgate contract include the REST API, or only nightly SFTP files?” first. It narrows the range by about 8h, more than any other open question. Next is “Should the sync run one way (Northgate to the platform) or both ways?” (~6h).",
+      "toolCalls": [
+        {
+          "name": "get_estimate",
+          "summary": "5 ranked questions"
+        }
+      ]
+    },
+    {
+      "question": "How was the buffer calculated?",
+      "answer": "The buffer is 87h, in three parts. Task risk is 23h: the root-square of each item's P80−P50 gap. Open questions add 38h, and absence adds 26h (7% of P50 hours). Committing to ΣP50 + buffer gives 452h, landing on 2027-01-28.",
+      "toolCalls": [
+        {
+          "name": "explain_number",
+          "summary": "buffer.total"
+        }
+      ]
+    },
+    {
+      "question": "What have past integration projects taught us?",
+      "answer": "Projects like this took 250h–419h (median 401h, 9 projects). The engine corrects guesses by category:\n- integration: ×1.18 from 63 past items\n- devops: ×0.89 from 40 past items\n- backend: ×0.91 from 33 past items\nWatch for scope additions: Second partner file format was added after kickoff in 5 of 9 similar projects.",
+      "toolCalls": [
+        {
+          "name": "explain_number",
+          "summary": "referenceClass"
+        }
+      ]
+    }
+  ]
+}

@@ -10,6 +10,8 @@ export interface SimItem {
   o: number;
   m: number;
   p: number;
+  /** Indices into SimConfig.questionSigmas of the open questions that move this item. */
+  questions?: number[];
 }
 
 export interface SimPhase {
@@ -28,6 +30,8 @@ export interface SimConfig {
   seed: number;
   /** Spread of the shared project-level error factor (see correlation.ts). 0 = independent items. */
   projectSigma?: number;
+  /** σ of each question's shared factor (see questionSigma); 0 when answered. */
+  questionSigmas?: number[];
 }
 
 export interface SimOutput {
@@ -156,14 +160,23 @@ export function simulate(cfg: SimConfig): SimOutput {
   const scratch = new Array<number>(cfg.items.length).fill(0);
   const absenceMax = 2 * cfg.squad.absenceRate;
   const sigma = cfg.projectSigma ?? 0;
+  const qSigmas = cfg.questionSigmas ?? [];
+  const qFactor = new Float64Array(qSigmas.length);
 
   for (let r = 0; r < runs; r++) {
-    // Draw in a fixed order (project factor, items, absence) so runs with different team shapes or
+    // Draw in a fixed order (project factor, question factors, items, absence) so runs with different team shapes or
     // answered questions share random numbers.
     const shared = sigma > 0 ? Math.exp(sigma * normal(rng) - (sigma * sigma) / 2) : 1;
+    for (let q = 0; q < qSigmas.length; q++) {
+      const z = normal(rng);
+      const s = qSigmas[q] as number;
+      qFactor[q] = s > 0 ? Math.exp(z > 0 ? s * z : (s * z) / 3) : 1;
+    }
     for (let i = 0; i < cfg.items.length; i++) {
       const it = cfg.items[i] as SimItem;
-      const h = samplePert(rng, it.o, it.m, it.p) * shared;
+      let g = shared;
+      if (it.questions) for (const q of it.questions) g *= qFactor[q] as number;
+      const h = samplePert(rng, it.o, it.m, it.p) * g;
       scratch[i] = h;
       (itemHours[i] as Float64Array)[r] = h;
     }

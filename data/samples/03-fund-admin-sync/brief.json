@@ -1,0 +1,16 @@
+{
+  "id": "fund-admin-sync",
+  "title": "Sync investor data with the fund administrator",
+  "client": "Tidewell Fund III (fictional)",
+  "clientDeadline": "2026-12-18",
+  "projectType": "integration",
+  "squad": "gamma",
+  "startDate": "2026-10-26",
+  "plantedGaps": [
+    { "id": "transport", "keywords": ["api", "sftp", "file", "csv"] },
+    { "id": "direction", "keywords": ["one-way", "two-way", "direction", "both ways", "bidirectional"] },
+    { "id": "source-of-truth", "keywords": ["source of truth", "conflict", "wins", "master"] },
+    { "id": "sandbox", "keywords": ["sandbox", "test environment", "staging"] },
+    { "id": "backfill", "keywords": ["backfill", "historical", "existing records"] }
+  ]
+}
