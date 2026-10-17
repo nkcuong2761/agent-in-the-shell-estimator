@@ -185,3 +185,12 @@ The user asked for an ASCII-art and dithering theme. The concept: **the estimate
 - **Bundler:** Vite 7. **zod:** v4.
 - **Demo data in the bundle:** `apps/web` imports `data/seed` and `data/demo-cache` as JSON via a Vite alias (`@data`), so the Pages build is self-contained.
 - **Role set:** `pm`, `designer`, `engineer`, `qa`, `legal`. Each phase has one role.
+- **Correlated error:** each Monte Carlo run draws one shared project-level factor. Its σ is measured from history: the residual of log(actual/estimate) after the type mean, shrunk toward 0.15. Each open question also draws one shared factor, exp(σz) on the unfavourable side and exp(σz/3) on the favourable side, with σ = ln(spreadMultiplier)/1.645. Without these, P80 sat only ~4% above P50 and value of information was negligible.
+- **Bias vs overhead:** past actuals include the squad's own coordination overhead. Bias and analog actuals divide it out (`historyOverhead`), and the engine re-applies it for the planned team. Bias correction applies only to the panel's share of the blend, because analog actuals are already actuals.
+- **Backtest:** past single-point estimates get an assumed shape, o = 0.75m and p = 1.6m. Suspected time-entry errors (≥ 8× the estimate) are left out of actuals for the accuracy metrics and out of calibration, and are flagged in post-mortems.
+- **API:**
+  - The default model is `claude-sonnet-5-5`. A forced `tool_choice` is not used on models that reject it.
+  - `/postmortem` without a key returns the engine's template notes (labelled `offline-heuristic`) instead of 503.
+  - `/estimate`, `/panel` and `/ask` use seed history, so they match demo mode.
+  - Vercel uses the `@hono/node-server/vercel` adapter.
+- **Web:** the dev server uses base `/`; builds use `VITE_BASE` (default `/agent-in-the-shell-estimator/`). The Learning page (Recharts) is lazy-loaded. Bundled JSON is zod-validated at load.
