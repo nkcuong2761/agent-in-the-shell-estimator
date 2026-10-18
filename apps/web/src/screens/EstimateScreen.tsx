@@ -139,7 +139,9 @@ export function EstimateScreen() {
   const root = useRef<HTMLDivElement>(null);
   const versionKey = conv?.currentEstimateId ?? '';
   useViewportHold(root, versionKey);
-  useEffect(() => window.scrollTo(0, 0), [id]);
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [id]);
 
   const scope = conv ? scopeOf(conv) : undefined;
   const spec = conv?.versions[conv.currentEstimateId]?.spec;

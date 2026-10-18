@@ -310,7 +310,7 @@ function RisksPanel({ conv, spec, plan, onClose }: { conv: Conversation; spec: E
       <div className="flex flex-col gap-2">
         <span className="label label-ink">{copy.risksTitle}</span>
         {rows.map((r, i) => (
-          <div key={i} className="grid grid-cols-[minmax(0,1fr)_6rem_2.5rem] gap-2 items-center">
+          <div key={i} className="grid grid-cols-[minmax(0,1fr)_4.5rem_2.25rem] gap-2 items-center">
             <label className="sr-only" htmlFor={`risk-l-${i}`}>
               {copy.riskLabelPlaceholder}
             </label>
@@ -337,7 +337,7 @@ function RisksPanel({ conv, spec, plan, onClose }: { conv: Conversation; spec: E
       </div>
       <fieldset className="m-0 p-0 border-0 flex flex-col gap-2">
         <legend className="label label-ink mb-2">{copy.bufferTitle}</legend>
-        <div className="tabs" role="radiogroup" aria-label={copy.bufferTitle}>
+        <div className="tabs tabs-fill" role="radiogroup" aria-label={copy.bufferTitle}>
           {[0, 10, 15, 20, 30].map((p) => (
             <button key={p} type="button" role="radio" aria-checked={pct === p} aria-selected={pct === p} onClick={() => setPct(p)}>
               {p === 0 ? copy.bufferNone : `${p}%`}

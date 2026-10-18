@@ -24,36 +24,30 @@ Change the team shape and the timeline moves. Push the approved estimate to Jira
 
 ## What to try (no install)
 
-Scopewise works like a chat with an estimating agent.
+Each estimate is a document; a small assistant in the corner answers edge cases and updates the page when asked.
 
-1. On **New estimate**, pick an example: "Put a paper form online", "Remind investors to sign" or "Sync with a fund administrator". A progress checklist plays, and in under 3 seconds you get the estimate:
-   - how many weeks it will take;
-   - the most likely finish date, and a safe date to promise;
-   - how sure the estimate is.
-2. Open a stage under **What happens when** to see its work items, each linked to the source it came from.
-3. **Ask the client before you commit** lists the three questions whose answers would tighten the estimate most. Copy the email, or answer them yourself to re-estimate.
-4. Ask follow-ups in plain words. They run on the real engine in your browser, even in demo mode:
+1. **Home** lists every estimate and finished project in one table, with three tiles above it. Open a row.
+2. The **estimate card** shows the pure effort in working hours, the working time in weeks for your team, and how sure the estimate is, with "Why this estimate and confidence?" one click away.
+3. Change the **team structure** (half a developer counts), the **working hours** (days a week × hours a day) or the **schedule** (start and due dates). The numbers update in place; the page never jumps.
+4. The **realistic forecast** adds what is known to cost time in this window: the team's planned leave, delays seen on similar projects, and your own risks and buffer. Untick any of them. A tag says whether it meets the due date.
+5. Open a stage under **What happens when** to see its work items, each linked to the source it came from. **Ask the client before you commit** lists the three questions that tighten the estimate most.
+6. Press **✦ Ask Scopewise** for follow-ups in plain words. They run on the real engine in your browser, even in demo mode:
    - "What if we add another developer?" shows a comparison. **Use this** makes it the current estimate.
-   - "Can we finish by 11 Dec?"
-   - "Why does build take so long?"
-   - "What if we skip QA?"
-   - "The client says email only, no SMS"
-5. Under **Finished — how did we do?** in the sidebar, each closed project shows:
-   - what we said against what it took;
-   - what happened and the lesson learned;
-   - whether estimates are getting better.
-6. **See the full working and methods** and **How estimates are worked out** show every formula, input and citation. Technical terms appear only there.
+   - "Can we finish by 11 Dec?" · "Why does build take so long?" · "What if we skip QA?" · "The client says email only, no SMS"
+7. Finished projects (from Home) show what we said against what it took, what happened, the lesson learned, and whether estimates are getting better.
+8. **See the full working and methods** and **Help** show every formula, input and citation. Technical terms appear only there.
 
 ## Screens
 
 | Route | What it shows |
 | --- | --- |
-| `#/` | New estimate: paste a brief, drop files, add a Jira link (live), or try an example |
-| `#/estimate/:id` | One conversation: brief → progress → estimate → follow-ups, with earlier versions collapsed |
+| `#/` | Home: the estimates table (open and finished), tiles, filters, CSV export; the brief screen when there are no estimates |
+| `#/new` | New estimate: paste a brief, drop files, add a Jira link (live), or try an example |
+| `#/estimate/:id` | The estimate document: card, stages, client questions, brief, with the floating assistant |
 | `#/project/:id` | A finished project: estimate vs actual, what happened, what I learned, accuracy over time |
-| `#/about` | Architecture, methods with citations, data disclaimer, Manager/Overseer view |
+| `#/about` | Help: architecture, methods with citations, data disclaimer, Manager/Overseer view |
 
-The look follows taste-skill's soft-skill: Geist type, double-bezel cards, pill buttons and a silver-grey ground, with light and dark themes.
+The look is dark Brutalism: Syne and Space Grotesk type, JetBrains Mono labels, 2px rules with hard offset shadows, one acid accent, film grain and an exposed grid. A light "paper" variant and an auto theme are one click away in the sidebar; every text colour meets WCAG AA.
 
 ## Architecture
 

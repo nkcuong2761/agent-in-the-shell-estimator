@@ -154,62 +154,73 @@ One line of helper text under each key number; no tours. Keyboard navigable, suf
 - README covers: problem, live URL, architecture, methods + citations, run locally, deploy (Pages + API), what is fake.
 - If a decision isn't covered here, pick the simplest option that keeps demo mode working on Pages, record it under **Decisions**, and continue.
 
-## User journey v2 (current)
+## Product shape v3 (current)
 
-The app is a chat with an estimating agent, like Claude:
-- **Left sidebar:** New estimate, recent estimates (title plus "range · date"), finished projects ("how did we do?"), and "How estimates are worked out".
-- **Main area:** one conversation per estimate.
+The product is **a document, not a chat.** Each estimate is a page with a fixed structure; the AI is a small assistant in the corner that answers edge cases and, when asked, updates the document. The v2 conversation model (`Conversation`, `Message`, `EstimateSpec` in `packages/shared/src/conversation.ts`) is still the state; v3 changes how it is shown and edited.
 
 | Route | Screen |
 | --- | --- |
-| `#/` | New estimate. Asks "What's the brief you'd like me to estimate?". Has a paste box, a drop zone, an attach button, Add a Jira link (live only), and 3 example chips. |
-| `#/estimate/:id` | One conversation: brief, then progress checklist, then estimate, then follow-ups. |
-| `#/project/:id` | A finished project: how the estimate did, what happened, what I learned, whether estimates are getting better. |
-| `#/about` | Methods, architecture, data disclaimer, and the Manager/Overseer switch. |
+| `#/` | Home: the Estimates table when there is at least one estimate, otherwise the brief screen. |
+| `#/new` | New estimate: "What's the brief you'd like me to estimate?" (paste box, drop zone, attach, Jira link in live mode, 3 example chips). |
+| `#/estimate/:id` | The estimate document with the floating assistant. |
+| `#/project/:id` | A finished project (how the estimate did, what happened, what I learned, accuracy trend), with a category tag. |
+| `#/estimates` | Alias of Home; `?tab=open|finished` pre-selects a tab. |
+| `#/about` | Help: methods, architecture, data disclaimer, Manager/Overseer switch. |
 
-- **The estimate message:**
-  - a headline card: weeks, team, most likely date, safe date with margin, how sure;
-  - "What happens when": stages, which expand to their work items with source chips;
-  - "Ask the client before you commit": the top 3 questions, with copy-email and answer-inline;
-  - "Why this number?": template bullets, and a link to the methods drawer.
-- **Follow-ups go through an intent parser** (`present/intent.ts`): `team_what_if`, `drop_what_if`, `deadline_check`, `explain`, `new_info`, `other`.
-  - What-ifs post a comparison with Use this / Keep the current one.
-  - Changes post a new estimate version with an "Updated:" line. Older versions collapse.
-- **State:** `Conversation` and `Message` live in `packages/shared/src/conversation.ts`.
-  - Conversations are kept in localStorage (`scopewise.conversations.v1`), and also saved to `PUT /conversations/:id` in live mode.
-  - Each estimate version stores its inputs (`EstimateSpec`); the numbers are recomputed by the engine, which is deterministic.
-  - The 3 samples are seeded as ready conversations on first load.
-- **Presentation layer:** `apps/web/src/present/` turns engine output into words. Components never read raw engine fields for display. All phrases live in `apps/web/src/copy.ts`.
+- **Sidebar (all screens):** logotype → Home, **Home**, **New estimate**, a collapsible **Ongoing** list of every active estimate (status not `error`, newest first, title plus a date-based progress line), then **Help** and the theme row. No finished projects, no "Sample data" tag, no big button.
+- **Home table:** logotype hero, subtitle, New estimate button; three tiles (Open estimates, Finished projects, Delivered on time "8 of 10"); tabs All / Estimates / Finished with counts, category `<select>`, search, Export CSV (includes Category); columns Name (+ "Updated <date>"), Category, Status (Estimated / In progress / Needs another try / Finished), Due date, Effort · time (`365 h · 16,5 weeks`; the promised range for finished), Plan / result (`Plan: Wed 17 Feb`; `On time (Thu 16 Jul)` / `2 weeks late (Mon 27 Apr)`). Rows open on click; estimates have inline Rename and Delete (confirm).
+- **The estimate document**, in this order: an "Updated: …" tag (last change note) → **the estimate card** → **What happens when** (stages, no "could stretch" segments or margin row) → **Ask the client before you commit** → **The brief**. While working: the progress steps; on error: the message with Retry. Stable ids: `est-summary`, `est-team`, `est-hours`, `est-duration`, `est-stages`, `est-questions`, `est-brief`.
+- **The estimate card** (`components/EstimateCard.tsx`), sections split by a 1px rule with 28px above and below:
+  1. **Header:** Estimated effort `365` working hours (P50 total, rounded to 5, no buffer) | Working time `16,5` weeks (the plan, 6.1) | Confidence bars + label, with a "Make it surer →" chip when confidence is low and questions are open. Below: "Why this estimate and confidence?" opens two labelled groups (*Why 365 working hours*: past work, track record, "No buffer: the number is pure working time…"; *Why "Not sure yet"*: open questions and spread), the "Surprises seen on similar projects" list and the methods-drawer link.
+  2. **Team structure:** one stepper per role (roles the scope needs first, by first stage, then the rest), fractional values (−/+ step 0,5; typeable to hundredths, comma or dot), a `part-time` tag on fractions. A needed role at 0 shows a warning border and the "No <role> on the team" panel: *<Role> does it too* (`spec.coveredRoles`), *Skip <role> work* (drops its items), *Add 1 <role>*. "See default team" opens the Default team modal.
+  3. **Working hours:** Days a week (1–7) × Hours a day (1–12, step 0,5), "Reset to default" when set for this estimate, "See default working hours" opens the modal.
+  4. **Schedule:** Start date (picker) · End date (plan, read-only) · Due date (picker; "· from the brief" until changed). The **Realistic forecast** box: `19,5 weeks → finish Wed 10 Mar`, a Meets / Misses the due date tag, "What's included (+N days on top of the plan)" with per-estimate checkboxes for *Team time off in this window*, *Delays seen on similar projects* and *Your risks and buffer*, and the "+ Add risks & buffer" panel (named risks in hours, buffer % None/10/15/20/30, live total, Apply to timeline).
+- **Edits never move the viewport:** `applySpec(convId, patch, note, inPlace = true)` replaces the latest `estimate` message (previous `{estimateId, changeNote, createdAt}` goes onto `message.edits[]`); the screen remembers the section being edited and scrolls by any height change before paint. Only chat-driven changes (`decide`, follow-up answers) append messages. Every version stays in `conversation.versions`.
+- **The assistant** (`components/Assistant.tsx`): a "✦ Ask Scopewise" pill bottom-right with an unread badge; expanded it is a 400×560 panel with compact bubbles mapped from messages (`user_brief` → "Shared the brief and 3 files.", `progress` → "I read the brief and compared it with past projects.", first `estimate` → "Your estimate is ready. It's on the page.", later ones → "<change note> The page is updated.", `comparison` → table with Use this / Keep the current one), the 3 suggestion chips and a one-line textarea (Enter sends). Open state is kept for the session. There is no composer dock.
+- **Default-setting modals** (`components/DefaultsModals.tsx`): *Default team for integrations* per category (`sw-team-def.v1` → `{ [category]: { role: n } }`; new briefs in that category start from it) and *Default working hours* (`sw-hours-def.v1` → `{ dpw, hpd, at }`; applies to estimates created after `at`). Both warn that existing estimates stay as they are.
+
+### Logic and derived values (no engine method changes)
+
+- **Working time (plan):** `planDays = min(P50 finish with planned leave removed, real P50 finish) / f`, where the leave-free run swaps `plannedLeave: []` into the prepared inputs. `planFinish = start + planDays` working days. Shown as half weeks with a comma (`16,5 weeks`; under 5 days → "a few days"). It must not change with the start date (tested).
+- **Working-hours policy:** per estimate on the spec (`hoursPerDay`, `daysPerWeek`) → the saved default if `conv.createdAt ≥ at` → learned from the squad (`round(6 × focusFactor × 2)/2` h/day, 5 days) → 5 × 7. Fed to the engine as `focusFactor = hpd × dpw / 5 / 6`; the learned policy keeps the squad's own factor.
+- **Fractional team:** `effectiveHeadcount` is `v > 0 ? max(0.05, v) : 1`; coordination overhead uses the same count.
+- **Risks & buffer:** `f = (P50 + Σ risk h + P50 × pct / 100) / P50`, applied as `focusFactor /= f`, so the timeline stretches and effort stays pure; `f` is part of the engine cache key.
+- **Realistic forecast:** `realDays = planDays + Σ included adjustments`. Leave = overlap of the squad's planned leave with the plan window, scaled by the share of the role away. History = Σ over the `blocked` and `availability` causes of (projects that saw it / n) × average days it cost, from the post-mortems of finished projects in the same category. Buffer = `planDays × (f − 1)`. Flags live in `sw-forecast.v1[conv.id]`.
+- **Sidebar progress:** before the start "Not started · starts Mon 26 Oct"; during, "Week 7 of 12 · 56%" with a 4px bar; at or past 100% "Past the planned finish"; while working "Estimating…".
 
 ### Glossary (plain language on the main screens)
 
 | Technical | Show instead |
 | --- | --- |
-| Total P50–P80 range | "This will take about **6–8 weeks**" (P50 days/5 rounded; P80 days/5 rounded up) |
-| P50 finish date | "Most likely finished: **Fri 4 Dec**" |
-| P80 / commit date | "Safe date to promise the client: **Fri 11 Dec**" |
-| Buffer | "Safety margin" ("Includes about 1 week of safety margin") |
-| Confidence High / Medium / Low | "How sure am I?": "Very sure" / "Fairly sure" / "Not sure yet" (3 / 2 / 1 bars) |
+| P50 effort (hours) | "Estimated effort: **365** working hours" (pure working time, no buffer) |
+| Plan duration | "Working time: **16,5** weeks" (the plan; half weeks with a comma, never ½) |
+| Plan + known adjustments | "Realistic forecast: 19,5 weeks → finish Wed 10 Mar" |
+| Working-hours policy | "Working hours: 5 days a week × 5 h a day"; "Default working hours" is the saved or learned policy |
+| Team shape | "Team structure"; "Default team" is what new estimates in a category start from; fractions are "part-time" |
+| Buffer factor | "Risks & buffer" (named risks in hours plus a % for the unknown); the word *buffer* appears only in that label and in "No buffer: the number is pure working time" |
+| Confidence High / Medium / Low | "Very sure" / "Fairly sure" / "Not sure yet" (3 / 2 / 1 bars) with "Make it surer →" |
 | Value of information ranking | "Ask the client before you commit" (most important first) |
 | Phases | "Stages" / "What happens when" |
-| Bias factor ≥ 1.2 for a category | "often runs long" next to that stage (observed actual/estimate, coordination included) |
-| Focus factor | "Your team spends about 7 of every 10 work hours on project work" |
+| Bias factor ≥ 1.2 | "often runs long" next to that stage |
+| Active estimates | "Ongoing" (sidebar) |
 | MMRE / accuracy | "How far off was each estimate?" |
 
-`P50`, `P80`, `MMRE`, `PRED`, `PERT`, `Monte Carlo`, `buffer`, `calibrat` and `FTE` must not appear on the main screens. They may appear only in the methods drawer (`[data-methods]`) and on About. `src/test/banned-terms.test.tsx` enforces this.
+`P50`, `P80`, `MMRE`, `PRED`, `PERT`, `Monte Carlo`, `calibrat`, `FTE`, `½`, `safety margin` and `40-hour week` must not appear on the main screens; `buffer` only in the two places above. They may appear in the methods drawer (`[data-methods]`) and on About. `src/test/banned-terms.test.tsx` enforces this, together with the document order, the stable ids and the in-place update.
 
-## Design system (v2: "soft structuralism", taste-skill / soft-skill)
+- **Presentation layer:** `apps/web/src/present/` turns engine output into words (`forecast.ts`, `why.ts`, `progress.ts`, `format.ts` with `sd`/`fmtNum`). Components never read raw engine fields for display. All phrases live in `apps/web/src/copy.ts`; category labels in `lib/categories.ts`.
 
-The user asked for a more professional, business-oriented look using taste-skill's soft-skill. This replaces the v1 ASCII/dither theme.
+## Design system (v3: dark Brutalism)
 
-- **Ground:** silver-grey `#EEF0F3`; white surfaces; ink `#101828`; one accent `#2F43D8`. Success, warning and danger tones mark status only.
-- **Dark mode:** `#0B0D12` ground, `#151821` surfaces, accent `#8C99FF`. Defined on `:root` in `styles.css`.
-- **Type:** Geist (Geist Mono only for formulas and inputs in the methods drawer).
-- **Cards are "double bezel":** an outer tray (`.bezel`: faint fill, hairline ring, 6px padding, 1.75rem radius) holding an inner plate (`.bezel-core`: white, concentric radius, top highlight, soft diffused shadow).
-- **Buttons** are pills with a nested icon island (`.btn-icon`). Press scales to 0.98.
-- **Motion:** spring easing `cubic-bezier(0.32,0.72,0,1)`. Messages fade up with a slight blur. `prefers-reduced-motion` turns motion off.
-- **Icons** are light 1.5px line icons drawn inline (`components/ui.tsx`).
-- **Bars:** the one detail kept from v1 is a light Bayer-dither stipple on the uncertain part of timeline bars (to P80, and the safety margin).
+The user asked for a dark Brutalism overhaul with readable, accessible content. It replaces the v2 soft look; the UX follows the v3 document view above.
+
+- **Ground:** near-black `#0B0B0B`; surfaces `#141414` / `#1C1C1C`; ink `#F2EFE8`; muted `#A39F96` (≥ 7:1 on surfaces); one acid accent `#D4FF3F` used for marks, fills with black text, the realistic forecast box and selected states. Success / warning / danger tones mark status only.
+- **Light variant** (`[data-theme="light"]`, or `system` following the OS): paper `#F3EFE6`, white surfaces, black rules, the same accent as fills, `--accent-ink: #3F5A00` for links, black focus rings. Dark is the default; the sidebar row cycles Dark → Light → Auto. Tokens live on `:root` in `styles.css`; the theme is set on `<html data-theme>` before paint.
+- **Type:** Syne 700/800 for headings and the big numerals, Space Grotesk for text, JetBrains Mono for labels, numbers, tags, buttons and inputs. Mono labels are uppercase with an index mark (`§ 01 Team structure`).
+- **Bricks:** cards are `.brick`: 2px ink rule, no radius, a hard 6px offset shadow in the ink colour. `.panel` is a quiet inset; `.panel-accent` / `.panel-warning` / `.panel-danger` are 2px-ruled tinted boxes.
+- **Controls:** rectangular buttons in uppercase mono; hover lifts by 2px with an accent hard shadow, press drops it. Steppers are one 40px box `[ − | value | + ]`. Date fields look like inputs and open a Mon-first calendar popover. Modals are centred bricks over a dark scrim. Tags are square mono outlines.
+- **Signature:** a fixed film-grain overlay (`body::before`, blend overlay, ~7%) and an exposed 48px grid on the page background; oversized display numerals; hatch (`.seg-hatch`) for uncertainty on bars instead of the v1 dither.
+- **Motion:** one hard "stamp" (scale 1.02 → 1, 180–220ms) for cards, modals and the assistant; nothing floats. `prefers-reduced-motion` turns it off.
+- **Accessibility:** every text colour meets WCAG AA on its surface; 3px focus rings; all controls labelled; the table is keyboard operable (rows focusable, Enter opens); the methods drawer and modals trap Escape and restore focus; readable at 375px.
 
 ## Decisions
 
@@ -237,3 +248,10 @@ The user asked for a more professional, business-oriented look using taste-skill
 - **Default team** is one person per role the work needs (spec). Durations are long with one developer; the "add another developer" follow-up shows the difference.
 - **Seed durations** come from the engine's own schedule model (`scheduleOnce` on actual hours, plus noise from a separate PRNG stream), so finished projects compare like with like. First-10 noise is 0.6 and later noise 0.1, so the backtest visibly improves (first five ~24% off, last five ~14%).
 - **Derived engine outputs** (no method changes): `Estimate.finishDays`, plus `BacktestPoint.calibratedP50Date` and `calibratedP80Date`.
+- **v3 deviations from the document-view prompt:**
+  - The working-hours policy and the risks & buffer live on the `EstimateSpec` (`hoursPerDay`, `daysPerWeek`, `risks`, `bufferPct`, `coveredRoles`) rather than in `sw-policy.v1` / `sw-buffer.v1`, so every version stays reproducible from its inputs and is saved with the conversation in live mode. `sw-hours-def.v1`, `sw-team-def.v1` and `sw-forecast.v1` use the prompt's keys.
+  - The prompt said not to change the visual design; the user asked for a dark Brutalism overhaul in the same request, so the design system changed (v3 above) while the UX follows the prompt.
+  - The theme defaults to dark (not auto) because the brief asked for a dark look; the row still offers Light and Auto.
+  - Effort is the P50 of the simulated total (coordination included), rounded to 5, which is what the prompt's example figures show.
+  - Engine preparation is cached per squad; the start date, planned leave and focus factor are swapped into the prepared inputs per run (a web-side shortcut, no engine change).
+- **Test environment:** Node 22+ defines a global `localStorage` that shadows jsdom's; `apps/web/src/test/setup.ts` installs an in-memory one.
