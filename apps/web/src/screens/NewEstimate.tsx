@@ -25,7 +25,9 @@ export function NewEstimate() {
   const live = mode.kind === 'live' && mode.health.features.claude;
   const jiraLive = mode.kind === 'live' && mode.health.features.jira;
   const hasInput = text.trim().length > 0 || files.length > 0 || jira.length > 0;
-  const showDemoNote = !live && hasInput;
+  // A Jira ticket alone is enough to submit: the API reads it even when Claude is off (it then shows the summary).
+  const canSubmit = hasInput && !readOnly && (live || (jiraLive && jira.length > 0));
+  const showDemoNote = hasInput && !live;
 
   const addFiles = (list: FileList | null) => setFiles((f) => [...f, ...Array.from(list ?? [])].slice(0, 10));
   const onDrop = (e: DragEvent) => {
@@ -35,7 +37,7 @@ export function NewEstimate() {
   };
   const submit = (e: FormEvent) => {
     e.preventDefault();
-    if (!hasInput || !live || readOnly) return;
+    if (!canSubmit) return;
     const id = startBrief({ text, files, jiraKeys: jira });
     navigate(`/estimate/${id}`);
   };
@@ -116,7 +118,7 @@ export function NewEstimate() {
                     {copy.addJira}
                   </button>
                 ) : null}
-                <button type="submit" className="btn btn-primary ml-auto" disabled={!hasInput || !live || readOnly}>
+                <button type="submit" className="btn btn-primary ml-auto" disabled={!canSubmit}>
                   {copy.estimateButton}
                   <span className="btn-icon">
                     <Icon name="arrow" size={16} />
@@ -127,7 +129,7 @@ export function NewEstimate() {
           </div>
           {showDemoNote ? (
             <p className="m-0 mt-3 text-[15px] ink-2" role="status">
-              {mode.kind === 'live' ? copy.liveNoClaude : copy.demoNeedsApi}
+              {mode.kind !== 'live' ? copy.demoNeedsApi : jira.length ? copy.liveNoClaudeJira : copy.liveNoClaude}
             </p>
           ) : null}
         </form>

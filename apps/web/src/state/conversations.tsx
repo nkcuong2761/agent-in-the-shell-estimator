@@ -174,11 +174,24 @@ export function ConversationsProvider({ children }: { children: ReactNode }) {
   modeRef.current = mode;
   const files = useRef(new Map<string, File[]>());
 
+  // Detect the API at start, and again when the tab regains focus (the API may have been started or
+  // reconfigured in the meantime), at most once every few seconds.
   useEffect(() => {
     let alive = true;
-    detectMode().then((m) => alive && setMode(m));
+    let last = 0;
+    const check = () => {
+      if (Date.now() - last < 5000) return;
+      last = Date.now();
+      detectMode().then((m) => alive && setMode(m));
+    };
+    check();
+    const onVisible = () => document.visibilityState === 'visible' && check();
+    window.addEventListener('focus', check);
+    document.addEventListener('visibilitychange', onVisible);
     return () => {
       alive = false;
+      window.removeEventListener('focus', check);
+      document.removeEventListener('visibilitychange', onVisible);
     };
   }, []);
 
@@ -270,17 +283,33 @@ export function ConversationsProvider({ children }: { children: ReactNode }) {
       try {
         setProgress(id, steps({ docs, stages: 0, similar: 0 }, 0, 0));
         // Jira links: pull each issue's summary and description into the brief.
+        const issues: { key: string; summary: string }[] = [];
         const sources = await Promise.all(
           c.brief.sources.map(async (s) => {
             if (s.kind !== 'jira') return s;
             const key = s.text.match(/[A-Z][A-Z0-9]+-\d+/)?.[0];
             if (!key) return s;
             const issue = await api.jiraIssue(key);
+            issues.push({ key: issue.key, summary: issue.summary });
             return { ...s, text: issue.text };
           }),
         );
-        if (sources.some((s, i) => s !== c.brief.sources[i])) patch(id, (x) => ({ ...x, brief: { ...x.brief, sources } }));
         const withJira: BriefPack = { ...c.brief, sources };
+        if (issues.length) {
+          // Show what was read from Jira straight away: title, preview and file chips, before Claude is involved.
+          patch(id, (x) => ({
+            ...x,
+            brief: withJira,
+            title: x.title === 'New estimate' ? (issues[0]?.summary ?? x.title) : x.title,
+            messages: x.messages.map((m) => (m.kind === 'user_brief' ? { ...m, preview: preview(withJira), files: fileChips(withJira) } : m)),
+          }));
+        }
+        const read = issues.map((i) => copy.readTicket(i.key, i.summary)).join(' ');
+        if (modeRef.current.kind === 'live' && !modeRef.current.health.features.claude) {
+          patch(id, (x) => ({ ...x, status: 'error' }));
+          push(id, { id: uid('m'), createdAt: nowIso(), kind: 'error', text: `${read} ${copy.noClaudeYet}`.trim(), retry: true });
+          return;
+        }
         const text = sources.filter((s) => s.kind !== 'jira').map((s) => s.text).join('\n\n');
         const upload = files.current.get(id) ?? [];
         const jiraFiles = sources.filter((s) => s.kind === 'jira').map((s) => new File([s.text], s.name, { type: 'text/markdown' }));
@@ -308,8 +337,11 @@ export function ConversationsProvider({ children }: { children: ReactNode }) {
         setProgress(id, steps(n, 4, -1));
         finishWithEstimate(id);
       } catch (err) {
+        const cur = ref.current.find((x) => x.id === id);
+        const jiraKeys = (cur?.brief.sources ?? []).filter((s) => s.kind === 'jira').map((s) => s.name.match(/[A-Z][A-Z0-9]+-\d+/)?.[0]).filter(Boolean);
+        const read = cur && cur.title !== 'New estimate' && jiraKeys.length ? `${copy.readTicket(jiraKeys.join(', '), cur.title)} ` : '';
         patch(id, (x) => ({ ...x, status: 'error' }));
-        push(id, { id: uid('m'), createdAt: nowIso(), kind: 'error', text: `Something went wrong reading the brief: ${err instanceof Error ? err.message : 'unknown error'}`, retry: true });
+        push(id, { id: uid('m'), createdAt: nowIso(), kind: 'error', text: `${read}${copy.briefFailed(err instanceof Error ? err.message : 'unknown error')}`, retry: true });
       } finally {
         setBusy(id, false);
       }

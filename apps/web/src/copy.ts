@@ -27,6 +27,10 @@ export const copy = {
   tryExample: 'No brief to hand? Try an example:',
   demoNeedsApi: 'Live estimates need the API. Try an example to see how it works.',
   liveNoClaude: "The API is running but has no Claude key yet, so it can't read new briefs. Try an example to see how it works.",
+  liveNoClaudeJira: "The API can read the Jira ticket, but estimating it needs a Claude key. You'll see the ticket's summary and can retry once the key is set.",
+  readTicket: (key: string, summary: string) => `I read ${key} from Jira: “${summary}”.`,
+  noClaudeYet: "I can't estimate it yet: the API has no Claude key. Add ANTHROPIC_API_KEY, restart the API and try again.",
+  briefFailed: (why: string) => `Something went wrong reading the brief: ${why}`,
 
   // Progress
   workingIntro: "Got it. I'm reading everything and comparing it with past projects.",

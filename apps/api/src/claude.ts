@@ -115,7 +115,9 @@ export function mapClaudeError(err: unknown): unknown {
     return new ApiError(502, 'claude_model_not_found', `Model "${env.model()}" was not found. Check ANTHROPIC_MODEL.`);
   }
   if (err instanceof Anthropic.BadRequestError) {
-    return new ApiError(502, 'claude_bad_request', `Anthropic rejected the request: ${err.message}`);
+    // The SDK message is "400 {json}"; show only Anthropic's own sentence (e.g. "Your credit balance is too low…").
+    const inner = (err.error as { error?: { message?: string } } | undefined)?.error?.message ?? err.message.replace(/^\d{3}\s*/, '');
+    return new ApiError(502, 'claude_bad_request', `Anthropic rejected the request: ${inner}`);
   }
   if (err instanceof Anthropic.APIConnectionTimeoutError) {
     return new ApiError(504, 'claude_timeout', 'The request to Anthropic timed out. Try again.');

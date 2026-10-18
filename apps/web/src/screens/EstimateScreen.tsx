@@ -176,6 +176,7 @@ export function EstimateScreen() {
             ) : null}
           </div>
         ) : null}
+        {conv.status === 'error' ? <BriefCard conv={conv} /> : null}
         {conv.status === 'ready' && scope && spec ? (
           est && plan ? (
             <>
