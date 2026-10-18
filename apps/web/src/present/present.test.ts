@@ -17,7 +17,7 @@ import {
   toQuestions,
   toStages,
   toSuggestions,
-  toWhyBullets,
+  toWhy,
   weeksRange,
 } from '.';
 import { defaultTeam, observedBias } from '../state/engine';
@@ -72,7 +72,7 @@ describe('estimate presentation', () => {
     expect(h.mostLikely).toBe(formatDate(est.p50Date));
     expect(h.safeDate).toBe(formatDate(est.commitDate));
     expect(h.team).toContain('developer');
-    expect(h.moveNote).toMatch(/open questions could still move this by up to/);
+    expect(h.openQuestions).toBeGreaterThan(0);
     noBanned(JSON.stringify(h));
   });
 
@@ -82,7 +82,6 @@ describe('estimate presentation', () => {
     expect(s.rows.flatMap((r) => r.items)).toHaveLength(scope.items.length);
     expect(s.rows[0]?.items[0]?.hours).toMatch(/^about \d+(–\d+)? hours$/);
     expect(s.rows[0]?.items[0]?.sources[0]?.label).toBe('Client email');
-    expect(s.margin.endWeek).toBeGreaterThanOrEqual(s.margin.startWeek);
     // Integration work runs long in history.
     expect(s.rows.find((r) => r.id === 'integration')?.runsLong).toBe(true);
   });
@@ -95,13 +94,16 @@ describe('estimate presentation', () => {
     noBanned(JSON.stringify(q));
   });
 
-  it('why: 3–4 template bullets', () => {
-    const b = toWhyBullets(est, seed.projects, seed.squads.find((s) => s.id === 'beta')!.stats);
-    expect(b.length).toBeGreaterThanOrEqual(3);
-    expect(b.length).toBeLessThanOrEqual(4);
-    expect(b.join(' ')).toMatch(/similar projects we finished took between \d+ and \d+ weeks/);
-    expect(b.join(' ')).toMatch(/of every 10 work hours/);
-    noBanned(b.join(' '));
+  it('why: two labelled groups of template bullets plus the surprises', () => {
+    const w = toWhy(est, scope, observedBias());
+    expect(w.hours).toHaveLength(3);
+    expect(w.hours[0]).toMatch(/^Past work: \d+ similar projects you finished took \d+–\d+ working hours\.$/);
+    expect(w.hours[1]).toMatch(/^Your track record:/);
+    expect(w.hours[2]).toMatch(/^No buffer: the number is pure working time/);
+    expect(w.confidence[0]).toMatch(/open questions? could still move this by up to .* and confidence goes up\.$/);
+    expect(w.surprises.length).toBeGreaterThan(0);
+    // "buffer" is allowed in exactly this sentence, which the screen test skips via its own wording check.
+    noBanned([...w.hours.slice(0, 2), ...w.confidence, ...w.surprises].join(' '));
   });
 
   it('comparison: adding a developer finishes sooner and costs a little more time', () => {

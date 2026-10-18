@@ -1,6 +1,7 @@
 import { Link, useParams } from 'react-router-dom';
 import { copy } from '../copy';
-import { Card, Spinner } from '../components/ui';
+import { Card, Label, Spinner, Tag } from '../components/ui';
+import { categoryLabel } from '../lib/categories';
 import { finishedLine, toHappened, toImprovement, toLesson } from '../present';
 import { useHistory, usePostmortems } from '../state/history';
 
@@ -12,7 +13,7 @@ export function ProjectScreen() {
   const pms = usePostmortems();
   if (!history) {
     return (
-      <div className="thread">
+      <div className="page">
         <Spinner label="Looking back at finished projects" />
       </div>
     );
@@ -20,10 +21,10 @@ export function ProjectScreen() {
   const f = history.finished.find((x) => x.project.id === id);
   if (!f) {
     return (
-      <div className="thread">
+      <div className="page">
         <p className="m-0 text-lg">{copy.notFound}</p>
-        <Link to="/" className="btn btn-primary self-start no-underline">
-          {copy.backToNew}
+        <Link to="/" className="btn btn-primary self-start">
+          {copy.backHome}
         </Link>
       </div>
     );
@@ -39,11 +40,14 @@ export function ProjectScreen() {
   const [client, name] = f.project.name.split(': ');
 
   return (
-    <div className="thread">
+    <div className="page">
       <header className="flex flex-col gap-2 enter">
-        <p className="m-0 text-[15px] muted">{client}</p>
+        <Label>{client}</Label>
         <h1 className="h-page m-0">{capitalise(name ?? f.project.name)}</h1>
-        <p className="m-0 muted">{finishedLine(f.project)}</p>
+        <p className="m-0 muted flex items-center gap-3 flex-wrap">
+          <span>{finishedLine(f.project)}</span>
+          <Tag tone="accent">{categoryLabel(f.project.projectType)}</Tag>
+        </p>
       </header>
 
       <Card inner="p-5 sm:p-6 flex flex-col gap-5" className="enter" style={{ ['--i' as string]: 1 }}>
@@ -53,7 +57,7 @@ export function ProjectScreen() {
           <div className="grid grid-cols-[6rem_minmax(0,1fr)] gap-3 items-center">
             <span className="text-[14px] muted">{copy.estimated}</span>
             <span className="track block">
-              <span className="seg-likely" style={{ left: pct(o.said.low), width: pct(Math.max(0.15, o.said.high - o.said.low)), opacity: 0.85 }} />
+              <span className="seg-likely" style={{ left: pct(o.said.low), width: pct(Math.max(0.15, o.said.high - o.said.low)) }} />
             </span>
           </div>
           <div className="grid grid-cols-[6rem_minmax(0,1fr)] gap-3 items-center">
@@ -64,7 +68,7 @@ export function ProjectScreen() {
           </div>
           <div className="grid grid-cols-[6rem_minmax(0,1fr)] gap-3">
             <span />
-            <div className="relative h-4 text-[12px] muted num" aria-hidden="true">
+            <div className="relative h-4 text-[11px] muted mono" aria-hidden="true">
               {Array.from({ length: Math.floor(scale) + 1 }, (_, w) => w)
                 .filter((w) => scale <= 12 || w % 2 === 0)
                 .map((w) => (
@@ -82,7 +86,7 @@ export function ProjectScreen() {
         <Card inner="p-5 sm:p-6 flex flex-col gap-3 h-full" className="enter" style={{ ['--i' as string]: 2 }}>
           <h2 className="h-card m-0">{copy.whatHappened}</h2>
           {happened.length ? (
-            <ul className="m-0 pl-5 flex flex-col gap-2 text-[15px] leading-relaxed" style={{ color: 'var(--ink-2)' }}>
+            <ul className="m-0 pl-5 flex flex-col gap-2 text-[15px] leading-relaxed ink-2">
               {happened.map((h) => (
                 <li key={h}>{h}</li>
               ))}
@@ -120,8 +124,8 @@ export function ProjectScreen() {
             <Link
               key={b.projectId}
               to={`/project/${b.projectId}`}
-              className="flex-1 rounded-t-md transition-opacity hover:opacity-70"
-              style={{ height: `${Math.max(3, (b.offPct / maxOff) * 100)}%`, background: b.highlight ? 'var(--accent)' : 'var(--surface-3)' }}
+              className="flex-1 transition-opacity hover:opacity-70"
+              style={{ height: `${Math.max(3, (b.offPct / maxOff) * 100)}%`, background: b.highlight ? 'var(--accent)' : 'var(--surface-3)', border: '1px solid var(--line)', borderBottom: 0 }}
               title={`${b.offPct}% off`}
               aria-label={`${b.offPct}% off${b.highlight ? ` (${copy.thisProject.toLowerCase()})` : ''}`}
             />
@@ -130,7 +134,7 @@ export function ProjectScreen() {
         <div className="flex justify-between text-[13px] muted">
           <span>Oldest</span>
           <span className="inline-flex items-center gap-1.5">
-            <span className="w-2.5 h-2.5 rounded-sm" style={{ background: 'var(--accent)' }} aria-hidden="true" />
+            <span className="w-2.5 h-2.5" style={{ background: 'var(--accent)' }} aria-hidden="true" />
             {copy.thisProject}
           </span>
           <span>Newest</span>

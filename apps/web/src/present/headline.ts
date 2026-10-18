@@ -23,13 +23,11 @@ export interface Headline {
   margin: string;
   sure: SureLevel;
   openQuestions: number;
-  moveNote: string;
 }
 
 export function toHeadline(est: Estimate, team: TeamShape): Headline {
   const weeks = weeksRange(est.finishDays.p50, est.finishDays.p80);
   const marginDays = Math.max(0, est.finishDays.commit - est.finishDays.p50);
-  const top = est.rankedQuestions[0];
   const open = est.rankedQuestions.length;
   return {
     weeks,
@@ -40,6 +38,5 @@ export function toHeadline(est: Estimate, team: TeamShape): Headline {
     margin: formatSpan(marginDays),
     sure: howSure(est.confidence),
     openQuestions: open,
-    moveNote: open && top ? copy.couldMove(open, formatSpan(hoursToScheduleDays(est, top.narrowsByH))) : copy.noneOpen,
   };
 }

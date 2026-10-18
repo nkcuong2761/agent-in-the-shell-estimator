@@ -1,23 +1,23 @@
 /**
  * Every user-facing phrase on the main screens lives here, in plain language.
  * Technical terms (P50, P80, buffer, calibration, …) appear only in the methods drawer, after a plain sentence.
- * See the glossary in CLAUDE.md ("User journey v2").
+ * See the glossary in CLAUDE.md ("Product shape v3").
  */
 import type { Category, Role } from '@scopewise/shared';
 
 export const copy = {
   product: 'Scopewise',
+  home: 'Home',
   newEstimate: 'New estimate',
-  recent: 'Recent estimates',
-  finished: 'Finished — how did we do?',
-  howWorkedOut: 'How estimates are worked out',
-  sampleData: 'Sample data',
-  showAll: (n: number) => `Show all ${n}`,
-  showFewer: 'Show fewer',
+  ongoing: 'Ongoing',
+  noEstimates: 'No estimates yet',
+  help: 'Help',
+  theme: { system: 'Theme: auto', light: 'Light mode', dark: 'Dark mode' } as const,
   menu: 'Menu',
 
+  // New estimate
   askHeading: "What's the brief you'd like me to estimate?",
-  askSub: "Paste the client's email or notes, or drop in files. I'll tell you how long it should take, and what to ask the client first.",
+  askSub: "Paste the client's email or notes, or drop in files. I'll tell you how much work it is, how long it takes with your team, and what to ask the client first.",
   pastePlaceholder: 'Paste the brief here…',
   dropHere: 'Drop emails, PDFs or meeting notes here',
   attach: 'Attach files',
@@ -28,6 +28,7 @@ export const copy = {
   demoNeedsApi: 'Live estimates need the API. Try an example to see how it works.',
   liveNoClaude: "The API is running but has no Claude key yet, so it can't read new briefs. Try an example to see how it works.",
 
+  // Progress
   workingIntro: "Got it. I'm reading everything and comparing it with past projects.",
   stepRead: (n: number) => `Read ${n} document${n === 1 ? '' : 's'}`,
   stepReading: (n: number) => `Reading ${n} document${n === 1 ? '' : 's'}`,
@@ -35,30 +36,74 @@ export const copy = {
   stepSplitting: 'Splitting the work into stages',
   stepCompare: (n: number) => `Comparing with ${n} similar past project${n === 1 ? '' : 's'}…`,
   stepCompared: (n: number) => `Compared with ${n} similar past project${n === 1 ? '' : 's'}`,
-  stepTimeline: 'Working out the timeline and a safe date to promise',
-  followUpLocked: 'You can ask follow-up questions once the estimate is ready.',
-  followUpPlaceholder: 'Ask a follow-up, or add something the client said…',
-  send: 'Send',
+  stepTimeline: 'Working out the timeline',
 
-  hereIsEstimate: (summary: string) => `Here's my estimate for ${summary}`,
-  takesAbout: 'This will take about',
-  plannedFor: (team: string) => `Planned for ${team}`,
-  changeTeam: 'change the team',
-  mostLikely: 'Most likely finished',
-  safeDate: 'Safe date to promise the client',
-  includesMargin: (m: string) => `Includes about ${m} of safety margin`,
-  howSure: 'How sure am I?',
+  // Estimate card
+  estimatedEffort: 'Estimated effort',
+  workingHoursUnit: 'working hours',
+  workingTime: 'Working time',
+  weeksUnit: 'weeks',
+  fewDays: 'a few',
+  daysUnit: 'days',
+  confidence: 'Confidence',
+  makeSurer: 'Make it surer →',
+  whyLink: 'Why this estimate and confidence?',
+  whyHours: (h: string) => `Why ${h} working hours`,
+  whyConfidence: (label: string) => `Why “${label}”`,
+  surprises: 'Surprises seen on similar projects',
+  fullWorking: 'See the full working and methods',
   sure: { High: 'Very sure', Medium: 'Fairly sure', Low: 'Not sure yet' } as const,
-  couldMove: (n: number, amount: string) => `${n} open question${n === 1 ? '' : 's'} could still move this by up to ${amount}.`,
-  noneOpen: 'No open questions left. What remains is ordinary day-to-day uncertainty.',
+
+  teamTitle: 'Team structure',
+  seeDefaultTeam: 'See default team',
+  partTime: 'part-time',
+  noRole: (role: string) => `No ${role} on the team`,
+  noRoleWhy: (role: string) => `The work needs a ${role}. Pick who covers it, or skip that work.`,
+  coverRole: (cover: string) => `${cover} does it too`,
+  skipRole: (role: string) => `Skip ${role} work`,
+  addRole: (role: string) => `Add 1 ${role}`,
+  coveredBy: (cover: string) => `Covered by the ${cover}.`,
+  skippedWork: (role: string) => `${role} work is skipped.`,
+  undo: 'Undo',
+
+  hoursTitle: 'Working hours',
+  seeDefaultHours: 'See default working hours',
+  daysWeek: 'Days a week',
+  hoursDay: 'Hours a day',
+  resetDefault: 'Reset to default',
+
+  scheduleTitle: 'Schedule',
+  startDate: 'Start date',
+  endDatePlan: 'End date (plan)',
+  dueDate: 'Due date',
+  fromBrief: '· from the brief',
+  realistic: 'Realistic forecast',
+  realisticLine: (weeks: string, date: string) => `${weeks} → finish ${date}`,
+  meetsDue: 'Meets the due date',
+  missesDue: 'Misses the due date',
+  whatsIncluded: (days: number) => `What's included (+${days} day${days === 1 ? '' : 's'} on top of the plan)`,
+  nothingAdds: 'Nothing known about this period adds time. The forecast matches the plan.',
+  adjLeave: 'Team time off in this window',
+  adjHist: 'Delays seen on similar projects',
+  adjBuf: 'Your risks and buffer',
+  plusDays: (d: number) => `+${d} day${d === 1 ? '' : 's'}`,
+  addRisks: '+ Add risks & buffer',
+  risksSet: (h: number) => `Risks & buffer: +${h} h`,
+  risksTitle: 'Known risks',
+  riskLabelPlaceholder: 'What could go wrong?',
+  riskHoursPlaceholder: 'Extra hours',
+  addRisk: '+ Add a risk',
+  removeRisk: 'Remove risk',
+  bufferTitle: 'Buffer for the unknown',
+  bufferNone: 'None',
+  liveTotal: (h: number, plan: number) => `+${h} h → plan for ${plan} working hours`,
+  applyTimeline: 'Apply to timeline',
+  cancel: 'Cancel',
 
   whatWhen: 'What happens when',
-  weeksFromKickoff: 'Weeks from kickoff',
+  weeksFromKickoff: 'Weeks from the start',
   runsLong: 'often runs long',
-  marginRow: 'Safety margin',
-  marginRowNote: 'for surprises',
   itemHours: (lo: number, hi: number) => (lo === hi ? `about ${lo} hours` : `about ${lo}–${hi} hours`),
-  showItems: (n: number) => `Show ${n} piece${n === 1 ? '' : 's'} of work`,
 
   askClient: 'Ask the client before you commit',
   askClientSub: 'Most important first. Their answers make the estimate tighter.',
@@ -69,10 +114,9 @@ export const copy = {
   knowAnswers: 'I already know the answers',
   answerPlaceholder: 'What did the client say?',
   submitAnswers: 'Use these answers',
-  cancel: 'Cancel',
 
-  why: 'Why this number?',
-  fullWorking: 'See the full working and methods',
+  briefTitle: 'The brief',
+  briefWas: (how: string) => `The brief was ${how}.`,
 
   sendToJira: 'Send to Jira',
   needsApi: 'Needs the API',
@@ -80,12 +124,30 @@ export const copy = {
   linkCopied: 'Link copied',
   sentToJira: (key: string) => `Sent to Jira as ${key}.`,
 
+  // Change notes
   updated: (range: string, was: string, because: string) =>
     range === was || !was ? `Updated: still ${range} because ${because}, with less guesswork in the margin.` : `Updated: now ${range} (was ${was}) because ${because}.`,
-  earlierVersion: (range: string, safe: string) => `Earlier estimate: ${range}, safe date ${safe}`,
-  showVersion: 'Show',
-  hideVersion: 'Hide',
+  teamNote: (phrase: string) => `Updated: ${phrase} on the team.`,
+  coverNote: (cover: string, role: string) => `Updated: the ${cover} covers the ${role} work.`,
+  skipNote: (role: string) => `Updated: ${role} work skipped.`,
+  hoursNote: (d: number, h: string) => `Updated: working hours ${d} days × ${h} h.`,
+  hoursResetNote: 'Updated: working hours back to the default.',
+  startNote: (date: string) => `Updated: start date ${date}.`,
+  dueNote: (date: string) => `Updated: due date ${date}.`,
+  bufferNote: (h: number) => (h > 0 ? `Updated: risks and buffer add ${h} h to the timeline.` : 'Updated: risks and buffer removed.'),
 
+  // Assistant
+  askScopewise: 'Ask Scopewise',
+  assistantSub: 'For edge cases. Changes update the page.',
+  assistantPlaceholder: 'Ask, or describe an edge case…',
+  minimise: 'Minimise',
+  openAssistant: 'Open the assistant',
+  send: 'Send',
+  sharedBrief: (n: number) => (n ? `Shared the brief and ${n} file${n === 1 ? '' : 's'}.` : 'Shared the brief.'),
+  readBrief: 'I read the brief and compared it with past projects.',
+  estimateReady: "Your estimate is ready. It's on the page.",
+  estimateUpdated: (note: string) => `${note} The page is updated.`,
+  followUpLocked: 'You can ask once the estimate is ready.',
   useThis: 'Use this',
   keepCurrent: 'Keep the current one',
   usedThis: 'Using this one now.',
@@ -95,11 +157,60 @@ export const copy = {
   rowLikely: 'Most likely finished',
   rowSafe: 'Safe date to promise',
   rowTeamTime: 'Total team time',
-
   demoOther: 'In this demo I can answer questions about team size, deadlines, dropping parts of the work, or why a stage takes long.',
   retry: 'Try again',
-  readOnly: 'Read-only view. Switch to the Manager view on "How estimates are worked out" to make changes.',
+  readOnly: 'Read-only view. Switch to the Manager view on the Help page to make changes.',
 
+  // Home
+  homeSub: 'All your estimates and finished projects in one place. Open a row to see the estimate.',
+  openEstimates: 'Open estimates',
+  beingScoped: 'Being scoped now',
+  finishedProjects: 'Finished projects',
+  learnsFrom: 'The tool learns from these',
+  deliveredOnTime: 'Delivered on time',
+  lastFinished: 'Last finished projects',
+  tabAll: 'All',
+  tabEstimates: 'Estimates',
+  tabFinished: 'Finished',
+  allCategories: 'All categories',
+  searchPlaceholder: 'Search by name',
+  exportCsv: 'Export CSV',
+  colName: 'Name',
+  colCategory: 'Category',
+  colStatus: 'Status',
+  colDue: 'Due date',
+  colEffort: 'Effort · time',
+  colPlan: 'Plan / result',
+  statusEstimated: 'Estimated',
+  statusWorking: 'In progress',
+  statusError: 'Needs another try',
+  statusFinished: 'Finished',
+  rename: 'Rename',
+  deleteWord: 'Delete',
+  confirmDelete: 'Delete this estimate?',
+  updatedOn: (date: string) => `Updated ${date}`,
+  planOn: (date: string) => `Plan: ${date}`,
+  onTimeResult: (date: string) => `On time (${date})`,
+  lateResult: (weeks: string, date: string) => `${weeks} late (${date})`,
+  noRows: 'Nothing matches.',
+
+  // Default-setting modals
+  defaultTeamTitle: (plural: string) => `Default team for ${plural}`,
+  defaultTeamIntro: (adj: string) => `Every ${adj} estimate starts with these roles, 1 person each.`,
+  defaultTeamIntroSaved: (adj: string) => `Every ${adj} estimate starts from this team.`,
+  defaultTeamWarning: (adj: string) => `This changes your setup. Every ${adj} estimate you create after saving will start from this team. Estimates you already have stay as they are.`,
+  defaultTeamHint: 'Only want a different team for this project? Close this and change the team on the page, or tell me in the chat, e.g. “add 1 tester”.',
+  resetPerRole: 'Reset to 1 per role',
+  saveDefault: 'Save as default',
+  defaultHoursTitle: 'Default working hours',
+  defaultHoursIntro: (d: number, h: string) => `Every estimate starts from the hours learned from your team's worklogs: ${d} days a week × ${h} h a day.`,
+  defaultHoursIntroFallback: (d: number, h: string) => `Every estimate starts from ${d} days a week × ${h} h a day.`,
+  defaultHoursIntroSaved: (d: number, h: string) => `Every estimate starts from ${d} days a week × ${h} h a day.`,
+  defaultHoursWarning: 'This changes your setup. Every estimate you create after saving will use these working hours. Estimates you already have stay as they are.',
+  defaultHoursHint: 'Only want different hours for this project? Close this and change the working hours on the page.',
+  resetLearned: 'Reset to learned hours',
+
+  // Finished project
   projectFinished: (date: string) => `Finished ${date}`,
   howDidItDo: 'How did the estimate do?',
   weSaid: (range: string, took: string) => `We said ${range}. It took ${took}.`,
@@ -116,8 +227,8 @@ export const copy = {
   thisProject: 'This project',
   sideTook: (took: string, said: string) => `Took ${took} · we said ${said}`,
   sideOnTime: (said: string) => `On time · we said ${said}`,
-  notFound: "I couldn't find that conversation. It may have been on another device.",
-  backToNew: 'Start a new estimate',
+  notFound: "I couldn't find that estimate. It may have been on another device.",
+  backHome: 'Back to Home',
 } as const;
 
 const ROLE_WORDS: Record<Role, [string, string]> = {
@@ -132,6 +243,8 @@ export function roleWord(role: Role, n = 1): string {
   return ROLE_WORDS[role][n === 1 ? 0 : 1];
 }
 
+export const capitalise = (s: string) => s.charAt(0).toUpperCase() + s.slice(1);
+
 /** Words people use for each role, for the follow-up parser. */
 export const ROLE_SYNONYMS: Record<Role, string[]> = {
   engineer: ['developer', 'developers', 'dev', 'devs', 'engineer', 'engineers', 'programmer', 'programmers', 'coder'],
@@ -141,7 +254,7 @@ export const ROLE_SYNONYMS: Record<Role, string[]> = {
   legal: ['legal', 'lawyer', 'lawyers', 'counsel', 'legal reviewer'],
 };
 
-/** Plain names for kinds of work, used in "We usually underestimate … work". */
+/** Plain names for kinds of work, used in "“… ” work usually takes longer than planned". */
 export const CATEGORY_WORDS: Record<Category, string> = {
   discovery: 'working out the requirements',
   design: 'design',
@@ -167,4 +280,4 @@ export const SOURCE_LABELS = {
 } as const;
 
 /** Terms that must never appear on the main screens (checked by a test). */
-export const BANNED_TERMS = ['P50', 'P80', 'MMRE', 'PRED', 'PERT', 'Monte Carlo', 'buffer', 'calibrat', 'FTE'];
+export const BANNED_TERMS = ['P50', 'P80', 'MMRE', 'PRED', 'PERT', 'Monte Carlo', 'buffer', 'calibrat', 'FTE', '½', 'safety margin', '40-hour week'];

@@ -23,7 +23,7 @@ const nowIso = () => new Date().toISOString();
  */
 export function replaceLatestEstimate(messages: Message[], estimateId: string, changeNote: string | undefined, now: string): Message[] {
   let idx = -1;
-  for (let i = messages.length - 1; i >= 0; i--) if (messages[i]?.kind === 'estimate') (idx = i), (i = -1);
+  for (let i = messages.length - 1; i >= 0 && idx < 0; i--) if (messages[i]?.kind === 'estimate') idx = i;
   if (idx < 0) return [...messages, { id: uid('m'), createdAt: now, kind: 'estimate', estimateId, changeNote }];
   return messages.map((m, i) => {
     if (i !== idx || m.kind !== 'estimate') return m;

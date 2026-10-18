@@ -58,17 +58,17 @@ function MethodsDrawer({ title, intro, entries, onClose }: Open & { onClose: () 
   return (
     <>
       <div className="scrim" onClick={onClose} aria-hidden="true" />
-      <div className="drawer bezel" role="dialog" aria-modal="true" aria-labelledby="methods-title" data-methods>
-        <div className="bezel-core">
+      <div className="drawer" role="dialog" aria-modal="true" aria-labelledby="methods-title" data-methods>
+        <div className="flex flex-col h-full min-h-0">
           <div className="drawer-head">
             <div>
-              <p className="text-sm muted m-0">The full working</p>
+              <p className="label m-0">The full working</p>
               <h2 id="methods-title" className="h-card m-0">
                 {title}
               </h2>
             </div>
-            <button ref={closeRef} className="btn btn-ghost btn-sm" onClick={onClose} aria-label="Close">
-              <Icon name="close" />
+            <button ref={closeRef} className="btn btn-ghost btn-sm btn-icon-only" onClick={onClose} aria-label="Close">
+              <Icon name="close" size={16} />
             </button>
           </div>
           <div className="drawer-body flex flex-col gap-5">
@@ -86,7 +86,7 @@ function MethodsDrawer({ title, intro, entries, onClose }: Open & { onClose: () 
                     {e.explanation.method}
                   </p>
                   {e.explanation.formula ? (
-                    <code className="code block text-[13px] leading-relaxed p-3 rounded-xl" style={{ background: 'var(--surface)', wordBreak: 'break-word' }}>
+                    <code className="code block text-[13px] leading-relaxed p-3" style={{ background: 'var(--surface)', border: '1px solid var(--line)', wordBreak: 'break-word' }}>
                       {e.explanation.formula}
                     </code>
                   ) : null}

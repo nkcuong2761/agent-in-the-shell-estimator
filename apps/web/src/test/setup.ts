@@ -26,3 +26,5 @@ if (!('ResizeObserver' in window)) {
   };
 }
 Element.prototype.scrollIntoView = Element.prototype.scrollIntoView ?? function () {};
+window.scrollTo = () => {};
+window.scrollBy = () => {};

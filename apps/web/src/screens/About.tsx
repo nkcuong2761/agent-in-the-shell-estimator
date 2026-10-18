@@ -43,7 +43,7 @@ const stroke: Record<Kind, string> = { agent: 'var(--accent)', browser: 'var(--i
 function NodeBox({ n }: { n: Node }) {
   return (
     <g>
-      <rect x={n.x} y={n.y} width={n.w} height={H} rx={12} fill="var(--surface)" stroke={stroke[n.kind]} strokeWidth={n.kind === 'browser' ? 2 : 1} strokeDasharray={n.kind === 'system' ? '4 3' : undefined} />
+      <rect x={n.x} y={n.y} width={n.w} height={H} fill="var(--surface)" stroke={stroke[n.kind]} strokeWidth={n.kind === 'browser' ? 2 : 1} strokeDasharray={n.kind === 'system' ? '4 3' : undefined} />
       <text x={n.x + 10} y={n.y + 22} fontFamily="var(--font-sans)" fontSize="13" fontWeight="600" fill="var(--ink)">
         {n.title}
       </text>
@@ -139,10 +139,10 @@ export function About() {
   const viewMode = readOnly ? 'overseer' : 'manager';
   const setViewMode = (v: 'manager' | 'overseer') => setReadOnly(v === 'overseer');
   return (
-    <div className="thread !max-w-[64rem] gap-6">
+    <div className="page page-wide gap-6">
       <header className="flex flex-col gap-3">
         <h1 className="h-page m-0">How estimates are worked out</h1>
-        <p className="m-0 text-lg leading-relaxed" style={{ color: 'var(--ink-2)' }}>
+        <p className="m-0 text-lg leading-relaxed ink-2 measure">
           Language models read the brief, make rough guesses and explain. They never set a final number. Every figure is computed by a small, deterministic estimating engine that runs in your browser and can show its working. This page uses the technical names for each method.
         </p>
       </header>
@@ -198,7 +198,7 @@ export function About() {
         <Box title="Manager and Overseer views" labelledBy="views-title">
           <div className="flex flex-col gap-3">
             <p className="m-0">
-              <span className="font-semibold">Manager</span> is for the person preparing the estimate: answer questions, change the team, trim scope and push to Jira.
+              <span className="font-semibold">Manager</span> is for the person preparing the estimate: answer questions, change the team and working hours, add risks, trim scope and push to Jira.
             </p>
             <p className="m-0">
               <span className="font-semibold">Overseer</span> is for a reviewer or client lead: the same numbers and explanations, read only, so nothing changes by accident in a review.

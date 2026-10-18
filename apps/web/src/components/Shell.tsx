@@ -1,139 +1,123 @@
 import { useEffect, useState, type ReactNode } from 'react';
-import { NavLink, useLocation, useNavigate } from 'react-router-dom';
+import { NavLink, useLocation } from 'react-router-dom';
 import type { Conversation } from '@scopewise/shared';
 import { copy } from '../copy';
-import { formatWeeks } from '../present/format';
-import { sidebarLine } from '../present/project';
-import { sortedConversations, useConversations } from '../state/conversations';
-import { useHistory } from '../state/history';
 import { readStore } from '../lib/storage';
-import { Icon, Mark, Spinner } from './ui';
+import { todayIso } from '../present/format';
+import { progressLine } from '../present/progress';
+import { sortedConversations, useConversations } from '../state/conversations';
+import { planOf } from '../state/engine';
+import { Icon, Logotype, Mark, type IconName } from './ui';
 
-type Theme = 'system' | 'light' | 'dark';
+type Theme = 'dark' | 'light' | 'system';
+const THEME_ICON: Record<Theme, IconName> = { dark: 'moon', light: 'sun', system: 'auto' };
 
 function useTheme(): [Theme, () => void] {
-  const [theme, setTheme] = useState<Theme>(() => readStore<Theme>('sw-theme', 'system'));
+  const [theme, setTheme] = useState<Theme>(() => {
+    const t = readStore<string>('sw-theme', 'dark');
+    return t === 'light' || t === 'system' ? t : 'dark';
+  });
   useEffect(() => {
-    const el = document.documentElement;
-    if (theme === 'system') delete el.dataset.theme;
-    else el.dataset.theme = theme;
+    document.documentElement.dataset.theme = theme;
     try {
-      if (theme === 'system') window.localStorage.removeItem('sw-theme');
-      else window.localStorage.setItem('sw-theme', JSON.stringify(theme));
+      window.localStorage.setItem('sw-theme', JSON.stringify(theme));
     } catch {
       /* storage unavailable */
     }
   }, [theme]);
-  return [theme, () => setTheme((t) => (t === 'system' ? 'light' : t === 'light' ? 'dark' : 'system'))];
+  return [theme, () => setTheme((t) => (t === 'dark' ? 'light' : t === 'light' ? 'system' : 'dark'))];
 }
 
-function when(iso: string): string {
-  const d = iso.slice(0, 10);
-  const today = new Date().toISOString().slice(0, 10);
-  if (d === today) return 'today';
-  const dt = new Date(`${d}T00:00:00Z`);
-  return dt.toLocaleDateString('en-GB', { day: 'numeric', month: 'short', timeZone: 'UTC' });
+function readSession(key: string, fallback: boolean): boolean {
+  try {
+    const v = window.sessionStorage.getItem(key);
+    return v === null ? fallback : v === '1';
+  } catch {
+    return fallback;
+  }
 }
 
-const capitalise = (s: string) => s.charAt(0).toUpperCase() + s.slice(1);
-
-function convLine(c: Conversation): string {
-  const v = c.versions[c.currentEstimateId];
-  if (c.status === 'working') return 'Working on it…';
-  if (!v) return c.status === 'error' ? 'Needs another try' : '';
-  return `${formatWeeks(v.summary.weeksLow, v.summary.weeksHigh)} · ${when(c.updatedAt)}`;
+function OngoingRow({ c, onNavigate, today }: { c: Conversation; onNavigate?: () => void; today: string }) {
+  const spec = c.versions[c.currentEstimateId]?.spec;
+  const plan = c.status === 'ready' && spec ? planOf(c, spec) : undefined;
+  const line = progressLine(c.status, spec?.startDate ?? c.startDate, plan?.planDays, today);
+  const color = line.tone === 'warning' ? 'var(--warning)' : line.tone === 'ink' ? 'var(--ink-2)' : 'var(--muted)';
+  return (
+    <li>
+      <NavLink to={`/estimate/${c.id}`} className="side-item" onClick={onNavigate}>
+        <span className="block text-[14px] font-semibold leading-snug truncate">{c.title}</span>
+        <span className="block text-[12px] mono leading-snug" style={{ color }}>
+          {line.text}
+        </span>
+        {line.pct !== undefined ? (
+          <span className="progress-bar block" aria-hidden="true">
+            <span style={{ width: `${Math.round(line.pct * 100)}%`, background: line.tone === 'warning' ? 'var(--warning)' : 'var(--accent)' }} />
+          </span>
+        ) : null}
+      </NavLink>
+    </li>
+  );
 }
 
 function Sidebar({ onNavigate }: { onNavigate?: () => void }) {
-  const { conversations, mode } = useConversations();
-  const history = useHistory();
-  const [showAll, setShowAll] = useState(false);
+  const { conversations } = useConversations();
   const [theme, cycleTheme] = useTheme();
-  const navigate = useNavigate();
-  const finished = history ? [...history.finished].reverse() : [];
-  const shown = showAll ? finished : finished.slice(0, 6);
+  const [ongoingOpen, setOngoingOpen] = useState(() => readSession('sw-ongoing-open', true));
+  const today = todayIso();
+  const active = sortedConversations(conversations).filter((c) => c.status !== 'error');
+  const toggleOngoing = () => {
+    setOngoingOpen((o) => {
+      try {
+        window.sessionStorage.setItem('sw-ongoing-open', o ? '0' : '1');
+      } catch {
+        /* session storage unavailable */
+      }
+      return !o;
+    });
+  };
   return (
-    <div className="bezel h-full bezel-flat">
-      <div className="bezel-core sidebar-inner">
-        <NavLink to="/" className="flex items-center gap-2.5 no-underline px-1" onClick={onNavigate} aria-label={`${copy.product}, ${copy.newEstimate}`}>
-          <Mark />
-          <span className="font-semibold tracking-tight text-[17px]" style={{ color: 'var(--ink)' }}>
-            {copy.product}
-          </span>
+    <div className="sidebar-inner">
+      <NavLink to="/" className="no-underline px-2 py-1 mb-3 inline-flex" onClick={onNavigate} aria-label={`${copy.product}, ${copy.home}`} style={{ color: 'var(--ink)' }}>
+        <Logotype size={24} />
+      </NavLink>
+      <nav aria-label="Main" className="flex flex-col gap-0.5">
+        <NavLink to="/" end className="side-row" onClick={onNavigate}>
+          <Icon name="home" size={18} />
+          {copy.home}
         </NavLink>
-        <button
-          className="btn btn-primary w-full justify-between"
-          onClick={() => {
-            navigate('/');
-            onNavigate?.();
-          }}
-        >
+        <NavLink to="/new" className="side-row" onClick={onNavigate}>
+          <Icon name="plus" size={18} />
           {copy.newEstimate}
-          <span className="btn-icon">
-            <Icon name="plus" size={16} />
-          </span>
+        </NavLink>
+      </nav>
+
+      <section aria-label={copy.ongoing} className="mt-4 flex flex-col">
+        <button className="side-head" aria-expanded={ongoingOpen} onClick={toggleOngoing}>
+          <span className="label">{copy.ongoing}</span>
+          <Icon name="down" size={14} className="muted" style={{ transform: ongoingOpen ? undefined : 'rotate(-90deg)', transition: 'transform 120ms' }} />
         </button>
-
-        <nav aria-label={copy.recent} className="flex flex-col">
-          <h2 className="side-label">{copy.recent}</h2>
-          <ul className="list-none m-0 p-0 flex flex-col gap-0.5">
-            {sortedConversations(conversations).map((c) => (
-              <li key={c.id}>
-                <NavLink to={`/estimate/${c.id}`} className="side-item" onClick={onNavigate}>
-                  <span className="block text-[15px] font-medium leading-snug truncate">{c.title}</span>
-                  <span className="block text-[13px] muted">{convLine(c)}</span>
-                </NavLink>
-              </li>
-            ))}
-          </ul>
-        </nav>
-
-        <nav aria-label={copy.finished} className="flex flex-col">
-          <h2 className="side-label">{copy.finished}</h2>
-          {!history ? (
-            <div className="px-3 py-2">
-              <Spinner label="Loading" />
-            </div>
-          ) : (
+        {ongoingOpen ? (
+          active.length ? (
             <ul className="list-none m-0 p-0 flex flex-col gap-0.5">
-              {shown.map((f) => {
-                const line = sidebarLine(f.outcome);
-                return (
-                  <li key={f.project.id}>
-                    <NavLink to={`/project/${f.project.id}`} className="side-item" onClick={onNavigate}>
-                      <span className="block text-[15px] font-medium leading-snug truncate">{capitalise(f.project.name.split(': ')[1] ?? f.project.name)}</span>
-                      <span className="block text-[13px]" style={{ color: line.tone === 'success' ? 'var(--success)' : 'var(--warning)' }}>
-                        {line.text}
-                      </span>
-                    </NavLink>
-                  </li>
-                );
-              })}
-              {finished.length > 6 ? (
-                <li>
-                  <button className="link text-[13px] px-3 py-1" onClick={() => setShowAll((s) => !s)}>
-                    {showAll ? copy.showFewer : copy.showAll(finished.length)}
-                  </button>
-                </li>
-              ) : null}
+              {active.map((c) => (
+                <OngoingRow key={c.id} c={c} onNavigate={onNavigate} today={today} />
+              ))}
             </ul>
-          )}
-        </nav>
+          ) : (
+            <p className="m-0 px-2.5 py-1 text-[13px] muted">{copy.noEstimates}</p>
+          )
+        ) : null}
+      </section>
 
-        <div className="mt-auto flex flex-col gap-2 pt-2">
-          <NavLink to="/about" className="side-item text-[15px]" onClick={onNavigate}>
-            <span className="flex items-center gap-2">
-              <Icon name="book" />
-              {copy.howWorkedOut}
-            </span>
-          </NavLink>
-          <div className="flex items-center justify-between gap-2 px-1">
-            {mode.kind === 'live' ? <span className="tag tag-accent">Live</span> : mode.kind === 'demo' ? <span className="tag" title={mode.reason}>{copy.sampleData}</span> : <span />}
-            <button className="btn btn-ghost btn-sm" onClick={cycleTheme} aria-label={`Theme: ${theme}. Change theme`}>
-              {theme === 'system' ? 'Auto theme' : theme === 'light' ? 'Light' : 'Dark'}
-            </button>
-          </div>
-        </div>
+      <div className="mt-auto pt-3 flex flex-col gap-0.5" style={{ borderTop: '1px solid var(--line)' }}>
+        <NavLink to="/about" className="side-row" onClick={onNavigate}>
+          <Icon name="book" size={18} />
+          {copy.help}
+        </NavLink>
+        <button className="side-row" onClick={cycleTheme} aria-label={`${copy.theme[theme]}. Change theme`}>
+          <Icon name={THEME_ICON[theme]} size={18} />
+          {copy.theme[theme]}
+        </button>
       </div>
     </div>
   );
@@ -154,17 +138,17 @@ export function Shell({ children }: { children: ReactNode }) {
       <a href="#main" className="skip-link">
         Skip to content
       </a>
-      <aside className={`sidebar ${open ? 'is-open' : ''}`} aria-label="History">
+      <aside className={`sidebar ${open ? 'is-open' : ''}`} aria-label="Navigation">
         <Sidebar onNavigate={() => setOpen(false)} />
       </aside>
       {open ? <div className="scrim" style={{ zIndex: 35 }} onClick={() => setOpen(false)} aria-hidden="true" /> : null}
       <div className="main">
         <div className="topbar">
-          <button className="btn btn-sm" onClick={() => setOpen(true)} aria-label={copy.menu} aria-expanded={open}>
-            <Icon name="menu" />
+          <button className="btn btn-sm btn-icon-only" onClick={() => setOpen(true)} aria-label={copy.menu} aria-expanded={open}>
+            <Icon name="menu" size={16} />
           </button>
-          <Mark size={24} />
-          <span className="font-semibold">{copy.product}</span>
+          <Mark size={22} />
+          <span className="font-[var(--font-display)] font-extrabold">{copy.product}</span>
         </div>
         <main id="main" tabIndex={-1} className="flex-1 flex flex-col min-h-0">
           {children}

@@ -50,17 +50,15 @@ export function NewEstimate() {
     <div className="flex-1 flex flex-col justify-center px-4 py-12 sm:py-20">
       <div className="w-full max-w-[46rem] mx-auto flex flex-col gap-8">
         <div className="flex flex-col gap-4 enter">
-          <Mark size={40} />
+          <Mark size={44} />
           <h1 className="h-hero m-0">{copy.askHeading}</h1>
-          <p className="m-0 text-lg leading-relaxed" style={{ color: 'var(--ink-2)' }}>
-            {copy.askSub}
-          </p>
+          <p className="m-0 text-lg leading-relaxed ink-2 measure">{copy.askSub}</p>
         </div>
 
         <form onSubmit={submit} className="enter" style={{ ['--i' as string]: 1 }}>
-          <div className="bezel">
+          <div className="brick">
             <div
-              className={`bezel-core p-3 sm:p-4 flex flex-col gap-3 ${over ? 'dropzone is-over' : ''}`}
+              className={`p-3 sm:p-4 flex flex-col gap-3 ${over ? 'dropzone is-over' : ''}`}
               onDragOver={(e) => {
                 e.preventDefault();
                 setOver(true);
@@ -82,8 +80,8 @@ export function NewEstimate() {
                     <li key={`${f.name}-${i}`} className="chip chip-quiet">
                       <Icon name="file" size={16} />
                       {f.name}
-                      <button type="button" className="btn-ghost rounded-full -mr-1" aria-label={`Remove ${f.name}`} onClick={() => setFiles((fs) => fs.filter((_, j) => j !== i))}>
-                        <Icon name="close" size={14} />
+                      <button type="button" className="btn btn-ghost btn-sm btn-icon-only -mr-1" aria-label={`Remove ${f.name}`} onClick={() => setFiles((fs) => fs.filter((_, j) => j !== i))}>
+                        <Icon name="close" size={12} />
                       </button>
                     </li>
                   ))}
@@ -128,14 +126,14 @@ export function NewEstimate() {
             </div>
           </div>
           {showDemoNote ? (
-            <p className="m-0 mt-3 text-[15px]" role="status" style={{ color: 'var(--ink-2)' }}>
+            <p className="m-0 mt-3 text-[15px] ink-2" role="status">
               {mode.kind === 'live' ? copy.liveNoClaude : copy.demoNeedsApi}
             </p>
           ) : null}
         </form>
 
         <div className="flex flex-col gap-3 enter" style={{ ['--i' as string]: 2 }}>
-          <p className="m-0 text-[15px] muted">{copy.tryExample}</p>
+          <p className="m-0 label">{copy.tryExample}</p>
           <div className="flex flex-wrap gap-2">
             {EXAMPLES.map((ex) => (
               <button
