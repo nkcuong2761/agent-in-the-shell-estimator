@@ -13,6 +13,17 @@ export function formatDate(iso: string | undefined): string {
   return `${DAYS[d.getUTCDay()]} ${d.getUTCDate()} ${MONTHS[d.getUTCMonth()]}`;
 }
 
+/** "Wed 17 Feb 2027" */
+export function formatDateYear(iso: string | undefined): string {
+  if (!iso) return '';
+  const d = parse(iso);
+  return `${DAYS[d.getUTCDay()]} ${d.getUTCDate()} ${MONTHS[d.getUTCMonth()]} ${d.getUTCFullYear()}`;
+}
+
+export function todayIso(): string {
+  return new Date().toISOString().slice(0, 10);
+}
+
 /** "4 Dec 2026" */
 export function formatLongDate(iso: string | undefined): string {
   if (!iso) return '';
@@ -20,20 +31,25 @@ export function formatLongDate(iso: string | undefined): string {
   return `${d.getUTCDate()} ${MONTHS[d.getUTCMonth()]} ${d.getUTCFullYear()}`;
 }
 
-function halves(weeks: number): string {
-  const whole = Math.floor(weeks);
-  const half = weeks - whole >= 0.5;
-  if (whole === 0) return '½';
-  return `${whole}${half ? '½' : ''}`;
+/** Numbers with a decimal comma and at most one decimal: 16.5 → "16,5", 16 → "16", 0.75 → "0,75" (two when needed). */
+export function fmtNum(n: number, maxDecimals = 2): string {
+  const rounded = Math.round(n * 10 ** maxDecimals) / 10 ** maxDecimals;
+  return String(rounded).replace('.', ',');
 }
 
-/** Working days → "a few days", "1 week", "1½ weeks", "3 weeks". */
-export function formatDuration(workingDays: number): string {
+/** Working days → "a few days", "1 week", "1,5 weeks", "3 weeks" (rounded to half weeks). */
+export function sd(workingDays: number): string {
   if (workingDays < 5) return 'a few days';
   const weeks = Math.round((workingDays / 5) * 2) / 2;
-  const label = halves(weeks);
-  return `${label} week${weeks === 1 ? '' : 's'}`;
+  return `${fmtNum(weeks)} week${weeks === 1 ? '' : 's'}`;
 }
+
+/** Working days → half weeks as a number, for the big "16,5" figure. */
+export function halfWeeks(workingDays: number): number {
+  return Math.max(0.5, Math.round((workingDays / 5) * 2) / 2);
+}
+
+export const formatDuration = sd;
 
 /** A small amount of time in plain words, for margins and "could move this by". */
 export function formatSpan(workingDays: number): string {
@@ -59,11 +75,18 @@ export function roundHours(h: number): number {
   return Math.round(h / 2) * 2;
 }
 
-const ROLE_ORDER: Role[] = ['pm', 'designer', 'engineer', 'qa', 'legal'];
+export const ROLE_ORDER: Role[] = ['pm', 'designer', 'engineer', 'qa', 'legal'];
+
+/** "0,5 developer (part-time)", "1,5 developers, one part-time", "2 developers". */
+export function rolePhrase(role: Role, n: number): string {
+  const word = roleWord(role, n === 1 ? 1 : 2);
+  if (!Number.isInteger(n)) return n < 1 ? `${fmtNum(n)} ${roleWord(role, 1)} (part-time)` : `${fmtNum(n)} ${word}, one part-time`;
+  return `${n} ${word}`;
+}
 
 /** "1 designer, 1 developer and 1 tester" */
 export function teamPhrase(team: TeamShape): string {
-  const parts = ROLE_ORDER.filter((r) => (team[r] ?? 0) > 0).map((r) => `${team[r]} ${roleWord(r, team[r])}`);
+  const parts = ROLE_ORDER.filter((r) => (team[r] ?? 0) > 0).map((r) => rolePhrase(r, team[r] as number));
   if (parts.length <= 1) return parts[0] ?? 'nobody yet';
   return `${parts.slice(0, -1).join(', ')} and ${parts[parts.length - 1]}`;
 }

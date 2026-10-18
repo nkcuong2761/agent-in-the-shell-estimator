@@ -53,9 +53,10 @@ interface LeaveWindow {
   people: number;
 }
 
-/** Headcount used for scheduling: a role with nobody assigned borrows one person. */
+/** Headcount used for scheduling: fractions are part-time capacity; a role with nobody assigned borrows one person. */
 export function effectiveHeadcount(team: TeamShape, role: Role): number {
-  return Math.max(1, team[role] ?? 0);
+  const v = team[role] ?? 0;
+  return v > 0 ? Math.max(0.05, v) : 1;
 }
 
 /** Brooks overhead: each extra person in a role adds `c` of that role's hours. */

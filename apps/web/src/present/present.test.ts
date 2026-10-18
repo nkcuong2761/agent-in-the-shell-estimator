@@ -41,7 +41,7 @@ describe('format', () => {
   it('describes durations in plain words, to the nearest half week', () => {
     expect(formatDuration(3)).toBe('a few days');
     expect(formatDuration(5)).toBe('1 week');
-    expect(formatDuration(7.6)).toBe('1½ weeks');
+    expect(formatDuration(7.6)).toBe('1,5 weeks');
     expect(formatDuration(10)).toBe('2 weeks');
   });
   it('rounds the week range: low to the nearest week, high up', () => {

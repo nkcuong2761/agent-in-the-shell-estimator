@@ -204,7 +204,8 @@ export const PanelResult = z.object({
 });
 export type PanelResult = z.infer<typeof PanelResult>;
 
-export const TeamShape = z.partialRecord(Role, z.number().int().min(0).max(20));
+/** Headcount per role. Fractions mean part-time (0.5 = half a person). */
+export const TeamShape = z.partialRecord(Role, z.number().min(0).max(20));
 export type TeamShape = z.infer<typeof TeamShape>;
 
 export const SquadStats = z.object({

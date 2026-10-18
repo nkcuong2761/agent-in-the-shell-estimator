@@ -1,5 +1,5 @@
 import { createContext, useCallback, useContext, useEffect, useMemo, useRef, useState, type ReactNode } from 'react';
-import type { BriefPack, Conversation, EstimateSpec, Message, ProgressStep, ScopeResult } from '@scopewise/shared';
+import type { BriefPack, Conversation, EstimateSpec, Message, ProgressStep, ScopeResult, TeamShape } from '@scopewise/shared';
 import { ConversationStore } from '@scopewise/shared';
 import { copy, roleWord, SOURCE_LABELS } from '../copy';
 import { api, detectMode, type Mode } from '../lib/api';
@@ -16,6 +16,20 @@ const STEP_MS = 600;
 let counter = 0;
 const uid = (p: string) => `${p}-${Date.now().toString(36)}-${(counter++).toString(36)}`;
 const nowIso = () => new Date().toISOString();
+
+/**
+ * In-place update (6.6): the latest `estimate` message takes the new version and change note; what it showed before
+ * goes onto `edits[]` so every version stays in the history. Appends only if there is no estimate message yet.
+ */
+export function replaceLatestEstimate(messages: Message[], estimateId: string, changeNote: string | undefined, now: string): Message[] {
+  let idx = -1;
+  for (let i = messages.length - 1; i >= 0; i--) if (messages[i]?.kind === 'estimate') (idx = i), (i = -1);
+  if (idx < 0) return [...messages, { id: uid('m'), createdAt: now, kind: 'estimate', estimateId, changeNote }];
+  return messages.map((m, i) => {
+    if (i !== idx || m.kind !== 'estimate') return m;
+    return { ...m, estimateId, changeNote, createdAt: now, edits: [...(m.edits ?? []), { estimateId: m.estimateId, changeNote: m.changeNote, createdAt: m.createdAt }] };
+  });
+}
 
 // ---------------------------------------------------------------------------------------------
 // Building blocks
@@ -101,6 +115,11 @@ function specOf(conv: Conversation, patch: Partial<EstimateSpec>): EstimateSpec 
     droppedItemIds: cur?.droppedItemIds ?? [],
     startDate: cur?.startDate ?? conv.startDate,
     deadline: cur?.deadline ?? conv.clientDeadline,
+    hoursPerDay: cur?.hoursPerDay,
+    daysPerWeek: cur?.daysPerWeek,
+    risks: cur?.risks,
+    bufferPct: cur?.bufferPct,
+    coveredRoles: cur?.coveredRoles,
     ...patch,
   };
 }
@@ -129,6 +148,11 @@ interface Store {
   startSample: (sampleId: string) => string;
   startBrief: (input: { text: string; files: File[]; jiraKeys: string[] }) => string;
   send: (id: string, text: string) => void;
+  /** Change the estimate's inputs from the document itself. The card updates in place (no new message). */
+  applySpec: (id: string, patch: Partial<EstimateSpec>, note?: string, inPlace?: boolean) => void;
+  setTeam: (id: string, team: TeamShape, note?: string) => void;
+  rename: (id: string, title: string) => void;
+  remove: (id: string) => void;
   decide: (id: string, messageId: string, use: boolean) => void;
   answer: (id: string, answers: { questionId: string; question: string; text: string }[]) => void;
   retry: (id: string) => void;
@@ -365,6 +389,33 @@ export function ConversationsProvider({ children }: { children: ReactNode }) {
     [patch, push],
   );
 
+  const applySpec = useCallback(
+    (id: string, specPatch: Partial<EstimateSpec>, note?: string, inPlace = true) => {
+      const c = ref.current.find((x) => x.id === id);
+      if (!c) return;
+      const now = nowIso();
+      const v = makeVersion(c, specOf(c, specPatch), uid('v'), now);
+      if (!v) return;
+      patch(id, (x) => ({
+        ...x,
+        team: v.spec.team,
+        versions: { ...x.versions, [v.id]: v },
+        currentEstimateId: v.id,
+        messages: inPlace ? replaceLatestEstimate(x.messages, v.id, note, now) : [...x.messages, { id: uid('m'), createdAt: now, kind: 'estimate', estimateId: v.id, changeNote: note }],
+      }));
+    },
+    [patch],
+  );
+
+  const setTeam = useCallback((id: string, team: TeamShape, note?: string) => applySpec(id, { team }, note, true), [applySpec]);
+
+  const rename = useCallback((id: string, title: string) => patch(id, (c) => ({ ...c, title: title.trim() || c.title })), [patch]);
+
+  const remove = useCallback((id: string) => {
+    setConversations((cs) => cs.filter((c) => c.id !== id));
+    ref.current = ref.current.filter((c) => c.id !== id);
+  }, []);
+
   const propose = useCallback(
     (id: string, spec: Partial<EstimateSpec>, label: string, why?: string) => {
       const c = ref.current.find((x) => x.id === id);
@@ -544,8 +595,8 @@ export function ConversationsProvider({ children }: { children: ReactNode }) {
   const busy = useCallback((id: string) => busyIds.has(id), [busyIds]);
 
   const value = useMemo<Store>(
-    () => ({ mode, conversations, get, startSample, startBrief, send, decide, answer, retry, readOnly, setReadOnly, busy }),
-    [mode, conversations, get, startSample, startBrief, send, decide, answer, retry, readOnly, setReadOnly, busy],
+    () => ({ mode, conversations, get, startSample, startBrief, send, applySpec, setTeam, rename, remove, decide, answer, retry, readOnly, setReadOnly, busy }),
+    [mode, conversations, get, startSample, startBrief, send, applySpec, setTeam, rename, remove, decide, answer, retry, readOnly, setReadOnly, busy],
   );
   return <Ctx.Provider value={value}>{children}</Ctx.Provider>;
 }

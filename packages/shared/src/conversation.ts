@@ -1,13 +1,24 @@
 import { z } from 'zod';
-import { BriefPack, PanelResult, Provenance, ScopeResult, TeamShape } from './domain';
+import { BriefPack, PanelResult, Provenance, Role, ScopeResult, TeamShape } from './domain';
 
 /** The inputs of one estimate version. The engine is deterministic, so the numbers are recomputed from these. */
+export const BufferRisk = z.object({ label: z.string(), h: z.number().nonnegative() });
+export type BufferRisk = z.infer<typeof BufferRisk>;
+
 export const EstimateSpec = z.object({
   team: TeamShape,
   answeredQuestionIds: z.array(z.string()),
   droppedItemIds: z.array(z.string()),
   startDate: z.string(),
   deadline: z.string().optional(),
+  /** Working-hours policy for this estimate only; unset = the default (see state/policy.ts). */
+  hoursPerDay: z.number().min(1).max(12).optional(),
+  daysPerWeek: z.number().int().min(1).max(7).optional(),
+  /** Known risks (extra hours) and a percentage buffer for the unknown. They stretch the timeline; effort stays pure. */
+  risks: z.array(BufferRisk).optional(),
+  bufferPct: z.number().min(0).max(100).optional(),
+  /** A needed role with nobody on the team, covered by another role ("Developer does it too"). */
+  coveredRoles: z.partialRecord(Role, Role).optional(),
 });
 export type EstimateSpec = z.infer<typeof EstimateSpec>;
 
@@ -35,7 +46,14 @@ export const Message = z.discriminatedUnion('kind', [
   }),
   z.object({ ...base, kind: z.literal('user_text'), text: z.string() }),
   z.object({ ...base, kind: z.literal('progress'), intro: z.string(), steps: z.array(ProgressStep) }),
-  z.object({ ...base, kind: z.literal('estimate'), estimateId: z.string(), changeNote: z.string().optional() }),
+  z.object({
+    ...base,
+    kind: z.literal('estimate'),
+    estimateId: z.string(),
+    changeNote: z.string().optional(),
+    /** Earlier versions this message showed before an in-place edit replaced them (newest last). */
+    edits: z.array(z.object({ estimateId: z.string(), changeNote: z.string().optional(), createdAt: z.string() })).optional(),
+  }),
   z.object({
     ...base,
     kind: z.literal('comparison'),
