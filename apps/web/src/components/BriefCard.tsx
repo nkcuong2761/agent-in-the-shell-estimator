@@ -9,7 +9,7 @@ export function BriefCard({ conv }: { conv: Conversation }) {
   return (
     <Card id="est-brief" inner="p-5 sm:p-6 flex flex-col gap-3" aria-labelledby="brief-title" quiet>
       <div className="flex flex-col gap-1">
-        <Label idx="§ 06">Source</Label>
+        <Label idx="§ 07">Source</Label>
         <h2 id="brief-title" className="h-card m-0">
           {copy.briefTitle}
         </h2>

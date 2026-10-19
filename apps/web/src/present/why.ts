@@ -1,5 +1,6 @@
-import type { Category, Estimate, ScopeResult } from '@scopewise/shared';
-import { CATEGORY_WORDS } from '../copy';
+import type { AiTools, Category, Estimate, ScopeResult } from '@scopewise/shared';
+import { CATEGORY_WORDS, copy } from '../copy';
+import { AI_TOOL_KINDS } from '../state/policy';
 import { formatSpan } from './format';
 import { hoursToScheduleDays } from './headline';
 
@@ -15,7 +16,14 @@ export interface WhyGroups {
 const round5 = (h: number) => Math.round(h / 5) * 5;
 
 /** Template bullets over engine output (never written by the language model). */
-export function toWhy(est: Estimate, scope: ScopeResult, observedBias?: ReadonlyMap<Category, number>): WhyGroups {
+/** "coding assistant on a paid plan, AI test tools on a free plan" */
+export function toolsPhrase(tools: AiTools): string {
+  return AI_TOOL_KINDS.filter((k) => (tools[k] ?? 'none') !== 'none')
+    .map((k) => `${copy.toolKinds[k].name.toLowerCase()} on ${copy.planPhrase[tools[k] as Exclude<AiTools[typeof k], undefined>]} plan`)
+    .join(', ');
+}
+
+export function toWhy(est: Estimate, scope: ScopeResult, observedBias?: ReadonlyMap<Category, number>, tooling?: { tools: AiTools; savedPct: number }): WhyGroups {
   const hours: string[] = [];
   const ref = est.referenceClass;
   if (ref.n >= 2) hours.push(`Past work: ${ref.n} similar projects you finished took ${round5(ref.p20)}–${round5(ref.p80)} working hours.`);
@@ -32,6 +40,7 @@ export function toWhy(est: Estimate, scope: ScopeResult, observedBias?: Readonly
   if (over) hours.push(`Your track record: “${CATEGORY_WORDS[over[0]]}” work usually takes longer than planned, so it gets extra hours.`);
   else if (under) hours.push(`Your track record: “${CATEGORY_WORDS[under[0]]}” work usually comes in quicker than planned, so it gets fewer hours.`);
   else hours.push('Your track record: this kind of work usually comes in close to plan, so the hours are taken as they are.');
+  if (tooling && tooling.savedPct > 0) hours.push(copy.toolsWhy(toolsPhrase(tooling.tools), tooling.savedPct));
   hours.push('No buffer: the number is pure working time. How many weeks it takes depends on your team and working week below.');
 
   const confidence: string[] = [];

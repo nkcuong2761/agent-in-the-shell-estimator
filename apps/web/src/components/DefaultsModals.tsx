@@ -1,12 +1,12 @@
 import { useState } from 'react';
-import type { Role, ScopeResult, SquadStats } from '@scopewise/shared';
+import type { AiPlan, AiToolKind, AiTools, Role, ScopeResult, SquadStats } from '@scopewise/shared';
 import { capitalise, copy, roleWord } from '../copy';
 import { categoryAdjective, categoryPlural } from '../lib/categories';
 import { useStore } from '../lib/useStore';
 import { fmtNum } from '../present/format';
 import { ROLE_ORDER, neededRoles } from '../state/engine';
-import { HOURS_DEF_KEY, TEAM_DEF_KEY, learnedPolicy, type HoursDefault, type TeamDefaults } from '../state/policy';
-import { Modal, Stepper } from './fields';
+import { AI_TOOL_KINDS, HOURS_DEF_KEY, TEAM_DEF_KEY, TOOLS_DEF_KEY, learnedPolicy, type HoursDefault, type TeamDefaults, type ToolsDefault } from '../state/policy';
+import { Modal, PlanPicker, Stepper } from './fields';
 import { Icon } from './ui';
 
 function WarningBox({ children }: { children: string }) {
@@ -127,6 +127,60 @@ export function DefaultHoursModal({ stats, onClose }: { stats: SquadStats | unde
       </div>
       <WarningBox>{copy.defaultHoursWarning}</WarningBox>
       <p className="m-0 text-[13px] muted">{copy.defaultHoursHint}</p>
+    </Modal>
+  );
+}
+
+/** Default AI tools (global): applies to estimates created after it is saved. */
+export function DefaultToolsModal({ onClose }: { onClose: () => void }) {
+  const [saved, setSaved] = useStore<ToolsDefault | null>(TOOLS_DEF_KEY, null);
+  const [tools, setTools] = useState<AiTools>(saved?.tools ?? {});
+  const set = (kind: AiToolKind, p: AiPlan) =>
+    setTools((t) => {
+      const next: AiTools = { ...t, [kind]: p };
+      if (p === 'none') delete next[kind];
+      return next;
+    });
+  return (
+    <Modal
+      title={copy.defaultToolsTitle}
+      intro={copy.defaultToolsIntro}
+      onClose={onClose}
+      footer={
+        <>
+          {saved ? (
+            <button
+              className="btn btn-ghost btn-sm mr-auto"
+              onClick={() => {
+                setSaved(undefined);
+                onClose();
+              }}
+            >
+              <Icon name="reset" size={14} />
+              {copy.resetNoTools}
+            </button>
+          ) : null}
+          <button className="btn btn-sm" onClick={onClose}>
+            {copy.cancel}
+          </button>
+          <button
+            className="btn btn-primary btn-sm"
+            onClick={() => {
+              setSaved({ tools, at: new Date().toISOString() });
+              onClose();
+            }}
+          >
+            {copy.saveDefault}
+          </button>
+        </>
+      }
+    >
+      <div className="flex flex-col divide-y" style={{ borderColor: 'var(--line)' }}>
+        {AI_TOOL_KINDS.map((k) => (
+          <PlanPicker key={k} kind={k} value={tools[k] ?? 'none'} onChange={(p) => set(k, p)} />
+        ))}
+      </div>
+      <WarningBox>{copy.defaultToolsWarning}</WarningBox>
     </Modal>
   );
 }

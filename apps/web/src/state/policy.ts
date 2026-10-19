@@ -2,13 +2,14 @@
  * Per-estimate inputs that are not part of the scope: the working-hours policy, the default team per category,
  * the risks-and-buffer factor and the realistic-forecast inclusion flags. Pure functions plus storage keys.
  */
-import type { BufferRisk, Role, SquadStats, TeamShape } from '@scopewise/shared';
+import type { AiPlan, AiToolKind, AiTools, BufferRisk, Category, Role, SquadStats, TeamShape } from '@scopewise/shared';
 import { HOURS_PER_DAY } from '@scopewise/engine';
 import { readStore } from '../lib/storage';
 
 export const HOURS_DEF_KEY = 'sw-hours-def.v1';
 export const TEAM_DEF_KEY = 'sw-team-def.v1';
 export const FORECAST_KEY = 'sw-forecast.v1';
+export const TOOLS_DEF_KEY = 'sw-tools-def.v1';
 export const CY = HOURS_PER_DAY;
 
 export interface HoursDefault {
@@ -18,6 +19,11 @@ export interface HoursDefault {
   at: string;
 }
 export type TeamDefaults = Record<string, Partial<Record<Role, number>>>;
+export interface ToolsDefault {
+  tools: AiTools;
+  /** ISO time it was saved; it applies to estimates created after this. */
+  at: string;
+}
 export interface ForecastFlags {
   leave: boolean;
   hist: boolean;
@@ -84,4 +90,50 @@ export function startingTeam(category: string, neededRoles: readonly Role[], def
 export function readForecastFlags(convId: string): ForecastFlags {
   const all = readStore<Record<string, Partial<ForecastFlags>>>(FORECAST_KEY, {});
   return { leave: true, hist: true, buf: true, ...all[convId] };
+}
+
+// --- AI tooling --------------------------------------------------------------------------------
+
+export type ToolsSource = 'estimate' | 'default' | 'none';
+
+/**
+ * What each kind of tool saves, as a share of the hours of the work it touches, by plan. These are assumptions
+ * (no finished project carries its tooling yet), kept small on purpose; the card and "Why this estimate" say so.
+ */
+export const AI_TOOL_EFFECT: Record<AiToolKind, { categories: Category[]; saves: Record<AiPlan, number> }> = {
+  coding: { categories: ['backend', 'frontend', 'integration', 'data', 'devops'], saves: { none: 0, free: 0.06, paid: 0.14, enterprise: 0.18 } },
+  chat: { categories: ['discovery', 'legal', 'reporting', 'notifications', 'forms'], saves: { none: 0, free: 0.04, paid: 0.08, enterprise: 0.1 } },
+  testing: { categories: ['qa'], saves: { none: 0, free: 0.05, paid: 0.12, enterprise: 0.15 } },
+  design: { categories: ['design'], saves: { none: 0, free: 0.04, paid: 0.1, enterprise: 0.12 } },
+};
+/** No kind of work ever loses more than this share to tooling, whatever is switched on. */
+export const AI_TOOL_FLOOR = 0.7;
+export const AI_TOOL_KINDS: AiToolKind[] = ['coding', 'chat', 'testing', 'design'];
+export const AI_PLANS: AiPlan[] = ['none', 'free', 'paid', 'enterprise'];
+
+/** Resolution order: this estimate → the saved default (only for estimates created after it) → no tools. */
+export function resolveTools(
+  spec: { aiTools?: AiTools | undefined },
+  conv: { createdAt: string },
+  saved: ToolsDefault | null = readStore<ToolsDefault | null>(TOOLS_DEF_KEY, null),
+): { tools: AiTools; source: ToolsSource } {
+  if (spec.aiTools) return { tools: spec.aiTools, source: 'estimate' };
+  if (saved && conv.createdAt >= saved.at) return { tools: saved.tools, source: 'default' };
+  return { tools: {}, source: 'none' };
+}
+
+export function hasTools(tools: AiTools): boolean {
+  return AI_TOOL_KINDS.some((k) => (tools[k] ?? 'none') !== 'none');
+}
+
+/** Per category, the share of hours that remains once the team's tools are counted (1 = untouched). */
+export function toolFactors(tools: AiTools): Partial<Record<Category, number>> {
+  const out: Partial<Record<Category, number>> = {};
+  for (const kind of AI_TOOL_KINDS) {
+    const plan = tools[kind] ?? 'none';
+    const save = AI_TOOL_EFFECT[kind].saves[plan];
+    if (save <= 0) continue;
+    for (const cat of AI_TOOL_EFFECT[kind].categories) out[cat] = Math.max(AI_TOOL_FLOOR, (out[cat] ?? 1) - save);
+  }
+  return out;
 }

@@ -26,7 +26,7 @@ export function Questions({ est, scope, conv }: { est: Estimate; scope: ScopeRes
   return (
     <Card id="est-questions" inner="p-5 sm:p-6 flex flex-col gap-4" aria-labelledby="questions-title" tabIndex={-1}>
       <div className="flex flex-col gap-1">
-        <Label idx="§ 05">Before you commit</Label>
+        <Label idx="§ 06">Before you commit</Label>
         <h2 id="questions-title" className="h-card m-0">
           {copy.askClient}
         </h2>

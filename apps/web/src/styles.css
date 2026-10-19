@@ -737,6 +737,50 @@ button.chip:disabled {
   padding-bottom: 0.25rem;
 }
 
+/* Segmented plan picker: four square mono buttons sharing one rule; the chosen one is the accent fill. */
+.seg {
+  display: inline-flex;
+  border: 2px solid var(--rule);
+  background: var(--surface);
+}
+.seg > button {
+  font-family: var(--font-mono);
+  font-size: 0.6875rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 0.45rem 0.7rem;
+  border: 0;
+  border-right: 1px solid var(--line);
+  background: transparent;
+  color: var(--ink-2);
+  cursor: pointer;
+  transition:
+    background-color var(--t-fast) var(--ease),
+    color var(--t-fast) var(--ease);
+}
+.seg > button:last-child {
+  border-right: 0;
+}
+.seg > button:hover:not(:disabled):not(.is-on) {
+  background: var(--surface-2);
+  color: var(--ink);
+}
+.seg > button.is-on {
+  background: var(--accent);
+  color: var(--on-accent);
+}
+.seg > button:disabled {
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+.seg > button:focus-visible {
+  outline: 3px solid var(--focus);
+  outline-offset: -3px;
+  position: relative;
+  z-index: 1;
+}
+
 /* Attach Jira popover: the same brick as the calendar, with a listbox of ongoing tickets. It opens upward,
    over the brief box, so the page keeps its height and nothing scrolls. */
 .jira-picker {

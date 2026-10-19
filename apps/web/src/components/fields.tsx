@@ -1,6 +1,9 @@
 import { useEffect, useId, useLayoutEffect, useRef, useState, type ReactNode } from 'react';
 import { createPortal } from 'react-dom';
+import type { AiPlan, AiToolKind } from '@scopewise/shared';
+import { copy } from '../copy';
 import { fmtNum, formatDate, todayIso } from '../present/format';
+import { AI_PLANS } from '../state/policy';
 import { Icon } from './ui';
 
 // ---------------------------------------------------------------------------------------------
@@ -240,5 +243,25 @@ export function Modal({ title, intro, onClose, children, footer, labelledBy }: {
       </div>
     </>,
     document.body,
+  );
+}
+
+/** Plan picker for one kind of tool: None | Free | Paid | Enterprise as a radio group. */
+export function PlanPicker({ kind, value, disabled, onChange }: { kind: AiToolKind; value: AiPlan; disabled?: boolean; onChange: (p: AiPlan) => void }) {
+  const info = copy.toolKinds[kind];
+  return (
+    <div className="flex flex-wrap items-center justify-between gap-x-4 gap-y-2 py-2.5 tool-row">
+      <div className="flex flex-col min-w-0">
+        <span className="text-[15px]">{info.name}</span>
+        <span className="text-[13px] muted">{info.examples}</span>
+      </div>
+      <div className="seg" role="radiogroup" aria-label={info.name}>
+        {AI_PLANS.map((p) => (
+          <button key={p} type="button" role="radio" aria-checked={value === p} className={value === p ? 'is-on' : ''} disabled={disabled} onClick={() => value !== p && onChange(p)}>
+            {copy.planWords[p]}
+          </button>
+        ))}
+      </div>
+    </div>
   );
 }

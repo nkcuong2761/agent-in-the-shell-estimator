@@ -16,7 +16,7 @@ export function Stages({ est, scope }: { est: Estimate; scope: ScopeResult }) {
     <Card id="est-stages" inner="p-5 sm:p-6 flex flex-col gap-4" aria-labelledby="stages-title">
       <div className="flex items-baseline justify-between gap-3 flex-wrap">
         <div className="flex flex-col gap-1">
-          <Label idx="§ 04">Stages</Label>
+          <Label idx="§ 05">Stages</Label>
           <h2 id="stages-title" className="h-card m-0">
             {copy.whatWhen}
           </h2>

@@ -118,6 +118,7 @@ function specOf(conv: Conversation, patch: Partial<EstimateSpec>): EstimateSpec 
     deadline: cur?.deadline ?? conv.clientDeadline,
     hoursPerDay: cur?.hoursPerDay,
     daysPerWeek: cur?.daysPerWeek,
+    aiTools: cur?.aiTools,
     risks: cur?.risks,
     bufferPct: cur?.bufferPct,
     coveredRoles: cur?.coveredRoles,

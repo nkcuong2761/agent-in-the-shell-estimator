@@ -93,7 +93,7 @@ describe('plain language on the main screens', () => {
     window.location.hash = '#/estimate/sample-subscription-form';
     render(<App />);
     await screen.findByText('Estimated effort', {}, { timeout: 10000 });
-    for (const id of ['est-summary', 'est-team', 'est-hours', 'est-duration', 'est-stages', 'est-questions', 'est-brief']) {
+    for (const id of ['est-summary', 'est-team', 'est-tools', 'est-hours', 'est-duration', 'est-stages', 'est-questions', 'est-brief']) {
       expect(document.querySelectorAll(`#${id}`), id).toHaveLength(1);
     }
     const order = ['est-summary', 'est-stages', 'est-questions', 'est-brief'].map((id) => document.getElementById(id)!);
@@ -120,6 +120,15 @@ describe('plain language on the main screens', () => {
     await screen.findByText(/Updated: 1,5 developers, one part-time on the team\./);
     expect(document.querySelectorAll('#est-summary')).toHaveLength(before);
     expect(screen.getAllByText(/Updated:/).length).toBe(1);
+    // AI tooling: picking a paid coding assistant lowers the effort and leaves one note.
+    const effortBefore = Number(document.querySelector('#est-hours .big-number')!.textContent);
+    const coding = within(document.getElementById('est-tools')!).getByRole('radiogroup', { name: 'Coding assistant' });
+    fireEvent.click(within(coding).getByRole('radio', { name: 'Paid' }));
+    await screen.findByText(/Updated: coding assistant on a paid plan\./);
+    expect(Number(document.querySelector('#est-hours .big-number')!.textContent)).toBeLessThan(effortBefore);
+    expect(document.querySelector('[data-tools-note]')!.textContent).toMatch(/AI tools take about \d+ hours \(\d+%\) off build work/);
+    expect(screen.getAllByText(/Updated:/).length).toBe(1);
+    expectNoBannedTerms();
   });
 
   it('the methods drawer is where the technical terms live', async () => {

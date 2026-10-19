@@ -2,6 +2,7 @@ import { describe, expect, it } from 'vitest';
 import type { Conversation, EstimateSpec } from '@scopewise/shared';
 import { samples } from '../lib/data';
 import { defaultTeam, estimateFor, planOf } from './engine';
+import { toolFactors } from './policy';
 
 function conv(sampleId: string): Conversation {
   const s = samples.find((x) => x.meta.id === sampleId)!;
@@ -88,5 +89,31 @@ describe('covered roles', () => {
     const covered = planOf(c, spec(c, { team: { ...c.team, engineer: 2, qa: 0 }, coveredRoles: { qa: 'engineer' } }))!;
     expect(covered.effortH).toBeGreaterThan(0);
     expect(covered.planDays).toBeLessThan(borrowed.planDays);
+  });
+});
+
+describe('AI tooling', () => {
+  const c = conv('fund-admin-sync');
+  it('a paid coding assistant lowers both the hours and the weeks, and leaves untouched work alone', () => {
+    const base = planOf(c, spec(c))!;
+    const tooled = planOf(c, spec(c, { aiTools: { coding: 'paid' } }))!;
+    expect(tooled.effortH).toBeLessThan(base.effortH);
+    expect(tooled.planDays).toBeLessThan(base.planDays);
+    expect(tooled.effortHWithoutTools).toBe(base.effortH);
+    expect(base.effortHWithoutTools).toBe(base.effortH);
+    const a = estimateFor(c, spec(c), { quick: true })!;
+    const b = estimateFor(c, spec(c, { aiTools: { coding: 'paid' } }), { quick: true })!;
+    const qaA = a.items.filter((i) => i.category === 'qa').reduce((s, i) => s + i.p50, 0);
+    const qaB = b.items.filter((i) => i.category === 'qa').reduce((s, i) => s + i.p50, 0);
+    expect(qaB).toBeCloseTo(qaA, 3);
+    const intA = a.items.filter((i) => i.category === 'integration').reduce((s, i) => s + i.p50, 0);
+    const intB = b.items.filter((i) => i.category === 'integration').reduce((s, i) => s + i.p50, 0);
+    expect(intB / intA).toBeCloseTo(0.86, 1);
+  });
+  it('toolFactors never takes more than 30% off a category', () => {
+    expect(toolFactors({})).toEqual({});
+    const all = toolFactors({ coding: 'enterprise', chat: 'enterprise', testing: 'enterprise', design: 'enterprise' });
+    for (const v of Object.values(all)) expect(v).toBeGreaterThanOrEqual(0.7);
+    expect(toolFactors({ testing: 'free' })).toEqual({ qa: 0.95 });
   });
 });

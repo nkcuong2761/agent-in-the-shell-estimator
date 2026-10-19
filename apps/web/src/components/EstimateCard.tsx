@@ -1,5 +1,5 @@
 import { useMemo, useState, type ReactNode } from 'react';
-import type { BufferRisk, Conversation, Estimate, EstimateSpec, Role, ScopeResult } from '@scopewise/shared';
+import type { AiPlan, AiToolKind, AiTools, BufferRisk, Conversation, Estimate, EstimateSpec, Role, ScopeResult } from '@scopewise/shared';
 import { capitalise, copy, roleWord } from '../copy';
 import { useStore } from '../lib/useStore';
 import { bufferAdjustment, historyAdjustment, leaveAdjustment, meetsDue, toForecast, type Adjustment } from '../present/forecast';
@@ -9,10 +9,10 @@ import { toWhy } from '../present/why';
 import { useConversations } from '../state/conversations';
 import { ROLE_ORDER, neededRoles, observedBias, squadOf, squadStatsOf, type Plan } from '../state/engine';
 import { allPostmortems, historyFor, usePostmortems } from '../state/history';
-import { CY, FORECAST_KEY, bufferExtraHours, type ForecastFlags } from '../state/policy';
-import { DefaultHoursModal, DefaultTeamModal } from './DefaultsModals';
+import { AI_TOOL_KINDS, CY, FORECAST_KEY, bufferExtraHours, hasTools, type ForecastFlags } from '../state/policy';
+import { DefaultHoursModal, DefaultTeamModal, DefaultToolsModal } from './DefaultsModals';
 import { useMethods } from './Explain';
-import { DateField, Stepper } from './fields';
+import { DateField, PlanPicker, Stepper } from './fields';
 import { Card, Icon, Label, SureBars, Tag } from './ui';
 
 const METHOD_KEYS: [string, string][] = [
@@ -60,7 +60,8 @@ function HeaderNumbers({ est, plan, scope }: { est: Estimate; plan: Plan; scope:
   const open = est.rankedQuestions.length;
   const [why, setWhy] = useState(false);
   const openMethods = useMethods();
-  const groups = useMemo(() => toWhy(est, scope, observedBias()), [est, scope]);
+  const savedPct = plan.effortHWithoutTools > 0 ? Math.round(((plan.effortHWithoutTools - plan.effortH) / plan.effortHWithoutTools) * 100) : 0;
+  const groups = useMemo(() => toWhy(est, scope, observedBias(), { tools: plan.tools, savedPct }), [est, scope, plan.tools, savedPct]);
   const fewDays = plan.planDays < 5;
   const goToQuestions = () => {
     const el = document.getElementById('est-questions');
@@ -264,6 +265,51 @@ function TeamSection({ conv, scope, spec, onDefaults }: { conv: Conversation; sc
 
 // ---------------------------------------------------------------------------------------------
 
+function ToolsSection({ conv, plan, onDefaults }: { conv: Conversation; plan: Plan; onDefaults: () => void }) {
+  const { applySpec, readOnly } = useConversations();
+  const tools = plan.tools;
+  const set = (kind: AiToolKind, p: AiPlan) => {
+    const next: AiTools = { ...tools, [kind]: p };
+    if (p === 'none') delete next[kind];
+    applySpec(conv.id, { aiTools: next }, copy.toolsNote(copy.toolKinds[kind].name, copy.planPhrase[p]));
+  };
+  const saved = plan.effortHWithoutTools - plan.effortH;
+  const pct = plan.effortHWithoutTools > 0 ? Math.round((saved / plan.effortHWithoutTools) * 100) : 0;
+  const areas = [...new Set(AI_TOOL_KINDS.filter((k) => (tools[k] ?? 'none') !== 'none').map((k) => copy.toolKinds[k].area))];
+  const areaText = areas.length <= 1 ? (areas[0] ?? '') : `${areas.slice(0, -1).join(', ')} and ${areas[areas.length - 1]}`;
+  return (
+    <Section
+      id="est-tools"
+      idx="§ 02"
+      title={copy.toolsTitle}
+      aside={
+        <button className="link text-[14px] shrink-0" onClick={onDefaults}>
+          {copy.seeDefaultTools}
+        </button>
+      }
+    >
+      <p className="m-0 mb-1 text-[15px] ink-2">{copy.toolsQuestion}</p>
+      <div className="flex flex-col divide-y" style={{ borderColor: 'var(--line)' }}>
+        {AI_TOOL_KINDS.map((k) => (
+          <PlanPicker key={k} kind={k} value={tools[k] ?? 'none'} disabled={readOnly} onChange={(p) => set(k, p)} />
+        ))}
+      </div>
+      <div className="flex flex-wrap items-baseline gap-x-4 gap-y-1 mt-3">
+        <p className="m-0 text-[14px] muted" data-tools-note>
+          {!hasTools(tools) ? copy.toolsNone : saved >= 5 ? copy.toolsSaves(saved, pct, areaText) : copy.toolsSavesLittle}
+        </p>
+        {plan.toolsSource === 'estimate' ? (
+          <button className="link text-[13px]" disabled={readOnly} onClick={() => applySpec(conv.id, { aiTools: undefined }, copy.toolsResetNote)}>
+            {copy.resetDefault}
+          </button>
+        ) : null}
+      </div>
+    </Section>
+  );
+}
+
+// ---------------------------------------------------------------------------------------------
+
 function HoursSection({ conv, plan, onDefaults }: { conv: Conversation; plan: Plan; onDefaults: () => void }) {
   const { applySpec, readOnly } = useConversations();
   const { hpd, dpw } = plan.policy;
@@ -273,7 +319,7 @@ function HoursSection({ conv, plan, onDefaults }: { conv: Conversation; plan: Pl
   };
   return (
     <Section
-      idx="§ 02"
+      idx="§ 03"
       title={copy.hoursTitle}
       aside={
         <button className="link text-[14px] shrink-0" onClick={onDefaults}>
@@ -387,7 +433,7 @@ function ScheduleSection({ conv, scope, spec, plan }: Props) {
   const extraH = bufferExtraHours(plan.effortH, spec.risks, spec.bufferPct);
   const fromBrief = !!spec.deadline && spec.deadline === conv.clientDeadline;
   return (
-    <Section idx="§ 03" title={copy.scheduleTitle}>
+    <Section idx="§ 04" title={copy.scheduleTitle}>
       <div className="grid gap-3 sm:grid-cols-3">
         <DateField label={copy.startDate} value={spec.startDate} disabled={readOnly} onChange={(d) => applySpec(conv.id, { startDate: d }, copy.startNote(formatDate(d)))} />
         <DateField label={copy.endDatePlan} value={fc.planFinish} disabled />
@@ -447,17 +493,19 @@ function ScheduleSection({ conv, scope, spec, plan }: Props) {
 
 // ---------------------------------------------------------------------------------------------
 
-/** The estimate card (3.1): header numbers, why, team structure, working hours, schedule with the realistic forecast. */
+/** The estimate card (3.1): header numbers, why, team structure, AI tooling, working hours, schedule with the realistic forecast. */
 export function EstimateCard(props: Props) {
   const { conv, scope, est, spec, plan } = props;
-  const [modal, setModal] = useState<'team' | 'hours' | null>(null);
+  const [modal, setModal] = useState<'team' | 'tools' | 'hours' | null>(null);
   return (
     <Card id="est-summary" as="article" inner="p-5 sm:p-7" aria-label="The estimate">
       <HeaderNumbers est={est} plan={plan} scope={scope} />
       <TeamSection conv={conv} scope={scope} spec={spec} onDefaults={() => setModal('team')} />
+      <ToolsSection conv={conv} plan={plan} onDefaults={() => setModal('tools')} />
       <HoursSection conv={conv} plan={plan} onDefaults={() => setModal('hours')} />
       <ScheduleSection {...props} />
       {modal === 'team' ? <DefaultTeamModal scope={scope} onClose={() => setModal(null)} /> : null}
+      {modal === 'tools' ? <DefaultToolsModal onClose={() => setModal(null)} /> : null}
       {modal === 'hours' ? <DefaultHoursModal stats={squadOf(conv)?.stats} onClose={() => setModal(null)} /> : null}
     </Card>
   );

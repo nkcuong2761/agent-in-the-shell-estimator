@@ -4,7 +4,7 @@
  * working-hours policy and the risks-and-buffer factor arrive as a squad focus-factor override, covered roles as a
  * derived scope, and the plan ("working time") as a second run with no planned leave in its window.
  */
-import type { BriefPack, Category, Conversation, Estimate, EstimateSpec, EstimateVersion, PanelResult, PlannedLeave, Provenance, Role, ScopeResult, SquadStats, TeamShape } from '@scopewise/shared';
+import type { AiTools, BriefPack, Category, Conversation, Estimate, EstimateSpec, EstimateVersion, PanelResult, PlannedLeave, Provenance, Role, ScopeResult, SquadStats, TeamShape } from '@scopewise/shared';
 import {
   biasFactors,
   buildAnalogIndex,
@@ -23,7 +23,7 @@ import { sampleById, seed } from '../lib/data';
 import { historyFor } from './history';
 import { subscribeRealProjects } from './realProjects';
 import { formatDate, weeksRange } from '../present/format';
-import { bufferFactor, focusFactorFor, resolvePolicy, startingTeam, type HoursPolicy } from './policy';
+import { bufferFactor, focusFactorFor, resolvePolicy, resolveTools, startingTeam, toolFactors, type HoursPolicy, type ToolsSource } from './policy';
 
 export function scopeOf(conv: Conversation): ScopeResult | undefined {
   return conv.scope ?? sampleById(conv.sampleId)?.cache.scope;
@@ -132,10 +132,21 @@ interface RunInputs {
   startDate: string;
   focusFactor: number;
   plannedLeave: readonly PlannedLeave[];
+  /** Per category, the share of hours left after the team's AI tools (see policy.ts); absent = 1. */
+  toolFactors?: Partial<Record<Category, number>>;
 }
 
+/** The per-run overrides: dates, the focus factor, and the item hours scaled by the team's AI tools. */
 function withInputs(p: PreparedEstimate, r: RunInputs): PreparedEstimate {
-  return { ...p, inputs: { ...p.inputs, startDate: r.startDate, plannedLeave: r.plannedLeave, squad: { ...p.inputs.squad, focusFactor: r.focusFactor } } };
+  const f = r.toolFactors ?? {};
+  const scaled = Object.keys(f).length ? p.calibrated.map((c) => ({ ...c, o: c.o * (f[c.item.category] ?? 1), m: c.m * (f[c.item.category] ?? 1), p: c.p * (f[c.item.category] ?? 1) })) : p.calibrated;
+  return { ...p, calibrated: scaled, inputs: { ...p.inputs, startDate: r.startDate, plannedLeave: r.plannedLeave, squad: { ...p.inputs.squad, focusFactor: r.focusFactor } } };
+}
+
+/** The team's AI tools for a spec (this estimate, else the saved default), as the factors the engine runs with. */
+export function toolsOf(conv: Conversation, spec: EstimateSpec): { tools: AiTools; source: ToolsSource; factors: Partial<Record<Category, number>> } {
+  const r = resolveTools(spec, conv);
+  return { ...r, factors: toolFactors(r.tools) };
 }
 
 const cache = new Map<string, Estimate>();
@@ -146,11 +157,11 @@ function remember(key: string, est: Estimate): Estimate {
 }
 
 /** Pure P50 effort for this spec, before the buffer factor (the buffer never changes hours, only time). */
-function p50HoursOf(conv: Conversation, scope: ScopeResult, spec: EstimateSpec, focus: number): number {
-  const key = JSON.stringify(['p50', conv.id, scope.items.length, spec.team, spec.droppedItemIds, spec.answeredQuestionIds, spec.coveredRoles, focus]);
+function p50HoursOf(conv: Conversation, scope: ScopeResult, spec: EstimateSpec, focus: number, factors: Partial<Record<Category, number>>): number {
+  const key = JSON.stringify(['p50', conv.id, scope.items.length, spec.team, spec.droppedItemIds, spec.answeredQuestionIds, spec.coveredRoles, focus, factors]);
   const hit = cache.get(key);
   if (hit) return hit.total.p50;
-  const est = runEstimate(withInputs(prepare(conv, scopeFor(scope, spec.coveredRoles)), { startDate: spec.startDate, focusFactor: focus, plannedLeave: [] }), {
+  const est = runEstimate(withInputs(prepare(conv, scopeFor(scope, spec.coveredRoles)), { startDate: spec.startDate, focusFactor: focus, plannedLeave: [], toolFactors: factors }), {
     teamShape: spec.team,
     answeredQuestionIds: spec.answeredQuestionIds,
     droppedItemIds: spec.droppedItemIds,
@@ -161,24 +172,25 @@ function p50HoursOf(conv: Conversation, scope: ScopeResult, spec: EstimateSpec, 
 }
 
 /** The inputs the engine runs with for a spec: the policy's focus factor divided by the buffer factor. */
-export function runInputsOf(conv: Conversation, spec: EstimateSpec): { focus: number; f: number; policy: HoursPolicy } {
+export function runInputsOf(conv: Conversation, spec: EstimateSpec, opts: { noTools?: boolean } = {}): { focus: number; f: number; policy: HoursPolicy; factors: Partial<Record<Category, number>> } {
   const stats = squadStatsOf(conv);
   const policy = policyOf(conv, spec);
   const base = focusFactorFor(policy, stats) ?? stats.focusFactor;
   const scope = scopeOf(conv);
-  const f = scope && ((spec.risks?.length ?? 0) > 0 || (spec.bufferPct ?? 0) > 0) ? bufferFactor(p50HoursOf(conv, scope, spec, base), spec.risks, spec.bufferPct) : 1;
-  return { focus: base / f, f, policy };
+  const factors = opts.noTools ? {} : toolsOf(conv, spec).factors;
+  const f = scope && ((spec.risks?.length ?? 0) > 0 || (spec.bufferPct ?? 0) > 0) ? bufferFactor(p50HoursOf(conv, scope, spec, base, factors), spec.risks, spec.bufferPct) : 1;
+  return { focus: base / f, f, policy, factors };
 }
 
-export function estimateFor(conv: Conversation, spec: EstimateSpec, opts: { quick?: boolean; noLeave?: boolean } = {}): Estimate | undefined {
+export function estimateFor(conv: Conversation, spec: EstimateSpec, opts: { quick?: boolean; noLeave?: boolean; noTools?: boolean } = {}): Estimate | undefined {
   const scope = scopeOf(conv);
   if (!scope) return undefined;
-  const { focus, f } = runInputsOf(conv, spec);
-  const key = JSON.stringify([conv.id, scope.items.length, spec, opts.quick ?? false, opts.noLeave ?? false, focus, f]);
+  const { focus, f, factors } = runInputsOf(conv, spec, { noTools: opts.noTools });
+  const key = JSON.stringify([conv.id, scope.items.length, spec, opts.quick ?? false, opts.noLeave ?? false, focus, f, factors]);
   const hit = cache.get(key);
   if (hit) return hit;
   const squad = squadOf(conv);
-  const est = runEstimate(withInputs(prepare(conv, scopeFor(scope, spec.coveredRoles)), { startDate: spec.startDate, focusFactor: focus, plannedLeave: opts.noLeave ? [] : (squad?.plannedLeave ?? []) }), {
+  const est = runEstimate(withInputs(prepare(conv, scopeFor(scope, spec.coveredRoles)), { startDate: spec.startDate, focusFactor: focus, plannedLeave: opts.noLeave ? [] : (squad?.plannedLeave ?? []), toolFactors: factors }), {
     teamShape: spec.team,
     answeredQuestionIds: spec.answeredQuestionIds,
     droppedItemIds: spec.droppedItemIds,
@@ -199,8 +211,12 @@ export interface Plan {
   planDays: number;
   /** Pure P50 effort in hours, rounded to 5. */
   effortH: number;
+  /** The same effort with the team's AI tools switched off (equal to effortH when there are none). */
+  effortHWithoutTools: number;
   f: number;
   policy: HoursPolicy;
+  tools: AiTools;
+  toolsSource: ToolsSource;
 }
 
 /** Working time (6.1): min(P50 finish with no leave in the window, the real P50 finish) / f. Does not move with the start date. */
@@ -208,8 +224,18 @@ export function planOf(conv: Conversation, spec: EstimateSpec): Plan | undefined
   const real = estimateFor(conv, spec, { quick: true });
   const noLeave = estimateFor(conv, spec, { quick: true, noLeave: true });
   if (!real || !noLeave) return undefined;
-  const { f, policy } = runInputsOf(conv, spec);
-  return { planDays: Math.min(real.finishDays.p50, noLeave.finishDays.p50) / f, effortH: Math.round(real.total.p50 / 5) * 5, f, policy };
+  const { f, policy, factors } = runInputsOf(conv, spec);
+  const { tools, source } = toolsOf(conv, spec);
+  const plain = Object.keys(factors).length ? estimateFor(conv, spec, { quick: true, noTools: true }) : real;
+  return {
+    planDays: Math.min(real.finishDays.p50, noLeave.finishDays.p50) / f,
+    effortH: Math.round(real.total.p50 / 5) * 5,
+    effortHWithoutTools: Math.round((plain ?? real).total.p50 / 5) * 5,
+    f,
+    policy,
+    tools,
+    toolsSource: source,
+  };
 }
 
 export function makeVersion(conv: Conversation, spec: EstimateSpec, id: string, now: string): EstimateVersion | undefined {

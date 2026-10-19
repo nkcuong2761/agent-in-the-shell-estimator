@@ -43,7 +43,7 @@ Each estimate is a document; a small assistant in the corner answers edge cases 
 | --- | --- |
 | `#/` | Home: the estimates table (open and finished), tiles, filters, CSV export; the brief screen when there are no estimates |
 | `#/new` | New estimate: paste a brief, drop files, attach a Jira ticket (pick an ongoing one from the list or paste a key or link; needs the API with Jira set up), or try an example. A finished ticket on its own opens its results page instead |
-| `#/estimate/:id` | The estimate document: card, stages, client questions, brief, with the floating assistant |
+| `#/estimate/:id` | The estimate document: card (effort, time, confidence, team, AI tooling, working hours, schedule), stages, client questions, brief, with the floating assistant |
 | `#/project/:id` | A finished project: estimate vs actual, what happened, what I learned, accuracy over time. Also real Jira tickets you import: fixed numbers, a verdict on whether it could have finished sooner, and they join the history for later estimates |
 | `#/about` | Help: architecture, methods with citations, data disclaimer, Manager/Overseer view |
 

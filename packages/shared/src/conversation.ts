@@ -5,6 +5,14 @@ import { BriefPack, PanelResult, Provenance, Role, ScopeResult, TeamShape } from
 export const BufferRisk = z.object({ label: z.string(), h: z.number().nonnegative() });
 export type BufferRisk = z.infer<typeof BufferRisk>;
 
+/** The team's AI tooling: which kinds of tool, on which plan. It shrinks the hours of the work each kind touches. */
+export const AiToolKind = z.enum(['coding', 'chat', 'testing', 'design']);
+export type AiToolKind = z.infer<typeof AiToolKind>;
+export const AiPlan = z.enum(['none', 'free', 'paid', 'enterprise']);
+export type AiPlan = z.infer<typeof AiPlan>;
+export const AiTools = z.partialRecord(AiToolKind, AiPlan);
+export type AiTools = z.infer<typeof AiTools>;
+
 export const EstimateSpec = z.object({
   team: TeamShape,
   answeredQuestionIds: z.array(z.string()),
@@ -14,6 +22,8 @@ export const EstimateSpec = z.object({
   /** Working-hours policy for this estimate only; unset = the default (see state/policy.ts). */
   hoursPerDay: z.number().min(1).max(12).optional(),
   daysPerWeek: z.number().int().min(1).max(7).optional(),
+  /** AI tools the team works with, for this estimate only; unset = the saved default, else none. */
+  aiTools: AiTools.optional(),
   /** Known risks (extra hours) and a percentage buffer for the unknown. They stretch the timeline; effort stays pure. */
   risks: z.array(BufferRisk).optional(),
   bufferPct: z.number().min(0).max(100).optional(),
