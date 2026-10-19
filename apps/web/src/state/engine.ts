@@ -4,8 +4,21 @@
  * working-hours policy and the risks-and-buffer factor arrive as a squad focus-factor override, covered roles as a
  * derived scope, and the plan ("working time") as a second run with no planned leave in its window.
  */
-import type { Category, Conversation, Estimate, EstimateSpec, EstimateVersion, PanelResult, PlannedLeave, Role, ScopeResult, SquadStats, TeamShape } from '@scopewise/shared';
-import { biasFactors, DEFAULT_SQUAD_STATS, prepareEstimate, runEstimate, type PreparedEstimate } from '@scopewise/engine';
+import type { BriefPack, Category, Conversation, Estimate, EstimateSpec, EstimateVersion, PanelResult, PlannedLeave, Provenance, Role, ScopeResult, SquadStats, TeamShape } from '@scopewise/shared';
+import {
+  biasFactors,
+  buildAnalogIndex,
+  DEFAULT_SQUAD_STATS,
+  findAnalogs,
+  historyOverhead,
+  OFFLINE_PANEL_VERSION,
+  OFFLINE_SCOPE_VERSION,
+  offlinePanel,
+  offlineScope,
+  prepareEstimate,
+  runEstimate,
+  type PreparedEstimate,
+} from '@scopewise/engine';
 import { sampleById, seed } from '../lib/data';
 import { formatDate, weeksRange } from '../present/format';
 import { bufferFactor, focusFactorFor, resolvePolicy, startingTeam, type HoursPolicy } from './policy';
@@ -16,6 +29,19 @@ export function scopeOf(conv: Conversation): ScopeResult | undefined {
 
 export function panelOf(conv: Conversation): PanelResult | undefined {
   return conv.panel ?? sampleById(conv.sampleId)?.cache.panel;
+}
+
+const offlineProvenance = (promptVersion: string): Provenance => ({ promptVersion, generatedBy: 'offline-heuristic', generatedAt: new Date().toISOString() });
+
+/** With no API at all, a pasted brief is read here in the browser by the engine's rule-based reader. */
+export function scopeInBrowser(brief: BriefPack): { scope: ScopeResult; provenance: Provenance } {
+  return { scope: offlineScope(brief, { projects: seed.projects, items: seed.items }), provenance: offlineProvenance(OFFLINE_SCOPE_VERSION) };
+}
+
+export function panelInBrowser(scope: ScopeResult): { panel: PanelResult; provenance: Provenance } {
+  const index = buildAnalogIndex(seed.items, seed.projects, historyOverhead(seed.projects, seed.squads));
+  const analogs = scope.items.map((i) => findAnalogs(i, index).value);
+  return { panel: offlinePanel(scope, analogs), provenance: offlineProvenance(OFFLINE_PANEL_VERSION) };
 }
 
 export function squadOf(conv: Pick<Conversation, 'squadId'>) {

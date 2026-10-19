@@ -48,3 +48,9 @@ export function predictScopeRisks(
 export function expectedRiskHours(risks: readonly ScopeRisk[]): number {
   return risks.reduce((s, r) => s + r.likelihood * ((r.addedHoursRange[0] + r.addedHoursRange[1]) / 2), 0);
 }
+
+/** Template client question for a scope risk; Claude rephrases it when a key is available. */
+export function templateRiskQuestion(r: ScopeRisk): string {
+  const title = r.description.split(' was added')[0] ?? r.description;
+  return `Similar projects often added “${title.toLowerCase()}” after kickoff. Should we plan for it now?`;
+}

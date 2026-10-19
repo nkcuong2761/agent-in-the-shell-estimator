@@ -7,7 +7,7 @@
 import { z } from 'zod';
 import type { BriefPack, Lesson, Provenance, ScopeResult, ScopeRisk } from '@scopewise/shared';
 import { MissingInfo, PHASE_TEMPLATES, ProjectType, ScopeResult as ScopeResultSchema, WorkItem } from '@scopewise/shared';
-import { predictScopeRisks } from '@scopewise/engine';
+import { OFFLINE_SCOPE_VERSION, offlineScope, predictScopeRisks, templateRiskQuestion } from '@scopewise/engine';
 import { callStructured, provenance } from '../claude';
 import { loadPrompt, loadSeedHistory } from '../data';
 import { env } from '../env';
@@ -127,10 +127,11 @@ const RiskQuestions = z.object({
   questions: z.array(z.object({ id: z.string(), clientQuestion: z.string().min(5).max(400) })),
 });
 
-/** Template phrasing used when the phrasing call fails (numbers are unchanged either way). */
-export function templateRiskQuestion(r: ScopeRisk): string {
-  const title = r.description.split(' was added')[0] ?? r.description;
-  return `Similar projects often added “${title.toLowerCase()}” after kickoff. Should we plan for it now?`;
+/** Without a key (or when Claude fails), the engine's rule-based reader stands in. Labelled offline-heuristic. */
+export function runScopeOffline(brief: BriefPack): { scope: ScopeResult; provenance: Provenance } {
+  const seed = loadSeedHistory();
+  const scope = offlineScope(brief, { projects: seed.projects, items: seed.items });
+  return { scope, provenance: { promptVersion: OFFLINE_SCOPE_VERSION, generatedBy: 'offline-heuristic', generatedAt: new Date().toISOString() } };
 }
 
 async function phraseRisks(brief: BriefPack, scope: ScopeDraft, risks: ScopeRisk[]): Promise<{ risks: ScopeRisk[]; phrasedBy: 'claude' | 'template' }> {

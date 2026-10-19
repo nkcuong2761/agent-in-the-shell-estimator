@@ -19,3 +19,4 @@ export * from './squad';
 export * from './scopeRisk';
 export * from './postmortem';
 export * from './offline';
+export * from './offlineScope';

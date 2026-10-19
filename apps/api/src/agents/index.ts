@@ -6,7 +6,7 @@
  *   runPostmortem(project, items)          → { result, provenance }   (falls back to the engine's template notes)
  *   runAsk(messages, context, seedData)    → AskResponse
  */
-export { runScopeAgent } from './scope';
-export { runPanel } from './panel';
+export { runScopeAgent, runScopeOffline } from './scope';
+export { runPanel, runPanelOffline } from './panel';
 export { runPostmortem } from './postmortem';
 export { runAsk } from './ask';

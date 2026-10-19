@@ -16,11 +16,12 @@ export const HealthResponse = z.object({
 export type HealthResponse = z.infer<typeof HealthResponse>;
 
 export const ScopeRequest = z.object({ brief: BriefPack });
-export const ScopeResponse = z.object({ scope: ScopeResult, provenance: Provenance, brief: BriefPack.optional() });
+/** `note` says why the rule-based reader was used instead of Claude (no key, no credit, …). */
+export const ScopeResponse = z.object({ scope: ScopeResult, provenance: Provenance, brief: BriefPack.optional(), note: z.string().optional() });
 export type ScopeResponse = z.infer<typeof ScopeResponse>;
 
 export const PanelRequest = z.object({ brief: BriefPack, scope: ScopeResult });
-export const PanelResponse = z.object({ panel: PanelResult, provenance: Provenance });
+export const PanelResponse = z.object({ panel: PanelResult, provenance: Provenance, note: z.string().optional() });
 export type PanelResponse = z.infer<typeof PanelResponse>;
 
 export const EstimateRequest = z.object({

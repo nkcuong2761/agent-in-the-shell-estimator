@@ -6,7 +6,7 @@
 import { z } from 'zod';
 import type { BriefPack, ItemAnalogs, PanelAgent, PanelResult, Persona, Provenance, ScopeResult } from '@scopewise/shared';
 import { PERSONA_LABELS, PanelGuess, PanelResult as PanelResultSchema } from '@scopewise/shared';
-import { aggregatePanel } from '@scopewise/engine';
+import { aggregatePanel, OFFLINE_PANEL_VERSION, offlinePanel } from '@scopewise/engine';
 import { callStructured, provenance } from '../claude';
 import { loadPrompt, type PromptName } from '../data';
 import { env } from '../env';
@@ -120,6 +120,11 @@ async function guess(
   const order = new Map(scope.items.map((i, k) => [i.id, k]));
   const items = [...value.items].sort((a, b) => (order.get(a.itemId) ?? 0) - (order.get(b.itemId) ?? 0));
   return { agent: { persona: persona.persona, items }, model };
+}
+
+/** Without a key (or when Claude fails), the engine's three fixed lenses stand in. Labelled offline-heuristic. */
+export function runPanelOffline(scope: ScopeResult, analogs: ItemAnalogs[]): { panel: PanelResult; provenance: Provenance } {
+  return { panel: offlinePanel(scope, analogs), provenance: { promptVersion: OFFLINE_PANEL_VERSION, generatedBy: 'offline-heuristic', generatedAt: new Date().toISOString() } };
 }
 
 export async function runPanel(

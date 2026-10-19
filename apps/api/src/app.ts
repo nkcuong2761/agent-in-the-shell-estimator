@@ -29,7 +29,7 @@ import {
   ScopeResponse,
 } from '@scopewise/shared';
 import { runEstimate, squadStatsFromWorklogs, worklogsFromTimesheet } from '@scopewise/engine';
-import { runAsk, runPanel, runPostmortem, runScopeAgent } from './agents';
+import { runAsk, runPanel, runPanelOffline, runPostmortem, runScopeAgent, runScopeOffline } from './agents';
 import { API_VERSION, loadSeedHistory, type SeedHistory } from './data';
 import { analogsFor, prepareFromRequest } from './engineRun';
 import { env } from './env';
@@ -68,6 +68,23 @@ const requireClaude: MiddlewareHandler = async (_c, next) => {
   if (!env.anthropicKey()) throw claudeNotConfigured();
   await next();
 };
+
+export const NO_KEY_NOTE = 'The API has no Claude key, so built-in rules read the brief instead of Claude.';
+
+/**
+ * Claude when there is a key, otherwise the engine's offline stand-in. A Claude failure (no credit, bad key,
+ * outage, invalid output) also falls back, with the reason in `note`; request errors (bad input) still throw.
+ */
+async function withOfflineFallback<T extends object>(label: string, live: () => Promise<T>, offline: () => T): Promise<T & { note?: string }> {
+  if (!env.anthropicKey()) return { ...offline(), note: NO_KEY_NOTE };
+  try {
+    return { ...(await live()) };
+  } catch (err) {
+    if (!(err instanceof ApiError) || !err.code.startsWith('claude_')) throw err;
+    console.warn(`[${label}] Claude failed (${err.code}); using the offline heuristic instead: ${err.message}`);
+    return { ...offline(), note: `Claude could not read this brief (${err.message}), so built-in rules did.` };
+  }
+}
 
 function jiraClient(): JiraClient {
   const cfg = env.jira();
@@ -134,7 +151,9 @@ export function createApp() {
   );
 
   // Scope: JSON { brief } (or a bare BriefPack), or multipart upload of brief files.
-  app.post('/scope', aiLimit, requireClaude, async (c) => {
+  // Without a Claude key, or when Claude fails (no credit, bad key, outage), the engine's rule-based reader
+  // answers instead; the response is labelled offline-heuristic and `note` says why.
+  app.post('/scope', aiLimit, async (c) => {
     const type = c.req.header('content-type') ?? '';
     let brief: BriefPack;
     if (type.startsWith('multipart/form-data')) {
@@ -144,15 +163,23 @@ export function createApp() {
       checkBriefSize(brief);
     }
     const lessons = await getStore().listLessons().catch(() => []);
-    const out = await runScopeAgent(brief, { lessons });
+    const out = await withOfflineFallback(
+      'scope',
+      () => runScopeAgent(brief, { lessons }),
+      () => runScopeOffline(brief),
+    );
     return c.json({ ...ScopeResponse.parse(out), brief });
   });
 
-  app.post('/panel', aiLimit, requireClaude, async (c) => {
+  app.post('/panel', aiLimit, async (c) => {
     const req = await jsonBody(c, PanelRequest);
     checkBriefSize(req.brief);
     const analogs = analogsFor(req.scope, loadSeedHistory());
-    const out = await runPanel(req.brief, req.scope, analogs);
+    const out = await withOfflineFallback(
+      'panel',
+      () => runPanel(req.brief, req.scope, analogs),
+      () => runPanelOffline(req.scope, analogs),
+    );
     return c.json(PanelResponse.parse(out));
   });
 

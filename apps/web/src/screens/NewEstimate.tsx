@@ -10,7 +10,10 @@ const EXAMPLES: { label: string; sampleId: string }[] = [
   { label: 'Sync with a fund administrator', sampleId: 'fund-admin-sync' },
 ];
 
-const JIRA_KEY = /\b([A-Z][A-Z0-9]+-\d+)\b/;
+/** An issue key on its own ("SUB-142") or inside a link ("https://x.atlassian.net/browse/SUB-142"). */
+export function parseJiraRef(input: string): string | undefined {
+  return input.toUpperCase().match(/\b([A-Z][A-Z0-9]+-\d+)\b/)?.[1];
+}
 
 export function NewEstimate() {
   const { mode, startSample, startBrief, readOnly } = useConversations();
@@ -20,14 +23,26 @@ export function NewEstimate() {
   const [jira, setJira] = useState<string[]>([]);
   const [jiraOpen, setJiraOpen] = useState(false);
   const [jiraInput, setJiraInput] = useState('');
+  const [jiraBad, setJiraBad] = useState(false);
   const [over, setOver] = useState(false);
   const fileInput = useRef<HTMLInputElement>(null);
-  const live = mode.kind === 'live' && mode.health.features.claude;
-  const jiraLive = mode.kind === 'live' && mode.health.features.jira;
+  const live = mode.kind === 'live';
+  const jiraLive = live && mode.health.features.jira;
   const hasInput = text.trim().length > 0 || files.length > 0 || jira.length > 0;
-  // A Jira ticket alone is enough to submit: the API reads it even when Claude is off (it then shows the summary).
-  const canSubmit = hasInput && !readOnly && (live || (jiraLive && jira.length > 0));
-  const showDemoNote = hasInput && !live;
+  // Pasted text is read in the browser when there is no API. Files and Jira tickets need the API (and Jira set up).
+  const needsApi = files.length > 0 || jira.length > 0;
+  const canSubmit = hasInput && !readOnly && (live ? jira.length === 0 || jiraLive : !needsApi);
+  const note = !hasInput
+    ? ''
+    : !live && needsApi
+      ? copy.demoNeedsApi
+      : live && jira.length > 0 && !jiraLive
+        ? copy.liveNoJira
+        : live && !mode.health.features.claude
+          ? copy.liveNoClaude
+          : !live
+            ? copy.demoOffline
+            : '';
 
   const addFiles = (list: FileList | null) => setFiles((f) => [...f, ...Array.from(list ?? [])].slice(0, 10));
   const onDrop = (e: DragEvent) => {
@@ -42,9 +57,14 @@ export function NewEstimate() {
     navigate(`/estimate/${id}`);
   };
   const addJira = () => {
-    const key = jiraInput.toUpperCase().match(JIRA_KEY)?.[1];
-    if (key) setJira((j) => [...new Set([...j, key])]);
+    const key = parseJiraRef(jiraInput);
+    if (!key) {
+      setJiraBad(jiraInput.trim().length > 0);
+      return;
+    }
+    setJira((j) => [...new Set([...j, key])]);
     setJiraInput('');
+    setJiraBad(false);
     setJiraOpen(false);
   };
 
@@ -91,19 +111,42 @@ export function NewEstimate() {
                     <li key={k} className="chip chip-quiet">
                       <Icon name="jira" size={16} />
                       {k}
+                      <button type="button" className="btn btn-ghost btn-sm btn-icon-only -mr-1" aria-label={`Remove ${k}`} onClick={() => setJira((j) => j.filter((x) => x !== k))}>
+                        <Icon name="close" size={12} />
+                      </button>
                     </li>
                   ))}
                 </ul>
               ) : null}
               {jiraOpen ? (
-                <div className="flex gap-2">
-                  <label htmlFor="jira" className="sr-only">
-                    {copy.jiraPlaceholder}
-                  </label>
-                  <input id="jira" className="input flex-1" placeholder={copy.jiraPlaceholder} value={jiraInput} onChange={(e) => setJiraInput(e.target.value)} onKeyDown={(e) => e.key === 'Enter' && (e.preventDefault(), addJira())} autoFocus />
-                  <button type="button" className="btn btn-sm" onClick={addJira}>
-                    Add
-                  </button>
+                <div className="flex flex-col gap-1">
+                  <div className="flex gap-2">
+                    <label htmlFor="jira" className="sr-only">
+                      {copy.jiraPlaceholder}
+                    </label>
+                    <input
+                      id="jira"
+                      className="input flex-1"
+                      placeholder={copy.jiraPlaceholder}
+                      value={jiraInput}
+                      aria-invalid={jiraBad || undefined}
+                      aria-describedby={jiraBad ? 'jira-error' : undefined}
+                      onChange={(e) => {
+                        setJiraInput(e.target.value);
+                        setJiraBad(false);
+                      }}
+                      onKeyDown={(e) => e.key === 'Enter' && (e.preventDefault(), addJira())}
+                      autoFocus
+                    />
+                    <button type="button" className="btn btn-sm" onClick={addJira}>
+                      {copy.jiraAdd}
+                    </button>
+                  </div>
+                  {jiraBad ? (
+                    <p id="jira-error" className="m-0 text-[13px] danger" role="alert">
+                      {copy.jiraNotAKey}
+                    </p>
+                  ) : null}
                 </div>
               ) : null}
               <div className="flex flex-wrap items-center gap-2">
@@ -112,12 +155,10 @@ export function NewEstimate() {
                   <Icon name="clip" />
                   {copy.attach}
                 </button>
-                {jiraLive ? (
-                  <button type="button" className="btn btn-ghost btn-sm" onClick={() => setJiraOpen((o) => !o)}>
-                    <Icon name="link" />
-                    {copy.addJira}
-                  </button>
-                ) : null}
+                <button type="button" className="btn btn-ghost btn-sm" aria-expanded={jiraOpen} onClick={() => setJiraOpen((o) => !o)}>
+                  <Icon name="jira" />
+                  {copy.addJira}
+                </button>
                 <button type="submit" className="btn btn-primary ml-auto" disabled={!canSubmit}>
                   {copy.estimateButton}
                   <span className="btn-icon">
@@ -127,9 +168,9 @@ export function NewEstimate() {
               </div>
             </div>
           </div>
-          {showDemoNote ? (
+          {note ? (
             <p className="m-0 mt-3 text-[15px] ink-2" role="status">
-              {mode.kind !== 'live' ? copy.demoNeedsApi : jira.length ? copy.liveNoClaudeJira : copy.liveNoClaude}
+              {note}
             </p>
           ) : null}
         </form>

@@ -42,7 +42,7 @@ Each estimate is a document; a small assistant in the corner answers edge cases 
 | Route | What it shows |
 | --- | --- |
 | `#/` | Home: the estimates table (open and finished), tiles, filters, CSV export; the brief screen when there are no estimates |
-| `#/new` | New estimate: paste a brief, drop files, add a Jira link (live), or try an example |
+| `#/new` | New estimate: paste a brief, drop files, attach a Jira ticket (key or link; needs the API with Jira set up), or try an example |
 | `#/estimate/:id` | The estimate document: card, stages, client questions, brief, with the floating assistant |
 | `#/project/:id` | A finished project: estimate vs actual, what happened, what I learned, accuracy over time |
 | `#/about` | Help: architecture, methods with citations, data disclaimer, Manager/Overseer view |
@@ -72,10 +72,12 @@ The look is dark Brutalism: Syne and Space Grotesk type, JetBrains Mono labels, 
 | `data/` | `seed/` (fake history), `samples/` (3 brief packs), `demo-cache/` (precomputed AI outputs). |
 | `scripts/` | `seed.ts`, `precompute-demo.ts`, `push-to-jira.ts`, `eval.ts`. |
 
-**Demo mode vs live mode.** The site calls `GET /health` on `VITE_API_BASE_URL`. With no API, or an API that doesn't respond, the full demo still works: the engine, bundled history, precomputed agent outputs and a rule-based follow-up parser. Live-only features say why they're off:
-- reading your own brief or a Jira link;
+**Demo mode vs live mode.** The site calls `GET /health` on `VITE_API_BASE_URL`. With no API, or an API that doesn't respond, the full demo still works: the engine, bundled history, precomputed agent outputs and a rule-based follow-up parser. A pasted brief is read in the browser by the engine's rule-based reader (see below). Live-only features say why they're off:
+- uploaded files and Jira tickets (the API reads them);
 - Send to Jira;
 - open-ended questions answered by the Ask agent.
+
+**No Claude key?** The API still estimates. `POST /scope` and `POST /panel` use the engine's rule-based reader and fixed-lens panel (`packages/engine/src/offlineScope.ts`, `offline.ts`) when `ANTHROPIC_API_KEY` is unset, and also when Claude fails (no credit, bad key, outage). The response carries a `note` saying so, the brief card says "prepared offline", and every number still comes from the engine: analogs, bias correction and the simulation are unchanged. The reader picks the phase template whose keywords the brief mentions most, adds work items for features it names (e-signature, reminders, PDFs, exports, bank details, uploads, …) with the sentence that triggered each as its citation, and asks that template's usual open questions. Claude reads briefs better; the rules keep the product usable for free.
 
 In live mode, conversations are also saved to the API store.
 
@@ -114,7 +116,7 @@ Checks (all run in CI):
 
 ```bash
 npm run typecheck && npm run lint && npm test && npm run eval && npm run build
-# npm test runs the engine tests (31) and the web tests (present/*, intent parser, banned terms)
+# npm test runs the engine tests (34, incl. the rule-based reader on the 3 samples) and the web tests
 ```
 
 Data:
@@ -144,6 +146,7 @@ Exact clicks are in [SETUP.md](SETUP.md).
 - **Sample brief packs:** written for this project, with deliberate gaps (`data/samples/*/brief.json` lists them).
 - **Demo cache:** no API key was available when this repo was built, so the committed cache is labelled honestly. The UI shows each output's provenance:
   - scope results are hand-written fixtures that follow the scope prompt's contract (`fixture-scope@1`);
-  - panel guesses and post-mortem notes come from deterministic offline heuristics (`offline-heuristic-*`).
+  - panel guesses and post-mortem notes come from deterministic offline heuristics (`offline-heuristic-*`);
+  - briefs you paste without a Claude key are read by the rule-based reader (`offline-heuristic-scope@1`).
   
   Run `npm run precompute -- --live` with a key to replace them with Claude output. `npm run eval` checks either version.

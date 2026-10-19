@@ -8,7 +8,7 @@ import { readStore, writeStore } from '../lib/storage';
 import { chanceWords, formatDate, formatDuration, formatWeeks, teamPhrase } from '../present/format';
 import { toComparison } from '../present/comparison';
 import { parseDate, parseIntent, type Intent } from '../present/intent';
-import { defaultTeam, estimateFor, makeVersion, scopeOf, versionEstimate } from './engine';
+import { defaultTeam, estimateFor, makeVersion, panelInBrowser, scopeInBrowser, scopeOf, versionEstimate } from './engine';
 
 const STORE_KEY = 'scopewise.conversations.v1';
 const STEP_MS = 600;
@@ -282,6 +282,13 @@ export function ConversationsProvider({ children }: { children: ReactNode }) {
       const docs = c.brief.sources.length || files.current.get(id)?.length || 1;
       try {
         setProgress(id, steps({ docs, stages: 0, similar: 0 }, 0, 0));
+        const live = modeRef.current.kind === 'live';
+        const upload = files.current.get(id) ?? [];
+        if (!live) {
+          // No API: pasted text is read in the browser. Jira and uploads have nowhere to go.
+          if (c.brief.sources.some((s) => s.kind === 'jira')) throw new Error(copy.jiraNeedsApi);
+          if (upload.length) throw new Error(copy.filesNeedApi);
+        }
         // Jira links: pull each issue's summary and description into the brief.
         const issues: { key: string; summary: string }[] = [];
         const sources = await Promise.all(
@@ -305,15 +312,10 @@ export function ConversationsProvider({ children }: { children: ReactNode }) {
           }));
         }
         const read = issues.map((i) => copy.readTicket(i.key, i.summary)).join(' ');
-        if (modeRef.current.kind === 'live' && !modeRef.current.health.features.claude) {
-          patch(id, (x) => ({ ...x, status: 'error' }));
-          push(id, { id: uid('m'), createdAt: nowIso(), kind: 'error', text: `${read} ${copy.noClaudeYet}`.trim(), retry: true });
-          return;
-        }
         const text = sources.filter((s) => s.kind !== 'jira').map((s) => s.text).join('\n\n');
-        const upload = files.current.get(id) ?? [];
         const jiraFiles = sources.filter((s) => s.kind === 'jira').map((s) => new File([s.text], s.name, { type: 'text/markdown' }));
-        const scoped = upload.length ? await api.scopeFromFiles(text, c.clientDeadline, [...upload, ...jiraFiles]) : await api.scope(withJira);
+        // The API reads with Claude when it has a key, else with the engine's rules (and says so in `note`).
+        const scoped = !live ? { ...scopeInBrowser(withJira), note: copy.demoOffline } : upload.length ? await api.scopeFromFiles(text, c.clientDeadline, [...upload, ...jiraFiles]) : await api.scope(withJira);
         const brief = scoped.brief ?? withJira;
         const scope = scoped.scope;
         const similar = similarCount(scope);
@@ -330,11 +332,13 @@ export function ConversationsProvider({ children }: { children: ReactNode }) {
           messages: x.messages.map((m) => (m.kind === 'user_brief' ? { ...m, preview: preview(brief), files: fileChips(brief) } : m)),
         }));
         setProgress(id, steps(n, 2, 2));
-        const panel = await api.panel(brief, scope).catch(() => undefined);
+        const panel = live ? await api.panel(brief, scope).catch(() => undefined) : panelInBrowser(scope);
         patch(id, (x) => ({ ...x, panel: panel?.panel, panelProvenance: panel?.provenance }));
         setProgress(id, steps(n, 3, 3));
         await new Promise((r) => window.setTimeout(r, 30));
         setProgress(id, steps(n, 4, -1));
+        const how = [read, scoped.note ? copy.readByRules(scoped.note) : ''].filter(Boolean).join(' ');
+        if (how) push(id, { id: uid('m'), createdAt: nowIso(), kind: 'answer', text: how });
         finishWithEstimate(id);
       } catch (err) {
         const cur = ref.current.find((x) => x.id === id);
