@@ -24,6 +24,9 @@ export function NewEstimate() {
   const [jiraOpen, setJiraOpen] = useState(false);
   const [busy, setBusy] = useState<string | null>(null);
   const [problem, setProblem] = useState<string | null>(null);
+  // Keys whose chips just appeared from a pasted link, plus a one-line note: both clear themselves.
+  const [fresh, setFresh] = useState<string[]>([]);
+  const [hint, setHint] = useState<string | null>(null);
   const [over, setOver] = useState(false);
   const fileInput = useRef<HTMLInputElement>(null);
   const jiraWrap = useRef<HTMLDivElement>(null);
@@ -36,6 +39,7 @@ export function NewEstimate() {
   const note =
     problem ??
     busy ??
+    hint ??
     (!hasInput
       ? ''
       : !live && needsApi
@@ -80,6 +84,10 @@ export function NewEstimate() {
     if (keys.length) {
       setJira((j) => [...new Set([...j, ...keys])]);
       setProblem(null);
+      setFresh(keys);
+      setHint(copy.jiraLinked(keys));
+      window.setTimeout(() => setFresh([]), 1000);
+      window.setTimeout(() => setHint(null), 3000);
     }
   };
 
@@ -135,7 +143,7 @@ export function NewEstimate() {
               <label htmlFor="brief" className="sr-only">
                 Brief
               </label>
-              <textarea id="brief" className="textarea px-1 min-h-[9rem]" placeholder={copy.pastePlaceholder} value={text} onChange={(e) => onText(e.target.value)} />
+              <textarea id="brief" className={`textarea px-1 min-h-[9rem] ${fresh.length ? 'is-flash' : ''}`} placeholder={copy.pastePlaceholder} value={text} onChange={(e) => onText(e.target.value)} />
               {files.length || jira.length ? (
                 <ul className="list-none m-0 p-0 flex flex-wrap gap-2">
                   {files.map((f, i) => (
@@ -148,7 +156,7 @@ export function NewEstimate() {
                     </li>
                   ))}
                   {jira.map((k) => (
-                    <li key={k} className="chip chip-quiet">
+                    <li key={k} className={`chip chip-quiet ${fresh.includes(k) ? 'chip-fresh' : ''}`}>
                       <Icon name="jira" size={16} />
                       {k}
                       <button type="button" className="btn btn-ghost btn-sm btn-icon-only -mr-1" aria-label={`Remove ${k}`} onClick={() => setJira((j) => j.filter((x) => x !== k))}>
