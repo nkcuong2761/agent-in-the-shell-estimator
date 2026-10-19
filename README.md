@@ -74,7 +74,6 @@ The look is dark Brutalism: Bricolage Grotesque headings and numerals, Space Gro
 
 **Demo mode vs live mode.** The site calls `GET /health` on `VITE_API_BASE_URL`. With no API, or an API that doesn't respond, the full demo still works: the engine, bundled history, precomputed agent outputs and a rule-based follow-up parser. A pasted brief is read in the browser by the engine's rule-based reader (see below). Live-only features say why they're off:
 - uploaded files and Jira tickets (the API reads them);
-- Send to Jira;
 - open-ended questions answered by the Ask agent.
 
 **No Claude key?** The API still estimates. `POST /scope` and `POST /panel` use the engine's rule-based reader and fixed-lens panel (`packages/engine/src/offlineScope.ts`, `offline.ts`) when `ANTHROPIC_API_KEY` is unset, and also when Claude fails (no credit, bad key, outage). The response carries a `note` saying so, the brief card says "prepared offline", and every number still comes from the engine: analogs, bias correction and the simulation are unchanged. The reader picks the phase template whose keywords the brief mentions most, adds work items for features it names (e-signature, reminders, PDFs, exports, bank details, uploads, …) with the sentence that triggered each as its citation, and asks that template's usual open questions. Claude reads briefs better; the rules keep the product usable for free.

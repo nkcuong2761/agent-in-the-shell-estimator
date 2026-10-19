@@ -8,7 +8,6 @@ import { Questions } from '../components/Questions';
 import { Stages } from '../components/Stages';
 import { Icon, Spinner, Tag } from '../components/ui';
 import { copy } from '../copy';
-import { api } from '../lib/api';
 import { categoryLabel } from '../lib/categories';
 import { useConversations } from '../state/conversations';
 import { planOf, scopeOf, versionEstimate } from '../state/engine';
@@ -72,9 +71,7 @@ function ProgressSteps({ msg }: { msg: Extract<Message, { kind: 'progress' }> })
 }
 
 function Header({ conv }: { conv: Conversation }) {
-  const { mode, readOnly } = useConversations();
   const [note, setNote] = useState<string | null>(null);
-  const jira = mode.kind === 'live' && mode.health.features.jira;
   const scope = scopeOf(conv);
   const flash = (t: string) => {
     setNote(t);
@@ -86,24 +83,6 @@ function Header({ conv }: { conv: Conversation }) {
       flash(copy.linkCopied);
     } catch {
       flash(window.location.href);
-    }
-  };
-  const sendToJira = async () => {
-    const est = versionEstimate(conv, conv.currentEstimateId, true);
-    if (!scope || !est) return;
-    try {
-      const r = await api.jiraPush({
-        title: conv.title,
-        summary: scope.summary,
-        estimateUrl: window.location.href,
-        projectType: scope.projectType,
-        size: scope.size,
-        dryRun: false,
-        items: est.items.map((c) => ({ id: c.itemId, title: scope.items.find((i) => i.id === c.itemId)?.title ?? c.itemId, phaseId: c.phaseId, category: c.category, p50Hours: c.p50, p80Hours: c.p80 })),
-      });
-      flash(copy.sentToJira(r.epicKey ?? 'a new epic'));
-    } catch (err) {
-      flash(err instanceof Error ? err.message : 'Jira did not accept it.');
     }
   };
   return (
@@ -118,10 +97,6 @@ function Header({ conv }: { conv: Conversation }) {
             {note}
           </span>
         ) : null}
-        <button className="btn btn-sm" disabled={!jira || readOnly || conv.status !== 'ready'} title={jira ? undefined : copy.needsApi} onClick={sendToJira}>
-          <Icon name="jira" size={14} />
-          {copy.sendToJira}
-        </button>
         <button className="btn btn-sm" onClick={share}>
           <Icon name="share" size={14} />
           {copy.share}

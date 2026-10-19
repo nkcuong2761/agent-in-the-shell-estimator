@@ -137,11 +137,8 @@ export const copy = {
   briefTitle: 'The brief',
   briefWas: (how: string) => `The brief was ${how}.`,
 
-  sendToJira: 'Send to Jira',
-  needsApi: 'Needs the API',
   share: 'Share',
   linkCopied: 'Link copied',
-  sentToJira: (key: string) => `Sent to Jira as ${key}.`,
 
   // Change notes
   updated: (range: string, was: string, because: string) =>
