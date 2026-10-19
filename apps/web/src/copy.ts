@@ -184,6 +184,9 @@ export const copy = {
 
   briefTitle: 'The brief',
   briefWas: (how: string) => `The brief was ${how}.`,
+  openSource: (label: string) => `Open ${label}`,
+  openInJiraTab: (key: string) => `Open ${key} in Jira (new tab)`,
+  sourceNoText: 'The text of this file is not kept in the browser. Re-attach it to read it again.',
 
   share: 'Share',
   linkCopied: 'Link copied',

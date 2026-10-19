@@ -179,6 +179,7 @@ export function createApp() {
         version: API_VERSION,
         features: { claude: Boolean(env.anthropicKey()), jira: env.jira() !== null, database: Boolean(env.databaseUrl()) },
         model: env.model(),
+        ...(env.jira() ? { jiraBaseUrl: env.jira()?.baseUrl } : {}),
       }),
     ),
   );

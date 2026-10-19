@@ -145,6 +145,14 @@ describe('plain language on the main screens', () => {
     expect(screen.getAllByText(/Updated:/).length).toBe(1);
     expect(screen.getByRole('button', { name: /Adjustments: net [−+]\d+ h/ })).toBeTruthy();
     expectNoBannedTerms();
+    // The brief's source chips open the original text; a sample's ticket is fictional, so it opens text too.
+    fireEvent.click(screen.getByRole('button', { name: 'Open Client email' }));
+    const dialog = await screen.findByRole('dialog', { name: 'Client email' });
+    expect(dialog.textContent).toMatch(/Northgate Fund Services/);
+    fireEvent.click(within(dialog).getByRole('button', { name: 'Close' }));
+    expect(screen.queryByRole('dialog', { name: 'Client email' })).toBeNull();
+    expect(screen.getByRole('button', { name: /Open Jira ticket TWF-231/ })).toBeTruthy();
+    expectNoBannedTerms();
   });
 
   it('the methods drawer is where the technical terms live', async () => {

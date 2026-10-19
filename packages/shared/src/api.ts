@@ -12,6 +12,8 @@ export const HealthResponse = z.object({
     database: z.boolean(),
   }),
   model: z.string().optional(),
+  /** The Jira site, so the web app can link a ticket chip to its page (no secret in it). */
+  jiraBaseUrl: z.string().optional(),
 });
 export type HealthResponse = z.infer<typeof HealthResponse>;
 
