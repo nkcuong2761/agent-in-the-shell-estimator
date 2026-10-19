@@ -948,7 +948,8 @@ button.chip:disabled {
   border-color: var(--rule);
   background: var(--surface);
 }
- /* The one primary action in the sidebar: the accent brick, lifted with a hard shadow like .btn-primary. */
+ /* The one primary action in the sidebar: the accent brick. Flat at rest like the other buttons; the hard shadow
+    appears on hover, and stays while the New estimate page is open. */
 .side-cta {
   display: flex;
   align-items: center;
@@ -965,24 +966,20 @@ button.chip:disabled {
   color: var(--on-accent);
   background: var(--accent);
   border: 2px solid var(--rule);
-  box-shadow: var(--shadow-hard-sm);
   text-decoration: none;
   cursor: pointer;
   transition:
     transform var(--t-fast) var(--ease),
     box-shadow var(--t-fast) var(--ease);
 }
-.side-cta:hover {
-  transform: translate(-1px, -1px);
-  box-shadow: 5px 5px 0 0 var(--rule);
+.side-cta:hover,
+.side-cta[aria-current='page'] {
+  transform: translate(-2px, -2px);
+  box-shadow: var(--shadow-hard-sm);
 }
 .side-cta:active {
-  transform: translate(2px, 2px);
-  box-shadow: 2px 2px 0 0 var(--rule);
-}
-.side-cta[aria-current='page'] {
+  transform: translate(0, 0);
   box-shadow: none;
-  transform: translate(2px, 2px);
 }
 .side-item {
   display: block;
