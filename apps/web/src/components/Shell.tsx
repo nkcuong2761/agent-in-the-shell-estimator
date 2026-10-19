@@ -85,7 +85,7 @@ function Sidebar({ onNavigate }: { onNavigate?: () => void }) {
           <Icon name="home" size={18} />
           {copy.home}
         </NavLink>
-        <NavLink to="/new" className="side-row" onClick={onNavigate}>
+        <NavLink to="/new" className="side-cta" onClick={onNavigate}>
           <Icon name="plus" size={18} />
           {copy.newEstimate}
         </NavLink>

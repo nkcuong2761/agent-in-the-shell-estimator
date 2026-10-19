@@ -790,6 +790,42 @@ button.chip:disabled {
   border-color: var(--rule);
   background: var(--surface);
 }
+ /* The one primary action in the sidebar: the accent brick, lifted with a hard shadow like .btn-primary. */
+.side-cta {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  width: 100%;
+  margin-top: 0.35rem;
+  padding: 0.7rem 0.75rem;
+  font-family: var(--font-mono);
+  font-weight: 700;
+  font-size: 0.8125rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  line-height: 1;
+  color: var(--on-accent);
+  background: var(--accent);
+  border: 2px solid var(--rule);
+  box-shadow: var(--shadow-hard-sm);
+  text-decoration: none;
+  cursor: pointer;
+  transition:
+    transform var(--t-fast) var(--ease),
+    box-shadow var(--t-fast) var(--ease);
+}
+.side-cta:hover {
+  transform: translate(-1px, -1px);
+  box-shadow: 5px 5px 0 0 var(--rule);
+}
+.side-cta:active {
+  transform: translate(2px, 2px);
+  box-shadow: 2px 2px 0 0 var(--rule);
+}
+.side-cta[aria-current='page'] {
+  box-shadow: none;
+  transform: translate(2px, 2px);
+}
 .side-item {
   display: block;
   padding: 0.5rem 0.6rem;
