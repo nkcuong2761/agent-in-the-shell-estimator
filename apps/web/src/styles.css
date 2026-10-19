@@ -1378,6 +1378,13 @@ button.chip:disabled {
   flex-direction: column;
   gap: 0.7rem;
 }
+.assistant-input {
+  min-height: 2.25rem;
+  /* Up to half the panel; beyond that the text scrolls inside the box. */
+  max-height: calc(min(560px, 100dvh - 2rem) * 0.5);
+  overflow-y: auto;
+  field-sizing: content;
+}
 .assistant-foot {
   border-top: 2px solid var(--rule);
   padding: 0.6rem 0.7rem 0.7rem;

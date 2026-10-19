@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState, type FormEvent } from 'react';
+import { useEffect, useLayoutEffect, useRef, useState, type FormEvent } from 'react';
 import type { Conversation, Message } from '@scopewise/shared';
 import { copy } from '../copy';
 import { toComparison } from '../present/comparison';
@@ -125,6 +125,13 @@ export function Assistant({ conv }: { conv: Conversation }) {
   useEffect(() => {
     if (open) input.current?.focus({ preventScroll: true });
   }, [open]);
+  // The box grows with the draft so a long message is readable in full; past half the panel it scrolls.
+  useLayoutEffect(() => {
+    const el = input.current;
+    if (!el) return;
+    el.style.height = 'auto';
+    el.style.height = `${el.scrollHeight}px`;
+  }, [draft, open]);
 
   const toggle = (v: boolean) => {
     setOpen(v);
@@ -183,7 +190,7 @@ export function Assistant({ conv }: { conv: Conversation }) {
             id="assistant-input"
             ref={input}
             rows={1}
-            className="textarea py-1.5 max-h-28 text-[15px]"
+            className="textarea py-1.5 text-[15px] assistant-input"
             placeholder={readOnly ? copy.readOnly : ready ? copy.assistantPlaceholder : copy.followUpLocked}
             value={draft}
             disabled={disabled}
