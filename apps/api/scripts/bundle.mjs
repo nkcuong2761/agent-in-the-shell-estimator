@@ -1,7 +1,9 @@
 /**
  * Build the Vercel function: one ESM file at api/index.js with the API, the workspace packages and the JSON data
  * inlined, plus a copy of prompts/ next to it (data.ts reads prompts with fs at runtime). npm packages stay
- * external so Vercel's file tracer ships them from node_modules as they are.
+ * external so Vercel's file tracer ships them from node_modules as they are. api/index.js is committed as a
+ * stub (Vercel checks that the function exists before the build runs); this overwrites it, so after a local
+ * bundle run `git checkout apps/api/api/index.js` before committing.
  */
 import { build } from 'esbuild';
 import { cpSync, mkdirSync, rmSync } from 'node:fs';
@@ -12,7 +14,6 @@ const here = dirname(fileURLToPath(import.meta.url));
 const api = resolve(here, '..');
 const root = resolve(api, '..', '..');
 
-rmSync(resolve(api, 'api'), { recursive: true, force: true });
 mkdirSync(resolve(api, 'api'), { recursive: true });
 rmSync(resolve(api, 'prompts'), { recursive: true, force: true });
 cpSync(resolve(root, 'prompts'), resolve(api, 'prompts'), { recursive: true });

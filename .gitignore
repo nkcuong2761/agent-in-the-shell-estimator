@@ -10,6 +10,6 @@ apps/api/.data/
 coverage/
 .DS_Store
 
-# Built by apps/api/scripts/bundle.mjs for Vercel
-apps/api/api/
+# Built by apps/api/scripts/bundle.mjs for Vercel (api/index.js is a committed stub that the build overwrites)
+apps/api/api/index.js.map
 apps/api/prompts/
