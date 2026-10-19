@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState, type DragEvent, type FormEvent } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { copy } from '../copy';
-import { JiraPicker, parseJiraRef } from '../components/JiraPicker';
+import { extractJiraRefs, JiraPicker, parseJiraRef } from '../components/JiraPicker';
 import { Icon, Mark } from '../components/ui';
 import { useConversations } from '../state/conversations';
 import { addRealProject } from '../state/realProjects';
@@ -73,6 +73,15 @@ export function NewEstimate() {
     setJira((j) => [...new Set([...j, key])]);
     setProblem(null);
   };
+  // A Jira link pasted or typed into the brief becomes a ticket chip, the same as one picked from the list.
+  const onText = (value: string) => {
+    const { text: cleaned, keys } = extractJiraRefs(value);
+    setText(cleaned);
+    if (keys.length) {
+      setJira((j) => [...new Set([...j, ...keys])]);
+      setProblem(null);
+    }
+  };
 
   const submit = async (e: FormEvent) => {
     e.preventDefault();
@@ -126,11 +135,7 @@ export function NewEstimate() {
               <label htmlFor="brief" className="sr-only">
                 Brief
               </label>
-              <textarea id="brief" className="textarea px-1 min-h-[9rem]" placeholder={copy.pastePlaceholder} value={text} onChange={(e) => setText(e.target.value)} />
-              <div className="dropzone px-4 py-3 text-sm muted flex items-center gap-2">
-                <Icon name="file" />
-                {copy.dropHere}
-              </div>
+              <textarea id="brief" className="textarea px-1 min-h-[9rem]" placeholder={copy.pastePlaceholder} value={text} onChange={(e) => onText(e.target.value)} />
               {files.length || jira.length ? (
                 <ul className="list-none m-0 p-0 flex flex-wrap gap-2">
                   {files.map((f, i) => (
@@ -153,6 +158,10 @@ export function NewEstimate() {
                   ))}
                 </ul>
               ) : null}
+              <div className="dropzone px-4 py-3 text-sm muted flex items-center gap-2">
+                <Icon name="file" />
+                {copy.dropHere}
+              </div>
               <div className="flex flex-wrap items-center gap-2">
                 <input ref={fileInput} type="file" multiple accept=".md,.txt,.eml,.pdf,text/plain,application/pdf" className="sr-only" onChange={(e) => addFiles(e.target.files)} tabIndex={-1} />
                 <button type="button" className="btn btn-ghost btn-sm" onClick={() => fileInput.current?.click()}>

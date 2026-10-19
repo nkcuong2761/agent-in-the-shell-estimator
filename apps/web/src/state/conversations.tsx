@@ -329,7 +329,8 @@ export function ConversationsProvider({ children }: { children: ReactNode }) {
         patch(id, (x) => ({
           ...x,
           brief,
-          title: scope.title || x.title,
+          // A ticket keeps its own name as the title; the scope's title is for pasted briefs.
+          title: issues.length ? x.title : scope.title || x.title,
           scope,
           scopeProvenance: scoped.provenance,
           team: defaultTeam(scope),
