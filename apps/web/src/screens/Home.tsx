@@ -1,5 +1,5 @@
 import { useMemo, useState, type KeyboardEvent } from 'react';
-import { Link, useNavigate, useSearchParams } from 'react-router-dom';
+import { useNavigate, useSearchParams } from 'react-router-dom';
 import type { Conversation, ProjectType } from '@scopewise/shared';
 import { Icon, Logotype, Tag } from '../components/ui';
 import { copy } from '../copy';
@@ -174,19 +174,11 @@ export function Home() {
 
   return (
     <div className="page page-wide">
-      <header className="flex flex-wrap items-end justify-between gap-4">
-        <div className="flex flex-col gap-3">
-          <h1 className="m-0" style={{ color: 'var(--ink)' }}>
-            <Logotype size={52} />
-          </h1>
-          <p className="m-0 text-[17px] ink-2 measure">{copy.homeSub}</p>
-        </div>
-        <Link to="/new" className="btn btn-primary">
-          {copy.newEstimate}
-          <span className="btn-icon">
-            <Icon name="plus" size={14} />
-          </span>
-        </Link>
+      <header className="flex flex-col gap-3">
+        <h1 className="m-0" style={{ color: 'var(--ink)' }}>
+          <Logotype size={52} />
+        </h1>
+        <p className="m-0 text-[17px] ink-2 measure">{copy.homeSub}</p>
       </header>
 
       <div className="grid sm:grid-cols-3">
