@@ -2,7 +2,8 @@ import { z } from 'zod';
 import { BriefPack, PanelResult, Provenance, Role, ScopeResult, TeamShape } from './domain';
 
 /** The inputs of one estimate version. The engine is deterministic, so the numbers are recomputed from these. */
-export const BufferRisk = z.object({ label: z.string(), h: z.number().nonnegative() });
+/** One adjustment to the timeline: a risk adds hours (h > 0), an opportunity takes them off (h < 0). `id` names a quick-pick. */
+export const BufferRisk = z.object({ id: z.string().optional(), label: z.string(), h: z.number() });
 export type BufferRisk = z.infer<typeof BufferRisk>;
 
 /** The team's AI tooling: which kinds of tool, on which plan. It shrinks the hours of the work each kind touches. */
@@ -24,7 +25,7 @@ export const EstimateSpec = z.object({
   daysPerWeek: z.number().int().min(1).max(7).optional(),
   /** AI tools the team works with, for this estimate only; unset = the saved default, else none. */
   aiTools: AiTools.optional(),
-  /** Known risks (extra hours) and a percentage buffer for the unknown. They stretch the timeline; effort stays pure. */
+  /** Risks (+h) and opportunities (−h), plus a percentage margin for the unknown. They stretch or shorten the timeline; effort stays pure. */
   risks: z.array(BufferRisk).optional(),
   bufferPct: z.number().min(0).max(100).optional(),
   /** A needed role with nobody on the team, covered by another role ("Developer does it too"). */

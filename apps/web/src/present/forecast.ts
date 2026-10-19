@@ -71,14 +71,20 @@ export function historyAdjustment(pms: DemoPostmortems | null | undefined, proje
   return { id: 'hist', title: copy.adjHist, source: lines.join(' · '), days: whole };
 }
 
-/** The risks-and-buffer factor expressed in working days on top of the plan. */
+/** The opportunities, risks and margin, as signed working days on top of (or off) the plan. */
 export function bufferAdjustment(planDays: number, f: number, risks: readonly BufferRisk[] | undefined, pct: number | undefined): Adjustment | undefined {
-  if (f <= 1 || planDays <= 0) return undefined;
+  if (f === 1 || planDays <= 0) return undefined;
   const whole = Math.round(planDays * (f - 1));
-  if (whole <= 0) return undefined;
-  const parts = (risks ?? []).filter((r) => r.h > 0).map((r) => `${r.label || 'Unnamed risk'} (+${Math.round(r.h)} h)`);
-  if (pct) parts.push(`${pct}% for the unknown`);
+  if (whole === 0) return undefined;
+  const parts = (risks ?? []).filter((r) => r.h !== 0).map((r) => `${r.label || copy.unnamedAdjustment} (${signedHours(r.h)})`);
+  if (pct) parts.push(copy.marginPart(pct));
   return { id: 'buf', title: copy.adjBuf, source: parts.join(', '), days: whole };
+}
+
+/** "+16 h" / "−24 h" (a real minus sign, never a hyphen). */
+export function signedHours(h: number): string {
+  const r = Math.round(h);
+  return `${r < 0 ? '−' : '+'}${Math.abs(r)} h`;
 }
 
 export interface Forecast {

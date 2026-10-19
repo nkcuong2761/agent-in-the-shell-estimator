@@ -63,15 +63,19 @@ export function focusFactorFor(policy: HoursPolicy, stats: SquadStats | undefine
   return (policy.hpd * policy.dpw) / 5 / CY;
 }
 
-/** f = (P50 + Σ risk hours + P50 × pct / 100) / P50. The timeline stretches by f; effort stays pure. */
+/** Opportunities can shorten the timeline by at most this much; risks have no cap. */
+export const ADJUST_FLOOR = 0.75;
+
+/** f = (P50 + Σ signed hours + P50 × pct / 100) / P50, floored at 0.75. The timeline scales by f; effort stays pure. */
 export function bufferFactor(p50Hours: number, risks: readonly BufferRisk[] | undefined, pct: number | undefined): number {
   if (p50Hours <= 0) return 1;
-  const extra = (risks ?? []).reduce((s, r) => s + Math.max(0, r.h), 0) + (p50Hours * (pct ?? 0)) / 100;
-  return Math.max(1, (p50Hours + extra) / p50Hours);
+  const extra = (risks ?? []).reduce((s, r) => s + r.h, 0) + (p50Hours * (pct ?? 0)) / 100;
+  return Math.max(ADJUST_FLOOR, (p50Hours + extra) / p50Hours);
 }
 
+/** The signed hours the adjustments add to (+) or take off (−) the timeline, risks and opportunities and margin together. */
 export function bufferExtraHours(p50Hours: number, risks: readonly BufferRisk[] | undefined, pct: number | undefined): number {
-  return Math.round((risks ?? []).reduce((s, r) => s + Math.max(0, r.h), 0) + (p50Hours * (pct ?? 0)) / 100);
+  return Math.round((risks ?? []).reduce((s, r) => s + r.h, 0) + (p50Hours * (pct ?? 0)) / 100);
 }
 
 export function readTeamDefaults(): TeamDefaults {

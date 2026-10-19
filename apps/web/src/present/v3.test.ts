@@ -58,6 +58,11 @@ describe('risks and buffer', () => {
     expect(bufferFactor(400, [], undefined)).toBe(1);
     expect(bufferFactor(0, [{ label: 'x', h: 5 }], 10)).toBe(1);
   });
+  it('an opportunity (negative hours) lowers f, never below 0.75', () => {
+    expect(bufferFactor(400, [{ label: 'Reuse', h: -40 }], undefined)).toBeCloseTo(0.9);
+    expect(bufferFactor(400, [{ label: 'Reuse', h: -40 }, { label: 'Late', h: 20 }], 5)).toBeCloseTo(1);
+    expect(bufferFactor(400, [{ label: 'Huge', h: -300 }], undefined)).toBe(0.75);
+  });
 });
 
 describe('default team', () => {

@@ -71,6 +71,19 @@ describe('risks and buffer', () => {
   });
 });
 
+describe('opportunities', () => {
+  const c = conv('fund-admin-sync');
+  it('shorten the timeline and leave the effort untouched', () => {
+    const base = planOf(c, spec(c))!;
+    const opp = planOf(c, spec(c, { risks: [{ id: 'opp-reuse', label: 'Reuse', h: -40 }] }))!;
+    expect(opp.effortH).toBe(base.effortH);
+    expect(opp.f).toBeLessThan(1);
+    const realA = estimateFor(c, spec(c), { quick: true })!;
+    const realB = estimateFor(c, spec(c, { risks: [{ id: 'opp-reuse', label: 'Reuse', h: -40 }] }), { quick: true })!;
+    expect(realB.finishDays.p50).toBeLessThan(realA.finishDays.p50);
+  });
+});
+
 describe('working-hours policy', () => {
   const c = conv('investor-reminders');
   it('fewer hours a day means more weeks, same hours', () => {

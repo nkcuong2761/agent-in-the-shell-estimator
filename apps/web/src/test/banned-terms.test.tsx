@@ -77,7 +77,7 @@ function expectNoBannedTerms() {
     // Acronyms match as whole uppercase words ("FTE" must not trip on "after"); phrases match anywhere, any case.
     const re = /^[A-Z0-9]+$/.test(term) ? new RegExp(`\\b${term}\\b`) : new RegExp(term, 'i');
     // "No buffer: the number is pure working time" is the one sentence allowed to say the word.
-    const cleaned = term === 'buffer' ? text.replace(/No buffer: the number is pure working time\./g, '').replace(/Risks & buffer|risks & buffer|Buffer for the unknown|risks and buffer/g, '') : text;
+    const cleaned = term === 'buffer' ? text.replace(/No buffer: the number is pure working time\./g, '') : text;
     expect(re.test(cleaned), `"${term}" appears on a main screen`).toBe(false);
   }
 }
@@ -128,6 +128,22 @@ describe('plain language on the main screens', () => {
     expect(Number(document.querySelector('#est-hours .big-number')!.textContent)).toBeLessThan(effortBefore);
     expect(document.querySelector('[data-tools-note]')!.textContent).toMatch(/AI tools take about \d+ hours \(\d+%\) off build work/);
     expect(screen.getAllByText(/Updated:/).length).toBe(1);
+    expectNoBannedTerms();
+    // Opportunities, risks & margin: tap one of each, the net line shows both signs, Apply leaves one note.
+    fireEvent.click(screen.getByRole('button', { name: 'Adjust: opportunities, risks & margin' }));
+    const opps = screen.getByRole('group', { name: 'Opportunities' });
+    const risks = screen.getByRole('group', { name: 'Risks' });
+    fireEvent.click(within(opps).getAllByRole('button', { pressed: false })[0]!);
+    fireEvent.click(within(risks).getAllByRole('button', { pressed: false })[0]!);
+    const net = document.querySelector('[data-net]')!.textContent!;
+    expect(net).toMatch(/−\d+ h saved/);
+    expect(net).toMatch(/\+\d+ h added/);
+    expect(net).toMatch(/Net [−+]\d+ h → plan for \d+ working hours/);
+    fireEvent.click(screen.getByRole('radio', { name: '10%' }));
+    fireEvent.click(screen.getByText('Apply to timeline'));
+    await screen.findByText(/Updated: opportunities, risks and margin (add|take) \d+ h/);
+    expect(screen.getAllByText(/Updated:/).length).toBe(1);
+    expect(screen.getByRole('button', { name: /Adjustments: net [−+]\d+ h/ })).toBeTruthy();
     expectNoBannedTerms();
   });
 

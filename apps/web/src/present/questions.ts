@@ -22,11 +22,11 @@ const words = (s: string) =>
       .map((w) => w.replace(/(ing|s)$/, '')),
   );
 
-function riskTitle(r: ScopeRisk): string {
+export function riskTitle(r: ScopeRisk): string {
   return (r.description.split(' was added')[0] ?? r.description).trim();
 }
 
-function riskEvidence(r: ScopeRisk): string {
+export function riskEvidence(r: ScopeRisk): string {
   const m = r.description.match(/in (\d+) of (\d+) similar projects/);
   const title = riskTitle(r).toLowerCase();
   return m ? `${m[1]} of ${m[2]} similar projects added ${title} later.` : `Similar projects often added ${title} later.`;

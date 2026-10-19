@@ -2,7 +2,8 @@ import { useMemo, useState, type ReactNode } from 'react';
 import type { AiPlan, AiToolKind, AiTools, BufferRisk, Conversation, Estimate, EstimateSpec, Role, ScopeResult } from '@scopewise/shared';
 import { capitalise, copy, roleWord } from '../copy';
 import { useStore } from '../lib/useStore';
-import { bufferAdjustment, historyAdjustment, leaveAdjustment, meetsDue, toForecast, type Adjustment } from '../present/forecast';
+import { pickedFrom, suggestedOpportunities, suggestedRisks, type Suggestion } from '../present/adjustments';
+import { bufferAdjustment, historyAdjustment, leaveAdjustment, meetsDue, signedHours, toForecast, type Adjustment } from '../present/forecast';
 import { fmtNum, formatDate, halfWeeks, rolePhrase, sd } from '../present/format';
 import { howSure } from '../present/headline';
 import { toWhy } from '../present/why';
@@ -344,45 +345,93 @@ function HoursSection({ conv, plan, onDefaults }: { conv: Conversation; plan: Pl
 
 // ---------------------------------------------------------------------------------------------
 
-function RisksPanel({ conv, spec, plan, onClose }: { conv: Conversation; spec: EstimateSpec; plan: Plan; onClose: () => void }) {
-  const { applySpec } = useConversations();
-  const [rows, setRows] = useState<BufferRisk[]>(spec.risks?.length ? spec.risks : [{ label: '', h: 0 }]);
-  const [pct, setPct] = useState<number>(spec.bufferPct ?? 0);
-  const valid = rows.filter((r) => r.h > 0);
-  const extra = bufferExtraHours(plan.effortH, valid, pct);
+type Group = 'opp' | 'risk';
+
+function PickChip({ s, on, tone, onToggle, disabled }: { s: Suggestion; on: boolean; tone: Group; onToggle: () => void; disabled?: boolean }) {
+  const style = { ['--tone' as string]: tone === 'opp' ? 'var(--success)' : 'var(--danger)', ['--tone-soft' as string]: tone === 'opp' ? 'var(--success-soft)' : 'var(--danger-soft)' };
   return (
-    <div className="panel p-4 mt-3 flex flex-col gap-4 enter" role="group" aria-label={copy.addRisks.replace(/^\+ /, '')}>
-      <div className="flex flex-col gap-2">
-        <span className="label label-ink">{copy.risksTitle}</span>
-        {rows.map((r, i) => (
-          <div key={i} className="grid grid-cols-[minmax(0,1fr)_4.5rem_2.25rem] gap-2 items-center">
-            <label className="sr-only" htmlFor={`risk-l-${i}`}>
-              {copy.riskLabelPlaceholder}
-            </label>
-            <input id={`risk-l-${i}`} className="input" placeholder={copy.riskLabelPlaceholder} value={r.label} onChange={(e) => setRows((rs) => rs.map((x, j) => (j === i ? { ...x, label: e.target.value } : x)))} />
-            <label className="sr-only" htmlFor={`risk-h-${i}`}>
-              {copy.riskHoursPlaceholder}
-            </label>
-            <input
-              id={`risk-h-${i}`}
-              className="input mono"
-              inputMode="numeric"
-              placeholder="h"
-              value={r.h || ''}
-              onChange={(e) => setRows((rs) => rs.map((x, j) => (j === i ? { ...x, h: Math.max(0, Number(e.target.value.replace(',', '.')) || 0) } : x)))}
-            />
-            <button type="button" className="btn btn-ghost btn-sm btn-icon-only" aria-label={copy.removeRisk} onClick={() => setRows((rs) => (rs.length > 1 ? rs.filter((_, j) => j !== i) : [{ label: '', h: 0 }]))}>
-              <Icon name="trash" size={15} />
-            </button>
-          </div>
+    <button type="button" className="chip-pick" aria-pressed={on} disabled={disabled} title={s.why} style={style} onClick={onToggle}>
+      <Icon name="check" size={14} className="chip-tick" />
+      {s.why ? <span className="chip-dot" aria-hidden="true" /> : null}
+      <span className="min-w-0">{s.label}</span>
+      <span className="chip-h">{signedHours(s.h)}</span>
+      {s.why ? <span className="sr-only">({copy.seenBefore})</span> : null}
+    </button>
+  );
+}
+
+/** Tap-to-pick opportunities and risks, a margin for the unknown, and one live net line. */
+function AdjustPanel({ conv, scope, spec, plan, onClose }: { conv: Conversation; scope: ScopeResult; spec: EstimateSpec; plan: Plan; onClose: () => void }) {
+  const { applySpec } = useConversations();
+  const hoursPerWeek = plan.policy.hpd * plan.policy.dpw;
+  const opps = useMemo(() => suggestedOpportunities(scope, plan.effortHWithoutTools || plan.effortH), [scope, plan.effortHWithoutTools, plan.effortH]);
+  const risksList = useMemo(() => suggestedRisks(scope, plan.effortHWithoutTools || plan.effortH, hoursPerWeek), [scope, plan.effortHWithoutTools, plan.effortH, hoursPerWeek]);
+  const [picked, setPicked] = useState<BufferRisk[]>(spec.risks ?? []);
+  const [pct, setPct] = useState<number>(spec.bufferPct ?? 0);
+  const [other, setOther] = useState<Group | null>(null);
+  const [otherLabel, setOtherLabel] = useState('');
+  const [otherH, setOtherH] = useState('');
+  const ids = pickedFrom(picked);
+  const toggle = (s: Suggestion) => setPicked((ps) => (ids.has(s.id) ? ps.filter((r) => r.id !== s.id) : [...ps, { id: s.id, label: s.label, h: s.h }]));
+  const addOther = () => {
+    const h = Math.abs(Number(otherH.replace(',', '.')) || 0);
+    if (!otherLabel.trim() || h <= 0 || !other) return;
+    setPicked((ps) => [...ps, { id: `custom-${Date.now().toString(36)}`, label: otherLabel.trim(), h: other === 'opp' ? -h : h }]);
+    setOtherLabel('');
+    setOtherH('');
+    setOther(null);
+  };
+  const saved = picked.filter((r) => r.h < 0).reduce((s, r) => s + r.h, 0);
+  const added = picked.filter((r) => r.h > 0).reduce((s, r) => s + r.h, 0) + (plan.effortH * pct) / 100;
+  const net = bufferExtraHours(plan.effortH, picked, pct);
+  const customOf = (g: Group) => picked.filter((r) => r.id?.startsWith('custom-') && (g === 'opp' ? r.h < 0 : r.h > 0));
+
+  const group = (g: Group, title: string, sub: string, list: Suggestion[]) => (
+    <div className="adjust-group" style={{ ['--tone' as string]: g === 'opp' ? 'var(--success)' : 'var(--danger)' }} role="group" aria-label={title}>
+      <div className="flex flex-col gap-0.5">
+        <span className="label">{title}</span>
+        <span className="text-[13px] muted">{sub}</span>
+      </div>
+      <div className="flex flex-wrap gap-2">
+        {list.map((s) => (
+          <PickChip key={s.id} s={s} on={ids.has(s.id)} tone={g} onToggle={() => toggle(s)} />
         ))}
-        <button type="button" className="link text-[13px] self-start" onClick={() => setRows((rs) => [...rs, { label: '', h: 0 }])}>
-          {copy.addRisk}
+        {customOf(g).map((r) => (
+          <PickChip key={r.id} s={{ id: r.id as string, label: r.label, h: r.h }} on tone={g} onToggle={() => setPicked((ps) => ps.filter((x) => x.id !== r.id))} />
+        ))}
+        <button type="button" className="chip-pick" aria-expanded={other === g} onClick={() => setOther((o) => (o === g ? null : g))}>
+          {copy.otherTag}
         </button>
       </div>
-      <fieldset className="m-0 p-0 border-0 flex flex-col gap-2">
-        <legend className="label label-ink mb-2">{copy.bufferTitle}</legend>
-        <div className="tabs tabs-fill" role="radiogroup" aria-label={copy.bufferTitle}>
+      {other === g ? (
+        <div className="grid grid-cols-[minmax(0,1fr)_5rem_auto] gap-2 items-center">
+          <label className="sr-only" htmlFor={`other-l-${g}`}>
+            {copy.otherLabel}
+          </label>
+          <input id={`other-l-${g}`} className="input" placeholder={copy.otherLabel} value={otherLabel} onChange={(e) => setOtherLabel(e.target.value)} onKeyDown={(e) => e.key === 'Enter' && (e.preventDefault(), addOther())} autoFocus />
+          <label className="sr-only" htmlFor={`other-h-${g}`}>
+            {copy.otherHours}
+          </label>
+          <input id={`other-h-${g}`} className="input mono" inputMode="numeric" placeholder="h" value={otherH} onChange={(e) => setOtherH(e.target.value)} onKeyDown={(e) => e.key === 'Enter' && (e.preventDefault(), addOther())} />
+          <button type="button" className="btn btn-sm" onClick={addOther}>
+            {copy.otherAdd}
+          </button>
+        </div>
+      ) : null}
+    </div>
+  );
+
+  return (
+    <div className="panel p-4 sm:p-5 mt-3 flex flex-col gap-6 enter" role="group" aria-label={copy.adjustOpen}>
+      {group('opp', copy.oppTitle, copy.oppSub, opps)}
+      {group('risk', copy.riskGroupTitle, copy.riskSub, risksList)}
+      <hr className="adjust-divider" />
+      <fieldset className="m-0 p-0 border-0 adjust-group">
+        <legend className="flex flex-col gap-0.5 mb-2">
+          <span className="label label-ink">{copy.marginTitle}</span>
+          <span className="text-[13px] muted">{copy.marginSub}</span>
+        </legend>
+        <div className="tabs tabs-fill" role="radiogroup" aria-label={copy.marginTitle}>
           {[0, 10, 15, 20, 30].map((p) => (
             <button key={p} type="button" role="radio" aria-checked={pct === p} aria-selected={pct === p} onClick={() => setPct(p)}>
               {p === 0 ? copy.bufferNone : `${p}%`}
@@ -390,13 +439,25 @@ function RisksPanel({ conv, spec, plan, onClose }: { conv: Conversation; spec: E
           ))}
         </div>
       </fieldset>
-      <p className="m-0 mono text-[14px] font-semibold">{copy.liveTotal(extra, plan.effortH + extra)}</p>
+      <div className="flex flex-wrap items-baseline gap-x-4 gap-y-1 rule-top pt-4" data-net>
+        {saved < 0 ? (
+          <span className="net-figure" style={{ color: 'var(--success)' }}>
+            {signedHours(saved)} {copy.savedWord}
+          </span>
+        ) : null}
+        {added > 0 ? (
+          <span className="net-figure" style={{ color: 'var(--danger)' }}>
+            {signedHours(added)} {copy.addedWord}
+          </span>
+        ) : null}
+        <span className="mono text-[14px] font-semibold">{saved === 0 && added === 0 ? copy.netNothing : copy.netLine(signedHours(net), plan.effortH + net)}</span>
+      </div>
       <div className="flex flex-wrap gap-2">
         <button
           type="button"
           className="btn btn-primary btn-sm"
           onClick={() => {
-            applySpec(conv.id, { risks: valid.length ? valid : undefined, bufferPct: pct || undefined }, copy.bufferNote(extra));
+            applySpec(conv.id, { risks: picked.length ? picked : undefined, bufferPct: pct || undefined }, copy.adjustNote(net));
             onClose();
           }}
         >
@@ -480,12 +541,13 @@ function ScheduleSection({ conv, scope, spec, plan }: Props) {
         ) : (
           <p className="m-0 text-[14px] ink-2">{copy.nothingAdds}</p>
         )}
-        <div>
+        <div className="flex flex-wrap items-center gap-3">
           <button className="btn btn-sm" disabled={readOnly} aria-expanded={risks} onClick={() => setRisks((v) => !v)}>
-            {extraH > 0 ? copy.risksSet(extraH) : copy.addRisks}
+            {extraH !== 0 ? copy.adjustSet(signedHours(extraH)) : copy.adjustOpen}
           </button>
+          {extraH !== 0 ? <Tag tone={extraH < 0 ? 'success' : 'danger'}>{extraH < 0 ? copy.savedWord : copy.addedWord}</Tag> : null}
         </div>
-        {risks ? <RisksPanel conv={conv} spec={spec} plan={plan} onClose={() => setRisks(false)} /> : null}
+        {risks ? <AdjustPanel conv={conv} scope={scope} spec={spec} plan={plan} onClose={() => setRisks(false)} /> : null}
       </div>
     </Section>
   );
