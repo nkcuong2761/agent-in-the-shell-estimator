@@ -42,6 +42,7 @@ export function JiraPicker({ availability, onPick, onClose }: { availability: Ji
     };
   }, [availability]);
 
+  // The picker opens upward over the brief box; make sure its top edge is on screen.
   useLayoutEffect(() => {
     box.current?.scrollIntoView({ block: 'nearest' });
   }, []);

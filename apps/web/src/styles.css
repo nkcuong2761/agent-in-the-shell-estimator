@@ -699,11 +699,12 @@ button.chip:disabled {
   padding-bottom: 0.25rem;
 }
 
-/* Attach Jira popover: the same brick as the calendar, with a listbox of ongoing tickets */
+/* Attach Jira popover: the same brick as the calendar, with a listbox of ongoing tickets. It opens upward,
+   over the brief box, so the page keeps its height and nothing scrolls. */
 .jira-picker {
   position: absolute;
   z-index: 70;
-  top: calc(100% + 6px);
+  bottom: calc(100% + 6px);
   left: 0;
   width: min(28rem, calc(100vw - 2rem));
   display: flex;
