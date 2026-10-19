@@ -521,6 +521,44 @@ button.chip:disabled {
   font-size: 1rem;
   line-height: 1.5;
 }
+.composer {
+  min-height: 9rem;
+  padding: 0 0.25rem;
+  outline: none;
+  color: var(--ink);
+  font: inherit;
+  font-size: 1rem;
+  line-height: 1.6;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+.composer[data-empty]::before {
+  content: attr(data-placeholder);
+  color: var(--muted);
+  pointer-events: none;
+}
+/* A ticket inside the text: the same chip, sized to sit on the line. */
+.chip-inline {
+  vertical-align: baseline;
+  margin: 0 0.1em;
+  padding: 0.15rem 0.45rem;
+  font-size: 0.75rem;
+  border-color: var(--line);
+  user-select: none;
+}
+.chip-inline .chip-x {
+  margin-left: 0.1rem;
+  padding: 0 0.15rem;
+  border: 0;
+  background: transparent;
+  color: inherit;
+  font: inherit;
+  cursor: pointer;
+  opacity: 0.6;
+}
+.chip-inline .chip-x:hover {
+  opacity: 1;
+}
 .dropzone {
   border: 2px dashed var(--line);
   background: var(--surface-2);
@@ -1304,7 +1342,7 @@ button.chip:disabled {
     outline-offset: 2px;
   }
 }
-.textarea.is-flash {
+.composer-wrap.is-flash {
   animation: box-flash 700ms var(--ease) both;
 }
 @keyframes slide-in {

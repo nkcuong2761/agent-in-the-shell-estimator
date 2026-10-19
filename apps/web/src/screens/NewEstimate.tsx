@@ -1,7 +1,8 @@
 import { useEffect, useRef, useState, type DragEvent, type FormEvent } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { copy } from '../copy';
-import { extractJiraRefs, JiraPicker, parseJiraRef } from '../components/JiraPicker';
+import { BriefComposer, type BriefComposerHandle, type BriefValue } from '../components/BriefComposer';
+import { JiraPicker, parseJiraRef } from '../components/JiraPicker';
 import { Icon, Mark } from '../components/ui';
 import { useConversations } from '../state/conversations';
 import { addRealProject } from '../state/realProjects';
@@ -18,15 +19,18 @@ const EXAMPLES: { label: string; sampleId: string }[] = [
 export function NewEstimate() {
   const { mode, startSample, startBrief, readOnly } = useConversations();
   const navigate = useNavigate();
-  const [text, setText] = useState('');
+  // The brief box owns its text; tickets live inline in it as chips.
+  const [brief, setBrief] = useState<BriefValue>({ text: '', keys: [], onlyChips: false });
+  const text = brief.text;
+  const jira = brief.keys;
+  const composer = useRef<BriefComposerHandle>(null);
   const [files, setFiles] = useState<File[]>([]);
-  const [jira, setJira] = useState<string[]>([]);
   const [jiraOpen, setJiraOpen] = useState(false);
   const [busy, setBusy] = useState<string | null>(null);
   const [problem, setProblem] = useState<string | null>(null);
-  // Keys whose chips just appeared from a pasted link, plus a one-line note: both clear themselves.
-  const [fresh, setFresh] = useState<string[]>([]);
+  // A one-line note after a link turned into a chip; it clears itself.
   const [hint, setHint] = useState<string | null>(null);
+  const [flash, setFlash] = useState(false);
   const [over, setOver] = useState(false);
   const fileInput = useRef<HTMLInputElement>(null);
   const jiraWrap = useRef<HTMLDivElement>(null);
@@ -73,22 +77,18 @@ export function NewEstimate() {
     setOver(false);
     addFiles(e.dataTransfer.files);
   };
+  // Picked from the list: the chip goes into the text at the caret (or the end).
   const addJira = (key: string) => {
-    setJira((j) => [...new Set([...j, key])]);
+    composer.current?.insertChip(key);
     setProblem(null);
   };
-  // A Jira link pasted or typed into the brief becomes a ticket chip, the same as one picked from the list.
-  const onText = (value: string) => {
-    const { text: cleaned, keys } = extractJiraRefs(value);
-    setText(cleaned);
-    if (keys.length) {
-      setJira((j) => [...new Set([...j, ...keys])]);
-      setProblem(null);
-      setFresh(keys);
-      setHint(copy.jiraLinked(keys));
-      window.setTimeout(() => setFresh([]), 1000);
-      window.setTimeout(() => setHint(null), 3000);
-    }
+  // A pasted or typed link just turned into a chip inside the text: say so, and flash the box once.
+  const onLinked = (keys: string[]) => {
+    setProblem(null);
+    setHint(copy.jiraLinked(keys));
+    setFlash(true);
+    window.setTimeout(() => setFlash(false), 800);
+    window.setTimeout(() => setHint(null), 3000);
   };
 
   const submit = async (e: FormEvent) => {
@@ -96,7 +96,7 @@ export function NewEstimate() {
     if (!canSubmit) return;
     setProblem(null);
     // One ticket and nothing else: a finished ticket opens its results instead of a new estimate.
-    const only = jira.length === 1 && !text.trim() && files.length === 0 ? jira[0] : undefined;
+    const only = jira.length === 1 && brief.onlyChips && files.length === 0 ? jira[0] : undefined;
     if (only && jiraLive) {
       setBusy(copy.jiraReading(only));
       try {
@@ -140,26 +140,16 @@ export function NewEstimate() {
               onDragLeave={() => setOver(false)}
               onDrop={onDrop}
             >
-              <label htmlFor="brief" className="sr-only">
-                Brief
-              </label>
-              <textarea id="brief" className={`textarea px-1 min-h-[9rem] ${fresh.length ? 'is-flash' : ''}`} placeholder={copy.pastePlaceholder} value={text} onChange={(e) => onText(e.target.value)} />
-              {files.length || jira.length ? (
+              <div className={flash ? 'is-flash composer-wrap' : 'composer-wrap'}>
+                <BriefComposer ref={composer} placeholder={copy.pastePlaceholder} onChange={setBrief} onLinked={onLinked} />
+              </div>
+              {files.length ? (
                 <ul className="list-none m-0 p-0 flex flex-wrap gap-2">
                   {files.map((f, i) => (
                     <li key={`${f.name}-${i}`} className="chip chip-quiet">
                       <Icon name="file" size={16} />
                       {f.name}
                       <button type="button" className="btn btn-ghost btn-sm btn-icon-only -mr-1" aria-label={`Remove ${f.name}`} onClick={() => setFiles((fs) => fs.filter((_, j) => j !== i))}>
-                        <Icon name="close" size={12} />
-                      </button>
-                    </li>
-                  ))}
-                  {jira.map((k) => (
-                    <li key={k} className={`chip chip-quiet ${fresh.includes(k) ? 'chip-fresh' : ''}`}>
-                      <Icon name="jira" size={16} />
-                      {k}
-                      <button type="button" className="btn btn-ghost btn-sm btn-icon-only -mr-1" aria-label={`Remove ${k}`} onClick={() => setJira((j) => j.filter((x) => x !== k))}>
                         <Icon name="close" size={12} />
                       </button>
                     </li>

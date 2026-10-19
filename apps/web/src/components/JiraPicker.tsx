@@ -9,29 +9,6 @@ export function parseJiraRef(input: string): string | undefined {
   return input.toUpperCase().match(/\b([A-Z][A-Z0-9]+-\d+)\b/)?.[1];
 }
 
-/** A Jira issue link anywhere in a text: …/browse/KEY, …/issues/KEY or a ?selectedIssue=KEY query. */
-const JIRA_LINK = /https?:\/\/\S*?(?:\/browse\/|\/issues\/|[?&]selectedIssue=)([A-Za-z][A-Za-z0-9]+-\d+)\S*/g;
-
-/**
- * Pull Jira links out of pasted text: each becomes a ticket chip and the link itself leaves the text.
- * A text that is nothing but a bare key ("IDM-2123") counts too; a key mentioned inside a sentence stays text.
- */
-export function extractJiraRefs(text: string): { text: string; keys: string[] } {
-  const keys: string[] = [];
-  let out = text.replace(JIRA_LINK, (_m, key: string) => {
-    keys.push(key.toUpperCase());
-    return '';
-  });
-  const bare = out.trim().match(/^([A-Za-z][A-Za-z0-9]+-\d+)$/);
-  if (bare?.[1]) {
-    keys.push(bare[1].toUpperCase());
-    out = '';
-  }
-  // Tidy what the links left behind: doubled spaces and blank lines at the edges.
-  out = out.replace(/[ \t]{2,}/g, ' ').replace(/^\s*\n/, '').replace(/\n\s*$/, '');
-  return { text: keys.length ? out : text, keys: [...new Set(keys)] };
-}
-
 /** The list is fetched once per screen life; a later open shows it straight away. */
 let cached: JiraIssuesResponse | null = null;
 
