@@ -1,11 +1,11 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
-  "buildCommand": "npm run typecheck",
+  "buildCommand": "npm run typecheck && npm run bundle",
   "outputDirectory": "public",
   "functions": {
-    "api/index.ts": {
+    "api/index.js": {
       "maxDuration": 60,
-      "includeFiles": "../../{prompts,data/seed,data/demo-cache}/**"
+      "includeFiles": "prompts/**"
     }
   },
   "rewrites": [

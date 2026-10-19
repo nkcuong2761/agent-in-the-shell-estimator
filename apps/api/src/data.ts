@@ -88,6 +88,8 @@ function promptCandidates(name: PromptName): string[] {
   const here = dirname(fileURLToPath(import.meta.url));
   return [
     fileURLToPath(PROMPT_URLS[name]),
+    // The Vercel bundle (api/index.js) ships with a copy of prompts/ next to it, inside the function's root.
+    resolve(here, '..', 'prompts', file),
     join(process.cwd(), 'prompts', file),
     join(process.cwd(), '..', '..', 'prompts', file),
     resolve(here, '..', '..', '..', 'prompts', file),

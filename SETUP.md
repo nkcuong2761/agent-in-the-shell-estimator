@@ -52,8 +52,8 @@ Without it, lessons are stored in a JSON file. On Vercel that file is in `/tmp`,
 ## 5. Deploy the API to Vercel and connect the site
 
 1. Go to https://vercel.com/new and import this repository.
-2. Set **Root Directory** to `apps/api`, and enable **Include files outside the root directory in the Build Step**. The API imports `packages/*`, `prompts/` and `data/`.
-3. Set Framework Preset to **Other**. `apps/api/vercel.json` routes every path to `api/index.ts`.
+2. Set **Root Directory** to `apps/api` and Framework Preset to **Other** (ignore the "possible mismatch" warning).
+3. Under **Build and Output Settings**, set **Install Command** to `cd ../.. && npm ci` (npm workspaces install from the repo root). Leave the build command alone: `apps/api/vercel.json` runs the typecheck, then `scripts/bundle.mjs` bundles the API with esbuild into one function (`api/index.js`) with the workspace packages and data inlined and `prompts/` copied next to it. Every path is rewritten to that function.
 4. Under **Environment Variables**, add the variables from steps 2–4, plus:
    - `CORS_ORIGINS=https://<user>.github.io`
    - `PUBLIC_WEB_URL=https://<user>.github.io/agent-in-the-shell-estimator/`
@@ -62,13 +62,9 @@ Without it, lessons are stored in a JSON file. On Vercel that file is in `/tmp`,
 
 The site now shows **Live mode**. Uploading a brief, Jira sync, Push to Jira and live Ask turn on according to what `/health` reports.
 
-If the Vercel build fails on TypeScript imports from the workspace packages, bundle the function first:
+7. If `/health` redirects to a Vercel login instead of answering, turn off **Settings → Deployment Protection → Vercel Authentication** for Production; the GitHub Pages site calls the API without a Vercel session.
 
-```bash
-npx esbuild apps/api/api/index.ts --bundle --platform=node --format=esm --outfile=apps/api/dist/index.mjs
-```
-
-Then point `vercel.json` at the bundle.
+To try the exact function Vercel runs: `npm run bundle -w apps/api`, then import `apps/api/api/index.js` from a Node `http` server.
 
 ## Run everything locally
 
