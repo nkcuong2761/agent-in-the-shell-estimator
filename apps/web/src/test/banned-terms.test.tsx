@@ -173,6 +173,14 @@ describe('plain language on the main screens', () => {
       expect(screen.getByText('We would have said')).toBeTruthy();
       expect(screen.getAllByText(/No time was logged on this ticket/).length).toBeGreaterThan(0);
       expect(mainText()).toMatch(/This finished about 1 week later than the safe date/);
+      // No hours, no lesson: the page asks instead, and the chart gets a calendar-time bar for this ticket.
+      expect(screen.getByText('Roughly how many hours of work was it, all roles together?')).toBeTruthy();
+      expect(mainText()).toMatch(/its bar is calendar time only/);
+      expect(document.querySelectorAll('[role=img] a').length).toBe(0);
+      fireEvent.change(screen.getByPlaceholderText('e.g. 12'), { target: { value: '14' } });
+      fireEvent.click(screen.getByText('Save what happened'));
+      await screen.findByText(/This now counts as history/);
+      expect(historyFor().projects.some((p) => p.id === 'IDM-901')).toBe(true);
       expectNoBannedTerms();
     } finally {
       setRealProjects([]);

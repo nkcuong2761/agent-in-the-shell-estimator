@@ -299,6 +299,14 @@ export function createApp() {
   // Imported tickets from the store; no Jira call, so it answers even when Jira is not configured.
   app.get('/jira/imports', async (c) => c.json(RealProjectsResponse.parse({ projects: await getStore().listRealProjects() })));
 
+  // The web app writes back what the user told it about a ticket (hours it really took, why it differed, a lesson).
+  app.put('/jira/imports/:id', async (c) => {
+    const real = await jsonBody(c, RealProject);
+    if (real.project.id !== c.req.param('id')) throw new ApiError(400, 'id_mismatch', 'The project id in the URL and the body differ.');
+    await getStore().putRealProject(real);
+    return c.json(real);
+  });
+
   // Conversations, saved from the web app in live mode (the browser keeps its own copy too).
   app.get('/conversations', async (c) => c.json({ conversations: await getStore().listConversations() }));
   app.put('/conversations/:id', async (c) => {

@@ -68,15 +68,58 @@ const PROJECT_WORDS: Record<HistoryProject['projectType'], string> = {
 export interface Improvement {
   bars: { projectId: string; offPct: number; highlight: boolean }[];
   sentence: string;
+  /** How this project's bar was worked out, in words. */
+  detail?: string;
 }
 
-/** Backtest error per finished project, oldest first, with a sentence computed from the data. */
-export function toImprovement(points: readonly BacktestPoint[], projectId?: string): Improvement {
-  const bars = points.map((p) => ({ projectId: p.projectId, offPct: Math.round(p.calibratedMRE * 100), highlight: p.projectId === projectId }));
+/** How far a dates-only ticket was off, on calendar time: the gap between the weeks it took and the middle of what we said. */
+export function calendarOffPct(o: ProjectOutcome): number {
+  const mid = (o.said.low + o.said.high) / 2;
+  return Math.round((Math.abs(o.tookWeeks - mid) / Math.max(1, mid)) * 100);
+}
+
+/**
+ * Error per finished project, oldest first, with a sentence computed from the data. Hour-based projects come from
+ * the backtest; a dates-only ticket (no hours in Jira) gets a calendar-time bar at its place in time.
+ */
+export function toImprovement(points: readonly BacktestPoint[], current?: { project: HistoryProject; point: BacktestPoint; outcome: ProjectOutcome }): Improvement {
+  const bars = points.map((p) => ({ projectId: p.projectId, offPct: Math.round(p.calibratedMRE * 100), highlight: p.projectId === current?.project.id, endDate: '' }));
   const mean = (xs: number[]) => (xs.length ? Math.round(xs.reduce((a, b) => a + b, 0) / xs.length) : 0);
   const early = mean(bars.slice(0, 5).map((b) => b.offPct));
   const late = mean(bars.slice(-5).map((b) => b.offPct));
-  return { bars, sentence: copy.improvement(early, late) };
+  let detail: string | undefined;
+  if (current) {
+    const o = current.outcome;
+    const datesOnly = current.project.labels.includes('dates-only');
+    if (datesOnly) {
+      const offPct = calendarOffPct(o);
+      bars.push({ projectId: current.project.id, offPct, highlight: true, endDate: current.project.endDate });
+      detail = copy.barDetailDates(o.said.text, o.took, offPct);
+    } else {
+      const offPct = Math.round(current.point.calibratedMRE * 100);
+      detail = copy.barDetailHours(Math.round(current.point.calibratedP50), Math.round(current.point.actualH), offPct, o.said.text, o.took);
+    }
+  }
+  return { bars: bars.map(({ endDate: _e, ...b }) => b), sentence: copy.improvement(early, late), detail };
+}
+
+/** Questions to ask the user when a finished ticket cannot explain itself (no hours logged, nothing to compare). */
+export interface Clarify {
+  intro: string;
+  hoursQuestion: string;
+  causeQuestion: string;
+  noteQuestion: string;
+}
+
+export function toClarify(rp: RealProject, o: ProjectOutcome): Clarify {
+  const diff = o.tookWeeks - (o.said.low + o.said.high) / 2;
+  const direction = Math.abs(diff) < 1 ? 'about as long as' : diff < 0 ? 'less time than' : 'more time than';
+  return {
+    intro: copy.clarifyIntro(o.took, direction, o.said.text),
+    hoursQuestion: copy.clarifyHours,
+    causeQuestion: copy.clarifyCause,
+    noteQuestion: copy.clarifyNote,
+  };
 }
 
 export function finishedLine(project: HistoryProject): string {

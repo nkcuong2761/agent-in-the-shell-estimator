@@ -414,7 +414,14 @@ button.chip:disabled {
   padding: 0.35rem 0.5rem;
   border: 1px solid currentColor;
   color: var(--ink-2);
+  max-width: 100%;
   white-space: nowrap;
+}
+/* A tag that carries a sentence wraps inside its card instead of running out of it. */
+.tag-wrap {
+  white-space: normal;
+  line-height: 1.35;
+  text-align: left;
 }
 .tag-success {
   color: var(--success);

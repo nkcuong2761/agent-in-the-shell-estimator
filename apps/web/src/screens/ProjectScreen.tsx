@@ -2,7 +2,8 @@ import { Link, useParams } from 'react-router-dom';
 import { copy } from '../copy';
 import { Card, Icon, Label, Spinner, Tag } from '../components/ui';
 import { categoryLabel } from '../lib/categories';
-import { finishedLine, toHappened, toImprovement, toLesson, toRealFacts } from '../present';
+import { finishedLine, toClarify, toHappened, toImprovement, toLesson, toRealFacts } from '../present';
+import { ClarifyForm } from '../components/ClarifyForm';
 import { postmortemFor, useHistory, usePostmortems } from '../state/history';
 import { realProjects } from '../state/realProjects';
 
@@ -36,7 +37,7 @@ export function ProjectScreen() {
   // Without hours there are no per-item findings worth reading: the post-mortem's one-line summary is the story.
   const happened = datesOnly ? [pm?.summary ?? ''].filter(Boolean) : toHappened(pm);
   const lesson = datesOnly ? undefined : toLesson(pm, f.project);
-  const imp = toImprovement(history.points, id);
+  const imp = toImprovement(history.points, f);
   const o = f.outcome;
   const facts = real ? toRealFacts(real, f.point, o) : undefined;
   const scale = Math.max(o.tookWeeks, o.said.high) * 1.15;
@@ -162,10 +163,12 @@ export function ProjectScreen() {
               <p className="m-0 text-[15px] leading-relaxed">{lesson.text}</p>
               {lesson.addsRule ? (
                 <p className="m-0">
-                  <span className="tag tag-accent">{copy.ruleAdded}</span>
+                  <span className="tag tag-accent tag-wrap">{copy.ruleAdded}</span>
                 </p>
               ) : null}
             </>
+          ) : real && datesOnly ? (
+            <ClarifyForm real={real} clarify={toClarify(real, o)} />
           ) : (
             <p className="m-0 muted">No new lesson from this one.</p>
           )}
@@ -177,15 +180,12 @@ export function ProjectScreen() {
           <h2 className="h-card m-0">{copy.gettingBetter}</h2>
           <p className="m-0 mt-1 text-[15px] muted">{copy.gettingBetterSub}</p>
         </div>
-        <div className="flex items-end gap-[3px] h-36" role="img" aria-label={imp.sentence}>
+        <div className="flex items-end gap-[3px] h-36" role="img" aria-label={`${imp.sentence} ${imp.detail ?? ''}`.trim()}>
           {imp.bars.map((b) => (
-            <Link
+            <span
               key={b.projectId}
-              to={`/project/${b.projectId}`}
-              className="flex-1 transition-opacity hover:opacity-70"
+              className="flex-1 block"
               style={{ height: `${Math.max(3, (b.offPct / maxOff) * 100)}%`, background: b.highlight ? 'var(--accent)' : 'var(--surface-3)', border: '1px solid var(--line)', borderBottom: 0 }}
-              title={`${b.offPct}% off`}
-              aria-label={`${b.offPct}% off${b.highlight ? ` (${copy.thisProject.toLowerCase()})` : ''}`}
             />
           ))}
         </div>
@@ -197,6 +197,7 @@ export function ProjectScreen() {
           </span>
           <span>Newest</span>
         </div>
+        {imp.detail ? <p className="m-0 text-[15px] leading-relaxed ink-2">{imp.detail}</p> : null}
         <p className="m-0 text-[16px] font-medium">{imp.sentence}</p>
       </Card>
     </div>

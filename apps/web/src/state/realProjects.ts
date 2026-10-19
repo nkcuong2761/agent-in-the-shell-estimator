@@ -68,6 +68,12 @@ export function syncRealProjects(): Promise<void> {
   return inflight;
 }
 
+/** What the user told us about a ticket: kept here and, when an API answers, in its store too. */
+export function updateRealProject(p: RealProject) {
+  addRealProject(p);
+  void api.saveRealProject(p).catch(() => undefined);
+}
+
 /** For tests and the demo reset. */
 export function setRealProjects(next: RealProject[]) {
   commit(next);

@@ -86,6 +86,9 @@ export const api = {
   jiraImports(): Promise<RealProjectsResponse> {
     return call('/jira/imports');
   },
+  saveRealProject(p: RealProject): Promise<RealProject> {
+    return call(`/jira/imports/${encodeURIComponent(p.project.id)}`, { method: 'PUT', body: JSON.stringify(p) });
+  },
   scope(brief: BriefPack): Promise<ScopeResponse> {
     return call('/scope', { method: 'POST', body: JSON.stringify({ brief }) });
   },

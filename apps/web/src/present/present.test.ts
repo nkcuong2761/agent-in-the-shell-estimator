@@ -133,9 +133,12 @@ describe('finished projects', () => {
     expect(o.sentence).toMatch(/^We said \d+(–\d+)? weeks?\. It (took \d+ weeks?|finished on time)\.$/);
   });
   it('improvement sentence is computed from the backtest', () => {
-    const imp = toImprovement(r.points, r.points[3]!.projectId);
+    const pt = r.points[3]!;
+    const project = seed.projects.find((x) => x.id === pt.projectId)!;
+    const imp = toImprovement(r.points, { project, point: pt, outcome: toOutcome(project, pt) });
     expect(imp.bars).toHaveLength(r.points.length);
     expect(imp.bars.filter((b) => b.highlight)).toHaveLength(1);
+    expect(imp.detail).toMatch(/^This project: we would have said \d+ hours and it took \d+, \d+% off\./);
     expect(imp.sentence).toMatch(/^Early estimates were off by about \d+%\. The last five were off by about \d+%\.$/);
   });
 });
