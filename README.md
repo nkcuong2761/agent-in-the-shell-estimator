@@ -47,7 +47,7 @@ Each estimate is a document; a small assistant in the corner answers edge cases 
 | `#/project/:id` | A finished project: estimate vs actual, what happened, what I learned, accuracy over time |
 | `#/about` | Help: architecture, methods with citations, data disclaimer, Manager/Overseer view |
 
-The look is dark Brutalism: Syne and Space Grotesk type, JetBrains Mono labels, 2px rules with hard offset shadows, one acid accent, film grain and an exposed grid. A light "paper" variant and an auto theme are one click away in the sidebar; every text colour meets WCAG AA.
+The look is dark Brutalism: Bricolage Grotesque headings and numerals, Space Grotesk text, JetBrains Mono labels, 2px rules with hard offset shadows, one acid accent, film grain and an exposed grid. A light "paper" variant and an auto theme are one click away in the sidebar; every text colour meets WCAG AA.
 
 ## Architecture
 

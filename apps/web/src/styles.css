@@ -96,10 +96,10 @@
 }
 
 :root {
-  --font-display: 'Syne', 'Space Grotesk', system-ui, sans-serif;
-  /* Headings that carry real words (page titles, section titles): a narrower grotesque reads far better than
-     Syne's extra-wide 800 at long titles. Syne stays for the hero line and the big numerals. */
-  --font-heading: 'Archivo', 'Space Grotesk', system-ui, sans-serif;
+  /* One display face for every heading and numeral: Bricolage Grotesque, a variable grotesque with ink traps
+     and a width axis. Narrow (wdth 85) and heavy for the hero and the big numerals, a little wider for page and
+     section titles, so long titles stay legible without losing the brutalist weight. */
+  --font-display: 'Bricolage Grotesque', 'Space Grotesk', system-ui, sans-serif;
   --font-sans: 'Space Grotesk', ui-sans-serif, system-ui, sans-serif;
   --font-mono: 'JetBrains Mono', ui-monospace, 'SFMono-Regular', Menlo, monospace;
   --ease: cubic-bezier(0.2, 0.9, 0.2, 1);
@@ -150,11 +150,11 @@ h1,
 h2,
 h3,
 h4 {
-  font-family: var(--font-heading);
+  font-family: var(--font-display);
   font-weight: 700;
-  font-stretch: 88%;
-  letter-spacing: -0.005em;
-  line-height: 1.1;
+  font-stretch: 92%;
+  letter-spacing: -0.01em;
+  line-height: 1.08;
   text-wrap: balance;
 }
 a {
@@ -847,41 +847,43 @@ button.chip:disabled {
    ------------------------------------------------------------------ */
 .h-hero {
   font-family: var(--font-display);
-  font-size: clamp(2.4rem, 5.2vw, 4rem);
-  line-height: 0.98;
+  font-size: clamp(2.5rem, 5.4vw, 4.25rem);
+  line-height: 0.96;
   letter-spacing: -0.03em;
   font-weight: 800;
-  font-stretch: 100%;
+  font-stretch: 85%;
 }
 .h-page {
-  font-family: var(--font-heading);
-  font-size: clamp(1.7rem, 3.4vw, 2.5rem);
-  line-height: 1.08;
-  letter-spacing: -0.01em;
-  font-weight: 700;
-  font-stretch: 88%;
+  font-family: var(--font-display);
+  font-size: clamp(1.75rem, 3.4vw, 2.5rem);
+  line-height: 1.04;
+  letter-spacing: -0.02em;
+  font-weight: 800;
+  font-stretch: 90%;
 }
 .h-card {
-  font-family: var(--font-heading);
+  font-family: var(--font-display);
   font-size: 1.125rem;
   font-weight: 700;
-  letter-spacing: 0;
-  font-stretch: 100%;
+  letter-spacing: -0.005em;
+  font-stretch: 96%;
 }
 .big-number {
   font-family: var(--font-display);
-  font-size: clamp(2.8rem, 6vw, 4.25rem);
+  font-size: clamp(3rem, 6.4vw, 4.5rem);
   line-height: 0.95;
-  letter-spacing: -0.04em;
+  letter-spacing: -0.03em;
   font-weight: 800;
+  font-stretch: 85%;
   font-variant-numeric: tabular-nums;
 }
 .mid-number {
   font-family: var(--font-display);
-  font-size: clamp(1.5rem, 2.6vw, 2rem);
+  font-size: clamp(1.6rem, 2.8vw, 2.125rem);
   line-height: 1;
-  letter-spacing: -0.03em;
+  letter-spacing: -0.02em;
   font-weight: 800;
+  font-stretch: 88%;
   font-variant-numeric: tabular-nums;
 }
 .vrule {
