@@ -165,7 +165,7 @@ The product is **a document, not a chat.** Each estimate is a page with a fixed 
 | `#/estimate/:id` | The estimate document with the floating assistant. |
 | `#/project/:id` | A finished project (how the estimate did, what happened, what I learned, accuracy trend), with a category tag. Seed projects and imported real Jira tickets (label `real`: fixed numbers, "Done · 100%", Jira link, a verdict on sooner/later). |
 | `#/estimates` | Alias of Home; `?tab=open|finished` pre-selects a tab. |
-| `#/about` | Help: methods, architecture, data disclaimer, Manager/Overseer switch. |
+| `#/about` | Help: methods, architecture, data disclaimer, Manager/Overseer toggle (a segmented control; the view is per visit and always starts as Manager). |
 
 - **Sidebar (all screens):** logotype → Home, **Home**, **New estimate**, a collapsible **Ongoing** list of every active estimate (status not `error`, newest first, title plus a date-based progress line), then **Help** and the theme row. No finished projects, no "Sample data" tag, no big button.
 - **Home table:** logotype hero, subtitle (the sidebar's New estimate is the one primary action); three tiles (Open estimates, Finished projects, Delivered on time "8 of 10"); tabs All / Estimates / Finished with counts, category `<select>`, search, Export CSV (includes Category); columns Name (+ "Updated <date>"), Category, Status (Estimated / In progress / Needs another try / Finished), Due date, Effort · time (`365 h · 16,5 weeks`; the promised range for finished), Plan / result (`Plan: Wed 17 Feb`; `On time (Thu 16 Jul)` / `2 weeks late (Mon 27 Apr)`). Rows open on click; estimates have inline Rename and Delete (confirm).

@@ -197,20 +197,23 @@ export function About() {
       <div className="grid gap-6 md:grid-cols-2">
         <Box title="Manager and Overseer views" labelledBy="views-title">
           <div className="flex flex-col gap-3">
+            <div className="tabs tabs-fill" role="radiogroup" aria-label="View">
+              <button type="button" role="radio" aria-checked={viewMode === 'manager'} aria-selected={viewMode === 'manager'} onClick={() => setViewMode('manager')}>
+                Manager
+              </button>
+              <button type="button" role="radio" aria-checked={viewMode === 'overseer'} aria-selected={viewMode === 'overseer'} onClick={() => setViewMode('overseer')}>
+                Overseer
+              </button>
+            </div>
+            <p className="m-0 text-[14px] muted" role="status">
+              {viewMode === 'manager' ? 'You are in the Manager view: you can change anything on an estimate.' : 'You are in the Overseer view: everything is read only until you switch back. It resets to Manager when you reload.'}
+            </p>
             <p className="m-0">
-              <span className="font-semibold">Manager</span> is for the person preparing the estimate: answer questions, change the team and working hours, add risks, trim scope and push to Jira.
+              <span className="font-semibold">Manager</span> is for the person preparing the estimate: answer questions, change the team, AI tools and working hours, pick opportunities and risks, and trim scope.
             </p>
             <p className="m-0">
               <span className="font-semibold">Overseer</span> is for a reviewer or client lead: the same numbers and explanations, read only, so nothing changes by accident in a review.
             </p>
-            <div className="flex gap-2">
-              <button className="btn btn-sm" aria-pressed={viewMode === 'manager'} onClick={() => setViewMode('manager')}>
-                Use Manager view
-              </button>
-              <button className="btn btn-sm" aria-pressed={viewMode === 'overseer'} onClick={() => setViewMode('overseer')}>
-                Use Overseer view
-              </button>
-            </div>
           </div>
         </Box>
         <Box title="About the data" labelledBy="data-title">

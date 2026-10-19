@@ -168,7 +168,8 @@ const Ctx = createContext<Store | null>(null);
 export function ConversationsProvider({ children }: { children: ReactNode }) {
   const [mode, setMode] = useState<Mode>({ kind: 'checking' });
   const [conversations, setConversations] = useState<Conversation[]>(loadInitial);
-  const [readOnly, setReadOnlyState] = useState<boolean>(() => readStore<string>('sw-view', 'manager') === 'overseer');
+  // The view is for the current visit only: every load starts in the Manager view.
+  const [readOnly, setReadOnlyState] = useState<boolean>(false);
   const [busyIds, setBusyIds] = useState<Set<string>>(new Set());
   const ref = useRef(conversations);
   ref.current = conversations;
@@ -216,10 +217,7 @@ export function ConversationsProvider({ children }: { children: ReactNode }) {
     return () => window.clearTimeout(t);
   }, [conversations, mode]);
 
-  const setReadOnly = useCallback((v: boolean) => {
-    setReadOnlyState(v);
-    writeStore('sw-view', v ? 'overseer' : 'manager');
-  }, []);
+  const setReadOnly = useCallback((v: boolean) => setReadOnlyState(v), []);
 
   const patch = useCallback((id: string, fn: (c: Conversation) => Conversation) => {
     setConversations((cs) => cs.map((c) => (c.id === id ? { ...fn(c), updatedAt: nowIso() } : c)));
