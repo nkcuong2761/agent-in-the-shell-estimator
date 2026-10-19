@@ -692,6 +692,43 @@ button.chip:disabled {
   padding-bottom: 0.25rem;
 }
 
+/* Attach Jira popover: the same brick as the calendar, with a listbox of ongoing tickets */
+.jira-picker {
+  position: absolute;
+  z-index: 70;
+  top: calc(100% + 6px);
+  left: 0;
+  width: min(28rem, calc(100vw - 2rem));
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  padding: 0.75rem;
+  background: var(--surface);
+  border: 2px solid var(--rule);
+  box-shadow: var(--shadow-hard);
+}
+.jira-list {
+  max-height: 16rem;
+  overflow-y: auto;
+  border: 1px solid var(--line);
+}
+.jira-option {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 0.6rem;
+  cursor: pointer;
+  color: var(--ink);
+  border-bottom: 1px solid var(--line);
+}
+.jira-option:last-child {
+  border-bottom: 0;
+}
+.jira-option.is-active {
+  background: var(--surface-2);
+  box-shadow: inset 3px 0 0 var(--accent);
+}
+
 /* ------------------------------------------------------------------
    Shell: sidebar on the page background + main column
    ------------------------------------------------------------------ */

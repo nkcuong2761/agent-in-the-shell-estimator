@@ -3,7 +3,7 @@ import { readFileSync } from 'node:fs';
 import { join } from 'node:path';
 import type { BriefPack, HistoryItem, HistoryProject, ProjectType } from '@scopewise/shared';
 import { ScopeResult } from '@scopewise/shared';
-import { detectProjectType, offlineScope } from '../src';
+import { detectProjectType, isSmallFix, offlineScope } from '../src';
 
 const data = (p: string) => JSON.parse(readFileSync(join(__dirname, '../../../data', p), 'utf8')) as unknown;
 const samples = data('demo-cache/samples.json') as { meta: { id: string; projectType: ProjectType; plantedGaps: { id: string; keywords: string[] }[] }; brief: BriefPack }[];
@@ -39,6 +39,19 @@ describe('offline scope (rule-based reader)', () => {
       expect(scope.clientEmailDraft).toContain('{{questions}}');
       expect(scope.title.length).toBeGreaterThan(3);
     }
+  });
+
+  it('reads a bug report as a small fix: four items, one question, a day or two of work', () => {
+    const text = '# IDM-2194: LP Edit Profile - Newly added contact disappears after clicking Save\n\nSteps: add a contact on LP Profiles > Contacts > Details, click Save. Expected: the contact stays. Actual: it disappears until the page is reloaded.';
+    const brief: BriefPack = { id: 'b', title: 'New brief', sources: [{ kind: 'jira', name: 'jira-IDM-2194.md', text }] };
+    expect(isSmallFix(text)).toBe(true);
+    const scope = offlineScope(brief);
+    expect(scope.size).toBe('S');
+    expect(scope.items.length).toBe(4);
+    expect(scope.items.reduce((s, i) => s + i.m, 0)).toBeLessThan(20);
+    expect(scope.missingInfo.length).toBeLessThanOrEqual(1);
+    expect(scope.title).toBe('LP Edit Profile - Newly added contact disappears after clicking Save');
+    for (const s of samples) expect(isSmallFix(s.brief.sources.map((x) => x.text).join('\n')), s.meta.id).toBe(false);
   });
 
   it('is deterministic and falls back to new-feature for a vague brief', () => {

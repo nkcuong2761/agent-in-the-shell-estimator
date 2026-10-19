@@ -7,7 +7,8 @@
     "dev": "tsx watch src/server.ts",
     "start": "tsx src/server.ts",
     "build": "tsc -p . --noEmit",
-    "typecheck": "tsc -p . --noEmit"
+    "typecheck": "tsc -p . --noEmit",
+    "test": "vitest run"
   },
   "dependencies": {
     "@anthropic-ai/sdk": "^0.65.0",

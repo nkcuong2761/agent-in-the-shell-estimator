@@ -1,7 +1,6 @@
 import { useMemo, useState, type ReactNode } from 'react';
 import type { BufferRisk, Conversation, Estimate, EstimateSpec, Role, ScopeResult } from '@scopewise/shared';
 import { capitalise, copy, roleWord } from '../copy';
-import { seed } from '../lib/data';
 import { useStore } from '../lib/useStore';
 import { bufferAdjustment, historyAdjustment, leaveAdjustment, meetsDue, toForecast, type Adjustment } from '../present/forecast';
 import { fmtNum, formatDate, halfWeeks, rolePhrase, sd } from '../present/format';
@@ -9,7 +8,7 @@ import { howSure } from '../present/headline';
 import { toWhy } from '../present/why';
 import { useConversations } from '../state/conversations';
 import { ROLE_ORDER, neededRoles, observedBias, squadOf, squadStatsOf, type Plan } from '../state/engine';
-import { usePostmortems } from '../state/history';
+import { allPostmortems, historyFor, usePostmortems } from '../state/history';
 import { CY, FORECAST_KEY, bufferExtraHours, type ForecastFlags } from '../state/policy';
 import { DefaultHoursModal, DefaultTeamModal } from './DefaultsModals';
 import { useMethods } from './Explain';
@@ -377,7 +376,7 @@ function ScheduleSection({ conv, scope, spec, plan }: Props) {
     const out: Adjustment[] = [];
     const leave = leaveAdjustment(squadOf(conv)?.plannedLeave ?? [], spec.team, spec.startDate, plan.planDays);
     if (leave) out.push(leave);
-    const hist = historyAdjustment(pms, seed.projects, scope.projectType, CY * stats.focusFactor);
+    const hist = historyAdjustment(pms && { ...pms, results: allPostmortems(pms) }, historyFor().projects, scope.projectType, CY * stats.focusFactor);
     if (hist) out.push(hist);
     const buf = bufferAdjustment(plan.planDays, plan.f, spec.risks, spec.bufferPct);
     if (buf) out.push(buf);

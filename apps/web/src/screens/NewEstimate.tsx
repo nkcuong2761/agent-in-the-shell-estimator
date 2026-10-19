@@ -1,19 +1,19 @@
-import { useRef, useState, type DragEvent, type FormEvent } from 'react';
+import { useEffect, useRef, useState, type DragEvent, type FormEvent } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { copy } from '../copy';
+import { JiraPicker, parseJiraRef } from '../components/JiraPicker';
 import { Icon, Mark } from '../components/ui';
 import { useConversations } from '../state/conversations';
+import { addRealProject } from '../state/realProjects';
+import { api } from '../lib/api';
+
+export { parseJiraRef };
 
 const EXAMPLES: { label: string; sampleId: string }[] = [
   { label: 'Put a paper form online', sampleId: 'subscription-form' },
   { label: 'Remind investors to sign', sampleId: 'investor-reminders' },
   { label: 'Sync with a fund administrator', sampleId: 'fund-admin-sync' },
 ];
-
-/** An issue key on its own ("SUB-142") or inside a link ("https://x.atlassian.net/browse/SUB-142"). */
-export function parseJiraRef(input: string): string | undefined {
-  return input.toUpperCase().match(/\b([A-Z][A-Z0-9]+-\d+)\b/)?.[1];
-}
 
 export function NewEstimate() {
   const { mode, startSample, startBrief, readOnly } = useConversations();
@@ -22,27 +22,46 @@ export function NewEstimate() {
   const [files, setFiles] = useState<File[]>([]);
   const [jira, setJira] = useState<string[]>([]);
   const [jiraOpen, setJiraOpen] = useState(false);
-  const [jiraInput, setJiraInput] = useState('');
-  const [jiraBad, setJiraBad] = useState(false);
+  const [busy, setBusy] = useState<string | null>(null);
+  const [problem, setProblem] = useState<string | null>(null);
   const [over, setOver] = useState(false);
   const fileInput = useRef<HTMLInputElement>(null);
+  const jiraWrap = useRef<HTMLDivElement>(null);
   const live = mode.kind === 'live';
   const jiraLive = live && mode.health.features.jira;
   const hasInput = text.trim().length > 0 || files.length > 0 || jira.length > 0;
   // Pasted text is read in the browser when there is no API. Files and Jira tickets need the API (and Jira set up).
   const needsApi = files.length > 0 || jira.length > 0;
-  const canSubmit = hasInput && !readOnly && (live ? jira.length === 0 || jiraLive : !needsApi);
-  const note = !hasInput
-    ? ''
-    : !live && needsApi
-      ? copy.demoNeedsApi
-      : live && jira.length > 0 && !jiraLive
-        ? copy.liveNoJira
-        : live && !mode.health.features.claude
-          ? copy.liveNoClaude
-          : !live
-            ? copy.demoOffline
-            : '';
+  const canSubmit = hasInput && !readOnly && !busy && (live ? jira.length === 0 || jiraLive : !needsApi);
+  const note =
+    problem ??
+    busy ??
+    (!hasInput
+      ? ''
+      : !live && needsApi
+        ? copy.demoNeedsApi
+        : live && jira.length > 0 && !jiraLive
+          ? copy.liveNoJira
+          : live && !mode.health.features.claude
+            ? copy.liveNoClaude
+            : !live
+              ? copy.demoOffline
+              : '');
+
+  // The picker closes on Escape and on a pointer down outside it (the same pattern as the date field).
+  useEffect(() => {
+    if (!jiraOpen) return;
+    const onKey = (e: KeyboardEvent) => e.key === 'Escape' && setJiraOpen(false);
+    const onDown = (e: PointerEvent) => {
+      if (!jiraWrap.current?.contains(e.target as Node)) setJiraOpen(false);
+    };
+    window.addEventListener('keydown', onKey);
+    window.addEventListener('pointerdown', onDown);
+    return () => {
+      window.removeEventListener('keydown', onKey);
+      window.removeEventListener('pointerdown', onDown);
+    };
+  }, [jiraOpen]);
 
   const addFiles = (list: FileList | null) => setFiles((f) => [...f, ...Array.from(list ?? [])].slice(0, 10));
   const onDrop = (e: DragEvent) => {
@@ -50,22 +69,37 @@ export function NewEstimate() {
     setOver(false);
     addFiles(e.dataTransfer.files);
   };
-  const submit = (e: FormEvent) => {
+  const addJira = (key: string) => {
+    setJira((j) => [...new Set([...j, key])]);
+    setProblem(null);
+  };
+
+  const submit = async (e: FormEvent) => {
     e.preventDefault();
     if (!canSubmit) return;
+    setProblem(null);
+    // One ticket and nothing else: a finished ticket opens its results instead of a new estimate.
+    const only = jira.length === 1 && !text.trim() && files.length === 0 ? jira[0] : undefined;
+    if (only && jiraLive) {
+      setBusy(copy.jiraReading(only));
+      try {
+        const issue = await api.jiraIssue(only);
+        if (issue.statusCategory === 'done') {
+          setBusy(copy.jiraImporting(only));
+          const imported = await api.jiraImport(only);
+          addRealProject(imported);
+          navigate(`/project/${encodeURIComponent(imported.project.id)}`);
+          return;
+        }
+      } catch (err) {
+        setProblem(copy.jiraImportFailed(err instanceof Error ? err.message : 'unknown error'));
+        setBusy(null);
+        return;
+      }
+      setBusy(null);
+    }
     const id = startBrief({ text, files, jiraKeys: jira });
     navigate(`/estimate/${id}`);
-  };
-  const addJira = () => {
-    const key = parseJiraRef(jiraInput);
-    if (!key) {
-      setJiraBad(jiraInput.trim().length > 0);
-      return;
-    }
-    setJira((j) => [...new Set([...j, key])]);
-    setJiraInput('');
-    setJiraBad(false);
-    setJiraOpen(false);
   };
 
   return (
@@ -77,7 +111,8 @@ export function NewEstimate() {
           <p className="m-0 text-lg leading-relaxed ink-2 measure">{copy.askSub}</p>
         </div>
 
-        <form onSubmit={submit} className="enter" style={{ ['--i' as string]: 1 }}>
+        {/* While the picker is open the form sits above the example chips (each `.enter` block is its own stacking context). */}
+        <form onSubmit={(e) => void submit(e)} className={`enter relative ${jiraOpen ? 'z-30' : ''}`} style={{ ['--i' as string]: 1 }}>
           <div className="brick">
             <div
               className={`p-3 sm:p-4 flex flex-col gap-3 ${over ? 'dropzone is-over' : ''}`}
@@ -118,48 +153,20 @@ export function NewEstimate() {
                   ))}
                 </ul>
               ) : null}
-              {jiraOpen ? (
-                <div className="flex flex-col gap-1">
-                  <div className="flex gap-2">
-                    <label htmlFor="jira" className="sr-only">
-                      {copy.jiraPlaceholder}
-                    </label>
-                    <input
-                      id="jira"
-                      className="input flex-1"
-                      placeholder={copy.jiraPlaceholder}
-                      value={jiraInput}
-                      aria-invalid={jiraBad || undefined}
-                      aria-describedby={jiraBad ? 'jira-error' : undefined}
-                      onChange={(e) => {
-                        setJiraInput(e.target.value);
-                        setJiraBad(false);
-                      }}
-                      onKeyDown={(e) => e.key === 'Enter' && (e.preventDefault(), addJira())}
-                      autoFocus
-                    />
-                    <button type="button" className="btn btn-sm" onClick={addJira}>
-                      {copy.jiraAdd}
-                    </button>
-                  </div>
-                  {jiraBad ? (
-                    <p id="jira-error" className="m-0 text-[13px] danger" role="alert">
-                      {copy.jiraNotAKey}
-                    </p>
-                  ) : null}
-                </div>
-              ) : null}
               <div className="flex flex-wrap items-center gap-2">
                 <input ref={fileInput} type="file" multiple accept=".md,.txt,.eml,.pdf,text/plain,application/pdf" className="sr-only" onChange={(e) => addFiles(e.target.files)} tabIndex={-1} />
                 <button type="button" className="btn btn-ghost btn-sm" onClick={() => fileInput.current?.click()}>
                   <Icon name="clip" />
                   {copy.attach}
                 </button>
-                <button type="button" className="btn btn-ghost btn-sm" aria-expanded={jiraOpen} onClick={() => setJiraOpen((o) => !o)}>
-                  <Icon name="jira" />
-                  {copy.addJira}
-                </button>
-                <button type="submit" className="btn btn-primary ml-auto" disabled={!canSubmit}>
+                <div ref={jiraWrap} className="relative">
+                  <button type="button" className="btn btn-ghost btn-sm" aria-haspopup="dialog" aria-expanded={jiraOpen} onClick={() => setJiraOpen((o) => !o)}>
+                    <Icon name="jira" />
+                    {copy.addJira}
+                  </button>
+                  {jiraOpen ? <JiraPicker availability={jiraLive ? 'ready' : live ? 'no-jira' : 'no-api'} onPick={addJira} onClose={() => setJiraOpen(false)} /> : null}
+                </div>
+                <button type="submit" className="btn btn-primary ml-auto" disabled={!canSubmit} aria-busy={busy ? true : undefined}>
                   {copy.estimateButton}
                   <span className="btn-icon">
                     <Icon name="arrow" size={16} />
@@ -169,7 +176,7 @@ export function NewEstimate() {
             </div>
           </div>
           {note ? (
-            <p className="m-0 mt-3 text-[15px] ink-2" role="status">
+            <p className={`m-0 mt-3 text-[15px] ${problem ? 'danger' : 'ink-2'}`} role="status">
               {note}
             </p>
           ) : null}

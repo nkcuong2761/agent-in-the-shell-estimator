@@ -9,6 +9,7 @@ import { chanceWords, formatDate, formatDuration, formatWeeks, teamPhrase } from
 import { toComparison } from '../present/comparison';
 import { parseDate, parseIntent, type Intent } from '../present/intent';
 import { defaultTeam, estimateFor, makeVersion, panelInBrowser, scopeInBrowser, scopeOf, versionEstimate } from './engine';
+import { syncRealProjects } from './realProjects';
 
 const STORE_KEY = 'scopewise.conversations.v1';
 const STEP_MS = 600;
@@ -182,7 +183,11 @@ export function ConversationsProvider({ children }: { children: ReactNode }) {
     const check = () => {
       if (Date.now() - last < 5000) return;
       last = Date.now();
-      detectMode().then((m) => alive && setMode(m));
+      detectMode().then((m) => {
+        if (!alive) return;
+        setMode(m);
+        if (m.kind === 'live') void syncRealProjects();
+      });
     };
     check();
     const onVisible = () => document.visibilityState === 'visible' && check();

@@ -8,9 +8,19 @@
  * `start:`/`end:` (epics) and `created:`/`resolved:` (items) date labels; reads prefer them when present.
  */
 import { z } from 'zod';
-import type { HistoryItem, HistoryProject, JiraPushRequest, JiraPushResponse, Squad, Worklog } from '@scopewise/shared';
+import type {
+  HistoryItem,
+  HistoryProject,
+  JiraIssueDetail,
+  JiraIssuesResponse,
+  JiraPushRequest,
+  JiraPushResponse,
+  JiraStatusCategory,
+  Squad,
+  Worklog,
+} from '@scopewise/shared';
 import { Category, Complexity, PHASE_TEMPLATES, ProjectType, Size } from '@scopewise/shared';
-import { worklogsFromTimesheet } from '@scopewise/engine';
+import { detectProjectType, worklogsFromTimesheet } from '@scopewise/engine';
 import type { JiraConfig } from './env';
 import { ApiError } from './errors';
 import type { JiraCache } from './store';
@@ -133,7 +143,7 @@ const IssueFields = z
     resolutiondate: z.string().nullish(),
     parent: z.object({ key: z.string() }).nullish(),
     issuetype: z.object({ name: z.string(), hierarchyLevel: z.number().optional(), subtask: z.boolean().optional() }).nullish(),
-    status: z.object({ statusCategory: z.object({ key: z.string() }).nullish() }).nullish(),
+    status: z.object({ name: z.string().optional(), statusCategory: z.object({ key: z.string() }).nullish() }).nullish(),
     worklog: z
       .object({
         total: z.number().optional(),
@@ -264,6 +274,69 @@ function complexityFromHours(h: number): z.infer<typeof Complexity> {
   return h < 12 ? 'S' : h < 28 ? 'M' : 'L';
 }
 
+/** The slice of the client that the read functions use, so tests can pass a fake. */
+export type IssueReader = Pick<JiraClient, 'request' | 'search' | 'fields' | 'cfg'>;
+
+/** An epic (or any issue standing for a whole project) → HistoryProject, with hour totals at 0. Pure. */
+export function projectFromIssue(issue: JiraIssue, opts: { projectType: z.infer<typeof ProjectType>; squad: string }): HistoryProject {
+  const labels = issue.fields.labels ?? [];
+  const size = Size.safeParse(labelValue(labels, 'size'));
+  const clientSlug = labelValue(labels, 'client');
+  const name = issue.fields.summary ?? issue.key;
+  const done = issue.fields.status?.statusCategory?.key === 'done' || labels.includes('state:closed');
+  return {
+    id: labelValue(labels, 'seed') ?? issue.key,
+    seedId: labelValue(labels, 'seed') ?? issue.key,
+    name,
+    client: clientSlug ? titleCase(clientSlug) : (name.split(':')[0] ?? name),
+    projectType: opts.projectType,
+    size: size.success ? size.data : 'M',
+    squad: opts.squad,
+    startDate: labelValue(labels, 'start') ?? day(issue.fields.created) ?? new Date().toISOString().slice(0, 10),
+    endDate: labelValue(labels, 'end') ?? day(issue.fields.resolutiondate) ?? '',
+    status: done ? 'closed' : 'open',
+    estimateH: 0,
+    actualH: 0,
+    labels,
+    jiraKey: issue.key,
+  };
+}
+
+/** The phase an item lands in: its `phase:` label if the template has it, else the first engineer phase, else the first phase. */
+function phaseForLabel(projectType: z.infer<typeof ProjectType>, phaseLabel: string | undefined) {
+  const template = PHASE_TEMPLATES[projectType];
+  const phase = template.find((p) => p.id === phaseLabel) ?? template.find((p) => p.role === 'engineer') ?? template[0];
+  if (!phase) throw new ApiError(500, 'no_phase_template', `No phase template for ${projectType}.`);
+  return phase;
+}
+
+/** A child issue → HistoryItem of `project` (hours in Jira seconds → h, 1 decimal). Pure; does not touch the project's totals. */
+export function itemFromIssue(issue: JiraIssue, project: HistoryProject): HistoryItem {
+  const labels = issue.fields.labels ?? [];
+  const phase = phaseForLabel(project.projectType, labelValue(labels, 'phase'));
+  const cat = Category.safeParse(labelValue(labels, 'cat'));
+  const est = (issue.fields.timeoriginalestimate ?? 0) / H;
+  const spent = (issue.fields.timespent ?? 0) / H;
+  const cx = Complexity.safeParse(labelValue(labels, 'cx'));
+  return {
+    id: labelValue(labels, 'seed') ?? issue.key,
+    seedId: labelValue(labels, 'seed') ?? issue.key,
+    projectId: project.id,
+    phaseId: phase.id,
+    title: issue.fields.summary ?? issue.key,
+    category: cat.success ? cat.data : 'backend',
+    complexity: cx.success ? cx.data : complexityFromHours(est),
+    role: phase.role,
+    originalEstimateH: r1(est),
+    timeSpentH: r1(spent),
+    labels,
+    addedAfterKickoff: labels.includes('added-after-kickoff'),
+    created: labelValue(labels, 'created') ?? day(issue.fields.created) ?? project.startDate,
+    resolved: labelValue(labels, 'resolved') ?? day(issue.fields.resolutiondate),
+    jiraKey: issue.key,
+  };
+}
+
 /** Read epics + child issues + worklogs from the configured project and map them to history shapes. */
 export async function readHistory(client: JiraClient, squads: readonly Squad[]): Promise<JiraCache> {
   const warnings: string[] = [];
@@ -285,26 +358,7 @@ export async function readHistory(client: JiraClient, squads: readonly Squad[]):
       warnings.push(`${e.key}: skipped (no valid type: label)`);
       continue;
     }
-    const size = Size.safeParse(labelValue(labels, 'size'));
-    const clientSlug = labelValue(labels, 'client');
-    const name = e.fields.summary ?? e.key;
-    const done = e.fields.status?.statusCategory?.key === 'done' || labels.includes('state:closed');
-    const p: HistoryProject = {
-      id: labelValue(labels, 'seed') ?? e.key,
-      seedId: labelValue(labels, 'seed') ?? e.key,
-      name,
-      client: clientSlug ? titleCase(clientSlug) : (name.split(':')[0] ?? name),
-      projectType: type.data,
-      size: size.success ? size.data : 'M',
-      squad: labelValue(labels, 'squad') ?? 'unknown',
-      startDate: labelValue(labels, 'start') ?? day(e.fields.created) ?? new Date().toISOString().slice(0, 10),
-      endDate: labelValue(labels, 'end') ?? day(e.fields.resolutiondate) ?? '',
-      status: done ? 'closed' : 'open',
-      estimateH: 0,
-      actualH: 0,
-      labels,
-      jiraKey: e.key,
-    };
+    const p = projectFromIssue(e, { projectType: type.data, squad: labelValue(labels, 'squad') ?? 'unknown' });
     projects.push(p);
     byEpicKey.set(e.key, p);
   }
@@ -319,33 +373,9 @@ export async function readHistory(client: JiraClient, squads: readonly Squad[]):
       warnings.push(`${c.key}: skipped (no parent epic with a type: label)`);
       continue;
     }
-    const labels = c.fields.labels ?? [];
-    const template = PHASE_TEMPLATES[project.projectType];
-    const phaseLabel = labelValue(labels, 'phase');
-    const phase = template.find((p) => p.id === phaseLabel) ?? template.find((p) => p.role === 'engineer') ?? template[0];
-    if (!phase) continue;
-    if (phaseLabel && phase.id !== phaseLabel) warnings.push(`${c.key}: phase "${phaseLabel}" not in ${project.projectType} template; using ${phase.id}`);
-    const cat = Category.safeParse(labelValue(labels, 'cat'));
-    const est = (c.fields.timeoriginalestimate ?? 0) / H;
-    const spent = (c.fields.timespent ?? 0) / H;
-    const cx = Complexity.safeParse(labelValue(labels, 'cx'));
-    const item: HistoryItem = {
-      id: labelValue(labels, 'seed') ?? c.key,
-      seedId: labelValue(labels, 'seed') ?? c.key,
-      projectId: project.id,
-      phaseId: phase.id,
-      title: c.fields.summary ?? c.key,
-      category: cat.success ? cat.data : 'backend',
-      complexity: cx.success ? cx.data : complexityFromHours(est),
-      role: phase.role,
-      originalEstimateH: r1(est),
-      timeSpentH: r1(spent),
-      labels,
-      addedAfterKickoff: labels.includes('added-after-kickoff'),
-      created: labelValue(labels, 'created') ?? day(c.fields.created) ?? project.startDate,
-      resolved: labelValue(labels, 'resolved') ?? day(c.fields.resolutiondate),
-      jiraKey: c.key,
-    };
+    const item = itemFromIssue(c, project);
+    const phaseLabel = labelValue(c.fields.labels ?? [], 'phase');
+    if (phaseLabel && item.phaseId !== phaseLabel) warnings.push(`${c.key}: phase "${phaseLabel}" not in ${project.projectType} template; using ${item.phaseId}`);
     items.push(item);
     if (!item.addedAfterKickoff) project.estimateH += item.originalEstimateH;
     project.actualH += item.timeSpentH;
@@ -454,4 +484,168 @@ export async function readIssueForBrief(client: JiraClient, key: string): Promis
   const issue = IssueForBrief.parse(await client.request('GET', `/rest/api/3/issue/${encodeURIComponent(key)}?fields=summary,description`));
   const description = adfToText(issue.fields.description).trim();
   return { key: issue.key, summary: issue.fields.summary, text: `# ${issue.key}: ${issue.fields.summary}\n\n${description}`.trim() };
+}
+
+// --- read: one ticket (pick an ongoing one, import a finished one) -------------------------------
+
+const statusCategory = (key: string | null | undefined): JiraStatusCategory => (key === 'done' || key === 'indeterminate' ? key : 'new');
+const isEpicType = (t: { name: string; hierarchyLevel?: number } | null | undefined) => (t?.hierarchyLevel ?? 0) === 1 || t?.name.toLowerCase() === 'epic';
+const hours = (seconds: number | null | undefined) => r1((seconds ?? 0) / H);
+
+/** Unresolved issues in the configured project, newest change first (sub-tasks left out). */
+export async function listOpenIssues(client: IssueReader, limit = 50): Promise<JiraIssuesResponse> {
+  const pk = client.cfg.projectKey.replace(/"/g, '');
+  const issues = await client.search(
+    `project = "${pk}" AND statusCategory != Done AND issuetype not in subTaskIssueTypes() ORDER BY updated DESC`,
+    ['summary', 'status', 'issuetype', 'updated', 'parent'],
+    limit,
+  );
+  return {
+    projectKey: pk,
+    issues: issues.slice(0, limit).map((i) => ({
+      key: i.key,
+      summary: i.fields.summary ?? i.key,
+      status: i.fields.status?.name ?? 'Unknown',
+      statusCategory: statusCategory(i.fields.status?.statusCategory?.key),
+      issueType: i.fields.issuetype?.name ?? 'Issue',
+      updated: typeof i.fields.updated === 'string' ? i.fields.updated : '',
+      ...(i.fields.parent?.key ? { parentKey: i.fields.parent.key } : {}),
+    })),
+  };
+}
+
+const DetailIssue = z.object({ id: z.string(), key: z.string(), fields: IssueFields.extend({ description: z.unknown().optional() }) });
+type DetailIssue = z.infer<typeof DetailIssue>;
+
+const DETAIL_FIELDS = ['summary', 'description', 'status', 'issuetype', 'created', 'resolutiondate', 'statuscategorychangedate', 'updated', 'timeoriginalestimate', 'timespent', 'labels'];
+
+async function fetchDetail(client: IssueReader, key: string): Promise<DetailIssue> {
+  return DetailIssue.parse(await client.request('GET', `/rest/api/3/issue/${encodeURIComponent(key)}?fields=${DETAIL_FIELDS.join(',')}`));
+}
+
+const str = (v: unknown) => (typeof v === 'string' ? v : undefined);
+
+/**
+ * When a done ticket finished: its resolution date, else the day its status category last changed, else its
+ * last update. Jira projects whose Done status does not set a resolution leave `resolutiondate` empty.
+ */
+function doneDate(issue: DetailIssue): string | undefined {
+  if (issue.fields.status?.statusCategory?.key !== 'done') return day(issue.fields.resolutiondate);
+  return day(issue.fields.resolutiondate) ?? day(str(issue.fields.statuscategorychangedate)) ?? day(str(issue.fields.updated));
+}
+
+function toDetail(client: IssueReader, issue: DetailIssue): JiraIssueDetail {
+  const summary = issue.fields.summary ?? '';
+  const description = adfToText(issue.fields.description).trim();
+  const resolved = doneDate(issue);
+  return {
+    key: issue.key,
+    summary,
+    text: `# ${issue.key}: ${summary}\n\n${description}`.trim(),
+    url: `${client.cfg.baseUrl}/browse/${issue.key}`,
+    status: issue.fields.status?.name ?? 'Unknown',
+    statusCategory: statusCategory(issue.fields.status?.statusCategory?.key),
+    issueType: issue.fields.issuetype?.name ?? 'Issue',
+    isEpic: isEpicType(issue.fields.issuetype),
+    created: day(issue.fields.created) ?? '',
+    ...(resolved ? { resolved } : {}),
+    originalEstimateH: hours(issue.fields.timeoriginalestimate),
+    timeSpentH: hours(issue.fields.timespent),
+    labels: issue.fields.labels ?? [],
+  };
+}
+
+/** One issue with its status and hours (a superset of readIssueForBrief; `text` is built the same way). */
+export async function readIssueDetail(client: IssueReader, key: string): Promise<JiraIssueDetail> {
+  return toDetail(client, await fetchDetail(client, key));
+}
+
+/** Category for a ticket without a `cat:` label, from words in its summary. */
+export function categoryFromSummary(summary: string): z.infer<typeof Category> {
+  const s = summary.toLowerCase();
+  const rules: [RegExp, z.infer<typeof Category>][] = [
+    [/\bform|field/, 'forms'],
+    [/sign/, 'esign'],
+    [/remind|notif|email/, 'notifications'],
+    [/report|dashboard/, 'reporting'],
+    [/sync|\bapi\b|integrat/, 'integration'],
+    [/migrat|import|\bdata\b/, 'data'],
+    [/screen|\bui\b|page/, 'frontend'],
+    [/\btest|\bqa\b/, 'qa'],
+    [/legal/, 'legal'],
+  ];
+  return rules.find(([re]) => re.test(s))?.[1] ?? 'backend';
+}
+
+function sizeFromHours(h: number): z.infer<typeof Size> {
+  return h < 40 ? 'S' : h < 120 ? 'M' : h < 300 ? 'L' : 'XL';
+}
+
+export interface ImportedIssue {
+  project: HistoryProject;
+  items: HistoryItem[];
+  /** The ticket as read, with `text` for a hindsight brief. */
+  detail: JiraIssueDetail;
+  /** True when no hours were logged or estimated: the project carries the "dates-only" label and only calendar time can be compared. */
+  datesOnly: boolean;
+}
+
+/**
+ * A finished ticket (statusCategory done) as a closed history project. An epic contributes its children as
+ * items; any other issue is one item. Hours come from the original estimate and logged time when the ticket
+ * has them; otherwise the project is labelled "dates-only" and keeps 0 h. Throws a 422 ApiError with a plain
+ * sentence when the ticket is not done.
+ */
+export async function importFinishedIssue(client: IssueReader, key: string, seedSquads: readonly Squad[]): Promise<ImportedIssue> {
+  const issue = await fetchDetail(client, key);
+  const detail = toDetail(client, issue);
+  if (detail.statusCategory !== 'done' || !detail.resolved) {
+    throw new ApiError(422, 'issue_not_finished', `${issue.key} is not finished yet, so it cannot be imported as a finished project.`);
+  }
+  const labels = issue.fields.labels ?? [];
+  const pk = client.cfg.projectKey.replace(/"/g, '');
+
+  let children: JiraIssue[] = [];
+  if (detail.isEpic) {
+    const fieldList = await client.fields().catch(() => []);
+    const epicLinkId = fieldList.find((f) => f.schema?.custom === EPIC_LINK_CUSTOM)?.id;
+    const jql = `(parent = ${issue.key}${epicLinkId ? ` OR "Epic Link" = ${issue.key}` : ''}) AND issuetype not in subTaskIssueTypes() ORDER BY created ASC`;
+    children = await client.search(jql, READ_FIELDS);
+  }
+  const spentS = detail.isEpic ? children.reduce((s, c) => s + (c.fields.timespent ?? 0), 0) : (issue.fields.timespent ?? 0);
+  const estS = detail.isEpic ? children.reduce((s, c) => s + (c.fields.timeoriginalestimate ?? 0), 0) : (issue.fields.timeoriginalestimate ?? 0);
+  const datesOnly = !(spentS > 0) || !(estS > 0);
+
+  const typeLabel = ProjectType.safeParse(labelValue(labels, 'type'));
+  const projectType = typeLabel.success ? typeLabel.data : detectProjectType(`${detail.summary}\n${adfToText(issue.fields.description)}`).type;
+  const squadLabel = labelValue(labels, 'squad');
+  const squad = seedSquads.find((s) => s.id === squadLabel)?.id ?? seedSquads[0]?.id;
+  if (!squad) throw new ApiError(500, 'no_squads', 'No squads in the seed data to attach the imported project to.');
+
+  const project: HistoryProject = {
+    ...projectFromIssue(issue, { projectType, squad }),
+    id: issue.key,
+    seedId: issue.key,
+    name: detail.summary || issue.key,
+    client: pk,
+    size: Size.safeParse(labelValue(labels, 'size')).data ?? sizeFromHours(estS / H),
+    startDate: detail.created || detail.resolved,
+    endDate: detail.resolved,
+    status: 'closed',
+    labels: [...labels.filter((l) => l !== 'real' && l !== 'dates-only'), 'real', ...(datesOnly ? ['dates-only'] : [])],
+  };
+  const items = (detail.isEpic ? children : [issue]).map((c) => {
+    const item = itemFromIssue(c, project);
+    if (!labelValue(c.fields.labels ?? [], 'cat')) item.category = categoryFromSummary(c.fields.summary ?? '');
+    // A single issue is its own project: it finished when the project did, even without a resolution date.
+    if (!detail.isEpic && !item.resolved) item.resolved = project.endDate;
+    return item;
+  });
+  for (const item of items) {
+    if (!item.addedAfterKickoff) project.estimateH += item.originalEstimateH;
+    project.actualH += item.timeSpentH;
+  }
+  project.estimateH = r1(project.estimateH);
+  project.actualH = r1(project.actualH);
+  return { project, items, detail, datesOnly };
 }

@@ -17,7 +17,7 @@
     "build:api": "npm run build -w apps/api",
     "typecheck": "tsc -p packages/shared && tsc -p packages/engine && npm run typecheck -w apps/api && npm run typecheck -w apps/web && tsc -p scripts/tsconfig.json",
     "lint": "eslint .",
-    "test": "vitest run --root packages/engine && vitest run --root apps/web",
+    "test": "vitest run --root packages/engine && vitest run --root apps/web && vitest run --root apps/api",
     "seed": "tsx scripts/seed.ts",
     "precompute": "tsx scripts/precompute-demo.ts",
     "push-to-jira": "tsx scripts/push-to-jira.ts",

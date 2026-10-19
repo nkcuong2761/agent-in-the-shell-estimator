@@ -1,6 +1,8 @@
 /**
  * Scopewise API (Hono). Runs on Node (src/server.ts) and Vercel (api/index.ts).
  * Every request body and response is validated with zod; errors are `{ error: { code, message } }`.
+ * Jira tickets: GET /jira/issues (ongoing, to pick from), GET /jira/issue/:key (one ticket with status and hours),
+ * POST /jira/import/:key (a finished ticket becomes a real history project), GET /jira/imports (what was imported).
  */
 import { Hono, type Context, type MiddlewareHandler } from 'hono';
 import { cors } from 'hono/cors';
@@ -16,6 +18,9 @@ import {
   Estimate,
   EstimateRequest,
   HealthResponse,
+  Hindsight,
+  JiraIssueDetail,
+  JiraIssuesResponse,
   JiraPushRequest,
   JiraPushResponse,
   Lesson,
@@ -25,6 +30,9 @@ import {
   PostmortemRequest,
   PostmortemResponse,
   ProjectType,
+  type ScopeResult,
+  RealProject,
+  RealProjectsResponse,
   ScopeRequest,
   ScopeResponse,
 } from '@scopewise/shared';
@@ -34,7 +42,7 @@ import { API_VERSION, loadSeedHistory, type SeedHistory } from './data';
 import { analogsFor, prepareFromRequest } from './engineRun';
 import { env } from './env';
 import { ApiError, claudeNotConfigured, errorBody, jiraNotConfigured } from './errors';
-import { JiraClient, pushEstimate, readHistory, readIssueForBrief } from './jira';
+import { importFinishedIssue, JiraClient, listOpenIssues, pushEstimate, readHistory, readIssueDetail } from './jira';
 import { rateLimit } from './rateLimit';
 import { getStore, type JiraCache } from './store';
 import { parseTimesheetCsv } from './timesheet';
@@ -92,12 +100,37 @@ function jiraClient(): JiraClient {
   return new JiraClient(cfg);
 }
 
+function issueKey(c: Context): string {
+  const key = (c.req.param('key') ?? '').toUpperCase();
+  if (!/^[A-Z][A-Z0-9]+-\d+$/.test(key)) throw new ApiError(400, 'bad_issue_key', `"${key}" is not a Jira issue key (for example SUB-142).`);
+  return key;
+}
+
 /** For post-mortems: synced Jira history when a cache exists (Jira is the system of record), else seed. Estimates use seed history so they match demo mode. */
 async function history(): Promise<SeedHistory> {
   const seed = loadSeedHistory();
   const cache = await getStore().getJiraCache().catch(() => null);
   if (!cache || cache.projects.length === 0) return seed;
   return { projects: cache.projects, items: cache.items, squads: seed.squads, worklogs: cache.worklogs.length ? cache.worklogs : seed.worklogs };
+}
+
+/** What Scopewise would have said about a ticket, from its text alone: scope (Claude or the rule-based reader), offline panel, engine estimate. */
+async function hindsightFor(key: string, detail: { summary: string; text: string }, squadId: string, startDate: string, seed: SeedHistory): Promise<Hindsight> {
+  const brief: BriefPack = { id: key, title: detail.summary || key, sources: [{ kind: 'jira', name: `jira-${key}.md`, text: detail.text }] };
+  const lessons = await getStore().listLessons().catch(() => []);
+  const { scope, provenance } = await withOfflineFallback(
+    'hindsight scope',
+    () => runScopeAgent(brief, { lessons }),
+    () => runScopeOffline(brief),
+  );
+  const panel = runPanelOffline(scope, analogsFor(scope, seed)).panel;
+  const est = runEstimate(prepareFromRequest({ scope, panel, teamShape: oneEachRole(scope), squadId, startDate, answeredQuestionIds: [], droppedItemIds: [] }, seed));
+  return Hindsight.parse({ effortH: Math.round(est.total.p50), safeEffortH: Math.round(est.total.p80), likelyDate: est.p50Date, safeDate: est.commitDate, scopeProvenance: provenance });
+}
+
+/** One person per role the scope's items need. */
+function oneEachRole(scope: ScopeResult): Record<string, number> {
+  return Object.fromEntries([...new Set(scope.items.map((i) => i.role))].map((r) => [r, 1]));
 }
 
 const aiLimit = rateLimit({ limit: 30, windowMs: MINUTE, name: 'AI' });
@@ -226,12 +259,45 @@ export function createApp() {
     return c.json({ source: 'jira', cached, ...cache, squadStats });
   });
 
-  // One issue's summary and description, so a Jira link can join a brief.
-  app.get('/jira/issue/:key', jiraLimit, async (c) => {
-    const key = c.req.param('key').toUpperCase();
-    if (!/^[A-Z][A-Z0-9]+-\d+$/.test(key)) throw new ApiError(400, 'bad_issue_key', `"${key}" is not a Jira issue key (for example SUB-142).`);
-    return c.json(await readIssueForBrief(jiraClient(), key));
+  // Ongoing (unresolved) tickets in the configured project, newest change first, to pick one on the intake screen.
+  app.get('/jira/issues', jiraLimit, async (c) => {
+    const limit = Math.min(200, Math.max(1, Number(c.req.query('limit')) || 50));
+    return c.json(JiraIssuesResponse.parse(await listOpenIssues(jiraClient(), limit)));
   });
+
+  // One issue: summary and description as brief text, plus its status and hours (so a finished ticket can be told apart).
+  app.get('/jira/issue/:key', jiraLimit, async (c) => {
+    return c.json(JiraIssueDetail.parse(await readIssueDetail(jiraClient(), issueKey(c))));
+  });
+
+  // A finished ticket becomes a real closed project in the history, with a post-mortem (engine template notes without a Claude key).
+  // A ticket without hours is imported "dates-only": the engine estimates it from its text in hindsight, so calendar time can still be compared.
+  app.post('/jira/import/:key', jiraLimit, async (c) => {
+    const client = jiraClient();
+    const key = issueKey(c);
+    const seed = loadSeedHistory();
+    const { project, items, detail, datesOnly } = await importFinishedIssue(client, key, seed.squads);
+    const pm = await runPostmortem(project, items);
+    let hindsight: Hindsight | undefined;
+    if (datesOnly) {
+      pm.result.summary = `No time was logged on ${key} in Jira, so only calendar time can be compared: it was opened on ${project.startDate} and finished on ${project.endDate}.`;
+      hindsight = await hindsightFor(key, detail, project.squad, project.startDate, seed);
+    }
+    const real = RealProject.parse({
+      project,
+      items,
+      postmortem: pm.result,
+      postmortemProvenance: pm.provenance,
+      ...(hindsight ? { hindsight } : {}),
+      importedAt: new Date().toISOString(),
+      url: `${client.cfg.baseUrl}/browse/${key}`,
+    });
+    await getStore().putRealProject(real);
+    return c.json(real, 201);
+  });
+
+  // Imported tickets from the store; no Jira call, so it answers even when Jira is not configured.
+  app.get('/jira/imports', async (c) => c.json(RealProjectsResponse.parse({ projects: await getStore().listRealProjects() })));
 
   // Conversations, saved from the web app in live mode (the browser keeps its own copy too).
   app.get('/conversations', async (c) => c.json({ conversations: await getStore().listConversations() }));

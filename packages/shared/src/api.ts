@@ -1,6 +1,6 @@
 import { z } from 'zod';
 import { BriefPack, PanelResult, Provenance, ScopeResult, TeamShape } from './domain';
-import { Lesson } from './history';
+import { HistoryItem, HistoryProject, Lesson } from './history';
 import { PostmortemResult } from './estimate';
 
 export const HealthResponse = z.object({
@@ -87,6 +87,75 @@ export const JiraPushResponse = z.object({
 export type JiraPushResponse = z.infer<typeof JiraPushResponse>;
 
 export const LessonsResponse = z.object({ lessons: z.array(Lesson) });
+
+// --- Jira tickets: pick an ongoing one, or import a finished one ---------------------------------
+
+export const JiraStatusCategory = z.enum(['new', 'indeterminate', 'done']);
+export type JiraStatusCategory = z.infer<typeof JiraStatusCategory>;
+
+/** One row of the "ongoing tickets" list (GET /jira/issues). */
+export const JiraIssueSummary = z.object({
+  key: z.string(),
+  summary: z.string(),
+  status: z.string(),
+  statusCategory: JiraStatusCategory,
+  issueType: z.string(),
+  updated: z.string(),
+  parentKey: z.string().optional(),
+});
+export type JiraIssueSummary = z.infer<typeof JiraIssueSummary>;
+export const JiraIssuesResponse = z.object({ projectKey: z.string(), issues: z.array(JiraIssueSummary) });
+export type JiraIssuesResponse = z.infer<typeof JiraIssuesResponse>;
+
+/** GET /jira/issue/:key. `text` is the brief source ("# KEY: summary\n\ndescription"); the rest says whether it is done and how much work it took. */
+export const JiraIssueDetail = z.object({
+  key: z.string(),
+  summary: z.string(),
+  text: z.string(),
+  url: z.string(),
+  status: z.string(),
+  statusCategory: JiraStatusCategory,
+  issueType: z.string(),
+  isEpic: z.boolean(),
+  created: z.string(),
+  resolved: z.string().optional(),
+  originalEstimateH: z.number().nonnegative(),
+  timeSpentH: z.number().nonnegative(),
+  labels: z.array(z.string()),
+});
+export type JiraIssueDetail = z.infer<typeof JiraIssueDetail>;
+
+/**
+ * What the engine would have said about a finished ticket, estimated from the ticket's text with only the
+ * history known at the time (default team, start = created). Filled when the ticket has no hours logged, so the
+ * page can still compare calendar time; the engine's own backtest covers tickets that do have hours.
+ */
+export const Hindsight = z.object({
+  effortH: z.number().nonnegative(),
+  safeEffortH: z.number().nonnegative(),
+  likelyDate: z.string(),
+  safeDate: z.string(),
+  scopeProvenance: Provenance,
+});
+export type Hindsight = z.infer<typeof Hindsight>;
+
+/**
+ * A finished ticket imported into the history (POST /jira/import/:key, GET /jira/imports). `project.labels`
+ * includes "real"; with "dates-only" too when no hours were logged (then `hindsight` is set, and the project
+ * stays out of the hour-based learning: analogs, bias correction, the accuracy chart).
+ */
+export const RealProject = z.object({
+  project: HistoryProject,
+  items: z.array(HistoryItem),
+  postmortem: PostmortemResult,
+  postmortemProvenance: Provenance,
+  hindsight: Hindsight.optional(),
+  importedAt: z.string(),
+  url: z.string(),
+});
+export type RealProject = z.infer<typeof RealProject>;
+export const RealProjectsResponse = z.object({ projects: z.array(RealProject) });
+export type RealProjectsResponse = z.infer<typeof RealProjectsResponse>;
 
 export const AskScriptEntry = z.object({
   question: z.string(),

@@ -11,11 +11,15 @@ import type {
   HealthResponse,
   HistoryItem,
   HistoryProject,
+  JiraIssueDetail,
+  JiraIssuesResponse,
   JiraPushRequest,
   JiraPushResponse,
   Lesson,
   PanelResponse,
   PostmortemResponse,
+  RealProject,
+  RealProjectsResponse,
   ScopeResponse,
   ScopeResult,
   Worklog,
@@ -68,8 +72,19 @@ export const api = {
     for (const f of files) form.append('files', f);
     return call('/scope', { method: 'POST', body: form });
   },
-  jiraIssue(key: string): Promise<{ key: string; summary: string; text: string }> {
+  jiraIssue(key: string): Promise<JiraIssueDetail> {
     return call(`/jira/issue/${encodeURIComponent(key)}`);
+  },
+  /** Ongoing (unresolved) tickets in the API's Jira project, newest first. */
+  jiraIssues(): Promise<JiraIssuesResponse> {
+    return call('/jira/issues');
+  },
+  /** Import a finished ticket as a real finished project (time logged, original estimate, post-mortem). */
+  jiraImport(key: string): Promise<RealProject> {
+    return call(`/jira/import/${encodeURIComponent(key)}`, { method: 'POST', body: '{}' });
+  },
+  jiraImports(): Promise<RealProjectsResponse> {
+    return call('/jira/imports');
   },
   scope(brief: BriefPack): Promise<ScopeResponse> {
     return call('/scope', { method: 'POST', body: JSON.stringify({ brief }) });

@@ -20,6 +20,8 @@ import {
   type PreparedEstimate,
 } from '@scopewise/engine';
 import { sampleById, seed } from '../lib/data';
+import { historyFor } from './history';
+import { subscribeRealProjects } from './realProjects';
 import { formatDate, weeksRange } from '../present/format';
 import { bufferFactor, focusFactorFor, resolvePolicy, startingTeam, type HoursPolicy } from './policy';
 
@@ -35,11 +37,13 @@ const offlineProvenance = (promptVersion: string): Provenance => ({ promptVersio
 
 /** With no API at all, a pasted brief is read here in the browser by the engine's rule-based reader. */
 export function scopeInBrowser(brief: BriefPack): { scope: ScopeResult; provenance: Provenance } {
-  return { scope: offlineScope(brief, { projects: seed.projects, items: seed.items }), provenance: offlineProvenance(OFFLINE_SCOPE_VERSION) };
+  const h = historyFor();
+  return { scope: offlineScope(brief, { projects: h.projects, items: h.items }), provenance: offlineProvenance(OFFLINE_SCOPE_VERSION) };
 }
 
 export function panelInBrowser(scope: ScopeResult): { panel: PanelResult; provenance: Provenance } {
-  const index = buildAnalogIndex(seed.items, seed.projects, historyOverhead(seed.projects, seed.squads));
+  const h = historyFor();
+  const index = buildAnalogIndex(h.items, h.projects, historyOverhead(h.projects, h.squads));
   const analogs = scope.items.map((i) => findAnalogs(i, index).value);
   return { panel: offlinePanel(scope, analogs), provenance: offlineProvenance(OFFLINE_PANEL_VERSION) };
 }
@@ -93,7 +97,15 @@ function scopeFor(scope: ScopeResult, covered: EstimateSpec['coveredRoles']): Sc
   return s;
 }
 
-const prepared = new WeakMap<ScopeResult, Map<string, PreparedEstimate>>();
+let prepared = new WeakMap<ScopeResult, Map<string, PreparedEstimate>>();
+
+/** A newly imported real project changes analogs, bias and reference classes: start every cache again. */
+export function resetEngineCaches() {
+  prepared = new WeakMap();
+  cache.clear();
+  observed = null;
+}
+subscribeRealProjects(resetEngineCaches);
 
 /** History-dependent preparation, once per squad (the start date and squad stats are swapped in per run). */
 function prepare(conv: Conversation, scope: ScopeResult): PreparedEstimate {
@@ -105,7 +117,7 @@ function prepare(conv: Conversation, scope: ScopeResult): PreparedEstimate {
     p = prepareEstimate({
       scope,
       panel: panelOf(conv),
-      history: { projects: seed.projects, items: seed.items, squads: seed.squads },
+      history: historyFor(),
       squad: squad?.stats ?? DEFAULT_SQUAD_STATS,
       plannedLeave: squad?.plannedLeave ?? [],
       teamShape: defaultTeam(scope),
@@ -210,6 +222,9 @@ export function makeVersion(conv: Conversation, spec: EstimateSpec, id: string, 
 let observed: Map<Category, number> | null = null;
 /** Actual/estimate per kind of work as the team experienced it (coordination included), for plain-language notes. */
 export function observedBias(): ReadonlyMap<Category, number> {
-  if (!observed) observed = new Map([...biasFactors(seed.items, seed.projects)].map(([k, v]) => [k, v.value.factor]));
+  if (!observed) {
+    const h = historyFor();
+    observed = new Map([...biasFactors(h.items, h.projects)].map(([k, v]) => [k, v.value.factor]));
+  }
   return observed;
 }

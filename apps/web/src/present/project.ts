@@ -1,6 +1,7 @@
-import type { BacktestPoint, HistoryProject, LessonCause, PostmortemResult } from '@scopewise/shared';
+import type { BacktestPoint, HistoryProject, LessonCause, PostmortemResult, RealProject, Role } from '@scopewise/shared';
+import { ROLE_LABELS } from '@scopewise/shared';
 import { CATEGORY_WORDS, copy } from '../copy';
-import { formatLongDate, formatWeeks } from './format';
+import { formatDate, formatLongDate, formatWeeks } from './format';
 
 const weeksBetween = (a: string, b: string) => (Date.parse(`${b}T00:00:00Z`) - Date.parse(`${a}T00:00:00Z`)) / (7 * 864e5);
 
@@ -80,4 +81,52 @@ export function toImprovement(points: readonly BacktestPoint[], projectId?: stri
 
 export function finishedLine(project: HistoryProject): string {
   return copy.projectFinished(formatLongDate(project.endDate));
+}
+
+// --- real tickets imported from Jira ----------------------------------------------------------------
+
+export interface RealFacts {
+  /** Hours are absent on a dates-only ticket (nothing was logged in Jira). */
+  hours?: { estimateH: number; actualH: number };
+  hindsightH: number;
+  started: string;
+  finished: string;
+  hindsight: string;
+  roles: string;
+  verdict: string;
+  second?: string;
+}
+
+const weeksWord = (n: number) => `${n} week${n === 1 ? '' : 's'}`;
+/** Hours a week one person puts into project work (6 productive hours × 5 days, at a typical focus factor). */
+const HOURS_PER_PERSON_WEEK = 24;
+
+/**
+ * Fixed facts for a finished ticket: what Jira said, what was logged, what the engine would have said with only
+ * earlier history (the backtest point), and one or two plain sentences on whether it could have finished sooner.
+ */
+export function toRealFacts(rp: RealProject, point: BacktestPoint, o: ProjectOutcome): RealFacts {
+  const p = rp.project;
+  const roles = [...new Set(rp.items.map((i) => i.role))] as Role[];
+  const roleText = roles.map((r) => ROLE_LABELS[r].toLowerCase()).join(', ') || 'the team';
+  const diff = o.tookWeeks - o.said.high;
+  const verdict = o.tookWeeks <= o.said.low ? copy.verdictSooner(weeksWord(Math.max(1, o.said.low - o.tookWeeks))) : diff <= 0 ? copy.verdictWithin : copy.verdictLater(weeksWord(diff));
+  const datesOnly = p.labels.includes('dates-only');
+  const fitsWeeks = Math.max(1, Math.ceil(p.actualH / (HOURS_PER_PERSON_WEEK * Math.max(1, roles.length))));
+  let second: string | undefined;
+  if (datesOnly) second = undefined;
+  else if (o.tookWeeks > fitsWeeks + 1) {
+    const causes = [...new Set(rp.postmortem.findings.filter((f) => f.cause === 'blocked' || f.cause === 'availability').map((f) => (f.cause === 'blocked' ? 'waiting on others' : 'time off')))].join(' and ');
+    second = copy.verdictWaiting(Math.round(p.actualH), weeksWord(fitsWeeks), causes);
+  } else if (o.tookWeeks < fitsWeeks - 1) second = copy.verdictPacked(Math.round(p.actualH), weeksWord(o.tookWeeks));
+  return {
+    hours: datesOnly ? undefined : { estimateH: Math.round(p.estimateH), actualH: Math.round(p.actualH) },
+    hindsightH: Math.round(point.calibratedP50),
+    started: copy.startedOn(formatDate(p.startDate)),
+    finished: copy.finishedOnDate(formatDate(p.endDate)),
+    hindsight: copy.hindsightDates(formatDate(point.calibratedP50Date), formatDate(point.calibratedP80Date)),
+    roles: datesOnly ? copy.datesOnlyNote : copy.rolesInvolved(roleText),
+    verdict,
+    second,
+  };
 }

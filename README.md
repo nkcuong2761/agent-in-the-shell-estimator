@@ -42,9 +42,9 @@ Each estimate is a document; a small assistant in the corner answers edge cases 
 | Route | What it shows |
 | --- | --- |
 | `#/` | Home: the estimates table (open and finished), tiles, filters, CSV export; the brief screen when there are no estimates |
-| `#/new` | New estimate: paste a brief, drop files, attach a Jira ticket (key or link; needs the API with Jira set up), or try an example |
+| `#/new` | New estimate: paste a brief, drop files, attach a Jira ticket (pick an ongoing one from the list or paste a key or link; needs the API with Jira set up), or try an example. A finished ticket on its own opens its results page instead |
 | `#/estimate/:id` | The estimate document: card, stages, client questions, brief, with the floating assistant |
-| `#/project/:id` | A finished project: estimate vs actual, what happened, what I learned, accuracy over time |
+| `#/project/:id` | A finished project: estimate vs actual, what happened, what I learned, accuracy over time. Also real Jira tickets you import: fixed numbers, a verdict on whether it could have finished sooner, and they join the history for later estimates |
 | `#/about` | Help: architecture, methods with citations, data disclaimer, Manager/Overseer view |
 
 The look is dark Brutalism: Bricolage Grotesque headings and numerals, Space Grotesk text, JetBrains Mono labels, 2px rules with hard offset shadows, one acid accent, film grain and an exposed grid. A light "paper" variant and an auto theme are one click away in the sidebar; every text colour meets WCAG AA.
@@ -116,7 +116,7 @@ Checks (all run in CI):
 
 ```bash
 npm run typecheck && npm run lint && npm test && npm run eval && npm run build
-# npm test runs the engine tests (34, incl. the rule-based reader on the 3 samples) and the web tests
+# npm test runs the engine tests (35, incl. the rule-based reader), the web tests and the API tests (Jira import mapping and routes)
 ```
 
 Data:
@@ -143,6 +143,7 @@ Exact clicks are in [SETUP.md](SETUP.md).
   - ~8% absence, plus one planned leave;
   - the first 10 projects are noisier;
   - two time-entry typos.
+- **Real tickets you import** (Attach Jira → a finished ticket) are the one exception: they come from your own Jira, carry the label `real`, show "Real ticket" on their page and "· real" in the table, and are added to the seed history for analogs, bias correction and the accuracy chart.
 - **Sample brief packs:** written for this project, with deliberate gaps (`data/samples/*/brief.json` lists them).
 - **Demo cache:** no API key was available when this repo was built, so the committed cache is labelled honestly. The UI shows each output's provenance:
   - scope results are hand-written fixtures that follow the scope prompt's contract (`fixture-scope@1`);

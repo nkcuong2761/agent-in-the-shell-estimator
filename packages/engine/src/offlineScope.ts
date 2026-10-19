@@ -237,6 +237,50 @@ function hoursFor(base: number, size: Size): { o: number; m: number; p: number }
   return { o: round(m * 0.7, 0), m, p: round(m * 1.6, 0) };
 }
 
+/**
+ * A bug report or a small change (the bulk of a real Jira backlog) is a day or two of work, not a project:
+ * a short brief that talks about something broken, or asks for a small tweak, gets a compact breakdown.
+ */
+const SMALL_FIX = /\b(bug|bugfix|hotfix|fix(es|ed)?|broken|does ?n[o']t|doesn't|isn't|incorrect(ly)?|wrong(ly)?|typo|crash(es|ed)?|disappears?|fails?|failing|not (showing|working|saved|displayed)|extra space|tweak|small change|minor)\b/i;
+const SMALL_FIX_MAX_WORDS = 350;
+
+export function isSmallFix(text: string): boolean {
+  return SMALL_FIX.test(text) && text.split(/\s+/).filter(Boolean).length <= SMALL_FIX_MAX_WORDS;
+}
+
+const SMALL_FIX_ITEMS: Record<ProjectType, ItemTemplate[]> = {
+  'new-feature': [
+    { phase: 'discovery', title: 'Reproduce it and find the cause', category: 'discovery', complexity: 'S', hours: 3, keywords: /when|after|steps|reproduc|expected/i },
+    { phase: 'build', title: 'Make the change', category: 'backend', complexity: 'S', hours: 6, keywords: /should|fix|change|instead/i },
+    { phase: 'qa', title: 'Test the change and what sits next to it', category: 'qa', complexity: 'S', hours: 3 },
+    { phase: 'go-live', title: 'Release', category: 'devops', complexity: 'S', hours: 1 },
+  ],
+  'form-digitization': [
+    { phase: 'form-analysis', title: 'Reproduce it and find the cause', category: 'discovery', complexity: 'S', hours: 3 },
+    { phase: 'build-form', title: 'Make the change to the form', category: 'forms', complexity: 'S', hours: 6 },
+    { phase: 'qa', title: 'Test the change and the paths around it', category: 'qa', complexity: 'S', hours: 3 },
+    { phase: 'go-live', title: 'Release', category: 'devops', complexity: 'S', hours: 1 },
+  ],
+  integration: [
+    { phase: 'discovery', title: 'Reproduce it and find the cause', category: 'discovery', complexity: 'S', hours: 3 },
+    { phase: 'build', title: 'Make the change to the sync', category: 'integration', complexity: 'S', hours: 6 },
+    { phase: 'integration-testing', title: 'Test the change against the partner', category: 'qa', complexity: 'S', hours: 4 },
+    { phase: 'go-live', title: 'Release', category: 'devops', complexity: 'S', hours: 1 },
+  ],
+  'data-migration': [
+    { phase: 'discovery', title: 'Reproduce it and find the cause', category: 'discovery', complexity: 'S', hours: 3 },
+    { phase: 'build', title: 'Make the change to the scripts', category: 'data', complexity: 'S', hours: 6 },
+    { phase: 'trial-migration', title: 'Re-run on a sample and check the counts', category: 'qa', complexity: 'S', hours: 4 },
+    { phase: 'go-live', title: 'Release', category: 'devops', complexity: 'S', hours: 1 },
+  ],
+  reporting: [
+    { phase: 'discovery', title: 'Reproduce it and find the cause', category: 'discovery', complexity: 'S', hours: 3 },
+    { phase: 'build', title: 'Make the change to the report', category: 'reporting', complexity: 'S', hours: 6 },
+    { phase: 'qa', title: 'Check the figures again', category: 'qa', complexity: 'S', hours: 3 },
+    { phase: 'go-live', title: 'Release', category: 'devops', complexity: 'S', hours: 1 },
+  ],
+};
+
 export interface OfflineScopeHistory {
   projects: readonly HistoryProject[];
   items: readonly HistoryItem[];
@@ -249,9 +293,10 @@ export function offlineScope(brief: BriefPack, history: OfflineScopeHistory = { 
   const roleOf = new Map(phases.map((p) => [p.id, p.role]));
   const prefix = type.slice(0, 3);
 
-  const addons = ADDONS.filter((a) => !a.not?.includes(type) && a.keywords.test(text));
+  const small = isSmallFix(text);
+  const addons = small ? [] : ADDONS.filter((a) => !a.not?.includes(type) && a.keywords.test(text));
   const words = text.split(/\s+/).filter(Boolean).length;
-  const size = sizeFrom(addons.length, words);
+  const size: Size = small ? 'S' : sizeFrom(addons.length, words);
 
   const items: WorkItem[] = [];
   let n = 0;
@@ -269,12 +314,13 @@ export function offlineScope(brief: BriefPack, history: OfflineScopeHistory = { 
       affectedByQuestions: [],
     });
   };
-  for (const t of TEMPLATES[type]) push(t, t.phase);
+  for (const t of small ? SMALL_FIX_ITEMS[type] : TEMPLATES[type]) push(t, t.phase);
   for (const a of addons) push(a, BUILD_PHASE[type]);
 
-  const missingInfo: MissingInfo[] = QUESTIONS.filter((q) => (!q.types || q.types.includes(type)) && (!q.onlyIf || q.onlyIf.test(text)) && !(q.answeredIf && q.answeredIf.test(text)))
+  // A small fix gets at most one question: the one about the systems it touches.
+  const missingInfo: MissingInfo[] = QUESTIONS.filter((q) => (!q.types || q.types.includes(type)) && (!q.onlyIf || q.onlyIf.test(text)) && !(q.answeredIf && q.answeredIf.test(text)) && (!small || q.id === 'q-systems'))
     .sort((a, b) => ['high', 'medium', 'low'].indexOf(a.impact) - ['high', 'medium', 'low'].indexOf(b.impact))
-    .slice(0, 5)
+    .slice(0, small ? 1 : 5)
     .map((q) => {
       const affected = items.filter((i) => q.categories.length === 0 || q.categories.includes(i.category)).map((i) => i.id);
       return { id: q.id, question: q.question, why: q.why, affectedItemIds: affected, spreadMultiplier: q.spread, impact: q.impact };

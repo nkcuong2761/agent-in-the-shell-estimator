@@ -1,7 +1,68 @@
 import { afterEach, describe, expect, it } from 'vitest';
 import { cleanup, fireEvent, render, screen, within } from '@testing-library/react';
+import type { RealProject } from '@scopewise/shared';
 import { App } from '../App';
 import { BANNED_TERMS } from '../copy';
+import { historyFor } from '../state/history';
+import { setRealProjects } from '../state/realProjects';
+
+/** A finished ticket as POST /jira/import returns it: one item, time logged, a template post-mortem. */
+const REAL_TICKET: RealProject = {
+  project: {
+    id: 'IDM-900',
+    seedId: 'IDM-900',
+    name: 'Copy contact matrix between investments',
+    client: 'IDM',
+    projectType: 'new-feature',
+    size: 'M',
+    squad: 'alpha',
+    startDate: '2026-03-02',
+    endDate: '2026-04-24',
+    status: 'closed',
+    estimateH: 80,
+    actualH: 104,
+    labels: ['real'],
+    jiraKey: 'IDM-900',
+  },
+  items: [
+    {
+      id: 'IDM-900',
+      seedId: 'IDM-900',
+      projectId: 'IDM-900',
+      phaseId: 'build',
+      title: 'Copy contact matrix between investments',
+      category: 'backend',
+      complexity: 'L',
+      role: 'engineer',
+      originalEstimateH: 80,
+      timeSpentH: 104,
+      labels: ['real'],
+      addedAfterKickoff: false,
+      created: '2026-03-02',
+      resolved: '2026-04-24',
+      jiraKey: 'IDM-900',
+    },
+  ],
+  postmortem: {
+    projectId: 'IDM-900',
+    summary: 'Took 104 hours against 80 estimated.',
+    findings: [{ scope: 'item', refId: 'IDM-900', title: 'Copy contact matrix between investments', estimateH: 80, actualH: 104, ratio: 1.3, cause: 'underestimated', note: 'Copying the matrix took 30% longer than estimated.', suspectedDataError: false }],
+    lessons: [{ cause: 'underestimated', note: 'Copying the matrix took 30% longer than estimated.', appliesTo: { category: 'backend', projectType: 'new-feature' } }],
+  },
+  postmortemProvenance: { promptVersion: 'offline-heuristic-postmortem@1', generatedBy: 'offline-heuristic', generatedAt: '2026-10-19T00:00:00.000Z' },
+  importedAt: '2026-10-19T00:00:00.000Z',
+  url: 'https://example.atlassian.net/browse/IDM-900',
+};
+
+/** The same ticket as the user's real project has them: done, but no hours logged, so the API adds a hindsight estimate. */
+const DATES_ONLY_TICKET: RealProject = {
+  ...REAL_TICKET,
+  project: { ...REAL_TICKET.project, id: 'IDM-901', seedId: 'IDM-901', jiraKey: 'IDM-901', estimateH: 0, actualH: 0, labels: ['real', 'dates-only'] },
+  items: [{ ...REAL_TICKET.items[0]!, id: 'IDM-901', seedId: 'IDM-901', projectId: 'IDM-901', jiraKey: 'IDM-901', originalEstimateH: 0, timeSpentH: 0, labels: ['real', 'dates-only'] }],
+  postmortem: { projectId: 'IDM-901', summary: 'No time was logged on this ticket, so only calendar time can be compared.', findings: [], lessons: [] },
+  hindsight: { effortH: 90, safeEffortH: 130, likelyDate: '2026-04-03', safeDate: '2026-04-17', scopeProvenance: { promptVersion: 'offline-heuristic-scope@1', generatedBy: 'offline-heuristic', generatedAt: '2026-10-19T00:00:00.000Z' } },
+  url: 'https://example.atlassian.net/browse/IDM-901',
+};
 
 /** Visible text of the page, leaving out the methods drawer (the one place technical terms may appear). */
 function mainText(): string {
@@ -78,6 +139,44 @@ describe('plain language on the main screens', () => {
     await screen.findByText(/Early estimates were off by about/);
     expect(screen.getAllByText(/^(New feature|Form|Integration|Data migration|Reporting)$/).length).toBeGreaterThan(0);
     expectNoBannedTerms();
+  }, 30000);
+
+  it('an imported Jira ticket shows as a real finished project with fixed numbers and no technical terms', async () => {
+    setRealProjects([REAL_TICKET]);
+    try {
+      window.location.hash = '#/project/IDM-900';
+      render(<App />);
+      await screen.findByText('How did the estimate do?', {}, { timeout: 20000 });
+      await screen.findByText('Real ticket');
+      expect(screen.getByText("Jira's own estimate")).toBeTruthy();
+      expect(screen.getByText('Time logged')).toBeTruthy();
+      expect(screen.getByText('We would have said')).toBeTruthy();
+      expect(screen.getByText('Done · 100%')).toBeTruthy();
+      expect(screen.getByRole('link', { name: /Open in Jira/ }).getAttribute('href')).toBe(REAL_TICKET.url);
+      expect(screen.getAllByText(/^(New feature|Form|Integration|Data migration|Reporting)$/).length).toBeGreaterThan(0);
+      expect(mainText()).toMatch(/This finished (about .+ (sooner|later) than|within the range)/);
+      expectNoBannedTerms();
+    } finally {
+      setRealProjects([]);
+    }
+  }, 30000);
+
+  it('a dates-only ticket compares calendar time only and stays out of the hour-based history', async () => {
+    setRealProjects([DATES_ONLY_TICKET]);
+    try {
+      expect(historyFor().projects.some((p) => p.id === 'IDM-901')).toBe(false);
+      window.location.hash = '#/project/IDM-901';
+      render(<App />);
+      await screen.findByText('How did the estimate do?', {}, { timeout: 20000 });
+      await screen.findByText('Real ticket');
+      expect(screen.queryByText('Time logged')).toBeNull();
+      expect(screen.getByText('We would have said')).toBeTruthy();
+      expect(screen.getAllByText(/No time was logged on this ticket/).length).toBeGreaterThan(0);
+      expect(mainText()).toMatch(/This finished about 1 week later than the safe date/);
+      expectNoBannedTerms();
+    } finally {
+      setRealProjects([]);
+    }
   }, 30000);
 
   it('home shows the estimates table; #/new shows the brief screen', async () => {

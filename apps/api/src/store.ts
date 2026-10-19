@@ -11,7 +11,7 @@ import { fileURLToPath } from 'node:url';
 import { tmpdir } from 'node:os';
 import { randomUUID } from 'node:crypto';
 import { z } from 'zod';
-import { Conversation, HistoryItem, HistoryProject, Lesson, Worklog } from '@scopewise/shared';
+import { Conversation, HistoryItem, HistoryProject, Lesson, RealProject, Worklog } from '@scopewise/shared';
 import { seedLessons } from './data';
 import { env } from './env';
 
@@ -32,6 +32,10 @@ export interface Store {
   setJiraCache(cache: JiraCache): Promise<void>;
   listConversations(): Promise<Conversation[]>;
   putConversation(conv: Conversation): Promise<void>;
+  /** Finished Jira tickets imported as history (newest import first). */
+  listRealProjects(): Promise<RealProject[]>;
+  /** Replaces any earlier import with the same `project.id`. */
+  putRealProject(p: RealProject): Promise<void>;
 }
 
 /** Conversations kept per store, newest first; older ones beyond this are dropped. */
@@ -48,6 +52,7 @@ const FileShape = z.object({
   lessons: z.array(Lesson),
   jiraCache: JiraCache.nullable().default(null),
   conversations: z.array(Conversation).default([]),
+  realProjects: z.array(RealProject).default([]),
 });
 type FileShape = z.infer<typeof FileShape>;
 
@@ -72,7 +77,7 @@ export class JsonFileStore implements Store {
         console.warn(`[store] ${this.path} is unreadable (${err instanceof Error ? err.message : err}); starting fresh.`);
       }
     }
-    this.data = { version: 1, lessons: seedLessons(), jiraCache: null, conversations: [] };
+    this.data = { version: 1, lessons: seedLessons(), jiraCache: null, conversations: [], realProjects: [] };
     this.persist();
     return this.data;
   }
@@ -117,6 +122,15 @@ export class JsonFileStore implements Store {
   async putConversation(conv: Conversation) {
     const d = this.load();
     d.conversations = [conv, ...d.conversations.filter((c) => c.id !== conv.id)].slice(0, MAX_CONVERSATIONS);
+    this.persist();
+    await this.writeChain;
+  }
+  async listRealProjects() {
+    return [...this.load().realProjects];
+  }
+  async putRealProject(p: RealProject) {
+    const d = this.load();
+    d.realProjects = [p, ...d.realProjects.filter((r) => r.project.id !== p.project.id)];
     this.persist();
     await this.writeChain;
   }
@@ -203,6 +217,21 @@ export class PostgresStore implements Store {
     const sql = await this.sql();
     const json = sql.json(conv as unknown as Parameters<typeof sql.json>[0]);
     await sql`insert into scopewise_kv (key, value, updated_at) values (${`conv:${conv.id}`}, ${json}, now()) on conflict (key) do update set value = excluded.value, updated_at = now()`;
+  }
+  async listRealProjects() {
+    await this.init();
+    const sql = await this.sql();
+    const rows = await sql<{ value: unknown }[]>`select value from scopewise_kv where key like 'real:%' order by updated_at desc`;
+    return rows.flatMap((r) => {
+      const p = RealProject.safeParse(r.value);
+      return p.success ? [p.data] : [];
+    });
+  }
+  async putRealProject(p: RealProject) {
+    await this.init();
+    const sql = await this.sql();
+    const json = sql.json(p as unknown as Parameters<typeof sql.json>[0]);
+    await sql`insert into scopewise_kv (key, value, updated_at) values (${`real:${p.project.id}`}, ${json}, now()) on conflict (key) do update set value = excluded.value, updated_at = now()`;
   }
 }
 
